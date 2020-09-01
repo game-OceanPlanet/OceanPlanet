@@ -2253,9 +2253,12 @@ var qmr;
             var dic = new qmr.Dictionary();
             var className = fileName.charAt(0).toLocaleUpperCase() + fileName.slice(1, fileName.length) + "Cfg"; //转换为类名
             var greeter = qmr[className];
-            var zip = t.getZip(t.WHOLE_CONFIG_NAME);
-            if (!zip) {
+            var zip;
+            if (fileName == qmr.ConfigEnumBase.MUSIC || fileName == qmr.ConfigEnumBase.PLAYERNAME || fileName == qmr.ConfigEnumBase.CODECFG || fileName == qmr.ConfigEnumBase.CLIENTCN) {
                 zip = t.getZip(t.BASE_CONFIG_NAME);
+            }
+            else {
+                zip = t.getZip(t.WHOLE_CONFIG_NAME);
             }
             if (!zip) {
                 console.error("配置读取失败");
@@ -9367,7 +9370,7 @@ var qmr;
         };
         /** 地图资源路径 */
         ResPathUtil.getMapUrl = function (mapName) {
-            return qmr.SystemPath.mapPath + mapName + ".jpg";
+            return qmr.SystemPath.mapPath + mapName;
         };
         return ResPathUtil;
     }());

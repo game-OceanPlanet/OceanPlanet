@@ -4,6 +4,7 @@ module qmr {
 		public static onEnterGame() {
 			console.log("======================开始进入游戏场景======================");
 			
+			SceneManager.instance.enterHangMap(3004);
 		}
 
 	}

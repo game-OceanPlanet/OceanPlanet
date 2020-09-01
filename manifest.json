@@ -16,9 +16,32 @@
 		"lib-login/login.js"
 	],
 	"game": [
+		"bin-debug/com/breeze/game/animation/base/BaseEffectMover.js",
+		"bin-debug/com/breeze/game/map/mover/BaseObject.js",
+		"bin-debug/com/breeze/game/map/Camera.js",
+		"bin-debug/com/breeze/game/animation/base/BaseEffect.js",
 		"bin-debug/MainAfterLogin.js",
-		"bin-debug/com/breeze/game/EntryAfterLogin.js",
 		"bin-debug/com/breeze/game/datas/DataManager.js",
-		"bin-debug/com/breeze/game/datas/configs/ItemConfigCfg.js"
+		"bin-debug/com/breeze/game/datas/configs/ItemConfigCfg.js",
+		"bin-debug/com/breeze/game/datas/configs/config/ConfigManager.js",
+		"bin-debug/com/breeze/game/datas/configs/config/dataset/ConfigDB.js",
+		"bin-debug/com/breeze/game/datas/configs/config/dataset/ConfigEnum.js",
+		"bin-debug/com/breeze/game/enum/GameConst.js",
+		"bin-debug/com/breeze/game/enum/ModuleNameConst.js",
+		"bin-debug/com/breeze/game/enum/NotifyConst.js",
+		"bin-debug/com/breeze/game/EntryAfterLogin.js",
+		"bin-debug/com/breeze/game/map/HangMap.js",
+		"bin-debug/com/breeze/game/map/Map.js",
+		"bin-debug/com/breeze/game/map/Scene.js",
+		"bin-debug/com/breeze/game/map/SceneManager.js",
+		"bin-debug/com/breeze/game/map/mover/BaseMover.js",
+		"bin-debug/com/breeze/game/animation/base/BaseBullet.js",
+		"bin-debug/com/breeze/game/res/SystemPathAft.js",
+		"bin-debug/com/breeze/game/tip/FloatHpTxt.js",
+		"bin-debug/com/breeze/game/tip/FloatImgLabel.js",
+		"bin-debug/com/breeze/game/tip/FloatManager.js",
+		"bin-debug/com/breeze/game/tip/FloatTip.js",
+		"bin-debug/com/breeze/game/util/ResPathUtilAft.js",
+		"bin-debug/com/breeze/game/util/TweenEffectUtil.js"
 	]
 }
