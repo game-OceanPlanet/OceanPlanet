@@ -104,6 +104,79 @@ declare module qmr {
     }
 }
 declare module qmr {
+    class AnimateClip extends egret.Bitmap {
+        private animateData;
+        private resName;
+        private callBack;
+        private thisObject;
+        private isDirLoad;
+        private actList;
+        private curFrame;
+        isBody: boolean;
+        constructor(callBack?: Function, thisObject?: any);
+        /**
+         * @description 动态设置是否是分方向加载
+         */
+        setIsDirLoad(value: boolean): void;
+        /**
+         * @description 获取是否是分方向加载
+         */
+        getIsDirLoad(): boolean;
+        /**
+         * @description 设置该动画片段包含的动作组
+         */
+        setActs(acts: string): void;
+        /**
+         * @description 该动画片段是否包含该动作
+         */
+        containsAct(act: string): boolean;
+        /**
+         * @description 加载
+         * @param path 文件的相对路径
+         * @param resName 当前动画片段的名字
+         * @param animationName 动画片段属于的动画的名字
+         * @param dir 有些动画会带方向的
+          @param act 动作名
+         */
+        load(path: string, resName: string, dir?: number): void;
+        /**
+         * @description 重置，防止夸帧
+         */
+        reset(): void;
+        /**
+         * @description 渲染第几帧
+         */
+        render(frame: number): void;
+        private _scale;
+        private _offsetX;
+        private _offsetY;
+        offsetX: number;
+        offsetY: number;
+        scale: number;
+        /** 用于设置特效宽度，设置之后无需设置scaleX */
+        private _effectWidth;
+        effectWidth: number;
+        /**获取第一帧的高度*/
+        readonly firstFrameHeight: number;
+        /** 获取总帧数 */
+        readonly totalFrames: number;
+        /**获取帧频*/
+        readonly frameRate: number;
+        /**  资源释放   */
+        dispos(): void;
+    }
+}
+declare module qmr {
+    class BaseBean {
+        key: string;
+        protected d: any;
+        constructor(d: any);
+        /** 用于两个值相merge */
+        merge(bean: any, rate?: number): void;
+        setRate(rate: number): void;
+    }
+}
+declare module qmr {
     /**
      *
      * @description 所有模块的基类
@@ -193,87 +266,6 @@ declare module qmr {
          * 关闭自身
          */
         protected closeView(): void;
-    }
-}
-declare module qmr {
-    class AnimateClip extends egret.Bitmap {
-        private animateData;
-        private resName;
-        private callBack;
-        private thisObject;
-        private isDirLoad;
-        private actList;
-        private curFrame;
-        isBody: boolean;
-        constructor(callBack?: Function, thisObject?: any);
-        /**
-         * @description 动态设置是否是分方向加载
-         */
-        setIsDirLoad(value: boolean): void;
-        /**
-         * @description 获取是否是分方向加载
-         */
-        getIsDirLoad(): boolean;
-        /**
-         * @description 设置该动画片段包含的动作组
-         */
-        setActs(acts: string): void;
-        /**
-         * @description 该动画片段是否包含该动作
-         */
-        containsAct(act: string): boolean;
-        /**
-         * @description 加载
-         * @param path 文件的相对路径
-         * @param resName 当前动画片段的名字
-         * @param animationName 动画片段属于的动画的名字
-         * @param dir 有些动画会带方向的
-          @param act 动作名
-         */
-        load(path: string, resName: string, dir?: number): void;
-        /**
-         * @description 重置，防止夸帧
-         */
-        reset(): void;
-        /**
-         * @description 渲染第几帧
-         */
-        render(frame: number): void;
-        private _scale;
-        private _offsetX;
-        private _offsetY;
-        offsetX: number;
-        offsetY: number;
-        scale: number;
-        /** 用于设置特效宽度，设置之后无需设置scaleX */
-        private _effectWidth;
-        effectWidth: number;
-        /**获取第一帧的高度*/
-        readonly firstFrameHeight: number;
-        /** 获取总帧数 */
-        readonly totalFrames: number;
-        /**获取帧频*/
-        readonly frameRate: number;
-        /**  资源释放   */
-        dispos(): void;
-    }
-}
-declare module qmr {
-    class BaseBean {
-        key: string;
-        protected d: any;
-        constructor(d: any);
-        /** 用于两个值相merge */
-        merge(bean: any, rate?: number): void;
-        setRate(rate: number): void;
-    }
-}
-declare module qmr {
-    class LoginViewUI extends SuperBaseModule {
-        labContent: eui.Label;
-        btnClose: eui.Image;
-        btnReturn: eui.Image;
-        constructor();
     }
 }
 declare module qmr {
@@ -540,6 +532,146 @@ declare module qmr {
         static S_SYNC_TIME: number;
         static C_SEND_SDK_DATA: number;
         static S_SEND_SDK_DATA: number;
+    }
+}
+declare module qmr {
+    /**
+     * @date 2016.12.01
+     * @description 带动画和移动操作的角色类,默认是待机状态,idle
+     */
+    class BaseActor extends egret.DisplayObjectContainer {
+        protected currentFrame: number;
+        protected totalFrame: number;
+        protected partDic: any;
+        protected partIdDic: any;
+        private isStopped;
+        private passedTime;
+        private frameIntervalTime;
+        private lastTime;
+        private eventDic;
+        private actDic;
+        private dir;
+        private isDirLoaded;
+        private loopCallBack;
+        private loopThisObject;
+        private loadCallBack;
+        private loadThisObject;
+        private _act;
+        private _resourcePath;
+        private _frameRate;
+        private _timeScale;
+        private _isNoRendering;
+        constructor(resourcePath: string, loadCallBack: Function, loadThisObject: any, defaultAct?: string);
+        protected addToStage(): void;
+        protected removeToStage(): void;
+        isNoRendering: boolean;
+        /**
+         * @description 设置是否是分方向加载
+         */
+        setIsDirLoad(value: boolean): void;
+        /**
+         * @description 添加部件
+         * @param part部件位置，参考ActorPart
+         * @param partId 部件的Id
+         * @param partIndex 部件层级位置,数字越大层级越高
+         */
+        addPartAt(part: number, partId: number, partIndex?: number, dir?: number, isDirLoad?: boolean, resPath?: string, isShowDefault?: boolean): void;
+        private addPartTo(part, partId, partIndex?, dir?, isDirLoad?, resPath?);
+        setPartVisible(part: number, show: boolean): void;
+        /**
+         * @description 移除部件
+         * @param part部件位置，参考ActorPart
+         */
+        removePart(part: number | string): void;
+        getPart(part?: number): AnimateClip;
+        /**
+         * @description 设置该部位包含的动作
+         */
+        setPartActs(part: number, acts: string): void;
+        /**
+         * @description 跳转并播放
+         */
+        gotoAndPlay(act: string, dir: number, loopCallBack?: Function, loopThisObject?: any, force?: boolean): void;
+        /**
+         * @description 清除回调
+         */
+        clearCallBack(): void;
+        /**
+         * @description 调整方向
+         */
+        changeDir(dir: number): void;
+        /**
+         * @description 跳转并停止在某一帧
+         */
+        gotoAndStop(frame: number): void;
+        /**
+        * @description 资源加载完毕
+        */
+        private onLoadedDefault(isFromCache, resName);
+        /**
+         * @description 其它部位加载完毕
+         */
+        private onLoadedOther(isFromCache);
+        private onLoaded(isFromCache, resName);
+        /**
+         * @description 获取第一帧裸体的高度
+         */
+        readonly firstBodyFrameHeight: number;
+        /**
+         * @description 注册一个帧事件         */
+        registerFrameEvent(frame: number, callBack: Function, thisObject: any): void;
+        /**
+         * @description 取消一个帧事件         */
+        unRegisterFrameEvent(frame: number): void;
+        /**
+         * @description 清除帧事件注册
+         */
+        clearFrameEvent(): void;
+        /**
+         * @description 帧频调用         */
+        private advanceTime(timeStamp);
+        /**
+         * @description 检测帧事件         */
+        private checkFrameEvent();
+        /**
+         * @description 渲染*/
+        private render();
+        /**
+         * @description 设置帧频         */
+        frameRate: number;
+        /**
+         * @description 获取总帧数
+         */
+        getTotalFrame(): number;
+        /**
+         * @description 获取timescale
+         */
+        /**
+         * @description 设置timescale
+         */
+        timeScale: number;
+        /**
+         * @description 获取timescale
+         */
+        act: string;
+        /**
+         * @description 获取timescale
+         */
+        resourcePath: string;
+        /**
+            * @private
+            *
+            * @param value
+            */
+        setIsStopped(value: boolean): void;
+        getDir(): number;
+        /**
+         * @description 清除资源
+         */
+        clear(): void;
+        /**
+         * @description 资源释放         */
+        dispos(isRemoveFromParent?: boolean): void;
     }
 }
 declare module qmr {
@@ -1083,6 +1215,7 @@ declare namespace qmr {
         static readonly ALERT: string;
         static readonly TIP: string;
         static readonly LOADING: string;
+        static readonly MASK_UI: string;
         static readonly TOP: string;
     }
 }
@@ -1565,7 +1698,18 @@ declare module qmr {
     }
 }
 declare module qmr {
-    class LoginView extends LoginViewUI {
+    class LoginView extends SuperBaseModule {
+        groupWind: eui.Group;
+        imgWindSlow: eui.Image;
+        imgWindFast: eui.Image;
+        imgWindMiddle: eui.Image;
+        gpRead: eui.Group;
+        lbUserBook: eui.Label;
+        lbPrivacyPolicy: eui.Label;
+        cbRead: eui.CheckBox;
+        btn_login: eui.Image;
+        groupAccount: eui.Group;
+        txt_account: eui.TextInput;
         constructor();
         /**
          * @description 初始化事件
@@ -1574,37 +1718,14 @@ declare module qmr {
         private onCloseClick();
         protected addedToStage(evt: egret.Event): void;
         private onBgResBack();
+        /** 加云朵 */
+        private addWindEffect();
         /**
         * @description 初始化数据,需被子类继承
         */
         protected initData(): void;
         dispose(): void;
     }
-}
-/**
- * 平台数据接口。
- * 由于每款游戏通常需要发布到多个平台上，所以提取出一个统一的接口用于开发者获取平台数据信息
- * 推荐开发者通过这种方式封装平台逻辑，以保证整体结构的稳定
- * 由于不同平台的接口形式各有不同，白鹭推荐开发者将所有接口封装为基于 Promise 的异步形式
- */
-interface Platform {
-    getUserInfo(): Promise<any>;
-    login(): Promise<any>;
-}
-declare class DebugPlatform implements Platform {
-    getUserInfo(): Promise<{
-        nickName: string;
-    }>;
-    login(): Promise<void>;
-}
-declare let platform: Platform;
-interface Window {
-    platform: Platform;
-}
-interface Window {
-    wx: any;
-    qq: any;
-    qg: any;
 }
 declare module qmr {
     /** 登录信息 */
@@ -1639,28 +1760,31 @@ declare module qmr {
         constructor();
     }
 }
-declare class ThemeAdapter implements eui.IThemeAdapter {
-    /**
-     * 解析主题
-     * @param url 待解析的主题url
-     * @param onSuccess 解析完成回调函数，示例：compFunc(e:egret.Event):void;
-     * @param onError 解析失败回调函数，示例：errorFunc():void;
-     * @param thisObject 回调的this引用
-     */
-    getTheme(url: string, onSuccess: Function, onError: Function, thisObject: any): void;
+/**
+ * 平台数据接口。
+ * 由于每款游戏通常需要发布到多个平台上，所以提取出一个统一的接口用于开发者获取平台数据信息
+ * 推荐开发者通过这种方式封装平台逻辑，以保证整体结构的稳定
+ * 由于不同平台的接口形式各有不同，白鹭推荐开发者将所有接口封装为基于 Promise 的异步形式
+ */
+interface Platform {
+    getUserInfo(): Promise<any>;
+    login(): Promise<any>;
 }
-declare var generateEUI: {
-    paths: string[];
-    skins: any;
-};
-declare var generateEUI2: {
-    paths: string[];
-    skins: any;
-};
-declare var generateJSON: {
-    paths: string[];
-    skins: any;
-};
+declare class DebugPlatform implements Platform {
+    getUserInfo(): Promise<{
+        nickName: string;
+    }>;
+    login(): Promise<void>;
+}
+declare let platform: Platform;
+interface Window {
+    platform: Platform;
+}
+interface Window {
+    wx: any;
+    qq: any;
+    qg: any;
+}
 declare module qmr {
     /**
      *
@@ -1705,22 +1829,28 @@ declare module qmr {
         static test(): void;
     }
 }
-declare module qmr {
+declare class ThemeAdapter implements eui.IThemeAdapter {
     /**
-     *
-     * @description 角色部件枚举
-     *
+     * 解析主题
+     * @param url 待解析的主题url
+     * @param onSuccess 解析完成回调函数，示例：compFunc(e:egret.Event):void;
+     * @param onError 解析失败回调函数，示例：errorFunc():void;
+     * @param thisObject 回调的this引用
      */
-    class ActorPart {
-        static BODY: number;
-        static WEAPON: number;
-        static WING: number;
-        static HORSE: number;
-        static HORSE_UP: number;
-        static SHIELD: number;
-        static DEFAULT: number;
-    }
+    getTheme(url: string, onSuccess: Function, onError: Function, thisObject: any): void;
 }
+declare var generateEUI: {
+    paths: string[];
+    skins: any;
+};
+declare var generateEUI2: {
+    paths: string[];
+    skins: any;
+};
+declare var generateJSON: {
+    paths: string[];
+    skins: any;
+};
 declare module qmr {
     class PlatformConfig {
         /**当前游戏参数配置 */
@@ -1925,13 +2055,18 @@ declare module qmr {
 }
 declare module qmr {
     /**
-     * 各个部位对应的资源加载地址
+     *
+     * @description 角色部件枚举
+     *
      */
-    class ActorPartResourceDic {
-        partDic: any;
-        constructor();
-        private static _instance;
-        static getInstance(): ActorPartResourceDic;
+    class ActorPart {
+        static BODY: number;
+        static WEAPON: number;
+        static WING: number;
+        static HORSE: number;
+        static HORSE_UP: number;
+        static SHIELD: number;
+        static DEFAULT: number;
     }
 }
 declare module qmr {
@@ -2374,142 +2509,13 @@ declare module qmr {
 }
 declare module qmr {
     /**
-     * @date 2016.12.01
-     * @description 带动画和移动操作的角色类,默认是待机状态,idle
+     * 各个部位对应的资源加载地址
      */
-    class BaseActor extends egret.DisplayObjectContainer {
-        protected currentFrame: number;
-        protected totalFrame: number;
-        protected partDic: any;
-        protected partIdDic: any;
-        private isStopped;
-        private passedTime;
-        private frameIntervalTime;
-        private lastTime;
-        private eventDic;
-        private actDic;
-        private dir;
-        private isDirLoaded;
-        private loopCallBack;
-        private loopThisObject;
-        private loadCallBack;
-        private loadThisObject;
-        private _act;
-        private _resourcePath;
-        private _frameRate;
-        private _timeScale;
-        private _isNoRendering;
-        constructor(resourcePath: string, loadCallBack: Function, loadThisObject: any, defaultAct?: string);
-        protected addToStage(): void;
-        protected removeToStage(): void;
-        isNoRendering: boolean;
-        /**
-         * @description 设置是否是分方向加载
-         */
-        setIsDirLoad(value: boolean): void;
-        /**
-         * @description 添加部件
-         * @param part部件位置，参考ActorPart
-         * @param partId 部件的Id
-         * @param partIndex 部件层级位置,数字越大层级越高
-         */
-        addPartAt(part: number, partId: number, partIndex?: number, dir?: number, isDirLoad?: boolean, resPath?: string, isShowDefault?: boolean): void;
-        private addPartTo(part, partId, partIndex?, dir?, isDirLoad?, resPath?);
-        setPartVisible(part: number, show: boolean): void;
-        /**
-         * @description 移除部件
-         * @param part部件位置，参考ActorPart
-         */
-        removePart(part: number | string): void;
-        getPart(part?: number): AnimateClip;
-        /**
-         * @description 设置该部位包含的动作
-         */
-        setPartActs(part: number, acts: string): void;
-        /**
-         * @description 跳转并播放
-         */
-        gotoAndPlay(act: string, dir: number, loopCallBack?: Function, loopThisObject?: any, force?: boolean): void;
-        /**
-         * @description 清除回调
-         */
-        clearCallBack(): void;
-        /**
-         * @description 调整方向
-         */
-        changeDir(dir: number): void;
-        /**
-         * @description 跳转并停止在某一帧
-         */
-        gotoAndStop(frame: number): void;
-        /**
-        * @description 资源加载完毕
-        */
-        private onLoadedDefault(isFromCache, resName);
-        /**
-         * @description 其它部位加载完毕
-         */
-        private onLoadedOther(isFromCache);
-        private onLoaded(isFromCache, resName);
-        /**
-         * @description 获取第一帧裸体的高度
-         */
-        readonly firstBodyFrameHeight: number;
-        /**
-         * @description 注册一个帧事件         */
-        registerFrameEvent(frame: number, callBack: Function, thisObject: any): void;
-        /**
-         * @description 取消一个帧事件         */
-        unRegisterFrameEvent(frame: number): void;
-        /**
-         * @description 清除帧事件注册
-         */
-        clearFrameEvent(): void;
-        /**
-         * @description 帧频调用         */
-        private advanceTime(timeStamp);
-        /**
-         * @description 检测帧事件         */
-        private checkFrameEvent();
-        /**
-         * @description 渲染*/
-        private render();
-        /**
-         * @description 设置帧频         */
-        frameRate: number;
-        /**
-         * @description 获取总帧数
-         */
-        getTotalFrame(): number;
-        /**
-         * @description 获取timescale
-         */
-        /**
-         * @description 设置timescale
-         */
-        timeScale: number;
-        /**
-         * @description 获取timescale
-         */
-        act: string;
-        /**
-         * @description 获取timescale
-         */
-        resourcePath: string;
-        /**
-            * @private
-            *
-            * @param value
-            */
-        setIsStopped(value: boolean): void;
-        getDir(): number;
-        /**
-         * @description 清除资源
-         */
-        clear(): void;
-        /**
-         * @description 资源释放         */
-        dispos(isRemoveFromParent?: boolean): void;
+    class ActorPartResourceDic {
+        partDic: any;
+        constructor();
+        private static _instance;
+        static getInstance(): ActorPartResourceDic;
     }
 }
 declare module qmr {

@@ -502,275 +502,6 @@ var qmr;
 })(qmr || (qmr = {}));
 var qmr;
 (function (qmr) {
-    /**
-     *
-     * @description 所有模块的基类
-     *
-     */
-    var SuperBaseModule = (function (_super) {
-        __extends(SuperBaseModule, _super);
-        function SuperBaseModule() {
-            var _this = _super.call(this) || this;
-            /** 是否可以点击背景黑幕来关闭面板 */
-            _this.isClickHide = true;
-            /** 是否需要半透明遮罩 */
-            _this.isNeedMask = false;
-            /** 是否需要全透明遮罩 */
-            _this.isNeedAlpha0Mask = false;
-            /** 是否需要弹出效果 */
-            _this.isPopupEffect = false;
-            /** 是否居中显示，居中显示不做屏幕大小适配 */
-            _this.isCenter = false;
-            /** 是否适配屏幕状态栏（刘海屏） */
-            _this.needAdaptStatusBar = true;
-            /** 是否显示中 */
-            _this._isShow = false;
-            _this.offsetY = 0; //弹出界面位置偏移
-            return _this;
-        }
-        Object.defineProperty(SuperBaseModule.prototype, "groupName", {
-            get: function () {
-                return this._groupName;
-            },
-            /** 设置资源组名字,需要在构造函数里面调用 */
-            set: function (value) {
-                this._groupName = value;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(SuperBaseModule.prototype, "qmrSkinName", {
-            /** 设置皮肤名字 */
-            set: function (value) {
-                this._qmrSkinName = value;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        /** 初始化组件 */
-        SuperBaseModule.prototype.initComponent = function () {
-            _super.prototype.initComponent.call(this);
-            this.resetPos();
-            this.initUnpackRes(this);
-        };
-        /** 刷新界面指引 */
-        SuperBaseModule.prototype.updateGuide = function () {
-        };
-        SuperBaseModule.prototype.resetPos = function () {
-            if (this.isPopupEffect || this.isCenter) {
-                this.anchorOffsetX = this.width >> 1;
-                this.anchorOffsetY = (this.height >> 1) + this.offsetY;
-                this.x = qmr.StageUtil.stageWidth >> 1;
-                this.y = qmr.StageUtil.stageHeight >> 1;
-            }
-        };
-        /** 初始化事件 */
-        SuperBaseModule.prototype.initListener = function () {
-            var t = this;
-            if (t.numChildren > 0) {
-                // let panelBg = t.getChildAt(0);
-                // if (panelBg && panelBg instanceof PanelBgUI)
-                // {
-                // 	t._panelBg = panelBg;
-                // 	t.addClickEvent(panelBg.btnClose, t.onPageBgCloseView, t);
-                // }
-                // else if (panelBg && panelBg instanceof PanelPopBgUI)
-                // {
-                // 	t.addClickEvent(panelBg.btnClose, t.onPageBgCloseView, t);
-                // }
-                // else if (panelBg instanceof egret.DisplayObjectContainer)
-                // {
-                // 	if (panelBg.numChildren > 0)
-                // 	{
-                // 		let child = panelBg.getChildAt(0);
-                // 		if (child && child instanceof PanelPopBgUI)
-                // 		{
-                // 			t.addClickEvent(child.btnClose, t.onPageBgCloseView, t);
-                // 		}
-                // 	}
-                // }
-            }
-            t.registerNotify(qmr.StageUtil.STAGE_RESIZE, t.onStageResize, t);
-            _super.prototype.initListener.call(this);
-        };
-        /** 对象是否有效 */
-        SuperBaseModule.prototype.getEffective = function (now, maxAliveTime) {
-            if (this.isShow) {
-                return true;
-            }
-            if (this.useTime && now - this.useTime >= maxAliveTime) {
-                return false;
-            }
-            return true;
-        };
-        /**关闭界面 不满意子类重写*/
-        SuperBaseModule.prototype.onPageBgCloseView = function () {
-            this.hide();
-        };
-        SuperBaseModule.prototype.addedToStage = function (evt) {
-            _super.prototype.addedToStage.call(this, evt);
-            egret.callLater(this.popupEffect, this);
-        };
-        SuperBaseModule.prototype.onStageResize = function (evt) {
-            var t = this;
-            if (!(t.isPopupEffect || t.isCenter)) {
-                t.width = qmr.StageUtil.stageWidth;
-                //刘海屏适配？临时处理
-                if (qmr.StageUtil.stageHeight > 1400 && t.needAdaptStatusBar) {
-                    t.height = qmr.StageUtil.stageHeight - 50;
-                    t.y = 50;
-                }
-                else {
-                    t.height = qmr.StageUtil.stageHeight;
-                    t.y = 0;
-                }
-            }
-            t.resetPos();
-            t.layout();
-            if (t.maskSprite) {
-                t.maskSprite.onStageResize();
-            }
-        };
-        /**
-         * 打开模块
-         * @param data 打开模块时，需要向这个模块传递的一些数据
-         */
-        SuperBaseModule.prototype.show = function (data) {
-            var t = this;
-            t.data = data;
-            if (!t.isSkinLoaded) {
-                if (t._qmrSkinName) {
-                    t.skinName = t._qmrSkinName;
-                }
-            }
-            else {
-                t.initListener();
-                egret.callLater(t.initData, t);
-            }
-            t.isShow = true;
-        };
-        Object.defineProperty(SuperBaseModule.prototype, "isShow", {
-            /** 获取当前模块的显示状态 */
-            get: function () {
-                return this._isShow;
-            },
-            set: function (flag) {
-                this._isShow = flag;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        /** 界面初始化之后布局 */
-        SuperBaseModule.prototype.layout = function () {
-        };
-        /** 获取模块中某个控件在舞台中的位置 */
-        SuperBaseModule.prototype.getComponentGlobalPoint = function (componentName) {
-            var component = this[componentName];
-            if (component) {
-                if (component.parent) {
-                    return component.parent.localToGlobal(component.x, component.y);
-                }
-                else {
-                    return component.localToGlobal(component.x, component.y);
-                }
-            }
-            return { x: 0, y: 0 };
-        };
-        /** 隐藏界面 */
-        SuperBaseModule.prototype.hide = function () {
-            if (this.isPopupEffect) {
-                this.closeEffect();
-            }
-            else {
-                qmr.ModuleManager.hideModule(this);
-            }
-        };
-        /** 弹出对话框效果*/
-        SuperBaseModule.prototype.popupEffect = function () {
-            var t = this;
-            if (!t.isPopupEffect)
-                return;
-            t.alpha = 0.2;
-            t.scaleX = 0.2;
-            t.scaleY = 0.2;
-            var toX, toY;
-            if (t.openPos) {
-                toX = t.openPos.x;
-                toY = t.openPos.y;
-            }
-            else {
-                toX = (qmr.StageUtil.stageWidth) >> 1;
-                toY = (qmr.StageUtil.stageHeight) >> 1;
-            }
-            egret.Tween.get(t).to({ scaleX: 1, scaleY: 1, alpha: 1, x: toX, y: toY }, 200, egret.Ease.backOut).call(t.doOpenOver, t);
-        };
-        /** 关闭对话框效果*/
-        SuperBaseModule.prototype.closeEffect = function () {
-            var toX = 0;
-            var toY = 0;
-            if (this._closePos) {
-                toX = this._closePos.x;
-                toY = this._closePos.y;
-            }
-            else {
-                toX = (qmr.StageUtil.stageWidth) >> 1;
-                toY = (qmr.StageUtil.stageHeight) >> 1;
-            }
-            egret.Tween.get(this).to({ scaleX: 0.3, scaleY: .3, alpha: 0, x: toX, y: toY }, 180, egret.Ease.cubicOut).call(this.doCloseOver, this);
-        };
-        /** 执行打开弹出框 */
-        SuperBaseModule.prototype.doOpenOver = function () {
-        };
-        /** 执行关闭弹出框 */
-        SuperBaseModule.prototype.doCloseOver = function () {
-            qmr.ModuleManager.hideModule(this);
-        };
-        Object.defineProperty(SuperBaseModule.prototype, "closePos", {
-            get: function () {
-                return this._closePos;
-            },
-            set: function (value) {
-                this._closePos = value;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(SuperBaseModule.prototype, "openPos", {
-            get: function () {
-                return this._openPos;
-            },
-            set: function (value) {
-                this._openPos = value;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        /** 资源释放 */
-        SuperBaseModule.prototype.dispose = function () {
-            _super.prototype.dispose.call(this);
-            this.isShow = false;
-            this.useTime = egret.getTimer();
-            if (this.title) {
-                this.updateTitle("", 0);
-            }
-            var groupName = this.groupName;
-            if (groupName != undefined && groupName != "") {
-                qmr.LoaderManager.instance.destoryGroup(groupName);
-            }
-        };
-        /**
-         * 关闭自身
-         */
-        SuperBaseModule.prototype.closeView = function () {
-            qmr.ModuleManager.hideModule(this);
-        };
-        return SuperBaseModule;
-    }(qmr.UIComponent));
-    qmr.SuperBaseModule = SuperBaseModule;
-    __reflect(SuperBaseModule.prototype, "qmr.SuperBaseModule");
-})(qmr || (qmr = {}));
-var qmr;
-(function (qmr) {
     var AnimateClip = (function (_super) {
         __extends(AnimateClip, _super);
         function AnimateClip(callBack, thisObject) {
@@ -1098,17 +829,272 @@ var qmr;
 })(qmr || (qmr = {}));
 var qmr;
 (function (qmr) {
-    var LoginViewUI = (function (_super) {
-        __extends(LoginViewUI, _super);
-        function LoginViewUI() {
+    /**
+     *
+     * @description 所有模块的基类
+     *
+     */
+    var SuperBaseModule = (function (_super) {
+        __extends(SuperBaseModule, _super);
+        function SuperBaseModule() {
             var _this = _super.call(this) || this;
-            _this.qmrSkinName = "LoginViewSkin";
+            /** 是否可以点击背景黑幕来关闭面板 */
+            _this.isClickHide = true;
+            /** 是否需要半透明遮罩 */
+            _this.isNeedMask = false;
+            /** 是否需要全透明遮罩 */
+            _this.isNeedAlpha0Mask = false;
+            /** 是否需要弹出效果 */
+            _this.isPopupEffect = false;
+            /** 是否居中显示，居中显示不做屏幕大小适配 */
+            _this.isCenter = false;
+            /** 是否适配屏幕状态栏（刘海屏） */
+            _this.needAdaptStatusBar = true;
+            /** 是否显示中 */
+            _this._isShow = false;
+            _this.offsetY = 0; //弹出界面位置偏移
             return _this;
         }
-        return LoginViewUI;
-    }(qmr.SuperBaseModule));
-    qmr.LoginViewUI = LoginViewUI;
-    __reflect(LoginViewUI.prototype, "qmr.LoginViewUI");
+        Object.defineProperty(SuperBaseModule.prototype, "groupName", {
+            get: function () {
+                return this._groupName;
+            },
+            /** 设置资源组名字,需要在构造函数里面调用 */
+            set: function (value) {
+                this._groupName = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SuperBaseModule.prototype, "qmrSkinName", {
+            /** 设置皮肤名字 */
+            set: function (value) {
+                this._qmrSkinName = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /** 初始化组件 */
+        SuperBaseModule.prototype.initComponent = function () {
+            _super.prototype.initComponent.call(this);
+            this.resetPos();
+            this.initUnpackRes(this);
+        };
+        /** 刷新界面指引 */
+        SuperBaseModule.prototype.updateGuide = function () {
+        };
+        SuperBaseModule.prototype.resetPos = function () {
+            if (this.isPopupEffect || this.isCenter) {
+                this.anchorOffsetX = this.width >> 1;
+                this.anchorOffsetY = (this.height >> 1) + this.offsetY;
+                this.x = qmr.StageUtil.stageWidth >> 1;
+                this.y = qmr.StageUtil.stageHeight >> 1;
+            }
+        };
+        /** 初始化事件 */
+        SuperBaseModule.prototype.initListener = function () {
+            var t = this;
+            if (t.numChildren > 0) {
+                // let panelBg = t.getChildAt(0);
+                // if (panelBg && panelBg instanceof PanelBgUI)
+                // {
+                // 	t._panelBg = panelBg;
+                // 	t.addClickEvent(panelBg.btnClose, t.onPageBgCloseView, t);
+                // }
+                // else if (panelBg && panelBg instanceof PanelPopBgUI)
+                // {
+                // 	t.addClickEvent(panelBg.btnClose, t.onPageBgCloseView, t);
+                // }
+                // else if (panelBg instanceof egret.DisplayObjectContainer)
+                // {
+                // 	if (panelBg.numChildren > 0)
+                // 	{
+                // 		let child = panelBg.getChildAt(0);
+                // 		if (child && child instanceof PanelPopBgUI)
+                // 		{
+                // 			t.addClickEvent(child.btnClose, t.onPageBgCloseView, t);
+                // 		}
+                // 	}
+                // }
+            }
+            t.registerNotify(qmr.StageUtil.STAGE_RESIZE, t.onStageResize, t);
+            _super.prototype.initListener.call(this);
+        };
+        /** 对象是否有效 */
+        SuperBaseModule.prototype.getEffective = function (now, maxAliveTime) {
+            if (this.isShow) {
+                return true;
+            }
+            if (this.useTime && now - this.useTime >= maxAliveTime) {
+                return false;
+            }
+            return true;
+        };
+        /**关闭界面 不满意子类重写*/
+        SuperBaseModule.prototype.onPageBgCloseView = function () {
+            this.hide();
+        };
+        SuperBaseModule.prototype.addedToStage = function (evt) {
+            _super.prototype.addedToStage.call(this, evt);
+            egret.callLater(this.popupEffect, this);
+        };
+        SuperBaseModule.prototype.onStageResize = function (evt) {
+            var t = this;
+            if (!(t.isPopupEffect || t.isCenter)) {
+                t.width = qmr.StageUtil.stageWidth;
+                //刘海屏适配？临时处理
+                if (qmr.StageUtil.stageHeight > 1400 && t.needAdaptStatusBar) {
+                    t.height = qmr.StageUtil.stageHeight - 50;
+                    t.y = 50;
+                }
+                else {
+                    t.height = qmr.StageUtil.stageHeight;
+                    t.y = 0;
+                }
+            }
+            t.resetPos();
+            t.layout();
+            if (t.maskSprite) {
+                t.maskSprite.onStageResize();
+            }
+        };
+        /**
+         * 打开模块
+         * @param data 打开模块时，需要向这个模块传递的一些数据
+         */
+        SuperBaseModule.prototype.show = function (data) {
+            var t = this;
+            t.data = data;
+            if (!t.isSkinLoaded) {
+                if (t._qmrSkinName) {
+                    t.skinName = t._qmrSkinName;
+                }
+            }
+            else {
+                t.initListener();
+                egret.callLater(t.initData, t);
+            }
+            t.isShow = true;
+        };
+        Object.defineProperty(SuperBaseModule.prototype, "isShow", {
+            /** 获取当前模块的显示状态 */
+            get: function () {
+                return this._isShow;
+            },
+            set: function (flag) {
+                this._isShow = flag;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /** 界面初始化之后布局 */
+        SuperBaseModule.prototype.layout = function () {
+        };
+        /** 获取模块中某个控件在舞台中的位置 */
+        SuperBaseModule.prototype.getComponentGlobalPoint = function (componentName) {
+            var component = this[componentName];
+            if (component) {
+                if (component.parent) {
+                    return component.parent.localToGlobal(component.x, component.y);
+                }
+                else {
+                    return component.localToGlobal(component.x, component.y);
+                }
+            }
+            return { x: 0, y: 0 };
+        };
+        /** 隐藏界面 */
+        SuperBaseModule.prototype.hide = function () {
+            if (this.isPopupEffect) {
+                this.closeEffect();
+            }
+            else {
+                qmr.ModuleManager.hideModule(this);
+            }
+        };
+        /** 弹出对话框效果*/
+        SuperBaseModule.prototype.popupEffect = function () {
+            var t = this;
+            if (!t.isPopupEffect)
+                return;
+            t.alpha = 0.2;
+            t.scaleX = 0.2;
+            t.scaleY = 0.2;
+            var toX, toY;
+            if (t.openPos) {
+                toX = t.openPos.x;
+                toY = t.openPos.y;
+            }
+            else {
+                toX = (qmr.StageUtil.stageWidth) >> 1;
+                toY = (qmr.StageUtil.stageHeight) >> 1;
+            }
+            egret.Tween.get(t).to({ scaleX: 1, scaleY: 1, alpha: 1, x: toX, y: toY }, 200, egret.Ease.backOut).call(t.doOpenOver, t);
+        };
+        /** 关闭对话框效果*/
+        SuperBaseModule.prototype.closeEffect = function () {
+            var toX = 0;
+            var toY = 0;
+            if (this._closePos) {
+                toX = this._closePos.x;
+                toY = this._closePos.y;
+            }
+            else {
+                toX = (qmr.StageUtil.stageWidth) >> 1;
+                toY = (qmr.StageUtil.stageHeight) >> 1;
+            }
+            egret.Tween.get(this).to({ scaleX: 0.3, scaleY: .3, alpha: 0, x: toX, y: toY }, 180, egret.Ease.cubicOut).call(this.doCloseOver, this);
+        };
+        /** 执行打开弹出框 */
+        SuperBaseModule.prototype.doOpenOver = function () {
+        };
+        /** 执行关闭弹出框 */
+        SuperBaseModule.prototype.doCloseOver = function () {
+            qmr.ModuleManager.hideModule(this);
+        };
+        Object.defineProperty(SuperBaseModule.prototype, "closePos", {
+            get: function () {
+                return this._closePos;
+            },
+            set: function (value) {
+                this._closePos = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SuperBaseModule.prototype, "openPos", {
+            get: function () {
+                return this._openPos;
+            },
+            set: function (value) {
+                this._openPos = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /** 资源释放 */
+        SuperBaseModule.prototype.dispose = function () {
+            _super.prototype.dispose.call(this);
+            this.isShow = false;
+            this.useTime = egret.getTimer();
+            if (this.title) {
+                this.updateTitle("", 0);
+            }
+            var groupName = this.groupName;
+            if (groupName != undefined && groupName != "") {
+                qmr.LoaderManager.instance.destoryGroup(groupName);
+            }
+        };
+        /**
+         * 关闭自身
+         */
+        SuperBaseModule.prototype.closeView = function () {
+            qmr.ModuleManager.hideModule(this);
+        };
+        return SuperBaseModule;
+    }(qmr.UIComponent));
+    qmr.SuperBaseModule = SuperBaseModule;
+    __reflect(SuperBaseModule.prototype, "qmr.SuperBaseModule");
 })(qmr || (qmr = {}));
 var qmr;
 (function (qmr) {
@@ -1515,6 +1501,560 @@ var qmr;
     }());
     qmr.MessageIDLogin = MessageIDLogin;
     __reflect(MessageIDLogin.prototype, "qmr.MessageIDLogin");
+})(qmr || (qmr = {}));
+var qmr;
+(function (qmr) {
+    /**
+     * @date 2016.12.01
+     * @description 带动画和移动操作的角色类,默认是待机状态,idle
+     */
+    var BaseActor = (function (_super) {
+        __extends(BaseActor, _super);
+        function BaseActor(resourcePath, loadCallBack, loadThisObject, defaultAct) {
+            if (defaultAct === void 0) { defaultAct = "idle"; }
+            var _this = _super.call(this) || this;
+            var t = _this;
+            t.resourcePath = resourcePath;
+            t.loadCallBack = loadCallBack;
+            t.loadThisObject = loadThisObject;
+            t.currentFrame = 1;
+            t.totalFrame = 0;
+            t.isStopped = true;
+            t.isDirLoaded = false;
+            t.isNoRendering = false;
+            t.passedTime = 0;
+            t.lastTime = 0;
+            t._timeScale = 1;
+            t.act = defaultAct;
+            t.frameRate = 30;
+            t.eventDic = {};
+            t.actDic = {};
+            t.partDic = {};
+            t.partIdDic = {};
+            t.addEventListener(egret.Event.ADDED_TO_STAGE, t.addToStage, t);
+            t.addEventListener(egret.Event.REMOVED_FROM_STAGE, t.removeToStage, t);
+            return _this;
+        }
+        BaseActor.prototype.addToStage = function () {
+            this.setIsStopped(false);
+            this.render();
+        };
+        BaseActor.prototype.removeToStage = function () {
+            this.setIsStopped(true);
+        };
+        Object.defineProperty(BaseActor.prototype, "isNoRendering", {
+            get: function () {
+                return this._isNoRendering;
+            },
+            set: function (value) {
+                this._isNoRendering = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * @description 设置是否是分方向加载
+         */
+        BaseActor.prototype.setIsDirLoad = function (value) {
+            this.isDirLoaded = value;
+            var partDic = this.partDic;
+            for (var part in partDic) {
+                var animalClip = partDic[part];
+                animalClip.setIsDirLoad(value);
+            }
+        };
+        /**
+         * @description 添加部件
+         * @param part部件位置，参考ActorPart
+         * @param partId 部件的Id
+         * @param partIndex 部件层级位置,数字越大层级越高
+         */
+        BaseActor.prototype.addPartAt = function (part, partId, partIndex, dir, isDirLoad, resPath, isShowDefault) {
+            if (partIndex === void 0) { partIndex = -1; }
+            if (dir === void 0) { dir = 1; }
+            if (isDirLoad === void 0) { isDirLoad = false; }
+            if (resPath === void 0) { resPath = null; }
+            if (isShowDefault === void 0) { isShowDefault = true; }
+            if (partId) {
+                var t = this;
+                t.addPartTo(part, partId, partIndex, dir, isDirLoad, resPath);
+                //这里是添加转圈特效，用来在模型资源加载完成之前显示一个loading特效的功能
+                if (part == qmr.ActorPart.BODY && isShowDefault) {
+                    var animalClip = t.partDic[qmr.ActorPart.DEFAULT];
+                    if (!animalClip) {
+                        t.addPartTo(qmr.ActorPart.DEFAULT, 168, partIndex, dir, isDirLoad, resPath);
+                        animalClip = t.partDic[qmr.ActorPart.DEFAULT];
+                        animalClip.offsetY = -85;
+                    }
+                }
+            }
+        };
+        BaseActor.prototype.addPartTo = function (part, partId, partIndex, dir, isDirLoad, resPath) {
+            if (partIndex === void 0) { partIndex = -1; }
+            if (dir === void 0) { dir = 1; }
+            if (isDirLoad === void 0) { isDirLoad = false; }
+            if (resPath === void 0) { resPath = null; }
+            var t = this;
+            var tempAct = t.act;
+            var animalClip = t.partDic[part];
+            t.partIdDic[part] = partId;
+            t.dir = dir;
+            if (animalClip) {
+                if (partIndex != -1) {
+                    t.addChildAt(animalClip, partIndex);
+                }
+                else {
+                    t.addChild(animalClip);
+                }
+                animalClip.setIsDirLoad(isDirLoad);
+                if (!animalClip.containsAct(tempAct)) {
+                    tempAct = part == qmr.ActorPart.HORSE ? qmr.Status.IDLE_RIDE : qmr.Status.IDLE;
+                }
+                var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
+                animalClip.load(partPath ? partPath : t.resourcePath, partId + "_" + tempAct, qmr.DirUtil.getDir(dir));
+            }
+            else {
+                if (part == qmr.ActorPart.BODY) {
+                    animalClip = new qmr.AnimateClip(t.onLoaded, t);
+                    // animalClip.isBody = true;
+                }
+                else if (part == qmr.ActorPart.DEFAULT) {
+                    animalClip = new qmr.AnimateClip(t.onLoadedDefault, t);
+                }
+                else if (part == qmr.ActorPart.WING) {
+                    animalClip = new qmr.AnimateWing(t.onLoadedOther, t);
+                }
+                else {
+                    animalClip = new qmr.AnimateClip(t.onLoadedOther, t);
+                }
+                // animalClip.setIsDirLoad(isDirLoad); 本项目不需要
+                if (partIndex != -1) {
+                    t.addChildAt(animalClip, partIndex);
+                }
+                else {
+                    t.addChild(animalClip);
+                }
+                if (!animalClip.containsAct(tempAct)) {
+                    tempAct = part == qmr.ActorPart.HORSE ? qmr.Status.IDLE_RIDE : qmr.Status.IDLE;
+                }
+                t.partDic[part] = animalClip;
+                var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
+                animalClip.load(partPath ? partPath : t.resourcePath, partId + "_" + tempAct, qmr.DirUtil.getDir(dir));
+            }
+        };
+        BaseActor.prototype.setPartVisible = function (part, show) {
+            var animalClip = this.partDic[part];
+            animalClip.visible = show;
+        };
+        /**
+         * @description 移除部件
+         * @param part部件位置，参考ActorPart
+         */
+        BaseActor.prototype.removePart = function (part) {
+            var animalClip = this.partDic[part];
+            if (animalClip) {
+                animalClip.dispos();
+                delete this.partDic[part];
+                delete this.partIdDic[part];
+            }
+        };
+        BaseActor.prototype.getPart = function (part) {
+            if (part === void 0) { part = qmr.ActorPart.BODY; }
+            return this.partDic[part];
+        };
+        /**
+         * @description 设置该部位包含的动作
+         */
+        BaseActor.prototype.setPartActs = function (part, acts) {
+            var partDic = this.partDic;
+            for (var key in partDic) {
+                if (parseInt(key) == part) {
+                    var animalClip = partDic[part];
+                    if (animalClip) {
+                        animalClip.setActs(acts);
+                    }
+                }
+            }
+            if (acts.indexOf(',') > -1) {
+                this.act = acts.split(',')[0];
+            }
+            else {
+                this.act = acts;
+            }
+        };
+        /**
+         * @description 跳转并播放
+         */
+        BaseActor.prototype.gotoAndPlay = function (act, dir, loopCallBack, loopThisObject, force) {
+            if (loopCallBack === void 0) { loopCallBack = null; }
+            if (loopThisObject === void 0) { loopThisObject = null; }
+            if (force === void 0) { force = false; }
+            var t = this;
+            t.loopCallBack = loopCallBack;
+            t.loopThisObject = loopThisObject;
+            if (!force) {
+                if (t.act == act)
+                    return;
+            }
+            t.actDic[act] = false;
+            t.act = act;
+            t.dir = dir;
+            t.currentFrame = 1;
+            var currentScale = Math.abs(t.scaleX);
+            if (dir <= 5) {
+                t.scaleX = currentScale;
+            }
+            else {
+                t.scaleX = -currentScale;
+            }
+            if (t.act == qmr.Status.DEAD) {
+                dir = -1;
+            }
+            var partDic = t.partDic;
+            var partIdDic = t.partIdDic;
+            t.setIsStopped(true);
+            for (var part in partDic) {
+                var animalClip = partDic[part];
+                if (animalClip) {
+                    var tempAct = t.act;
+                    if (!animalClip.containsAct(tempAct)) {
+                        if (parseInt(part) == qmr.ActorPart.HORSE) {
+                            tempAct = qmr.Status.IDLE_RIDE;
+                        }
+                        else {
+                            tempAct = qmr.Status.IDLE;
+                        }
+                    }
+                    var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
+                    var resPath = partPath ? partPath : t.resourcePath;
+                    animalClip.load(resPath, partIdDic[part] + "_" + tempAct, qmr.DirUtil.getDir(dir));
+                }
+            }
+        };
+        /**
+         * @description 清除回调
+         */
+        BaseActor.prototype.clearCallBack = function () {
+            this.loopCallBack = null;
+        };
+        /**
+         * @description 调整方向
+         */
+        BaseActor.prototype.changeDir = function (dir) {
+            var t = this;
+            if (t.dir == dir)
+                return;
+            t.dir = dir;
+            var currentScale = Math.abs(t.scaleX);
+            if (dir <= 5) {
+                t.scaleX = currentScale;
+            }
+            else {
+                t.scaleX = -currentScale;
+            }
+            var partDic = t.partDic;
+            var partIdDic = t.partIdDic;
+            for (var part in partDic) {
+                var animalClip = partDic[part];
+                if (animalClip) {
+                    var tempAct = t.act;
+                    if (!animalClip.containsAct(tempAct)) {
+                        if (parseInt(part) == qmr.ActorPart.HORSE) {
+                            tempAct = qmr.Status.IDLE_RIDE;
+                        }
+                        else {
+                            tempAct = qmr.Status.IDLE;
+                        }
+                    }
+                    var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
+                    var resPath = partPath ? partPath : t.resourcePath;
+                    animalClip.load(resPath + partIdDic[part] + "/", partIdDic[part] + "_" + tempAct, qmr.DirUtil.getDir(dir));
+                }
+            }
+        };
+        /**
+         * @description 跳转并停止在某一帧
+         */
+        BaseActor.prototype.gotoAndStop = function (frame) {
+            this.currentFrame = frame;
+            this.render();
+            this.setIsStopped(true);
+        };
+        /**
+        * @description 资源加载完毕
+        */
+        BaseActor.prototype.onLoadedDefault = function (isFromCache, resName) {
+            var t = this;
+            var animalClip = t.partDic[qmr.ActorPart.DEFAULT];
+            if (animalClip) {
+                t.totalFrame = animalClip.totalFrames;
+                t.frameRate = animalClip.frameRate;
+                t.setIsStopped(false);
+            }
+        };
+        /**
+         * @description 其它部位加载完毕
+         */
+        BaseActor.prototype.onLoadedOther = function (isFromCache) {
+            var t = this;
+            var animalClip = t.partDic[qmr.ActorPart.DEFAULT];
+            if (animalClip) {
+                t.removePart(qmr.ActorPart.DEFAULT);
+                t.totalFrame = 1;
+            }
+            if (!isFromCache) {
+                t.changeDir(t.dir);
+            }
+        };
+        BaseActor.prototype.onLoaded = function (isFromCache, resName) {
+            var t = this;
+            t.removePart(qmr.ActorPart.DEFAULT);
+            if (resName.indexOf(t.act) == -1)
+                return;
+            var animalClip = t.partDic[qmr.ActorPart.BODY];
+            if (animalClip) {
+                t.totalFrame = animalClip.totalFrames;
+                t.frameRate = animalClip.frameRate;
+            }
+            else {
+                t.totalFrame = 0;
+            }
+            if (t.totalFrame > 0) {
+                t.actDic[t.act] = true;
+                //如果只是有一帧
+                if (t.totalFrame == 1) {
+                    t.gotoAndStop(1);
+                }
+                else {
+                    t.setIsStopped(false);
+                }
+                if (t.loadCallBack) {
+                    t.loadCallBack.call(t.loadThisObject);
+                }
+            }
+            else {
+                t.gotoAndPlay(t.act, t.dir);
+            }
+        };
+        Object.defineProperty(BaseActor.prototype, "firstBodyFrameHeight", {
+            /**
+             * @description 获取第一帧裸体的高度
+             */
+            get: function () {
+                var animalClip = this.partDic[qmr.ActorPart.BODY];
+                if (animalClip) {
+                    return animalClip.firstFrameHeight;
+                }
+                return 0;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * @description 注册一个帧事件         */
+        BaseActor.prototype.registerFrameEvent = function (frame, callBack, thisObject) {
+            this.eventDic[frame] = { callBack: callBack, thisObject: thisObject };
+        };
+        /**
+         * @description 取消一个帧事件         */
+        BaseActor.prototype.unRegisterFrameEvent = function (frame) {
+            var eventDic = this.eventDic;
+            if (eventDic[frame]) {
+                eventDic[frame] = null;
+                delete eventDic[frame];
+            }
+        };
+        /**
+         * @description 清除帧事件注册
+         */
+        BaseActor.prototype.clearFrameEvent = function () {
+            var eventDic = this.eventDic;
+            for (var key in eventDic) {
+                eventDic[key] = null;
+                delete eventDic[key];
+            }
+        };
+        /**
+         * @description 帧频调用         */
+        BaseActor.prototype.advanceTime = function (timeStamp) {
+            var t = this;
+            if (t.isNoRendering) {
+                t.gotoAndStop(1);
+                return false;
+            }
+            var advancedTime = timeStamp - t.lastTime;
+            t.lastTime = timeStamp;
+            var frameIntervalTime = t.frameIntervalTime;
+            var currentTime = t.passedTime + advancedTime;
+            t.passedTime = currentTime % frameIntervalTime;
+            var num = currentTime / frameIntervalTime;
+            if (num < 1) {
+                return false;
+            }
+            t.render();
+            while (num >= 1) {
+                num--;
+                t.currentFrame++;
+                if (t.actDic[t.act]) {
+                    t.checkFrameEvent();
+                }
+            }
+            return false;
+        };
+        /**
+         * @description 检测帧事件         */
+        BaseActor.prototype.checkFrameEvent = function () {
+            var obj = this.eventDic[this.currentFrame];
+            if (obj && obj.callBack) {
+                obj.callBack.call(obj.thisObject);
+            }
+        };
+        /**
+         * @description 渲染*/
+        BaseActor.prototype.render = function () {
+            var t = this;
+            if (t.totalFrame > 0) {
+                if (t.currentFrame > t.totalFrame) {
+                    t.currentFrame = 1;
+                    if (t.loopCallBack) {
+                        t.loopCallBack.call(t.loopThisObject);
+                    }
+                }
+                if (t.totalFrame == 1 || t.stage) {
+                    var partDic = t.partDic;
+                    var currentFrame = t.currentFrame;
+                    for (var part in partDic) {
+                        var animalClip = partDic[part];
+                        if (animalClip) {
+                            animalClip.render(currentFrame);
+                        }
+                    }
+                }
+            }
+        };
+        Object.defineProperty(BaseActor.prototype, "frameRate", {
+            /**
+             * @description 设置帧频         */
+            set: function (value) {
+                if (value > 60) {
+                    value = 60;
+                }
+                this._frameRate = value;
+                this.frameIntervalTime = 1000 / (value * this._timeScale);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * @description 获取总帧数
+         */
+        BaseActor.prototype.getTotalFrame = function () {
+            return this.totalFrame;
+        };
+        Object.defineProperty(BaseActor.prototype, "timeScale", {
+            /**
+             * @description 获取timescale
+             */
+            get: function () {
+                return this._timeScale;
+            },
+            /**
+             * @description 设置timescale
+             */
+            set: function (value) {
+                if (value <= 0) {
+                    value = 1;
+                }
+                this._timeScale = value;
+                this.frameIntervalTime = 1000 / (this._frameRate * value);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(BaseActor.prototype, "act", {
+            /**
+             * @description 获取timescale
+             */
+            get: function () {
+                return this._act;
+            },
+            set: function (value) {
+                this._act = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(BaseActor.prototype, "resourcePath", {
+            /**
+             * @description 获取timescale
+             */
+            get: function () {
+                return this._resourcePath;
+            },
+            set: function (value) {
+                this._resourcePath = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+            * @private
+            *
+            * @param value
+            */
+        BaseActor.prototype.setIsStopped = function (value) {
+            var t = this;
+            if (t.isStopped == value) {
+                return;
+            }
+            t.isStopped = value;
+            if (value) {
+                egret.stopTick(t.advanceTime, t);
+            }
+            else {
+                //如果只是有一帧或者外面设置了不在渲染
+                if (t.totalFrame == 1 || t.isNoRendering) {
+                    t.gotoAndStop(1);
+                }
+                else {
+                    t.lastTime = egret.getTimer();
+                    egret.startTick(t.advanceTime, t);
+                }
+            }
+        };
+        BaseActor.prototype.getDir = function () {
+            return this.dir;
+        };
+        /**
+         * @description 清除资源
+         */
+        BaseActor.prototype.clear = function () {
+            this.setIsStopped(true);
+            this.clearFrameEvent();
+            if (this.parent) {
+                this.parent.removeChild(this);
+            }
+        };
+        /**
+         * @description 资源释放         */
+        BaseActor.prototype.dispos = function (isRemoveFromParent) {
+            if (isRemoveFromParent === void 0) { isRemoveFromParent = true; }
+            var t = this;
+            t.setIsStopped(true);
+            t.clearFrameEvent();
+            t.removeEventListener(egret.Event.ADDED_TO_STAGE, t.addToStage, t);
+            t.removeEventListener(egret.Event.REMOVED_FROM_STAGE, t.removeToStage, t);
+            for (var part in t.partDic) {
+                t.removePart(part);
+            }
+            if (t.parent && isRemoveFromParent) {
+                t.parent.removeChild(t);
+            }
+        };
+        return BaseActor;
+    }(egret.DisplayObjectContainer));
+    qmr.BaseActor = BaseActor;
+    __reflect(BaseActor.prototype, "qmr.BaseActor");
 })(qmr || (qmr = {}));
 var qmr;
 (function (qmr) {
@@ -2860,6 +3400,7 @@ var qmr;
         LayerConst.ALERT = "alert";
         LayerConst.TIP = "tip";
         LayerConst.LOADING = "loading";
+        LayerConst.MASK_UI = "maskUI"; //ui层含遮罩
         LayerConst.TOP = "top";
         return LayerConst;
     }());
@@ -2895,6 +3436,7 @@ var qmr;
             this.addLayer(qmr.LayerConst.ALERT, true);
             this.addLayer(qmr.LayerConst.TIP, true);
             this.addLayer(qmr.LayerConst.LOADING, true);
+            this.addLayer(qmr.LayerConst.MASK_UI, true);
             this.addLayer(qmr.LayerConst.TOP, true);
         };
         LayerManager.prototype.addLayer = function (layerName, mouseEnabled) {
@@ -4161,7 +4703,7 @@ var qmr;
             if (!commonTip) {
                 commonTip = new qmr.CommonTip();
             }
-            qmr.LayerManager.instance.addDisplay(commonTip, qmr.LayerConst.TIP);
+            qmr.LayerManager.instance.addDisplay(commonTip, qmr.LayerConst.TOP);
             commonTip.showTip(messInfo);
             egret.setTimeout(function () {
                 if (!_this.commonMessInfo.length) {
@@ -4357,6 +4899,12 @@ var qmr;
                 }
                 win.show(data);
                 t._currView = win;
+                if (win.isNeedMask || win.isNeedAlpha0Mask) {
+                    layer = qmr.LayerConst.MASK_UI;
+                    if (!win.maskSprite) {
+                        win.maskSprite = t.addMask(layer, win.isNeedAlpha0Mask);
+                    }
+                }
                 var groupName = win.groupName;
                 if (groupName != undefined && groupName != "") {
                     if (groupName.match("_json")) {
@@ -5006,7 +5554,7 @@ var qmr;
         __extends(LoginView, _super);
         function LoginView() {
             var _this = _super.call(this) || this;
-            _this.needAdaptStatusBar = false;
+            _this.qmrSkinName = "LoginViewSkin";
             return _this;
         }
         /**
@@ -5014,8 +5562,7 @@ var qmr;
          */
         LoginView.prototype.initListener = function () {
             _super.prototype.initListener.call(this);
-            this.addClickEvent(this.btnClose, this.onCloseClick, this);
-            this.addClickEvent(this.btnReturn, this.onCloseClick, this);
+            this.addClickEvent(this.btn_login, this.onCloseClick, this);
         };
         LoginView.prototype.onCloseClick = function () {
             qmr.LoginController.instance.onEnterGame();
@@ -5033,6 +5580,7 @@ var qmr;
             qmr.PlatformManager.instance.platform.setLoadingStatus("");
             qmr.GameLoadManager.instance.loadGameResAfterLogin();
             this.onBgResBack();
+            this.addWindEffect();
         };
         LoginView.prototype.onBgResBack = function () {
             qmr.LogUtil.log("onBgResBack");
@@ -5040,6 +5588,21 @@ var qmr;
                 var myBg = document.getElementById("loaingMyBg");
                 myBg.style.display = "none";
             }
+        };
+        /** 加云朵 */
+        LoginView.prototype.addWindEffect = function () {
+            this.imgWindSlow.source = "serverlist_wind_png";
+            this.imgWindFast.source = "serverlist_wind_png";
+            this.imgWindMiddle.source = "serverlist_wind_png";
+            var moveTime = 12000;
+            this.imgWindSlow.x = this.stage.stageWidth;
+            this.imgWindFast.x = this.stage.stageWidth;
+            this.imgWindMiddle.x = this.stage.stageWidth;
+            var windTarget = -800;
+            qmr.LogUtil.log("this.imgWindSlow.width", this.imgWindSlow.width);
+            egret.Tween.get(this.imgWindSlow, { loop: true }).to({ x: windTarget }, moveTime);
+            egret.Tween.get(this.imgWindFast, { loop: true }).to({ x: windTarget }, moveTime / 2);
+            egret.Tween.get(this.imgWindMiddle, { loop: true }).to({ x: windTarget }, moveTime / 1.5);
         };
         /**
         * @description 初始化数据,需被子类继承
@@ -5049,38 +5612,18 @@ var qmr;
         };
         LoginView.prototype.dispose = function () {
             _super.prototype.dispose.call(this);
+            egret.Tween.removeTweens(this.imgWindSlow);
+            egret.Tween.removeTweens(this.imgWindFast);
+            egret.Tween.removeTweens(this.imgWindMiddle);
             qmr.ModuleManager.deleteModule(qmr.ModuleNameLogin.LOGIN_VIEW);
             var destroySuccess = RES.destroyRes("login");
             qmr.LogUtil.log("RES.destroyRes,login=", destroySuccess);
         };
         return LoginView;
-    }(qmr.LoginViewUI));
+    }(qmr.SuperBaseModule));
     qmr.LoginView = LoginView;
     __reflect(LoginView.prototype, "qmr.LoginView");
 })(qmr || (qmr = {}));
-var DebugPlatform = (function () {
-    function DebugPlatform() {
-    }
-    DebugPlatform.prototype.getUserInfo = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                return [2 /*return*/, { nickName: "username" }];
-            });
-        });
-    };
-    DebugPlatform.prototype.login = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                return [2 /*return*/];
-            });
-        });
-    };
-    return DebugPlatform;
-}());
-__reflect(DebugPlatform.prototype, "DebugPlatform", ["Platform"]);
-if (!window.platform) {
-    window.platform = new DebugPlatform();
-}
 var qmr;
 (function (qmr) {
     /** 登录信息 */
@@ -5184,102 +5727,29 @@ var qmr;
     qmr.ProtoMsgIdMapLogin = ProtoMsgIdMapLogin;
     __reflect(ProtoMsgIdMapLogin.prototype, "qmr.ProtoMsgIdMapLogin");
 })(qmr || (qmr = {}));
-//////////////////////////////////////////////////////////////////////////////////////
-//
-//  Copyright (c) 2014-present, Egret Technology.
-//  All rights reserved.
-//  Redistribution and use in source and binary forms, with or without
-//  modification, are permitted provided that the following conditions are met:
-//
-//     * Redistributions of source code must retain the above copyright
-//       notice, this list of conditions and the following disclaimer.
-//     * Redistributions in binary form must reproduce the above copyright
-//       notice, this list of conditions and the following disclaimer in the
-//       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the Egret nor the
-//       names of its contributors may be used to endorse or promote products
-//       derived from this software without specific prior written permission.
-//
-//  THIS SOFTWARE IS PROVIDED BY EGRET AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
-//  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-//  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-//  IN NO EVENT SHALL EGRET AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-//  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF USE, DATA,
-//  OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-//  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-//  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-//////////////////////////////////////////////////////////////////////////////////////
-var ThemeAdapter = (function () {
-    function ThemeAdapter() {
+var DebugPlatform = (function () {
+    function DebugPlatform() {
     }
-    /**
-     * 解析主题
-     * @param url 待解析的主题url
-     * @param onSuccess 解析完成回调函数，示例：compFunc(e:egret.Event):void;
-     * @param onError 解析失败回调函数，示例：errorFunc():void;
-     * @param thisObject 回调的this引用
-     */
-    ThemeAdapter.prototype.getTheme = function (url, onSuccess, onError, thisObject) {
-        var _this = this;
-        function onResGet(e) {
-            onSuccess.call(thisObject, e);
-        }
-        function onResError(e) {
-            if (e.resItem.url == url) {
-                RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, onResError, null);
-                onError.call(thisObject);
-            }
-        }
-        if (typeof generateEUI !== 'undefined') {
-            qmr.LogUtil.log("[url:" + url + "]");
-            egret.callLater(function () {
-                onSuccess.call(thisObject, generateEUI);
-            }, this);
-        }
-        else if (typeof generateEUI2 !== 'undefined') {
-            RES.getResByUrl("resource/gameEui.json", function (data, url) {
-                window["JSONParseClass"]["setData"](data);
-                egret.callLater(function () {
-                    onSuccess.call(thisObject, generateEUI2);
-                }, _this);
-            }, this, RES.ResourceItem.TYPE_JSON);
-        }
-        else if (typeof generateJSON !== 'undefined') {
-            if (url.indexOf(".exml") > -1) {
-                var dataPath = url.split("/");
-                dataPath.pop();
-                var dirPath = dataPath.join("/") + "_EUI.json";
-                if (!generateJSON.paths[url]) {
-                    RES.getResByUrl(dirPath, function (data) {
-                        window["JSONParseClass"]["setData"](data);
-                        egret.callLater(function () {
-                            onSuccess.call(thisObject, generateJSON.paths[url]);
-                        }, _this);
-                    }, this, RES.ResourceItem.TYPE_JSON);
-                }
-                else {
-                    egret.callLater(function () {
-                        onSuccess.call(thisObject, generateJSON.paths[url]);
-                    }, this);
-                }
-            }
-            else {
-                egret.callLater(function () {
-                    onSuccess.call(thisObject, generateJSON);
-                }, this);
-            }
-        }
-        else {
-            RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, onResError, null);
-            RES.getResByUrl(url, onResGet, this, RES.ResourceItem.TYPE_TEXT);
-        }
+    DebugPlatform.prototype.getUserInfo = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, { nickName: "username" }];
+            });
+        });
     };
-    return ThemeAdapter;
+    DebugPlatform.prototype.login = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    return DebugPlatform;
 }());
-__reflect(ThemeAdapter.prototype, "ThemeAdapter", ["eui.IThemeAdapter"]);
+__reflect(DebugPlatform.prototype, "DebugPlatform", ["Platform"]);
+if (!window.platform) {
+    window.platform = new DebugPlatform();
+}
 var qmr;
 (function (qmr) {
     /**
@@ -5433,28 +5903,102 @@ var qmr;
     qmr.NotifyManager = NotifyManager;
     __reflect(NotifyManager.prototype, "qmr.NotifyManager");
 })(qmr || (qmr = {}));
-var qmr;
-(function (qmr) {
+//////////////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright (c) 2014-present, Egret Technology.
+//  All rights reserved.
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions are met:
+//
+//     * Redistributions of source code must retain the above copyright
+//       notice, this list of conditions and the following disclaimer.
+//     * Redistributions in binary form must reproduce the above copyright
+//       notice, this list of conditions and the following disclaimer in the
+//       documentation and/or other materials provided with the distribution.
+//     * Neither the name of the Egret nor the
+//       names of its contributors may be used to endorse or promote products
+//       derived from this software without specific prior written permission.
+//
+//  THIS SOFTWARE IS PROVIDED BY EGRET AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+//  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+//  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+//  IN NO EVENT SHALL EGRET AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+//  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF USE, DATA,
+//  OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+//  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+//  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+//  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+//////////////////////////////////////////////////////////////////////////////////////
+var ThemeAdapter = (function () {
+    function ThemeAdapter() {
+    }
     /**
-     *
-     * @description 角色部件枚举
-     *
+     * 解析主题
+     * @param url 待解析的主题url
+     * @param onSuccess 解析完成回调函数，示例：compFunc(e:egret.Event):void;
+     * @param onError 解析失败回调函数，示例：errorFunc():void;
+     * @param thisObject 回调的this引用
      */
-    var ActorPart = (function () {
-        function ActorPart() {
+    ThemeAdapter.prototype.getTheme = function (url, onSuccess, onError, thisObject) {
+        var _this = this;
+        function onResGet(e) {
+            onSuccess.call(thisObject, e);
         }
-        ActorPart.BODY = 0; //裸体
-        ActorPart.WEAPON = 1; //武器
-        ActorPart.WING = 2; //翅膀
-        ActorPart.HORSE = 4; //坐骑
-        ActorPart.HORSE_UP = 5; //坐骑上的头套?
-        ActorPart.SHIELD = 6; //护盾
-        ActorPart.DEFAULT = 7; //默认特效
-        return ActorPart;
-    }());
-    qmr.ActorPart = ActorPart;
-    __reflect(ActorPart.prototype, "qmr.ActorPart");
-})(qmr || (qmr = {}));
+        function onResError(e) {
+            if (e.resItem.url == url) {
+                RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, onResError, null);
+                onError.call(thisObject);
+            }
+        }
+        if (typeof generateEUI !== 'undefined') {
+            qmr.LogUtil.log("[url:" + url + "]");
+            egret.callLater(function () {
+                onSuccess.call(thisObject, generateEUI);
+            }, this);
+        }
+        else if (typeof generateEUI2 !== 'undefined') {
+            RES.getResByUrl("resource/gameEui.json", function (data, url) {
+                window["JSONParseClass"]["setData"](data);
+                egret.callLater(function () {
+                    onSuccess.call(thisObject, generateEUI2);
+                }, _this);
+            }, this, RES.ResourceItem.TYPE_JSON);
+        }
+        else if (typeof generateJSON !== 'undefined') {
+            if (url.indexOf(".exml") > -1) {
+                var dataPath = url.split("/");
+                dataPath.pop();
+                var dirPath = dataPath.join("/") + "_EUI.json";
+                if (!generateJSON.paths[url]) {
+                    RES.getResByUrl(dirPath, function (data) {
+                        window["JSONParseClass"]["setData"](data);
+                        egret.callLater(function () {
+                            onSuccess.call(thisObject, generateJSON.paths[url]);
+                        }, _this);
+                    }, this, RES.ResourceItem.TYPE_JSON);
+                }
+                else {
+                    egret.callLater(function () {
+                        onSuccess.call(thisObject, generateJSON.paths[url]);
+                    }, this);
+                }
+            }
+            else {
+                egret.callLater(function () {
+                    onSuccess.call(thisObject, generateJSON);
+                }, this);
+            }
+        }
+        else {
+            RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, onResError, null);
+            RES.getResByUrl(url, onResGet, this, RES.ResourceItem.TYPE_TEXT);
+        }
+    };
+    return ThemeAdapter;
+}());
+__reflect(ThemeAdapter.prototype, "ThemeAdapter", ["eui.IThemeAdapter"]);
 var qmr;
 (function (qmr) {
     var PlatformConfig = (function () {
@@ -5794,28 +6338,24 @@ var qmr;
 var qmr;
 (function (qmr) {
     /**
-     * 各个部位对应的资源加载地址
+     *
+     * @description 角色部件枚举
+     *
      */
-    var ActorPartResourceDic = (function () {
-        function ActorPartResourceDic() {
-            var partDic = {};
-            partDic[qmr.ActorPart.WEAPON] = qmr.SystemPath.weaponPath;
-            partDic[qmr.ActorPart.WING] = qmr.SystemPath.wingPath;
-            partDic[qmr.ActorPart.HORSE] = qmr.SystemPath.horsePath;
-            partDic[qmr.ActorPart.HORSE_UP] = qmr.SystemPath.horsePath;
-            partDic[qmr.ActorPart.DEFAULT] = qmr.SystemPath.defaultPath;
-            this.partDic = partDic;
+    var ActorPart = (function () {
+        function ActorPart() {
         }
-        ActorPartResourceDic.getInstance = function () {
-            if (ActorPartResourceDic._instance == null) {
-                ActorPartResourceDic._instance = new ActorPartResourceDic();
-            }
-            return ActorPartResourceDic._instance;
-        };
-        return ActorPartResourceDic;
+        ActorPart.BODY = 0; //裸体
+        ActorPart.WEAPON = 1; //武器
+        ActorPart.WING = 2; //翅膀
+        ActorPart.HORSE = 4; //坐骑
+        ActorPart.HORSE_UP = 5; //坐骑上的头套?
+        ActorPart.SHIELD = 6; //护盾
+        ActorPart.DEFAULT = 7; //默认特效
+        return ActorPart;
     }());
-    qmr.ActorPartResourceDic = ActorPartResourceDic;
-    __reflect(ActorPartResourceDic.prototype, "qmr.ActorPartResourceDic");
+    qmr.ActorPart = ActorPart;
+    __reflect(ActorPart.prototype, "qmr.ActorPart");
 })(qmr || (qmr = {}));
 var qmr;
 (function (qmr) {
@@ -7348,556 +7888,28 @@ var qmr;
 var qmr;
 (function (qmr) {
     /**
-     * @date 2016.12.01
-     * @description 带动画和移动操作的角色类,默认是待机状态,idle
+     * 各个部位对应的资源加载地址
      */
-    var BaseActor = (function (_super) {
-        __extends(BaseActor, _super);
-        function BaseActor(resourcePath, loadCallBack, loadThisObject, defaultAct) {
-            if (defaultAct === void 0) { defaultAct = "idle"; }
-            var _this = _super.call(this) || this;
-            var t = _this;
-            t.resourcePath = resourcePath;
-            t.loadCallBack = loadCallBack;
-            t.loadThisObject = loadThisObject;
-            t.currentFrame = 1;
-            t.totalFrame = 0;
-            t.isStopped = true;
-            t.isDirLoaded = false;
-            t.isNoRendering = false;
-            t.passedTime = 0;
-            t.lastTime = 0;
-            t._timeScale = 1;
-            t.act = defaultAct;
-            t.frameRate = 30;
-            t.eventDic = {};
-            t.actDic = {};
-            t.partDic = {};
-            t.partIdDic = {};
-            t.addEventListener(egret.Event.ADDED_TO_STAGE, t.addToStage, t);
-            t.addEventListener(egret.Event.REMOVED_FROM_STAGE, t.removeToStage, t);
-            return _this;
+    var ActorPartResourceDic = (function () {
+        function ActorPartResourceDic() {
+            var partDic = {};
+            partDic[qmr.ActorPart.WEAPON] = qmr.SystemPath.weaponPath;
+            partDic[qmr.ActorPart.WING] = qmr.SystemPath.wingPath;
+            partDic[qmr.ActorPart.HORSE] = qmr.SystemPath.horsePath;
+            partDic[qmr.ActorPart.HORSE_UP] = qmr.SystemPath.horsePath;
+            partDic[qmr.ActorPart.DEFAULT] = qmr.SystemPath.defaultPath;
+            this.partDic = partDic;
         }
-        BaseActor.prototype.addToStage = function () {
-            this.setIsStopped(false);
-            this.render();
+        ActorPartResourceDic.getInstance = function () {
+            if (ActorPartResourceDic._instance == null) {
+                ActorPartResourceDic._instance = new ActorPartResourceDic();
+            }
+            return ActorPartResourceDic._instance;
         };
-        BaseActor.prototype.removeToStage = function () {
-            this.setIsStopped(true);
-        };
-        Object.defineProperty(BaseActor.prototype, "isNoRendering", {
-            get: function () {
-                return this._isNoRendering;
-            },
-            set: function (value) {
-                this._isNoRendering = value;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        /**
-         * @description 设置是否是分方向加载
-         */
-        BaseActor.prototype.setIsDirLoad = function (value) {
-            this.isDirLoaded = value;
-            var partDic = this.partDic;
-            for (var part in partDic) {
-                var animalClip = partDic[part];
-                animalClip.setIsDirLoad(value);
-            }
-        };
-        /**
-         * @description 添加部件
-         * @param part部件位置，参考ActorPart
-         * @param partId 部件的Id
-         * @param partIndex 部件层级位置,数字越大层级越高
-         */
-        BaseActor.prototype.addPartAt = function (part, partId, partIndex, dir, isDirLoad, resPath, isShowDefault) {
-            if (partIndex === void 0) { partIndex = -1; }
-            if (dir === void 0) { dir = 1; }
-            if (isDirLoad === void 0) { isDirLoad = false; }
-            if (resPath === void 0) { resPath = null; }
-            if (isShowDefault === void 0) { isShowDefault = true; }
-            if (partId) {
-                var t = this;
-                t.addPartTo(part, partId, partIndex, dir, isDirLoad, resPath);
-                //这里是添加转圈特效，用来在模型资源加载完成之前显示一个loading特效的功能
-                if (part == qmr.ActorPart.BODY && isShowDefault) {
-                    var animalClip = t.partDic[qmr.ActorPart.DEFAULT];
-                    if (!animalClip) {
-                        t.addPartTo(qmr.ActorPart.DEFAULT, 168, partIndex, dir, isDirLoad, resPath);
-                        animalClip = t.partDic[qmr.ActorPart.DEFAULT];
-                        animalClip.offsetY = -85;
-                    }
-                }
-            }
-        };
-        BaseActor.prototype.addPartTo = function (part, partId, partIndex, dir, isDirLoad, resPath) {
-            if (partIndex === void 0) { partIndex = -1; }
-            if (dir === void 0) { dir = 1; }
-            if (isDirLoad === void 0) { isDirLoad = false; }
-            if (resPath === void 0) { resPath = null; }
-            var t = this;
-            var tempAct = t.act;
-            var animalClip = t.partDic[part];
-            t.partIdDic[part] = partId;
-            t.dir = dir;
-            if (animalClip) {
-                if (partIndex != -1) {
-                    t.addChildAt(animalClip, partIndex);
-                }
-                else {
-                    t.addChild(animalClip);
-                }
-                animalClip.setIsDirLoad(isDirLoad);
-                if (!animalClip.containsAct(tempAct)) {
-                    tempAct = part == qmr.ActorPart.HORSE ? qmr.Status.IDLE_RIDE : qmr.Status.IDLE;
-                }
-                var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
-                animalClip.load(partPath ? partPath : t.resourcePath, partId + "_" + tempAct, qmr.DirUtil.getDir(dir));
-            }
-            else {
-                if (part == qmr.ActorPart.BODY) {
-                    animalClip = new qmr.AnimateClip(t.onLoaded, t);
-                    // animalClip.isBody = true;
-                }
-                else if (part == qmr.ActorPart.DEFAULT) {
-                    animalClip = new qmr.AnimateClip(t.onLoadedDefault, t);
-                }
-                else if (part == qmr.ActorPart.WING) {
-                    animalClip = new qmr.AnimateWing(t.onLoadedOther, t);
-                }
-                else {
-                    animalClip = new qmr.AnimateClip(t.onLoadedOther, t);
-                }
-                // animalClip.setIsDirLoad(isDirLoad); 本项目不需要
-                if (partIndex != -1) {
-                    t.addChildAt(animalClip, partIndex);
-                }
-                else {
-                    t.addChild(animalClip);
-                }
-                if (!animalClip.containsAct(tempAct)) {
-                    tempAct = part == qmr.ActorPart.HORSE ? qmr.Status.IDLE_RIDE : qmr.Status.IDLE;
-                }
-                t.partDic[part] = animalClip;
-                var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
-                animalClip.load(partPath ? partPath : t.resourcePath, partId + "_" + tempAct, qmr.DirUtil.getDir(dir));
-            }
-        };
-        BaseActor.prototype.setPartVisible = function (part, show) {
-            var animalClip = this.partDic[part];
-            animalClip.visible = show;
-        };
-        /**
-         * @description 移除部件
-         * @param part部件位置，参考ActorPart
-         */
-        BaseActor.prototype.removePart = function (part) {
-            var animalClip = this.partDic[part];
-            if (animalClip) {
-                animalClip.dispos();
-                delete this.partDic[part];
-                delete this.partIdDic[part];
-            }
-        };
-        BaseActor.prototype.getPart = function (part) {
-            if (part === void 0) { part = qmr.ActorPart.BODY; }
-            return this.partDic[part];
-        };
-        /**
-         * @description 设置该部位包含的动作
-         */
-        BaseActor.prototype.setPartActs = function (part, acts) {
-            var partDic = this.partDic;
-            for (var key in partDic) {
-                if (parseInt(key) == part) {
-                    var animalClip = partDic[part];
-                    if (animalClip) {
-                        animalClip.setActs(acts);
-                    }
-                }
-            }
-            if (acts.indexOf(',') > -1) {
-                this.act = acts.split(',')[0];
-            }
-            else {
-                this.act = acts;
-            }
-        };
-        /**
-         * @description 跳转并播放
-         */
-        BaseActor.prototype.gotoAndPlay = function (act, dir, loopCallBack, loopThisObject, force) {
-            if (loopCallBack === void 0) { loopCallBack = null; }
-            if (loopThisObject === void 0) { loopThisObject = null; }
-            if (force === void 0) { force = false; }
-            var t = this;
-            t.loopCallBack = loopCallBack;
-            t.loopThisObject = loopThisObject;
-            if (!force) {
-                if (t.act == act)
-                    return;
-            }
-            t.actDic[act] = false;
-            t.act = act;
-            t.dir = dir;
-            t.currentFrame = 1;
-            var currentScale = Math.abs(t.scaleX);
-            if (dir <= 5) {
-                t.scaleX = currentScale;
-            }
-            else {
-                t.scaleX = -currentScale;
-            }
-            if (t.act == qmr.Status.DEAD) {
-                dir = -1;
-            }
-            var partDic = t.partDic;
-            var partIdDic = t.partIdDic;
-            t.setIsStopped(true);
-            for (var part in partDic) {
-                var animalClip = partDic[part];
-                if (animalClip) {
-                    var tempAct = t.act;
-                    if (!animalClip.containsAct(tempAct)) {
-                        if (parseInt(part) == qmr.ActorPart.HORSE) {
-                            tempAct = qmr.Status.IDLE_RIDE;
-                        }
-                        else {
-                            tempAct = qmr.Status.IDLE;
-                        }
-                    }
-                    var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
-                    var resPath = partPath ? partPath : t.resourcePath;
-                    animalClip.load(resPath, partIdDic[part] + "_" + tempAct, qmr.DirUtil.getDir(dir));
-                }
-            }
-        };
-        /**
-         * @description 清除回调
-         */
-        BaseActor.prototype.clearCallBack = function () {
-            this.loopCallBack = null;
-        };
-        /**
-         * @description 调整方向
-         */
-        BaseActor.prototype.changeDir = function (dir) {
-            var t = this;
-            if (t.dir == dir)
-                return;
-            t.dir = dir;
-            var currentScale = Math.abs(t.scaleX);
-            if (dir <= 5) {
-                t.scaleX = currentScale;
-            }
-            else {
-                t.scaleX = -currentScale;
-            }
-            var partDic = t.partDic;
-            var partIdDic = t.partIdDic;
-            for (var part in partDic) {
-                var animalClip = partDic[part];
-                if (animalClip) {
-                    var tempAct = t.act;
-                    if (!animalClip.containsAct(tempAct)) {
-                        if (parseInt(part) == qmr.ActorPart.HORSE) {
-                            tempAct = qmr.Status.IDLE_RIDE;
-                        }
-                        else {
-                            tempAct = qmr.Status.IDLE;
-                        }
-                    }
-                    var partPath = qmr.ActorPartResourceDic.getInstance().partDic[part];
-                    var resPath = partPath ? partPath : t.resourcePath;
-                    animalClip.load(resPath + partIdDic[part] + "/", partIdDic[part] + "_" + tempAct, qmr.DirUtil.getDir(dir));
-                }
-            }
-        };
-        /**
-         * @description 跳转并停止在某一帧
-         */
-        BaseActor.prototype.gotoAndStop = function (frame) {
-            this.currentFrame = frame;
-            this.render();
-            this.setIsStopped(true);
-        };
-        /**
-        * @description 资源加载完毕
-        */
-        BaseActor.prototype.onLoadedDefault = function (isFromCache, resName) {
-            var t = this;
-            var animalClip = t.partDic[qmr.ActorPart.DEFAULT];
-            if (animalClip) {
-                t.totalFrame = animalClip.totalFrames;
-                t.frameRate = animalClip.frameRate;
-                t.setIsStopped(false);
-            }
-        };
-        /**
-         * @description 其它部位加载完毕
-         */
-        BaseActor.prototype.onLoadedOther = function (isFromCache) {
-            var t = this;
-            var animalClip = t.partDic[qmr.ActorPart.DEFAULT];
-            if (animalClip) {
-                t.removePart(qmr.ActorPart.DEFAULT);
-                t.totalFrame = 1;
-            }
-            if (!isFromCache) {
-                t.changeDir(t.dir);
-            }
-        };
-        BaseActor.prototype.onLoaded = function (isFromCache, resName) {
-            var t = this;
-            t.removePart(qmr.ActorPart.DEFAULT);
-            if (resName.indexOf(t.act) == -1)
-                return;
-            var animalClip = t.partDic[qmr.ActorPart.BODY];
-            if (animalClip) {
-                t.totalFrame = animalClip.totalFrames;
-                t.frameRate = animalClip.frameRate;
-            }
-            else {
-                t.totalFrame = 0;
-            }
-            if (t.totalFrame > 0) {
-                t.actDic[t.act] = true;
-                //如果只是有一帧
-                if (t.totalFrame == 1) {
-                    t.gotoAndStop(1);
-                }
-                else {
-                    t.setIsStopped(false);
-                }
-                if (t.loadCallBack) {
-                    t.loadCallBack.call(t.loadThisObject);
-                }
-            }
-            else {
-                t.gotoAndPlay(t.act, t.dir);
-            }
-        };
-        Object.defineProperty(BaseActor.prototype, "firstBodyFrameHeight", {
-            /**
-             * @description 获取第一帧裸体的高度
-             */
-            get: function () {
-                var animalClip = this.partDic[qmr.ActorPart.BODY];
-                if (animalClip) {
-                    return animalClip.firstFrameHeight;
-                }
-                return 0;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        /**
-         * @description 注册一个帧事件         */
-        BaseActor.prototype.registerFrameEvent = function (frame, callBack, thisObject) {
-            this.eventDic[frame] = { callBack: callBack, thisObject: thisObject };
-        };
-        /**
-         * @description 取消一个帧事件         */
-        BaseActor.prototype.unRegisterFrameEvent = function (frame) {
-            var eventDic = this.eventDic;
-            if (eventDic[frame]) {
-                eventDic[frame] = null;
-                delete eventDic[frame];
-            }
-        };
-        /**
-         * @description 清除帧事件注册
-         */
-        BaseActor.prototype.clearFrameEvent = function () {
-            var eventDic = this.eventDic;
-            for (var key in eventDic) {
-                eventDic[key] = null;
-                delete eventDic[key];
-            }
-        };
-        /**
-         * @description 帧频调用         */
-        BaseActor.prototype.advanceTime = function (timeStamp) {
-            var t = this;
-            if (t.isNoRendering) {
-                t.gotoAndStop(1);
-                return false;
-            }
-            var advancedTime = timeStamp - t.lastTime;
-            t.lastTime = timeStamp;
-            var frameIntervalTime = t.frameIntervalTime;
-            var currentTime = t.passedTime + advancedTime;
-            t.passedTime = currentTime % frameIntervalTime;
-            var num = currentTime / frameIntervalTime;
-            if (num < 1) {
-                return false;
-            }
-            t.render();
-            while (num >= 1) {
-                num--;
-                t.currentFrame++;
-                if (t.actDic[t.act]) {
-                    t.checkFrameEvent();
-                }
-            }
-            return false;
-        };
-        /**
-         * @description 检测帧事件         */
-        BaseActor.prototype.checkFrameEvent = function () {
-            var obj = this.eventDic[this.currentFrame];
-            if (obj && obj.callBack) {
-                obj.callBack.call(obj.thisObject);
-            }
-        };
-        /**
-         * @description 渲染*/
-        BaseActor.prototype.render = function () {
-            var t = this;
-            if (t.totalFrame > 0) {
-                if (t.currentFrame > t.totalFrame) {
-                    t.currentFrame = 1;
-                    if (t.loopCallBack) {
-                        t.loopCallBack.call(t.loopThisObject);
-                    }
-                }
-                if (t.totalFrame == 1 || t.stage) {
-                    var partDic = t.partDic;
-                    var currentFrame = t.currentFrame;
-                    for (var part in partDic) {
-                        var animalClip = partDic[part];
-                        if (animalClip) {
-                            animalClip.render(currentFrame);
-                        }
-                    }
-                }
-            }
-        };
-        Object.defineProperty(BaseActor.prototype, "frameRate", {
-            /**
-             * @description 设置帧频         */
-            set: function (value) {
-                if (value > 60) {
-                    value = 60;
-                }
-                this._frameRate = value;
-                this.frameIntervalTime = 1000 / (value * this._timeScale);
-            },
-            enumerable: true,
-            configurable: true
-        });
-        /**
-         * @description 获取总帧数
-         */
-        BaseActor.prototype.getTotalFrame = function () {
-            return this.totalFrame;
-        };
-        Object.defineProperty(BaseActor.prototype, "timeScale", {
-            /**
-             * @description 获取timescale
-             */
-            get: function () {
-                return this._timeScale;
-            },
-            /**
-             * @description 设置timescale
-             */
-            set: function (value) {
-                if (value <= 0) {
-                    value = 1;
-                }
-                this._timeScale = value;
-                this.frameIntervalTime = 1000 / (this._frameRate * value);
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(BaseActor.prototype, "act", {
-            /**
-             * @description 获取timescale
-             */
-            get: function () {
-                return this._act;
-            },
-            set: function (value) {
-                this._act = value;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(BaseActor.prototype, "resourcePath", {
-            /**
-             * @description 获取timescale
-             */
-            get: function () {
-                return this._resourcePath;
-            },
-            set: function (value) {
-                this._resourcePath = value;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        /**
-            * @private
-            *
-            * @param value
-            */
-        BaseActor.prototype.setIsStopped = function (value) {
-            var t = this;
-            if (t.isStopped == value) {
-                return;
-            }
-            t.isStopped = value;
-            if (value) {
-                egret.stopTick(t.advanceTime, t);
-            }
-            else {
-                //如果只是有一帧或者外面设置了不在渲染
-                if (t.totalFrame == 1 || t.isNoRendering) {
-                    t.gotoAndStop(1);
-                }
-                else {
-                    t.lastTime = egret.getTimer();
-                    egret.startTick(t.advanceTime, t);
-                }
-            }
-        };
-        BaseActor.prototype.getDir = function () {
-            return this.dir;
-        };
-        /**
-         * @description 清除资源
-         */
-        BaseActor.prototype.clear = function () {
-            this.setIsStopped(true);
-            this.clearFrameEvent();
-            if (this.parent) {
-                this.parent.removeChild(this);
-            }
-        };
-        /**
-         * @description 资源释放         */
-        BaseActor.prototype.dispos = function (isRemoveFromParent) {
-            if (isRemoveFromParent === void 0) { isRemoveFromParent = true; }
-            var t = this;
-            t.setIsStopped(true);
-            t.clearFrameEvent();
-            t.removeEventListener(egret.Event.ADDED_TO_STAGE, t.addToStage, t);
-            t.removeEventListener(egret.Event.REMOVED_FROM_STAGE, t.removeToStage, t);
-            for (var part in t.partDic) {
-                t.removePart(part);
-            }
-            if (t.parent && isRemoveFromParent) {
-                t.parent.removeChild(t);
-            }
-        };
-        return BaseActor;
-    }(egret.DisplayObjectContainer));
-    qmr.BaseActor = BaseActor;
-    __reflect(BaseActor.prototype, "qmr.BaseActor");
+        return ActorPartResourceDic;
+    }());
+    qmr.ActorPartResourceDic = ActorPartResourceDic;
+    __reflect(ActorPartResourceDic.prototype, "qmr.ActorPartResourceDic");
 })(qmr || (qmr = {}));
 var qmr;
 (function (qmr) {
