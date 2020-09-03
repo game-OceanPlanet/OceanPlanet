@@ -22,7 +22,6 @@
 		"bin-debug/com/breeze/game/map/HangMap.js",
 		"bin-debug/MainAfterLogin.js",
 		"bin-debug/com/breeze/game/datas/DataManager.js",
-		"bin-debug/com/breeze/game/datas/configs/ItemConfigCfg.js",
 		"bin-debug/com/breeze/game/datas/configs/config/ConfigManager.js",
 		"bin-debug/com/breeze/game/datas/configs/config/dataset/ConfigDB.js",
 		"bin-debug/com/breeze/game/datas/configs/config/dataset/ConfigEnum.js",

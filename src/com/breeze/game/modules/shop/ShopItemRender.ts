@@ -22,7 +22,6 @@ public img_head:eui.Image;
 			super.childrenCreated();
 			let t = this;
             
-            // t.btn_buy_group.addEventListener(egret.TouchEvent.TOUCH_TAP, t.onBuyClick, t);
             DisplayUtils.addClick(t.btn_buy_group, t.onBuyClick, t);
         }
 
