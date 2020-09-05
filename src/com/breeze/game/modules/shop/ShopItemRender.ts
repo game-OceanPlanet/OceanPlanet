@@ -8,6 +8,7 @@ public txt_3:eui.Label;
 public btn_buy_group:eui.Group;
 public btn_buy:eui.Image;
 public img_head:eui.Image;
+public txt_price:eui.Label;
 
 
 		
@@ -32,9 +33,14 @@ public img_head:eui.Image;
         
 		public dataChanged(): void {
 			let t = this;
-            let index:number = t.data;
-            if(index > 0){
-                var itemRes:string = ResPathUtilAft.getHeadUrl(index+"");
+            let cfg:PetCfg = t.data;
+            if(cfg){
+                t.txt_name.text = cfg.name + "(Lv." + cfg.level + ")";
+                t.txt_1.text = cfg.produce + "";
+                t.txt_2.text = cfg.limitTime + "";
+                t.txt_3.text = cfg.monthly + "%";
+                t.txt_price.text = cfg.price + "JT";
+                var itemRes:string = ResPathUtilAft.getHeadUrl(cfg.resId+"");
                 t.img_head.source = itemRes;
             }
 		}

@@ -1,0 +1,46 @@
+syntax="proto3";
+package com.message;
+
+message FishMsg {
+	int64 id=1; // 鱼的唯一ID
+	int32 level=2; //等级
+	int64 fishId=3; //鱼配置ID
+	int32 state=4; //状态，0生产中，1停产中
+	int64 allMoney=5; //总共可以产出金币，读表
+	int64 extMoney=6; //已经产出金币，存
+	int64 todayMoney=7; //今日产出金币，存
+	int32 allDay = 8;//生命周期，读表
+	int32 leftDay = 9;//剩余天数，（总币-已产出）/日产出率
+}
+
+// 获取我的鱼儿
+message C_GET_FISH_INFO {
+	
+}
+
+// 获取我的鱼儿
+message S_GET_FISH_INFO {
+	repeated FishMsg fishMsg = 1; //鱼信息
+}
+
+
+// 购买鱼儿
+message C_BUY_FISH {
+	int32 fishConfigId=1; // 鱼的配置ID
+}
+
+// 购买鱼儿
+message S_BUY_FISH {
+	FishMsg fishMsg = 1; //鱼信息
+}
+
+// 合并鱼儿
+message C_COMBINE_FISH {
+	int64 fishId1=1; // 鱼1的唯一ID
+	int64 fishId2=2; // 鱼2的唯一ID
+}
+
+// 合并鱼儿
+message S_COMBINE_FISH {
+	FishMsg fishMsg = 1; //合并后鱼信息
+}

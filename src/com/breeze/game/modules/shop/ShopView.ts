@@ -8,8 +8,8 @@ module qmr
         public itemGroup:eui.Group;
         public item_list:eui.List;
 
-        private _arrCollection: eui.ArrayCollection;
-
+		private _arrCollection: eui.ArrayCollection;
+		
 		public constructor()
 		{
 			super();
@@ -43,8 +43,8 @@ module qmr
 		private updateView():void
 		{
             let t = this;
-            let items = [1,2,3,4,5];
-            t._arrCollection.replaceAll(items);
+            let cfgs:PetCfg[] = ConfigManager.getBean(ConfigEnum.PET).values;
+            t._arrCollection.replaceAll(cfgs);
 		}
 
 		public dispose(): void

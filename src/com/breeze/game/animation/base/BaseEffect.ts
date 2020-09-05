@@ -108,6 +108,27 @@ module qmr
         }
 
         /**
+		 * @description 播放特效,先判断是否支持分方向
+		 * @param effectName 特效资源
+		 * @param dir 特效方向,主要是用在多方向分块加载的时候
+		 * @param playTimes -1代表无限次
+		 */
+        public playUIEffect(effectName: string, dir: number = -1, playTimes: number = -1, timeScale: number = 1, callBack: Function = null, thisObject: any = null): void
+        {
+            let _self = this;
+            _self.currentFrame = 1;
+            _self.totalFrame = 0;
+            _self.playTimes = playTimes;
+            _self.loopCallBack = callBack;
+            _self.thisObject = thisObject;
+            _self._timeScale = timeScale;
+            _self._pauseFramed = false;
+            _self.mainClip.load(SystemPathAft.uieffect, effectName, qmr.DirUtil.getDir(dir));
+            _self.addChild(_self.mainClip);
+            _self.setIsStopped(false);
+        }
+
+        /**
         * @description 注册一个帧事件         */
         public registerFrameEvent(frame: number, callBack: Function, thisObject: any): void
         {

@@ -24,12 +24,13 @@
 				<e:HorizontalLayout verticalAlign="middle"/>
 			</e:layout>
 			</e:Group>
-			<e:Image id="btn_login" source="loginPanel_json.ui_denglu_anniu" x="146" y="198" scaleX="1" scaleY="1"/>
+
 			<e:Group id="groupAccount" x="93" y="74" visible="true" scaleX="1" scaleY="1">
 			<e:Image source="loginPanel_json.serverlist_ui_denglu_kuang" x="0" y="0" scaleX="1" scaleY="1" scale9Grid="9,11,61,66" anchorOffsetX="0" width="404"/>
 			<e:TextInput id="txt_account" maxChars="35" x="87" prompt="请输入账号" skinName="ServerListTextInputSkin" y="28"/>
 			<e:Label stroke="1" text="账号:" x="17" y="32" fontFamily="specialGameFont" size="28"/>
 			</e:Group>
+			<e:Image id="btn_login" source="loginPanel_json.ui_denglu_anniu" scaleX="1" scaleY="1" horizontalCenter="3" verticalCenter="46"/>
 		</e:Group>
 	</e:Group>
 

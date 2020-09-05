@@ -29,7 +29,7 @@
 		<e:Image source="mainui_json.item_di" x="0" y="0" scaleX="1" scaleY="1"/>
 		<e:Image source="mainui_json.icon_gold" x="101.38" y="2.56" width="90" height="90" rotation="45"/>
 		<e:Label text="待领数量" y="18" textColor="0x106EB5" size="26" fontFamily="specialGameFont" horizontalCenter="57"/>
-		<e:Label text="1.0001 JT" y="48" textColor="0x106eb5" size="22" fontFamily="specialGameFont" horizontalCenter="57"/>
+		<e:Label id="txt_curr" text="1.0001 JT" y="48" size="22" fontFamily="specialGameFont" horizontalCenter="57" textColor="0xed0b0b"/>
 		<e:Group id="btn_get_group" x="168" y="75" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Image id="btn_get" source="mainui_json.btn_common" x="0" y="0" scaleX="1" scaleY="1"/>
 			<e:Label text="领  钱" y="12" textColor="0xE88012" size="26" fontFamily="specialGameFont" x="44" scaleX="1" scaleY="1"/>
@@ -39,7 +39,7 @@
 		<e:Image source="mainui_json.item_di" scaleX="1" scaleY="1" y="0" x="0"/>
 		<e:Image x="101.38" y="2.56" width="90" height="90" rotation="45" source="icon_treasury"/>
 		<e:Label text="总资产" y="18" textColor="0x106EB5" size="26" fontFamily="specialGameFont" horizontalCenter="57"/>
-		<e:Label text="1.0001 JT" y="48" textColor="0x106EB5" size="22" fontFamily="specialGameFont" horizontalCenter="57"/>
+		<e:Label id="txt_total" text="1.0001 JT" y="48" textColor="0x106EB5" size="22" fontFamily="specialGameFont" horizontalCenter="57"/>
 		<e:Group id="btn_price_group" x="168" y="75" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Image id="btn_price" source="mainui_json.btn_common" x="0" y="0" scaleX="1" scaleY="1"/>
 			<e:Label text="价  钱" y="12" textColor="0xE88012" size="26" fontFamily="specialGameFont" x="44" scaleX="1" scaleY="1"/>

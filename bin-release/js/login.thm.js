@@ -1013,7 +1013,7 @@ window.skins=window.skins||{};
 	__extends(LoginViewSkin, _super);
 	function LoginViewSkin() {
 		_super.call(this);
-		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","cbRead","gpRead","btn_login","txt_account","groupAccount"];
+		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","cbRead","gpRead","txt_account","groupAccount","btn_login"];
 		
 		this.height = 1334;
 		this.width = 750;
@@ -1088,7 +1088,7 @@ window.skins=window.skins||{};
 		var t = new eui.Group();
 		t.horizontalCenter = 8;
 		t.verticalCenter = 92.5;
-		t.elementsContent = [this._Image2_i(),this.gpRead_i(),this.btn_login_i(),this.groupAccount_i()];
+		t.elementsContent = [this._Image2_i(),this.gpRead_i(),this.groupAccount_i(),this.btn_login_i()];
 		return t;
 	};
 	_proto._Image2_i = function () {
@@ -1184,16 +1184,6 @@ window.skins=window.skins||{};
 		t.y = 10;
 		return t;
 	};
-	_proto.btn_login_i = function () {
-		var t = new eui.Image();
-		this.btn_login = t;
-		t.scaleX = 1;
-		t.scaleY = 1;
-		t.source = "loginPanel_json.ui_denglu_anniu";
-		t.x = 146;
-		t.y = 198;
-		return t;
-	};
 	_proto.groupAccount_i = function () {
 		var t = new eui.Group();
 		this.groupAccount = t;
@@ -1235,6 +1225,16 @@ window.skins=window.skins||{};
 		t.text = "账号:";
 		t.x = 17;
 		t.y = 32;
+		return t;
+	};
+	_proto.btn_login_i = function () {
+		var t = new eui.Image();
+		this.btn_login = t;
+		t.horizontalCenter = 3;
+		t.scaleX = 1;
+		t.scaleY = 1;
+		t.source = "loginPanel_json.ui_denglu_anniu";
+		t.verticalCenter = 46;
 		return t;
 	};
 	return LoginViewSkin;

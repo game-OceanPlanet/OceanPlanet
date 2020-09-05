@@ -1,7 +1,6 @@
 syntax="proto3";
 package com.message;
 import "common.proto";
-import "battleMsg.proto";
 
 //战斗类属性
 message S_SYN_FIGHTER_PROPERTY{
@@ -164,7 +163,6 @@ message CROSS_C_GET_PLAYER_BATTLE_INFO{
 message CROSS_S_GET_PLAYER_BATTLE_INFO{
 	int32 serverId = 1;						// 当前玩家服务器id
 	int64 playerId = 2;						// 当前玩家的id
-	BattlePlayerMsg targetBattleInfo = 3;	// 目标玩家的战斗数据
 }
 
 message CROSS_C_GET_PLAYER_ABI_HELL{
@@ -188,7 +186,6 @@ message CROSS_C_PLAYER_SYS_BATTLE_INFO{
 message CROSS_S_PLAYER_SYS_BATTLE_INFO{
 	int64 playerId = 1;						// 当前玩家的id
 	string recordId = 2;					// 本次战斗的记录唯一id
-	BattlePlayerMsg targetBattleInfo = 3;	// 目标玩家的战斗数据
 	int32 paramType = 4;					// 战斗的类型数据 1海选赛2是排名赛
 }
 
@@ -198,4 +195,16 @@ message CROSS_C_PLAYER_QUERY_INFO{
 
 message CROSS_S_PLAYER_QUERY_INFO{
 	repeated int64 playerIds = 1;			// 要验证的玩家的id
+}
+
+//客户端 查看玩家游戏中购买次数的数据
+message C_PLAYER_BUY_TIMES{
+	int32 buyType=1;		//购买类型
+}
+
+//查看玩家游戏中购买次数的数据
+message S_PLAYER_BUY_TIMES{
+	int32 buyType = 1;		//购买类型
+	int32 buyTimes = 2;		//已经购买的次数
+
 }

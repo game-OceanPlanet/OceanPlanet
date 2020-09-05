@@ -53,7 +53,7 @@ module qmr
          */
         public loadMap(mapId: number)
         {
-            let mapCfg: MapCfg = ConfigManagerBase.getConf(ConfigEnum.MAP, mapId);
+            let mapCfg: MapCfg = ConfigManager.getConf(ConfigEnum.MAP, mapId);
             if (!mapCfg)
             {
                 LogUtil.warn("地图配置不存在:" + mapId)
@@ -86,7 +86,7 @@ module qmr
                 for (var k = 0; k < repeatCount; k++)
                 {
                     startPosy += this.bgHeights[i];
-                    mapPath = ResPathUtil.getMapUrl(fileName);
+                    mapPath = ResPathUtilAft.getMapUrl(fileName);
                     this.tilesKeys[rowCount] = mapPath;
                     this.mapPaths.push(mapPath);
                     rowCount ++;
@@ -211,25 +211,6 @@ module qmr
             return result;
         }
 
-        //刷一波怪
-        private refreshMonster(): void
-        {
-            this.curWave += 1;
-            this.maskWave.push(this.curWave);
-            NotifyManager.sendNotification(NotifyConst.REFRESH_MONSTER, this.curWave);
-        }
-
-        // 如果是多波怪物的话长度大于1
-        public getLabelsEventCount(): number
-        {
-            return this.bgLabelEvents.length;
-        }
-
-        /** 清除波次记录 */
-        public clearMaskWave()
-        {
-            this.maskWave.length = 0;
-        }
 
         public dispose(): void
         {

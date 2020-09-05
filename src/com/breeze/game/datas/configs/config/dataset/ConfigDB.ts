@@ -1,5 +1,55 @@
 module qmr
 {
+	export class PetCfg extends BaseBean
+	{
+		/**宠物ID*/
+	get id():number
+	{			
+		return this.d["id"];			
+	}
+	/**宠物名称*/
+	get name():string
+	{			
+		return this.d["name"];			
+	}
+	/**模型编号*/
+	get resId():string
+	{			
+		return this.d["resId"];			
+	}
+	/**等级*/
+	get level():number
+	{			
+		return this.d["level"];			
+	}
+	/**周期*/
+	get limitTime():number
+	{			
+		return this.d["limitTime"];			
+	}
+	/**月化*/
+	get monthly():number
+	{			
+		return this.d["monthly"];			
+	}
+	/**产出*/
+	get produce():number
+	{			
+		return this.d["produce"];			
+	}
+	/**购买价格*/
+	get price():number
+	{			
+		return this.d["price"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="id";
+		}
+	}
+
 	export class MapCfg extends BaseBean
 	{
 		/**地图ID*/
@@ -89,6 +139,108 @@ module qmr
 	get music():string
 	{			
 		return this.d["music"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="mapId";
+		}
+	}
+
+	export class SkillCfg extends BaseBean
+	{
+		/**技能id
+主角技能-101001-106000
+*/
+	get skillId():number
+	{			
+		return this.d["skillId"];			
+	}
+	/**名字*/
+	get name():string
+	{			
+		return this.d["name"];			
+	}
+	/**等级*/
+	get level():number
+	{			
+		return this.d["level"];			
+	}
+	/**技能分组*/
+	get group():number
+	{			
+		return this.d["group"];			
+	}
+	/**概率技能优先级 多个概率技能优先级触发 普攻填0 能量型技能请填最大值100*/
+	get seq():number
+	{			
+		return this.d["seq"];			
+	}
+	/**描述*/
+	get desc():string
+	{			
+		return this.d["desc"];			
+	}
+	/**技能战斗力*/
+	get skillFightVal():number
+	{			
+		return this.d["skillFightVal"];			
+	}
+	/**图标*/
+	get icon():string
+	{			
+		return this.d["icon"];			
+	}
+	/**类型 1普通技能、2概率性技能、3能量型技能*/
+	get type():number
+	{			
+		return this.d["type"];			
+	}
+	/**下一级技能ID*/
+	get nextSkillId():number
+	{			
+		return this.d["nextSkillId"];			
+	}
+	/**升级消耗*/
+	get cost():string
+	{			
+		return this.d["cost"];			
+	}
+	/**效果ID*/
+	get effectId():number
+	{			
+		return this.d["effectId"];			
+	}
+	/**终极技能*/
+	get ultimateEffectId():number
+	{			
+		return this.d["ultimateEffectId"];			
+	}
+	/**武将tips中是否不展示（1，不展示）*/
+	get isHide():number
+	{			
+		return this.d["isHide"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="skillId";
+		}
+	}
+
+	export class TemplateCfg extends BaseBean
+	{
+		/**地图ID*/
+	get mapId():number
+	{			
+		return this.d["mapId"];			
+	}
+	/**地图名*/
+	get mapname():string
+	{			
+		return this.d["mapname"];			
 	}
 
 		constructor(element)

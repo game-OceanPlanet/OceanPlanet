@@ -71,7 +71,7 @@ module qmr
          */
         public loadMap(chapterId: number)
         {
-            let mapCfg: XinHangUpCfg = ConfigManagerBase.getConf(ConfigEnum.XINHANGUP, chapterId);
+            let mapCfg: XinHangUpCfg = ConfigManager.getConf(ConfigEnum.XINHANGUP, chapterId);
             if (!mapCfg)
             {
                 LogUtil.warn("挂机地图配置不存在:" + chapterId)
@@ -120,7 +120,7 @@ module qmr
                     t.reLayout();
                 }
                 fileName = mapResId + t.bgNames[i];
-                var mapPath = ResPathUtil.getMapUrl(fileName);
+                var mapPath = ResPathUtilAft.getMapUrl(fileName);
                 ResManager.getRes(mapPath, onTextureLoaded, t, LoadPriority.IMMEDIATELY, RES.ResourceItem.TYPE_IMAGE);
                 t.mapPaths.push(mapPath);
             }

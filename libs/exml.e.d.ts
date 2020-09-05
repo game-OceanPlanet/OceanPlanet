@@ -60,6 +60,8 @@ declare class CheckBoxLoginSkin extends eui.Skin{
 }
 declare class CommonTipSkin extends eui.Skin{
 }
+declare class DisConnectSkin extends eui.Skin{
+}
 declare class GameLoadingProgressBarSkin extends eui.Skin{
 }
 declare class GameLoadingViewSkin extends eui.Skin{

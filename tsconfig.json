@@ -14,7 +14,7 @@
         "src",
         "libs",
         "protobuf-login/library",
-        "protobuf-login/bundles",
+        "protobuf/bundles",
         "lib-login"
     ]
 }

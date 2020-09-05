@@ -45,7 +45,7 @@
     },
     {
       "name": "protobuf-bundles",
-      "path": "protobuf-login/bundles"
+      "path": "protobuf/bundles"
     },
     {
       "name": "login",

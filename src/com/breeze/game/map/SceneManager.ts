@@ -75,6 +75,64 @@ module qmr
 			// this.scene.touchChildren = false;
 		}
 
+		private __pets:HeroActor[];
+		private createUnits(): void
+		{
+			let t = this;
+			t.__pets = [];
+			let len:number = 3;
+			for(var i:number = 0; i < len; i ++){
+				let heroId: number = 1001;
+				let h: HeroActor = new HeroActor();
+				h.id = heroId;
+				h.update();
+				SceneManager.instance.addObject(h);
+				t.__pets.push(h);
+			}
+		}
+
+		//随机移动
+		// private _sourcePos:egret.Point = new egret.Point();
+		// private _targetPos:egret.Point = new egret.Point();
+		private movePet(): void
+		{
+			let t = this;
+			t.count ++;
+			if(t.count > 15){
+				egret.clearInterval(this._endTimeKey);
+				this._endTimeKey = -1;
+				return;
+			}
+			// let len = t.__pets.length
+			// let index:number = Math.floor((len + 1) * Math.random());
+			// index = index > len - 1 ? len - 1 : index;
+			// let pet:HeroActor = t.__pets[index];
+			// let targetX:number = StageUtil.stageWidth * Math.random();
+			// let targetY:number = StageUtil.stageHeight * Math.random();
+			// t._targetPos.x = targetY;
+			// t._targetPos.y = targetY;
+			// t._sourcePos.x = pet.x;
+			// t._sourcePos.y = pet.y;
+			// let dir:number = MathUtil.dir(t._sourcePos, t._targetPos);
+			// pet.speed = 2;
+			// pet.updateDir(dir);
+			// pet.changeStatus(Status.MOVE);
+			// pet.moveTo(targetX, targetY);
+
+			let heroId: number = 1001;
+			let h: HeroActor = new HeroActor();
+			h.id = heroId;
+			h.update();
+			h.alpha = 0;
+
+			egret.Tween.get(h).to({alpha:1}, 1000).wait(50)
+            .call(()=>{
+                egret.Tween.removeTweens(h);
+			});
+			SceneManager.instance.addObject(h);
+			t.__pets.push(h);
+		}
+
 
 		/** 进入挂机地图 */
 		public enterHangMap(chapterId: number = 0)
@@ -91,11 +149,11 @@ module qmr
 			map.x = 0;
 			map.y = 52;
 			map.loadMap(chapterId);
-			// let mapCfg: XinHangUpCfg = ConfigManagerBase.getConf(ConfigEnum.XINHANGUP, chapterId);
-			// if (mapCfg)
-			// {
-			// 	SoundManager.getInstance().loadAndPlayMusic(mapCfg.music);
-			// }
+			let mapCfg: XinHangUpCfg = ConfigManager.getConf(ConfigEnum.XINHANGUP, chapterId);
+			if (mapCfg)
+			{
+				SoundManager.getInstance().loadAndPlayMusic(mapCfg.music);
+			}
 			if (!map.parent)
 			{
 				SceneManager.instance.addToMap(map);
@@ -105,7 +163,16 @@ module qmr
 				LayerManager.instance.addDisplay(t.scene, LayerConst.MAP_LAYER);
 			}
 			t.leaveMap();
+
+			t.createUnits();
+
+			// Ticker.getInstance().registerTick(t.movePet, t, 3000, 10);
+
+			this._endTimeKey = egret.setInterval(this.movePet, this, 1000);
 		}
+
+		private _endTimeKey;
+		private count:number = 0;
 
 		/** 进入地图instanceId 副本id/角色id */
 		public enterMap(instanceId: number, chapterMap: number = 0): void
@@ -278,6 +345,22 @@ module qmr
 			}
 		}
 
+		/** 攻击结果返回,飘数字用 */
+		public onAttackResultBack(actor: BaseMoverActor, fighterMsg: any, rate: number = 1): void
+		{
+			if (actor && fighterMsg)
+			{
+				var type = fighterMsg.beHurtMsg.type;
+				var value = (fighterMsg.beHurtMsg.value * rate) | 0;
+				if (actor instanceof HeroActor)
+				{
+					actor.catcheState(fighterMsg.beginState, fighterMsg.endState);
+					// actor.updateHitOverProperty();
+					actor.onPlayHit();
+				}
+				FloatManager.createFloatHp(type, value, actor.x, actor.y, 1, 2);
+			}
+		}
 
 		/** 添加到地图层 */
 		public addToMap(disPlay: egret.DisplayObject): void
