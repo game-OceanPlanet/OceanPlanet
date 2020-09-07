@@ -2,7 +2,6 @@ module qmr
 {
 	/**
 	 *
-	 * @author coler
 	 * @description 特效基类,如果有多方向特效，全部采用分方向加载
 	 *
 	 */
@@ -27,19 +26,19 @@ module qmr
         public constructor()
         {
             super();
-            let _self = this;
-            _self.currentFrame = 1;
-            _self.totalFrame = 0;
-            _self.isStopped = true;
-            _self._pauseFramed = false;
-            _self.passedTime = 0;
-            _self.lastTime = 0;
-            _self.playTimes = 1;
-            _self._timeScale = 1;
-            _self.frameRate = 30;
-            _self.eventDic = {};
-            _self.mainClip = new qmr.AnimateClip(_self.onLoaded, _self);
-            _self.touchEnabled = _self.touchChildren = false;
+            let t = this;
+            t.currentFrame = 1;
+            t.totalFrame = 0;
+            t.isStopped = true;
+            t._pauseFramed = false;
+            t.passedTime = 0;
+            t.lastTime = 0;
+            t.playTimes = 1;
+            t._timeScale = 1;
+            t.frameRate = 30;
+            t.eventDic = {};
+            t.mainClip = new qmr.AnimateClip(t.onLoaded, t);
+            t.touchEnabled = t.touchChildren = false;
         }
 
         public getCurrentFrame(): number
@@ -94,17 +93,17 @@ module qmr
 		 */
         public play(effectRes: string, dir: number = -1, playTimes: number = -1, timeScale: number = 1, callBack: Function = null, thisObject: any = null): void
         {
-            let _self = this;
-            _self.currentFrame = 1;
-            _self.totalFrame = 0;
-            _self.playTimes = playTimes;
-            _self.loopCallBack = callBack;
-            _self.thisObject = thisObject;
-            _self._timeScale = timeScale;
-            _self._pauseFramed = false;
-            _self.mainClip.load(SystemPathAft.effectPath, effectRes, qmr.DirUtil.getDir(dir));
-            _self.addChild(_self.mainClip);
-            _self.setIsStopped(false);
+            let t = this;
+            t.currentFrame = 1;
+            t.totalFrame = 0;
+            t.playTimes = playTimes;
+            t.loopCallBack = callBack;
+            t.thisObject = thisObject;
+            t._timeScale = timeScale;
+            t._pauseFramed = false;
+            t.mainClip.load(SystemPathAft.effectPath, effectRes, qmr.DirUtil.getDir(dir));
+            t.addChild(t.mainClip);
+            t.setIsStopped(false);
         }
 
         /**
@@ -115,17 +114,17 @@ module qmr
 		 */
         public playUIEffect(effectName: string, dir: number = -1, playTimes: number = -1, timeScale: number = 1, callBack: Function = null, thisObject: any = null): void
         {
-            let _self = this;
-            _self.currentFrame = 1;
-            _self.totalFrame = 0;
-            _self.playTimes = playTimes;
-            _self.loopCallBack = callBack;
-            _self.thisObject = thisObject;
-            _self._timeScale = timeScale;
-            _self._pauseFramed = false;
-            _self.mainClip.load(SystemPathAft.uieffect, effectName, qmr.DirUtil.getDir(dir));
-            _self.addChild(_self.mainClip);
-            _self.setIsStopped(false);
+            let t = this;
+            t.currentFrame = 1;
+            t.totalFrame = 0;
+            t.playTimes = playTimes;
+            t.loopCallBack = callBack;
+            t.thisObject = thisObject;
+            t._timeScale = timeScale;
+            t._pauseFramed = false;
+            t.mainClip.load(SystemPathAft.uieffect, effectName, qmr.DirUtil.getDir(dir));
+            t.addChild(t.mainClip);
+            t.setIsStopped(false);
         }
 
         /**
@@ -147,25 +146,25 @@ module qmr
         }
 		/**
          * @description 帧频调用         */
-        private advanceTime(t: number): boolean
+        private advanceTime(time: number): boolean
         {
-            let _self = this;
-            let advancedTime: number = t - _self.lastTime;
-            _self.lastTime = t;
-            let ft: number = _self.frameIntervalTime;
-            let currentTime = _self.passedTime + advancedTime;
-            _self.passedTime = currentTime % ft;
+            let t = this;
+            let advancedTime: number = time - t.lastTime;
+            t.lastTime = time;
+            let ft: number = t.frameIntervalTime;
+            let currentTime = t.passedTime + advancedTime;
+            t.passedTime = currentTime % ft;
             let num: number = currentTime / ft;
             if (num < 1)
             {
                 return false;
             }
-            _self.render();
-            while (!_self._pauseFramed && num >= 1)
+            t.render();
+            while (!t._pauseFramed && num >= 1)
             {
                 num--;
-                _self.currentFrame++;
-                _self.checkFrameEvent();
+                t.currentFrame++;
+                t.checkFrameEvent();
             }
             return false;
         }
@@ -196,36 +195,36 @@ module qmr
         * @description 渲染 需被子类继承*/
         protected render(): void
         {
-            let _self = this;
-            if (_self.totalFrame > 0)
+            let t = this;
+            if (t.totalFrame > 0)
             {
-                if (_self.currentFrame > _self.totalFrame)
+                if (t.currentFrame > t.totalFrame)
                 {
-                    _self.currentFrame = 1;
-                    if (_self.playTimes == -1)
+                    t.currentFrame = 1;
+                    if (t.playTimes == -1)
                     {
-                        if (_self.loopCallBack)
+                        if (t.loopCallBack)
                         {
-                            _self.loopCallBack.call(_self.thisObject);
+                            t.loopCallBack.call(t.thisObject);
                         }
                     }
                     else
                     {
-                        _self.playTimes--;
-                        if (_self.playTimes <= 0)
+                        t.playTimes--;
+                        if (t.playTimes <= 0)
                         {
-                            if (_self.loopCallBack)
+                            if (t.loopCallBack)
                             {
-                                _self.loopCallBack.call(_self.thisObject);
+                                t.loopCallBack.call(t.thisObject);
                             }
-                            _self.dispos();
+                            t.dispos();
                             return;
                         }
                     }
                 }
-                if (_self.stage)
+                if (t.stage)
                 {
-                    _self.mainClip.render(_self.currentFrame);
+                    t.mainClip.render(t.currentFrame);
                 }
             }
         }
@@ -272,11 +271,11 @@ module qmr
             {
                 value = 1;
             }
-            let _self = this;
-            _self._timeScale = value;
-            if (!isNaN(_self.frameRate))
+            let t = this;
+            t._timeScale = value;
+            if (!isNaN(t.frameRate))
             {
-                _self.frameIntervalTime = 1000 / (_self._frameRate * value);
+                t.frameIntervalTime = 1000 / (t._frameRate * value);
             }
         }
 		/**
@@ -319,26 +318,26 @@ module qmr
         /** 资源释放 千万不要直接调用        */
         public dispos(): void
         {
-            let _self = this;
-            _self.rotation = 0;
-            _self.effectWidth = 0;
+            let t = this;
+            t.rotation = 0;
+            t.effectWidth = 0;
             super.dispos()
-            if (_self.mainClip)
+            if (t.mainClip)
             {
-                _self.mainClip.blendMode = egret.BlendMode.NORMAL;
-                _self.mainClip.dispos();
+                t.mainClip.blendMode = egret.BlendMode.NORMAL;
+                t.mainClip.dispos();
             }
-            _self.setIsStopped(true);
-            for (let key in _self.eventDic)
+            t.setIsStopped(true);
+            for (let key in t.eventDic)
             {
-                _self.eventDic[key] = null;
-                delete _self.eventDic[key];
+                t.eventDic[key] = null;
+                delete t.eventDic[key];
             }
-            _self.scaleXY = 1;
-            // EffectFactory.getInstance().releaseEffect(_self);
-            if (_self.parent)
+            t.scaleXY = 1;
+            // EffectFactory.getInstance().releaseEffect(t);
+            if (t.parent)
             {
-                _self.parent.removeChild(_self);
+                t.parent.removeChild(t);
             }
         }
     }

@@ -82,7 +82,7 @@ export class SubPackagePlugin {
         }
         pluginContext.createFile(this.options.output, new Buffer(contents));
         if (this.options.subPackages) {
-            const _self = this;
+            const t = this;
             this.options.subPackages.forEach(function (item) {
                 let gameJS = "";
                 // 配置的文件必须存在

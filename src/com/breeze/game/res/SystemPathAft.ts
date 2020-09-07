@@ -17,5 +17,9 @@ module qmr
         public static get bgPath(): string {
             return PlatformConfig.webRoot + "unpack/bg/"; 
         }
+
+        public static get unpack_battle(): string {
+            return PlatformConfig.webRoot + "unpack/battle/"; 
+        }
     }
 }

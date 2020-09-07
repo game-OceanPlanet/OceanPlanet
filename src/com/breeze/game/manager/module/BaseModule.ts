@@ -17,13 +17,13 @@ module qmr
 		/** 初始化事件 */
 		protected initListener(): void
 		{
-			let _self = this;
-			_self.registerNotify(StageUtil.STAGE_RESIZE, _self.onStageResize, _self);
-			_self.registerNotify(NotifyConstLogin.CLOSE_PANEL_LAYER, _self.onTabViewGuide, _self);
-			_self.registerNotify(NotifyConst.TAB_VIEW_GUIDE, _self.onTabViewGuide, _self);
-			let btn_return = _self["btn_return"];
+			let t = this;
+			t.registerNotify(StageUtil.STAGE_RESIZE, t.onStageResize, t);
+			t.registerNotify(NotifyConstLogin.CLOSE_PANEL_LAYER, t.onTabViewGuide, t);
+			t.registerNotify(NotifyConst.TAB_VIEW_GUIDE, t.onTabViewGuide, t);
+			let btn_return = t["btn_return"];
 			if(btn_return){
-				_self.addClickEvent(btn_return, _self.onPageBgCloseView, _self);
+				t.addClickEvent(btn_return, t.onPageBgCloseView, t);
 			}
 			
 			super.initListener();

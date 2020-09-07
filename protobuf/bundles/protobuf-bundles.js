@@ -2058,8 +2058,8 @@ $root.com = (function() {
              * Properties of a C_COMBINE_FISH.
              * @memberof com.message
              * @interface IC_COMBINE_FISH
-             * @property {number|Long|null} [fishId1] C_COMBINE_FISH fishId1
-             * @property {number|Long|null} [fishId2] C_COMBINE_FISH fishId2
+             * @property {number|Long|null} [fish1Id] C_COMBINE_FISH fish1Id
+             * @property {number|Long|null} [fish2Id] C_COMBINE_FISH fish2Id
              */
 
             /**
@@ -2078,20 +2078,20 @@ $root.com = (function() {
             }
 
             /**
-             * C_COMBINE_FISH fishId1.
-             * @member {number|Long} fishId1
+             * C_COMBINE_FISH fish1Id.
+             * @member {number|Long} fish1Id
              * @memberof com.message.C_COMBINE_FISH
              * @instance
              */
-            C_COMBINE_FISH.prototype.fishId1 = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            C_COMBINE_FISH.prototype.fish1Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
-             * C_COMBINE_FISH fishId2.
-             * @member {number|Long} fishId2
+             * C_COMBINE_FISH fish2Id.
+             * @member {number|Long} fish2Id
              * @memberof com.message.C_COMBINE_FISH
              * @instance
              */
-            C_COMBINE_FISH.prototype.fishId2 = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            C_COMBINE_FISH.prototype.fish2Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * Encodes the specified C_COMBINE_FISH message. Does not implicitly {@link com.message.C_COMBINE_FISH.verify|verify} messages.
@@ -2105,10 +2105,10 @@ $root.com = (function() {
             C_COMBINE_FISH.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.fishId1 != null && message.hasOwnProperty("fishId1"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.fishId1);
-                if (message.fishId2 != null && message.hasOwnProperty("fishId2"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fishId2);
+                if (message.fish1Id != null && message.hasOwnProperty("fish1Id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.fish1Id);
+                if (message.fish2Id != null && message.hasOwnProperty("fish2Id"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fish2Id);
                 return writer;
             };
 
@@ -2131,10 +2131,10 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.fishId1 = reader.int64();
+                        message.fish1Id = reader.int64();
                         break;
                     case 2:
-                        message.fishId2 = reader.int64();
+                        message.fish2Id = reader.int64();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -2226,6 +2226,316 @@ $root.com = (function() {
             };
 
             return S_COMBINE_FISH;
+        })();
+
+        message.C_GET_MONEY_REWARD = (function() {
+
+            /**
+             * Properties of a C_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @interface IC_GET_MONEY_REWARD
+             */
+
+            /**
+             * Constructs a new C_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MONEY_REWARD.
+             * @implements IC_GET_MONEY_REWARD
+             * @constructor
+             * @param {com.message.IC_GET_MONEY_REWARD=} [properties] Properties to set
+             */
+            function C_GET_MONEY_REWARD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MONEY_REWARD message. Does not implicitly {@link com.message.C_GET_MONEY_REWARD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MONEY_REWARD
+             * @static
+             * @param {com.message.IC_GET_MONEY_REWARD} message C_GET_MONEY_REWARD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MONEY_REWARD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MONEY_REWARD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MONEY_REWARD} C_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MONEY_REWARD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_REWARD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MONEY_REWARD;
+        })();
+
+        message.S_GET_MONEY_REWARD = (function() {
+
+            /**
+             * Properties of a S_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @interface IS_GET_MONEY_REWARD
+             * @property {number|Long|null} [money] S_GET_MONEY_REWARD money
+             */
+
+            /**
+             * Constructs a new S_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MONEY_REWARD.
+             * @implements IS_GET_MONEY_REWARD
+             * @constructor
+             * @param {com.message.IS_GET_MONEY_REWARD=} [properties] Properties to set
+             */
+            function S_GET_MONEY_REWARD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MONEY_REWARD money.
+             * @member {number|Long} money
+             * @memberof com.message.S_GET_MONEY_REWARD
+             * @instance
+             */
+            S_GET_MONEY_REWARD.prototype.money = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MONEY_REWARD
+             * @static
+             * @param {com.message.IS_GET_MONEY_REWARD} message S_GET_MONEY_REWARD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MONEY_REWARD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.money != null && message.hasOwnProperty("money"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.money);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MONEY_REWARD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MONEY_REWARD} S_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MONEY_REWARD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_REWARD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 3:
+                        message.money = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MONEY_REWARD;
+        })();
+
+        message.C_GET_MONEY_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_MONEY_INFO.
+             * @memberof com.message
+             * @interface IC_GET_MONEY_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_MONEY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MONEY_INFO.
+             * @implements IC_GET_MONEY_INFO
+             * @constructor
+             * @param {com.message.IC_GET_MONEY_INFO=} [properties] Properties to set
+             */
+            function C_GET_MONEY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MONEY_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MONEY_INFO
+             * @static
+             * @param {com.message.IC_GET_MONEY_INFO} message C_GET_MONEY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MONEY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MONEY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MONEY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MONEY_INFO} C_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MONEY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MONEY_INFO;
+        })();
+
+        message.S_GET_MONEY_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_MONEY_INFO.
+             * @memberof com.message
+             * @interface IS_GET_MONEY_INFO
+             * @property {number|Long|null} [money] S_GET_MONEY_INFO money
+             * @property {number|Long|null} [diamond] S_GET_MONEY_INFO diamond
+             */
+
+            /**
+             * Constructs a new S_GET_MONEY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MONEY_INFO.
+             * @implements IS_GET_MONEY_INFO
+             * @constructor
+             * @param {com.message.IS_GET_MONEY_INFO=} [properties] Properties to set
+             */
+            function S_GET_MONEY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MONEY_INFO money.
+             * @member {number|Long} money
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @instance
+             */
+            S_GET_MONEY_INFO.prototype.money = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * S_GET_MONEY_INFO diamond.
+             * @member {number|Long} diamond
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @instance
+             */
+            S_GET_MONEY_INFO.prototype.diamond = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @static
+             * @param {com.message.IS_GET_MONEY_INFO} message S_GET_MONEY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MONEY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.money != null && message.hasOwnProperty("money"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.money);
+                if (message.diamond != null && message.hasOwnProperty("diamond"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.diamond);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MONEY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MONEY_INFO} S_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MONEY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 3:
+                        message.money = reader.int64();
+                        break;
+                    case 4:
+                        message.diamond = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MONEY_INFO;
         })();
 
         message.C_USER_LOGIN = (function() {
@@ -4545,6 +4855,10 @@ $root.com = (function() {
              * @property {number} S_BUY_FISH=1054 S_BUY_FISH value
              * @property {number} C_COMBINE_FISH=1055 C_COMBINE_FISH value
              * @property {number} S_COMBINE_FISH=1056 S_COMBINE_FISH value
+             * @property {number} C_GET_MONEY_REWARD=1057 C_GET_MONEY_REWARD value
+             * @property {number} S_GET_MONEY_REWARD=1058 S_GET_MONEY_REWARD value
+             * @property {number} C_GET_MONEY_INFO=1059 C_GET_MONEY_INFO value
+             * @property {number} S_GET_MONEY_INFO=1060 S_GET_MONEY_INFO value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -4585,6 +4899,10 @@ $root.com = (function() {
                 values[valuesById[1054] = "S_BUY_FISH"] = 1054;
                 values[valuesById[1055] = "C_COMBINE_FISH"] = 1055;
                 values[valuesById[1056] = "S_COMBINE_FISH"] = 1056;
+                values[valuesById[1057] = "C_GET_MONEY_REWARD"] = 1057;
+                values[valuesById[1058] = "S_GET_MONEY_REWARD"] = 1058;
+                values[valuesById[1059] = "C_GET_MONEY_INFO"] = 1059;
+                values[valuesById[1060] = "S_GET_MONEY_INFO"] = 1060;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;

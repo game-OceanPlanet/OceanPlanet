@@ -41,23 +41,23 @@ module qmr {
 			}
 		}
 		public setTip():void{
-			let _self = this;
-			if(!_self.data) return;
-			if(_self.isSeted) return;
-			_self.isSeted = true;
-			_self.alpha = 1;
-			_self.lbl_tips.textFlow = HtmlUtil.htmlParse.parser(_self.data.mess);
-			_self.y = _self.data.yPos ? _self.data.yPos : StageUtil.stageHeight / 2 - _self.height / 2;
-			let offset = _self.y - 60;
-			if(_self.data.itemcfg)
+			let t = this;
+			if(!t.data) return;
+			if(t.isSeted) return;
+			t.isSeted = true;
+			t.alpha = 1;
+			t.lbl_tips.textFlow = HtmlUtil.htmlParse.parser(t.data.mess);
+			t.y = t.data.yPos ? t.data.yPos : StageUtil.stageHeight / 2 - t.height / 2;
+			let offset = t.y - 60;
+			if(t.data.itemcfg)
 			{
-				ImageUtil.setItemIcon(_self.img_icon, _self.data.itemcfg.icon, _self.data.itemcfg.page);
+				ImageUtil.setItemIcon(t.img_icon, t.data.itemcfg.icon, t.data.itemcfg.page);
 			}
-			egret.Tween.get(_self)
+			egret.Tween.get(t)
 				.to({ y: offset }, 800)
 				.wait(50)
 				.to({y: offset - 30, alpha: 0 }, 400)
-				.call(_self.dispose, _self);
+				.call(t.dispose, t);
 		}
 		public dispose(): void {
 			this.data = null;

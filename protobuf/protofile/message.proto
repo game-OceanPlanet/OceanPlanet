@@ -22,18 +22,23 @@ message MsgEnum {
         S_EDIT_PLAYER_NICKNAME      = 1024;
 
 
+
         C_GET_NICKNAME_INFO           = 1030;	// 客户端核查随机名字是否可以使用
         S_GET_NICKNAME_INFO           = 1031;
 
         C_SEND_SDK_DATA               = 1032;	// 客户端通知sdk上报数据操作
         S_SEND_SDK_DATA               = 1033;
 
-        C_GET_FISH_INFO		= 1051; //获取我的鱼儿
-        S_GET_FISH_INFO		= 1052;
-        C_BUY_FISH		= 1053; //购买鱼儿
-        S_BUY_FISH		= 1054;
-        C_COMBINE_FISH		= 1055; //合并鱼儿
-        S_COMBINE_FISH		= 1056;
+		C_GET_FISH_INFO		= 1051; //获取我的鱼儿
+		S_GET_FISH_INFO		= 1052;
+		C_BUY_FISH		= 1053; //购买鱼儿
+		S_BUY_FISH		= 1054;
+		C_COMBINE_FISH		= 1055; //合并鱼儿
+		S_COMBINE_FISH		= 1056;
+		C_GET_MONEY_REWARD 	= 1057; //领取金币奖励
+		S_GET_MONEY_REWARD  = 1058;
+		C_GET_MONEY_INFO	= 1059; //获取金币信息
+		S_GET_MONEY_INFO	= 1060;
 
 
         S_SYN_PROPERTY = 2001; // 同步属性变化

@@ -51,12 +51,12 @@ module qmr {
         /**
          * @description 帧频调用         */
         private advanceTime(timeStamp: number): boolean {
-            let _self = this;
-            let advancedTime: number = timeStamp - _self.lastTime;
-            _self.lastTime = timeStamp;
-            let frameIntervalTime: number = _self.frameIntervalTime;
-            let currentTime = _self.passedTime + advancedTime;
-            _self.passedTime = currentTime % frameIntervalTime;
+            let t = this;
+            let advancedTime: number = timeStamp - t.lastTime;
+            t.lastTime = timeStamp;
+            let frameIntervalTime: number = t.frameIntervalTime;
+            let currentTime = t.passedTime + advancedTime;
+            t.passedTime = currentTime % frameIntervalTime;
             let num: number = currentTime / frameIntervalTime;
             if(num < 1) {
                 return false;

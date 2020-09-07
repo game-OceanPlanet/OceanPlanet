@@ -2298,13 +2298,13 @@ module qmr
         {
             disObject.scaleX = 0;
             disObject.scaleY = 0;
-            let _self = this;
+            let t = this;
             egret.Tween.get(disObject).to({ scaleX: 1.3, scaleY: 1.3 }, largenTime).wait(afterLargenWaitTime).
                 to({ scaleX: 1, scaleY: 1 }, resetSizeTime).wait(afterResetWaitTime).call(() =>
                 {
                     egret.Tween.removeTweens(disObject);
                     disObject.parent.removeChild(disObject);
-                }, _self);
+                }, t);
 
             return true;
         }
@@ -2314,7 +2314,7 @@ module qmr
         {
             let img = new eui.Image(res);
 
-            let _self = this;
+            let t = this;
             img.addEventListener(egret.Event.COMPLETE, () =>
             {
                 img.x = StageUtil.stageWidth / 2 - img.width / 2;
@@ -2325,8 +2325,8 @@ module qmr
                 {
                     egret.Tween.removeTweens(img);
                     img.parent.removeChild(img);
-                }, _self)
-            }, _self);
+                }, t)
+            }, t);
 
             StageUtil.stage.addChild(img);
 
@@ -2337,7 +2337,7 @@ module qmr
 
         public static createBullet(content: string): eui.Label
         {
-            let _self = this;
+            let t = this;
             let bulletScreenPool: eui.Label[] = TweenEffectUtil.effectPool["bulletScreenPool"];
             if (!bulletScreenPool)
             {
@@ -2367,7 +2367,7 @@ module qmr
                 }
                 egret.Tween.removeTweens(e.currentTarget);
                 TweenEffectUtil.releaseBullet(e.currentTarget);
-            }, _self);
+            }, t);
 
             LogUtil.log("createBullet bulletScreenPool createBullet", bulletScreen);
             return bulletScreen;
@@ -2391,7 +2391,7 @@ module qmr
             {
                 parent = StageUtil.stage;
             }
-            let _self = this;
+            let t = this;
             // let label = new eui.Label(content);
             // label.fontFamily = "specialGameFont";
             // label.stroke = 1;
@@ -2413,7 +2413,7 @@ module qmr
             {
                 egret.Tween.removeTweens(bulletScreen);
                 bulletScreen.parent.removeChild(bulletScreen);
-            }, _self);
+            }, t);
 
             parent.addChild(bulletScreen);
 

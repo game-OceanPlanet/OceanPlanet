@@ -16,7 +16,6 @@ module qmr
         protected curHp: number = 0;                    //当前血量
         public fighterId: number;                       //战斗角色ID,唯一
         public camp: CampType;                          //敌我阵营
-        public pos: number;                             //阵营位置 1-6卡牌 0-7
         protected baseActor: qmr.BaseActor;             //卡牌动画
         public constructor()
         {
@@ -36,16 +35,16 @@ module qmr
         /** 初始化控制器,需被子类继承 */
         protected initController(): void
         {
-            let _self = this;
-            _self.controllerDic[Status.IDLE] = new HeroIdleController(_self);
-            _self.controllerDic[Status.MOVE] = new HeroMoveController(_self);
-            _self.controllerDic[Status.SKILL] = new HeroSkillController(_self);
-            _self.controllerDic[Status.SKILL2] = new HeroSkillController(_self);
-            _self.controllerDic[Status.ATTACK] = new HeroAttackController(_self);
-            _self.controllerDic[Status.ATTACK2] = new HeroAttack2Controller(_self);
-            _self.controllerDic[Status.DEAD] = new HeroDeadController(_self);
-            _self.controllerDic[Status.FLY] = new HeroFlyController(_self);
-            _self.currentController = _self.controllerDic[Status.IDLE];
+            let t = this;
+            t.controllerDic[Status.IDLE] = new HeroIdleController(t);
+            t.controllerDic[Status.MOVE] = new HeroMoveController(t);
+            t.controllerDic[Status.SKILL] = new HeroSkillController(t);
+            t.controllerDic[Status.SKILL2] = new HeroSkillController(t);
+            t.controllerDic[Status.ATTACK] = new HeroAttackController(t);
+            t.controllerDic[Status.ATTACK2] = new HeroAttack2Controller(t);
+            t.controllerDic[Status.DEAD] = new HeroDeadController(t);
+            t.controllerDic[Status.FLY] = new HeroFlyController(t);
+            t.currentController = t.controllerDic[Status.IDLE];
         }
 
         public get anchorOffsetX()
@@ -361,23 +360,23 @@ module qmr
         /** 资源释放 */
         public dispos(): void
         {
-            let _self = this;
-            _self.curHp = 0;
-            _self.timeScale = 1;
+            let t = this;
+            t.curHp = 0;
+            t.timeScale = 1;
 
-            egret.Tween.removeTweens(_self.baseActor);
-            egret.Tween.removeTweens(_self.container);
-            FightTimer.instance.unRegisterTick(_self.onBackPos, _self);
-            _self.container.rotation = 0;
-            _self.container.x = _self.container.y = 0;
-            _self.setActorScale(1);
-            _self.container.scaleX = _self.container.scaleY = 1;
+            egret.Tween.removeTweens(t.baseActor);
+            egret.Tween.removeTweens(t.container);
+            FightTimer.instance.unRegisterTick(t.onBackPos, t);
+            t.container.rotation = 0;
+            t.container.x = t.container.y = 0;
+            t.setActorScale(1);
+            t.container.scaleX = t.container.scaleY = 1;
 
-            if (_self.currentController != null)
+            if (t.currentController != null)
             {
-                _self.currentController.cancelExcute();
+                t.currentController.cancelExcute();
             }
-            _self.clearActor();
+            t.clearActor();
             super.dispos();
         }
     }

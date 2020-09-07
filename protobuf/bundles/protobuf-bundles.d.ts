@@ -947,11 +947,11 @@ declare namespace com {
         /** Properties of a C_COMBINE_FISH. */
         interface IC_COMBINE_FISH {
 
-            /** C_COMBINE_FISH fishId1 */
-            fishId1?: (number|Long|null);
+            /** C_COMBINE_FISH fish1Id */
+            fish1Id?: (number|Long|null);
 
-            /** C_COMBINE_FISH fishId2 */
-            fishId2?: (number|Long|null);
+            /** C_COMBINE_FISH fish2Id */
+            fish2Id?: (number|Long|null);
         }
 
         /** Represents a C_COMBINE_FISH. */
@@ -963,11 +963,11 @@ declare namespace com {
              */
             constructor(properties?: com.message.IC_COMBINE_FISH);
 
-            /** C_COMBINE_FISH fishId1. */
-            public fishId1: (number|Long);
+            /** C_COMBINE_FISH fish1Id. */
+            public fish1Id: (number|Long);
 
-            /** C_COMBINE_FISH fishId2. */
-            public fishId2: (number|Long);
+            /** C_COMBINE_FISH fish2Id. */
+            public fish2Id: (number|Long);
 
             /**
              * Encodes the specified C_COMBINE_FISH message. Does not implicitly {@link com.message.C_COMBINE_FISH.verify|verify} messages.
@@ -1024,6 +1024,152 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_COMBINE_FISH;
+        }
+
+        /** Properties of a C_GET_MONEY_REWARD. */
+        interface IC_GET_MONEY_REWARD {
+        }
+
+        /** Represents a C_GET_MONEY_REWARD. */
+        class C_GET_MONEY_REWARD implements IC_GET_MONEY_REWARD {
+
+            /**
+             * Constructs a new C_GET_MONEY_REWARD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MONEY_REWARD);
+
+            /**
+             * Encodes the specified C_GET_MONEY_REWARD message. Does not implicitly {@link com.message.C_GET_MONEY_REWARD.verify|verify} messages.
+             * @param message C_GET_MONEY_REWARD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MONEY_REWARD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_REWARD;
+        }
+
+        /** Properties of a S_GET_MONEY_REWARD. */
+        interface IS_GET_MONEY_REWARD {
+
+            /** S_GET_MONEY_REWARD money */
+            money?: (number|Long|null);
+        }
+
+        /** Represents a S_GET_MONEY_REWARD. */
+        class S_GET_MONEY_REWARD implements IS_GET_MONEY_REWARD {
+
+            /**
+             * Constructs a new S_GET_MONEY_REWARD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MONEY_REWARD);
+
+            /** S_GET_MONEY_REWARD money. */
+            public money: (number|Long);
+
+            /**
+             * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
+             * @param message S_GET_MONEY_REWARD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MONEY_REWARD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_REWARD;
+        }
+
+        /** Properties of a C_GET_MONEY_INFO. */
+        interface IC_GET_MONEY_INFO {
+        }
+
+        /** Represents a C_GET_MONEY_INFO. */
+        class C_GET_MONEY_INFO implements IC_GET_MONEY_INFO {
+
+            /**
+             * Constructs a new C_GET_MONEY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MONEY_INFO);
+
+            /**
+             * Encodes the specified C_GET_MONEY_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_INFO.verify|verify} messages.
+             * @param message C_GET_MONEY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MONEY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MONEY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_INFO;
+        }
+
+        /** Properties of a S_GET_MONEY_INFO. */
+        interface IS_GET_MONEY_INFO {
+
+            /** S_GET_MONEY_INFO money */
+            money?: (number|Long|null);
+
+            /** S_GET_MONEY_INFO diamond */
+            diamond?: (number|Long|null);
+        }
+
+        /** Represents a S_GET_MONEY_INFO. */
+        class S_GET_MONEY_INFO implements IS_GET_MONEY_INFO {
+
+            /**
+             * Constructs a new S_GET_MONEY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MONEY_INFO);
+
+            /** S_GET_MONEY_INFO money. */
+            public money: (number|Long);
+
+            /** S_GET_MONEY_INFO diamond. */
+            public diamond: (number|Long);
+
+            /**
+             * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
+             * @param message S_GET_MONEY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MONEY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MONEY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_INFO;
         }
 
         /** Properties of a C_USER_LOGIN. */
@@ -2110,6 +2256,10 @@ declare namespace com {
                 S_BUY_FISH = 1054,
                 C_COMBINE_FISH = 1055,
                 S_COMBINE_FISH = 1056,
+                C_GET_MONEY_REWARD = 1057,
+                S_GET_MONEY_REWARD = 1058,
+                C_GET_MONEY_INFO = 1059,
+                S_GET_MONEY_INFO = 1060,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,

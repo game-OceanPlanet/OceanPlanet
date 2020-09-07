@@ -1,18 +1,15 @@
 module qmr
 {
-	/**
-	 *
-	 * @author coler
-	 * @description 场景
-	 *
-	 */
     export class Scene extends eui.UILayer
     {
+        /**
+         * 地图图层见：SceneLayerEnum
+         */
         private mapLayer: egret.DisplayObjectContainer;   //地图所在层级
         private bottomLayer: egret.DisplayObjectContainer; //底部层，比如道具掉落，脚底特效等
-        private objLayer: egret.DisplayObjectContainer;   //卡牌层
+        private objLayer: egret.DisplayObjectContainer;   //角色层
         private maskLayer: egret.DisplayObjectContainer;   //黑色半透明遮罩层,用于释放大招时候盖着下面所有东西
-        private frontLayer: egret.DisplayObjectContainer;  //卡牌前层，比如飘血,前景特效
+        private frontLayer: egret.DisplayObjectContainer;  //角色前层，比如飘血,前景特效
         private topLayer: egret.DisplayObjectContainer;   //最上层，用于大技能
 
         private objList: Array<BaseObject>;            //所有的物体对象
@@ -22,60 +19,60 @@ module qmr
         public constructor()
         {
             super();
-            let t = this;
-            t.mapLayer = new egret.DisplayObjectContainer();
-            t.bottomLayer = new egret.DisplayObjectContainer();
-            t.objLayer = new egret.DisplayObjectContainer();
-            t.frontLayer = new egret.DisplayObjectContainer();
-            t.maskLayer = new egret.DisplayObjectContainer();
-            t.topLayer = new egret.DisplayObjectContainer();
-            t.maskLayer.touchEnabled = t.maskLayer.touchChildren = false;
-            t.mapLayer.touchEnabled = t.mapLayer.touchChildren = false;
-            t.bottomLayer.touchEnabled = t.bottomLayer.touchChildren = false;
-            t.topLayer.touchEnabled = t.topLayer.touchChildren = false;
-            t.frontLayer.touchEnabled = t.frontLayer.touchChildren = false;
-            t.addChild(t.mapLayer);
-            t.addChild(t.bottomLayer);
-            t.addChild(t.objLayer);
-            t.addChild(t.frontLayer);
-            t.addChild(t.maskLayer);
-            t.addChild(t.topLayer);
-            t.objList = new Array<BaseObject>();
-            t.camera = new Camera(StageUtil.stageWidth, StageUtil.stageHeight);
-            t.camera.init(t);
-            t.zeroPoint = new egret.Point(0, 0);
+            let self = this;
+            self.mapLayer = new egret.DisplayObjectContainer();
+            self.bottomLayer = new egret.DisplayObjectContainer();
+            self.objLayer = new egret.DisplayObjectContainer();
+            self.frontLayer = new egret.DisplayObjectContainer();
+            self.maskLayer = new egret.DisplayObjectContainer();
+            self.topLayer = new egret.DisplayObjectContainer();
+            self.maskLayer.touchEnabled = self.maskLayer.touchChildren = false;
+            self.mapLayer.touchEnabled = self.mapLayer.touchChildren = false;
+            self.bottomLayer.touchEnabled = self.bottomLayer.touchChildren = false;
+            self.topLayer.touchEnabled = self.topLayer.touchChildren = false;
+            self.frontLayer.touchEnabled = self.frontLayer.touchChildren = false;
+            self.addChild(self.mapLayer);
+            self.addChild(self.bottomLayer);
+            self.addChild(self.objLayer);
+            self.addChild(self.frontLayer);
+            self.addChild(self.maskLayer);
+            self.addChild(self.topLayer);
+            self.objList = new Array<BaseObject>();
+            self.camera = new Camera(StageUtil.stageWidth, StageUtil.stageHeight);
+            self.camera.init(self);
+            self.zeroPoint = new egret.Point(0, 0);
         }
 
         private addMaskShape()
         {
-            let t = this;
-            if (!t.maskShape) t.maskShape = new egret.Shape();
-            t.maskShape.graphics.beginFill(0, 1);
-            t.maskShape.graphics.drawRect(0, 0, StageUtil.stageWidth, StageUtil.stageHeight);
-            t.maskShape.graphics.endFill();
-            t.maskLayer.addChild(t.maskShape);
+            let self = this;
+            if (!self.maskShape) self.maskShape = new egret.Shape();
+            self.maskShape.graphics.beginFill(0, 1);
+            self.maskShape.graphics.drawRect(0, 0, StageUtil.stageWidth, StageUtil.stageHeight);
+            self.maskShape.graphics.endFill();
+            self.maskLayer.addChild(self.maskShape);
         }
 
         public tweenShowOrHideMask(isShow: boolean)
         {
-            let t = this;
+            let self = this;
             if (isShow)
             {
-                t.addMaskShape();
-                t.maskShape.alpha = 0;
-                t.maskShape.visible = true;
-                egret.Tween.get(t.maskShape).to({ alpha: 0.7 }, 100)
+                self.addMaskShape();
+                self.maskShape.alpha = 0;
+                self.maskShape.visible = true;
+                egret.Tween.get(self.maskShape).to({ alpha: 0.7 }, 100)
             }
             else
             {
-                if (t.maskShape && t.maskShape.visible)
+                if (self.maskShape && self.maskShape.visible)
                 {
-                    egret.Tween.get(t.maskShape)
+                    egret.Tween.get(self.maskShape)
                         .to({ alpha: 0 }, 100)
                         .call(() =>
                         {
-                            t.maskShape.graphics.clear();
-                            t.maskShape.visible = false;
+                            self.maskShape.graphics.clear();
+                            self.maskShape.visible = false;
                         })
                 }
             }
@@ -91,10 +88,10 @@ module qmr
         /** 当舞台尺寸发生变化 */
         private onStageResize(): void
         {
-            let t: Scene = this;
+            let self: Scene = this;
             egret.setTimeout(function ()
             {
-                t.checkPosition()
+                self.checkPosition()
             }, this, 500);
         }
 
@@ -113,9 +110,9 @@ module qmr
         {
             if (pos)
             {
-                let t: Scene = this;
+                let self: Scene = this;
                 this.camera.setAnchor(pos);
-                egret.Tween.removeTweens(t);
+                egret.Tween.removeTweens(self);
                 egret.Tween.get(this).
                     to({ scaleX: 1.6, scaleY: 1.6 }, time, egret.Ease.circOut).
                     wait(waitTime).
@@ -125,9 +122,9 @@ module qmr
 
         public removeTween()
         {
-            let t: Scene = this;
-            egret.Tween.removeTweens(t);
-            t.scaleX = t.scaleY = 1;
+            let self: Scene = this;
+            egret.Tween.removeTweens(self);
+            self.scaleX = self.scaleY = 1;
             this.camera.setAnchor(this.zeroPoint);
         }
 
@@ -174,6 +171,10 @@ module qmr
                     this.objList.splice(index, 1);
                 }
 
+                if (item instanceof HeroActor)
+                {
+                    LogUtil.logF("移除对象数量:-----" + this.objList.length + " " + index + " " + item.fighterId);
+                }
                 item.dispos();
                 item = null;
             }
@@ -318,7 +319,12 @@ module qmr
             while (bottomLayer.numChildren > 0)
             {
                 let item = bottomLayer.getChildAt(0);
-                if (item instanceof BaseEffect)
+                if (item instanceof TombstoneDrop)
+                {
+                    item.dispose();
+                    item = null;
+                }
+                else if (item instanceof BaseEffect)
                 {
                     item.dispos();
                     item = null;
@@ -335,11 +341,11 @@ module qmr
          */
         public clear(): void
         {
-            let t = this;
-            t.removeTween();
-            t.removeAllBottomObj();
-            t.frontLayer.removeChildren();
-            let objList = t.objList;
+            let self = this;
+            self.removeTween();
+            self.removeAllBottomObj();
+            self.frontLayer.removeChildren();
+            let objList = self.objList;
             if (objList)
             {
                 while (objList.length > 0)
@@ -352,10 +358,10 @@ module qmr
                     }
                 }
             }
-            if (t.maskShape && t.maskShape.visible)
+            if (self.maskShape && self.maskShape.visible)
             {
-                t.maskShape.graphics.clear();
-                t.maskShape.visible = false;
+                self.maskShape.graphics.clear();
+                self.maskShape.visible = false;
             }
         }
     }
