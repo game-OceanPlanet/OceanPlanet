@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ShopSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:qmr="qmr.*">
-	<e:Image source="common_beijing_png" anchorOffsetY="0" verticalCenter="-30" left="0" right="0" visible="false"/>
+<e:Skin class="ShopSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:qmr="qmr.*">
+	<w:Config id="17468711b9b" visible="false" />
+	<e:Image source="common_beijing_png" anchorOffsetY="0" verticalCenter="-30" left="0" right="0" visible="false" />
 	<e:Group id="all_group" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334" verticalCenter="0">
-		<e:Image id="bg" left="43" right="34" y="269.99" x="10" anchorOffsetY="0" height="849.24" anchorOffsetX="0" source="mainui_json.panel_img" scale9Grid="44,31,267,190"/>
-		<e:Image y="241.21" left="16" right="16" scale9Grid="132,11,11,2" source="mainui_json.panel_title"/>
-		<e:Image source="mainui_json.panel_frame2" x="124" y="321.27" scale9Grid="38,14,111,23" anchorOffsetX="0" width="273" anchorOffsetY="0" height="56"/>
-		<e:Label text="商  店" y="257.27" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="17.5" textColor="0xffffff"/>
-		<e:Image source="mainui_json.icon_gold" x="132" y="287.27" width="80" height="80" rotation="45"/>
-		<e:Image id="btnClose" y="280.75" anchorOffsetX="37.2" x="686.56" anchorOffsetY="41.35" source="mainui_json.btn_close"/>
-		<e:Label text="0.00099 JT" y="339.27" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="178" textColor="0x553b24"/>
-		<e:Group id="itemGroup" width="640" height="631.69" x="60.61" y="393.94" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Scroller width="640" height="627.51" top="2" x="0" y="-1" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off">
-			<e:List id="item_list" anchorOffsetY="0" height="630.54" anchorOffsetX="0" width="614.06">
-				<e:layout>
-				<e:VerticalLayout gap="3"/>
-				</e:layout>
-			</e:List>
+		<e:Image id="bg" y="172" anchorOffsetY="0" anchorOffsetX="0" scale9Grid="44,31,267,190" source="mainui_json.panel_bg"
+		          x="11"/>
+		<e:Image y="169.21" left="16" right="16" scale9Grid="132,11,11,2" source="mainui_json.panel_title" visible="false" />
+		<e:Image x="67" y="251.27" scale9Grid="38,14,111,23" anchorOffsetX="0" width="273"
+		         anchorOffsetY="0" height="56"  source="mainui_json.panel_frame3"/>
+		<e:Label text="商  店" y="185.27" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xffffff"
+		         horizontalCenter="0.5" visible="false" />
+		<e:Image x="75" y="255"  source="mainui_json.icon_gold1"/>
+		<e:Image id="btnClose" y="195" x="680" source="mainui_json.btn_close1" width="94" height="94" anchorOffsetX="47"
+		         anchorOffsetY="47" />
+		<e:Label text="0.00099 JT" y="267.27" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="139"
+		          textColor="0xfff4d6"/>
+		<e:Group id="itemGroup" width="640" height="730" y="344" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+			<e:Scroller width="646" x="0" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off"
+			            height="730">
+				<e:List id="item_list" anchorOffsetY="0" anchorOffsetX="0" itemRendererSkinName="ShopItemSkin" x="2">
+					<e:layout>
+						<e:VerticalLayout gap="6" />
+					</e:layout>
+
+				</e:List>
 			</e:Scroller>
 		</e:Group>
+		<e:Image id="btnBack" source="mainui_json.btn_back" x="655" y="1131" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47"/>
 	</e:Group>
 </e:Skin>
