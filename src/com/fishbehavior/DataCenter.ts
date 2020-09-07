@@ -124,6 +124,7 @@ class DataCenter extends egret.EventDispatcher {
     _url: string;
     private loadedComplete(data, url: string) {
         this.pathJsonData = data;
+        //最好在这里加一个时间抛出去，等路径JSON加载完了以后，再去给鱼安装行为管理器
         if (data && this._url == url) {
             egret.log("onLoadUrlComplete!");
             let mPaths: { [id: string]: any[] } = {};
