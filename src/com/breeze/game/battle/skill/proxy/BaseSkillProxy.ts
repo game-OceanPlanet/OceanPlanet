@@ -81,14 +81,14 @@ module qmr
 		//展示震屏
 		private checkShowShake()
 		{
-			let _self = this;
-			let eCfg = _self.skillEffectCfg;
+			let t = this;
+			let eCfg = t.skillEffectCfg;
 			if (eCfg && eCfg.shakeTimePoint)
 			{
-				var shakeShowTime = eCfg.shakeTimePoint / _self.timeScale;
+				var shakeShowTime = eCfg.shakeTimePoint / t.timeScale;
 				if (shakeShowTime > 0)
 				{
-					FightTimer.instance.registerTick(_self.showShake, _self, shakeShowTime, 1, eCfg.shakeTime / _self.timeScale);
+					FightTimer.instance.registerTick(t.showShake, t, shakeShowTime, 1, eCfg.shakeTime / t.timeScale);
 				}
 			}
 		}
@@ -145,21 +145,21 @@ module qmr
 		/** 回收技能，需被子类继承 */
 		public recycleSkill(): void
 		{
-			let _self = this;
-			_self.owner = null;
-			_self.canShowEffect = false;
-			_self.targetList.length = 0;
-			_self.targetFighterMsg.length = 0;
-			_self.removeCaseEffect();
-			_self.removeShowEffect();
-			_self.removeAllTempEffect();
+			let t = this;
+			t.owner = null;
+			t.canShowEffect = false;
+			t.targetList.length = 0;
+			t.targetFighterMsg.length = 0;
+			t.removeCaseEffect();
+			t.removeShowEffect();
+			t.removeAllTempEffect();
 
-			let count = _self.mulitHuttFunc.length;
+			let count = t.mulitHuttFunc.length;
 			for (var i = 0; i < count; i++)
 			{
-				FightTimer.instance.unRegisterTick(_self.mulitHuttFunc[i], _self);
+				FightTimer.instance.unRegisterTick(t.mulitHuttFunc[i], t);
 			}
-			FightTimer.instance.unRegisterTick(_self.showShake, _self);
+			FightTimer.instance.unRegisterTick(t.showShake, t);
 			SceneManager.instance.removeShake();
 		}
 

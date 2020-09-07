@@ -28,8 +28,8 @@ module qmr
 		 */
 		public flyUp(hurtType: number, hp: number, x: number, y: number, dir: number = 0, buffName: string = ""): void
 		{
-			let _self: FloatHpTxt = this;
-			let txt_hp = _self.txt_hp;
+			let t: FloatHpTxt = this;
+			let txt_hp = t.txt_hp;
 			let len = hp.toString().length;
 
 			txt_hp.text = '';
@@ -61,7 +61,7 @@ module qmr
 				// 	txt_hp.text = "+" + hp;
 				// 	if (hp == 0)
 				// 	{
-				// 		FloatPool.getInstance().recycleFloatHp(_self);
+				// 		FloatPool.getInstance().recycleFloatHp(t);
 				// 		return;
 				// 	}
 				// 	break;
@@ -76,26 +76,26 @@ module qmr
 			}
 			//console.log("FloatHpTxt:",txt_hp.font, txt_hp.text);
 
-			_self.x = x;
-			_self.y = y + 50;
-			_self.anchorOffsetX = _self.txt_hp.width >> 1;
-			_self.anchorOffsetY = _self.txt_hp.height >> 1;
-			_self.scaleX = _self.scaleY = 1;
+			t.x = x;
+			t.y = y + 50;
+			t.anchorOffsetX = t.txt_hp.width >> 1;
+			t.anchorOffsetY = t.txt_hp.height >> 1;
+			t.scaleX = t.scaleY = 1;
 
-			let mx = _self.x;
-			let my = _self.y;
+			let mx = t.x;
+			let my = t.y;
 			let ran = Math.floor(Math.random() * 40);
 			my -= ran;
-			egret.Tween.get(_self).to({ x: mx, y: my - 50, scaleX: 2, scaleY: 2 }, 200).wait(50)
+			egret.Tween.get(t).to({ x: mx, y: my - 50, scaleX: 2, scaleY: 2 }, 200).wait(50)
 				.to({ scaleX: 1, scaleY: 1 }, 200).wait(300)
 				.to({ x: mx, y: my - 80, alpha: 0.7 }, 300)
 				.to({ x: mx, y: my - 120, alpha: 0 }, 300)
 				.call(function ()
 				{
-					// FloatPool.getInstance().recycleFloatHp(_self);
-				}, _self);
+					// FloatPool.getInstance().recycleFloatHp(t);
+				}, t);
 
-			SceneManager.instance.addToFront(_self);
+			SceneManager.instance.addToFront(t);
 		}
 	}
 }

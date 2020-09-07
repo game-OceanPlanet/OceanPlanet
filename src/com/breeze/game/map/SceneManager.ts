@@ -71,24 +71,23 @@ module qmr
 		public initScene(): void
 		{
 			this.scene = new Scene();
-			// this.scene.touchEnabled = false;
-			// this.scene.touchChildren = false;
 		}
 
 		private __pets:HeroActor[];
+		private ids:number[] = [101,101,101,101,101,101,102,102,102,102,103,103,104,104,105,105,106,106,107,108,109,110,111,112,113,114,115];
 		private createUnits(): void
 		{
 			let t = this;
 			t.__pets = [];
-			let len:number = 3;
-			for(var i:number = 0; i < len; i ++){
-				let heroId: number = 1001;
-				let h: HeroActor = new HeroActor();
-				h.id = heroId;
-				h.update();
-				SceneManager.instance.addObject(h);
-				t.__pets.push(h);
-			}
+			
+			// for(var i:number = 0; i < ids.length; i ++){
+			// 	let heroId: number = ids[i];
+			// 	let h: HeroActor = new HeroActor();
+			// 	h.id = heroId;
+			// 	h.update();
+			// 	SceneManager.instance.addObject(h);
+			// 	t.__pets.push(h);
+			// }
 		}
 
 		//随机移动
@@ -98,7 +97,7 @@ module qmr
 		{
 			let t = this;
 			t.count ++;
-			if(t.count > 15){
+			if(t.ids.length == 0){
 				egret.clearInterval(this._endTimeKey);
 				this._endTimeKey = -1;
 				return;
@@ -119,7 +118,7 @@ module qmr
 			// pet.changeStatus(Status.MOVE);
 			// pet.moveTo(targetX, targetY);
 
-			let heroId: number = 1001;
+			let heroId: number = t.ids.shift();
 			let h: HeroActor = new HeroActor();
 			h.id = heroId;
 			h.update();
@@ -168,7 +167,7 @@ module qmr
 
 			// Ticker.getInstance().registerTick(t.movePet, t, 3000, 10);
 
-			this._endTimeKey = egret.setInterval(this.movePet, this, 1000);
+			this._endTimeKey = egret.setInterval(this.movePet, this, 500);
 		}
 
 		private _endTimeKey;

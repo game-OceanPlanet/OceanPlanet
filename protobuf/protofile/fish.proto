@@ -12,7 +12,6 @@ message FishMsg {
 	int32 allDay = 8;//生命周期，读表
 	int32 leftDay = 9;//剩余天数，（总币-已产出）/日产出率
 }
-
 // 获取我的鱼儿
 message C_GET_FISH_INFO {
 	
@@ -36,11 +35,35 @@ message S_BUY_FISH {
 
 // 合并鱼儿
 message C_COMBINE_FISH {
-	int64 fishId1=1; // 鱼1的唯一ID
-	int64 fishId2=2; // 鱼2的唯一ID
+	int64 fish1Id=1; // 鱼1的唯一ID
+	int64 fish2Id=2; // 鱼2的唯一ID
 }
 
 // 合并鱼儿
 message S_COMBINE_FISH {
 	FishMsg fishMsg = 1; //合并后鱼信息
 }
+
+// 领取金币奖励
+message C_GET_MONEY_REWARD {
+
+}
+
+// 领取金币奖励
+message S_GET_MONEY_REWARD {
+	int64 money=3; //当前持有金币
+}
+
+
+// 获取金币信息
+message C_GET_MONEY_INFO {
+
+}
+
+// 获取金币信息
+message S_GET_MONEY_INFO {
+	int64 money=3; //当前持有金币
+	int64 diamond=4; //当前持有u
+}
+
+

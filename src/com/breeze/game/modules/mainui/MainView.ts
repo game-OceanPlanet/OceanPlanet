@@ -2,8 +2,7 @@ module qmr
 {
     export class MainView extends BaseModule
     {
-        public btn_home:eui.Image;
-public btn_detail:eui.Image;
+public btn_help:eui.Image;
 public btn_inject:eui.Image;
 public btn_promote:eui.Image;
 public btn_dividend:eui.Image;
@@ -42,8 +41,7 @@ public btn_price:eui.Image;
             t.addClickEvent(t.btn_get_group, t.onGetClick, t);
             t.addClickEvent(t.btn_price_group, t.onPriceClick, t);
 
-            t.addClickEvent(t.btn_home, t.onHomeClick, t);
-            t.addClickEvent(t.btn_detail, t.onDetailClick, t);
+            t.addClickEvent(t.btn_help, t.onHelpClick, t);
 
             t.addClickEvent(t.btn_exchange, t.onExchangeClick, t);
             t.addClickEvent(t.btn_inject, t.onInjectClick, t);
@@ -55,6 +53,8 @@ public btn_price:eui.Image;
             t.registerNotify(NotifyConst.S_GET_FINSH_INFO, t.updateView, t);
             t.registerNotify(NotifyConst.S_COMBINE_FINSH, t.updateView, t);
             t.registerNotify(NotifyConst.S_BUY_FISH, t.updateView, t);
+            t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
+            t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
         }
 
         protected addedToStage(evt: egret.Event): void
@@ -75,20 +75,17 @@ public btn_price:eui.Image;
                 return;
             }
             t.__lastGetMoneyTime = egret.getTimer() + 60000;
-            TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
+            
+            HeroController.instance.getMoneyCmd();
         }
         //查看价钱
         private onPriceClick():void
         {
             TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
         }
-        //主页
-        private onHomeClick():void
-        {
-            TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
-        }
-        //
-        private onDetailClick():void
+
+        //查看帮助
+        private onHelpClick():void
         {
             TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
         }
@@ -148,13 +145,13 @@ public btn_price:eui.Image;
 			}
 
 			if(t.__currMoney < t.__dayTotal){
-				t.__timekey = egret.setInterval(t.updateTime, t, 1000);
+				t.__timekey = egret.setInterval(t.onTimeRun, t, 1000);
 			} else {
 				t.stopTime();
             }
         }
 
-        private updateTime(){
+        private onTimeRun(){
             let t = this;
 			if(t.__currMoney >= t.__dayTotal){
 				t.txt_curr.text = t.__dayTotal + "JT";

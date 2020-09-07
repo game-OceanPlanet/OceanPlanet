@@ -30,6 +30,8 @@ module qmr {
 			this.msgIdMap[MessageID.S_GET_FISH_INFO] = com.message.S_GET_FISH_INFO;
 			this.msgIdMap[MessageID.S_BUY_FISH] = com.message.S_BUY_FISH;
 			this.msgIdMap[MessageID.S_COMBINE_FISH] = com.message.S_COMBINE_FISH;
+			this.msgIdMap[MessageID.S_GET_MONEY_REWARD] = com.message.S_GET_MONEY_REWARD;
+			this.msgIdMap[MessageID.S_GET_MONEY_INFO] = com.message.S_GET_MONEY_INFO;
 			this.msgIdMap[MessageID.S_SYN_PROPERTY] = com.message.S_SYN_PROPERTY;
 			this.msgIdMap[MessageID.C_SYNC_TIME] = com.message.C_SYNC_TIME;
 			this.msgIdMap[MessageID.S_SYNC_TIME] = com.message.S_SYNC_TIME;

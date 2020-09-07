@@ -66,6 +66,12 @@ module qmr {
 		/** 合并鱼儿 */
 		public static C_COMBINE_FISH:number = 1055; 
 		public static S_COMBINE_FISH:number = 1056;
+		/** 领取金币奖励 */
+		public static C_GET_MONEY_REWARD:number = 1057; 
+		public static S_GET_MONEY_REWARD:number = 1058;
+		/** 获取金币信息 */
+		public static C_GET_MONEY_INFO:number = 1059; 
+		public static S_GET_MONEY_INFO:number = 1060;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

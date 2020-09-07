@@ -53,36 +53,36 @@ module qmr
          */
 		private enterFrameMove(): void
 		{
-			let _self: BaseEffectMover = this;
-			_self.disx = _self.destX - _self.x;
-			_self.disy = _self.destY - _self.y;
-			_self.distance = Math.sqrt(_self.disx * _self.disx + _self.disy * _self.disy);
-			if (_self.distance < 5 || _self.distance < _self.nearDiatance)
+			let t: BaseEffectMover = this;
+			t.disx = t.destX - t.x;
+			t.disy = t.destY - t.y;
+			t.distance = Math.sqrt(t.disx * t.disx + t.disy * t.disy);
+			if (t.distance < 5 || t.distance < t.nearDiatance)
 			{
-				if (_self.x != _self.destX) _self.x = _self.destX;
-				if (_self.y != _self.destY) _self.y = _self.destY;
+				if (t.x != t.destX) t.x = t.destX;
+				if (t.y != t.destY) t.y = t.destY;
 				FightTimer.instance.unRegisterTick(this.enterFrameMove, this);
-				_self.onStop();
-				if (_self.onArrival)
+				t.onStop();
+				if (t.onArrival)
 				{
-					_self.onArrival.call(_self.thisObject, this.argArray);
+					t.onArrival.call(t.thisObject, this.argArray);
 				}
 				return;
 			}
-			_self.disx = (_self.disx / _self.distance) * _self.speed;
-			_self.disy = (_self.disy / _self.distance) * _self.speed;
-			_self.vx = _self.disx;
-			_self.vy = _self.disy;
-			if (Math.abs(_self.x - _self.destX) < Math.abs(_self.vx))
+			t.disx = (t.disx / t.distance) * t.speed;
+			t.disy = (t.disy / t.distance) * t.speed;
+			t.vx = t.disx;
+			t.vy = t.disy;
+			if (Math.abs(t.x - t.destX) < Math.abs(t.vx))
 			{
-				_self.vx = _self.destX - _self.x;
+				t.vx = t.destX - t.x;
 			}
-			if (Math.abs(_self.y - _self.destY) < Math.abs(_self.vy))
+			if (Math.abs(t.y - t.destY) < Math.abs(t.vy))
 			{
-				_self.vy = _self.destY - _self.y;
+				t.vy = t.destY - t.y;
 			}
-			_self.x += _self.vx;
-			_self.y += _self.vy;
+			t.x += t.vx;
+			t.y += t.vy;
 		}
 
 		/** 停止走动 */

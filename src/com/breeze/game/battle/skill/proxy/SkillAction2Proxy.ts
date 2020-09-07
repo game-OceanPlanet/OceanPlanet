@@ -85,7 +85,6 @@ module qmr
         /** 突袭之后回到自己的位置 */
         protected onBackPos()
         {
-            LogUtil.logF("---突袭之后回到自己的位置: " + this.owner.fighterId + "  " + this.owner.pos)
         }
 
         /** 表现特效 */

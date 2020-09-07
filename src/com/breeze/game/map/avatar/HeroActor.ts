@@ -12,20 +12,17 @@ module qmr {
             t.updateBaseActor();
             t.updatePos();
 
-            t.changeStatus(Status.MOVE);
             t.layout();
         }
 
         /** 初始化卡牌特效 */
         private initBaseActor() {
-            this.resPath = SystemPath.rolePath;//方便怪物共用角色模型，放在一个路径下了
-            this.baseActor = new qmr.BaseActor(this.resPath, this.onBodyLoad, Status.MOVE);
-            this.baseActor.touchChildren = false;
-            this.addChild(this.baseActor);
-
-            // this.avatar = new BaseActor(SystemPath.roleUiPath, null, this, Status.IDLE);
-            // this.groupRoleMonkey.addChild(this.avatar);
-            // this.avatar.addPartAt(ActorPart.BODY, avatarId, 0, -1);
+            let t = this;
+            t.resPath = SystemPath.rolePath;//方便怪物共用角色模型，放在一个路径下了
+            let s = t.id == 115 ? Status.IDLE : Status.MOVE;
+            t.baseActor = new qmr.BaseActor(t.resPath, t.onBodyLoad, t, s);
+            t.baseActor.touchChildren = false;
+            t.addChild(t.baseActor);
         }
 
         /**  裸体加载完毕 */
@@ -50,9 +47,19 @@ module qmr {
         /** 放到指定位置 */
         public updatePos() {
             let t = this;
-            var p: egret.Point = new egret.Point(700 * Math.random(), 1200 * Math.random());
+            var p: egret.Point = new egret.Point(500 * Math.random(), 1000 * Math.random());
+            
             t.x = p.x;
-            t.y = p.y < 300 ? 200 + Math.random() * 500 : p.y;
+            if(t.id > 107){
+                t.x =0;
+            }
+
+            t.y = p.y < 300 ? 200 + Math.random() * 600 : p.y;
+
+            if(t.id == 115){
+                t.x = 400;
+                t.y = 200;
+            }
         }
 
         /** 重新布局 */

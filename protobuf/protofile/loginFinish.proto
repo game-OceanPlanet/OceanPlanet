@@ -27,7 +27,7 @@ message BasePlayerMsg{
 message PlayerPropertyMsg {
 	int64 playerId=1; // 玩家编号
 	int64 money=3; //当前持有金币
-	int64 diamond=4; //usdt
+	int64 diamond=4; //当前持有u
 	int64 frozenDiamond=5; //金币
 	int32 available = 6; //是否有效用户
 }
