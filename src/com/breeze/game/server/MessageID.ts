@@ -51,6 +51,10 @@ module qmr {
 		/** 修改角色昵称 */
 		public static C_EDIT_PLAYER_NICKNAME:number = 1023;         
 		public static S_EDIT_PLAYER_NICKNAME:number = 1024;
+		/**  登录推送客户端玩家离线奖励数据操作 */
+		public static S_LOGIN_OFFLINE_HANGUP_PUSH:number = 1028;
+		/**  登录推送客户端玩家的背包数据 */
+		public static S_LOGIN_BACK_PACK_PUSH:number = 1029;
 		/**  客户端核查随机名字是否可以使用 */
 		public static C_GET_NICKNAME_INFO:number = 1030;
 		public static S_GET_NICKNAME_INFO:number = 1031;
@@ -72,6 +76,8 @@ module qmr {
 		/** 获取金币信息 */
 		public static C_GET_MONEY_INFO:number = 1059; 
 		public static S_GET_MONEY_INFO:number = 1060;
+		/**  客户端通知服务器加载成功，服务器可以推送指令 */
+		public static C_SYNC_LOAD_FINISH:number = 2000; 
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

@@ -49,7 +49,7 @@ module qmr
             GlobalConfig.userId = Int64Util.getNumber(s.playerId);
             HeroModel.instance.playerPro = s.property as com.message.PlayerPropertyMsg;
             HeroModel.instance.IdentityPro = s.basePlayerMsg as com.message.BasePlayerMsg;
-            HeroModel.instance.fishPros = s.fishMsg as com.message.FishMsg[];
+            HeroModel.instance.updateData(s.fishMsg as com.message.FishMsg[]);
 			HeroModel.instance.teamPro = s.teamMsg as com.message.TeamMsg;
 			HeroModel.instance.pendingMoney = HeroModel.instance.getPetPendingMoney();
 			HeroModel.instance.totalMoney = Int64Util.getNumber(s.property.money);
@@ -92,7 +92,8 @@ module qmr
         // 获取我的鱼儿
         private getFishInfoResponse(s: com.message.S_GET_FISH_INFO):void
         {
-            HeroModel.instance.fishPros = s.fishMsg as com.message.FishMsg[];
+			HeroModel.instance.updateData(s.fishMsg as com.message.FishMsg[]);
+
             this.dispatch(NotifyConst.S_GET_FINSH_INFO);
         }
 
@@ -108,7 +109,7 @@ module qmr
         // 合并鱼儿
         private getCombineResponse(s: com.message.S_COMBINE_FISH):void
         {
-            HeroModel.instance.fishPros = s.fishMsg as com.message.FishMsg[];
+            HeroModel.instance.updateData(s.fishMsg as com.message.FishMsg[]);
             this.dispatch(NotifyConst.S_COMBINE_FINSH);
 		}
 		
@@ -123,7 +124,7 @@ module qmr
         // 购买鱼儿
         private getBuyFishResponse(s: com.message.S_BUY_FISH):void
         {
-            HeroModel.instance.fishPros = s.fishMsg as com.message.FishMsg[];
+			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
             this.dispatch(NotifyConst.S_BUY_FISH);
 		}
 		
