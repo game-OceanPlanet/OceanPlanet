@@ -45,12 +45,6 @@ module qmr {
 		public static C_USER_LOGIN_INIT_FINISH:number = 1009; 
 		/**  登录注册完成请求 角色信息 */
 		public static S_USER_LOGIN_INIT_FINISH:number = 1010; 
-		/** 客户端 查看其它角色信息 */
-		public static C_GET_PLAYER_INFO:number = 1021;         
-		public static S_GET_PLAYER_INFO:number = 1022;
-		/** 修改角色昵称 */
-		public static C_EDIT_PLAYER_NICKNAME:number = 1023;         
-		public static S_EDIT_PLAYER_NICKNAME:number = 1024;
 		/**  登录推送客户端玩家离线奖励数据操作 */
 		public static S_LOGIN_OFFLINE_HANGUP_PUSH:number = 1028;
 		/**  登录推送客户端玩家的背包数据 */

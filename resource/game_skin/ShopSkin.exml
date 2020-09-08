@@ -14,7 +14,7 @@
 		<e:Image x="75" y="255"  source="mainui_json.icon_gold1"/>
 		<e:Image id="btnClose" y="195" x="680" source="mainui_json.btn_close1" width="94" height="94" anchorOffsetX="47"
 		         anchorOffsetY="47" />
-		<e:Label text="0.00099 JT" y="267.27" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="139"
+		<e:Label id="txt_total" text="0.00099 JT" y="267.27" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="139"
 		          textColor="0xfff4d6"/>
 		<e:Group id="itemGroup" width="640" height="730" y="344" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
 			<e:Scroller width="646" x="0" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off"

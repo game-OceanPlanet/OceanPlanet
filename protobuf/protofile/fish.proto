@@ -41,7 +41,9 @@ message C_COMBINE_FISH {
 
 // 合并鱼儿
 message S_COMBINE_FISH {
-	FishMsg fishMsg = 1; //合并后鱼信息
+	int64 fish1Id=1; // 鱼1的唯一ID
+	int64 fish2Id=2; // 鱼2的唯一ID
+	FishMsg fishMsg = 3; //合并后鱼信息
 }
 
 // 领取金币奖励

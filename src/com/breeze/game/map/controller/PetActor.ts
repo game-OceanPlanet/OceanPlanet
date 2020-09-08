@@ -22,6 +22,7 @@ module qmr {
             let t = this;
             t.petInfo = info;
             t.id = info.id;
+            t.modelId = info.modelId;
             t.initBaseActor();
             t.updateBaseActor();
             t.updatePos();
@@ -34,7 +35,7 @@ module qmr {
             let t = this;
             if(!t.baseActor){
                 t.resPath = SystemPath.rolePath;//方便怪物共用角色模型，放在一个路径下了
-                let action = t.id == 15 ? Status.IDLE : Status.MOVE;
+                let action = Number(t.petInfo.modelId) == 15 ? Status.IDLE : Status.MOVE;
                 t.baseActor = new qmr.BaseActor(t.resPath, t.onBodyLoad, t, action);
                 t.baseActor.touchChildren = false;
                 t.addChild(t.baseActor);
@@ -49,8 +50,8 @@ module qmr {
         protected updateBaseActor() {
             let t = this;
             t.removeActor();
-            if (t.petInfo && t.petInfo.modelId) {
-                let modelId:number = parseInt(t.petInfo.modelId);
+            if (t.petInfo && t.petInfo.modelId > 0) {
+                let modelId:number = t.petInfo.modelId;
                 t.addPartAt(ActorPart.BODY, modelId);
             }
         }
@@ -59,8 +60,9 @@ module qmr {
         public updatePos() {
             let t = this;
             if(t.petInfo){
-                t.x = t.petInfo.posX;
-                t.y = t.petInfo.posY;
+                let p:egret.Point = MapController.instance.getPetPosition(t.petInfo.fishId);
+                t.x = p.x;
+                t.y = p.y;
             }
         }
 

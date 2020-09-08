@@ -16,25 +16,39 @@ module qmr {
         private _cfg:PetCfg;
 
 		public constructor() {
-		}
+        }
+        
+        public setData(pro:com.message.FishMsg):void
+        {
+            let t = this;
+            t.id = Int64Util.getNumber(pro.id);
+            t.level = pro.level;
+            t.fishId = Int64Util.getNumber(pro.fishId);
+            t.state = pro.state;
+            t.allMoney = Int64Util.getNumber(pro.allMoney);
+            t.extMoney = Int64Util.getNumber(pro.extMoney);
+            t.todayMoney = Int64Util.getNumber(pro.todayMoney);
+            t.allDay = pro.allDay;
+            t.leftDay = pro.leftDay;
+        }
 
         public get config():PetCfg
         {
             let t = this;
             if(!t._cfg && t.fishId && t.fishId > 0){
-                t._cfg = ConfigManager.getConf(ConfigEnum.PET, t.id);
+                t._cfg = ConfigManager.getConf(ConfigEnum.PET, t.fishId);
             }
             return t._cfg;
         }
 
-        public get modelId():string
+        public get modelId():number
         {
             let t = this;
             let cfg:PetCfg = t.config;
             if(cfg){
-                return cfg.resId;
+                return parseInt(cfg.resId);
             }
-            return "";
+            return 0;
         }
 
 	}

@@ -15,11 +15,6 @@ message MsgEnum {
 
         C_USER_LOGIN_INIT_FINISH = 1009; // 登录注册完成请求 角色信息
         S_USER_LOGIN_INIT_FINISH = 1010; // 登录注册完成请求 角色信息
-		
-        C_GET_PLAYER_INFO           = 1021;         //客户端 查看其它角色信息
-        S_GET_PLAYER_INFO           = 1022;
-        C_EDIT_PLAYER_NICKNAME      = 1023;         //修改角色昵称
-        S_EDIT_PLAYER_NICKNAME      = 1024;
 
 
         S_LOGIN_OFFLINE_HANGUP_PUSH		= 1028;	// 登录推送客户端玩家离线奖励数据操作

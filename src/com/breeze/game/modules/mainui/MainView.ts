@@ -2,18 +2,27 @@ module qmr
 {
     export class MainView extends BaseModule
     {
-public btn_help:eui.Image;
-public btn_inject:eui.Image;
-public btn_promote:eui.Image;
-public btn_dividend:eui.Image;
-public btn_exchange:eui.Image;
-public btn_shop:eui.Image;
-public txt_curr:eui.Label;
-public btn_get_group:eui.Group;
-public btn_get:eui.Image;
-public txt_total:eui.Label;
-public btn_price_group:eui.Group;
-public btn_price:eui.Image;
+        public btn_home:eui.Image;
+        public btn_detail:eui.Image;
+        public btn_bottom_gold:eui.Image;
+        public btn_bottom_exchange:eui.Image;
+        public btn_bottom_pet:eui.Image;
+        public txt_curr:eui.Label;
+        public btn_get_group:eui.Group;
+        public btn_get:eui.Image;
+        public txt_total:eui.Label;
+        public btn_price_group:eui.Group;
+        public btn_price:eui.Image;
+        public btn_exchange:eui.Image;
+        public btn_injection:eui.Image;
+        public btn_shop:eui.Image;
+        public btn_dividend:eui.Image;
+        public btn_promote:eui.Image;
+        public btn_realname:eui.Image;
+        public btn_person:eui.Image;
+        public btn_permit:eui.Image;
+        public btn_download:eui.Image;
+        
 
 
 
@@ -41,13 +50,20 @@ public btn_price:eui.Image;
             t.addClickEvent(t.btn_get_group, t.onGetClick, t);
             t.addClickEvent(t.btn_price_group, t.onPriceClick, t);
 
-            t.addClickEvent(t.btn_help, t.onHelpClick, t);
-
             t.addClickEvent(t.btn_exchange, t.onExchangeClick, t);
-            t.addClickEvent(t.btn_inject, t.onInjectClick, t);
+            t.addClickEvent(t.btn_injection, t.onInjectClick, t);
             t.addClickEvent(t.btn_shop, t.onShopClick, t);
             t.addClickEvent(t.btn_dividend, t.onDividendClick, t);
             t.addClickEvent(t.btn_promote, t.onPromoteClick, t);
+
+            t.addClickEvent(t.btn_bottom_pet, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_bottom_exchange, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_bottom_gold, t.onPromoteClick, t);
+
+            t.addClickEvent(t.btn_realname, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_person, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_permit, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_download, t.onPromoteClick, t);
 
 
             t.registerNotify(NotifyConst.S_GET_FINSH_INFO, t.updateView, t);
@@ -55,6 +71,7 @@ public btn_price:eui.Image;
             t.registerNotify(NotifyConst.S_BUY_FISH, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
+            t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
         }
 
         protected addedToStage(evt: egret.Event): void
@@ -68,7 +85,7 @@ public btn_price:eui.Image;
         {
             let t = this;
             if(t.__lastGetMoneyTime - egret.getTimer() > 0){
-                let pendingMoney:number = HeroModel.instance.pendingMoney;
+                let pendingMoney:number = t.__currMoney;
                 HeroModel.instance.pendingMoney = 0;
                 HeroModel.instance.totalMoney += pendingMoney;
                 t.updateView();
@@ -76,7 +93,7 @@ public btn_price:eui.Image;
             }
             t.__lastGetMoneyTime = egret.getTimer() + 60000;
             
-            HeroController.instance.getMoneyCmd();
+            PetController.instance.getMoneyCmd();
         }
         //查看价钱
         private onPriceClick():void

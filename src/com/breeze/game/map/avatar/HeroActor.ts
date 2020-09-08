@@ -33,8 +33,8 @@ module qmr {
         protected updateBaseActor() {
             let t = this;
             t.removeActor();
-            if (t.id > 0) {
-                t.addPartAt(ActorPart.BODY, t.id);
+            if (t.modelId > 0) {
+                t.addPartAt(ActorPart.BODY, t.modelId);
             }
         }
 

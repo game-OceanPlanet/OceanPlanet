@@ -2,7 +2,6 @@ module qmr
 {
 	/**
 	 *
-	 * @author coler
 	 * @description 可走动对象的基类
 	 *
 	 */

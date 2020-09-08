@@ -1,11 +1,7 @@
 module qmr
 {
 	/**
-	 *
-	 * @author hh
-	 * @date 2016.11.29
 	 * @description 场景中基础的显示对象,所有场景中参与排序的物体都要继承此类
-	 *
 	 */
     export class BaseObject
     {
@@ -20,6 +16,7 @@ module qmr
         private _isRobotMonster: boolean;            //是否是机器怪
         private _isQiyue: boolean; //是否是战斗契约
         public id: any;                             //物体的唯一标识对象,64位
+        public modelId:number;                       //形象编号、模型Id
         public type: number;                        //物体类型，用于区分各种类型的物体的
         public dy: number = 0;                      //动态排序的增量值
         public scene: Scene;                        //物体所属场景

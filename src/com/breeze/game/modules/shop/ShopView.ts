@@ -43,7 +43,8 @@ module qmr
 			
 			t.registerNotify(NotifyConst.S_BUY_FISH, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
-            t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
+			t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
+			t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
 		}
 
 		private updateView():void
@@ -52,7 +53,7 @@ module qmr
             let cfgs:PetCfg[] = ConfigManager.getBean(ConfigEnum.PET).values;
 			t._arrCollection.replaceAll(cfgs);
 			
-			t.txt_total.text = HeroModel.instance.totalUSDT+"";
+			t.txt_total.text = HeroModel.instance.totalMoney+"";
 		}
 
 		public dispose(): void

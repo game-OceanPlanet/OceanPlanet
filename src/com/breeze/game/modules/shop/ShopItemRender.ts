@@ -32,7 +32,7 @@ public txt_price:eui.Label;
             if(!cfg){
                 return;
             }
-            HeroController.instance.getBuyFish(cfg.id);
+            PetController.instance.getBuyFish(cfg.id);
         }
         
 		public dataChanged(): void {

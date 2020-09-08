@@ -4,7 +4,7 @@ module qmr {
         public playerPro:com.message.PlayerPropertyMsg;
         public teamPro:com.message.TeamMsg;
 
-        private fishPros:com.message.FishMsg[];
+        private fishInfos:PetActorInfo[];
         private fishIds:number[];
 
         public pendingMoney:number = 0;//待领取的金币
@@ -14,7 +14,7 @@ module qmr {
         public constructor() {
             super();
             let t = this;
-            this.fishPros = [];
+            this.fishInfos = [];
             this.fishIds = [];
         }
 
@@ -23,62 +23,101 @@ module qmr {
             return this._instance || (this._instance = new HeroModel());
         }
 
-        public updateData(infos:com.message.FishMsg[]):void
+        public updateData(pros:com.message.FishMsg[]):void
         {
             let t = this;
-            if(!infos){
+            if(!pros){
                 return;
             }
-            t.fishPros = infos;
-            let addPetIds:number[] = [];
+            let addIds:number[] = [];
             let removeIds:number[] = [];
+            let newIds:number[] = [];
 
             let pro:com.message.FishMsg;
-            let len:number = infos.length;
+            let len:number = pros.length;
             let id:number;
             for(var i:number = 0; i < len; i ++){
-                pro = infos[i];
+                pro = pros[i];
                 id = Int64Util.getNumber(pro.id);
                 if(t.fishIds.indexOf(id) == -1){
-                    addPetIds.push(id);
+                    addIds.push(id);
                 }
+                newIds.push(id);
             }
 
             len = t.fishIds.length;
             for(var j:number = 0; j < len; j ++){
-
+                id = t.fishIds[j];
+                if(newIds.indexOf(id) == -1){
+                    removeIds.push(id);
+                }
             }
 
-            if(t.fishPros && t.fishPros.length > 0){
-                let len:number = t.fishPros.length;
+            len = pros.length;
+            if(len > 0){
                 for(var i:number = i; i <len; i++){
-                    pro = HeroModel.instance.fishPros[i];
+                    pro = pros[i];
                     let info:PetActorInfo = new PetActorInfo();
-                    info.id = Int64Util.getNumber(pro.id);
-                    info.level = pro.level;
-                    info.fishId = Int64Util.getNumber(pro.fishId);
-                    info.state = pro.state;
-                    MapController.instance.addPlayer(info);
+                    info.setData(pro);
+                    if(-1 == addIds.indexOf(info.id)){
+                        MapController.instance.addPlayer(info);
+                    }
                 }
             }
         }
 
         public addPet(pro:com.message.FishMsg):void
         {
+            let t = this;
             if(!pro){
                 return;
             }
-            let info:PetActorInfo = new PetActorInfo();
-            info.id = Int64Util.getNumber(pro.id);
-            info.level = pro.level;
-            info.fishId = Int64Util.getNumber(pro.fishId);
-            info.state = pro.state;
-            MapController.instance.addPlayer(info);
+            let isAdd:boolean = false;
+            let id:number = Int64Util.getNumber(pro.id);
+            let info:PetActorInfo;
+            for(var i:number = 0; i < t.fishInfos.length; i ++){
+                if(id == t.fishInfos[i].id){
+                    info = t.fishInfos[i];
+                    break;
+                }
+            }
+            if(!info){
+                info = new PetActorInfo();
+                t.fishInfos.push(info);
+                isAdd = true;
+            }
+            info.setData(pro);
+
+            if(-1 == t.fishIds.indexOf(id)){
+                t.fishIds.push(id);
+            }
+            
+            if(isAdd){
+                MapController.instance.addPlayer(info);
+            }
         }
 
         public removePet(id:number):void
         {
+            let t = this;
+            let index:number = t.fishIds.indexOf(id);
+            if(-1 != index){
+                t.fishIds.splice(index, 1);
+            }
+            let info:PetActorInfo;
+            let removeIndex:number = -1;
+            for(var i:number = 0; i < t.fishInfos.length; i ++){
+                if(id == t.fishInfos[i].id){
+                    info = t.fishInfos[i];
+                    removeIndex = i;
+                    break;
+                }
+            }
 
+            if(info){
+                MapController.instance.removePlayer(id);
+                t.fishInfos.splice(removeIndex, 1);
+            }
         }
 
 
@@ -88,17 +127,17 @@ module qmr {
         public getProduceMoneySpeed():number
         {
             let t = this;
-            if(!t.fishPros || t.fishPros.length == 0){
+            if(!t.fishInfos || t.fishInfos.length == 0){
                 return 0;
             }
 
             let total:number = 0;
-            let len:number = t.fishPros.length;
+            let len:number = t.fishInfos.length;
             let cfg:PetCfg;
             let id:number;
-            let pro:com.message.FishMsg;
+            let pro:PetActorInfo;
             for(var i:number = 0; i < len; i ++){
-                pro  = t.fishPros[i];
+                pro  = t.fishInfos[i];
                 id = Int64Util.getNumber(pro.fishId);
                 if(pro.state == 0){
                     cfg = ConfigManager.getConf(ConfigEnum.PET, id);
@@ -115,17 +154,17 @@ module qmr {
         public getEveryDayProduceMoney():number
         {
             let t = this;
-            if(!t.fishPros || t.fishPros.length == 0){
+            if(!t.fishInfos || t.fishInfos.length == 0){
                 return 0;
             }
 
             let total:number = 0;
-            let len:number = t.fishPros.length;
+            let len:number = t.fishInfos.length;
             let cfg:PetCfg;
             let id:number;
-            let pro:com.message.FishMsg;
+            let pro:PetActorInfo;
             for(var i:number = 0; i < len; i ++){
-                pro  = t.fishPros[i];
+                pro  = t.fishInfos[i];
                 id = Int64Util.getNumber(pro.fishId);
                 if(pro.state == 0){
                     cfg = ConfigManager.getConf(ConfigEnum.PET, id);
@@ -143,14 +182,14 @@ module qmr {
         public getPetLeftMoney(id:number):number
         {
             let t = this;
-            if(!t.fishPros || t.fishPros.length == 0){
+            if(!t.fishInfos || t.fishInfos.length == 0){
                 return 0;
             }
-            let len:number = t.fishPros.length;
+            let len:number = t.fishInfos.length;
             let cfg:PetCfg;
-            let pro:com.message.FishMsg;
+            let pro:PetActorInfo;
             for(var i:number = 0; i < len; i ++){
-                pro  = t.fishPros[i];
+                pro  = t.fishInfos[i];
                 let fid = Int64Util.getNumber(pro.fishId);
                 if(pro.state == 0 && id == fid){
                     cfg = ConfigManager.getConf(ConfigEnum.PET, id);
@@ -169,14 +208,14 @@ module qmr {
         public getPetPendingMoney():number
         {
             let t = this;
-            if(!t.fishPros || t.fishPros.length == 0){
+            if(!t.fishInfos || t.fishInfos.length == 0){
                 return 0;
             }
-            let len:number = t.fishPros.length;
-            let pro:com.message.FishMsg;
+            let len:number = t.fishInfos.length;
+            let pro:PetActorInfo;
             let total:number = 0;
             for(var i:number = 0; i < len; i ++){
-                pro  = t.fishPros[i];
+                pro  = t.fishInfos[i];
                 let pendingMoney:number = Int64Util.getNumber(pro.todayMoney);//今日产出的待领取的金币数量
                 let gainedMoney:number = Int64Util.getNumber(pro.extMoney);//宠物总共产出的金币数量，pro.todayMoney领完之后直接加在pro.extMoney上
                 total += pendingMoney;

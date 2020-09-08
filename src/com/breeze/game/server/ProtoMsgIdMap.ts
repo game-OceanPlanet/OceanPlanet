@@ -23,8 +23,6 @@ module qmr {
 			this.msgIdMap[MessageID.S_USER_LOGIN_BAN] = com.message.S_USER_LOGIN_BAN;
 			this.msgIdMap[MessageID.S_USER_LOGOUT] = com.message.S_USER_LOGOUT;
 			this.msgIdMap[MessageID.S_USER_LOGIN_INIT_FINISH] = com.message.S_USER_LOGIN_INIT_FINISH;
-			this.msgIdMap[MessageID.S_GET_PLAYER_INFO] = com.message.S_GET_PLAYER_INFO;
-			this.msgIdMap[MessageID.S_EDIT_PLAYER_NICKNAME] = com.message.S_EDIT_PLAYER_NICKNAME;
 			this.msgIdMap[MessageID.S_GET_NICKNAME_INFO] = com.message.S_GET_NICKNAME_INFO;
 			this.msgIdMap[MessageID.S_SEND_SDK_DATA] = com.message.S_SEND_SDK_DATA;
 			this.msgIdMap[MessageID.S_GET_FISH_INFO] = com.message.S_GET_FISH_INFO;
