@@ -1,5 +1,7 @@
 module qmr {
     export class HeroModel extends BaseModel {
+        public static KH:string = "KH";
+        
         public IdentityPro:com.message.BasePlayerMsg;
         public playerPro:com.message.PlayerPropertyMsg;
         public teamPro:com.message.TeamMsg;

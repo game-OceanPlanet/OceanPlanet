@@ -53,7 +53,7 @@ module qmr
             let cfgs:PetCfg[] = ConfigManager.getBean(ConfigEnum.PET).values;
 			t._arrCollection.replaceAll(cfgs);
 			
-			t.txt_total.text = HeroModel.instance.totalMoney+"";
+			t.txt_total.text = HeroModel.instance.totalMoney.toFixed(4);
 		}
 
 		public dispose(): void

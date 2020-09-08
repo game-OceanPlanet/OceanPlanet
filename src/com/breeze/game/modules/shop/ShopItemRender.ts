@@ -43,7 +43,7 @@ public txt_price:eui.Label;
                 t.txt_1.text = cfg.produce + "";
                 t.txt_2.text = cfg.limitTime + "";
                 t.txt_3.text = cfg.monthly + "%";
-                t.txt_price.text = cfg.price + "JT";
+                t.txt_price.text = cfg.price + HeroModel.KH;
                 var itemRes:string = ResPathUtilAft.getHeadUrl(cfg.resId+"");
                 t.img_head.source = itemRes;
             }

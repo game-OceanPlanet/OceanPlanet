@@ -257,8 +257,8 @@ public effect_group_pet:eui.Group;
             t.__secondSpeed = md.getProduceMoneySpeed();
             t.__dayTotal = md.getEveryDayProduceMoney();
 
-            t.txt_curr.text = t.__currMoney + "JT";
-            t.txt_total.text = t.__totalMoney + "JT";
+            t.txt_curr.text = t.__currMoney.toFixed(4) + HeroModel.KH;
+            t.txt_total.text = t.__totalMoney.toFixed(4) + HeroModel.KH;
 
 
 			if (t.__timekey != -1){
@@ -275,12 +275,12 @@ public effect_group_pet:eui.Group;
         private onTimeRun(){
             let t = this;
 			if(t.__currMoney >= t.__dayTotal){
-				t.txt_curr.text = t.__dayTotal + "JT";
+				t.txt_curr.text = t.__dayTotal + HeroModel.KH;
 				t.stopTime();
 				return;
 			}
             t.__currMoney += t.__secondSpeed;
-            t.txt_curr.text = t.__currMoney.toFixed(4) + "JT";
+            t.txt_curr.text = t.__currMoney.toFixed(4) + HeroModel.KH;
 		}
 
 		private stopTime(): void
@@ -290,7 +290,7 @@ public effect_group_pet:eui.Group;
 				egret.clearInterval(t.__timekey);
 			}
 			t.__timekey = -1;
-			t.txt_curr.text = t.__dayTotal + "JT";
+			t.txt_curr.text = t.__dayTotal + HeroModel.KH;
 		}
     }
 }
