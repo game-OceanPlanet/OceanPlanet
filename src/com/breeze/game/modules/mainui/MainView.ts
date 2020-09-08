@@ -5,7 +5,7 @@ module qmr
         public btn_home:eui.Image;
         public btn_detail:eui.Image;
         public btn_bottom_gold:eui.Image;
-        public btn_bottom_exchange:eui.Image;
+        public btn_bottom_property:eui.Image;
         public btn_bottom_pet:eui.Image;
         public txt_curr:eui.Label;
         public btn_get_group:eui.Group;
@@ -56,14 +56,14 @@ module qmr
             t.addClickEvent(t.btn_dividend, t.onDividendClick, t);
             t.addClickEvent(t.btn_promote, t.onPromoteClick, t);
 
-            t.addClickEvent(t.btn_bottom_pet, t.onPromoteClick, t);
-            t.addClickEvent(t.btn_bottom_exchange, t.onPromoteClick, t);
-            t.addClickEvent(t.btn_bottom_gold, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_bottom_pet, t.onPetViewClick, t);
+            t.addClickEvent(t.btn_bottom_property, t.onPropertyViewClick, t);
+            t.addClickEvent(t.btn_bottom_gold, t.onGoldViewClick, t);
 
-            t.addClickEvent(t.btn_realname, t.onPromoteClick, t);
-            t.addClickEvent(t.btn_person, t.onPromoteClick, t);
-            t.addClickEvent(t.btn_permit, t.onPromoteClick, t);
-            t.addClickEvent(t.btn_download, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_realname, t.onRealNameClick, t);
+            t.addClickEvent(t.btn_person, t.onPersonClick, t);
+            t.addClickEvent(t.btn_permit, t.onPermitClick, t);
+            t.addClickEvent(t.btn_download, t.onDowonClick, t);
 
 
             t.registerNotify(NotifyConst.S_GET_FINSH_INFO, t.updateView, t);
@@ -77,6 +77,39 @@ module qmr
         protected addedToStage(evt: egret.Event): void
         {
             super.addedToStage(evt);
+
+        }
+
+        //资产面板
+        private onPropertyViewClick():void
+        {
+
+        }
+
+        //金币面板
+        private onGoldViewClick():void
+        {
+
+        }
+
+        //实名认证
+        private onRealNameClick():void
+        {
+
+        }
+        //通行证
+        private onPermitClick():void
+        {
+
+        }
+        //个人中心
+        private onPersonClick():void
+        {
+
+        }
+        //下载
+        private onDowonClick():void
+        {
 
         }
 
@@ -99,6 +132,12 @@ module qmr
         private onPriceClick():void
         {
             TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
+        }
+
+        //查看宠物面板
+        private onPetViewClick():void
+        {
+
         }
 
         //查看帮助
