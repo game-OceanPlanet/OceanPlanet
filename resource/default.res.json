@@ -178,6 +178,11 @@
 			"url": "assets/ToggleSwitch/on.png",
 			"type": "image",
 			"name": "on_png"
+		},
+		{
+			"url": "table/TableFishPath.json",
+			"type": "json",
+			"name": "TableFishPath_json"
 		}
 	]
 }

@@ -101,6 +101,31 @@
 			"url": "unpack/serverlist_wind.png",
 			"type": "image",
 			"name": "serverlist_wind_png"
+		},
+		{
+			"url": "animation/9999_idle.png",
+			"type": "image",
+			"name": "9999_idle_png"
+		},
+		{
+			"url": "animation/9999_idle_g.png",
+			"type": "image",
+			"name": "9999_idle_g_png"
+		},
+		{
+			"url": "animation/9999_move.png",
+			"type": "image",
+			"name": "9999_move_png"
+		},
+		{
+			"url": "animation/9999_idle.json",
+			"type": "json",
+			"name": "9999_idle_json"
+		},
+		{
+			"url": "animation/9999_move.json",
+			"type": "json",
+			"name": "9999_move_json"
 		}
 	]
 }
