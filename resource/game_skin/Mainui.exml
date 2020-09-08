@@ -9,7 +9,7 @@
 		<e:Image source="mainui_json.game_title" y="19" horizontalCenter="0" />
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" x="-5" bottom="0">
-		<e:Image source="mainui_json.main_dikuang" y="75.76" scaleX="1" scaleY="1" horizontalCenter="0" />
+
 		<e:Image source="mainui_json.home_frame1" y="13" horizontalCenter="0" />
 		<e:Image id="btn_bottom_gold" x="565" y="-67" source="mainui_json.btn_bottom_gold" />
 		<e:Image id="btn_bottom_exchange" x="50" y="-67" source="mainui_json.btn_bottom_exchange" />
@@ -50,7 +50,8 @@
 		</e:layout>
 	</e:Group>
 	<e:Image id="btn_realname" source="mainui_json.btn_realname" y="715" left="0" />
-	<e:Image id="btn_person" source="mainui_json.btn_person" y="843.97" left="0" />
+	<e:Image id="btn_person" source="mainui_json.btn_person" y="843" left="0" />
 	<e:Image id="btn_permit" source="mainui_json.btn_permit" y="967" left="0" />
 	<e:Image id="btn_download" source="mainui_json.btn_download" y="967" right="0" />
+	<e:Image id="btn_help" source="mainui_json.btn_help" y="843" right="0" />
 </e:Skin>
