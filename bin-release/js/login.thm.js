@@ -1013,7 +1013,7 @@ window.skins=window.skins||{};
 	__extends(LoginViewSkin, _super);
 	function LoginViewSkin() {
 		_super.call(this);
-		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","cbRead","gpRead","txt_account","groupAccount","btn_login"];
+		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","gpRead","txt_account","groupAccount","btn_login"];
 		
 		this.height = 1334;
 		this.width = 750;
@@ -1033,13 +1033,13 @@ window.skins=window.skins||{};
 	};
 	_proto._Image1_i = function () {
 		var t = new eui.Image();
-		t.bottom = 0;
+		t.bottom = -1;
 		t.left = 0;
 		t.right = 0;
 		t.scaleX = 1;
 		t.scaleY = 1;
 		t.source = "1022_map_jpg";
-		t.top = 0;
+		t.top = 1;
 		return t;
 	};
 	_proto.groupWind_i = function () {
@@ -1094,13 +1094,11 @@ window.skins=window.skins||{};
 	_proto._Image2_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetY = 0;
-		t.height = 399;
 		t.scale9Grid = new egret.Rectangle(89,71,13,33);
 		t.scaleX = 1;
 		t.scaleY = 1;
-		t.source = "loginPanel_json.backpack_heidi";
-		t.width = 588;
-		t.x = 2;
+		t.source = "loginPanel_json.login_bg";
+		t.x = 0;
 		t.y = 4;
 		return t;
 	};
@@ -1109,19 +1107,25 @@ window.skins=window.skins||{};
 		this.gpRead = t;
 		t.anchorOffsetX = 0;
 		t.anchorOffsetY = 0;
-		t.horizontalCenter = 1.5;
+		t.horizontalCenter = 0;
 		t.scaleX = 1;
 		t.scaleY = 1;
 		t.visible = true;
-		t.x = -33;
 		t.y = 328;
 		t.layout = this._HorizontalLayout1_i();
-		t.elementsContent = [this._Label1_i(),this.lbUserBook_i(),this._Label2_i(),this.lbPrivacyPolicy_i(),this.cbRead_i()];
+		t.elementsContent = [this._Image3_i(),this._Label1_i(),this.lbUserBook_i(),this._Label2_i(),this.lbPrivacyPolicy_i()];
 		return t;
 	};
 	_proto._HorizontalLayout1_i = function () {
 		var t = new eui.HorizontalLayout();
 		t.verticalAlign = "middle";
+		return t;
+	};
+	_proto._Image3_i = function () {
+		var t = new eui.Image();
+		t.source = "loginPanel_json.point";
+		t.x = 5;
+		t.y = 9;
 		return t;
 	};
 	_proto._Label1_i = function () {
@@ -1172,49 +1176,31 @@ window.skins=window.skins||{};
 		t.y = 13;
 		return t;
 	};
-	_proto.cbRead_i = function () {
-		var t = new eui.CheckBox();
-		this.cbRead = t;
-		t.anchorOffsetX = 0;
-		t.scaleX = 1;
-		t.scaleY = 1;
-		t.skinName = "CheckBoxLoginSkin";
-		t.width = 51;
-		t.x = 440;
-		t.y = 10;
-		return t;
-	};
 	_proto.groupAccount_i = function () {
 		var t = new eui.Group();
 		this.groupAccount = t;
+		t.anchorOffsetX = 0;
+		t.anchorOffsetY = 0;
+		t.height = 91;
+		t.horizontalCenter = 11;
 		t.scaleX = 1;
 		t.scaleY = 1;
 		t.visible = true;
-		t.x = 93;
-		t.y = 74;
-		t.elementsContent = [this._Image3_i(),this.txt_account_i(),this._Label3_i()];
-		return t;
-	};
-	_proto._Image3_i = function () {
-		var t = new eui.Image();
-		t.anchorOffsetX = 0;
-		t.scale9Grid = new egret.Rectangle(9,11,61,66);
-		t.scaleX = 1;
-		t.scaleY = 1;
-		t.source = "loginPanel_json.serverlist_ui_denglu_kuang";
-		t.width = 404;
-		t.x = 0;
-		t.y = 0;
+		t.width = 432;
+		t.y = 80;
+		t.elementsContent = [this.txt_account_i(),this._Label3_i()];
 		return t;
 	};
 	_proto.txt_account_i = function () {
 		var t = new eui.TextInput();
 		this.txt_account = t;
+		t.anchorOffsetX = 0;
 		t.maxChars = 35;
 		t.prompt = "请输入账号";
 		t.skinName = "ServerListTextInputSkin";
-		t.x = 87;
-		t.y = 28;
+		t.width = 270;
+		t.x = 123;
+		t.y = 25;
 		return t;
 	};
 	_proto._Label3_i = function () {
@@ -1223,14 +1209,15 @@ window.skins=window.skins||{};
 		t.size = 28;
 		t.stroke = 1;
 		t.text = "账号:";
-		t.x = 17;
+		t.textColor = 0x000000;
+		t.x = 38;
 		t.y = 32;
 		return t;
 	};
 	_proto.btn_login_i = function () {
 		var t = new eui.Image();
 		this.btn_login = t;
-		t.horizontalCenter = 3;
+		t.horizontalCenter = 3.5;
 		t.scaleX = 1;
 		t.scaleY = 1;
 		t.source = "loginPanel_json.ui_denglu_anniu";

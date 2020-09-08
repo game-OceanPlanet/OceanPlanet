@@ -1260,10 +1260,6 @@ declare namespace qmr {
         /**加载基础资源*/
         loadLoginRes(): Promise<void>;
         /**
-        * @description 加载创角资源
-        */
-        loadcreateRes(): Promise<{}>;
-        /**
          * 加载登录后游戏资源
         */
         loadGameResAfterLogin(): Promise<void>;

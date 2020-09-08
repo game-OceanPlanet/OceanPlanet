@@ -23,6 +23,28 @@ module qmr {
             return this._instance || (this._instance = new HeroModel());
         }
 
+        public testMerge():void
+        {
+            let t = this;
+            let len:number = t.fishInfos.length;
+            let p1:PetActorInfo;
+            let p2:PetActorInfo;
+            for(var i:number = 0; i < len - 1; i ++){
+                p1 = t.fishInfos[i];
+                for(var j:number = i + 1; j < len; j ++){
+                    p2 = t.fishInfos[j];
+                    if(p1.fishId == p2.fishId){
+                        if(p1 && p2){
+                            PetController.instance.getCombineFish(p1.id, p2.id);
+                        }
+                        return;
+                    }
+                }
+            }
+
+            
+        }
+
         public updateData(pros:com.message.FishMsg[]):void
         {
             let t = this;
@@ -55,13 +77,15 @@ module qmr {
 
             len = pros.length;
             if(len > 0){
-                for(var i:number = i; i <len; i++){
+                for(var i:number = 0; i <len; i++){
                     pro = pros[i];
-                    let info:PetActorInfo = new PetActorInfo();
-                    info.setData(pro);
-                    if(-1 == addIds.indexOf(info.id)){
-                        MapController.instance.addPlayer(info);
-                    }
+                    t.addPet(pro);
+                }
+            }
+            len = removeIds.length;
+            if(len > 0){
+                for(var i:number = 0; i < len; i ++){
+                    t.removePet(removeIds[i]);
                 }
             }
         }

@@ -3,26 +3,34 @@ module qmr
     export class MainView extends BaseModule
     {
         public btn_home:eui.Image;
-        public btn_detail:eui.Image;
-        public btn_bottom_gold:eui.Image;
-        public btn_bottom_property:eui.Image;
-        public btn_bottom_pet:eui.Image;
-        public txt_curr:eui.Label;
-        public btn_get_group:eui.Group;
-        public btn_get:eui.Image;
-        public txt_total:eui.Label;
-        public btn_price_group:eui.Group;
-        public btn_price:eui.Image;
-        public btn_exchange:eui.Image;
-        public btn_injection:eui.Image;
-        public btn_shop:eui.Image;
-        public btn_dividend:eui.Image;
-        public btn_promote:eui.Image;
-        public btn_realname:eui.Image;
-        public btn_person:eui.Image;
-        public btn_permit:eui.Image;
-        public btn_download:eui.Image;
-        
+public btn_detail:eui.Image;
+public btn_bottom_gold:eui.Image;
+public btn_bottom_property:eui.Image;
+public btn_bottom_pet:eui.Image;
+public txt_curr:eui.Label;
+public btn_get_group:eui.Group;
+public btn_get:eui.Image;
+public txt_total:eui.Label;
+public btn_price_group:eui.Group;
+public btn_price:eui.Image;
+public btn_exchange:eui.Image;
+public btn_injection:eui.Image;
+public btn_shop:eui.Image;
+public btn_dividend:eui.Image;
+public btn_promote:eui.Image;
+public btn_realname:eui.Image;
+public btn_person:eui.Image;
+public btn_permit:eui.Image;
+public btn_download:eui.Image;
+public btn_help:eui.Image;
+public effect_group_1:eui.Group;
+public effect_group_2:eui.Group;
+public effect_group_3:eui.Group;
+public effect_group_4:eui.Group;
+public effect_group_5:eui.Group;
+public effect_group_pet:eui.Group;
+
+
 
 
 
@@ -33,6 +41,13 @@ module qmr
         private __totalMoney:number;//我的总资产
 
         private __lastGetMoneyTime:number = 0;//上次零钱的时间点
+
+        private baseEffect: BaseEffect;
+        private baseEffect2: BaseEffect;
+        private baseEffect3: BaseEffect;
+        private baseEffect4: BaseEffect;
+        private baseEffect5: BaseEffect;
+        private baseEffectPet: BaseEffect;
 
         public constructor()
         {
@@ -64,6 +79,7 @@ module qmr
             t.addClickEvent(t.btn_person, t.onPersonClick, t);
             t.addClickEvent(t.btn_permit, t.onPermitClick, t);
             t.addClickEvent(t.btn_download, t.onDowonClick, t);
+            t.addClickEvent(t.btn_help, t.onHelpClick, t);
 
 
             t.registerNotify(NotifyConst.S_GET_FINSH_INFO, t.updateView, t);
@@ -83,34 +99,35 @@ module qmr
         //资产面板
         private onPropertyViewClick():void
         {
-
+            TipManagerCommon.getInstance().createCommonTip("测试鱼儿合成功能...");
+            HeroModel.instance.testMerge();
         }
 
         //金币面板
         private onGoldViewClick():void
         {
-
+            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
         }
 
         //实名认证
         private onRealNameClick():void
         {
-
+            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
         }
         //通行证
         private onPermitClick():void
         {
-
+            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
         }
         //个人中心
         private onPersonClick():void
         {
-
+            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
         }
         //下载
         private onDowonClick():void
         {
-
+            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
         }
 
         //领钱
@@ -137,7 +154,9 @@ module qmr
         //查看宠物面板
         private onPetViewClick():void
         {
+            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
 
+            PetController.instance.getMyFishInfo();
         }
 
         //查看帮助
@@ -180,6 +199,52 @@ module qmr
             super.initData();
             let t = this;
             t.updateView();
+
+            if(!t.baseEffect){
+                t.baseEffect = new BaseEffect();
+                t.baseEffect.scaleX = t.baseEffect.scaleY = 1.5;
+				t.effect_group_1.addChild(t.baseEffect);
+				t.baseEffect.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+            
+            if(!t.baseEffect2){
+                t.baseEffect2 = new BaseEffect();
+                t.baseEffect2.scaleX = t.baseEffect2.scaleY = 1.5;
+				t.effect_group_2.addChild(t.baseEffect2);
+				t.baseEffect2.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+            
+            if(!t.baseEffect3){
+                t.baseEffect3 = new BaseEffect();
+                t.baseEffect3.scaleX = t.baseEffect3.scaleY = 1.5;
+				t.effect_group_3.addChild(t.baseEffect3);
+				t.baseEffect3.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+            
+            if(!t.baseEffect4){
+                t.baseEffect4 = new BaseEffect();
+                t.baseEffect4.scaleX = t.baseEffect4.scaleY = 1.5;
+				t.effect_group_4.addChild(t.baseEffect4);
+				t.baseEffect4.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+            
+            if(!t.baseEffect5){
+                t.baseEffect5 = new BaseEffect();
+                t.baseEffect5.scaleX = t.baseEffect5.scaleY = 1.5;
+				t.effect_group_5.addChild(t.baseEffect5);
+				t.baseEffect5.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+            
+            if(!t.baseEffectPet){
+                t.baseEffectPet = new BaseEffect();
+                t.baseEffectPet.scaleX = t.baseEffectPet.scaleY = 1.5;
+				t.effect_group_pet.addChild(t.baseEffectPet);
+				t.baseEffectPet.playUIEffect("ui_jinjie_zhe", -1, -1, 1);
+            }
+            
+            t.baseEffectPet.touchChildren = t.baseEffectPet.touchEnabled = false;
+            t.effect_group_pet.touchEnabled = false;
+
         }
 
         private updateView():void
