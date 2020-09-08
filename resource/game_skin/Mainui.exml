@@ -8,19 +8,12 @@
 		<e:Label text="海洋星球" y="23" size="40" fontFamily="specialGameFont" x="296" textColor="0xe2dfae" visible="false" />
 		<e:Image source="mainui_json.game_title" y="19" horizontalCenter="0" />
 	</e:Group>
-	<e:Group anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="2">
-		<e:Image source="mainui_json.main_dikuang" x="0" y="75.76" scaleX="1" scaleY="1" />
-		<e:Image source="mainui_json.home_frame1" />
-		<e:Image source="mainui_json.icon_di2" x="17.99" y="9.31" />
-		<e:Image source="mainui_json.icon_di2" x="628" y="9.31" />
-		<e:Image source="mainui_json.icon_di" x="309.67" y="-1.67" />
-		<e:Image source="mainui_json.icon_promote" x="632.68" y="20.98" />
-		<e:Image id="btn_bottom_exchange" source="mainui_json.exchange" x="24.99" y="14" />
-		<e:Image id="btn_bottom_shop" source="mainui_json.icon_shop" x="334" y="11" />
-		<e:Label text="商城" y="114" size="26" fontFamily="specialGameFont" horizontalCenter="-1" bold="true"
-		         textColor="0xf2b641" />
-		<e:Label text="兑换" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="47" />
-		<e:Label text="推广" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="662" />
+	<e:Group anchorOffsetX="0" anchorOffsetY="0" x="-5" bottom="0">
+		<e:Image source="mainui_json.main_dikuang" y="75.76" scaleX="1" scaleY="1" horizontalCenter="0" />
+		<e:Image source="mainui_json.home_frame1" y="13" horizontalCenter="0" />
+		<e:Image id="btn_bottom_gold" x="565" y="-67" source="mainui_json.btn_bottom_gold" />
+		<e:Image id="btn_bottom_exchange" x="50" y="-67" source="mainui_json.btn_bottom_exchange" />
+		<e:Image id="btn_bottom_pet" y="-101" source="mainui_json.btn_bottom_pet" horizontalCenter="11.5" />
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" left="1" top="85">
 		<e:Image x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.item_di1" />
@@ -56,4 +49,8 @@
 			<e:HorizontalLayout gap="0" />
 		</e:layout>
 	</e:Group>
+	<e:Image id="btn_realname" source="mainui_json.btn_realname" y="715" left="0" />
+	<e:Image id="btn_person" source="mainui_json.btn_person" y="843.97" left="0" />
+	<e:Image id="btn_permit" source="mainui_json.btn_permit" y="967" left="0" />
+	<e:Image id="btn_download" source="mainui_json.btn_download" y="967" right="0" />
 </e:Skin>
