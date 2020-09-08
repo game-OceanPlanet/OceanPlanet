@@ -24,7 +24,7 @@
 		"bin-debug/com/breeze/game/battle/skill/proxy/BaseSkillProxy.js",
 		"bin-debug/com/breeze/game/manager/model/BaseModel.js",
 		"bin-debug/com/breeze/game/manager/module/BaseModule.js",
-		"bin-debug/com/breeze/game/datas/DataManager.js",
+		"bin-debug/com/breeze/game/datas/configs/config/ConfigManagerAft.js",
 		"bin-debug/com/breeze/game/animation/effect/EffectModel.js",
 		"bin-debug/com/breeze/game/animation/effect/EffectPlayer.js",
 		"bin-debug/com/breeze/game/battle/controller/HeroAttack2Controller.js",
@@ -50,8 +50,8 @@
 		"bin-debug/com/breeze/game/battle/skill/proxy/SkillAction7Proxy.js",
 		"bin-debug/com/breeze/game/battle/skill/proxy/SkillAction8Proxy.js",
 		"bin-debug/com/breeze/game/battle/skill/proxy/SkillAction9Proxy.js",
+		"bin-debug/com/breeze/game/datas/DataManager.js",
 		"bin-debug/com/breeze/game/EntryAfterLogin.js",
-		"bin-debug/com/breeze/game/datas/configs/config/ConfigManagerAft.js",
 		"bin-debug/com/breeze/game/datas/configs/config/dataset/ConfigDB.js",
 		"bin-debug/com/breeze/game/datas/configs/config/dataset/ConfigEnum.js",
 		"bin-debug/com/breeze/game/enum/GameConst.js",
@@ -83,6 +83,9 @@
 		"bin-debug/com/breeze/game/tip/FloatManager.js",
 		"bin-debug/com/breeze/game/tip/FloatTip.js",
 		"bin-debug/com/breeze/game/util/ResPathUtilAft.js",
-		"bin-debug/com/breeze/game/util/TweenEffectUtil.js"
+		"bin-debug/com/breeze/game/util/TweenEffectUtil.js",
+		"bin-debug/com/fishbehavior/DataCenter.js",
+		"bin-debug/com/fishbehavior/FishBehavior.js",
+		"bin-debug/com/fishbehavior/TableFishPath.js"
 	]
 }

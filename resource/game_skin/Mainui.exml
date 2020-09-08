@@ -1,48 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="Mainui" xmlns:e="http://ns.egret.com/eui" xmlns:qmr="qmr.*" xmlns:w="http://ns.egret.com/wing" height="1334" width="750">
+<e:Skin class="Mainui" xmlns:e="http://ns.egret.com/eui" xmlns:qmr="qmr.*" xmlns:w="http://ns.egret.com/wing"
+        height="1334" width="750">
 	<e:Group height="79" anchorOffsetX="0" anchorOffsetY="0" top="0" left="0" right="-1">
-		<e:Image source="mainui_json.main_dikuang2" y="3" scaleX="1" scaleY="1" left="-1" right="-4"/>
-		<e:Image id="btn_home" source="mainui_json.icon_home" x="6" y="17"/>
-		<e:Image id="btn_detail" source="mainui_json.icon_Raiders" x="684" y="19"/>
-		<e:Label text="海洋星球" y="23" size="40" fontFamily="specialGameFont" x="296" textColor="0xe2dfae"/>
+		<e:Image source="mainui_json.main_dikuang2" y="3" scaleX="1" scaleY="1" left="-1" right="-4" />
+		<e:Image id="btn_home" source="mainui_json.icon_home" x="6" y="17" />
+		<e:Image id="btn_detail" source="mainui_json.icon_Raiders" x="684" y="19" />
+		<e:Label text="海洋星球" y="23" size="40" fontFamily="specialGameFont" x="296" textColor="0xe2dfae" visible="false" />
+		<e:Image source="mainui_json.game_title" y="19" horizontalCenter="0" />
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="2">
-		<e:Image source="mainui_json.main_dikuang" x="0" y="75.76" scaleX="1" scaleY="1"/>
-		<e:Image source="mainui_json.home_frame" x="159" y="79.99"/>
-		<e:Image source="mainui_json.icon_di2" x="17.99" y="9.31"/>
-		<e:Image source="mainui_json.icon_di2" x="150.67" y="9.31"/>
-		<e:Image source="mainui_json.icon_di2" x="495.34" y="9.31"/>
-		<e:Image source="mainui_json.icon_di2" x="628" y="9.31"/>
-		<e:Image source="mainui_json.icon_di" x="309.67" y="-1.67"/>
-		<e:Image id="btn_inject" source="mainui_json.icon_injection" x="157.5" y="13.3"/>
-		<e:Image id="btn_promote" source="mainui_json.icon_promote" x="632.68" y="20.98"/>
-		<e:Image id="btn_dividend" source="mainui_json.icon_dividend " x="506.02" y="11.34"/>
-		<e:Image id="btn_exchange" source="mainui_json.exchange" x="24.99" y="14"/>
-		<e:Image id="btn_shop" source="mainui_json.icon_shop" x="334" y="11"/>
-		<e:Label text="商城" y="114" size="26" fontFamily="specialGameFont" horizontalCenter="-1" bold="true" textColor="0xf2b641"/>
-		<e:Label text="注入" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="181"/>
-		<e:Label text="兑换" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="47"/>
-		<e:Label text="分红" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="526"/>
-		<e:Label text="推广" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="662"/>
+		<e:Image source="mainui_json.main_dikuang" x="0" y="75.76" scaleX="1" scaleY="1" />
+		<e:Image source="mainui_json.home_frame1" />
+		<e:Image source="mainui_json.icon_di2" x="17.99" y="9.31" />
+		<e:Image source="mainui_json.icon_di2" x="628" y="9.31" />
+		<e:Image source="mainui_json.icon_di" x="309.67" y="-1.67" />
+		<e:Image source="mainui_json.icon_promote" x="632.68" y="20.98" />
+		<e:Image id="btn_bottom_exchange" source="mainui_json.exchange" x="24.99" y="14" />
+		<e:Image id="btn_bottom_shop" source="mainui_json.icon_shop" x="334" y="11" />
+		<e:Label text="商城" y="114" size="26" fontFamily="specialGameFont" horizontalCenter="-1" bold="true"
+		         textColor="0xf2b641" />
+		<e:Label text="兑换" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="47" />
+		<e:Label text="推广" y="111" textColor="0xF2B641" size="26" fontFamily="specialGameFont" bold="true" x="662" />
 	</e:Group>
-	<e:Group anchorOffsetX="0" anchorOffsetY="0" left="0" top="79">
-		<e:Image source="mainui_json.item_di" x="0" y="0" scaleX="1" scaleY="1"/>
-		<e:Image source="mainui_json.icon_gold" x="101.38" y="2.56" width="90" height="90" rotation="45"/>
-		<e:Label text="待领数量" y="18" textColor="0x106EB5" size="26" fontFamily="specialGameFont" horizontalCenter="57"/>
-		<e:Label id="txt_curr" text="1.0001 JT" y="48" size="22" fontFamily="specialGameFont" horizontalCenter="57" textColor="0xed0b0b"/>
-		<e:Group id="btn_get_group" x="168" y="75" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Image id="btn_get" source="mainui_json.btn_common" x="0" y="0" scaleX="1" scaleY="1"/>
-			<e:Label text="领  钱" y="12" textColor="0xE88012" size="26" fontFamily="specialGameFont" x="44" scaleX="1" scaleY="1"/>
+	<e:Group anchorOffsetX="0" anchorOffsetY="0" left="1" top="85">
+		<e:Image x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.item_di1" />
+		<e:Image x="54" y="58" source="mainui_json.icon_gold1" />
+		<e:Label text="待领数量" y="30" textColor="0x106EB5" size="26" fontFamily="specialGameFont" horizontalCenter="-8" />
+		<e:Label id="txt_curr" text="1.0001 JT" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-7.5"
+		         textColor="0xed0b0b" />
+		<e:Group id="btn_get_group" anchorOffsetX="0" anchorOffsetY="0" x="233" y="6">
+			<e:Image id="btn_get" scaleX="1" scaleY="1" source="mainui_json.btn_get" />
+			<e:Label text="领  钱" textColor="0xE88012" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
+			         visible="false" />
 		</e:Group>
 	</e:Group>
-	<e:Group anchorOffsetX="0" anchorOffsetY="0" right="1" top="79">
-		<e:Image source="mainui_json.item_di" scaleX="1" scaleY="1" y="0" x="0"/>
-		<e:Image x="101.38" y="2.56" width="90" height="90" rotation="45" source="icon_treasury"/>
-		<e:Label text="总资产" y="18" textColor="0x106EB5" size="26" fontFamily="specialGameFont" horizontalCenter="57"/>
-		<e:Label id="txt_total" text="1.0001 JT" y="48" textColor="0x106EB5" size="22" fontFamily="specialGameFont" horizontalCenter="57"/>
-		<e:Group id="btn_price_group" x="168" y="75" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Image id="btn_price" source="mainui_json.btn_common" x="0" y="0" scaleX="1" scaleY="1"/>
-			<e:Label text="价  钱" y="12" textColor="0xE88012" size="26" fontFamily="specialGameFont" x="44" scaleX="1" scaleY="1"/>
+	<e:Group anchorOffsetX="0" anchorOffsetY="0" right="1" top="85">
+		<e:Image scaleX="1" scaleY="1" y="0" x="0" source="mainui_json.item_di1" />
+		<e:Image x="55.02" y="58" source="mainui_json.icon_gold1" />
+		<e:Label text="总资产" y="30" textColor="0x106EB5" size="26" fontFamily="specialGameFont" horizontalCenter="-8" />
+		<e:Label id="txt_total" text="1.0001 JT" y="70" textColor="0x106EB5" size="22" fontFamily="specialGameFont"
+		         horizontalCenter="-8" />
+		<e:Group id="btn_price_group" anchorOffsetX="0" anchorOffsetY="0" y="5" x="233">
+			<e:Image id="btn_price" x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.btn_price" />
+			<e:Label text="价  钱" textColor="0xE88012" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
+			         visible="false" />
 		</e:Group>
+	</e:Group>
+	<e:Group y="218" right="0">
+		<e:Image id="btn_exchange" source="mainui_json.btn_exchange" x="29" y="10" scaleX="1" scaleY="1" />
+		<e:Image id="btn_injection" source="mainui_json.icon_injection1" x="171" y="31" scaleX="1" scaleY="1" />
+		<e:Image id="btn_shop" source="mainui_json.icon_shop1" x="334" y="22" scaleX="1" scaleY="1" />
+		<e:Image id="btn_dividend" x="458" y="34" source="mainui_json.icon_dividend1" scaleX="1" scaleY="1" />
+		<e:Image id="btn_promote" source="mainui_json.icon_promote1" x="168" y="216" scaleX="1" scaleY="1" />
+		<e:layout>
+			<e:HorizontalLayout gap="0" />
+		</e:layout>
 	</e:Group>
 </e:Skin>
