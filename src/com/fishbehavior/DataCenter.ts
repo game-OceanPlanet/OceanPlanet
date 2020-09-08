@@ -111,10 +111,12 @@ class DataCenter extends egret.EventDispatcher {
     }
 
     protected loadDataFromUrl() {
-        // this._url = $res.getFishPath();
+        this._url = "resource/table/TableFishPath.json"//$res.getFishPath();
         if (!RES.hasRes(this._url)) {
             if (this._url != null && RES.hasRes(this._url)) RES.destroyRes(this._url);
-            // ResUtils.getResByUrl(this._url, this.loadedComplete, this, RES.ResourceItem.TYPE_JSON);
+            RES.getResByUrl(this._url, this.loadedComplete, this, RES.ResourceItem.TYPE_JSON);
+            // let data: any[] = RES.getRes("TableFishPath_json");
+            // this.loadedComplete(data, this._url);
         } else {
             let data = RES.getRes(this._url);
             this.loadedComplete(data, this._url);

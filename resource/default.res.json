@@ -57,7 +57,7 @@
 			"url": "sheet/mainui.json",
 			"type": "sheet",
 			"name": "mainui_json",
-			"subkeys": "btn_back,btn_close,btn_close1,btn_common,btn_common1,exchange,home_frame,icon_Raiders,icon_di,icon_di2,icon_dividend ,icon_gold,icon_gold1,icon_home,icon_injection,icon_promote,icon_shop,icon_treasury,item_di,item_icon,item_icon1,main_dikuang,main_dikuang2,panel_bg,panel_frame,panel_frame2,panel_frame3,panel_frame4,panel_img,panel_title"
+			"subkeys": "btn_back,btn_bottom_exchange,btn_bottom_gold,btn_bottom_pet,btn_close,btn_close1,btn_common,btn_common1,btn_download,btn_exchange,btn_get,btn_help,btn_permit,btn_person,btn_price,btn_realname,exchange,game_title,home_frame,home_frame1,icon_Raiders,icon_di,icon_di2,icon_dividend ,icon_dividend1,icon_gold,icon_gold1,icon_home,icon_injection,icon_injection1,icon_promote,icon_promote1,icon_shop,icon_shop1,icon_treasury,item_di,item_di1,item_icon,item_icon1,main_dikuang,main_dikuang2,panel_bg,panel_frame,panel_frame2,panel_frame3,panel_frame4,panel_img,panel_title"
 		},
 		{
 			"url": "unpack/bg/common_beijing.png",
@@ -178,6 +178,11 @@
 			"url": "assets/ToggleSwitch/on.png",
 			"type": "image",
 			"name": "on_png"
+		},
+		{
+			"url": "table/TableFishPath.json",
+			"type": "json",
+			"name": "TableFishPath_json"
 		}
 	]
 }
