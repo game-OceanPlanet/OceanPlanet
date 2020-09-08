@@ -22,6 +22,8 @@ message MsgEnum {
         S_EDIT_PLAYER_NICKNAME      = 1024;
 
 
+        S_LOGIN_OFFLINE_HANGUP_PUSH		= 1028;	// 登录推送客户端玩家离线奖励数据操作
+        S_LOGIN_BACK_PACK_PUSH			= 1029;	// 登录推送客户端玩家的背包数据
 
         C_GET_NICKNAME_INFO           = 1030;	// 客户端核查随机名字是否可以使用
         S_GET_NICKNAME_INFO           = 1031;
@@ -40,6 +42,8 @@ message MsgEnum {
 		C_GET_MONEY_INFO	= 1059; //获取金币信息
 		S_GET_MONEY_INFO	= 1060;
 
+
+		C_SYNC_LOAD_FINISH	= 2000; // 客户端通知服务器加载成功，服务器可以推送指令
 
         S_SYN_PROPERTY = 2001; // 同步属性变化
 
@@ -89,6 +93,8 @@ message MsgEnum {
         SIGN_DAY_LARGE = 1178; //签到天数大于开服天数
         SIGN_DAY_NOT_ENOUGH  = 1179; //签到天数不足
 		PLAYER_NOT_EXIST = 1181;//玩家不存在
+		FISH_MAX_LIMIT = 1201; //已经是最大的鱼了,无法合成下一等级
+		
 	
   }
 

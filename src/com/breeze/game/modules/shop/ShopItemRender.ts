@@ -28,7 +28,11 @@ public txt_price:eui.Label;
 
         private onBuyClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能开发中...");
+            let cfg:PetCfg = this.data;
+            if(!cfg){
+                return;
+            }
+            HeroController.instance.getBuyFish(cfg.id);
         }
         
 		public dataChanged(): void {

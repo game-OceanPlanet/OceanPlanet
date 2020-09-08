@@ -4845,6 +4845,8 @@ $root.com = (function() {
              * @property {number} S_GET_PLAYER_INFO=1022 S_GET_PLAYER_INFO value
              * @property {number} C_EDIT_PLAYER_NICKNAME=1023 C_EDIT_PLAYER_NICKNAME value
              * @property {number} S_EDIT_PLAYER_NICKNAME=1024 S_EDIT_PLAYER_NICKNAME value
+             * @property {number} S_LOGIN_OFFLINE_HANGUP_PUSH=1028 S_LOGIN_OFFLINE_HANGUP_PUSH value
+             * @property {number} S_LOGIN_BACK_PACK_PUSH=1029 S_LOGIN_BACK_PACK_PUSH value
              * @property {number} C_GET_NICKNAME_INFO=1030 C_GET_NICKNAME_INFO value
              * @property {number} S_GET_NICKNAME_INFO=1031 S_GET_NICKNAME_INFO value
              * @property {number} C_SEND_SDK_DATA=1032 C_SEND_SDK_DATA value
@@ -4859,6 +4861,7 @@ $root.com = (function() {
              * @property {number} S_GET_MONEY_REWARD=1058 S_GET_MONEY_REWARD value
              * @property {number} C_GET_MONEY_INFO=1059 C_GET_MONEY_INFO value
              * @property {number} S_GET_MONEY_INFO=1060 S_GET_MONEY_INFO value
+             * @property {number} C_SYNC_LOAD_FINISH=2000 C_SYNC_LOAD_FINISH value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -4889,6 +4892,8 @@ $root.com = (function() {
                 values[valuesById[1022] = "S_GET_PLAYER_INFO"] = 1022;
                 values[valuesById[1023] = "C_EDIT_PLAYER_NICKNAME"] = 1023;
                 values[valuesById[1024] = "S_EDIT_PLAYER_NICKNAME"] = 1024;
+                values[valuesById[1028] = "S_LOGIN_OFFLINE_HANGUP_PUSH"] = 1028;
+                values[valuesById[1029] = "S_LOGIN_BACK_PACK_PUSH"] = 1029;
                 values[valuesById[1030] = "C_GET_NICKNAME_INFO"] = 1030;
                 values[valuesById[1031] = "S_GET_NICKNAME_INFO"] = 1031;
                 values[valuesById[1032] = "C_SEND_SDK_DATA"] = 1032;
@@ -4903,6 +4908,7 @@ $root.com = (function() {
                 values[valuesById[1058] = "S_GET_MONEY_REWARD"] = 1058;
                 values[valuesById[1059] = "C_GET_MONEY_INFO"] = 1059;
                 values[valuesById[1060] = "S_GET_MONEY_INFO"] = 1060;
+                values[valuesById[2000] = "C_SYNC_LOAD_FINISH"] = 2000;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;
@@ -4944,6 +4950,7 @@ $root.com = (function() {
              * @property {number} SIGN_DAY_LARGE=1178 SIGN_DAY_LARGE value
              * @property {number} SIGN_DAY_NOT_ENOUGH=1179 SIGN_DAY_NOT_ENOUGH value
              * @property {number} PLAYER_NOT_EXIST=1181 PLAYER_NOT_EXIST value
+             * @property {number} FISH_MAX_LIMIT=1201 FISH_MAX_LIMIT value
              */
             MsgEnum.ExceptionCode = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -4968,6 +4975,7 @@ $root.com = (function() {
                 values[valuesById[1178] = "SIGN_DAY_LARGE"] = 1178;
                 values[valuesById[1179] = "SIGN_DAY_NOT_ENOUGH"] = 1179;
                 values[valuesById[1181] = "PLAYER_NOT_EXIST"] = 1181;
+                values[valuesById[1201] = "FISH_MAX_LIMIT"] = 1201;
                 return values;
             })();
 

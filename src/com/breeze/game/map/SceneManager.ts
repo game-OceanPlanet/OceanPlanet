@@ -73,66 +73,6 @@ module qmr
 			this.scene = new Scene();
 		}
 
-		private __pets:HeroActor[];
-		private ids:number[] = [101,101,101,101,101,101,102,102,102,102,103,103,104,104,105,105,106,106,107,108,109,110,111,112,113,114,115];
-		private createUnits(): void
-		{
-			let t = this;
-			t.__pets = [];
-			
-			// for(var i:number = 0; i < ids.length; i ++){
-			// 	let heroId: number = ids[i];
-			// 	let h: HeroActor = new HeroActor();
-			// 	h.id = heroId;
-			// 	h.update();
-			// 	SceneManager.instance.addObject(h);
-			// 	t.__pets.push(h);
-			// }
-		}
-
-		//随机移动
-		// private _sourcePos:egret.Point = new egret.Point();
-		// private _targetPos:egret.Point = new egret.Point();
-		private movePet(): void
-		{
-			let t = this;
-			t.count ++;
-			if(t.ids.length == 0){
-				egret.clearInterval(this._endTimeKey);
-				this._endTimeKey = -1;
-				return;
-			}
-			// let len = t.__pets.length
-			// let index:number = Math.floor((len + 1) * Math.random());
-			// index = index > len - 1 ? len - 1 : index;
-			// let pet:HeroActor = t.__pets[index];
-			// let targetX:number = StageUtil.stageWidth * Math.random();
-			// let targetY:number = StageUtil.stageHeight * Math.random();
-			// t._targetPos.x = targetY;
-			// t._targetPos.y = targetY;
-			// t._sourcePos.x = pet.x;
-			// t._sourcePos.y = pet.y;
-			// let dir:number = MathUtil.dir(t._sourcePos, t._targetPos);
-			// pet.speed = 2;
-			// pet.updateDir(dir);
-			// pet.changeStatus(Status.MOVE);
-			// pet.moveTo(targetX, targetY);
-
-			let heroId: number = t.ids.shift();
-			let h: HeroActor = new HeroActor();
-			h.id = heroId;
-			h.update();
-			h.alpha = 0;
-
-			egret.Tween.get(h).to({alpha:1}, 1000).wait(50)
-            .call(()=>{
-                egret.Tween.removeTweens(h);
-			});
-			SceneManager.instance.addObject(h);
-			t.__pets.push(h);
-		}
-
-
 		/** 进入挂机地图 */
 		public enterHangMap(chapterId: number = 0)
 		{
@@ -162,12 +102,6 @@ module qmr
 				LayerManager.instance.addDisplay(t.scene, LayerConst.MAP_LAYER);
 			}
 			t.leaveMap();
-
-			t.createUnits();
-
-			// Ticker.getInstance().registerTick(t.movePet, t, 3000, 10);
-
-			this._endTimeKey = egret.setInterval(this.movePet, this, 500);
 		}
 
 		private _endTimeKey;
@@ -367,25 +301,25 @@ module qmr
 			this.scene.addToMap(disPlay);
 		}
 
-		/** 添加到卡牌下层 */
+		/** 添加到角色下层 */
 		public addToBottom(disPlay: egret.DisplayObject): void
 		{
 			this.scene.addToBottom(disPlay);
 		}
 
-		/** 添加到卡牌层 */
+		/** 添加到角色层 */
 		public addObject(baseObject: BaseObject): void
 		{
 			this.scene.addObject(baseObject);
 		}
 
-		/** 添加到卡牌层 */
+		/** 添加到角色层 */
 		public addObjectToTop(baseObject: BaseObject): void
 		{
 			this.scene.addObjectToTop(baseObject);
 		}
 
-		/** 添加到卡牌层之上，比如飘血,前景特效 */
+		/** 添加到角色层之上，比如飘血,前景特效 */
 		public addToFront(disPlay: egret.DisplayObject): void
 		{
 			this.scene.addToFront(disPlay);

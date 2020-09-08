@@ -2246,6 +2246,8 @@ declare namespace com {
                 S_GET_PLAYER_INFO = 1022,
                 C_EDIT_PLAYER_NICKNAME = 1023,
                 S_EDIT_PLAYER_NICKNAME = 1024,
+                S_LOGIN_OFFLINE_HANGUP_PUSH = 1028,
+                S_LOGIN_BACK_PACK_PUSH = 1029,
                 C_GET_NICKNAME_INFO = 1030,
                 S_GET_NICKNAME_INFO = 1031,
                 C_SEND_SDK_DATA = 1032,
@@ -2260,6 +2262,7 @@ declare namespace com {
                 S_GET_MONEY_REWARD = 1058,
                 C_GET_MONEY_INFO = 1059,
                 S_GET_MONEY_INFO = 1060,
+                C_SYNC_LOAD_FINISH = 2000,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,
@@ -2297,7 +2300,8 @@ declare namespace com {
                 CAN_NOT_USE_SENSITIVE_CHAR = 1173,
                 SIGN_DAY_LARGE = 1178,
                 SIGN_DAY_NOT_ENOUGH = 1179,
-                PLAYER_NOT_EXIST = 1181
+                PLAYER_NOT_EXIST = 1181,
+                FISH_MAX_LIMIT = 1201
             }
         }
 

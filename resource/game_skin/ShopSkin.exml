@@ -8,7 +8,7 @@
 		<e:Label text="商  店" y="257.27" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="17.5" textColor="0xffffff"/>
 		<e:Image source="mainui_json.icon_gold" x="132" y="287.27" width="80" height="80" rotation="45"/>
 		<e:Image id="btnClose" y="280.75" anchorOffsetX="37.2" x="686.56" anchorOffsetY="41.35" source="mainui_json.btn_close"/>
-		<e:Label text="0.00099 JT" y="339.27" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="178" textColor="0x553b24"/>
+		<e:Label id="txt_total" text="0.00099 JT" y="339.27" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="178" textColor="0x553b24"/>
 		<e:Group id="itemGroup" width="640" height="631.69" x="60.61" y="393.94" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Scroller width="640" height="627.51" top="2" x="0" y="-1" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off">
 			<e:List id="item_list" anchorOffsetY="0" height="630.54" anchorOffsetX="0" width="614.06">

@@ -1505,7 +1505,6 @@ var qmr;
 var qmr;
 (function (qmr) {
     /**
-     * @date 2016.12.01
      * @description 带动画和移动操作的角色类,默认是待机状态,idle
      */
     var BaseActor = (function (_super) {
@@ -1579,16 +1578,14 @@ var qmr;
                 var t = this;
                 t.addPartTo(part, partId, partIndex, dir, isDirLoad, resPath);
                 //这里是添加转圈特效，用来在模型资源加载完成之前显示一个loading特效的功能
-                // if (part == ActorPart.BODY && isShowDefault)
-                // {
-                //     let animalClip: AnimateClip = t.partDic[ActorPart.DEFAULT];
-                //     if (!animalClip)
-                //     {
-                //         t.addPartTo(ActorPart.DEFAULT, 9999, partIndex, dir, isDirLoad, resPath);
-                //         animalClip = t.partDic[ActorPart.DEFAULT];
-                //         animalClip.offsetY = -85;
-                //     }
-                // }
+                if (part == qmr.ActorPart.BODY && isShowDefault) {
+                    var animalClip = t.partDic[qmr.ActorPart.DEFAULT];
+                    if (!animalClip) {
+                        t.addPartTo(qmr.ActorPart.DEFAULT, 9999, partIndex, dir, isDirLoad, resPath);
+                        animalClip = t.partDic[qmr.ActorPart.DEFAULT];
+                        animalClip.offsetY = -85;
+                    }
+                }
             }
         };
         BaseActor.prototype.addPartTo = function (part, partId, partIndex, dir, isDirLoad, resPath) {
@@ -2887,7 +2884,7 @@ var qmr;
         /**游戏登陆账号 */
         GlobalConfig.account = 0;
         /**登录服务器 */
-        GlobalConfig.loginServer = "129.226.177.253"; //129.226.177.253   192.168.3.116
+        GlobalConfig.loginServer = "192.168.3.116"; //129.226.177.253   192.168.3.116
         //登陆服务器端口
         GlobalConfig.loginPort = 8003;
         //玩家的账号             
@@ -6140,12 +6137,11 @@ var qmr;
 (function (qmr) {
     /**
      * 平台id枚举
-     * dear_H
      */
     var PlatformEnum;
     (function (PlatformEnum) {
         /**星灵互动(默认平台)*/
-        PlatformEnum[PlatformEnum["P_SLOGAME_DEBUG"] = 0] = "P_SLOGAME_DEBUG";
+        PlatformEnum[PlatformEnum["P_SLOGAME_DEBUG"] = 1] = "P_SLOGAME_DEBUG";
         PlatformEnum[PlatformEnum["P_SLOGAME_WEB"] = 100] = "P_SLOGAME_WEB";
     })(PlatformEnum = qmr.PlatformEnum || (qmr.PlatformEnum = {}));
 })(qmr || (qmr = {}));
@@ -6883,12 +6879,16 @@ var qmr;
             if (isOutNetPlatForm) {
                 socketUrl = protocol + "://" + host + "/s" + qmr.GlobalConfig.sid;
                 if (qmr.PlatformConfig.isWSS) {
-                    socketUrl = "wss://" + host + "/s" + qmr.GlobalConfig.sid;
+                    socketUrl = "ws://" + host + "/s" + qmr.GlobalConfig.sid;
                 }
             }
             else {
                 socketUrl = "ws://" + host + ":" + port + this.WEB_KEY;
             }
+            socketUrl = "ws://" + host + ":" + port + this.WEB_KEY;
+            // let ws = JsUtil.getQueryStringByName("ws");
+            // let pt = JsUtil.getQueryStringByName("pt");
+            // socketUrl = ws +"://"+host+"/" + pt;
             this.websocket.connectByUrl(socketUrl);
             // let socketUrl = "wss://echo.websocket.org"
             // this.websocket.connect(host, port)

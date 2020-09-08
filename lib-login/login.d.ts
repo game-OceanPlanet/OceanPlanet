@@ -536,7 +536,6 @@ declare module qmr {
 }
 declare module qmr {
     /**
-     * @date 2016.12.01
      * @description 带动画和移动操作的角色类,默认是待机状态,idle
      */
     class BaseActor extends egret.DisplayObjectContainer {
@@ -1907,11 +1906,10 @@ declare module qmr {
 declare module qmr {
     /**
      * 平台id枚举
-     * dear_H
      */
     enum PlatformEnum {
         /**星灵互动(默认平台)*/
-        P_SLOGAME_DEBUG = 0,
+        P_SLOGAME_DEBUG = 1,
         P_SLOGAME_WEB = 100,
     }
 }
