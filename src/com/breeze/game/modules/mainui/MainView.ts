@@ -87,8 +87,8 @@ module qmr {
         //兑换
         private onExchangeClick(): void {
             TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
-            let b = new FishBehavior(this.btn_realname, "10001");
-            b.onanimationButtons();
+            // let b = new FishBehavior(this.btn_realname, "10001");
+            // b.onanimationButtons();
         }
         //注入
         private onInjectClick(): void {
