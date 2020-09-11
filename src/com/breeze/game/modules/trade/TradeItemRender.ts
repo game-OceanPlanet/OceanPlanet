@@ -27,18 +27,22 @@ public txt_price_gold:eui.Label;
 
         private onSellClick():void
         {
-            let cfg:PetCfg = this.data;
-            if(!cfg){
+            let t = this;
+            let pro:com.message.BuyGoodMsg = t.data;
+            if(!pro){
                 return;
             }
-            PetController.instance.getBuyFish(cfg.id);
+            TradeController.instance.getSellOrderRequest(Int64Util.getNumber(pro.buyGoodMsgId));
         }
 
 		public dataChanged(): void {
 			let t = this;
-            let cfg:PetCfg = t.data;
-            if(cfg){
-                
+            let pro:com.message.BuyGoodMsg = t.data;
+            if(pro){
+                t.txt_id.text = pro.playerId.toString();
+                t.txt_price.text = pro.diamondPrice + "";
+                t.txt_count.text = pro.moneyCount + "";
+                t.txt_time.text = TimeUtil.getDateByTimer(Int64Util.getNumber(pro.createTime));
             }
 		}
 	}

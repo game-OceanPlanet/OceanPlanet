@@ -72,7 +72,7 @@ module qmr
             var hourStr: string = hour < 10 ? ("0" + hour) : hour.toString();
             var minStr: string = min < 10 ? ("0" + min) : min.toString();
             var secStr: string = sec < 10 ? ("0" + sec) : sec.toString();
-            return year + "-" + month + "-" + day + " " + hourStr + ":" + minStr + ":" + secStr;
+            return year + "-" + monthStr + "-" + dayStr + " " + hourStr + ":" + minStr + ":" + secStr;
         }
 
         /**

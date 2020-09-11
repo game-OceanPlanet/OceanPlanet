@@ -137,13 +137,12 @@ public btnReturn:eui.Image;
 			let totalBuyCount:number = 0;
 			let len:number;
 			if(pros && pros.length > 0){
-				t._arrCollection.replaceAll(pros);
-
 				len = pros.length;
 				for(var i:number = 0; i < len;i ++){
 					totalBuyCount += Int64Util.getNumber(pros[i].moneyCount);
 				}
 			}
+			t._arrCollection.replaceAll(pros);
 			
 			t.txt_todayPrice.text = TradeModule.instance.sysDiamonPrice + HeroModel.USDT;
 			t.txt_totalCount.text = totalBuyCount + HeroModel.USDT;
