@@ -18,6 +18,14 @@ module qmr
 		public static S_BUY_FISH:string = "S_BUY_FISH";// 购买鱼儿
 		public static S_GET_MONEY_REWARD:string = "S_GET_MONEY_REWARD";// 领取金币奖励
 		public static S_GET_MONEY_INFO:string = "S_GET_MONEY_INFO";// 获取金币信息
+		public static S_GET_MONEY_LOG_LIST:string = "S_GET_MONEY_LOG_LIST";
+		public static S_GET_DIAMOND_LOG_LIST:string = "S_GET_DIAMOND_LOG_LIST";
+		public static S_DIAMOND_BUY_FISH:string = "S_DIAMOND_BUY_FISH";
+
+		public static S_GET_OCT_MARKET_INFO:string = "S_GET_OCT_MARKET_INFO";
+		public static S_MARKET_BUY:string = "S_MARKET_BUY";
+		public static S_MARKET_SELL:string = "S_MARKET_SELL";
+		public static S_MARKET_CANCEL:string = "S_MARKET_CANCEL";
 	}
 
 }

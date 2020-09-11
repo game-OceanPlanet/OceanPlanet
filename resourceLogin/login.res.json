@@ -9,7 +9,7 @@
 			"name": "login"
 		},
 		{
-			"keys": "4036_map_jpg,3026_map_jpg,1022_map_jpg,1025_map_jpg,1032_hang_down_png,1032_hang_middle_png,1032_hang_top_jpg,1033_hang_down_png,1033_hang_top_jpg,1033_hang_middle_png,serverlist_wind_png",
+			"keys": "4036_map_jpg,3026_map_jpg,1022_map_jpg,1025_map_jpg,serverlist_wind_png",
 			"name": "unpack"
 		}
 	],
@@ -66,36 +66,6 @@
 			"url": "unpack/1025_map.jpg",
 			"type": "image",
 			"name": "1025_map_jpg"
-		},
-		{
-			"url": "unpack/1032_hang_down.png",
-			"type": "image",
-			"name": "1032_hang_down_png"
-		},
-		{
-			"url": "unpack/1032_hang_middle.png",
-			"type": "image",
-			"name": "1032_hang_middle_png"
-		},
-		{
-			"url": "unpack/1032_hang_top.jpg",
-			"type": "image",
-			"name": "1032_hang_top_jpg"
-		},
-		{
-			"url": "unpack/1033_hang_down.png",
-			"type": "image",
-			"name": "1033_hang_down_png"
-		},
-		{
-			"url": "unpack/1033_hang_top.jpg",
-			"type": "image",
-			"name": "1033_hang_top_jpg"
-		},
-		{
-			"url": "unpack/1033_hang_middle.png",
-			"type": "image",
-			"name": "1033_hang_middle_png"
 		},
 		{
 			"url": "unpack/serverlist_wind.png",

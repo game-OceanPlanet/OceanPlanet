@@ -75,8 +75,8 @@ module qmr
             p.y = p.y < 300 ? 200 + Math.random() * 600 : p.y;
 
             if(id == 15){
-                p.x = 400;
-                p.y = 200;
+                p.x = 300;
+                p.y = 400;
             }
 
             return p;

@@ -30,6 +30,13 @@ module qmr {
 			this.msgIdMap[MessageID.S_COMBINE_FISH] = com.message.S_COMBINE_FISH;
 			this.msgIdMap[MessageID.S_GET_MONEY_REWARD] = com.message.S_GET_MONEY_REWARD;
 			this.msgIdMap[MessageID.S_GET_MONEY_INFO] = com.message.S_GET_MONEY_INFO;
+			this.msgIdMap[MessageID.S_DIAMOND_BUY_FISH] = com.message.S_DIAMOND_BUY_FISH;
+			this.msgIdMap[MessageID.S_GET_MONEY_LOG_LIST] = com.message.S_GET_MONEY_LOG_LIST;
+			this.msgIdMap[MessageID.S_GET_DIAMOND_LOG_LIST] = com.message.S_GET_DIAMOND_LOG_LIST;
+			this.msgIdMap[MessageID.S_GET_OCT_MARKET_INFO] = com.message.S_GET_OCT_MARKET_INFO;
+			this.msgIdMap[MessageID.S_MARKET_BUY] = com.message.S_MARKET_BUY;
+			this.msgIdMap[MessageID.S_MARKET_SELL] = com.message.S_MARKET_SELL;
+			this.msgIdMap[MessageID.S_MARKET_CANCEL] = com.message.S_MARKET_CANCEL;
 			this.msgIdMap[MessageID.S_SYN_PROPERTY] = com.message.S_SYN_PROPERTY;
 			this.msgIdMap[MessageID.C_SYNC_TIME] = com.message.C_SYNC_TIME;
 			this.msgIdMap[MessageID.S_SYNC_TIME] = com.message.S_SYNC_TIME;

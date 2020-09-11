@@ -3,12 +3,14 @@ module qmr {
         public id:number; // 鱼的唯一ID
         public level:number; //等级
         public fishId:number; //鱼配置ID
-        public state:number; //状态，0生产中，1停产中
-        public allMoney:number; //总共可以产出金币，读表
-        public extMoney:number; //已经产出金币，存
-        public todayMoney:number; //今日产出金币，存
+        public state:number; //状态，0生产中，1停产中,2已过期
+        private _allMoney:number; //总共可以产出金币，读表
+        private _extMoney:number; //鱼生累计已经产出金币,包括遗漏的  ExtMoney=鱼生累计已经产出金币
+        private _leftMoney:number; //鱼生累计遗漏未领取金币
+        private _todayGotMoney:number; //今日已经领取金币
+        private _todayCurMoney:number; //今日当前可领取金币
         public allDay:number;//生命周期，读表
-        public leftDay:number;//剩余天数，（总币-已产出）/日产出率
+        //（配置总产量 - 鱼生累计已经产出金币）/ 配置天数
 
         public posX:number;
         public posY:number;
@@ -25,11 +27,34 @@ module qmr {
             t.level = pro.level;
             t.fishId = Int64Util.getNumber(pro.fishId);
             t.state = pro.state;
-            t.allMoney = Int64Util.getNumber(pro.allMoney);
-            t.extMoney = Int64Util.getNumber(pro.extMoney);
-            t.todayMoney = Int64Util.getNumber(pro.todayMoney);
+            t._allMoney = Int64Util.getNumber(pro.allMoney);
+            t._extMoney = Int64Util.getNumber(pro.extMoney);
+            t._leftMoney = Int64Util.getNumber(pro.leftMoney);
+            t._todayGotMoney = Int64Util.getNumber(pro.todayGotMoney);
+            t._todayCurMoney = Int64Util.getNumber(pro.todayCurMoney);
+
             t.allDay = pro.allDay;
-            t.leftDay = pro.leftDay;
+        }
+
+        public get allMoney():number
+        {
+            return this._allMoney/HeroModel.TIMES;
+        }
+        public get extMoney():number
+        {
+            return this._extMoney/HeroModel.TIMES;
+        }
+        public get leftMoney():number
+        {
+            return this._leftMoney/HeroModel.TIMES;
+        }
+        public get todayGotMoney():number
+        {
+            return this._todayGotMoney/HeroModel.TIMES;
+        }
+        public get todayCurMoney():number
+        {
+            return this._todayCurMoney/HeroModel.TIMES;
         }
 
         public get config():PetCfg

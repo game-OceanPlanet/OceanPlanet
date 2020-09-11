@@ -4,7 +4,7 @@ import "common.proto";
 
 //非战斗属性 如金币,经验等货币类的数值
 message S_SYN_PROPERTY{
-	repeated IntLongMapMsg mapMsg=1;
+	repeated IntDoubleMapMsg mapMsg=1;
 }
 
 

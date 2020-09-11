@@ -45,10 +45,6 @@ module qmr {
 		public static C_USER_LOGIN_INIT_FINISH:number = 1009; 
 		/**  登录注册完成请求 角色信息 */
 		public static S_USER_LOGIN_INIT_FINISH:number = 1010; 
-		/**  登录推送客户端玩家离线奖励数据操作 */
-		public static S_LOGIN_OFFLINE_HANGUP_PUSH:number = 1028;
-		/**  登录推送客户端玩家的背包数据 */
-		public static S_LOGIN_BACK_PACK_PUSH:number = 1029;
 		/**  客户端核查随机名字是否可以使用 */
 		public static C_GET_NICKNAME_INFO:number = 1030;
 		public static S_GET_NICKNAME_INFO:number = 1031;
@@ -70,8 +66,27 @@ module qmr {
 		/** 获取金币信息 */
 		public static C_GET_MONEY_INFO:number = 1059; 
 		public static S_GET_MONEY_INFO:number = 1060;
-		/**  客户端通知服务器加载成功，服务器可以推送指令 */
-		public static C_SYNC_LOAD_FINISH:number = 2000; 
+		/**  U购买鱼 */
+		public static C_DIAMOND_BUY_FISH:number = 1061; 
+		public static S_DIAMOND_BUY_FISH:number = 1062;
+		/**  获取金币日志信息 */
+		public static C_GET_MONEY_LOG_LIST:number = 1063; 
+		public static S_GET_MONEY_LOG_LIST:number = 1064;
+		/**  获取U日志信息 */
+		public static C_GET_DIAMOND_LOG_LIST:number =1065;
+		public static S_GET_DIAMOND_LOG_LIST:number = 1066;
+		/** C->S 请求: 获取otc信息 */
+		public static C_GET_OCT_MARKET_INFO:number = 1101; 
+		public static S_GET_OCT_MARKET_INFO:number = 1102;
+		/** C->S 请求: 买入金币（挂单） */
+		public static C_MARKET_BUY:number = 1103;
+		public static S_MARKET_BUY:number = 1104;
+		/** C->S 请求: 卖给Ta，获得U */
+		public static C_MARKET_SELL:number = 1105;
+		public static S_MARKET_SELL:number = 1106;
+		/** C->S 请求: 撤单 */
+		public static C_MARKET_CANCEL:number = 1107; 
+		public static S_MARKET_CANCEL:number = 1108;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

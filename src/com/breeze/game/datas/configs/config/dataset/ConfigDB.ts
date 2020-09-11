@@ -32,10 +32,25 @@ module qmr
 	{			
 		return this.d["monthly"];			
 	}
-	/**产出*/
+	/**每日产出*/
 	get produce():number
 	{			
 		return this.d["produce"];			
+	}
+	/**直推人数*/
+	get directPerson():number
+	{			
+		return this.d["directPerson"];			
+	}
+	/**团队规模*/
+	get teamPerson():number
+	{			
+		return this.d["teamPerson"];			
+	}
+	/**U购买价格*/
+	get UBuyPrice():number
+	{			
+		return this.d["UBuyPrice"];			
 	}
 	/**购买价格*/
 	get price():number

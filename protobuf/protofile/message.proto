@@ -17,15 +17,13 @@ message MsgEnum {
         S_USER_LOGIN_INIT_FINISH = 1010; // 登录注册完成请求 角色信息
 
 
-        S_LOGIN_OFFLINE_HANGUP_PUSH		= 1028;	// 登录推送客户端玩家离线奖励数据操作
-        S_LOGIN_BACK_PACK_PUSH			= 1029;	// 登录推送客户端玩家的背包数据
-
         C_GET_NICKNAME_INFO           = 1030;	// 客户端核查随机名字是否可以使用
         S_GET_NICKNAME_INFO           = 1031;
 
         C_SEND_SDK_DATA               = 1032;	// 客户端通知sdk上报数据操作
         S_SEND_SDK_DATA               = 1033;
 
+		//fish
 		C_GET_FISH_INFO		= 1051; //获取我的鱼儿
 		S_GET_FISH_INFO		= 1052;
 		C_BUY_FISH		= 1053; //购买鱼儿
@@ -36,9 +34,22 @@ message MsgEnum {
 		S_GET_MONEY_REWARD  = 1058;
 		C_GET_MONEY_INFO	= 1059; //获取金币信息
 		S_GET_MONEY_INFO	= 1060;
-
-
-		C_SYNC_LOAD_FINISH	= 2000; // 客户端通知服务器加载成功，服务器可以推送指令
+		C_DIAMOND_BUY_FISH	= 1061; // U购买鱼
+		S_DIAMOND_BUY_FISH	= 1062;
+		C_GET_MONEY_LOG_LIST = 1063; // 获取金币日志信息
+		S_GET_MONEY_LOG_LIST = 1064;
+		C_GET_DIAMOND_LOG_LIST =1065;// 获取U日志信息
+		S_GET_DIAMOND_LOG_LIST = 1066;
+		
+		//OCT
+		C_GET_OCT_MARKET_INFO	= 1101; //C->S 请求: 获取otc信息
+		S_GET_OCT_MARKET_INFO	= 1102;
+		C_MARKET_BUY			= 1103;	//C->S 请求: 买入金币（挂单）
+		S_MARKET_BUY			= 1104;
+		C_MARKET_SELL			= 1105;	//C->S 请求: 卖给Ta，获得U
+		S_MARKET_SELL			= 1106;
+		C_MARKET_CANCEL			= 1107; //C->S 请求: 撤单
+		S_MARKET_CANCEL			= 1108;
 
         S_SYN_PROPERTY = 2001; // 同步属性变化
 
