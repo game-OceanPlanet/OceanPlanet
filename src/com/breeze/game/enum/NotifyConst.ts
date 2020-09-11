@@ -25,6 +25,7 @@ module qmr
 		public static S_GET_OCT_MARKET_INFO:string = "S_GET_OCT_MARKET_INFO";
 		public static S_MARKET_BUY:string = "S_MARKET_BUY";
 		public static S_MARKET_SELL:string = "S_MARKET_SELL";
+		public static S_MARKET_CANCEL:string = "S_MARKET_CANCEL";
 	}
 
 }

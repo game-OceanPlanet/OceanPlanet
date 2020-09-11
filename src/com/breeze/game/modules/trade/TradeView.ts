@@ -63,8 +63,8 @@ public btnReturn:eui.Image;
             t._arrCollection = new eui.ArrayCollection();
 			t.item_list.dataProvider = t._arrCollection;
 			
-			t.text_input_price.restrict = "0-9\\/";
-			t.text_input_price.restrict = "0-9\\/";
+			// t.text_input_price.restrict = new RegExp(reg);
+			// t.text_input_price.restrict = reg;
 
 			t._stepLabels = [t.txt_price0,t.txt_price1,t.txt_price2,t.txt_price3,t.txt_price4,t.txt_price5];
 			t._dateLabels = [t.txt_date0,t.txt_date1,t.txt_date2,t.txt_date3,t.txt_date4,t.txt_date5,t.txt_date6,t.txt_date7];
@@ -94,6 +94,7 @@ public btnReturn:eui.Image;
 			t.registerNotify(NotifyConst.S_GET_OCT_MARKET_INFO, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MARKET_BUY, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MARKET_SELL, t.updateView, t);
+			t.registerNotify(NotifyConst.S_MARKET_CANCEL, t.updateView, t);
 		}
 
 		private buyClick():void
@@ -117,13 +118,19 @@ public btnReturn:eui.Image;
                 return;
 			}
 
-			let count:number = Number(price);
+			let count:number = Number(str);
 			if(count <= 0){
 				TipManagerCommon.getInstance().createCommonColorTip("输入数量有误");
                 return;
 			}
+
+			if(price > TradeModule.instance.sysDiamonPrice){
+				TipManagerCommon.getInstance().createCommonColorTip("购买的价格不能大于系统指导价格");
+                return;
+			}
+
 			let money:number = count * price;
-			if(money < HeroModel.instance.totalUSDT){
+			if(money > HeroModel.instance.totalUSDT){
 				TipManagerCommon.getInstance().createCommonColorTip("对不起购买货币不足");
 				return;
 			}
@@ -189,7 +196,7 @@ public btnReturn:eui.Image;
 
 			len = steps.length;
 			for(var i:number = 0; i < len; i ++){
-				t._stepLabels[i].text = steps[i] + "";
+				t._stepLabels[i].text = NumberUtil.getFloat4Number(steps[i]) + "";
 			}
 
 			len = prices.length;

@@ -52,6 +52,8 @@ declare module skins{
 }
 declare class BuyGoodItemSkin extends eui.Skin{
 }
+declare class ExchangeSkin extends eui.Skin{
+}
 declare class Mainui extends eui.Skin{
 }
 declare class MoneyLogItemSkin extends eui.Skin{
@@ -67,6 +69,8 @@ declare class PriceSkin extends eui.Skin{
 declare class ShopItemSkin extends eui.Skin{
 }
 declare class ShopSkin extends eui.Skin{
+}
+declare class TradeNumInputView extends eui.Skin{
 }
 declare class USDTLogItemSkin extends eui.Skin{
 }

@@ -5130,7 +5130,7 @@ $root.com = (function() {
              * @interface IBuyGoodMsg
              * @property {number|Long|null} [buyGoodMsgId] BuyGoodMsg buyGoodMsgId
              * @property {number|Long|null} [playerId] BuyGoodMsg playerId
-             * @property {number|Long|null} [username] BuyGoodMsg username
+             * @property {string|null} [username] BuyGoodMsg username
              * @property {number|null} [moneyCount] BuyGoodMsg moneyCount
              * @property {number|null} [diamondPrice] BuyGoodMsg diamondPrice
              * @property {number|Long|null} [createTime] BuyGoodMsg createTime
@@ -5169,11 +5169,11 @@ $root.com = (function() {
 
             /**
              * BuyGoodMsg username.
-             * @member {number|Long} username
+             * @member {string} username
              * @memberof com.message.BuyGoodMsg
              * @instance
              */
-            BuyGoodMsg.prototype.username = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            BuyGoodMsg.prototype.username = "";
 
             /**
              * BuyGoodMsg moneyCount.
@@ -5216,7 +5216,7 @@ $root.com = (function() {
                 if (message.playerId != null && message.hasOwnProperty("playerId"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.playerId);
                 if (message.username != null && message.hasOwnProperty("username"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.username);
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.username);
                 if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.moneyCount);
                 if (message.diamondPrice != null && message.hasOwnProperty("diamondPrice"))
@@ -5251,7 +5251,7 @@ $root.com = (function() {
                         message.playerId = reader.int64();
                         break;
                     case 3:
-                        message.username = reader.int64();
+                        message.username = reader.string();
                         break;
                     case 4:
                         message.moneyCount = reader.double();
@@ -5441,7 +5441,7 @@ $root.com = (function() {
              * Properties of a S_GET_OCT_MARKET_INFO.
              * @memberof com.message
              * @interface IS_GET_OCT_MARKET_INFO
-             * @property {number|null} [sysDiamonPrice] S_GET_OCT_MARKET_INFO sysDiamonPrice
+             * @property {number|null} [sysDiamondPrice] S_GET_OCT_MARKET_INFO sysDiamondPrice
              * @property {Array.<com.message.IHistoryPriceMsg>|null} [historyPriceMsgList] S_GET_OCT_MARKET_INFO historyPriceMsgList
              * @property {Array.<com.message.IBuyGoodMsg>|null} [buyGoodMsgList] S_GET_OCT_MARKET_INFO buyGoodMsgList
              */
@@ -5464,12 +5464,12 @@ $root.com = (function() {
             }
 
             /**
-             * S_GET_OCT_MARKET_INFO sysDiamonPrice.
-             * @member {number} sysDiamonPrice
+             * S_GET_OCT_MARKET_INFO sysDiamondPrice.
+             * @member {number} sysDiamondPrice
              * @memberof com.message.S_GET_OCT_MARKET_INFO
              * @instance
              */
-            S_GET_OCT_MARKET_INFO.prototype.sysDiamonPrice = 0;
+            S_GET_OCT_MARKET_INFO.prototype.sysDiamondPrice = 0;
 
             /**
              * S_GET_OCT_MARKET_INFO historyPriceMsgList.
@@ -5499,8 +5499,8 @@ $root.com = (function() {
             S_GET_OCT_MARKET_INFO.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.sysDiamonPrice != null && message.hasOwnProperty("sysDiamonPrice"))
-                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.sysDiamonPrice);
+                if (message.sysDiamondPrice != null && message.hasOwnProperty("sysDiamondPrice"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.sysDiamondPrice);
                 if (message.historyPriceMsgList != null && message.historyPriceMsgList.length)
                     for (var i = 0; i < message.historyPriceMsgList.length; ++i)
                         $root.com.message.HistoryPriceMsg.encode(message.historyPriceMsgList[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -5529,7 +5529,7 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.sysDiamonPrice = reader.double();
+                        message.sysDiamondPrice = reader.double();
                         break;
                     case 3:
                         if (!(message.historyPriceMsgList && message.historyPriceMsgList.length))
@@ -5559,7 +5559,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IC_MARKET_BUY
              * @property {number|null} [diamondPrice] C_MARKET_BUY diamondPrice
-             * @property {number|Long|null} [moneyCount] C_MARKET_BUY moneyCount
+             * @property {number|null} [moneyCount] C_MARKET_BUY moneyCount
              */
 
             /**
@@ -5587,11 +5587,11 @@ $root.com = (function() {
 
             /**
              * C_MARKET_BUY moneyCount.
-             * @member {number|Long} moneyCount
+             * @member {number} moneyCount
              * @memberof com.message.C_MARKET_BUY
              * @instance
              */
-            C_MARKET_BUY.prototype.moneyCount = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            C_MARKET_BUY.prototype.moneyCount = 0;
 
             /**
              * Encodes the specified C_MARKET_BUY message. Does not implicitly {@link com.message.C_MARKET_BUY.verify|verify} messages.
@@ -5608,7 +5608,7 @@ $root.com = (function() {
                 if (message.diamondPrice != null && message.hasOwnProperty("diamondPrice"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.diamondPrice);
                 if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.moneyCount);
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.moneyCount);
                 return writer;
             };
 
@@ -5634,7 +5634,7 @@ $root.com = (function() {
                         message.diamondPrice = reader.double();
                         break;
                     case 3:
-                        message.moneyCount = reader.int64();
+                        message.moneyCount = reader.double();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5735,6 +5735,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IC_MARKET_SELL
              * @property {number|Long|null} [buyGoodMsgId] C_MARKET_SELL buyGoodMsgId
+             * @property {number|null} [sellMoneyCount] C_MARKET_SELL sellMoneyCount
              */
 
             /**
@@ -5761,6 +5762,14 @@ $root.com = (function() {
             C_MARKET_SELL.prototype.buyGoodMsgId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
+             * C_MARKET_SELL sellMoneyCount.
+             * @member {number} sellMoneyCount
+             * @memberof com.message.C_MARKET_SELL
+             * @instance
+             */
+            C_MARKET_SELL.prototype.sellMoneyCount = 0;
+
+            /**
              * Encodes the specified C_MARKET_SELL message. Does not implicitly {@link com.message.C_MARKET_SELL.verify|verify} messages.
              * @function encode
              * @memberof com.message.C_MARKET_SELL
@@ -5774,6 +5783,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.buyGoodMsgId != null && message.hasOwnProperty("buyGoodMsgId"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.buyGoodMsgId);
+                if (message.sellMoneyCount != null && message.hasOwnProperty("sellMoneyCount"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.sellMoneyCount);
                 return writer;
             };
 
@@ -5798,6 +5809,9 @@ $root.com = (function() {
                     case 1:
                         message.buyGoodMsgId = reader.int64();
                         break;
+                    case 2:
+                        message.sellMoneyCount = reader.double();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5815,7 +5829,8 @@ $root.com = (function() {
              * Properties of a S_MARKET_SELL.
              * @memberof com.message
              * @interface IS_MARKET_SELL
-             * @property {com.message.IBuyGoodMsg|null} [buyGoodMsg] S_MARKET_SELL buyGoodMsg
+             * @property {number|Long|null} [buyGoodMsgId] S_MARKET_SELL buyGoodMsgId
+             * @property {number|null} [sellMoneyCount] S_MARKET_SELL sellMoneyCount
              */
 
             /**
@@ -5834,12 +5849,20 @@ $root.com = (function() {
             }
 
             /**
-             * S_MARKET_SELL buyGoodMsg.
-             * @member {com.message.IBuyGoodMsg|null|undefined} buyGoodMsg
+             * S_MARKET_SELL buyGoodMsgId.
+             * @member {number|Long} buyGoodMsgId
              * @memberof com.message.S_MARKET_SELL
              * @instance
              */
-            S_MARKET_SELL.prototype.buyGoodMsg = null;
+            S_MARKET_SELL.prototype.buyGoodMsgId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * S_MARKET_SELL sellMoneyCount.
+             * @member {number} sellMoneyCount
+             * @memberof com.message.S_MARKET_SELL
+             * @instance
+             */
+            S_MARKET_SELL.prototype.sellMoneyCount = 0;
 
             /**
              * Encodes the specified S_MARKET_SELL message. Does not implicitly {@link com.message.S_MARKET_SELL.verify|verify} messages.
@@ -5853,8 +5876,10 @@ $root.com = (function() {
             S_MARKET_SELL.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.buyGoodMsg != null && message.hasOwnProperty("buyGoodMsg"))
-                    $root.com.message.BuyGoodMsg.encode(message.buyGoodMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.buyGoodMsgId != null && message.hasOwnProperty("buyGoodMsgId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.buyGoodMsgId);
+                if (message.sellMoneyCount != null && message.hasOwnProperty("sellMoneyCount"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.sellMoneyCount);
                 return writer;
             };
 
@@ -5877,7 +5902,10 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.buyGoodMsg = $root.com.message.BuyGoodMsg.decode(reader, reader.uint32());
+                        message.buyGoodMsgId = reader.int64();
+                        break;
+                    case 2:
+                        message.sellMoneyCount = reader.double();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5888,6 +5916,168 @@ $root.com = (function() {
             };
 
             return S_MARKET_SELL;
+        })();
+
+        message.C_MARKET_CANCEL = (function() {
+
+            /**
+             * Properties of a C_MARKET_CANCEL.
+             * @memberof com.message
+             * @interface IC_MARKET_CANCEL
+             * @property {number|Long|null} [buyGoodMsgId] C_MARKET_CANCEL buyGoodMsgId
+             */
+
+            /**
+             * Constructs a new C_MARKET_CANCEL.
+             * @memberof com.message
+             * @classdesc Represents a C_MARKET_CANCEL.
+             * @implements IC_MARKET_CANCEL
+             * @constructor
+             * @param {com.message.IC_MARKET_CANCEL=} [properties] Properties to set
+             */
+            function C_MARKET_CANCEL(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_MARKET_CANCEL buyGoodMsgId.
+             * @member {number|Long} buyGoodMsgId
+             * @memberof com.message.C_MARKET_CANCEL
+             * @instance
+             */
+            C_MARKET_CANCEL.prototype.buyGoodMsgId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified C_MARKET_CANCEL message. Does not implicitly {@link com.message.C_MARKET_CANCEL.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_MARKET_CANCEL
+             * @static
+             * @param {com.message.IC_MARKET_CANCEL} message C_MARKET_CANCEL message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_MARKET_CANCEL.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.buyGoodMsgId != null && message.hasOwnProperty("buyGoodMsgId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.buyGoodMsgId);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_MARKET_CANCEL message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_MARKET_CANCEL
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_MARKET_CANCEL} C_MARKET_CANCEL
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_MARKET_CANCEL.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_MARKET_CANCEL();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.buyGoodMsgId = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_MARKET_CANCEL;
+        })();
+
+        message.S_MARKET_CANCEL = (function() {
+
+            /**
+             * Properties of a S_MARKET_CANCEL.
+             * @memberof com.message
+             * @interface IS_MARKET_CANCEL
+             * @property {number|Long|null} [buyGoodMsgId] S_MARKET_CANCEL buyGoodMsgId
+             */
+
+            /**
+             * Constructs a new S_MARKET_CANCEL.
+             * @memberof com.message
+             * @classdesc Represents a S_MARKET_CANCEL.
+             * @implements IS_MARKET_CANCEL
+             * @constructor
+             * @param {com.message.IS_MARKET_CANCEL=} [properties] Properties to set
+             */
+            function S_MARKET_CANCEL(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_MARKET_CANCEL buyGoodMsgId.
+             * @member {number|Long} buyGoodMsgId
+             * @memberof com.message.S_MARKET_CANCEL
+             * @instance
+             */
+            S_MARKET_CANCEL.prototype.buyGoodMsgId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified S_MARKET_CANCEL message. Does not implicitly {@link com.message.S_MARKET_CANCEL.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_MARKET_CANCEL
+             * @static
+             * @param {com.message.IS_MARKET_CANCEL} message S_MARKET_CANCEL message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_MARKET_CANCEL.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.buyGoodMsgId != null && message.hasOwnProperty("buyGoodMsgId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.buyGoodMsgId);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_MARKET_CANCEL message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_MARKET_CANCEL
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_MARKET_CANCEL} S_MARKET_CANCEL
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_MARKET_CANCEL.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_MARKET_CANCEL();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.buyGoodMsgId = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_MARKET_CANCEL;
         })();
 
         message.MsgEnum = (function() {
@@ -5968,8 +6158,6 @@ $root.com = (function() {
              * @property {number} S_USER_LOGOUT=1008 S_USER_LOGOUT value
              * @property {number} C_USER_LOGIN_INIT_FINISH=1009 C_USER_LOGIN_INIT_FINISH value
              * @property {number} S_USER_LOGIN_INIT_FINISH=1010 S_USER_LOGIN_INIT_FINISH value
-             * @property {number} S_LOGIN_OFFLINE_HANGUP_PUSH=1028 S_LOGIN_OFFLINE_HANGUP_PUSH value
-             * @property {number} S_LOGIN_BACK_PACK_PUSH=1029 S_LOGIN_BACK_PACK_PUSH value
              * @property {number} C_GET_NICKNAME_INFO=1030 C_GET_NICKNAME_INFO value
              * @property {number} S_GET_NICKNAME_INFO=1031 S_GET_NICKNAME_INFO value
              * @property {number} C_SEND_SDK_DATA=1032 C_SEND_SDK_DATA value
@@ -5996,7 +6184,8 @@ $root.com = (function() {
              * @property {number} S_MARKET_BUY=1104 S_MARKET_BUY value
              * @property {number} C_MARKET_SELL=1105 C_MARKET_SELL value
              * @property {number} S_MARKET_SELL=1106 S_MARKET_SELL value
-             * @property {number} C_SYNC_LOAD_FINISH=2000 C_SYNC_LOAD_FINISH value
+             * @property {number} C_MARKET_CANCEL=1107 C_MARKET_CANCEL value
+             * @property {number} S_MARKET_CANCEL=1108 S_MARKET_CANCEL value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -6023,8 +6212,6 @@ $root.com = (function() {
                 values[valuesById[1008] = "S_USER_LOGOUT"] = 1008;
                 values[valuesById[1009] = "C_USER_LOGIN_INIT_FINISH"] = 1009;
                 values[valuesById[1010] = "S_USER_LOGIN_INIT_FINISH"] = 1010;
-                values[valuesById[1028] = "S_LOGIN_OFFLINE_HANGUP_PUSH"] = 1028;
-                values[valuesById[1029] = "S_LOGIN_BACK_PACK_PUSH"] = 1029;
                 values[valuesById[1030] = "C_GET_NICKNAME_INFO"] = 1030;
                 values[valuesById[1031] = "S_GET_NICKNAME_INFO"] = 1031;
                 values[valuesById[1032] = "C_SEND_SDK_DATA"] = 1032;
@@ -6051,7 +6238,8 @@ $root.com = (function() {
                 values[valuesById[1104] = "S_MARKET_BUY"] = 1104;
                 values[valuesById[1105] = "C_MARKET_SELL"] = 1105;
                 values[valuesById[1106] = "S_MARKET_SELL"] = 1106;
-                values[valuesById[2000] = "C_SYNC_LOAD_FINISH"] = 2000;
+                values[valuesById[1107] = "C_MARKET_CANCEL"] = 1107;
+                values[valuesById[1108] = "S_MARKET_CANCEL"] = 1108;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;

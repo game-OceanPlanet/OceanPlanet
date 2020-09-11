@@ -18,6 +18,7 @@ module qmr
             this.addSocketListener(MessageID.S_GET_OCT_MARKET_INFO, this.getOTCResponse, this, false);
 			this.addSocketListener(MessageID.S_MARKET_BUY, this.getBuyOrderResponse, this, false);
 			this.addSocketListener(MessageID.S_MARKET_SELL, this.getSellOrderResponse, this, false);
+			this.addSocketListener(MessageID.S_MARKET_CANCEL, this.getBuyOrderRevokeResponse, this, false);
 		}
 
         //获取otc信息
@@ -30,7 +31,7 @@ module qmr
         // 获取otc信息
         private getOTCResponse(s: com.message.S_GET_OCT_MARKET_INFO):void
         {
-            TradeModule.instance.sysDiamonPrice = Int64Util.getNumber(s.sysDiamonPrice);
+            TradeModule.instance.sysDiamonPrice = Int64Util.getNumber(s.sysDiamondPrice);
             TradeModule.instance.buyGoodsList = s.buyGoodMsgList as com.message.BuyGoodMsg[];
             TradeModule.instance.historyPrices = s.historyPriceMsgList as com.message.HistoryPriceMsg[];
             this.dispatch(NotifyConst.S_GET_OCT_MARKET_INFO);
@@ -53,18 +54,34 @@ module qmr
 		}
 		
 		//请求: 卖给Ta，获得U
-        public getSellOrderRequest(id:number):void
+        public getSellOrderRequest(id:number, count:number):void
         {
 			var c: com.message.C_MARKET_SELL = new com.message.C_MARKET_SELL();
 			c.buyGoodMsgId = id;
+			c.sellMoneyCount = count;
 			this.sendCmd(c, MessageID.C_MARKET_SELL, true);
 		}
 		
 		// 响应: 卖给Ta，获得U
         private getSellOrderResponse(s: com.message.S_MARKET_SELL):void
         {
-			TradeModule.instance.updateBuyOrder(s.buyGoodMsg as com.message.BuyGoodMsg);
+			TradeModule.instance.updateBuyOrder(Int64Util.getNumber(s.buyGoodMsgId), s.sellMoneyCount);
             this.dispatch(NotifyConst.S_MARKET_SELL);
+		}
+		
+		//请求: 撤单
+        public getBuyOrderRevokeRequest(id:number):void
+        {
+			var c: com.message.C_MARKET_CANCEL = new com.message.C_MARKET_CANCEL();
+			c.buyGoodMsgId = id;
+			this.sendCmd(c, MessageID.C_MARKET_CANCEL, true);
+		}
+		
+		// 响应: 撤单
+        private getBuyOrderRevokeResponse(s: com.message.S_MARKET_CANCEL):void
+        {
+			TradeModule.instance.updateBuyOrder(Int64Util.getNumber(s.buyGoodMsgId), 0);
+            this.dispatch(NotifyConst.S_MARKET_CANCEL);
         }
     }
 }

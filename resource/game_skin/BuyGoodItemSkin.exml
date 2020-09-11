@@ -11,4 +11,8 @@
 		<e:Image id="btn_buy" x="0" y="0" scaleX="1" scaleY="1" source="shop_json.btn_common1"/>
 		<e:Label id="txt_price_gold" text="卖给TA" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0xfff4d6"/>
 	</e:Group>
+	<e:Group id="btn_revoke" x="465.44" y="45.33" anchorOffsetX="0" anchorOffsetY="0" visible="false">
+		<e:Image x="0" y="0" scaleX="1" scaleY="1" source="shop_json.btn_common1"/>
+		<e:Label id="txt_revoke" text="撤 单" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0xFFF4D6"/>
+	</e:Group>
 </e:Skin>

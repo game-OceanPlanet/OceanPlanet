@@ -1,7 +1,8 @@
 module qmr {
     export class HeroModel extends BaseModel {
         public static KH:string = "KH";
-        public static USDT:string = "USDT"
+        public static USDT:string = "USDT";
+        public static KAD:string = "KAD";
         public static TIMES:number = 1;
         
         public IdentityPro:com.message.BasePlayerMsg;
@@ -28,6 +29,14 @@ module qmr {
         private static _instance: HeroModel;
         public static get instance(): HeroModel {
             return this._instance || (this._instance = new HeroModel());
+        }
+
+        public get playerId():number
+        {
+            if(this.playerPro){
+                return Int64Util.getNumber(this.playerPro.playerId);
+            }
+            return 0;
         }
 
         public testMerge():void

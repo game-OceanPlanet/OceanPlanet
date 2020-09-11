@@ -34,20 +34,21 @@ module qmr {
          * 
          * @param pro 更新一个挂单数据
          */
-        public updateBuyOrder(pro:com.message.BuyGoodMsg):void
+        public updateBuyOrder(id:number, count:number):void
         {
             let t = this;
             if(!t.buyGoodsList){
                 t.buyGoodsList = [];
             }
-            if(pro){
-                let id:number = Int64Util.getNumber(pro.buyGoodMsgId);
-                let len:number = t.buyGoodsList.length;
-                for(var i:number = 0; i < len; i ++){
-                    if(id == Int64Util.getNumber(t.buyGoodsList[i].buyGoodMsgId)){
-                        t.buyGoodsList[i] = pro;
-                        break;
+            let len:number = t.buyGoodsList.length;
+            for(var i:number = 0; i < len; i ++){
+                if(id == Int64Util.getNumber(t.buyGoodsList[i].buyGoodMsgId)){
+                    if(count > 0){
+                        t.buyGoodsList[i].moneyCount = count;
+                    } else {
+                        t.buyGoodsList.splice(i, 1);
                     }
+                    break;
                 }
             }
         }

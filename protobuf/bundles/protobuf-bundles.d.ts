@@ -2368,7 +2368,7 @@ declare namespace com {
             playerId?: (number|Long|null);
 
             /** BuyGoodMsg username */
-            username?: (number|Long|null);
+            username?: (string|null);
 
             /** BuyGoodMsg moneyCount */
             moneyCount?: (number|null);
@@ -2396,7 +2396,7 @@ declare namespace com {
             public playerId: (number|Long);
 
             /** BuyGoodMsg username. */
-            public username: (number|Long);
+            public username: string;
 
             /** BuyGoodMsg moneyCount. */
             public moneyCount: number;
@@ -2505,8 +2505,8 @@ declare namespace com {
         /** Properties of a S_GET_OCT_MARKET_INFO. */
         interface IS_GET_OCT_MARKET_INFO {
 
-            /** S_GET_OCT_MARKET_INFO sysDiamonPrice */
-            sysDiamonPrice?: (number|null);
+            /** S_GET_OCT_MARKET_INFO sysDiamondPrice */
+            sysDiamondPrice?: (number|null);
 
             /** S_GET_OCT_MARKET_INFO historyPriceMsgList */
             historyPriceMsgList?: (com.message.IHistoryPriceMsg[]|null);
@@ -2524,8 +2524,8 @@ declare namespace com {
              */
             constructor(properties?: com.message.IS_GET_OCT_MARKET_INFO);
 
-            /** S_GET_OCT_MARKET_INFO sysDiamonPrice. */
-            public sysDiamonPrice: number;
+            /** S_GET_OCT_MARKET_INFO sysDiamondPrice. */
+            public sysDiamondPrice: number;
 
             /** S_GET_OCT_MARKET_INFO historyPriceMsgList. */
             public historyPriceMsgList: com.message.IHistoryPriceMsg[];
@@ -2559,7 +2559,7 @@ declare namespace com {
             diamondPrice?: (number|null);
 
             /** C_MARKET_BUY moneyCount */
-            moneyCount?: (number|Long|null);
+            moneyCount?: (number|null);
         }
 
         /** Represents a C_MARKET_BUY. */
@@ -2575,7 +2575,7 @@ declare namespace com {
             public diamondPrice: number;
 
             /** C_MARKET_BUY moneyCount. */
-            public moneyCount: (number|Long);
+            public moneyCount: number;
 
             /**
              * Encodes the specified C_MARKET_BUY message. Does not implicitly {@link com.message.C_MARKET_BUY.verify|verify} messages.
@@ -2639,6 +2639,9 @@ declare namespace com {
 
             /** C_MARKET_SELL buyGoodMsgId */
             buyGoodMsgId?: (number|Long|null);
+
+            /** C_MARKET_SELL sellMoneyCount */
+            sellMoneyCount?: (number|null);
         }
 
         /** Represents a C_MARKET_SELL. */
@@ -2652,6 +2655,9 @@ declare namespace com {
 
             /** C_MARKET_SELL buyGoodMsgId. */
             public buyGoodMsgId: (number|Long);
+
+            /** C_MARKET_SELL sellMoneyCount. */
+            public sellMoneyCount: number;
 
             /**
              * Encodes the specified C_MARKET_SELL message. Does not implicitly {@link com.message.C_MARKET_SELL.verify|verify} messages.
@@ -2675,8 +2681,11 @@ declare namespace com {
         /** Properties of a S_MARKET_SELL. */
         interface IS_MARKET_SELL {
 
-            /** S_MARKET_SELL buyGoodMsg */
-            buyGoodMsg?: (com.message.IBuyGoodMsg|null);
+            /** S_MARKET_SELL buyGoodMsgId */
+            buyGoodMsgId?: (number|Long|null);
+
+            /** S_MARKET_SELL sellMoneyCount */
+            sellMoneyCount?: (number|null);
         }
 
         /** Represents a S_MARKET_SELL. */
@@ -2688,8 +2697,11 @@ declare namespace com {
              */
             constructor(properties?: com.message.IS_MARKET_SELL);
 
-            /** S_MARKET_SELL buyGoodMsg. */
-            public buyGoodMsg?: (com.message.IBuyGoodMsg|null);
+            /** S_MARKET_SELL buyGoodMsgId. */
+            public buyGoodMsgId: (number|Long);
+
+            /** S_MARKET_SELL sellMoneyCount. */
+            public sellMoneyCount: number;
 
             /**
              * Encodes the specified S_MARKET_SELL message. Does not implicitly {@link com.message.S_MARKET_SELL.verify|verify} messages.
@@ -2708,6 +2720,82 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_MARKET_SELL;
+        }
+
+        /** Properties of a C_MARKET_CANCEL. */
+        interface IC_MARKET_CANCEL {
+
+            /** C_MARKET_CANCEL buyGoodMsgId */
+            buyGoodMsgId?: (number|Long|null);
+        }
+
+        /** Represents a C_MARKET_CANCEL. */
+        class C_MARKET_CANCEL implements IC_MARKET_CANCEL {
+
+            /**
+             * Constructs a new C_MARKET_CANCEL.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_MARKET_CANCEL);
+
+            /** C_MARKET_CANCEL buyGoodMsgId. */
+            public buyGoodMsgId: (number|Long);
+
+            /**
+             * Encodes the specified C_MARKET_CANCEL message. Does not implicitly {@link com.message.C_MARKET_CANCEL.verify|verify} messages.
+             * @param message C_MARKET_CANCEL message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_MARKET_CANCEL, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_MARKET_CANCEL message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_MARKET_CANCEL
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_MARKET_CANCEL;
+        }
+
+        /** Properties of a S_MARKET_CANCEL. */
+        interface IS_MARKET_CANCEL {
+
+            /** S_MARKET_CANCEL buyGoodMsgId */
+            buyGoodMsgId?: (number|Long|null);
+        }
+
+        /** Represents a S_MARKET_CANCEL. */
+        class S_MARKET_CANCEL implements IS_MARKET_CANCEL {
+
+            /**
+             * Constructs a new S_MARKET_CANCEL.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_MARKET_CANCEL);
+
+            /** S_MARKET_CANCEL buyGoodMsgId. */
+            public buyGoodMsgId: (number|Long);
+
+            /**
+             * Encodes the specified S_MARKET_CANCEL message. Does not implicitly {@link com.message.S_MARKET_CANCEL.verify|verify} messages.
+             * @param message S_MARKET_CANCEL message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_MARKET_CANCEL, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_MARKET_CANCEL message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_MARKET_CANCEL
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_MARKET_CANCEL;
         }
 
         /** Properties of a MsgEnum. */
@@ -2756,8 +2844,6 @@ declare namespace com {
                 S_USER_LOGOUT = 1008,
                 C_USER_LOGIN_INIT_FINISH = 1009,
                 S_USER_LOGIN_INIT_FINISH = 1010,
-                S_LOGIN_OFFLINE_HANGUP_PUSH = 1028,
-                S_LOGIN_BACK_PACK_PUSH = 1029,
                 C_GET_NICKNAME_INFO = 1030,
                 S_GET_NICKNAME_INFO = 1031,
                 C_SEND_SDK_DATA = 1032,
@@ -2784,7 +2870,8 @@ declare namespace com {
                 S_MARKET_BUY = 1104,
                 C_MARKET_SELL = 1105,
                 S_MARKET_SELL = 1106,
-                C_SYNC_LOAD_FINISH = 2000,
+                C_MARKET_CANCEL = 1107,
+                S_MARKET_CANCEL = 1108,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,

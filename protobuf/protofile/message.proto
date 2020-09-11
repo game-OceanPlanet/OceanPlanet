@@ -17,9 +17,6 @@ message MsgEnum {
         S_USER_LOGIN_INIT_FINISH = 1010; // 登录注册完成请求 角色信息
 
 
-        S_LOGIN_OFFLINE_HANGUP_PUSH		= 1028;	// 登录推送客户端玩家离线奖励数据操作
-        S_LOGIN_BACK_PACK_PUSH			= 1029;	// 登录推送客户端玩家的背包数据
-
         C_GET_NICKNAME_INFO           = 1030;	// 客户端核查随机名字是否可以使用
         S_GET_NICKNAME_INFO           = 1031;
 
@@ -51,9 +48,8 @@ message MsgEnum {
 		S_MARKET_BUY			= 1104;
 		C_MARKET_SELL			= 1105;	//C->S 请求: 卖给Ta，获得U
 		S_MARKET_SELL			= 1106;
-
-
-		C_SYNC_LOAD_FINISH	= 2000; // 客户端通知服务器加载成功，服务器可以推送指令
+		C_MARKET_CANCEL			= 1107; //C->S 请求: 撤单
+		S_MARKET_CANCEL			= 1108;
 
         S_SYN_PROPERTY = 2001; // 同步属性变化
 
