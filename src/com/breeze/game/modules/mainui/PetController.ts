@@ -19,7 +19,10 @@ module qmr
 			this.addSocketListener(MessageID.S_COMBINE_FISH, this.getCombineResponse, this, false);
 			this.addSocketListener(MessageID.S_BUY_FISH, this.getBuyFishResponse, this, false);
 			this.addSocketListener(MessageID.S_GET_MONEY_REWARD, this.getMoneyResponse, this, false);
-			this.addSocketListener(MessageID.C_GET_MONEY_INFO, this.getMoneyInfoResponse, this, false);
+            this.addSocketListener(MessageID.S_GET_MONEY_INFO, this.getMoneyInfoResponse, this, false);
+            this.addSocketListener(MessageID.S_GET_MONEY_LOG_LIST, this.getMoneyLogResponse, this, false);
+            this.addSocketListener(MessageID.S_GET_DIAMOND_LOG_LIST, this.getUSDTLogResponse, this, false);
+            this.addSocketListener(MessageID.S_DIAMOND_BUY_FISH, this.getBuyFishByUSDTResponse, this, false);
 		}
 
 		public reqUserLoginInitFinish(): void
@@ -39,7 +42,7 @@ module qmr
         private getFishInfoResponse(s: com.message.S_GET_FISH_INFO):void
         {
 			HeroModel.instance.updateData(s.fishMsg as com.message.FishMsg[]);
-
+            HeroModel.instance.pendingMoney = HeroModel.instance.getPetPendingMoney();
             this.dispatch(NotifyConst.S_GET_FINSH_INFO);
         }
 
@@ -72,8 +75,25 @@ module qmr
         // 购买鱼儿
         private getBuyFishResponse(s: com.message.S_BUY_FISH):void
         {
+            TipManagerCommon.getInstance().createCommonColorTip("购买成功");
 			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
             this.dispatch(NotifyConst.S_BUY_FISH);
+        }
+
+        // U购买鱼
+        public getBuyFishByUSDT(configId:number):void
+        {
+            var c: com.message.C_DIAMOND_BUY_FISH = new com.message.C_DIAMOND_BUY_FISH();
+            c.fishConfigId = configId;
+			this.sendCmd(c, MessageID.C_DIAMOND_BUY_FISH, true);
+        }
+        
+        // U购买鱼
+        private getBuyFishByUSDTResponse(s: com.message.S_DIAMOND_BUY_FISH):void
+        {
+            TipManagerCommon.getInstance().createCommonColorTip("购买成功");
+			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
+            this.dispatch(NotifyConst.S_DIAMOND_BUY_FISH);
 		}
 		
 		// 领取金币奖励
@@ -87,6 +107,7 @@ module qmr
         private getMoneyResponse(s: com.message.S_GET_MONEY_REWARD):void
         {
             HeroModel.instance.totalMoney = Int64Util.getNumber(s.money);
+            HeroModel.instance.pendingMoney = 0;
             this.dispatch(NotifyConst.S_GET_MONEY_REWARD);
 		}
 
@@ -103,6 +124,34 @@ module qmr
 			HeroModel.instance.totalMoney = Int64Util.getNumber(s.money);
 			HeroModel.instance.totalUSDT = Int64Util.getNumber(s.money);
             this.dispatch(NotifyConst.S_GET_MONEY_INFO);
+        }
+        
+        // 获取金币日志信息
+        public getMoneyLogCmd():void
+        {
+            var c: com.message.C_GET_MONEY_LOG_LIST = new com.message.C_GET_MONEY_LOG_LIST();
+			this.sendCmd(c, MessageID.C_GET_MONEY_LOG_LIST, true);
+        }
+
+        // 获取金币日志信息
+        private getMoneyLogResponse(s: com.message.S_GET_MONEY_LOG_LIST):void
+        {
+            HeroModel.instance.moneyLogs = s.moneyLogMsg as com.message.MoneyLogMsg[];
+            this.dispatch(NotifyConst.S_GET_MONEY_LOG_LIST);
+        }
+        
+        // 获取U日志信息
+        public getUSDTLogCmd():void
+        {
+            var c: com.message.C_GET_DIAMOND_LOG_LIST = new com.message.C_GET_DIAMOND_LOG_LIST();
+			this.sendCmd(c, MessageID.C_GET_DIAMOND_LOG_LIST, true);
+        }
+
+        // 获取U日志信息
+        private getUSDTLogResponse(s: com.message.S_GET_DIAMOND_LOG_LIST):void
+        {
+            HeroModel.instance.usdtLogs = s.moneyLogMsg as com.message.MoneyLogMsg[];
+            this.dispatch(NotifyConst.S_GET_DIAMOND_LOG_LIST);
 		}
 		
 	}

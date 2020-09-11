@@ -35,7 +35,7 @@ module qmr {
             let t = this;
             if(!t.baseActor){
                 t.resPath = SystemPath.rolePath;//方便怪物共用角色模型，放在一个路径下了
-                let action = Number(t.petInfo.modelId) == 15 ? Status.IDLE : Status.MOVE;
+                let action = Number(t.petInfo.modelId) == 115 ? Status.IDLE : Status.MOVE;
                 t.baseActor = new qmr.BaseActor(t.resPath, t.onBodyLoad, t, action);
                 t.baseActor.touchChildren = false;
                 t.addChild(t.baseActor);

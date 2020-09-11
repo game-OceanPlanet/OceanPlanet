@@ -16,6 +16,11 @@ message IntLongMapMsg{
 	int64 value=2;
 }
 
+message IntDoubleMapMsg{
+	int32 key=1;
+	double value=2;
+}
+
 message IntFloatMapMsg{
 	int32 key=1;
 	float value=2;

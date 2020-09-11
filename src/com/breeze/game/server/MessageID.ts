@@ -70,6 +70,24 @@ module qmr {
 		/** 获取金币信息 */
 		public static C_GET_MONEY_INFO:number = 1059; 
 		public static S_GET_MONEY_INFO:number = 1060;
+		/**  U购买鱼 */
+		public static C_DIAMOND_BUY_FISH:number = 1061; 
+		public static S_DIAMOND_BUY_FISH:number = 1062;
+		/**  获取金币日志信息 */
+		public static C_GET_MONEY_LOG_LIST:number = 1063; 
+		public static S_GET_MONEY_LOG_LIST:number = 1064;
+		/**  获取U日志信息 */
+		public static C_GET_DIAMOND_LOG_LIST:number =1065;
+		public static S_GET_DIAMOND_LOG_LIST:number = 1066;
+		/** C->S 请求: 获取otc信息 */
+		public static C_GET_OCT_MARKET_INFO:number = 1101; 
+		public static S_GET_OCT_MARKET_INFO:number = 1102;
+		/** C->S 请求: 买入金币（挂单） */
+		public static C_MARKET_BUY:number = 1103;
+		public static S_MARKET_BUY:number = 1104;
+		/** C->S 请求: 卖给Ta，获得U */
+		public static C_MARKET_SELL:number = 1105;
+		public static S_MARKET_SELL:number = 1106;
 		/**  客户端通知服务器加载成功，服务器可以推送指令 */
 		public static C_SYNC_LOAD_FINISH:number = 2000; 
 		/**  同步属性变化 */

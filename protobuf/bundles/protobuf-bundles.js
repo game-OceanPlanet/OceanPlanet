@@ -309,6 +309,101 @@ $root.com = (function() {
             return IntLongMapMsg;
         })();
 
+        message.IntDoubleMapMsg = (function() {
+
+            /**
+             * Properties of an IntDoubleMapMsg.
+             * @memberof com.message
+             * @interface IIntDoubleMapMsg
+             * @property {number|null} [key] IntDoubleMapMsg key
+             * @property {number|null} [value] IntDoubleMapMsg value
+             */
+
+            /**
+             * Constructs a new IntDoubleMapMsg.
+             * @memberof com.message
+             * @classdesc Represents an IntDoubleMapMsg.
+             * @implements IIntDoubleMapMsg
+             * @constructor
+             * @param {com.message.IIntDoubleMapMsg=} [properties] Properties to set
+             */
+            function IntDoubleMapMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * IntDoubleMapMsg key.
+             * @member {number} key
+             * @memberof com.message.IntDoubleMapMsg
+             * @instance
+             */
+            IntDoubleMapMsg.prototype.key = 0;
+
+            /**
+             * IntDoubleMapMsg value.
+             * @member {number} value
+             * @memberof com.message.IntDoubleMapMsg
+             * @instance
+             */
+            IntDoubleMapMsg.prototype.value = 0;
+
+            /**
+             * Encodes the specified IntDoubleMapMsg message. Does not implicitly {@link com.message.IntDoubleMapMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.IntDoubleMapMsg
+             * @static
+             * @param {com.message.IIntDoubleMapMsg} message IntDoubleMapMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IntDoubleMapMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.key);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.value);
+                return writer;
+            };
+
+            /**
+             * Decodes an IntDoubleMapMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.IntDoubleMapMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.IntDoubleMapMsg} IntDoubleMapMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IntDoubleMapMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.IntDoubleMapMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.int32();
+                        break;
+                    case 2:
+                        message.value = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return IntDoubleMapMsg;
+        })();
+
         message.IntFloatMapMsg = (function() {
 
             /**
@@ -1555,11 +1650,12 @@ $root.com = (function() {
              * @property {number|null} [level] FishMsg level
              * @property {number|Long|null} [fishId] FishMsg fishId
              * @property {number|null} [state] FishMsg state
-             * @property {number|Long|null} [allMoney] FishMsg allMoney
-             * @property {number|Long|null} [extMoney] FishMsg extMoney
-             * @property {number|Long|null} [todayMoney] FishMsg todayMoney
+             * @property {number|null} [allMoney] FishMsg allMoney
+             * @property {number|null} [extMoney] FishMsg extMoney
+             * @property {number|null} [leftMoney] FishMsg leftMoney
+             * @property {number|null} [todayGotMoney] FishMsg todayGotMoney
+             * @property {number|null} [todayCurMoney] FishMsg todayCurMoney
              * @property {number|null} [allDay] FishMsg allDay
-             * @property {number|null} [leftDay] FishMsg leftDay
              */
 
             /**
@@ -1611,27 +1707,43 @@ $root.com = (function() {
 
             /**
              * FishMsg allMoney.
-             * @member {number|Long} allMoney
+             * @member {number} allMoney
              * @memberof com.message.FishMsg
              * @instance
              */
-            FishMsg.prototype.allMoney = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            FishMsg.prototype.allMoney = 0;
 
             /**
              * FishMsg extMoney.
-             * @member {number|Long} extMoney
+             * @member {number} extMoney
              * @memberof com.message.FishMsg
              * @instance
              */
-            FishMsg.prototype.extMoney = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            FishMsg.prototype.extMoney = 0;
 
             /**
-             * FishMsg todayMoney.
-             * @member {number|Long} todayMoney
+             * FishMsg leftMoney.
+             * @member {number} leftMoney
              * @memberof com.message.FishMsg
              * @instance
              */
-            FishMsg.prototype.todayMoney = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            FishMsg.prototype.leftMoney = 0;
+
+            /**
+             * FishMsg todayGotMoney.
+             * @member {number} todayGotMoney
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.todayGotMoney = 0;
+
+            /**
+             * FishMsg todayCurMoney.
+             * @member {number} todayCurMoney
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.todayCurMoney = 0;
 
             /**
              * FishMsg allDay.
@@ -1640,14 +1752,6 @@ $root.com = (function() {
              * @instance
              */
             FishMsg.prototype.allDay = 0;
-
-            /**
-             * FishMsg leftDay.
-             * @member {number} leftDay
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.leftDay = 0;
 
             /**
              * Encodes the specified FishMsg message. Does not implicitly {@link com.message.FishMsg.verify|verify} messages.
@@ -1670,15 +1774,17 @@ $root.com = (function() {
                 if (message.state != null && message.hasOwnProperty("state"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.state);
                 if (message.allMoney != null && message.hasOwnProperty("allMoney"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).int64(message.allMoney);
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.allMoney);
                 if (message.extMoney != null && message.hasOwnProperty("extMoney"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).int64(message.extMoney);
-                if (message.todayMoney != null && message.hasOwnProperty("todayMoney"))
-                    writer.uint32(/* id 7, wireType 0 =*/56).int64(message.todayMoney);
+                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.extMoney);
+                if (message.leftMoney != null && message.hasOwnProperty("leftMoney"))
+                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.leftMoney);
+                if (message.todayGotMoney != null && message.hasOwnProperty("todayGotMoney"))
+                    writer.uint32(/* id 8, wireType 1 =*/65).double(message.todayGotMoney);
+                if (message.todayCurMoney != null && message.hasOwnProperty("todayCurMoney"))
+                    writer.uint32(/* id 9, wireType 1 =*/73).double(message.todayCurMoney);
                 if (message.allDay != null && message.hasOwnProperty("allDay"))
-                    writer.uint32(/* id 8, wireType 0 =*/64).int32(message.allDay);
-                if (message.leftDay != null && message.hasOwnProperty("leftDay"))
-                    writer.uint32(/* id 9, wireType 0 =*/72).int32(message.leftDay);
+                    writer.uint32(/* id 10, wireType 0 =*/80).int32(message.allDay);
                 return writer;
             };
 
@@ -1713,19 +1819,22 @@ $root.com = (function() {
                         message.state = reader.int32();
                         break;
                     case 5:
-                        message.allMoney = reader.int64();
+                        message.allMoney = reader.double();
                         break;
                     case 6:
-                        message.extMoney = reader.int64();
+                        message.extMoney = reader.double();
                         break;
                     case 7:
-                        message.todayMoney = reader.int64();
+                        message.leftMoney = reader.double();
                         break;
                     case 8:
-                        message.allDay = reader.int32();
+                        message.todayGotMoney = reader.double();
                         break;
                     case 9:
-                        message.leftDay = reader.int32();
+                        message.todayCurMoney = reader.double();
+                        break;
+                    case 10:
+                        message.allDay = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -2052,6 +2161,168 @@ $root.com = (function() {
             return S_BUY_FISH;
         })();
 
+        message.C_DIAMOND_BUY_FISH = (function() {
+
+            /**
+             * Properties of a C_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @interface IC_DIAMOND_BUY_FISH
+             * @property {number|null} [fishConfigId] C_DIAMOND_BUY_FISH fishConfigId
+             */
+
+            /**
+             * Constructs a new C_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a C_DIAMOND_BUY_FISH.
+             * @implements IC_DIAMOND_BUY_FISH
+             * @constructor
+             * @param {com.message.IC_DIAMOND_BUY_FISH=} [properties] Properties to set
+             */
+            function C_DIAMOND_BUY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_DIAMOND_BUY_FISH fishConfigId.
+             * @member {number} fishConfigId
+             * @memberof com.message.C_DIAMOND_BUY_FISH
+             * @instance
+             */
+            C_DIAMOND_BUY_FISH.prototype.fishConfigId = 0;
+
+            /**
+             * Encodes the specified C_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.C_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_DIAMOND_BUY_FISH
+             * @static
+             * @param {com.message.IC_DIAMOND_BUY_FISH} message C_DIAMOND_BUY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_DIAMOND_BUY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.fishConfigId);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_DIAMOND_BUY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_DIAMOND_BUY_FISH} C_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_DIAMOND_BUY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_DIAMOND_BUY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishConfigId = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_DIAMOND_BUY_FISH;
+        })();
+
+        message.S_DIAMOND_BUY_FISH = (function() {
+
+            /**
+             * Properties of a S_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @interface IS_DIAMOND_BUY_FISH
+             * @property {com.message.IFishMsg|null} [fishMsg] S_DIAMOND_BUY_FISH fishMsg
+             */
+
+            /**
+             * Constructs a new S_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a S_DIAMOND_BUY_FISH.
+             * @implements IS_DIAMOND_BUY_FISH
+             * @constructor
+             * @param {com.message.IS_DIAMOND_BUY_FISH=} [properties] Properties to set
+             */
+            function S_DIAMOND_BUY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_DIAMOND_BUY_FISH fishMsg.
+             * @member {com.message.IFishMsg|null|undefined} fishMsg
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @instance
+             */
+            S_DIAMOND_BUY_FISH.prototype.fishMsg = null;
+
+            /**
+             * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @static
+             * @param {com.message.IS_DIAMOND_BUY_FISH} message S_DIAMOND_BUY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_DIAMOND_BUY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
+                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_DIAMOND_BUY_FISH} S_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_DIAMOND_BUY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_DIAMOND_BUY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_DIAMOND_BUY_FISH;
+        })();
+
         message.C_COMBINE_FISH = (function() {
 
             /**
@@ -2329,7 +2600,7 @@ $root.com = (function() {
              * Properties of a S_GET_MONEY_REWARD.
              * @memberof com.message
              * @interface IS_GET_MONEY_REWARD
-             * @property {number|Long|null} [money] S_GET_MONEY_REWARD money
+             * @property {number|null} [money] S_GET_MONEY_REWARD money
              */
 
             /**
@@ -2349,11 +2620,11 @@ $root.com = (function() {
 
             /**
              * S_GET_MONEY_REWARD money.
-             * @member {number|Long} money
+             * @member {number} money
              * @memberof com.message.S_GET_MONEY_REWARD
              * @instance
              */
-            S_GET_MONEY_REWARD.prototype.money = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            S_GET_MONEY_REWARD.prototype.money = 0;
 
             /**
              * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
@@ -2368,7 +2639,7 @@ $root.com = (function() {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.money != null && message.hasOwnProperty("money"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.money);
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
                 return writer;
             };
 
@@ -2391,7 +2662,7 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 3:
-                        message.money = reader.int64();
+                        message.money = reader.double();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -2477,8 +2748,8 @@ $root.com = (function() {
              * Properties of a S_GET_MONEY_INFO.
              * @memberof com.message
              * @interface IS_GET_MONEY_INFO
-             * @property {number|Long|null} [money] S_GET_MONEY_INFO money
-             * @property {number|Long|null} [diamond] S_GET_MONEY_INFO diamond
+             * @property {number|null} [money] S_GET_MONEY_INFO money
+             * @property {number|null} [diamond] S_GET_MONEY_INFO diamond
              */
 
             /**
@@ -2498,19 +2769,19 @@ $root.com = (function() {
 
             /**
              * S_GET_MONEY_INFO money.
-             * @member {number|Long} money
+             * @member {number} money
              * @memberof com.message.S_GET_MONEY_INFO
              * @instance
              */
-            S_GET_MONEY_INFO.prototype.money = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            S_GET_MONEY_INFO.prototype.money = 0;
 
             /**
              * S_GET_MONEY_INFO diamond.
-             * @member {number|Long} diamond
+             * @member {number} diamond
              * @memberof com.message.S_GET_MONEY_INFO
              * @instance
              */
-            S_GET_MONEY_INFO.prototype.diamond = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            S_GET_MONEY_INFO.prototype.diamond = 0;
 
             /**
              * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
@@ -2525,9 +2796,9 @@ $root.com = (function() {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.money != null && message.hasOwnProperty("money"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.money);
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
                 if (message.diamond != null && message.hasOwnProperty("diamond"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.diamond);
+                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.diamond);
                 return writer;
             };
 
@@ -2550,10 +2821,10 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 3:
-                        message.money = reader.int64();
+                        message.money = reader.double();
                         break;
                     case 4:
-                        message.diamond = reader.int64();
+                        message.diamond = reader.double();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -2564,6 +2835,503 @@ $root.com = (function() {
             };
 
             return S_GET_MONEY_INFO;
+        })();
+
+        message.MoneyLogMsg = (function() {
+
+            /**
+             * Properties of a MoneyLogMsg.
+             * @memberof com.message
+             * @interface IMoneyLogMsg
+             * @property {number|Long|null} [playerId] MoneyLogMsg playerId
+             * @property {number|Long|null} [fishId] MoneyLogMsg fishId
+             * @property {number|Long|null} [fishConfigId] MoneyLogMsg fishConfigId
+             * @property {number|null} [type] MoneyLogMsg type
+             * @property {number|null} [beforeMoney] MoneyLogMsg beforeMoney
+             * @property {number|null} [changeMoney] MoneyLogMsg changeMoney
+             * @property {number|null} [afterMoney] MoneyLogMsg afterMoney
+             * @property {number|Long|null} [logTime] MoneyLogMsg logTime
+             * @property {string|null} [info] MoneyLogMsg info
+             */
+
+            /**
+             * Constructs a new MoneyLogMsg.
+             * @memberof com.message
+             * @classdesc Represents a MoneyLogMsg.
+             * @implements IMoneyLogMsg
+             * @constructor
+             * @param {com.message.IMoneyLogMsg=} [properties] Properties to set
+             */
+            function MoneyLogMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MoneyLogMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg fishId.
+             * @member {number|Long} fishId
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.fishId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg fishConfigId.
+             * @member {number|Long} fishConfigId
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.fishConfigId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg type.
+             * @member {number} type
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.type = 0;
+
+            /**
+             * MoneyLogMsg beforeMoney.
+             * @member {number} beforeMoney
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.beforeMoney = 0;
+
+            /**
+             * MoneyLogMsg changeMoney.
+             * @member {number} changeMoney
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.changeMoney = 0;
+
+            /**
+             * MoneyLogMsg afterMoney.
+             * @member {number} afterMoney
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.afterMoney = 0;
+
+            /**
+             * MoneyLogMsg logTime.
+             * @member {number|Long} logTime
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.logTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg info.
+             * @member {string} info
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.info = "";
+
+            /**
+             * Encodes the specified MoneyLogMsg message. Does not implicitly {@link com.message.MoneyLogMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.MoneyLogMsg
+             * @static
+             * @param {com.message.IMoneyLogMsg} message MoneyLogMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MoneyLogMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.fishId != null && message.hasOwnProperty("fishId"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fishId);
+                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.fishConfigId);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.type);
+                if (message.beforeMoney != null && message.hasOwnProperty("beforeMoney"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.beforeMoney);
+                if (message.changeMoney != null && message.hasOwnProperty("changeMoney"))
+                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.changeMoney);
+                if (message.afterMoney != null && message.hasOwnProperty("afterMoney"))
+                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.afterMoney);
+                if (message.logTime != null && message.hasOwnProperty("logTime"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int64(message.logTime);
+                if (message.info != null && message.hasOwnProperty("info"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.info);
+                return writer;
+            };
+
+            /**
+             * Decodes a MoneyLogMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.MoneyLogMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.MoneyLogMsg} MoneyLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MoneyLogMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.MoneyLogMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    case 2:
+                        message.fishId = reader.int64();
+                        break;
+                    case 3:
+                        message.fishConfigId = reader.int64();
+                        break;
+                    case 4:
+                        message.type = reader.int32();
+                        break;
+                    case 5:
+                        message.beforeMoney = reader.double();
+                        break;
+                    case 6:
+                        message.changeMoney = reader.double();
+                        break;
+                    case 7:
+                        message.afterMoney = reader.double();
+                        break;
+                    case 8:
+                        message.logTime = reader.int64();
+                        break;
+                    case 9:
+                        message.info = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return MoneyLogMsg;
+        })();
+
+        message.C_GET_MONEY_LOG_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @interface IC_GET_MONEY_LOG_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MONEY_LOG_LIST.
+             * @implements IC_GET_MONEY_LOG_LIST
+             * @constructor
+             * @param {com.message.IC_GET_MONEY_LOG_LIST=} [properties] Properties to set
+             */
+            function C_GET_MONEY_LOG_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.C_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MONEY_LOG_LIST
+             * @static
+             * @param {com.message.IC_GET_MONEY_LOG_LIST} message C_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MONEY_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MONEY_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MONEY_LOG_LIST} C_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MONEY_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MONEY_LOG_LIST;
+        })();
+
+        message.S_GET_MONEY_LOG_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @interface IS_GET_MONEY_LOG_LIST
+             * @property {Array.<com.message.IMoneyLogMsg>|null} [moneyLogMsg] S_GET_MONEY_LOG_LIST moneyLogMsg
+             */
+
+            /**
+             * Constructs a new S_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MONEY_LOG_LIST.
+             * @implements IS_GET_MONEY_LOG_LIST
+             * @constructor
+             * @param {com.message.IS_GET_MONEY_LOG_LIST=} [properties] Properties to set
+             */
+            function S_GET_MONEY_LOG_LIST(properties) {
+                this.moneyLogMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MONEY_LOG_LIST moneyLogMsg.
+             * @member {Array.<com.message.IMoneyLogMsg>} moneyLogMsg
+             * @memberof com.message.S_GET_MONEY_LOG_LIST
+             * @instance
+             */
+            S_GET_MONEY_LOG_LIST.prototype.moneyLogMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.S_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MONEY_LOG_LIST
+             * @static
+             * @param {com.message.IS_GET_MONEY_LOG_LIST} message S_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MONEY_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyLogMsg != null && message.moneyLogMsg.length)
+                    for (var i = 0; i < message.moneyLogMsg.length; ++i)
+                        $root.com.message.MoneyLogMsg.encode(message.moneyLogMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MONEY_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MONEY_LOG_LIST} S_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MONEY_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.moneyLogMsg && message.moneyLogMsg.length))
+                            message.moneyLogMsg = [];
+                        message.moneyLogMsg.push($root.com.message.MoneyLogMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MONEY_LOG_LIST;
+        })();
+
+        message.C_GET_DIAMOND_LOG_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @interface IC_GET_DIAMOND_LOG_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_DIAMOND_LOG_LIST.
+             * @implements IC_GET_DIAMOND_LOG_LIST
+             * @constructor
+             * @param {com.message.IC_GET_DIAMOND_LOG_LIST=} [properties] Properties to set
+             */
+            function C_GET_DIAMOND_LOG_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.C_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {com.message.IC_GET_DIAMOND_LOG_LIST} message C_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_DIAMOND_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_DIAMOND_LOG_LIST} C_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_DIAMOND_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_DIAMOND_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_DIAMOND_LOG_LIST;
+        })();
+
+        message.S_GET_DIAMOND_LOG_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @interface IS_GET_DIAMOND_LOG_LIST
+             * @property {Array.<com.message.IMoneyLogMsg>|null} [moneyLogMsg] S_GET_DIAMOND_LOG_LIST moneyLogMsg
+             */
+
+            /**
+             * Constructs a new S_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_DIAMOND_LOG_LIST.
+             * @implements IS_GET_DIAMOND_LOG_LIST
+             * @constructor
+             * @param {com.message.IS_GET_DIAMOND_LOG_LIST=} [properties] Properties to set
+             */
+            function S_GET_DIAMOND_LOG_LIST(properties) {
+                this.moneyLogMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_DIAMOND_LOG_LIST moneyLogMsg.
+             * @member {Array.<com.message.IMoneyLogMsg>} moneyLogMsg
+             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
+             * @instance
+             */
+            S_GET_DIAMOND_LOG_LIST.prototype.moneyLogMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.S_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {com.message.IS_GET_DIAMOND_LOG_LIST} message S_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_DIAMOND_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyLogMsg != null && message.moneyLogMsg.length)
+                    for (var i = 0; i < message.moneyLogMsg.length; ++i)
+                        $root.com.message.MoneyLogMsg.encode(message.moneyLogMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_DIAMOND_LOG_LIST} S_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_DIAMOND_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_DIAMOND_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.moneyLogMsg && message.moneyLogMsg.length))
+                            message.moneyLogMsg = [];
+                        message.moneyLogMsg.push($root.com.message.MoneyLogMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_DIAMOND_LOG_LIST;
         })();
 
         message.C_USER_LOGIN = (function() {
@@ -3988,9 +4756,9 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IPlayerPropertyMsg
              * @property {number|Long|null} [playerId] PlayerPropertyMsg playerId
-             * @property {number|Long|null} [money] PlayerPropertyMsg money
-             * @property {number|Long|null} [diamond] PlayerPropertyMsg diamond
-             * @property {number|Long|null} [frozenDiamond] PlayerPropertyMsg frozenDiamond
+             * @property {number|null} [money] PlayerPropertyMsg money
+             * @property {number|null} [diamond] PlayerPropertyMsg diamond
+             * @property {number|null} [frozenDiamond] PlayerPropertyMsg frozenDiamond
              * @property {number|null} [available] PlayerPropertyMsg available
              */
 
@@ -4019,27 +4787,27 @@ $root.com = (function() {
 
             /**
              * PlayerPropertyMsg money.
-             * @member {number|Long} money
+             * @member {number} money
              * @memberof com.message.PlayerPropertyMsg
              * @instance
              */
-            PlayerPropertyMsg.prototype.money = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            PlayerPropertyMsg.prototype.money = 0;
 
             /**
              * PlayerPropertyMsg diamond.
-             * @member {number|Long} diamond
+             * @member {number} diamond
              * @memberof com.message.PlayerPropertyMsg
              * @instance
              */
-            PlayerPropertyMsg.prototype.diamond = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            PlayerPropertyMsg.prototype.diamond = 0;
 
             /**
              * PlayerPropertyMsg frozenDiamond.
-             * @member {number|Long} frozenDiamond
+             * @member {number} frozenDiamond
              * @memberof com.message.PlayerPropertyMsg
              * @instance
              */
-            PlayerPropertyMsg.prototype.frozenDiamond = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            PlayerPropertyMsg.prototype.frozenDiamond = 0;
 
             /**
              * PlayerPropertyMsg available.
@@ -4064,11 +4832,11 @@ $root.com = (function() {
                 if (message.playerId != null && message.hasOwnProperty("playerId"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
                 if (message.money != null && message.hasOwnProperty("money"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.money);
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
                 if (message.diamond != null && message.hasOwnProperty("diamond"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.diamond);
+                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.diamond);
                 if (message.frozenDiamond != null && message.hasOwnProperty("frozenDiamond"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).int64(message.frozenDiamond);
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.frozenDiamond);
                 if (message.available != null && message.hasOwnProperty("available"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int32(message.available);
                 return writer;
@@ -4096,13 +4864,13 @@ $root.com = (function() {
                         message.playerId = reader.int64();
                         break;
                     case 3:
-                        message.money = reader.int64();
+                        message.money = reader.double();
                         break;
                     case 4:
-                        message.diamond = reader.int64();
+                        message.diamond = reader.double();
                         break;
                     case 5:
-                        message.frozenDiamond = reader.int64();
+                        message.frozenDiamond = reader.double();
                         break;
                     case 6:
                         message.available = reader.int32();
@@ -4354,25 +5122,29 @@ $root.com = (function() {
             return TeamMemberMsg;
         })();
 
-        message.BUY_GOODS_INFO = (function() {
+        message.BuyGoodMsg = (function() {
 
             /**
-             * Properties of a BUY_GOODS_INFO.
+             * Properties of a BuyGoodMsg.
              * @memberof com.message
-             * @interface IBUY_GOODS_INFO
-             * @property {number|null} [marketId] BUY_GOODS_INFO marketId
-             * @property {number|null} [count] BUY_GOODS_INFO count
+             * @interface IBuyGoodMsg
+             * @property {number|Long|null} [buyGoodMsgId] BuyGoodMsg buyGoodMsgId
+             * @property {number|Long|null} [playerId] BuyGoodMsg playerId
+             * @property {number|Long|null} [username] BuyGoodMsg username
+             * @property {number|null} [moneyCount] BuyGoodMsg moneyCount
+             * @property {number|null} [diamondPrice] BuyGoodMsg diamondPrice
+             * @property {number|Long|null} [createTime] BuyGoodMsg createTime
              */
 
             /**
-             * Constructs a new BUY_GOODS_INFO.
+             * Constructs a new BuyGoodMsg.
              * @memberof com.message
-             * @classdesc Represents a BUY_GOODS_INFO.
-             * @implements IBUY_GOODS_INFO
+             * @classdesc Represents a BuyGoodMsg.
+             * @implements IBuyGoodMsg
              * @constructor
-             * @param {com.message.IBUY_GOODS_INFO=} [properties] Properties to set
+             * @param {com.message.IBuyGoodMsg=} [properties] Properties to set
              */
-            function BUY_GOODS_INFO(properties) {
+            function BuyGoodMsg(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4380,63 +5152,115 @@ $root.com = (function() {
             }
 
             /**
-             * BUY_GOODS_INFO marketId.
-             * @member {number} marketId
-             * @memberof com.message.BUY_GOODS_INFO
+             * BuyGoodMsg buyGoodMsgId.
+             * @member {number|Long} buyGoodMsgId
+             * @memberof com.message.BuyGoodMsg
              * @instance
              */
-            BUY_GOODS_INFO.prototype.marketId = 0;
+            BuyGoodMsg.prototype.buyGoodMsgId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
-             * BUY_GOODS_INFO count.
-             * @member {number} count
-             * @memberof com.message.BUY_GOODS_INFO
+             * BuyGoodMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.BuyGoodMsg
              * @instance
              */
-            BUY_GOODS_INFO.prototype.count = 0;
+            BuyGoodMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
-             * Encodes the specified BUY_GOODS_INFO message. Does not implicitly {@link com.message.BUY_GOODS_INFO.verify|verify} messages.
+             * BuyGoodMsg username.
+             * @member {number|Long} username
+             * @memberof com.message.BuyGoodMsg
+             * @instance
+             */
+            BuyGoodMsg.prototype.username = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * BuyGoodMsg moneyCount.
+             * @member {number} moneyCount
+             * @memberof com.message.BuyGoodMsg
+             * @instance
+             */
+            BuyGoodMsg.prototype.moneyCount = 0;
+
+            /**
+             * BuyGoodMsg diamondPrice.
+             * @member {number} diamondPrice
+             * @memberof com.message.BuyGoodMsg
+             * @instance
+             */
+            BuyGoodMsg.prototype.diamondPrice = 0;
+
+            /**
+             * BuyGoodMsg createTime.
+             * @member {number|Long} createTime
+             * @memberof com.message.BuyGoodMsg
+             * @instance
+             */
+            BuyGoodMsg.prototype.createTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified BuyGoodMsg message. Does not implicitly {@link com.message.BuyGoodMsg.verify|verify} messages.
              * @function encode
-             * @memberof com.message.BUY_GOODS_INFO
+             * @memberof com.message.BuyGoodMsg
              * @static
-             * @param {com.message.IBUY_GOODS_INFO} message BUY_GOODS_INFO message or plain object to encode
+             * @param {com.message.IBuyGoodMsg} message BuyGoodMsg message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            BUY_GOODS_INFO.encode = function encode(message, writer) {
+            BuyGoodMsg.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.marketId != null && message.hasOwnProperty("marketId"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.marketId);
-                if (message.count != null && message.hasOwnProperty("count"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.count);
+                if (message.buyGoodMsgId != null && message.hasOwnProperty("buyGoodMsgId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.buyGoodMsgId);
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.playerId);
+                if (message.username != null && message.hasOwnProperty("username"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.username);
+                if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
+                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.moneyCount);
+                if (message.diamondPrice != null && message.hasOwnProperty("diamondPrice"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.diamondPrice);
+                if (message.createTime != null && message.hasOwnProperty("createTime"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int64(message.createTime);
                 return writer;
             };
 
             /**
-             * Decodes a BUY_GOODS_INFO message from the specified reader or buffer.
+             * Decodes a BuyGoodMsg message from the specified reader or buffer.
              * @function decode
-             * @memberof com.message.BUY_GOODS_INFO
+             * @memberof com.message.BuyGoodMsg
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.BUY_GOODS_INFO} BUY_GOODS_INFO
+             * @returns {com.message.BuyGoodMsg} BuyGoodMsg
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            BUY_GOODS_INFO.decode = function decode(reader, length) {
+            BuyGoodMsg.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.BUY_GOODS_INFO();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.BuyGoodMsg();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.marketId = reader.int32();
+                        message.buyGoodMsgId = reader.int64();
                         break;
                     case 2:
-                        message.count = reader.int32();
+                        message.playerId = reader.int64();
+                        break;
+                    case 3:
+                        message.username = reader.int64();
+                        break;
+                    case 4:
+                        message.moneyCount = reader.double();
+                        break;
+                    case 5:
+                        message.diamondPrice = reader.double();
+                        break;
+                    case 6:
+                        message.createTime = reader.int64();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4446,7 +5270,286 @@ $root.com = (function() {
                 return message;
             };
 
-            return BUY_GOODS_INFO;
+            return BuyGoodMsg;
+        })();
+
+        message.HistoryPriceMsg = (function() {
+
+            /**
+             * Properties of a HistoryPriceMsg.
+             * @memberof com.message
+             * @interface IHistoryPriceMsg
+             * @property {number|null} [historyPrice] HistoryPriceMsg historyPrice
+             * @property {number|Long|null} [historyTime] HistoryPriceMsg historyTime
+             */
+
+            /**
+             * Constructs a new HistoryPriceMsg.
+             * @memberof com.message
+             * @classdesc Represents a HistoryPriceMsg.
+             * @implements IHistoryPriceMsg
+             * @constructor
+             * @param {com.message.IHistoryPriceMsg=} [properties] Properties to set
+             */
+            function HistoryPriceMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * HistoryPriceMsg historyPrice.
+             * @member {number} historyPrice
+             * @memberof com.message.HistoryPriceMsg
+             * @instance
+             */
+            HistoryPriceMsg.prototype.historyPrice = 0;
+
+            /**
+             * HistoryPriceMsg historyTime.
+             * @member {number|Long} historyTime
+             * @memberof com.message.HistoryPriceMsg
+             * @instance
+             */
+            HistoryPriceMsg.prototype.historyTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified HistoryPriceMsg message. Does not implicitly {@link com.message.HistoryPriceMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.HistoryPriceMsg
+             * @static
+             * @param {com.message.IHistoryPriceMsg} message HistoryPriceMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            HistoryPriceMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.historyPrice != null && message.hasOwnProperty("historyPrice"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.historyPrice);
+                if (message.historyTime != null && message.hasOwnProperty("historyTime"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.historyTime);
+                return writer;
+            };
+
+            /**
+             * Decodes a HistoryPriceMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.HistoryPriceMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.HistoryPriceMsg} HistoryPriceMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            HistoryPriceMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.HistoryPriceMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.historyPrice = reader.double();
+                        break;
+                    case 2:
+                        message.historyTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return HistoryPriceMsg;
+        })();
+
+        message.C_GET_OCT_MARKET_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_OCT_MARKET_INFO.
+             * @memberof com.message
+             * @interface IC_GET_OCT_MARKET_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_OCT_MARKET_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_OCT_MARKET_INFO.
+             * @implements IC_GET_OCT_MARKET_INFO
+             * @constructor
+             * @param {com.message.IC_GET_OCT_MARKET_INFO=} [properties] Properties to set
+             */
+            function C_GET_OCT_MARKET_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_OCT_MARKET_INFO message. Does not implicitly {@link com.message.C_GET_OCT_MARKET_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_OCT_MARKET_INFO
+             * @static
+             * @param {com.message.IC_GET_OCT_MARKET_INFO} message C_GET_OCT_MARKET_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_OCT_MARKET_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_OCT_MARKET_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_OCT_MARKET_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_OCT_MARKET_INFO} C_GET_OCT_MARKET_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_OCT_MARKET_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_OCT_MARKET_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_OCT_MARKET_INFO;
+        })();
+
+        message.S_GET_OCT_MARKET_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_OCT_MARKET_INFO.
+             * @memberof com.message
+             * @interface IS_GET_OCT_MARKET_INFO
+             * @property {number|null} [sysDiamonPrice] S_GET_OCT_MARKET_INFO sysDiamonPrice
+             * @property {Array.<com.message.IHistoryPriceMsg>|null} [historyPriceMsgList] S_GET_OCT_MARKET_INFO historyPriceMsgList
+             * @property {Array.<com.message.IBuyGoodMsg>|null} [buyGoodMsgList] S_GET_OCT_MARKET_INFO buyGoodMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_OCT_MARKET_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_OCT_MARKET_INFO.
+             * @implements IS_GET_OCT_MARKET_INFO
+             * @constructor
+             * @param {com.message.IS_GET_OCT_MARKET_INFO=} [properties] Properties to set
+             */
+            function S_GET_OCT_MARKET_INFO(properties) {
+                this.historyPriceMsgList = [];
+                this.buyGoodMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_OCT_MARKET_INFO sysDiamonPrice.
+             * @member {number} sysDiamonPrice
+             * @memberof com.message.S_GET_OCT_MARKET_INFO
+             * @instance
+             */
+            S_GET_OCT_MARKET_INFO.prototype.sysDiamonPrice = 0;
+
+            /**
+             * S_GET_OCT_MARKET_INFO historyPriceMsgList.
+             * @member {Array.<com.message.IHistoryPriceMsg>} historyPriceMsgList
+             * @memberof com.message.S_GET_OCT_MARKET_INFO
+             * @instance
+             */
+            S_GET_OCT_MARKET_INFO.prototype.historyPriceMsgList = $util.emptyArray;
+
+            /**
+             * S_GET_OCT_MARKET_INFO buyGoodMsgList.
+             * @member {Array.<com.message.IBuyGoodMsg>} buyGoodMsgList
+             * @memberof com.message.S_GET_OCT_MARKET_INFO
+             * @instance
+             */
+            S_GET_OCT_MARKET_INFO.prototype.buyGoodMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_OCT_MARKET_INFO message. Does not implicitly {@link com.message.S_GET_OCT_MARKET_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_OCT_MARKET_INFO
+             * @static
+             * @param {com.message.IS_GET_OCT_MARKET_INFO} message S_GET_OCT_MARKET_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_OCT_MARKET_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sysDiamonPrice != null && message.hasOwnProperty("sysDiamonPrice"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.sysDiamonPrice);
+                if (message.historyPriceMsgList != null && message.historyPriceMsgList.length)
+                    for (var i = 0; i < message.historyPriceMsgList.length; ++i)
+                        $root.com.message.HistoryPriceMsg.encode(message.historyPriceMsgList[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.buyGoodMsgList != null && message.buyGoodMsgList.length)
+                    for (var i = 0; i < message.buyGoodMsgList.length; ++i)
+                        $root.com.message.BuyGoodMsg.encode(message.buyGoodMsgList[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_OCT_MARKET_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_OCT_MARKET_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_OCT_MARKET_INFO} S_GET_OCT_MARKET_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_OCT_MARKET_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_OCT_MARKET_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.sysDiamonPrice = reader.double();
+                        break;
+                    case 3:
+                        if (!(message.historyPriceMsgList && message.historyPriceMsgList.length))
+                            message.historyPriceMsgList = [];
+                        message.historyPriceMsgList.push($root.com.message.HistoryPriceMsg.decode(reader, reader.uint32()));
+                        break;
+                    case 4:
+                        if (!(message.buyGoodMsgList && message.buyGoodMsgList.length))
+                            message.buyGoodMsgList = [];
+                        message.buyGoodMsgList.push($root.com.message.BuyGoodMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_OCT_MARKET_INFO;
         })();
 
         message.C_MARKET_BUY = (function() {
@@ -4455,7 +5558,8 @@ $root.com = (function() {
              * Properties of a C_MARKET_BUY.
              * @memberof com.message
              * @interface IC_MARKET_BUY
-             * @property {com.message.IBUY_GOODS_INFO|null} [buyInfo] C_MARKET_BUY buyInfo
+             * @property {number|null} [diamondPrice] C_MARKET_BUY diamondPrice
+             * @property {number|Long|null} [moneyCount] C_MARKET_BUY moneyCount
              */
 
             /**
@@ -4474,12 +5578,20 @@ $root.com = (function() {
             }
 
             /**
-             * C_MARKET_BUY buyInfo.
-             * @member {com.message.IBUY_GOODS_INFO|null|undefined} buyInfo
+             * C_MARKET_BUY diamondPrice.
+             * @member {number} diamondPrice
              * @memberof com.message.C_MARKET_BUY
              * @instance
              */
-            C_MARKET_BUY.prototype.buyInfo = null;
+            C_MARKET_BUY.prototype.diamondPrice = 0;
+
+            /**
+             * C_MARKET_BUY moneyCount.
+             * @member {number|Long} moneyCount
+             * @memberof com.message.C_MARKET_BUY
+             * @instance
+             */
+            C_MARKET_BUY.prototype.moneyCount = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * Encodes the specified C_MARKET_BUY message. Does not implicitly {@link com.message.C_MARKET_BUY.verify|verify} messages.
@@ -4493,8 +5605,10 @@ $root.com = (function() {
             C_MARKET_BUY.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.buyInfo != null && message.hasOwnProperty("buyInfo"))
-                    $root.com.message.BUY_GOODS_INFO.encode(message.buyInfo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.diamondPrice != null && message.hasOwnProperty("diamondPrice"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.diamondPrice);
+                if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.moneyCount);
                 return writer;
             };
 
@@ -4517,7 +5631,10 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.buyInfo = $root.com.message.BUY_GOODS_INFO.decode(reader, reader.uint32());
+                        message.diamondPrice = reader.double();
+                        break;
+                    case 3:
+                        message.moneyCount = reader.int64();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4536,7 +5653,7 @@ $root.com = (function() {
              * Properties of a S_MARKET_BUY.
              * @memberof com.message
              * @interface IS_MARKET_BUY
-             * @property {com.message.IBUY_GOODS_INFO|null} [buyInfo] S_MARKET_BUY buyInfo
+             * @property {com.message.IBuyGoodMsg|null} [buyGoodMsg] S_MARKET_BUY buyGoodMsg
              */
 
             /**
@@ -4555,12 +5672,12 @@ $root.com = (function() {
             }
 
             /**
-             * S_MARKET_BUY buyInfo.
-             * @member {com.message.IBUY_GOODS_INFO|null|undefined} buyInfo
+             * S_MARKET_BUY buyGoodMsg.
+             * @member {com.message.IBuyGoodMsg|null|undefined} buyGoodMsg
              * @memberof com.message.S_MARKET_BUY
              * @instance
              */
-            S_MARKET_BUY.prototype.buyInfo = null;
+            S_MARKET_BUY.prototype.buyGoodMsg = null;
 
             /**
              * Encodes the specified S_MARKET_BUY message. Does not implicitly {@link com.message.S_MARKET_BUY.verify|verify} messages.
@@ -4574,8 +5691,8 @@ $root.com = (function() {
             S_MARKET_BUY.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.buyInfo != null && message.hasOwnProperty("buyInfo"))
-                    $root.com.message.BUY_GOODS_INFO.encode(message.buyInfo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.buyGoodMsg != null && message.hasOwnProperty("buyGoodMsg"))
+                    $root.com.message.BuyGoodMsg.encode(message.buyGoodMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -4598,7 +5715,7 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.buyInfo = $root.com.message.BUY_GOODS_INFO.decode(reader, reader.uint32());
+                        message.buyGoodMsg = $root.com.message.BuyGoodMsg.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4611,24 +5728,24 @@ $root.com = (function() {
             return S_MARKET_BUY;
         })();
 
-        message.C_LIST_MARKET_LIMIT_INFO = (function() {
+        message.C_MARKET_SELL = (function() {
 
             /**
-             * Properties of a C_LIST_MARKET_LIMIT_INFO.
+             * Properties of a C_MARKET_SELL.
              * @memberof com.message
-             * @interface IC_LIST_MARKET_LIMIT_INFO
-             * @property {number|null} [shopType] C_LIST_MARKET_LIMIT_INFO shopType
+             * @interface IC_MARKET_SELL
+             * @property {number|Long|null} [buyGoodMsgId] C_MARKET_SELL buyGoodMsgId
              */
 
             /**
-             * Constructs a new C_LIST_MARKET_LIMIT_INFO.
+             * Constructs a new C_MARKET_SELL.
              * @memberof com.message
-             * @classdesc Represents a C_LIST_MARKET_LIMIT_INFO.
-             * @implements IC_LIST_MARKET_LIMIT_INFO
+             * @classdesc Represents a C_MARKET_SELL.
+             * @implements IC_MARKET_SELL
              * @constructor
-             * @param {com.message.IC_LIST_MARKET_LIMIT_INFO=} [properties] Properties to set
+             * @param {com.message.IC_MARKET_SELL=} [properties] Properties to set
              */
-            function C_LIST_MARKET_LIMIT_INFO(properties) {
+            function C_MARKET_SELL(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4636,50 +5753,50 @@ $root.com = (function() {
             }
 
             /**
-             * C_LIST_MARKET_LIMIT_INFO shopType.
-             * @member {number} shopType
-             * @memberof com.message.C_LIST_MARKET_LIMIT_INFO
+             * C_MARKET_SELL buyGoodMsgId.
+             * @member {number|Long} buyGoodMsgId
+             * @memberof com.message.C_MARKET_SELL
              * @instance
              */
-            C_LIST_MARKET_LIMIT_INFO.prototype.shopType = 0;
+            C_MARKET_SELL.prototype.buyGoodMsgId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
-             * Encodes the specified C_LIST_MARKET_LIMIT_INFO message. Does not implicitly {@link com.message.C_LIST_MARKET_LIMIT_INFO.verify|verify} messages.
+             * Encodes the specified C_MARKET_SELL message. Does not implicitly {@link com.message.C_MARKET_SELL.verify|verify} messages.
              * @function encode
-             * @memberof com.message.C_LIST_MARKET_LIMIT_INFO
+             * @memberof com.message.C_MARKET_SELL
              * @static
-             * @param {com.message.IC_LIST_MARKET_LIMIT_INFO} message C_LIST_MARKET_LIMIT_INFO message or plain object to encode
+             * @param {com.message.IC_MARKET_SELL} message C_MARKET_SELL message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            C_LIST_MARKET_LIMIT_INFO.encode = function encode(message, writer) {
+            C_MARKET_SELL.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.shopType != null && message.hasOwnProperty("shopType"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.shopType);
+                if (message.buyGoodMsgId != null && message.hasOwnProperty("buyGoodMsgId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.buyGoodMsgId);
                 return writer;
             };
 
             /**
-             * Decodes a C_LIST_MARKET_LIMIT_INFO message from the specified reader or buffer.
+             * Decodes a C_MARKET_SELL message from the specified reader or buffer.
              * @function decode
-             * @memberof com.message.C_LIST_MARKET_LIMIT_INFO
+             * @memberof com.message.C_MARKET_SELL
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_LIST_MARKET_LIMIT_INFO} C_LIST_MARKET_LIMIT_INFO
+             * @returns {com.message.C_MARKET_SELL} C_MARKET_SELL
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            C_LIST_MARKET_LIMIT_INFO.decode = function decode(reader, length) {
+            C_MARKET_SELL.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_LIST_MARKET_LIMIT_INFO();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_MARKET_SELL();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.shopType = reader.int32();
+                        message.buyGoodMsgId = reader.int64();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4689,29 +5806,27 @@ $root.com = (function() {
                 return message;
             };
 
-            return C_LIST_MARKET_LIMIT_INFO;
+            return C_MARKET_SELL;
         })();
 
-        message.S_LIST_MARKET_LIMIT_INFO = (function() {
+        message.S_MARKET_SELL = (function() {
 
             /**
-             * Properties of a S_LIST_MARKET_LIMIT_INFO.
+             * Properties of a S_MARKET_SELL.
              * @memberof com.message
-             * @interface IS_LIST_MARKET_LIMIT_INFO
-             * @property {number|null} [shopType] S_LIST_MARKET_LIMIT_INFO shopType
-             * @property {Array.<com.message.IBUY_GOODS_INFO>|null} [limitInfo] S_LIST_MARKET_LIMIT_INFO limitInfo
+             * @interface IS_MARKET_SELL
+             * @property {com.message.IBuyGoodMsg|null} [buyGoodMsg] S_MARKET_SELL buyGoodMsg
              */
 
             /**
-             * Constructs a new S_LIST_MARKET_LIMIT_INFO.
+             * Constructs a new S_MARKET_SELL.
              * @memberof com.message
-             * @classdesc Represents a S_LIST_MARKET_LIMIT_INFO.
-             * @implements IS_LIST_MARKET_LIMIT_INFO
+             * @classdesc Represents a S_MARKET_SELL.
+             * @implements IS_MARKET_SELL
              * @constructor
-             * @param {com.message.IS_LIST_MARKET_LIMIT_INFO=} [properties] Properties to set
+             * @param {com.message.IS_MARKET_SELL=} [properties] Properties to set
              */
-            function S_LIST_MARKET_LIMIT_INFO(properties) {
-                this.limitInfo = [];
+            function S_MARKET_SELL(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4719,66 +5834,50 @@ $root.com = (function() {
             }
 
             /**
-             * S_LIST_MARKET_LIMIT_INFO shopType.
-             * @member {number} shopType
-             * @memberof com.message.S_LIST_MARKET_LIMIT_INFO
+             * S_MARKET_SELL buyGoodMsg.
+             * @member {com.message.IBuyGoodMsg|null|undefined} buyGoodMsg
+             * @memberof com.message.S_MARKET_SELL
              * @instance
              */
-            S_LIST_MARKET_LIMIT_INFO.prototype.shopType = 0;
+            S_MARKET_SELL.prototype.buyGoodMsg = null;
 
             /**
-             * S_LIST_MARKET_LIMIT_INFO limitInfo.
-             * @member {Array.<com.message.IBUY_GOODS_INFO>} limitInfo
-             * @memberof com.message.S_LIST_MARKET_LIMIT_INFO
-             * @instance
-             */
-            S_LIST_MARKET_LIMIT_INFO.prototype.limitInfo = $util.emptyArray;
-
-            /**
-             * Encodes the specified S_LIST_MARKET_LIMIT_INFO message. Does not implicitly {@link com.message.S_LIST_MARKET_LIMIT_INFO.verify|verify} messages.
+             * Encodes the specified S_MARKET_SELL message. Does not implicitly {@link com.message.S_MARKET_SELL.verify|verify} messages.
              * @function encode
-             * @memberof com.message.S_LIST_MARKET_LIMIT_INFO
+             * @memberof com.message.S_MARKET_SELL
              * @static
-             * @param {com.message.IS_LIST_MARKET_LIMIT_INFO} message S_LIST_MARKET_LIMIT_INFO message or plain object to encode
+             * @param {com.message.IS_MARKET_SELL} message S_MARKET_SELL message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            S_LIST_MARKET_LIMIT_INFO.encode = function encode(message, writer) {
+            S_MARKET_SELL.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.shopType != null && message.hasOwnProperty("shopType"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.shopType);
-                if (message.limitInfo != null && message.limitInfo.length)
-                    for (var i = 0; i < message.limitInfo.length; ++i)
-                        $root.com.message.BUY_GOODS_INFO.encode(message.limitInfo[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.buyGoodMsg != null && message.hasOwnProperty("buyGoodMsg"))
+                    $root.com.message.BuyGoodMsg.encode(message.buyGoodMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
             /**
-             * Decodes a S_LIST_MARKET_LIMIT_INFO message from the specified reader or buffer.
+             * Decodes a S_MARKET_SELL message from the specified reader or buffer.
              * @function decode
-             * @memberof com.message.S_LIST_MARKET_LIMIT_INFO
+             * @memberof com.message.S_MARKET_SELL
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_LIST_MARKET_LIMIT_INFO} S_LIST_MARKET_LIMIT_INFO
+             * @returns {com.message.S_MARKET_SELL} S_MARKET_SELL
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            S_LIST_MARKET_LIMIT_INFO.decode = function decode(reader, length) {
+            S_MARKET_SELL.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_LIST_MARKET_LIMIT_INFO();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_MARKET_SELL();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.shopType = reader.int32();
-                        break;
-                    case 2:
-                        if (!(message.limitInfo && message.limitInfo.length))
-                            message.limitInfo = [];
-                        message.limitInfo.push($root.com.message.BUY_GOODS_INFO.decode(reader, reader.uint32()));
+                        message.buyGoodMsg = $root.com.message.BuyGoodMsg.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4788,7 +5887,7 @@ $root.com = (function() {
                 return message;
             };
 
-            return S_LIST_MARKET_LIMIT_INFO;
+            return S_MARKET_SELL;
         })();
 
         message.MsgEnum = (function() {
@@ -4885,6 +5984,18 @@ $root.com = (function() {
              * @property {number} S_GET_MONEY_REWARD=1058 S_GET_MONEY_REWARD value
              * @property {number} C_GET_MONEY_INFO=1059 C_GET_MONEY_INFO value
              * @property {number} S_GET_MONEY_INFO=1060 S_GET_MONEY_INFO value
+             * @property {number} C_DIAMOND_BUY_FISH=1061 C_DIAMOND_BUY_FISH value
+             * @property {number} S_DIAMOND_BUY_FISH=1062 S_DIAMOND_BUY_FISH value
+             * @property {number} C_GET_MONEY_LOG_LIST=1063 C_GET_MONEY_LOG_LIST value
+             * @property {number} S_GET_MONEY_LOG_LIST=1064 S_GET_MONEY_LOG_LIST value
+             * @property {number} C_GET_DIAMOND_LOG_LIST=1065 C_GET_DIAMOND_LOG_LIST value
+             * @property {number} S_GET_DIAMOND_LOG_LIST=1066 S_GET_DIAMOND_LOG_LIST value
+             * @property {number} C_GET_OCT_MARKET_INFO=1101 C_GET_OCT_MARKET_INFO value
+             * @property {number} S_GET_OCT_MARKET_INFO=1102 S_GET_OCT_MARKET_INFO value
+             * @property {number} C_MARKET_BUY=1103 C_MARKET_BUY value
+             * @property {number} S_MARKET_BUY=1104 S_MARKET_BUY value
+             * @property {number} C_MARKET_SELL=1105 C_MARKET_SELL value
+             * @property {number} S_MARKET_SELL=1106 S_MARKET_SELL value
              * @property {number} C_SYNC_LOAD_FINISH=2000 C_SYNC_LOAD_FINISH value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
@@ -4928,6 +6039,18 @@ $root.com = (function() {
                 values[valuesById[1058] = "S_GET_MONEY_REWARD"] = 1058;
                 values[valuesById[1059] = "C_GET_MONEY_INFO"] = 1059;
                 values[valuesById[1060] = "S_GET_MONEY_INFO"] = 1060;
+                values[valuesById[1061] = "C_DIAMOND_BUY_FISH"] = 1061;
+                values[valuesById[1062] = "S_DIAMOND_BUY_FISH"] = 1062;
+                values[valuesById[1063] = "C_GET_MONEY_LOG_LIST"] = 1063;
+                values[valuesById[1064] = "S_GET_MONEY_LOG_LIST"] = 1064;
+                values[valuesById[1065] = "C_GET_DIAMOND_LOG_LIST"] = 1065;
+                values[valuesById[1066] = "S_GET_DIAMOND_LOG_LIST"] = 1066;
+                values[valuesById[1101] = "C_GET_OCT_MARKET_INFO"] = 1101;
+                values[valuesById[1102] = "S_GET_OCT_MARKET_INFO"] = 1102;
+                values[valuesById[1103] = "C_MARKET_BUY"] = 1103;
+                values[valuesById[1104] = "S_MARKET_BUY"] = 1104;
+                values[valuesById[1105] = "C_MARKET_SELL"] = 1105;
+                values[valuesById[1106] = "S_MARKET_SELL"] = 1106;
                 values[valuesById[2000] = "C_SYNC_LOAD_FINISH"] = 2000;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
@@ -5008,7 +6131,7 @@ $root.com = (function() {
              * Properties of a S_SYN_PROPERTY.
              * @memberof com.message
              * @interface IS_SYN_PROPERTY
-             * @property {Array.<com.message.IIntLongMapMsg>|null} [mapMsg] S_SYN_PROPERTY mapMsg
+             * @property {Array.<com.message.IIntDoubleMapMsg>|null} [mapMsg] S_SYN_PROPERTY mapMsg
              */
 
             /**
@@ -5029,7 +6152,7 @@ $root.com = (function() {
 
             /**
              * S_SYN_PROPERTY mapMsg.
-             * @member {Array.<com.message.IIntLongMapMsg>} mapMsg
+             * @member {Array.<com.message.IIntDoubleMapMsg>} mapMsg
              * @memberof com.message.S_SYN_PROPERTY
              * @instance
              */
@@ -5049,7 +6172,7 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.mapMsg != null && message.mapMsg.length)
                     for (var i = 0; i < message.mapMsg.length; ++i)
-                        $root.com.message.IntLongMapMsg.encode(message.mapMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.com.message.IntDoubleMapMsg.encode(message.mapMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -5074,7 +6197,7 @@ $root.com = (function() {
                     case 1:
                         if (!(message.mapMsg && message.mapMsg.length))
                             message.mapMsg = [];
-                        message.mapMsg.push($root.com.message.IntLongMapMsg.decode(reader, reader.uint32()));
+                        message.mapMsg.push($root.com.message.IntDoubleMapMsg.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);

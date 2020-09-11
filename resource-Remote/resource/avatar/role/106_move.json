@@ -2,7 +2,7 @@
 	"d":{
 		"frameRate":24,
 		"labels":[
-			{"name":"d","frame":1,"end":21}
+			{"name":"dd","frame":1,"end":21}
 			
 			],
 		"events":[
@@ -11,132 +11,132 @@
 		"frames":[
 			
 			{
-			"res":"armatureName_newAnimation_00_png",
-			"x":20,
+			"res":"armatureName_newAnimation_00",
+			"x":60,
 			"y":0
 			},
 			{
-			"res":"armatureName_newAnimation_01_png",
-			"x":15,
-			"y":6
+			"res":"armatureName_newAnimation_01",
+			"x":53,
+			"y":9
 			},
 			{
-			"res":"armatureName_newAnimation_02_png",
+			"res":"armatureName_newAnimation_02",
+			"x":47,
+			"y":18
+			},
+			{
+			"res":"armatureName_newAnimation_03",
+			"x":42,
+			"y":28
+			},
+			{
+			"res":"armatureName_newAnimation_04",
+			"x":39,
+			"y":39
+			},
+			{
+			"res":"armatureName_newAnimation_05",
+			"x":35,
+			"y":50
+			},
+			{
+			"res":"armatureName_newAnimation_06",
+			"x":22,
+			"y":67
+			},
+			{
+			"res":"armatureName_newAnimation_07",
 			"x":12,
-			"y":13
+			"y":81
 			},
 			{
-			"res":"armatureName_newAnimation_03_png",
-			"x":9,
-			"y":20
-			},
-			{
-			"res":"armatureName_newAnimation_04_png",
+			"res":"armatureName_newAnimation_08",
 			"x":6,
-			"y":27
+			"y":82
 			},
 			{
-			"res":"armatureName_newAnimation_05_png",
-			"x":4,
-			"y":35
-			},
-			{
-			"res":"armatureName_newAnimation_06_png",
-			"x":3,
-			"y":43
-			},
-			{
-			"res":"armatureName_newAnimation_07_png",
-			"x":2,
-			"y":45
-			},
-			{
-			"res":"armatureName_newAnimation_08_png",
-			"x":2,
-			"y":46
-			},
-			{
-			"res":"armatureName_newAnimation_09_png",
-			"x":3,
-			"y":47
-			},
-			{
-			"res":"armatureName_newAnimation_10_png",
-			"x":4,
-			"y":48
-			},
-			{
-			"res":"armatureName_newAnimation_11_png",
-			"x":3,
-			"y":47
-			},
-			{
-			"res":"armatureName_newAnimation_12_png",
-			"x":2,
-			"y":46
-			},
-			{
-			"res":"armatureName_newAnimation_13_png",
-			"x":2,
-			"y":45
-			},
-			{
-			"res":"armatureName_newAnimation_14_png",
-			"x":3,
-			"y":43
-			},
-			{
-			"res":"armatureName_newAnimation_15_png",
-			"x":4,
-			"y":35
-			},
-			{
-			"res":"armatureName_newAnimation_16_png",
+			"res":"armatureName_newAnimation_09",
 			"x":6,
-			"y":27
+			"y":82
 			},
 			{
-			"res":"armatureName_newAnimation_17_png",
+			"res":"armatureName_newAnimation_10",
 			"x":9,
-			"y":20
+			"y":83
 			},
 			{
-			"res":"armatureName_newAnimation_18_png",
+			"res":"armatureName_newAnimation_11",
+			"x":8,
+			"y":82
+			},
+			{
+			"res":"armatureName_newAnimation_12",
+			"x":8,
+			"y":82
+			},
+			{
+			"res":"armatureName_newAnimation_13",
+			"x":10,
+			"y":81
+			},
+			{
+			"res":"armatureName_newAnimation_14",
 			"x":12,
-			"y":13
+			"y":80
 			},
 			{
-			"res":"armatureName_newAnimation_19_png",
-			"x":15,
-			"y":6
+			"res":"armatureName_newAnimation_15",
+			"x":17,
+			"y":70
 			},
 			{
-			"res":"armatureName_newAnimation_20_png",
-			"x":20,
+			"res":"armatureName_newAnimation_16",
+			"x":22,
+			"y":53
+			},
+			{
+			"res":"armatureName_newAnimation_17",
+			"x":29,
+			"y":38
+			},
+			{
+			"res":"armatureName_newAnimation_18",
+			"x":37,
+			"y":23
+			},
+			{
+			"res":"armatureName_newAnimation_19",
+			"x":48,
+			"y":10
+			},
+			{
+			"res":"armatureName_newAnimation_20",
+			"x":60,
 			"y":0
 			}
 			]
 }},
 	"res":{
-		"armatureName_newAnimation_05_png":{"x":0,"y":313,"w":233,"h":93},
-		"armatureName_newAnimation_01_png":{"x":0,"y":0,"w":220,"h":112},
-		"armatureName_newAnimation_20_png":{"x":440,"y":0,"w":214,"h":115},
-		"armatureName_newAnimation_19_png":{"x":220,"y":0,"w":220,"h":112},
-		"armatureName_newAnimation_00_png":{"x":440,"y":0,"w":214,"h":115},
-		"armatureName_newAnimation_03_png":{"x":228,"y":116,"w":227,"h":103},
-		"armatureName_newAnimation_11_png":{"x":234,"y":408,"w":237,"h":90},
-		"armatureName_newAnimation_10_png":{"x":234,"y":316,"w":236,"h":91},
-		"armatureName_newAnimation_04_png":{"x":686,"y":219,"w":230,"h":99},
-		"armatureName_newAnimation_12_png":{"x":707,"y":318,"w":237,"h":89},
-		"armatureName_newAnimation_06_png":{"x":236,"y":498,"w":235,"h":87},
-		"armatureName_newAnimation_07_png":{"x":708,"y":495,"w":236,"h":88},
-		"armatureName_newAnimation_14_png":{"x":0,"y":498,"w":236,"h":87},
-		"armatureName_newAnimation_13_png":{"x":708,"y":407,"w":237,"h":88},
-		"armatureName_newAnimation_09_png":{"x":471,"y":408,"w":237,"h":90},
-		"armatureName_newAnimation_16_png":{"x":456,"y":217,"w":230,"h":99},
-		"armatureName_newAnimation_18_png":{"x":654,"y":0,"w":224,"h":108},
-		"armatureName_newAnimation_08_png":{"x":470,"y":318,"w":237,"h":89},
-		"armatureName_newAnimation_02_png":{"x":654,"y":109,"w":224,"h":108},
-		"armatureName_newAnimation_17_png":{"x":0,"y":113,"w":228,"h":103},
-		"armatureName_newAnimation_15_png":{"x":0,"y":219,"w":234,"h":93}
+		"armatureName_newAnimation_13":{"x":901,"y":878,"w":463,"h":160},
+		"armatureName_newAnimation_06":{"x":885,"y":701,"w":452,"h":176},
+		"armatureName_newAnimation_08":{"x":901,"y":1038,"w":468,"h":157},
+		"armatureName_newAnimation_07":{"x":1364,"y":878,"w":461,"h":160},
+		"armatureName_newAnimation_00":{"x":0,"y":0,"w":418,"h":270},
+		"armatureName_newAnimation_01":{"x":1267,"y":0,"w":425,"h":257},
+		"armatureName_newAnimation_14":{"x":438,"y":877,"w":463,"h":163},
+		"armatureName_newAnimation_12":{"x":1369,"y":1038,"w":466,"h":157},
+		"armatureName_newAnimation_05":{"x":1342,"y":501,"w":440,"h":199},
+		"armatureName_newAnimation_18":{"x":836,"y":257,"w":442,"h":239},
+		"armatureName_newAnimation_15":{"x":1342,"y":700,"w":460,"h":178},
+		"armatureName_newAnimation_10":{"x":466,"y":1195,"w":466,"h":151},
+		"armatureName_newAnimation_17":{"x":435,"y":496,"w":450,"h":219},
+		"armatureName_newAnimation_16":{"x":885,"y":501,"w":457,"h":200},
+		"armatureName_newAnimation_11":{"x":0,"y":1194,"w":466,"h":154},
+		"armatureName_newAnimation_04":{"x":0,"y":715,"w":438,"h":214},
+		"armatureName_newAnimation_03":{"x":0,"y":270,"w":435,"h":229},
+		"armatureName_newAnimation_02":{"x":1278,"y":257,"w":431,"h":244},
+		"armatureName_newAnimation_20":{"x":418,"y":0,"w":418,"h":270},
+		"armatureName_newAnimation_19":{"x":836,"y":0,"w":431,"h":256},
+		"armatureName_newAnimation_09":{"x":0,"y":1040,"w":468,"h":154}
 	}}

@@ -50,11 +50,27 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
+declare class BuyGoodItemSkin extends eui.Skin{
+}
 declare class Mainui extends eui.Skin{
+}
+declare class MoneyLogItemSkin extends eui.Skin{
+}
+declare class MoneyLogSkin extends eui.Skin{
+}
+declare class PetItemSkin extends eui.Skin{
+}
+declare class PetViewSkin extends eui.Skin{
+}
+declare class PriceSkin extends eui.Skin{
 }
 declare class ShopItemSkin extends eui.Skin{
 }
 declare class ShopSkin extends eui.Skin{
+}
+declare class USDTLogItemSkin extends eui.Skin{
+}
+declare class USDTLogVSkin extends eui.Skin{
 }
 declare class CheckBoxLoginSkin extends eui.Skin{
 }

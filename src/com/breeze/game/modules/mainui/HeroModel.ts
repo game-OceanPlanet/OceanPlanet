@@ -1,6 +1,8 @@
 module qmr {
     export class HeroModel extends BaseModel {
         public static KH:string = "KH";
+        public static USDT:string = "USDT"
+        public static TIMES:number = 1;
         
         public IdentityPro:com.message.BasePlayerMsg;
         public playerPro:com.message.PlayerPropertyMsg;
@@ -12,6 +14,9 @@ module qmr {
         public pendingMoney:number = 0;//待领取的金币
         public totalMoney:number = 0;//总共持有金币的数量
         public totalUSDT:number = 0;//当前玩家USDT的数量
+
+        public moneyLogs:com.message.MoneyLogMsg[];//获取金币日志信息
+        public usdtLogs:com.message.MoneyLogMsg[];//获取U日志信息
 
         public constructor() {
             super();
@@ -45,6 +50,11 @@ module qmr {
             }
 
             
+        }
+
+        public getPets():PetActorInfo[]
+        {
+            return this.fishInfos;
         }
 
         public updateData(pros:com.message.FishMsg[]):void
@@ -202,33 +212,6 @@ module qmr {
         }
 
         /**
-         * 宠物每天还剩余的金币
-         * @param id 
-         */
-        public getPetLeftMoney(id:number):number
-        {
-            let t = this;
-            if(!t.fishInfos || t.fishInfos.length == 0){
-                return 0;
-            }
-            let len:number = t.fishInfos.length;
-            let cfg:PetCfg;
-            let pro:PetActorInfo;
-            for(var i:number = 0; i < len; i ++){
-                pro  = t.fishInfos[i];
-                let fid = Int64Util.getNumber(pro.fishId);
-                if(pro.state == 0 && id == fid){
-                    cfg = ConfigManager.getConf(ConfigEnum.PET, id);
-                    let hadProduce:number = Int64Util.getNumber(pro.todayMoney);
-                    let left =  cfg.produce / cfg.limitTime - hadProduce;
-                    return left;
-                }
-            }
-            
-            return 0;
-        }
-
-        /**
          * 今日产出可以领取的金币总数量
          */
         public getPetPendingMoney():number
@@ -242,7 +225,7 @@ module qmr {
             let total:number = 0;
             for(var i:number = 0; i < len; i ++){
                 pro  = t.fishInfos[i];
-                let pendingMoney:number = Int64Util.getNumber(pro.todayMoney);//今日产出的待领取的金币数量
+                let pendingMoney:number = Int64Util.getNumber(pro.todayCurMoney);//今日产出的待领取的金币数量
                 let gainedMoney:number = Int64Util.getNumber(pro.extMoney);//宠物总共产出的金币数量，pro.todayMoney领完之后直接加在pro.extMoney上
                 total += pendingMoney;
             }

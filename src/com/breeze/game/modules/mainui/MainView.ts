@@ -10,7 +10,6 @@ public btn_bottom_pet:eui.Image;
 public txt_curr:eui.Label;
 public btn_get_group:eui.Group;
 public btn_get:eui.Image;
-public txt_total:eui.Label;
 public btn_price_group:eui.Group;
 public btn_price:eui.Image;
 public btn_exchange:eui.Image;
@@ -29,6 +28,8 @@ public effect_group_3:eui.Group;
 public effect_group_4:eui.Group;
 public effect_group_5:eui.Group;
 public effect_group_pet:eui.Group;
+public txt_totalGold:eui.Label;
+public txt_totalUsdt:eui.Label;
 
 
 
@@ -99,20 +100,24 @@ public effect_group_pet:eui.Group;
         //资产面板
         private onPropertyViewClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("测试鱼儿合成功能...");
-            HeroModel.instance.testMerge();
+            ModuleManager.showModule(ModuleNameConst.USDT_LOG_VIEW);
+            PetController.instance.getUSDTLogCmd();
         }
 
         //金币面板
         private onGoldViewClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.GOLD_LOG_VIEW);
+            PetController.instance.getMoneyLogCmd();
         }
 
         //实名认证
         private onRealNameClick():void
         {
             TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
+            TipManagerCommon.getInstance().createCommonTip("测试鱼儿合成功能...");
+            HeroModel.instance.testMerge();
+            
         }
         //通行证
         private onPermitClick():void
@@ -141,21 +146,21 @@ public effect_group_pet:eui.Group;
                 t.updateView();
                 return;
             }
-            t.__lastGetMoneyTime = egret.getTimer() + 60000;
+            t.__lastGetMoneyTime = egret.getTimer() + 10000;
             
             PetController.instance.getMoneyCmd();
         }
         //查看价钱
         private onPriceClick():void
         {
-            TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.TRADE_VIEW);
+            TradeController.instance.requestOTCInfo();
         }
 
         //查看宠物面板
         private onPetViewClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
-
+            ModuleManager.showModule(ModuleNameConst.PET_VIEW);
             PetController.instance.getMyFishInfo();
         }
 
@@ -167,11 +172,13 @@ public effect_group_pet:eui.Group;
         //兑换
         private onExchangeClick():void
         {
+            PetController.instance.getMoneyLogCmd();
             TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
         }
         //注入
         private onInjectClick():void
         {
+            PetController.instance.getUSDTLogCmd();
             TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
         }
         //商城
@@ -257,8 +264,9 @@ public effect_group_pet:eui.Group;
             t.__secondSpeed = md.getProduceMoneySpeed();
             t.__dayTotal = md.getEveryDayProduceMoney();
 
-            t.txt_curr.text = t.__currMoney.toFixed(4) + HeroModel.KH;
-            t.txt_total.text = t.__totalMoney.toFixed(4) + HeroModel.KH;
+            t.txt_curr.text = Number(t.__currMoney.toFixed(4)) + HeroModel.KH;
+            t.txt_totalGold.text = Number(HeroModel.instance.totalMoney.toFixed(4))+HeroModel.KH;
+			t.txt_totalUsdt.text = Number(HeroModel.instance.totalUSDT.toFixed(4))+HeroModel.USDT;
 
 
 			if (t.__timekey != -1){
@@ -280,7 +288,7 @@ public effect_group_pet:eui.Group;
 				return;
 			}
             t.__currMoney += t.__secondSpeed;
-            t.txt_curr.text = t.__currMoney.toFixed(4) + HeroModel.KH;
+            t.txt_curr.text = Number(t.__currMoney.toFixed(4)) + HeroModel.KH;
 		}
 
 		private stopTime(): void

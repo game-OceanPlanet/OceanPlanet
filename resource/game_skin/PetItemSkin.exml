@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PetItemSkin" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="normal,tower"  width="646" height="155">
+	<e:Image id="rank_bgImg" scale9Grid="29,30,35,35" anchorOffsetY="0" anchorOffsetX="0" x="0" y="0" source="shop_json.panel_frame4"/>
+	<e:Image x="12" verticalCenter="0" source="shop_json.item_icon1"/>
+	<e:Image id="img_head" width="128" height="128" x="16" verticalCenter="1.5"/>
+	<e:Label id="txt_name" text="鹏鲲" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" textColor="0x803f07" bold="false" anchorOffsetX="0" y="14" left="169"/>
+	<e:Label id="txt_state" text="正在产币" size="22" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" bold="false" anchorOffsetX="0" y="26" textColor="0x138423" horizontalCenter="240"/>
+	<e:Label id="t" text="产出：" y="50" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169"/>
+	<e:Label text="剩余：" y="74" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169"/>
+	<e:Label text="总量：" y="99" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169"/>
+	<e:Label id="txt_gain" text="10.526JT" y="50" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="230"/>
+	<e:Label id="txt_left" text="90JT" y="75" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="230"/>
+	<e:Label id="txt_total" text="1000JT" y="99" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="230"/>
+	<e:Label text="剩余时间：" y="123" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="171"/>
+	<e:Label id="txt_leftTime" text="00：00" y="122" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="265"/>
+	<e:Label text="今日已领取：" y="75" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="401"/>
+	<e:Label text="当前可领取：" y="99" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="401"/>
+	<e:Label id="txt_todayGained" text="90JT" y="75" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="518"/>
+	<e:Label id="txt_todayCanGain" text="1000JT" y="99" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="518"/>
+	<e:Label text="累计未领取：" y="50" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="401"/>
+	<e:Label id="txt_totalLeft" text="90JT" y="51" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="518"/>
+</e:Skin>

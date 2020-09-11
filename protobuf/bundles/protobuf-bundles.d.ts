@@ -138,6 +138,50 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.IntLongMapMsg;
         }
 
+        /** Properties of an IntDoubleMapMsg. */
+        interface IIntDoubleMapMsg {
+
+            /** IntDoubleMapMsg key */
+            key?: (number|null);
+
+            /** IntDoubleMapMsg value */
+            value?: (number|null);
+        }
+
+        /** Represents an IntDoubleMapMsg. */
+        class IntDoubleMapMsg implements IIntDoubleMapMsg {
+
+            /**
+             * Constructs a new IntDoubleMapMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IIntDoubleMapMsg);
+
+            /** IntDoubleMapMsg key. */
+            public key: number;
+
+            /** IntDoubleMapMsg value. */
+            public value: number;
+
+            /**
+             * Encodes the specified IntDoubleMapMsg message. Does not implicitly {@link com.message.IntDoubleMapMsg.verify|verify} messages.
+             * @param message IntDoubleMapMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IIntDoubleMapMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an IntDoubleMapMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns IntDoubleMapMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.IntDoubleMapMsg;
+        }
+
         /** Properties of an IntFloatMapMsg. */
         interface IIntFloatMapMsg {
 
@@ -728,19 +772,22 @@ declare namespace com {
             state?: (number|null);
 
             /** FishMsg allMoney */
-            allMoney?: (number|Long|null);
+            allMoney?: (number|null);
 
             /** FishMsg extMoney */
-            extMoney?: (number|Long|null);
+            extMoney?: (number|null);
 
-            /** FishMsg todayMoney */
-            todayMoney?: (number|Long|null);
+            /** FishMsg leftMoney */
+            leftMoney?: (number|null);
+
+            /** FishMsg todayGotMoney */
+            todayGotMoney?: (number|null);
+
+            /** FishMsg todayCurMoney */
+            todayCurMoney?: (number|null);
 
             /** FishMsg allDay */
             allDay?: (number|null);
-
-            /** FishMsg leftDay */
-            leftDay?: (number|null);
         }
 
         /** Represents a FishMsg. */
@@ -765,19 +812,22 @@ declare namespace com {
             public state: number;
 
             /** FishMsg allMoney. */
-            public allMoney: (number|Long);
+            public allMoney: number;
 
             /** FishMsg extMoney. */
-            public extMoney: (number|Long);
+            public extMoney: number;
 
-            /** FishMsg todayMoney. */
-            public todayMoney: (number|Long);
+            /** FishMsg leftMoney. */
+            public leftMoney: number;
+
+            /** FishMsg todayGotMoney. */
+            public todayGotMoney: number;
+
+            /** FishMsg todayCurMoney. */
+            public todayCurMoney: number;
 
             /** FishMsg allDay. */
             public allDay: number;
-
-            /** FishMsg leftDay. */
-            public leftDay: number;
 
             /**
              * Encodes the specified FishMsg message. Does not implicitly {@link com.message.FishMsg.verify|verify} messages.
@@ -944,6 +994,82 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_BUY_FISH;
         }
 
+        /** Properties of a C_DIAMOND_BUY_FISH. */
+        interface IC_DIAMOND_BUY_FISH {
+
+            /** C_DIAMOND_BUY_FISH fishConfigId */
+            fishConfigId?: (number|null);
+        }
+
+        /** Represents a C_DIAMOND_BUY_FISH. */
+        class C_DIAMOND_BUY_FISH implements IC_DIAMOND_BUY_FISH {
+
+            /**
+             * Constructs a new C_DIAMOND_BUY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_DIAMOND_BUY_FISH);
+
+            /** C_DIAMOND_BUY_FISH fishConfigId. */
+            public fishConfigId: number;
+
+            /**
+             * Encodes the specified C_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.C_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @param message C_DIAMOND_BUY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_DIAMOND_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_DIAMOND_BUY_FISH;
+        }
+
+        /** Properties of a S_DIAMOND_BUY_FISH. */
+        interface IS_DIAMOND_BUY_FISH {
+
+            /** S_DIAMOND_BUY_FISH fishMsg */
+            fishMsg?: (com.message.IFishMsg|null);
+        }
+
+        /** Represents a S_DIAMOND_BUY_FISH. */
+        class S_DIAMOND_BUY_FISH implements IS_DIAMOND_BUY_FISH {
+
+            /**
+             * Constructs a new S_DIAMOND_BUY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_DIAMOND_BUY_FISH);
+
+            /** S_DIAMOND_BUY_FISH fishMsg. */
+            public fishMsg?: (com.message.IFishMsg|null);
+
+            /**
+             * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @param message S_DIAMOND_BUY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_DIAMOND_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_DIAMOND_BUY_FISH;
+        }
+
         /** Properties of a C_COMBINE_FISH. */
         interface IC_COMBINE_FISH {
 
@@ -1074,7 +1200,7 @@ declare namespace com {
         interface IS_GET_MONEY_REWARD {
 
             /** S_GET_MONEY_REWARD money */
-            money?: (number|Long|null);
+            money?: (number|null);
         }
 
         /** Represents a S_GET_MONEY_REWARD. */
@@ -1087,7 +1213,7 @@ declare namespace com {
             constructor(properties?: com.message.IS_GET_MONEY_REWARD);
 
             /** S_GET_MONEY_REWARD money. */
-            public money: (number|Long);
+            public money: number;
 
             /**
              * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
@@ -1144,10 +1270,10 @@ declare namespace com {
         interface IS_GET_MONEY_INFO {
 
             /** S_GET_MONEY_INFO money */
-            money?: (number|Long|null);
+            money?: (number|null);
 
             /** S_GET_MONEY_INFO diamond */
-            diamond?: (number|Long|null);
+            diamond?: (number|null);
         }
 
         /** Represents a S_GET_MONEY_INFO. */
@@ -1160,10 +1286,10 @@ declare namespace com {
             constructor(properties?: com.message.IS_GET_MONEY_INFO);
 
             /** S_GET_MONEY_INFO money. */
-            public money: (number|Long);
+            public money: number;
 
             /** S_GET_MONEY_INFO diamond. */
-            public diamond: (number|Long);
+            public diamond: number;
 
             /**
              * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
@@ -1182,6 +1308,232 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_INFO;
+        }
+
+        /** Properties of a MoneyLogMsg. */
+        interface IMoneyLogMsg {
+
+            /** MoneyLogMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** MoneyLogMsg fishId */
+            fishId?: (number|Long|null);
+
+            /** MoneyLogMsg fishConfigId */
+            fishConfigId?: (number|Long|null);
+
+            /** MoneyLogMsg type */
+            type?: (number|null);
+
+            /** MoneyLogMsg beforeMoney */
+            beforeMoney?: (number|null);
+
+            /** MoneyLogMsg changeMoney */
+            changeMoney?: (number|null);
+
+            /** MoneyLogMsg afterMoney */
+            afterMoney?: (number|null);
+
+            /** MoneyLogMsg logTime */
+            logTime?: (number|Long|null);
+
+            /** MoneyLogMsg info */
+            info?: (string|null);
+        }
+
+        /** Represents a MoneyLogMsg. */
+        class MoneyLogMsg implements IMoneyLogMsg {
+
+            /**
+             * Constructs a new MoneyLogMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IMoneyLogMsg);
+
+            /** MoneyLogMsg playerId. */
+            public playerId: (number|Long);
+
+            /** MoneyLogMsg fishId. */
+            public fishId: (number|Long);
+
+            /** MoneyLogMsg fishConfigId. */
+            public fishConfigId: (number|Long);
+
+            /** MoneyLogMsg type. */
+            public type: number;
+
+            /** MoneyLogMsg beforeMoney. */
+            public beforeMoney: number;
+
+            /** MoneyLogMsg changeMoney. */
+            public changeMoney: number;
+
+            /** MoneyLogMsg afterMoney. */
+            public afterMoney: number;
+
+            /** MoneyLogMsg logTime. */
+            public logTime: (number|Long);
+
+            /** MoneyLogMsg info. */
+            public info: string;
+
+            /**
+             * Encodes the specified MoneyLogMsg message. Does not implicitly {@link com.message.MoneyLogMsg.verify|verify} messages.
+             * @param message MoneyLogMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IMoneyLogMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a MoneyLogMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns MoneyLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.MoneyLogMsg;
+        }
+
+        /** Properties of a C_GET_MONEY_LOG_LIST. */
+        interface IC_GET_MONEY_LOG_LIST {
+        }
+
+        /** Represents a C_GET_MONEY_LOG_LIST. */
+        class C_GET_MONEY_LOG_LIST implements IC_GET_MONEY_LOG_LIST {
+
+            /**
+             * Constructs a new C_GET_MONEY_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MONEY_LOG_LIST);
+
+            /**
+             * Encodes the specified C_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.C_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @param message C_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MONEY_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_LOG_LIST;
+        }
+
+        /** Properties of a S_GET_MONEY_LOG_LIST. */
+        interface IS_GET_MONEY_LOG_LIST {
+
+            /** S_GET_MONEY_LOG_LIST moneyLogMsg */
+            moneyLogMsg?: (com.message.IMoneyLogMsg[]|null);
+        }
+
+        /** Represents a S_GET_MONEY_LOG_LIST. */
+        class S_GET_MONEY_LOG_LIST implements IS_GET_MONEY_LOG_LIST {
+
+            /**
+             * Constructs a new S_GET_MONEY_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MONEY_LOG_LIST);
+
+            /** S_GET_MONEY_LOG_LIST moneyLogMsg. */
+            public moneyLogMsg: com.message.IMoneyLogMsg[];
+
+            /**
+             * Encodes the specified S_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.S_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @param message S_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MONEY_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_LOG_LIST;
+        }
+
+        /** Properties of a C_GET_DIAMOND_LOG_LIST. */
+        interface IC_GET_DIAMOND_LOG_LIST {
+        }
+
+        /** Represents a C_GET_DIAMOND_LOG_LIST. */
+        class C_GET_DIAMOND_LOG_LIST implements IC_GET_DIAMOND_LOG_LIST {
+
+            /**
+             * Constructs a new C_GET_DIAMOND_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_DIAMOND_LOG_LIST);
+
+            /**
+             * Encodes the specified C_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.C_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @param message C_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_DIAMOND_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_DIAMOND_LOG_LIST;
+        }
+
+        /** Properties of a S_GET_DIAMOND_LOG_LIST. */
+        interface IS_GET_DIAMOND_LOG_LIST {
+
+            /** S_GET_DIAMOND_LOG_LIST moneyLogMsg */
+            moneyLogMsg?: (com.message.IMoneyLogMsg[]|null);
+        }
+
+        /** Represents a S_GET_DIAMOND_LOG_LIST. */
+        class S_GET_DIAMOND_LOG_LIST implements IS_GET_DIAMOND_LOG_LIST {
+
+            /**
+             * Constructs a new S_GET_DIAMOND_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_DIAMOND_LOG_LIST);
+
+            /** S_GET_DIAMOND_LOG_LIST moneyLogMsg. */
+            public moneyLogMsg: com.message.IMoneyLogMsg[];
+
+            /**
+             * Encodes the specified S_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.S_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @param message S_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_DIAMOND_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_DIAMOND_LOG_LIST;
         }
 
         /** Properties of a C_USER_LOGIN. */
@@ -1845,13 +2197,13 @@ declare namespace com {
             playerId?: (number|Long|null);
 
             /** PlayerPropertyMsg money */
-            money?: (number|Long|null);
+            money?: (number|null);
 
             /** PlayerPropertyMsg diamond */
-            diamond?: (number|Long|null);
+            diamond?: (number|null);
 
             /** PlayerPropertyMsg frozenDiamond */
-            frozenDiamond?: (number|Long|null);
+            frozenDiamond?: (number|null);
 
             /** PlayerPropertyMsg available */
             available?: (number|null);
@@ -1870,13 +2222,13 @@ declare namespace com {
             public playerId: (number|Long);
 
             /** PlayerPropertyMsg money. */
-            public money: (number|Long);
+            public money: number;
 
             /** PlayerPropertyMsg diamond. */
-            public diamond: (number|Long);
+            public diamond: number;
 
             /** PlayerPropertyMsg frozenDiamond. */
-            public frozenDiamond: (number|Long);
+            public frozenDiamond: number;
 
             /** PlayerPropertyMsg available. */
             public available: number;
@@ -2006,55 +2358,208 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.TeamMemberMsg;
         }
 
-        /** Properties of a BUY_GOODS_INFO. */
-        interface IBUY_GOODS_INFO {
+        /** Properties of a BuyGoodMsg. */
+        interface IBuyGoodMsg {
 
-            /** BUY_GOODS_INFO marketId */
-            marketId?: (number|null);
+            /** BuyGoodMsg buyGoodMsgId */
+            buyGoodMsgId?: (number|Long|null);
 
-            /** BUY_GOODS_INFO count */
-            count?: (number|null);
+            /** BuyGoodMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** BuyGoodMsg username */
+            username?: (number|Long|null);
+
+            /** BuyGoodMsg moneyCount */
+            moneyCount?: (number|null);
+
+            /** BuyGoodMsg diamondPrice */
+            diamondPrice?: (number|null);
+
+            /** BuyGoodMsg createTime */
+            createTime?: (number|Long|null);
         }
 
-        /** Represents a BUY_GOODS_INFO. */
-        class BUY_GOODS_INFO implements IBUY_GOODS_INFO {
+        /** Represents a BuyGoodMsg. */
+        class BuyGoodMsg implements IBuyGoodMsg {
 
             /**
-             * Constructs a new BUY_GOODS_INFO.
+             * Constructs a new BuyGoodMsg.
              * @param [properties] Properties to set
              */
-            constructor(properties?: com.message.IBUY_GOODS_INFO);
+            constructor(properties?: com.message.IBuyGoodMsg);
 
-            /** BUY_GOODS_INFO marketId. */
-            public marketId: number;
+            /** BuyGoodMsg buyGoodMsgId. */
+            public buyGoodMsgId: (number|Long);
 
-            /** BUY_GOODS_INFO count. */
-            public count: number;
+            /** BuyGoodMsg playerId. */
+            public playerId: (number|Long);
+
+            /** BuyGoodMsg username. */
+            public username: (number|Long);
+
+            /** BuyGoodMsg moneyCount. */
+            public moneyCount: number;
+
+            /** BuyGoodMsg diamondPrice. */
+            public diamondPrice: number;
+
+            /** BuyGoodMsg createTime. */
+            public createTime: (number|Long);
 
             /**
-             * Encodes the specified BUY_GOODS_INFO message. Does not implicitly {@link com.message.BUY_GOODS_INFO.verify|verify} messages.
-             * @param message BUY_GOODS_INFO message or plain object to encode
+             * Encodes the specified BuyGoodMsg message. Does not implicitly {@link com.message.BuyGoodMsg.verify|verify} messages.
+             * @param message BuyGoodMsg message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: com.message.IBUY_GOODS_INFO, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: com.message.IBuyGoodMsg, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Decodes a BUY_GOODS_INFO message from the specified reader or buffer.
+             * Decodes a BuyGoodMsg message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns BUY_GOODS_INFO
+             * @returns BuyGoodMsg
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.BUY_GOODS_INFO;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.BuyGoodMsg;
+        }
+
+        /** Properties of a HistoryPriceMsg. */
+        interface IHistoryPriceMsg {
+
+            /** HistoryPriceMsg historyPrice */
+            historyPrice?: (number|null);
+
+            /** HistoryPriceMsg historyTime */
+            historyTime?: (number|Long|null);
+        }
+
+        /** Represents a HistoryPriceMsg. */
+        class HistoryPriceMsg implements IHistoryPriceMsg {
+
+            /**
+             * Constructs a new HistoryPriceMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IHistoryPriceMsg);
+
+            /** HistoryPriceMsg historyPrice. */
+            public historyPrice: number;
+
+            /** HistoryPriceMsg historyTime. */
+            public historyTime: (number|Long);
+
+            /**
+             * Encodes the specified HistoryPriceMsg message. Does not implicitly {@link com.message.HistoryPriceMsg.verify|verify} messages.
+             * @param message HistoryPriceMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IHistoryPriceMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a HistoryPriceMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns HistoryPriceMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.HistoryPriceMsg;
+        }
+
+        /** Properties of a C_GET_OCT_MARKET_INFO. */
+        interface IC_GET_OCT_MARKET_INFO {
+        }
+
+        /** Represents a C_GET_OCT_MARKET_INFO. */
+        class C_GET_OCT_MARKET_INFO implements IC_GET_OCT_MARKET_INFO {
+
+            /**
+             * Constructs a new C_GET_OCT_MARKET_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_OCT_MARKET_INFO);
+
+            /**
+             * Encodes the specified C_GET_OCT_MARKET_INFO message. Does not implicitly {@link com.message.C_GET_OCT_MARKET_INFO.verify|verify} messages.
+             * @param message C_GET_OCT_MARKET_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_OCT_MARKET_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_OCT_MARKET_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_OCT_MARKET_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_OCT_MARKET_INFO;
+        }
+
+        /** Properties of a S_GET_OCT_MARKET_INFO. */
+        interface IS_GET_OCT_MARKET_INFO {
+
+            /** S_GET_OCT_MARKET_INFO sysDiamonPrice */
+            sysDiamonPrice?: (number|null);
+
+            /** S_GET_OCT_MARKET_INFO historyPriceMsgList */
+            historyPriceMsgList?: (com.message.IHistoryPriceMsg[]|null);
+
+            /** S_GET_OCT_MARKET_INFO buyGoodMsgList */
+            buyGoodMsgList?: (com.message.IBuyGoodMsg[]|null);
+        }
+
+        /** Represents a S_GET_OCT_MARKET_INFO. */
+        class S_GET_OCT_MARKET_INFO implements IS_GET_OCT_MARKET_INFO {
+
+            /**
+             * Constructs a new S_GET_OCT_MARKET_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_OCT_MARKET_INFO);
+
+            /** S_GET_OCT_MARKET_INFO sysDiamonPrice. */
+            public sysDiamonPrice: number;
+
+            /** S_GET_OCT_MARKET_INFO historyPriceMsgList. */
+            public historyPriceMsgList: com.message.IHistoryPriceMsg[];
+
+            /** S_GET_OCT_MARKET_INFO buyGoodMsgList. */
+            public buyGoodMsgList: com.message.IBuyGoodMsg[];
+
+            /**
+             * Encodes the specified S_GET_OCT_MARKET_INFO message. Does not implicitly {@link com.message.S_GET_OCT_MARKET_INFO.verify|verify} messages.
+             * @param message S_GET_OCT_MARKET_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_OCT_MARKET_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_OCT_MARKET_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_OCT_MARKET_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCT_MARKET_INFO;
         }
 
         /** Properties of a C_MARKET_BUY. */
         interface IC_MARKET_BUY {
 
-            /** C_MARKET_BUY buyInfo */
-            buyInfo?: (com.message.IBUY_GOODS_INFO|null);
+            /** C_MARKET_BUY diamondPrice */
+            diamondPrice?: (number|null);
+
+            /** C_MARKET_BUY moneyCount */
+            moneyCount?: (number|Long|null);
         }
 
         /** Represents a C_MARKET_BUY. */
@@ -2066,8 +2571,11 @@ declare namespace com {
              */
             constructor(properties?: com.message.IC_MARKET_BUY);
 
-            /** C_MARKET_BUY buyInfo. */
-            public buyInfo?: (com.message.IBUY_GOODS_INFO|null);
+            /** C_MARKET_BUY diamondPrice. */
+            public diamondPrice: number;
+
+            /** C_MARKET_BUY moneyCount. */
+            public moneyCount: (number|Long);
 
             /**
              * Encodes the specified C_MARKET_BUY message. Does not implicitly {@link com.message.C_MARKET_BUY.verify|verify} messages.
@@ -2091,8 +2599,8 @@ declare namespace com {
         /** Properties of a S_MARKET_BUY. */
         interface IS_MARKET_BUY {
 
-            /** S_MARKET_BUY buyInfo */
-            buyInfo?: (com.message.IBUY_GOODS_INFO|null);
+            /** S_MARKET_BUY buyGoodMsg */
+            buyGoodMsg?: (com.message.IBuyGoodMsg|null);
         }
 
         /** Represents a S_MARKET_BUY. */
@@ -2104,8 +2612,8 @@ declare namespace com {
              */
             constructor(properties?: com.message.IS_MARKET_BUY);
 
-            /** S_MARKET_BUY buyInfo. */
-            public buyInfo?: (com.message.IBUY_GOODS_INFO|null);
+            /** S_MARKET_BUY buyGoodMsg. */
+            public buyGoodMsg?: (com.message.IBuyGoodMsg|null);
 
             /**
              * Encodes the specified S_MARKET_BUY message. Does not implicitly {@link com.message.S_MARKET_BUY.verify|verify} messages.
@@ -2126,86 +2634,80 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_MARKET_BUY;
         }
 
-        /** Properties of a C_LIST_MARKET_LIMIT_INFO. */
-        interface IC_LIST_MARKET_LIMIT_INFO {
+        /** Properties of a C_MARKET_SELL. */
+        interface IC_MARKET_SELL {
 
-            /** C_LIST_MARKET_LIMIT_INFO shopType */
-            shopType?: (number|null);
+            /** C_MARKET_SELL buyGoodMsgId */
+            buyGoodMsgId?: (number|Long|null);
         }
 
-        /** Represents a C_LIST_MARKET_LIMIT_INFO. */
-        class C_LIST_MARKET_LIMIT_INFO implements IC_LIST_MARKET_LIMIT_INFO {
+        /** Represents a C_MARKET_SELL. */
+        class C_MARKET_SELL implements IC_MARKET_SELL {
 
             /**
-             * Constructs a new C_LIST_MARKET_LIMIT_INFO.
+             * Constructs a new C_MARKET_SELL.
              * @param [properties] Properties to set
              */
-            constructor(properties?: com.message.IC_LIST_MARKET_LIMIT_INFO);
+            constructor(properties?: com.message.IC_MARKET_SELL);
 
-            /** C_LIST_MARKET_LIMIT_INFO shopType. */
-            public shopType: number;
+            /** C_MARKET_SELL buyGoodMsgId. */
+            public buyGoodMsgId: (number|Long);
 
             /**
-             * Encodes the specified C_LIST_MARKET_LIMIT_INFO message. Does not implicitly {@link com.message.C_LIST_MARKET_LIMIT_INFO.verify|verify} messages.
-             * @param message C_LIST_MARKET_LIMIT_INFO message or plain object to encode
+             * Encodes the specified C_MARKET_SELL message. Does not implicitly {@link com.message.C_MARKET_SELL.verify|verify} messages.
+             * @param message C_MARKET_SELL message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: com.message.IC_LIST_MARKET_LIMIT_INFO, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: com.message.IC_MARKET_SELL, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Decodes a C_LIST_MARKET_LIMIT_INFO message from the specified reader or buffer.
+             * Decodes a C_MARKET_SELL message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns C_LIST_MARKET_LIMIT_INFO
+             * @returns C_MARKET_SELL
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_LIST_MARKET_LIMIT_INFO;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_MARKET_SELL;
         }
 
-        /** Properties of a S_LIST_MARKET_LIMIT_INFO. */
-        interface IS_LIST_MARKET_LIMIT_INFO {
+        /** Properties of a S_MARKET_SELL. */
+        interface IS_MARKET_SELL {
 
-            /** S_LIST_MARKET_LIMIT_INFO shopType */
-            shopType?: (number|null);
-
-            /** S_LIST_MARKET_LIMIT_INFO limitInfo */
-            limitInfo?: (com.message.IBUY_GOODS_INFO[]|null);
+            /** S_MARKET_SELL buyGoodMsg */
+            buyGoodMsg?: (com.message.IBuyGoodMsg|null);
         }
 
-        /** Represents a S_LIST_MARKET_LIMIT_INFO. */
-        class S_LIST_MARKET_LIMIT_INFO implements IS_LIST_MARKET_LIMIT_INFO {
+        /** Represents a S_MARKET_SELL. */
+        class S_MARKET_SELL implements IS_MARKET_SELL {
 
             /**
-             * Constructs a new S_LIST_MARKET_LIMIT_INFO.
+             * Constructs a new S_MARKET_SELL.
              * @param [properties] Properties to set
              */
-            constructor(properties?: com.message.IS_LIST_MARKET_LIMIT_INFO);
+            constructor(properties?: com.message.IS_MARKET_SELL);
 
-            /** S_LIST_MARKET_LIMIT_INFO shopType. */
-            public shopType: number;
-
-            /** S_LIST_MARKET_LIMIT_INFO limitInfo. */
-            public limitInfo: com.message.IBUY_GOODS_INFO[];
+            /** S_MARKET_SELL buyGoodMsg. */
+            public buyGoodMsg?: (com.message.IBuyGoodMsg|null);
 
             /**
-             * Encodes the specified S_LIST_MARKET_LIMIT_INFO message. Does not implicitly {@link com.message.S_LIST_MARKET_LIMIT_INFO.verify|verify} messages.
-             * @param message S_LIST_MARKET_LIMIT_INFO message or plain object to encode
+             * Encodes the specified S_MARKET_SELL message. Does not implicitly {@link com.message.S_MARKET_SELL.verify|verify} messages.
+             * @param message S_MARKET_SELL message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: com.message.IS_LIST_MARKET_LIMIT_INFO, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: com.message.IS_MARKET_SELL, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Decodes a S_LIST_MARKET_LIMIT_INFO message from the specified reader or buffer.
+             * Decodes a S_MARKET_SELL message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns S_LIST_MARKET_LIMIT_INFO
+             * @returns S_MARKET_SELL
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_LIST_MARKET_LIMIT_INFO;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_MARKET_SELL;
         }
 
         /** Properties of a MsgEnum. */
@@ -2270,6 +2772,18 @@ declare namespace com {
                 S_GET_MONEY_REWARD = 1058,
                 C_GET_MONEY_INFO = 1059,
                 S_GET_MONEY_INFO = 1060,
+                C_DIAMOND_BUY_FISH = 1061,
+                S_DIAMOND_BUY_FISH = 1062,
+                C_GET_MONEY_LOG_LIST = 1063,
+                S_GET_MONEY_LOG_LIST = 1064,
+                C_GET_DIAMOND_LOG_LIST = 1065,
+                S_GET_DIAMOND_LOG_LIST = 1066,
+                C_GET_OCT_MARKET_INFO = 1101,
+                S_GET_OCT_MARKET_INFO = 1102,
+                C_MARKET_BUY = 1103,
+                S_MARKET_BUY = 1104,
+                C_MARKET_SELL = 1105,
+                S_MARKET_SELL = 1106,
                 C_SYNC_LOAD_FINISH = 2000,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
@@ -2317,7 +2831,7 @@ declare namespace com {
         interface IS_SYN_PROPERTY {
 
             /** S_SYN_PROPERTY mapMsg */
-            mapMsg?: (com.message.IIntLongMapMsg[]|null);
+            mapMsg?: (com.message.IIntDoubleMapMsg[]|null);
         }
 
         /** Represents a S_SYN_PROPERTY. */
@@ -2330,7 +2844,7 @@ declare namespace com {
             constructor(properties?: com.message.IS_SYN_PROPERTY);
 
             /** S_SYN_PROPERTY mapMsg. */
-            public mapMsg: com.message.IIntLongMapMsg[];
+            public mapMsg: com.message.IIntDoubleMapMsg[];
 
             /**
              * Encodes the specified S_SYN_PROPERTY message. Does not implicitly {@link com.message.S_SYN_PROPERTY.verify|verify} messages.

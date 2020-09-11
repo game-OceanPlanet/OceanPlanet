@@ -3,12 +3,12 @@ module qmr
 	export class ShopView extends BaseModule
 	{
 		public all_group:eui.Group;
-        public bg:eui.Image;
-        public btnClose:eui.Image;
-        public itemGroup:eui.Group;
-		public item_list:eui.List;
-		public txt_total:eui.Label;
-
+public btnClose:eui.Image;
+public itemGroup:eui.Group;
+public item_list:eui.List;
+public btnReturn:eui.Image;
+public txt_totalUSDT:eui.Label;
+public txt_totalGold:eui.Label;
 
 		private _arrCollection: eui.ArrayCollection;
 		
@@ -40,6 +40,7 @@ module qmr
 			super.initListener();
             let t = this;
 			t.addClickEvent(t.btnClose, t.closeView, t);
+			t.addClickEvent(t.btnReturn, t.closeView, t);
 			
 			t.registerNotify(NotifyConst.S_BUY_FISH, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
@@ -53,7 +54,8 @@ module qmr
             let cfgs:PetCfg[] = ConfigManager.getBean(ConfigEnum.PET).values;
 			t._arrCollection.replaceAll(cfgs);
 			
-			t.txt_total.text = HeroModel.instance.totalMoney.toFixed(4);
+			t.txt_totalGold.text = Number(HeroModel.instance.totalMoney.toFixed(4))+HeroModel.KH;
+			t.txt_totalUSDT.text = Number(HeroModel.instance.totalUSDT.toFixed(4))+HeroModel.USDT;
 		}
 
 		public dispose(): void
