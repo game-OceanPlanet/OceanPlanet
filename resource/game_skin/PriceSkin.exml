@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PriceSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image anchorOffsetY="0" verticalCenter="-30" left="0" right="0" source="common_beijing_png"/>
+	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
+		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0"/>
+		<e:Group width="304.67" height="169.7" x="439.43" y="1.37" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image x="24.26" y="64.81" scale9Grid="38,14,111,23" anchorOffsetX="0" width="273" anchorOffsetY="0" height="56" source="mainui_json.panel_frame3" scaleX="1" scaleY="1"/>
+			<e:Image x="33.26" y="68.54" source="mainui_json.icon_gold1" scaleX="1" scaleY="1"/>
+			<e:Label id="txt_totalCount" text="165478465 JT" y="80.81" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="93" textColor="0xFFF4D6" x="111"/>
+			<e:Label id="txt_totalChangeValue" text="+800%" y="129.84" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" left="201"/>
+			<e:Label text="当前需求总量" y="20.81" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="142" textColor="0xFFF4D6" x="95"/>
+			<e:Label text="历史涨跌幅：" y="129.84" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="48.7"/>
+		</e:Group>
+		<e:Group width="304.67" height="171.21" x="6" y="1.37" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image x="0" y="64.81" scale9Grid="38,14,111,23" anchorOffsetX="0" width="273" anchorOffsetY="0" height="56" source="mainui_json.panel_frame3" scaleX="1" scaleY="1"/>
+			<e:Image x="9" y="68.54" source="mainui_json.icon_gold1" scaleX="1" scaleY="1"/>
+			<e:Label id="txt_todayPrice" text="0.00099 JT" y="80.81" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="66" textColor="0xFFF4D6" x="111"/>
+			<e:Label id="txt_changeValue" text="+25%" y="129.84" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" left="181"/>
+			<e:Label text="今日指导价格" y="20.81" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="8" textColor="0xFFF4D6" x="95"/>
+			<e:Label text="今日涨跌幅：" y="129.84" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="29"/>
+		</e:Group>
+		<e:Group width="725.76" height="279.12" x="11.94" y="203.37" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Label id="txt_price0" text="0.098" y="208.48" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0"/>
+			<e:Label text="0.098" y="83.19999999999999" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0" id="txt_price3"/>
+			<e:Label text="0.098" y="124.79999999999998" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0" id="txt_price2"/>
+			<e:Label text="0.098" y="166.39999999999998" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0" id="txt_price1"/>
+			<e:Label id="txt_price5" text="0.098" y="0" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0"/>
+			<e:Label id="txt_price4" text="0.098" y="41.6" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0"/>
+			<e:Label id="txt_date0" text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="-248.38"/>
+			<e:Label text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" id="txt_date2" x="251"/>
+			<e:Label text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" id="txt_date3" x="331"/>
+			<e:Label text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" id="txt_date4" x="410"/>
+			<e:Label text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" id="txt_date5" x="490"/>
+			<e:Label text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" id="txt_date6" x="570"/>
+			<e:Label text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" id="txt_date7" x="650"/>
+			<e:Label text="09/1" y="239" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" id="txt_date1" x="171"/>
+			<e:Image id="column_0" source="shop_json.item_icon" x="96" y="228" anchorOffsetX="0" width="34" anchorOffsetY="0" height="0"/>
+			<e:Image source="shop_json.item_icon" x="175.71428571428572" y="228" anchorOffsetX="0" width="34" id="column_1" height="0"/>
+			<e:Image source="shop_json.item_icon" x="255.42857142857144" y="228" anchorOffsetX="0" width="34" id="column_2" height="0"/>
+			<e:Image source="shop_json.item_icon" x="335.14285714285717" y="228" anchorOffsetX="0" width="34" id="column_3" height="0"/>
+			<e:Image source="shop_json.item_icon" x="414.8571428571429" y="228" anchorOffsetX="0" width="34" id="column_4" height="0"/>
+			<e:Image source="shop_json.item_icon" x="494.5714285714286" y="228" anchorOffsetX="0" width="34" id="column_5" height="0"/>
+			<e:Image source="shop_json.item_icon" x="574.2857142857143" y="228" anchorOffsetX="0" width="34" id="column_6" height="0"/>
+			<e:Image source="shop_json.item_icon" x="654" y="228" anchorOffsetX="0" width="34" id="column_7" height="0"/>
+		</e:Group>
+		<e:Group width="737.88" height="568.67" x="4.12" y="688.85" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image source="trade_json.liet_item_png" x="0" y="0" scale9Grid="28,27,169,28" anchorOffsetX="0" width="746" anchorOffsetY="0" height="568.27"/>
+			<e:Image x="9.64" y="13.85" anchorOffsetX="0" width="721.73" anchorOffsetY="0" height="540.42" source="trade_json.list_bg_png" scale9Grid="71,124,429,138"/>
+			<e:Image source="trade_json.list_title_png" x="153" y="20.91"/>
+			<e:Image source="shop_json.title_jibi" x="315" y="32.02"/>
+		</e:Group>
+		<e:Group width="725" height="211.09" x="12" y="491.37" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Label text="价格" y="9" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="18"/>
+			<e:Label text="数量" y="82.85" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="20"/>
+			<e:Group id="input_group0" anchorOffsetY="0" height="73" scaleX="1" scaleY="1" right="48" anchorOffsetX="0" left="88" y="-12.04">
+				<e:Image source="trade_json.list_bg2_png" y="9.66" scaleX="1" scaleY="1" left="3" right="1" anchorOffsetX="0" scale9Grid="54,13,331,30" anchorOffsetY="0" height="50.48"/>
+				<e:EditableText id="text_input_price" height="49" prompt="请输入聊天内容..." size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" y="12" promptColor="0xCECECD" width="579" left="9"/>
+			</e:Group>
+			<e:Group id="input_group" anchorOffsetY="0" height="73" scaleX="1" scaleY="1" right="48" anchorOffsetX="0" left="88" y="59.2">
+				<e:Image y="9.66" scaleX="1" scaleY="1" left="3" right="1" anchorOffsetX="0" scale9Grid="54,13,331,30" source="trade_json.list_bg2_png" anchorOffsetY="0" height="50.48"/>
+				<e:EditableText id="text_input_count" height="49" prompt="请输入聊天内容..." size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xffffff" anchorOffsetX="0" y="12" promptColor="0xcececd" width="579" left="9"/>
+			</e:Group>
+			<e:Group id="btn_buy_group" x="206.06" y="125.77" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
+				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.button_img_png"/>
+				<e:Label id="txt_button_buy" text="购  买" y="30.18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0x71492e"/>
+			</e:Group>
+		</e:Group>
+		<e:Group width="671.28" height="405.45" x="57.99" y="777.85" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Group id="itemGroup" width="675.82" height="396.66" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" y="6.03">
+				<e:Scroller width="675.76" x="0" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" height="402.72" y="3.03">
+				<e:List id="item_list" anchorOffsetY="0" anchorOffsetX="0" x="2" height="445.15" width="703.76">
+					<e:layout>
+					<e:VerticalLayout gap="6"/>
+					</e:layout>
+				</e:List>
+				</e:Scroller>
+			</e:Group>
+		</e:Group>
+		<e:Image id="btnReturn" x="697.39" y="1289.39" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="mainui_json.btn_back" scaleX="1" scaleY="1"/>
+	</e:Group>
+</e:Skin>
