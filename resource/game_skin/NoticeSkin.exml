@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NoticeSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
+		<e:Group anchorOffsetX="0" anchorOffsetY="0" x="45" y="373">
+			<e:Image anchorOffsetX="0"
+			         anchorOffsetY="0"  x="63" y="15" source="mainui_json.alertbg1" scale9Grid="179,101,22,55" width="578" height="582"/>
+			<e:Image anchorOffsetX="0" anchorOffsetY="0"
+			          x="71" y="108" source="mainui_json.alertbg2" width="563" height="426" scale9Grid="35,29,212,178"/>
+			<e:Image source="mainui_json.title_banner" x="48" y="9"/>
+
+			<e:Label id="txt_itemdesc" text="已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量" size="26" fontFamily="specialGameFont"
+			         scaleX="1" scaleY="1" textColor="0x491c0e" width="500" lineSpacing="5"  y="143" x="107" anchorOffsetX="0"/>
+
+			<e:Image y="10"  x="209" source="mainui_json.title_bg"/>
+			<e:Label id="txt_title" text="说 明" y="17" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1"
+			          x="325" textColor="0xb28208"/>
+
+
+
+			<e:Image id="btnClose" x="572.79" y="-20.07" source="mainui_json.btn_close0"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>
