@@ -188,7 +188,7 @@
 			"url": "sheet/shop.json",
 			"type": "sheet",
 			"name": "shop_json",
-			"subkeys": "btn_back_png,btn_close_png,btn_common1_png,btn_common_png,item_icon1_png,item_icon_png,panel_bar1_png,panel_bar2_png,panel_bg_png,panel_frame4_png,panel_title_png,title_duihuan_jpg,title_fenhong_jpg,title_img_png,title_jibi_png,title_pet_png,title_shop_png,title_tongzheng_png,title_tuiguang_jpg,title_zhuru_jpg,title_zichan_png"
+			"subkeys": "btn_back,btn_close,btn_common,btn_common1,item_icon,item_icon1,panel_bar1,panel_bar2,panel_bg,panel_frame4,panel_title,title_duihuan,title_fenhong,title_img,title_jibi,title_pet,title_shop,title_tongzheng,title_tuiguang,title_zhuru,title_zichan"
 		},
 		{
 			"url": "unpack/bg/trade_bg.png",
