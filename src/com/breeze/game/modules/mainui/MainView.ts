@@ -177,8 +177,7 @@ public txt_totalUsdt:eui.Label;
         //注入
         private onInjectClick():void
         {
-            PetController.instance.getUSDTLogCmd();
-            TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.INJECT_VIEW);
         }
         //商城
         private onShopClick():void
@@ -188,12 +187,12 @@ public txt_totalUsdt:eui.Label;
         //分红
         private onDividendClick():void
         {
-            TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.DIVIDEND_VIEW);
         }
         //推广
         private onPromoteClick():void
         {
-            TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.INVITE_CODE_VIEW);
         }
 
         
@@ -282,7 +281,7 @@ public txt_totalUsdt:eui.Label;
         private onTimeRun(){
             let t = this;
 			if(t.__currMoney >= t.__dayTotal){
-				t.txt_curr.text = t.__dayTotal + HeroModel.KH;
+				t.txt_curr.text = Number(t.__dayTotal.toFixed(4)) + HeroModel.KH;
 				t.stopTime();
 				return;
 			}
@@ -297,7 +296,7 @@ public txt_totalUsdt:eui.Label;
 				egret.clearInterval(t.__timekey);
 			}
 			t.__timekey = -1;
-			t.txt_curr.text = t.__dayTotal + HeroModel.KH;
+			t.txt_curr.text = Number(t.__dayTotal.toFixed(4)) + HeroModel.KH;
 		}
     }
 }

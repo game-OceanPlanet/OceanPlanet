@@ -1,3 +1,7 @@
+declare class PanelBg extends eui.Skin{
+}
+declare class PanelPopBg extends eui.Skin{
+}
 declare module skins{
 	class ButtonSkin extends eui.Skin{
 	}
@@ -54,13 +58,21 @@ declare class AlertShopItemSkin extends eui.Skin{
 }
 declare class BuyGoodItemSkin extends eui.Skin{
 }
+declare class DividendSkin extends eui.Skin{
+}
 declare class ExchangeSkin extends eui.Skin{
+}
+declare class InjectSkin extends eui.Skin{
+}
+declare class InviteCodeSkin extends eui.Skin{
 }
 declare class Mainui extends eui.Skin{
 }
 declare class MoneyLogItemSkin extends eui.Skin{
 }
 declare class MoneyLogSkin extends eui.Skin{
+}
+declare class NoticeSkin extends eui.Skin{
 }
 declare class PetItemSkin extends eui.Skin{
 }

@@ -46,7 +46,7 @@
 			"url": "sheet/common.json",
 			"type": "sheet",
 			"name": "common_json",
-			"subkeys": "anniud_dis2,anniuds,anniuds_down,common_biaotitou,common_dadishang,common_dadixia,common_dikuang,common_dikuang2,common_dikuang3,common_fanhui,common_guanbi,common_title_bg,duobianxing1,duobianxing2,shuaixuanbg,xuanzhong,yeqian1,yeqian2,zhuangshi"
+			"subkeys": "common_biaotitou,common_dadishang,common_dadixia,common_dikuang,common_dikuang2,common_dikuang3,common_fanhui,common_guanbi,common_title_bg,panel_biaotou,panel_biaotou2,panel_tanchuangdiban"
 		},
 		{
 			"url": "config/config.bin",
