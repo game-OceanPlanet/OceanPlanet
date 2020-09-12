@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="promptSkin" width="580" height="475" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:qmr="qmr.*">
+	<e:Group width="580" height="400" verticalCenter="0" horizontalCenter="0">
+		<e:Group width="579" height="402" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image source="trade_json.liet_item_png" anchorOffsetX="0" width="824.57" anchorOffsetY="0" height="675" horizontalCenter="1" verticalCenter="0" scaleX="0.7" scaleY="0.7" x="29" y="-36" scale9Grid="28,27,169,28"/>
+			<e:Image anchorOffsetX="0" width="721" anchorOffsetY="0" height="568.28" source="trade_json.list_bg_png" horizontalCenter="-1" verticalCenter="-2" scaleX="0.7" scaleY="0.7" x="37" y="-25" scale9Grid="71,124,429,138"/>
+			<e:Image source="trade_json.list_title_png" y="9" horizontalCenter="0.5" x="71" scaleX="1" scaleY="1"/>
+			<e:Label id="txt_title" text="购 买" y="23" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0.5" x="257"/>
+		</e:Group>
+		<e:CheckBox id="checkbox" label="本次登录不再提示" x="165" verticalCenter="77.5" skinName="CheckBoxLoginSkin"/>
+		<e:Group width="490" height="180"   horizontalCenter="0" verticalCenter="-43" x="30" y="73"  >
+			<e:Image   left="0" right="0" bottom="0" x="-30"   top="0" scale9Grid="14,13,74,76" y="-84" source="common_json.common_dikuang"/>
+			<e:Label id="labContent" text="--" lineSpacing="4" horizontalCenter="0" fontFamily="specialGameFont" verticalCenter="0"  width="473"  height="166" textAlign="center" verticalAlign="middle" bold="false" textColor="0x803f07"/>
+		</e:Group>
+		<e:Group id="btnCancel" anchorOffsetX="0" anchorOffsetY="0" bottom="40" horizontalCenter="108">
+			<e:Image x="0" y="0" scaleX="1" scaleY="1" source="shop_json.btn_common1"/>
+			<e:Label id="txt_cancel" text="取 消" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group id="btnConfirm" anchorOffsetX="0" anchorOffsetY="0" bottom="40" horizontalCenter="-108">
+			<e:Image x="0" y="0" scaleX="1" scaleY="1" source="shop_json.btn_common1"/>
+			<e:Label id="txt_sure" text="确 定" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
+		</e:Group>
+		<e:Image id="btnClose" source="shop_json.btn_close" x="459.87" y="-11.07" scaleX="1" scaleY="1"/>
+
+
+	</e:Group>
+</e:Skin>

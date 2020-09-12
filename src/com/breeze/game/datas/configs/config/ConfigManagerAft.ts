@@ -16,6 +16,27 @@ module qmr
 			}
 			return "";
 		}
+
+		/**
+		 * 获取中文配置
+		 * @param  {string} key
+		 */
+		public static getCNValue(key: string, ...args): string
+		{
+			var config: Dictionary = ConfigManager.getBean(ConfigEnumBase.CLIENTCN);
+			var clientCnVo: ClientCnCfg = config.get(key);
+			if (clientCnVo)
+			{
+				let msg: string = clientCnVo.value;
+				if (args && args.length > 0)
+				{
+					args.unshift(msg);
+					msg = StringUtils.getmsg(...args);
+				}
+				return msg;
+			}
+			return "";
+		}
 		
 	}
 }
