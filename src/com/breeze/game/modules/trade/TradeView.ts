@@ -176,9 +176,11 @@ public btnReturn:eui.Image;
 			}
 			
 			let dayMiniSeconds:number = 24 * 3600 * 1000;
+			let index:number = 1;
 			while(prices.length < 8){
 				prices.push(0);
-				days.push(startTime + dayMiniSeconds);
+				days.push(startTime + dayMiniSeconds * index);
+				index ++;
 			}
 
 			let maxPrice:number = 0;
@@ -207,8 +209,8 @@ public btnReturn:eui.Image;
 				dt.setTime(days[i]);
 				price = prices[i];
 				t._dateLabels[i].text = TimeUtil.formatMD(dt);
-				t._columns[i].height = maxHeight * price / maxPrice;
-				t._columns[i].y = t._positions[i].y - t._columns[i].height;
+				t._columns[i].height = maxPrice > 0 ? maxHeight * price / maxPrice : 0;
+				t._columns[i].y = 230 - t._columns[i].height;
 			}
 		}
 

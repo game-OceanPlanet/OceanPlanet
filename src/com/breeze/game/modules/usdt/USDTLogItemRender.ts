@@ -26,29 +26,11 @@ public txt_name:eui.Label;
                 let cfgId:number = Int64Util.getNumber(pro.fishConfigId);
                 let cfg:PetCfg = ConfigManager.getConf(ConfigEnum.PET, cfgId);
                 let changeMoney:number = Int64Util.getNumber(pro.changeMoney);
-                t.txt_count.text = changeMoney+HeroModel.KH;
-                t.txt_type.text = t.getType(pro.type);
-                t.txt_name.text = cfg.name;
+                t.txt_count.text = changeMoney+HeroModel.USDT;
+                t.txt_type.text = "";
+                t.txt_name.text = TradeModule.instance.getType(pro.type);
                 t.txt_time.text = TimeUtil.getDateByTimerSecond(Int64Util.getNumber(pro.logTime));
             }
-        }
-        
-        private getType(s):string
-        {
-            //类型,1=领取鱼日产金币,2=金币买鱼,101=U买鱼
-            let msg:string;
-            switch(s){
-                case 1:
-                    msg = "领取"
-                    break;
-                case 2:
-                    msg = "购买"
-                    break;
-                case 101:
-                    msg = "购买"
-                    break;
-            }
-            return msg;
         }
 	}
 }

@@ -172,8 +172,7 @@ public txt_totalUsdt:eui.Label;
         //兑换
         private onExchangeClick():void
         {
-            PetController.instance.getMoneyLogCmd();
-            TipManagerCommon.getInstance().createCommonColorTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.EXCHANGE_VIEW);
         }
         //注入
         private onInjectClick():void

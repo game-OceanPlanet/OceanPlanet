@@ -20,6 +20,7 @@ module qmr
             modulelManager.registerClass(ModuleNameConst.GOLD_LOG_VIEW, qmr.GoldLogView);
             modulelManager.registerClass(ModuleNameConst.USDT_LOG_VIEW, qmr.USDTLogView);
             modulelManager.registerClass(ModuleNameConst.TRADE_VIEW, qmr.TradeView);
+            modulelManager.registerClass(ModuleNameConst.EXCHANGE_VIEW, qmr.ExchangeView);
         }
     }
 }

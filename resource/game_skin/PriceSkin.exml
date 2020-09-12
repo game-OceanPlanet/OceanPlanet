@@ -19,7 +19,7 @@
 			<e:Label text="今日指导价格" y="20.81" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="8" textColor="0xFFF4D6" x="95"/>
 			<e:Label text="今日涨跌幅：" y="129.84" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="29"/>
 		</e:Group>
-		<e:Group width="725.76" height="279.12" x="11.94" y="203.37" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group width="725.76" height="267.12" x="11.94" y="203.37" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Label id="txt_price0" text="0.098" y="208.48" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0"/>
 			<e:Label text="0.098" y="83.19999999999999" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0" id="txt_price3"/>
 			<e:Label text="0.098" y="124.79999999999998" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="0" id="txt_price2"/>
@@ -54,11 +54,11 @@
 			<e:Label text="数量" y="82.85" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="20"/>
 			<e:Group id="input_group0" anchorOffsetY="0" height="73" scaleX="1" scaleY="1" right="48" anchorOffsetX="0" left="88" y="-12.04">
 				<e:Image source="trade_json.list_bg2_png" y="9.66" scaleX="1" scaleY="1" left="3" right="1" anchorOffsetX="0" scale9Grid="54,13,331,30" anchorOffsetY="0" height="50.48"/>
-				<e:EditableText id="text_input_price" height="49" prompt="请输入聊天内容..." size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" y="12" promptColor="0xCECECD" width="579" left="9"/>
+				<e:EditableText id="text_input_price" height="49" prompt="请输入聊天内容..." size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" y="12" promptColor="0xCECECD" width="579" horizontalCenter="4" textAlign="center"/>
 			</e:Group>
 			<e:Group id="input_group" anchorOffsetY="0" height="73" scaleX="1" scaleY="1" right="48" anchorOffsetX="0" left="88" y="59.2">
 				<e:Image y="9.66" scaleX="1" scaleY="1" left="3" right="1" anchorOffsetX="0" scale9Grid="54,13,331,30" source="trade_json.list_bg2_png" anchorOffsetY="0" height="50.48"/>
-				<e:EditableText id="text_input_count" height="49" prompt="请输入聊天内容..." size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xffffff" anchorOffsetX="0" y="12" promptColor="0xcececd" width="579" left="9"/>
+				<e:EditableText id="text_input_count" height="49" prompt="请输入聊天内容..." size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xffffff" anchorOffsetX="0" y="12" promptColor="0xcececd" width="579" horizontalCenter="4" textAlign="center"/>
 			</e:Group>
 			<e:Group id="btn_buy_group" x="206.06" y="125.77" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.button_img_png"/>

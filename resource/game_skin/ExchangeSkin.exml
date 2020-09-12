@@ -4,16 +4,17 @@
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
 		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0"/>
 		<e:Group width="730" height="277.27" x="9.04" y="1.37" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Label id="txt_kda_total" text="0.00099 KAD" y="29.3" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="111"/>
-			<e:Label text="平台通行证总量：" y="28.39" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="69" textColor="0xFFF4D6" x="95"/>
-			<e:Label id="txt_exchanged_total" text="0.00099 KAD" y="61.26" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
-			<e:Label text="已兑换总数量：" y="60.35" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="69" textColor="0xFFF4D6" x="-1.040000000000001"/>
-			<e:Label id="txt_rate" text="50KH：1KAD" y="114.29" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
-			<e:Label text="当前兑换比例：" y="113.38" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="69" textColor="0xFFF4D6" x="-1.040000000000001"/>
-			<e:Label id="txt_kh_totalSelf" text="100 KH" y="173.39" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
-			<e:Label text="持有KH数量：" y="172.48" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="69" textColor="0xFFF4D6" x="-1.040000000000001"/>
-			<e:Label id="txt_kadTotalSelf" text="2 KAD" y="207.58" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" left="274"/>
-			<e:Label text="持有KAD数量：" y="207.58" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="68.61"/>
+			<e:Image source="trade_json.exchange_title_img_jpg" x="3.02" y="0" scale9Grid="237,135,187,29" anchorOffsetX="0" width="725"/>
+			<e:Label id="txt_kda_total" text="0.00099 KAD" y="21.3" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="111"/>
+			<e:Label text="平台通行证总量：" y="20.39" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="69"/>
+			<e:Label id="txt_exchanged_total" text="0.00099 KAD" y="53.26" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
+			<e:Label text="已兑换总数量：" y="52.35" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="69"/>
+			<e:Label id="txt_rate" text="50KH：1KAD" y="134.27" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
+			<e:Label text="当前兑换比例：" y="133.36" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="69"/>
+			<e:Label id="txt_kh_totalSelf" text="100 KH" y="205.4" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
+			<e:Label text="持有KH数量：" y="204.49" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="69"/>
+			<e:Label id="txt_kadTotalSelf" text="2 KAD" y="239.59" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" left="274"/>
+			<e:Label text="持有KAD数量：" y="239.59" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="69"/>
 		</e:Group>
 		<e:Group width="725" x="12" y="301.55" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Label id="txt_exchangeDes" text="可兑换0KAD" y="98.38" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="20.5"/>
@@ -30,7 +31,7 @@
 			<e:Image source="trade_json.liet_item_png" x="0" y="0" scale9Grid="28,27,169,28" anchorOffsetX="0" width="746" anchorOffsetY="0" height="674.27"/>
 			<e:Image x="9.64" y="13.85" anchorOffsetX="0" width="721.73" anchorOffsetY="0" height="644.42" source="trade_json.list_bg_png" scale9Grid="71,124,429,138"/>
 			<e:Image source="trade_json.list_title_png" x="153" y="20.91"/>
-			<e:Image source="shop_json.title_jibi" x="315" y="32.02"/>
+			<e:Image x="315" y="32.02" source="shop_json.title_duihuan_jpg"/>
 		</e:Group>
 		<e:Group width="727.28" height="624.24" x="7.81" y="612.52" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Group id="itemGroup" width="721.82" height="614.84" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" y="6.03">

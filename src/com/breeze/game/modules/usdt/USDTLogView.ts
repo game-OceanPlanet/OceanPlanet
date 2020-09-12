@@ -24,7 +24,7 @@ public btnReturn:eui.Image;
 			let t = this;
 			super.initComponent();
 
-            t.item_list.itemRenderer = GoldLogItemRender;
+            t.item_list.itemRenderer = USDTLogItemRender;
             t._arrCollection = new eui.ArrayCollection();
             t.item_list.dataProvider = t._arrCollection;
 		}

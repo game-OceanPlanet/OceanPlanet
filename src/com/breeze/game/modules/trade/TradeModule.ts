@@ -52,5 +52,38 @@ module qmr {
                 }
             }
         }
+
+        public getType(s):string
+        {
+            //类型,1=领取鱼日产金币,2=金币买鱼,101=U买鱼
+            let msg:string;
+            switch(s){
+                case TradeTypeEnum.MONEY_REWARD:
+                    msg = "领取"
+                    break;
+                case TradeTypeEnum.MONEY_BUY_FISH:
+                    msg = "金币买鱼"
+                    break;
+                case TradeTypeEnum.OCT_SELL_MONEY:
+                    msg = "OTC-卖给Ta"
+                    break;
+                case TradeTypeEnum.OCT_SOMEONE_SELL_ME:
+                    msg = "OTC-卖给我"
+                    break;
+                case TradeTypeEnum.DIAMOND_BUY_FISH:
+                    msg = "U买鱼"
+                    break;
+                    case TradeTypeEnum.OCT_BUY_MONEY_COST_U:
+                    msg = "OTC-买入金币（挂单）"
+                    break;
+                    case TradeTypeEnum.OCT_SELL_MONEY_GOT_U:
+                    msg = "OTC-卖给Ta，获得U"
+                    break;
+                    case TradeTypeEnum.OCT_CANCEL_GOT_U:
+                    msg = "OTC-撤单，获得U"
+                    break;
+            }
+            return msg;
+        }
     }
 }
