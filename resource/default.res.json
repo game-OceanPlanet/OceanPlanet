@@ -57,7 +57,7 @@
 			"url": "sheet/mainui.json",
 			"type": "sheet",
 			"name": "mainui_json",
-			"subkeys": "btn_back,btn_bottom_exchange,btn_bottom_gold,btn_bottom_pet,btn_download,btn_exchange,btn_get,btn_help,btn_permit,btn_person,btn_price,btn_realname,exchange,game_title,home_frame1,icon_Raiders,icon_di,icon_dividend ,icon_dividend1,icon_gold,icon_gold1,icon_home,icon_injection,icon_injection1,icon_promote,icon_promote1,icon_shop,icon_shop1,icon_treasury,item_di1,main_dikuang2,panel_frame2,panel_frame3"
+			"subkeys": "alertbg1,alertbg2,alertbg3,btn_back,btn_bottom_exchange,btn_bottom_gold,btn_bottom_pet,btn_close,btn_close0,btn_close1,btn_common,btn_common1,btn_download,btn_exchange,btn_get,btn_help,btn_permit,btn_person,btn_price,btn_realname,exchange,game_title,home_frame,home_frame1,icon_Raiders,icon_di,icon_di2,icon_dividend ,icon_dividend1,icon_gold,icon_gold1,icon_home,icon_injection,icon_injection1,icon_promote,icon_promote1,icon_shop,icon_shop1,icon_treasury,item_di,item_di1,item_icon,item_icon1,main_dikuang,main_dikuang2,panel_bg,panel_frame,panel_frame2,panel_frame3,panel_frame4,panel_img,panel_title,title_banner,title_bg,title_exchange,title_fenhong,title_tuiguang,title_zhuru"
 		},
 		{
 			"url": "unpack/bg/common_beijing.png",
@@ -200,6 +200,26 @@
 			"type": "sheet",
 			"name": "trade_json",
 			"subkeys": "btn_help_png,button_img_png,exchange_title_img_jpg,input_img_png,kuang_img2_png,kuang_img_png,liet_item_png,list_bg2_png,list_bg_png,list_kuang_png,list_title_png,mask_bg_png,panel_bg2_png,panel_bg_png"
+		},
+		{
+			"url": "assets/ui1.png",
+			"type": "image",
+			"name": "ui1_png"
+		},
+		{
+			"url": "assets/ui2.png",
+			"type": "image",
+			"name": "ui2_png"
+		},
+		{
+			"url": "assets/ui3.png",
+			"type": "image",
+			"name": "ui3_png"
+		},
+		{
+			"url": "assets/ui4.jpg",
+			"type": "image",
+			"name": "ui4_jpg"
 		}
 	]
 }
