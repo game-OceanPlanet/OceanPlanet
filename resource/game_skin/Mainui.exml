@@ -3,17 +3,17 @@
         height="1334" width="750">
 	<e:Group height="79" anchorOffsetX="0" anchorOffsetY="0" top="0" left="0" right="-1">
 		<e:Image source="mainui_json.main_dikuang2" scaleX="1" scaleY="1" left="-1" right="-4"  y="3"/>
-		<e:Image id="btn_home" source="mainui_json.icon_home" x="6" y="17" />
-		<e:Image id="btn_detail" source="mainui_json.icon_Raiders" x="684" y="19" />
+		<e:Image id="btn_home" source="mainui_json.icon_home" x="31" y="42"  anchorOffsetX="25" anchorOffsetY="25"/>
+		<e:Image id="btn_detail" source="mainui_json.icon_Raiders" x="709" y="54"  anchorOffsetX="25" anchorOffsetY="25"/>
 		<e:Label text="海洋星球" y="23" size="40" fontFamily="specialGameFont" x="296" textColor="0xe2dfae" visible="false" />
 		<e:Image source="mainui_json.game_title" y="19" horizontalCenter="0" />
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" bottom="0" height="263" left="0" right="0">
 
 		<e:Image source="mainui_json.home_frame1" y="112"  left="-5" right="-5" scale9Grid="261,38,274,74"/>
-		<e:Image id="btn_bottom_gold" x="565" y="32" source="mainui_json.btn_bottom_gold" />
-		<e:Image id="btn_bottom_property" x="50" y="32" source="mainui_json.btn_bottom_exchange" />
-		<e:Image id="btn_bottom_pet" y="-2" source="mainui_json.btn_bottom_pet" horizontalCenter="11.5" />
+		<e:Image id="btn_bottom_gold" x="641" y="107" source="mainui_json.btn_bottom_gold"  anchorOffsetX="75" anchorOffsetY="75"/>
+		<e:Image id="btn_bottom_property" x="125" y="107" source="mainui_json.btn_bottom_exchange"  anchorOffsetX="75" anchorOffsetY="75"/>
+		<e:Image id="btn_bottom_pet" y="97" source="mainui_json.btn_bottom_pet"  x="386" anchorOffsetX="100" anchorOffsetY="99"/>
 		<e:Group id="effect_group_pet" width="20" height="20" x="384.85" y="93.94"/>
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" left="1" top="85">
@@ -23,7 +23,7 @@
 		<e:Label id="txt_curr" text="1.0001 JT" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-7.5"
 		          textColor="0xffffff"/>
 		<e:Group id="btn_get_group" anchorOffsetX="0" anchorOffsetY="0" x="233" y="6">
-			<e:Image id="btn_get" scaleX="1" scaleY="1" source="mainui_json.btn_get" />
+			<e:Image id="btn_get" scaleX="1" scaleY="1" source="mainui_json.btn_get"  width="114" height="113" anchorOffsetX="57" anchorOffsetY="56" x="57" y="56"/>
 			<e:Label text="领  钱" textColor="0xE88012" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 			         visible="false" />
 		</e:Group>
@@ -36,7 +36,7 @@
 		<e:Label id="txt_totalGold" text="1.000001 JT" y="27.58" size="22" fontFamily="specialGameFont"
 		         horizontalCenter="-24.5"  textColor="0xffffff"/>
 		<e:Group id="btn_price_group" anchorOffsetX="0" anchorOffsetY="0" y="5" x="233">
-			<e:Image id="btn_price" x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.btn_price" />
+			<e:Image id="btn_price" x="57" y="56" scaleX="1" scaleY="1" source="mainui_json.btn_price"  anchorOffsetX="57" anchorOffsetY="56"/>
 
 		</e:Group>
 	</e:Group>
@@ -46,18 +46,18 @@
 		<e:Group id="effect_group_3" width="20" height="20" x="110.48" y="58.79"/>
 		<e:Group id="effect_group_4" width="20" height="20" x="505.23" y="58.79"/>
 		<e:Group id="effect_group_5" width="20" height="20" x="637.98" y="58.79"/>
-		<e:Image id="btn_exchange" source="mainui_json.btn_exchange" x="177.46" y="-2.91" scaleX="1" scaleY="1" />
-		<e:Image id="btn_injection" source="mainui_json.icon_injection1" x="309.46" y="-2.91" scaleX="1" scaleY="1" />
-		<e:Image id="btn_shop" source="mainui_json.icon_shop1" x="47.46" y="-2.91" scaleX="1" scaleY="1" />
-		<e:Image id="btn_dividend" x="444.5" y="-2.91" source="mainui_json.icon_dividend1" scaleX="1" scaleY="1" />
-		<e:Image id="btn_promote" source="mainui_json.icon_promote1" x="576.5" y="-2.91" scaleX="1" scaleY="1" />
+		<e:Image id="btn_exchange" source="mainui_json.btn_exchange" x="238" y="68" scaleX="1" scaleY="1"  anchorOffsetX="61" anchorOffsetY="70"/>
+		<e:Image id="btn_injection" source="mainui_json.icon_injection1" x="370" y="68" scaleX="1" scaleY="1"  anchorOffsetX="61" anchorOffsetY="70"/>
+		<e:Image id="btn_shop" source="mainui_json.icon_shop1" x="108" y="68" scaleX="1" scaleY="1"  anchorOffsetX="61" anchorOffsetY="70"/>
+		<e:Image id="btn_dividend" x="505" y="68" source="mainui_json.icon_dividend1" scaleX="1" scaleY="1"  anchorOffsetX="61" anchorOffsetY="70"/>
+		<e:Image id="btn_promote" source="mainui_json.icon_promote1" x="637" y="68" scaleX="1" scaleY="1"  anchorOffsetX="61" anchorOffsetY="70"/>
 
 	</e:Group>
-	<e:Image id="btn_realname" source="mainui_json.btn_realname" y="715" left="0" />
-	<e:Image id="btn_person" source="mainui_json.btn_person" y="843" left="0" />
-	<e:Image id="btn_permit" source="mainui_json.btn_permit" y="967" left="0" />
-	<e:Image id="btn_download" source="mainui_json.btn_download" y="967" right="0" />
-	<e:Image id="btn_help" source="mainui_json.btn_help" y="843" right="0" />
+	<e:Image id="btn_realname" source="mainui_json.btn_realname" y="766"  x="68" anchorOffsetX="68" anchorOffsetY="51"/>
+	<e:Image id="btn_person" source="mainui_json.btn_person" y="894"  x="68" anchorOffsetX="68" anchorOffsetY="51"/>
+	<e:Image id="btn_permit" source="mainui_json.btn_permit" y="1018"  x="68" anchorOffsetX="68" anchorOffsetY="51"/>
+	<e:Image id="btn_download" source="mainui_json.btn_download" y="1018"  x="682" anchorOffsetX="68" anchorOffsetY="51"/>
+	<e:Image id="btn_help" source="mainui_json.btn_help" y="894"  x="682" anchorOffsetX="68" anchorOffsetY="51"/>
 
 
 </e:Skin>
