@@ -1464,6 +1464,1429 @@ $root.com = (function() {
             return S_DEBUG_COMMON;
         })();
 
+        message.MoneyExchangeMsg = (function() {
+
+            /**
+             * Properties of a MoneyExchangeMsg.
+             * @memberof com.message
+             * @interface IMoneyExchangeMsg
+             * @property {number|null} [sysAllKAD] MoneyExchangeMsg sysAllKAD
+             * @property {number|null} [exAllKAD] MoneyExchangeMsg exAllKAD
+             * @property {number|null} [exRatio] MoneyExchangeMsg exRatio
+             */
+
+            /**
+             * Constructs a new MoneyExchangeMsg.
+             * @memberof com.message
+             * @classdesc Represents a MoneyExchangeMsg.
+             * @implements IMoneyExchangeMsg
+             * @constructor
+             * @param {com.message.IMoneyExchangeMsg=} [properties] Properties to set
+             */
+            function MoneyExchangeMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MoneyExchangeMsg sysAllKAD.
+             * @member {number} sysAllKAD
+             * @memberof com.message.MoneyExchangeMsg
+             * @instance
+             */
+            MoneyExchangeMsg.prototype.sysAllKAD = 0;
+
+            /**
+             * MoneyExchangeMsg exAllKAD.
+             * @member {number} exAllKAD
+             * @memberof com.message.MoneyExchangeMsg
+             * @instance
+             */
+            MoneyExchangeMsg.prototype.exAllKAD = 0;
+
+            /**
+             * MoneyExchangeMsg exRatio.
+             * @member {number} exRatio
+             * @memberof com.message.MoneyExchangeMsg
+             * @instance
+             */
+            MoneyExchangeMsg.prototype.exRatio = 0;
+
+            /**
+             * Encodes the specified MoneyExchangeMsg message. Does not implicitly {@link com.message.MoneyExchangeMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.MoneyExchangeMsg
+             * @static
+             * @param {com.message.IMoneyExchangeMsg} message MoneyExchangeMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MoneyExchangeMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sysAllKAD != null && message.hasOwnProperty("sysAllKAD"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.sysAllKAD);
+                if (message.exAllKAD != null && message.hasOwnProperty("exAllKAD"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.exAllKAD);
+                if (message.exRatio != null && message.hasOwnProperty("exRatio"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.exRatio);
+                return writer;
+            };
+
+            /**
+             * Decodes a MoneyExchangeMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.MoneyExchangeMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.MoneyExchangeMsg} MoneyExchangeMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MoneyExchangeMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.MoneyExchangeMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.sysAllKAD = reader.double();
+                        break;
+                    case 2:
+                        message.exAllKAD = reader.double();
+                        break;
+                    case 3:
+                        message.exRatio = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return MoneyExchangeMsg;
+        })();
+
+        message.PlayerExcInfoMsg = (function() {
+
+            /**
+             * Properties of a PlayerExcInfoMsg.
+             * @memberof com.message
+             * @interface IPlayerExcInfoMsg
+             * @property {number|null} [moneyCount] PlayerExcInfoMsg moneyCount
+             * @property {number|null} [KADCount] PlayerExcInfoMsg KADCount
+             * @property {number|Long|null} [logTime] PlayerExcInfoMsg logTime
+             */
+
+            /**
+             * Constructs a new PlayerExcInfoMsg.
+             * @memberof com.message
+             * @classdesc Represents a PlayerExcInfoMsg.
+             * @implements IPlayerExcInfoMsg
+             * @constructor
+             * @param {com.message.IPlayerExcInfoMsg=} [properties] Properties to set
+             */
+            function PlayerExcInfoMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * PlayerExcInfoMsg moneyCount.
+             * @member {number} moneyCount
+             * @memberof com.message.PlayerExcInfoMsg
+             * @instance
+             */
+            PlayerExcInfoMsg.prototype.moneyCount = 0;
+
+            /**
+             * PlayerExcInfoMsg KADCount.
+             * @member {number} KADCount
+             * @memberof com.message.PlayerExcInfoMsg
+             * @instance
+             */
+            PlayerExcInfoMsg.prototype.KADCount = 0;
+
+            /**
+             * PlayerExcInfoMsg logTime.
+             * @member {number|Long} logTime
+             * @memberof com.message.PlayerExcInfoMsg
+             * @instance
+             */
+            PlayerExcInfoMsg.prototype.logTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified PlayerExcInfoMsg message. Does not implicitly {@link com.message.PlayerExcInfoMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.PlayerExcInfoMsg
+             * @static
+             * @param {com.message.IPlayerExcInfoMsg} message PlayerExcInfoMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PlayerExcInfoMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.moneyCount);
+                if (message.KADCount != null && message.hasOwnProperty("KADCount"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.KADCount);
+                if (message.logTime != null && message.hasOwnProperty("logTime"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.logTime);
+                return writer;
+            };
+
+            /**
+             * Decodes a PlayerExcInfoMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.PlayerExcInfoMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.PlayerExcInfoMsg} PlayerExcInfoMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PlayerExcInfoMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.PlayerExcInfoMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.moneyCount = reader.double();
+                        break;
+                    case 2:
+                        message.KADCount = reader.double();
+                        break;
+                    case 3:
+                        message.logTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return PlayerExcInfoMsg;
+        })();
+
+        message.C_GET_MONEY_EXCHANGE_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_MONEY_EXCHANGE_INFO.
+             * @memberof com.message
+             * @interface IC_GET_MONEY_EXCHANGE_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_MONEY_EXCHANGE_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MONEY_EXCHANGE_INFO.
+             * @implements IC_GET_MONEY_EXCHANGE_INFO
+             * @constructor
+             * @param {com.message.IC_GET_MONEY_EXCHANGE_INFO=} [properties] Properties to set
+             */
+            function C_GET_MONEY_EXCHANGE_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MONEY_EXCHANGE_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_EXCHANGE_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MONEY_EXCHANGE_INFO
+             * @static
+             * @param {com.message.IC_GET_MONEY_EXCHANGE_INFO} message C_GET_MONEY_EXCHANGE_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MONEY_EXCHANGE_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MONEY_EXCHANGE_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MONEY_EXCHANGE_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MONEY_EXCHANGE_INFO} C_GET_MONEY_EXCHANGE_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MONEY_EXCHANGE_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_EXCHANGE_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MONEY_EXCHANGE_INFO;
+        })();
+
+        message.S_GET_MONEY_EXCHANGE_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_MONEY_EXCHANGE_INFO.
+             * @memberof com.message
+             * @interface IS_GET_MONEY_EXCHANGE_INFO
+             * @property {com.message.IMoneyExchangeMsg|null} [moneyExchangeMsg] S_GET_MONEY_EXCHANGE_INFO moneyExchangeMsg
+             * @property {Array.<com.message.IPlayerExcInfoMsg>|null} [playerExcInfoMsg] S_GET_MONEY_EXCHANGE_INFO playerExcInfoMsg
+             */
+
+            /**
+             * Constructs a new S_GET_MONEY_EXCHANGE_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MONEY_EXCHANGE_INFO.
+             * @implements IS_GET_MONEY_EXCHANGE_INFO
+             * @constructor
+             * @param {com.message.IS_GET_MONEY_EXCHANGE_INFO=} [properties] Properties to set
+             */
+            function S_GET_MONEY_EXCHANGE_INFO(properties) {
+                this.playerExcInfoMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MONEY_EXCHANGE_INFO moneyExchangeMsg.
+             * @member {com.message.IMoneyExchangeMsg|null|undefined} moneyExchangeMsg
+             * @memberof com.message.S_GET_MONEY_EXCHANGE_INFO
+             * @instance
+             */
+            S_GET_MONEY_EXCHANGE_INFO.prototype.moneyExchangeMsg = null;
+
+            /**
+             * S_GET_MONEY_EXCHANGE_INFO playerExcInfoMsg.
+             * @member {Array.<com.message.IPlayerExcInfoMsg>} playerExcInfoMsg
+             * @memberof com.message.S_GET_MONEY_EXCHANGE_INFO
+             * @instance
+             */
+            S_GET_MONEY_EXCHANGE_INFO.prototype.playerExcInfoMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_MONEY_EXCHANGE_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_EXCHANGE_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MONEY_EXCHANGE_INFO
+             * @static
+             * @param {com.message.IS_GET_MONEY_EXCHANGE_INFO} message S_GET_MONEY_EXCHANGE_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MONEY_EXCHANGE_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyExchangeMsg != null && message.hasOwnProperty("moneyExchangeMsg"))
+                    $root.com.message.MoneyExchangeMsg.encode(message.moneyExchangeMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.playerExcInfoMsg != null && message.playerExcInfoMsg.length)
+                    for (var i = 0; i < message.playerExcInfoMsg.length; ++i)
+                        $root.com.message.PlayerExcInfoMsg.encode(message.playerExcInfoMsg[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MONEY_EXCHANGE_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MONEY_EXCHANGE_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MONEY_EXCHANGE_INFO} S_GET_MONEY_EXCHANGE_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MONEY_EXCHANGE_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_EXCHANGE_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.moneyExchangeMsg = $root.com.message.MoneyExchangeMsg.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        if (!(message.playerExcInfoMsg && message.playerExcInfoMsg.length))
+                            message.playerExcInfoMsg = [];
+                        message.playerExcInfoMsg.push($root.com.message.PlayerExcInfoMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MONEY_EXCHANGE_INFO;
+        })();
+
+        message.C_MONEY_EXCHANGE_KAD = (function() {
+
+            /**
+             * Properties of a C_MONEY_EXCHANGE_KAD.
+             * @memberof com.message
+             * @interface IC_MONEY_EXCHANGE_KAD
+             * @property {number|null} [moneyCount] C_MONEY_EXCHANGE_KAD moneyCount
+             */
+
+            /**
+             * Constructs a new C_MONEY_EXCHANGE_KAD.
+             * @memberof com.message
+             * @classdesc Represents a C_MONEY_EXCHANGE_KAD.
+             * @implements IC_MONEY_EXCHANGE_KAD
+             * @constructor
+             * @param {com.message.IC_MONEY_EXCHANGE_KAD=} [properties] Properties to set
+             */
+            function C_MONEY_EXCHANGE_KAD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_MONEY_EXCHANGE_KAD moneyCount.
+             * @member {number} moneyCount
+             * @memberof com.message.C_MONEY_EXCHANGE_KAD
+             * @instance
+             */
+            C_MONEY_EXCHANGE_KAD.prototype.moneyCount = 0;
+
+            /**
+             * Encodes the specified C_MONEY_EXCHANGE_KAD message. Does not implicitly {@link com.message.C_MONEY_EXCHANGE_KAD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_MONEY_EXCHANGE_KAD
+             * @static
+             * @param {com.message.IC_MONEY_EXCHANGE_KAD} message C_MONEY_EXCHANGE_KAD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_MONEY_EXCHANGE_KAD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.moneyCount);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_MONEY_EXCHANGE_KAD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_MONEY_EXCHANGE_KAD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_MONEY_EXCHANGE_KAD} C_MONEY_EXCHANGE_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_MONEY_EXCHANGE_KAD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_MONEY_EXCHANGE_KAD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.moneyCount = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_MONEY_EXCHANGE_KAD;
+        })();
+
+        message.S_MONEY_EXCHANGE_KAD = (function() {
+
+            /**
+             * Properties of a S_MONEY_EXCHANGE_KAD.
+             * @memberof com.message
+             * @interface IS_MONEY_EXCHANGE_KAD
+             * @property {number|null} [moneyCount] S_MONEY_EXCHANGE_KAD moneyCount
+             * @property {number|null} [KADCount] S_MONEY_EXCHANGE_KAD KADCount
+             */
+
+            /**
+             * Constructs a new S_MONEY_EXCHANGE_KAD.
+             * @memberof com.message
+             * @classdesc Represents a S_MONEY_EXCHANGE_KAD.
+             * @implements IS_MONEY_EXCHANGE_KAD
+             * @constructor
+             * @param {com.message.IS_MONEY_EXCHANGE_KAD=} [properties] Properties to set
+             */
+            function S_MONEY_EXCHANGE_KAD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_MONEY_EXCHANGE_KAD moneyCount.
+             * @member {number} moneyCount
+             * @memberof com.message.S_MONEY_EXCHANGE_KAD
+             * @instance
+             */
+            S_MONEY_EXCHANGE_KAD.prototype.moneyCount = 0;
+
+            /**
+             * S_MONEY_EXCHANGE_KAD KADCount.
+             * @member {number} KADCount
+             * @memberof com.message.S_MONEY_EXCHANGE_KAD
+             * @instance
+             */
+            S_MONEY_EXCHANGE_KAD.prototype.KADCount = 0;
+
+            /**
+             * Encodes the specified S_MONEY_EXCHANGE_KAD message. Does not implicitly {@link com.message.S_MONEY_EXCHANGE_KAD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_MONEY_EXCHANGE_KAD
+             * @static
+             * @param {com.message.IS_MONEY_EXCHANGE_KAD} message S_MONEY_EXCHANGE_KAD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_MONEY_EXCHANGE_KAD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.moneyCount);
+                if (message.KADCount != null && message.hasOwnProperty("KADCount"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.KADCount);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_MONEY_EXCHANGE_KAD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_MONEY_EXCHANGE_KAD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_MONEY_EXCHANGE_KAD} S_MONEY_EXCHANGE_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_MONEY_EXCHANGE_KAD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_MONEY_EXCHANGE_KAD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.moneyCount = reader.double();
+                        break;
+                    case 2:
+                        message.KADCount = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_MONEY_EXCHANGE_KAD;
+        })();
+
+        message.SysBonusMsg = (function() {
+
+            /**
+             * Properties of a SysBonusMsg.
+             * @memberof com.message
+             * @interface ISysBonusMsg
+             * @property {number|null} [sysAllBonus] SysBonusMsg sysAllBonus
+             * @property {number|null} [todayAllBonus] SysBonusMsg todayAllBonus
+             */
+
+            /**
+             * Constructs a new SysBonusMsg.
+             * @memberof com.message
+             * @classdesc Represents a SysBonusMsg.
+             * @implements ISysBonusMsg
+             * @constructor
+             * @param {com.message.ISysBonusMsg=} [properties] Properties to set
+             */
+            function SysBonusMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SysBonusMsg sysAllBonus.
+             * @member {number} sysAllBonus
+             * @memberof com.message.SysBonusMsg
+             * @instance
+             */
+            SysBonusMsg.prototype.sysAllBonus = 0;
+
+            /**
+             * SysBonusMsg todayAllBonus.
+             * @member {number} todayAllBonus
+             * @memberof com.message.SysBonusMsg
+             * @instance
+             */
+            SysBonusMsg.prototype.todayAllBonus = 0;
+
+            /**
+             * Encodes the specified SysBonusMsg message. Does not implicitly {@link com.message.SysBonusMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.SysBonusMsg
+             * @static
+             * @param {com.message.ISysBonusMsg} message SysBonusMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SysBonusMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sysAllBonus != null && message.hasOwnProperty("sysAllBonus"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.sysAllBonus);
+                if (message.todayAllBonus != null && message.hasOwnProperty("todayAllBonus"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.todayAllBonus);
+                return writer;
+            };
+
+            /**
+             * Decodes a SysBonusMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.SysBonusMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.SysBonusMsg} SysBonusMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SysBonusMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.SysBonusMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.sysAllBonus = reader.double();
+                        break;
+                    case 2:
+                        message.todayAllBonus = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return SysBonusMsg;
+        })();
+
+        message.PersonBonusMsg = (function() {
+
+            /**
+             * Properties of a PersonBonusMsg.
+             * @memberof com.message
+             * @interface IPersonBonusMsg
+             * @property {number|null} [diamondCount] PersonBonusMsg diamondCount
+             * @property {string|null} [info] PersonBonusMsg info
+             * @property {number|Long|null} [logTime] PersonBonusMsg logTime
+             */
+
+            /**
+             * Constructs a new PersonBonusMsg.
+             * @memberof com.message
+             * @classdesc Represents a PersonBonusMsg.
+             * @implements IPersonBonusMsg
+             * @constructor
+             * @param {com.message.IPersonBonusMsg=} [properties] Properties to set
+             */
+            function PersonBonusMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * PersonBonusMsg diamondCount.
+             * @member {number} diamondCount
+             * @memberof com.message.PersonBonusMsg
+             * @instance
+             */
+            PersonBonusMsg.prototype.diamondCount = 0;
+
+            /**
+             * PersonBonusMsg info.
+             * @member {string} info
+             * @memberof com.message.PersonBonusMsg
+             * @instance
+             */
+            PersonBonusMsg.prototype.info = "";
+
+            /**
+             * PersonBonusMsg logTime.
+             * @member {number|Long} logTime
+             * @memberof com.message.PersonBonusMsg
+             * @instance
+             */
+            PersonBonusMsg.prototype.logTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified PersonBonusMsg message. Does not implicitly {@link com.message.PersonBonusMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.PersonBonusMsg
+             * @static
+             * @param {com.message.IPersonBonusMsg} message PersonBonusMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PersonBonusMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.diamondCount != null && message.hasOwnProperty("diamondCount"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.diamondCount);
+                if (message.info != null && message.hasOwnProperty("info"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.info);
+                if (message.logTime != null && message.hasOwnProperty("logTime"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.logTime);
+                return writer;
+            };
+
+            /**
+             * Decodes a PersonBonusMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.PersonBonusMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.PersonBonusMsg} PersonBonusMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PersonBonusMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.PersonBonusMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.diamondCount = reader.double();
+                        break;
+                    case 2:
+                        message.info = reader.string();
+                        break;
+                    case 3:
+                        message.logTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return PersonBonusMsg;
+        })();
+
+        message.C_GET_BONUS_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_BONUS_INFO.
+             * @memberof com.message
+             * @interface IC_GET_BONUS_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_BONUS_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_BONUS_INFO.
+             * @implements IC_GET_BONUS_INFO
+             * @constructor
+             * @param {com.message.IC_GET_BONUS_INFO=} [properties] Properties to set
+             */
+            function C_GET_BONUS_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_BONUS_INFO message. Does not implicitly {@link com.message.C_GET_BONUS_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_BONUS_INFO
+             * @static
+             * @param {com.message.IC_GET_BONUS_INFO} message C_GET_BONUS_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_BONUS_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_BONUS_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_BONUS_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_BONUS_INFO} C_GET_BONUS_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_BONUS_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_BONUS_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_BONUS_INFO;
+        })();
+
+        message.S_GET_BONUS_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_BONUS_INFO.
+             * @memberof com.message
+             * @interface IS_GET_BONUS_INFO
+             * @property {com.message.ISysBonusMsg|null} [sysBonusMsg] S_GET_BONUS_INFO sysBonusMsg
+             * @property {Array.<com.message.IPersonBonusMsg>|null} [personBonusMsg] S_GET_BONUS_INFO personBonusMsg
+             */
+
+            /**
+             * Constructs a new S_GET_BONUS_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_BONUS_INFO.
+             * @implements IS_GET_BONUS_INFO
+             * @constructor
+             * @param {com.message.IS_GET_BONUS_INFO=} [properties] Properties to set
+             */
+            function S_GET_BONUS_INFO(properties) {
+                this.personBonusMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_BONUS_INFO sysBonusMsg.
+             * @member {com.message.ISysBonusMsg|null|undefined} sysBonusMsg
+             * @memberof com.message.S_GET_BONUS_INFO
+             * @instance
+             */
+            S_GET_BONUS_INFO.prototype.sysBonusMsg = null;
+
+            /**
+             * S_GET_BONUS_INFO personBonusMsg.
+             * @member {Array.<com.message.IPersonBonusMsg>} personBonusMsg
+             * @memberof com.message.S_GET_BONUS_INFO
+             * @instance
+             */
+            S_GET_BONUS_INFO.prototype.personBonusMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_BONUS_INFO message. Does not implicitly {@link com.message.S_GET_BONUS_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_BONUS_INFO
+             * @static
+             * @param {com.message.IS_GET_BONUS_INFO} message S_GET_BONUS_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_BONUS_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sysBonusMsg != null && message.hasOwnProperty("sysBonusMsg"))
+                    $root.com.message.SysBonusMsg.encode(message.sysBonusMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.personBonusMsg != null && message.personBonusMsg.length)
+                    for (var i = 0; i < message.personBonusMsg.length; ++i)
+                        $root.com.message.PersonBonusMsg.encode(message.personBonusMsg[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_BONUS_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_BONUS_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_BONUS_INFO} S_GET_BONUS_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_BONUS_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_BONUS_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.sysBonusMsg = $root.com.message.SysBonusMsg.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        if (!(message.personBonusMsg && message.personBonusMsg.length))
+                            message.personBonusMsg = [];
+                        message.personBonusMsg.push($root.com.message.PersonBonusMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_BONUS_INFO;
+        })();
+
+        message.PersonInjectMsg = (function() {
+
+            /**
+             * Properties of a PersonInjectMsg.
+             * @memberof com.message
+             * @interface IPersonInjectMsg
+             * @property {number|null} [KADCount] PersonInjectMsg KADCount
+             * @property {number|null} [cycleId] PersonInjectMsg cycleId
+             * @property {number|Long|null} [createTime] PersonInjectMsg createTime
+             * @property {number|Long|null} [endTime] PersonInjectMsg endTime
+             * @property {number|null} [state] PersonInjectMsg state
+             */
+
+            /**
+             * Constructs a new PersonInjectMsg.
+             * @memberof com.message
+             * @classdesc Represents a PersonInjectMsg.
+             * @implements IPersonInjectMsg
+             * @constructor
+             * @param {com.message.IPersonInjectMsg=} [properties] Properties to set
+             */
+            function PersonInjectMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * PersonInjectMsg KADCount.
+             * @member {number} KADCount
+             * @memberof com.message.PersonInjectMsg
+             * @instance
+             */
+            PersonInjectMsg.prototype.KADCount = 0;
+
+            /**
+             * PersonInjectMsg cycleId.
+             * @member {number} cycleId
+             * @memberof com.message.PersonInjectMsg
+             * @instance
+             */
+            PersonInjectMsg.prototype.cycleId = 0;
+
+            /**
+             * PersonInjectMsg createTime.
+             * @member {number|Long} createTime
+             * @memberof com.message.PersonInjectMsg
+             * @instance
+             */
+            PersonInjectMsg.prototype.createTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * PersonInjectMsg endTime.
+             * @member {number|Long} endTime
+             * @memberof com.message.PersonInjectMsg
+             * @instance
+             */
+            PersonInjectMsg.prototype.endTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * PersonInjectMsg state.
+             * @member {number} state
+             * @memberof com.message.PersonInjectMsg
+             * @instance
+             */
+            PersonInjectMsg.prototype.state = 0;
+
+            /**
+             * Encodes the specified PersonInjectMsg message. Does not implicitly {@link com.message.PersonInjectMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.PersonInjectMsg
+             * @static
+             * @param {com.message.IPersonInjectMsg} message PersonInjectMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PersonInjectMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.KADCount != null && message.hasOwnProperty("KADCount"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.KADCount);
+                if (message.cycleId != null && message.hasOwnProperty("cycleId"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.cycleId);
+                if (message.createTime != null && message.hasOwnProperty("createTime"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.createTime);
+                if (message.endTime != null && message.hasOwnProperty("endTime"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.endTime);
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.state);
+                return writer;
+            };
+
+            /**
+             * Decodes a PersonInjectMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.PersonInjectMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.PersonInjectMsg} PersonInjectMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PersonInjectMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.PersonInjectMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.KADCount = reader.double();
+                        break;
+                    case 2:
+                        message.cycleId = reader.int32();
+                        break;
+                    case 3:
+                        message.createTime = reader.int64();
+                        break;
+                    case 4:
+                        message.endTime = reader.int64();
+                        break;
+                    case 5:
+                        message.state = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return PersonInjectMsg;
+        })();
+
+        message.C_GET_INJECT_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_INJECT_INFO.
+             * @memberof com.message
+             * @interface IC_GET_INJECT_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_INJECT_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_INJECT_INFO.
+             * @implements IC_GET_INJECT_INFO
+             * @constructor
+             * @param {com.message.IC_GET_INJECT_INFO=} [properties] Properties to set
+             */
+            function C_GET_INJECT_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_INJECT_INFO message. Does not implicitly {@link com.message.C_GET_INJECT_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_INJECT_INFO
+             * @static
+             * @param {com.message.IC_GET_INJECT_INFO} message C_GET_INJECT_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_INJECT_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_INJECT_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_INJECT_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_INJECT_INFO} C_GET_INJECT_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_INJECT_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_INJECT_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_INJECT_INFO;
+        })();
+
+        message.S_GET_INJECT_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_INJECT_INFO.
+             * @memberof com.message
+             * @interface IS_GET_INJECT_INFO
+             * @property {number|null} [allInject] S_GET_INJECT_INFO allInject
+             * @property {Array.<com.message.IPersonInjectMsg>|null} [personInjectMsg] S_GET_INJECT_INFO personInjectMsg
+             */
+
+            /**
+             * Constructs a new S_GET_INJECT_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_INJECT_INFO.
+             * @implements IS_GET_INJECT_INFO
+             * @constructor
+             * @param {com.message.IS_GET_INJECT_INFO=} [properties] Properties to set
+             */
+            function S_GET_INJECT_INFO(properties) {
+                this.personInjectMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_INJECT_INFO allInject.
+             * @member {number} allInject
+             * @memberof com.message.S_GET_INJECT_INFO
+             * @instance
+             */
+            S_GET_INJECT_INFO.prototype.allInject = 0;
+
+            /**
+             * S_GET_INJECT_INFO personInjectMsg.
+             * @member {Array.<com.message.IPersonInjectMsg>} personInjectMsg
+             * @memberof com.message.S_GET_INJECT_INFO
+             * @instance
+             */
+            S_GET_INJECT_INFO.prototype.personInjectMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_INJECT_INFO message. Does not implicitly {@link com.message.S_GET_INJECT_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_INJECT_INFO
+             * @static
+             * @param {com.message.IS_GET_INJECT_INFO} message S_GET_INJECT_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_INJECT_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.allInject != null && message.hasOwnProperty("allInject"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.allInject);
+                if (message.personInjectMsg != null && message.personInjectMsg.length)
+                    for (var i = 0; i < message.personInjectMsg.length; ++i)
+                        $root.com.message.PersonInjectMsg.encode(message.personInjectMsg[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_INJECT_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_INJECT_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_INJECT_INFO} S_GET_INJECT_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_INJECT_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_INJECT_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.allInject = reader.double();
+                        break;
+                    case 2:
+                        if (!(message.personInjectMsg && message.personInjectMsg.length))
+                            message.personInjectMsg = [];
+                        message.personInjectMsg.push($root.com.message.PersonInjectMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_INJECT_INFO;
+        })();
+
+        message.C_INJECT_KAD = (function() {
+
+            /**
+             * Properties of a C_INJECT_KAD.
+             * @memberof com.message
+             * @interface IC_INJECT_KAD
+             * @property {number|null} [KADCount] C_INJECT_KAD KADCount
+             * @property {number|null} [cycleId] C_INJECT_KAD cycleId
+             */
+
+            /**
+             * Constructs a new C_INJECT_KAD.
+             * @memberof com.message
+             * @classdesc Represents a C_INJECT_KAD.
+             * @implements IC_INJECT_KAD
+             * @constructor
+             * @param {com.message.IC_INJECT_KAD=} [properties] Properties to set
+             */
+            function C_INJECT_KAD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_INJECT_KAD KADCount.
+             * @member {number} KADCount
+             * @memberof com.message.C_INJECT_KAD
+             * @instance
+             */
+            C_INJECT_KAD.prototype.KADCount = 0;
+
+            /**
+             * C_INJECT_KAD cycleId.
+             * @member {number} cycleId
+             * @memberof com.message.C_INJECT_KAD
+             * @instance
+             */
+            C_INJECT_KAD.prototype.cycleId = 0;
+
+            /**
+             * Encodes the specified C_INJECT_KAD message. Does not implicitly {@link com.message.C_INJECT_KAD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_INJECT_KAD
+             * @static
+             * @param {com.message.IC_INJECT_KAD} message C_INJECT_KAD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_INJECT_KAD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.KADCount != null && message.hasOwnProperty("KADCount"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.KADCount);
+                if (message.cycleId != null && message.hasOwnProperty("cycleId"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.cycleId);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_INJECT_KAD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_INJECT_KAD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_INJECT_KAD} C_INJECT_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_INJECT_KAD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_INJECT_KAD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.KADCount = reader.double();
+                        break;
+                    case 2:
+                        message.cycleId = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_INJECT_KAD;
+        })();
+
+        message.S_INJECT_KAD = (function() {
+
+            /**
+             * Properties of a S_INJECT_KAD.
+             * @memberof com.message
+             * @interface IS_INJECT_KAD
+             * @property {number|null} [allInject] S_INJECT_KAD allInject
+             * @property {com.message.IPersonInjectMsg|null} [personInjectMsg] S_INJECT_KAD personInjectMsg
+             */
+
+            /**
+             * Constructs a new S_INJECT_KAD.
+             * @memberof com.message
+             * @classdesc Represents a S_INJECT_KAD.
+             * @implements IS_INJECT_KAD
+             * @constructor
+             * @param {com.message.IS_INJECT_KAD=} [properties] Properties to set
+             */
+            function S_INJECT_KAD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_INJECT_KAD allInject.
+             * @member {number} allInject
+             * @memberof com.message.S_INJECT_KAD
+             * @instance
+             */
+            S_INJECT_KAD.prototype.allInject = 0;
+
+            /**
+             * S_INJECT_KAD personInjectMsg.
+             * @member {com.message.IPersonInjectMsg|null|undefined} personInjectMsg
+             * @memberof com.message.S_INJECT_KAD
+             * @instance
+             */
+            S_INJECT_KAD.prototype.personInjectMsg = null;
+
+            /**
+             * Encodes the specified S_INJECT_KAD message. Does not implicitly {@link com.message.S_INJECT_KAD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_INJECT_KAD
+             * @static
+             * @param {com.message.IS_INJECT_KAD} message S_INJECT_KAD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_INJECT_KAD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.allInject != null && message.hasOwnProperty("allInject"))
+                    writer.uint32(/* id 1, wireType 1 =*/9).double(message.allInject);
+                if (message.personInjectMsg != null && message.hasOwnProperty("personInjectMsg"))
+                    $root.com.message.PersonInjectMsg.encode(message.personInjectMsg, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_INJECT_KAD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_INJECT_KAD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_INJECT_KAD} S_INJECT_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_INJECT_KAD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_INJECT_KAD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.allInject = reader.double();
+                        break;
+                    case 2:
+                        message.personInjectMsg = $root.com.message.PersonInjectMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_INJECT_KAD;
+        })();
+
         message.S_EXCEPTION_MSG = (function() {
 
             /**
@@ -4758,7 +6181,7 @@ $root.com = (function() {
              * @property {number|Long|null} [playerId] PlayerPropertyMsg playerId
              * @property {number|null} [money] PlayerPropertyMsg money
              * @property {number|null} [diamond] PlayerPropertyMsg diamond
-             * @property {number|null} [frozenDiamond] PlayerPropertyMsg frozenDiamond
+             * @property {number|null} [KAD] PlayerPropertyMsg KAD
              * @property {number|null} [available] PlayerPropertyMsg available
              */
 
@@ -4802,12 +6225,12 @@ $root.com = (function() {
             PlayerPropertyMsg.prototype.diamond = 0;
 
             /**
-             * PlayerPropertyMsg frozenDiamond.
-             * @member {number} frozenDiamond
+             * PlayerPropertyMsg KAD.
+             * @member {number} KAD
              * @memberof com.message.PlayerPropertyMsg
              * @instance
              */
-            PlayerPropertyMsg.prototype.frozenDiamond = 0;
+            PlayerPropertyMsg.prototype.KAD = 0;
 
             /**
              * PlayerPropertyMsg available.
@@ -4835,8 +6258,8 @@ $root.com = (function() {
                     writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
                 if (message.diamond != null && message.hasOwnProperty("diamond"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.diamond);
-                if (message.frozenDiamond != null && message.hasOwnProperty("frozenDiamond"))
-                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.frozenDiamond);
+                if (message.KAD != null && message.hasOwnProperty("KAD"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.KAD);
                 if (message.available != null && message.hasOwnProperty("available"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int32(message.available);
                 return writer;
@@ -4870,7 +6293,7 @@ $root.com = (function() {
                         message.diamond = reader.double();
                         break;
                     case 5:
-                        message.frozenDiamond = reader.double();
+                        message.KAD = reader.double();
                         break;
                     case 6:
                         message.available = reader.int32();
@@ -6186,6 +7609,16 @@ $root.com = (function() {
              * @property {number} S_MARKET_SELL=1106 S_MARKET_SELL value
              * @property {number} C_MARKET_CANCEL=1107 C_MARKET_CANCEL value
              * @property {number} S_MARKET_CANCEL=1108 S_MARKET_CANCEL value
+             * @property {number} C_GET_MONEY_EXCHANGE_INFO=1201 C_GET_MONEY_EXCHANGE_INFO value
+             * @property {number} S_GET_MONEY_EXCHANGE_INFO=1202 S_GET_MONEY_EXCHANGE_INFO value
+             * @property {number} C_MONEY_EXCHANGE_KAD=1203 C_MONEY_EXCHANGE_KAD value
+             * @property {number} S_MONEY_EXCHANGE_KAD=1204 S_MONEY_EXCHANGE_KAD value
+             * @property {number} C_GET_BONUS_INFO=1205 C_GET_BONUS_INFO value
+             * @property {number} S_GET_BONUS_INFO=1206 S_GET_BONUS_INFO value
+             * @property {number} C_GET_INJECT_INFO=1207 C_GET_INJECT_INFO value
+             * @property {number} S_GET_INJECT_INFO=1208 S_GET_INJECT_INFO value
+             * @property {number} C_INJECT_KAD=1209 C_INJECT_KAD value
+             * @property {number} S_INJECT_KAD=1210 S_INJECT_KAD value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -6240,6 +7673,16 @@ $root.com = (function() {
                 values[valuesById[1106] = "S_MARKET_SELL"] = 1106;
                 values[valuesById[1107] = "C_MARKET_CANCEL"] = 1107;
                 values[valuesById[1108] = "S_MARKET_CANCEL"] = 1108;
+                values[valuesById[1201] = "C_GET_MONEY_EXCHANGE_INFO"] = 1201;
+                values[valuesById[1202] = "S_GET_MONEY_EXCHANGE_INFO"] = 1202;
+                values[valuesById[1203] = "C_MONEY_EXCHANGE_KAD"] = 1203;
+                values[valuesById[1204] = "S_MONEY_EXCHANGE_KAD"] = 1204;
+                values[valuesById[1205] = "C_GET_BONUS_INFO"] = 1205;
+                values[valuesById[1206] = "S_GET_BONUS_INFO"] = 1206;
+                values[valuesById[1207] = "C_GET_INJECT_INFO"] = 1207;
+                values[valuesById[1208] = "S_GET_INJECT_INFO"] = 1208;
+                values[valuesById[1209] = "C_INJECT_KAD"] = 1209;
+                values[valuesById[1210] = "S_INJECT_KAD"] = 1210;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;
@@ -6405,12 +7848,14 @@ $root.com = (function() {
          * @property {number} LEVEL=0 LEVEL value
          * @property {number} MONEY=1 MONEY value
          * @property {number} DIAMOND=2 DIAMOND value
+         * @property {number} KAD=3 KAD value
          */
         message.PropertyID = (function() {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "LEVEL"] = 0;
             values[valuesById[1] = "MONEY"] = 1;
             values[valuesById[2] = "DIAMOND"] = 2;
+            values[valuesById[3] = "KAD"] = 3;
             return values;
         })();
 

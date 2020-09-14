@@ -1,11 +1,5 @@
 module qmr
 {
-	/**
-	 *
-	 * @author coler
-	 * @description 消息通知的常量,所有的消息通知常量都写在这里
-	 *
-	 */
 	export class NotifyConst
 	{
 
@@ -26,6 +20,12 @@ module qmr
 		public static S_MARKET_BUY:string = "S_MARKET_BUY";
 		public static S_MARKET_SELL:string = "S_MARKET_SELL";
 		public static S_MARKET_CANCEL:string = "S_MARKET_CANCEL";
+
+		public static S_GET_MONEY_EXCHANGE_INFO:string = "S_GET_MONEY_EXCHANGE_INFO";
+		public static S_MONEY_EXCHANGE_KAD:string = "S_MONEY_EXCHANGE_KAD";
+		public static S_GET_BONUS_INFO:string = "S_GET_BONUS_INFO";
+		public static S_INJECT_KAD:string = "S_INJECT_KAD";
+		public static S_GET_INJECT_INFO:string = "S_GET_INJECT_INFO";
 	}
 
 }

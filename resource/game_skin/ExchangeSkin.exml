@@ -4,7 +4,7 @@
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
 		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0"/>
 		<e:Group width="730" height="277.27" x="9.04" y="1.37" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Image source="trade_json.exchange_title_img_jpg" x="3.02" y="0" scale9Grid="237,135,187,29" anchorOffsetX="0" width="725"/>
+			<e:Image x="3.02" y="0" scale9Grid="237,135,187,29" anchorOffsetX="0" width="725" source="trade_json.exchange_title_img_png"/>
 			<e:Label id="txt_kda_total" text="0.00099 KAD" y="21.3" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="111"/>
 			<e:Label text="平台通行证总量：" y="20.39" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="69"/>
 			<e:Label id="txt_exchanged_total" text="0.00099 KAD" y="53.26" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
@@ -24,7 +24,7 @@
 			</e:Group>
 			<e:Group id="btn_exchange_group" x="88" y="134.84" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.button_img_png" scale9Grid="78,9,200,61" width="590"/>
-				<e:Label id="txt_button_buy" text="兑换LAND" y="30.18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0x71492e"/>
+				<e:Label id="txt_button_buy" text="兑换KAD" y="30.18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0x71492e"/>
 			</e:Group>
 		</e:Group>
 		<e:Group width="737.88" height="666.67" x="6.12" y="584.85" anchorOffsetX="0" anchorOffsetY="0">

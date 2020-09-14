@@ -265,6 +265,36 @@ module qmr
 		}
 	}
 
+	export class InjectCycleCfg extends BaseBean
+	{
+		/**周期ID*/
+	get id():number
+	{			
+		return this.d["id"];			
+	}
+	/**权重*/
+	get weights():number
+	{			
+		return this.d["weights"];			
+	}
+	/**周期时长*/
+	get cycle():number
+	{			
+		return this.d["cycle"];			
+	}
+	/**周期描述*/
+	get des():string
+	{			
+		return this.d["des"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="id";
+		}
+	}
+
 	export class CommonConfigCfg extends BaseBean
 	{
 		/**ID*/
@@ -282,6 +312,36 @@ module qmr
 		{				
 			super(element)
 		this.key="id";
+		}
+	}
+
+	export class OutBossInspireCfg extends BaseBean
+	{
+		/**鼓舞等级*/
+	get level():number
+	{			
+		return this.d["level"];			
+	}
+	/**消耗材料*/
+	get cost():string
+	{			
+		return this.d["cost"];			
+	}
+	/**鼓舞buff：buffId1，buffId2*/
+	get buffs():string
+	{			
+		return this.d["buffs"];			
+	}
+	/**描述*/
+	get dec():string
+	{			
+		return this.d["dec"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="level";
 		}
 	}
 

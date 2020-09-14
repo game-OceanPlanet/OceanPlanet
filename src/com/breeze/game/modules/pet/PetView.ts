@@ -59,7 +59,7 @@ public btnReturn:eui.Image;
 			})
             t._arrCollection.replaceAll(pets);
 			
-			t.txt_total.text = Number(HeroModel.instance.totalMoney.toFixed(4))+HeroModel.KH;
+			t.txt_total.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
 		}
 
 		public dispose(): void

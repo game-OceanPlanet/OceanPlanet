@@ -87,6 +87,21 @@ module qmr {
 		/** C->S 请求: 撤单 */
 		public static C_MARKET_CANCEL:number = 1107; 
 		public static S_MARKET_CANCEL:number = 1108;
+		/** 获取兑换信息 */
+		public static C_GET_MONEY_EXCHANGE_INFO:number = 1201;
+		public static S_GET_MONEY_EXCHANGE_INFO:number = 1202;
+		/** 金币兑换平台币KAD */
+		public static C_MONEY_EXCHANGE_KAD:number = 1203; 
+		public static S_MONEY_EXCHANGE_KAD:number = 1204;
+		/** 获取分红信息 */
+		public static C_GET_BONUS_INFO:number = 1205;
+		public static S_GET_BONUS_INFO:number = 1206;
+		/** 获取注入信息 */
+		public static C_GET_INJECT_INFO:number = 1207; 
+		public static S_GET_INJECT_INFO:number = 1208;
+		/** 注入 */
+		public static C_INJECT_KAD:number = 1209;  
+		public static S_INJECT_KAD:number = 1210;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

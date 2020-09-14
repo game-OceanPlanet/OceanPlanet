@@ -50,6 +50,19 @@ message MsgEnum {
 		S_MARKET_SELL			= 1106;
 		C_MARKET_CANCEL			= 1107; //C->S 请求: 撤单
 		S_MARKET_CANCEL			= 1108;
+		
+		//Bonus
+		C_GET_MONEY_EXCHANGE_INFO 	= 1201;	//获取兑换信息
+		S_GET_MONEY_EXCHANGE_INFO	= 1202;
+		C_MONEY_EXCHANGE_KAD		= 1203; //金币兑换平台币KAD
+		S_MONEY_EXCHANGE_KAD		= 1204;
+		C_GET_BONUS_INFO			= 1205;	//获取分红信息
+		S_GET_BONUS_INFO			= 1206;
+		C_GET_INJECT_INFO			= 1207; //获取注入信息
+		S_GET_INJECT_INFO			= 1208;
+		C_INJECT_KAD				= 1209;  //注入
+		S_INJECT_KAD				= 1210;
+		
 
         S_SYN_PROPERTY = 2001; // 同步属性变化
 

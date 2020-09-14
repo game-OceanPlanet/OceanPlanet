@@ -12,8 +12,12 @@ module qmr
 		static SKILL:string='Skill';
 		/**模板*/
 		static TEMPLATE:string='Template';
+		/**OTC*/
+		static INJECTCYCLE:string='InjectCycle';
 		/**全局配置*/
 		static COMMONCONFIG:string='CommonConfig';
+		/**野外boss鼓舞*/
+		static OUTBOSSINSPIRE:string='OutBossInspire';
 		/**技能效果*/
 		static SKILLEFFECT:string='SkillEffect';
 		/**特效*/

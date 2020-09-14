@@ -1,8 +1,8 @@
 module qmr {
     export class HeroModel extends BaseModel {
-        public static KH:string = "KH";
-        public static USDT:string = "USDT";
-        public static KAD:string = "KAD";
+        public static KH:string = " KH";     //金币
+        public static USDT:string = " USDT"; //U币，相当于RMB
+        public static KAD:string = " KAD";   //平台币，也就是证通
         public static TIMES:number = 1;
         
         public IdentityPro:com.message.BasePlayerMsg;
@@ -15,6 +15,7 @@ module qmr {
         public pendingMoney:number = 0;//待领取的金币
         public totalMoney:number = 0;//总共持有金币的数量
         public totalUSDT:number = 0;//当前玩家USDT的数量
+        public totalKAD:number = 0;//当前玩家KAD的数量
 
         public moneyLogs:com.message.MoneyLogMsg[];//获取金币日志信息
         public usdtLogs:com.message.MoneyLogMsg[];//获取U日志信息

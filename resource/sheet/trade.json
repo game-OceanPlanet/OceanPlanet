@@ -1,7 +1,7 @@
 {"file":"trade.png","frames":{
 "btn_help_png":{"x":933,"y":939,"w":80,"h":80,"offX":0,"offY":0,"sourceW":80,"sourceH":80},
 "button_img_png":{"x":676,"y":866,"w":337,"h":73,"offX":4,"offY":3,"sourceW":344,"sourceH":79},
-"exchange_title_img_jpg":{"x":571,"y":374,"w":663,"h":291,"offX":0,"offY":0,"sourceW":663,"sourceH":291},
+"exchange_title_img_png":{"x":571,"y":374,"w":663,"h":291,"offX":0,"offY":0,"sourceW":663,"sourceH":291},
 "input_img_png":{"x":676,"y":939,"w":257,"h":73,"offX":3,"offY":3,"sourceW":262,"sourceH":78},
 "kuang_img_png":{"x":1069,"y":665,"w":315,"h":293,"offX":0,"offY":0,"sourceW":315,"sourceH":293},
 "kuang_img2_png":{"x":1384,"y":665,"w":313,"h":291,"offX":1,"offY":1,"sourceW":315,"sourceH":293},

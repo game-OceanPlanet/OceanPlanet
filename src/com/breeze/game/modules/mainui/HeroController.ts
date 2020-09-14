@@ -47,6 +47,7 @@ module qmr
 			HeroModel.instance.pendingMoney = HeroModel.instance.getPetPendingMoney();
 			HeroModel.instance.totalMoney = Int64Util.getNumber(s.property.money);
 			HeroModel.instance.totalUSDT = Int64Util.getNumber(s.property.diamond);
+			HeroModel.instance.totalKAD = Int64Util.getNumber(s.property.KAD);
 
 			ModuleManager.showModule(ModuleNameConst.MAINUI_VIEW, null, LayerConst.TOOLBAR);
 			SceneManager.instance.enterHangMap(3004);
@@ -84,6 +85,9 @@ module qmr
 						break;
 					case com.message.PropertyID.DIAMOND:
 						HeroModel.instance.totalUSDT = value;
+						break;
+					case com.message.PropertyID.KAD:
+						HeroModel.instance.totalKAD = value;
 						break;
 				}
 			})

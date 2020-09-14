@@ -28,7 +28,7 @@ message PlayerPropertyMsg {
 	int64 playerId=1; // 玩家编号
 	double money=3; //当前持有金币
 	double diamond=4; //当前持有u
-	double frozenDiamond=5; //金币
+	double KAD=5; //KAD
 	int32 available = 6; //是否有效用户
 }
 

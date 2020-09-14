@@ -199,7 +199,7 @@
 			"url": "sheet/trade.json",
 			"type": "sheet",
 			"name": "trade_json",
-			"subkeys": "btn_help_png,button_img_png,exchange_title_img_jpg,input_img_png,kuang_img2_png,kuang_img_png,liet_item_png,list_bg2_png,list_bg_png,list_kuang_png,list_title_png,mask_bg_png,panel_bg2_png,panel_bg_png"
+			"subkeys": "btn_help_png,button_img_png,exchange_title_img_png,input_img_png,kuang_img2_png,kuang_img_png,liet_item_png,list_bg2_png,list_bg_png,list_kuang_png,list_title_png,mask_bg_png,panel_bg2_png,panel_bg_png"
 		},
 		{
 			"url": "assets/ui1.png",
@@ -220,6 +220,12 @@
 			"url": "assets/ui4.jpg",
 			"type": "image",
 			"name": "ui4_jpg"
+		},
+		{
+			"url": "sheet/injectList.json",
+			"type": "sheet",
+			"name": "injectList_json",
+			"subkeys": "common_anniud_png,dfzbs_saiqu_dijianniu_png,dfzbs_saiqudiban_png,dikuang_png,frame_dianfengzhengba_xuanzhekuang_png"
 		}
 	]
 }

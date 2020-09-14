@@ -262,9 +262,9 @@ public txt_totalUsdt:eui.Label;
             t.__secondSpeed = md.getProduceMoneySpeed();
             t.__dayTotal = md.getEveryDayProduceMoney();
 
-            t.txt_curr.text = Number(t.__currMoney.toFixed(4)) + HeroModel.KH;
-            t.txt_totalGold.text = Number(HeroModel.instance.totalMoney.toFixed(4))+HeroModel.KH;
-			t.txt_totalUsdt.text = Number(HeroModel.instance.totalUSDT.toFixed(4))+HeroModel.USDT;
+            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney) + HeroModel.KH;
+            t.txt_totalGold.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+			t.txt_totalUsdt.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalUSDT) + HeroModel.USDT;
 
 
 			if (t.__timekey != -1){
@@ -281,12 +281,12 @@ public txt_totalUsdt:eui.Label;
         private onTimeRun(){
             let t = this;
 			if(t.__currMoney >= t.__dayTotal){
-				t.txt_curr.text = Number(t.__dayTotal.toFixed(4)) + HeroModel.KH;
+				t.txt_curr.text =  NumberUtil.getFloat4Number2String(t.__dayTotal) + HeroModel.KH;
 				t.stopTime();
 				return;
 			}
             t.__currMoney += t.__secondSpeed;
-            t.txt_curr.text = Number(t.__currMoney.toFixed(4)) + HeroModel.KH;
+            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney) + HeroModel.KH;
 		}
 
 		private stopTime(): void
@@ -296,7 +296,7 @@ public txt_totalUsdt:eui.Label;
 				egret.clearInterval(t.__timekey);
 			}
 			t.__timekey = -1;
-			t.txt_curr.text = Number(t.__dayTotal.toFixed(4)) + HeroModel.KH;
+			t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__dayTotal) + HeroModel.KH;
 		}
     }
 }

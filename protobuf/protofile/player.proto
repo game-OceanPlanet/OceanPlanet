@@ -12,4 +12,5 @@ enum PropertyID {
 		LEVEL = 0;	
 		MONEY = 1;
 		DIAMOND = 2;
+		KAD = 3;
 }

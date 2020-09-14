@@ -6825,8 +6825,8 @@ var qmr;
             // {
             //     socketUrl = "ws://" + host + ":" + port + this.WEB_KEY;
             // }
-            // socketUrl = "ws://129.226.177.253/s1";
-            socketUrl = "ws://192.168.3.116:8004" + this.WEB_KEY;
+            socketUrl = "ws://129.226.177.253/s1";
+            // socketUrl = "ws://192.168.3.116:8004"+ this.WEB_KEY;
             this.websocket.connectByUrl(socketUrl);
             // let socketUrl = "wss://echo.websocket.org"
             // this.websocket.connect(host, port)

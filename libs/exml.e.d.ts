@@ -58,9 +58,19 @@ declare class AlertShopItemSkin extends eui.Skin{
 }
 declare class BuyGoodItemSkin extends eui.Skin{
 }
+declare class DividendItemSkin extends eui.Skin{
+}
 declare class DividendSkin extends eui.Skin{
 }
+declare class ExchangeItemSkin extends eui.Skin{
+}
 declare class ExchangeSkin extends eui.Skin{
+}
+declare class InjectListItemSkin extends eui.Skin{
+}
+declare class InjectListSkin extends eui.Skin{
+}
+declare class InjectLogItemSkin extends eui.Skin{
 }
 declare class InjectSkin extends eui.Skin{
 }

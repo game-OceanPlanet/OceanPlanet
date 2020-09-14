@@ -54,8 +54,8 @@ public txt_totalGold:eui.Label;
             let cfgs:PetCfg[] = ConfigManager.getBean(ConfigEnum.PET).values;
 			t._arrCollection.replaceAll(cfgs);
 			
-			t.txt_totalGold.text = Number(HeroModel.instance.totalMoney.toFixed(4))+HeroModel.KH;
-			t.txt_totalUSDT.text = Number(HeroModel.instance.totalUSDT.toFixed(4))+HeroModel.USDT;
+			t.txt_totalGold.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+			t.txt_totalUSDT.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalUSDT) + HeroModel.USDT;
 		}
 
 		public dispose(): void

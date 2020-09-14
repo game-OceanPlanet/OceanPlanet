@@ -12,7 +12,7 @@ module qmr
 		public static USDT_LOG_VIEW: string = "qmr.USDTLogView";        				//主ui模块
 		public static TRADE_VIEW: string = "qmr.TradeView";
 		public static INVITE_CODE_VIEW: string = "qmr.InviteCodeView";
-		public static INJECT_VIEW: string = "qmr.DividendView";
-		public static DIVIDEND_VIEW: string = "qmr.InjectView";
+		public static INJECT_VIEW: string = "qmr.InjectView";
+		public static DIVIDEND_VIEW: string = "qmr.DividendView";
 	}
 }

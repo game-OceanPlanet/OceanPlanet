@@ -674,6 +674,660 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_DEBUG_COMMON;
         }
 
+        /** Properties of a MoneyExchangeMsg. */
+        interface IMoneyExchangeMsg {
+
+            /** MoneyExchangeMsg sysAllKAD */
+            sysAllKAD?: (number|null);
+
+            /** MoneyExchangeMsg exAllKAD */
+            exAllKAD?: (number|null);
+
+            /** MoneyExchangeMsg exRatio */
+            exRatio?: (number|null);
+        }
+
+        /** Represents a MoneyExchangeMsg. */
+        class MoneyExchangeMsg implements IMoneyExchangeMsg {
+
+            /**
+             * Constructs a new MoneyExchangeMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IMoneyExchangeMsg);
+
+            /** MoneyExchangeMsg sysAllKAD. */
+            public sysAllKAD: number;
+
+            /** MoneyExchangeMsg exAllKAD. */
+            public exAllKAD: number;
+
+            /** MoneyExchangeMsg exRatio. */
+            public exRatio: number;
+
+            /**
+             * Encodes the specified MoneyExchangeMsg message. Does not implicitly {@link com.message.MoneyExchangeMsg.verify|verify} messages.
+             * @param message MoneyExchangeMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IMoneyExchangeMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a MoneyExchangeMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns MoneyExchangeMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.MoneyExchangeMsg;
+        }
+
+        /** Properties of a PlayerExcInfoMsg. */
+        interface IPlayerExcInfoMsg {
+
+            /** PlayerExcInfoMsg moneyCount */
+            moneyCount?: (number|null);
+
+            /** PlayerExcInfoMsg KADCount */
+            KADCount?: (number|null);
+
+            /** PlayerExcInfoMsg logTime */
+            logTime?: (number|Long|null);
+        }
+
+        /** Represents a PlayerExcInfoMsg. */
+        class PlayerExcInfoMsg implements IPlayerExcInfoMsg {
+
+            /**
+             * Constructs a new PlayerExcInfoMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IPlayerExcInfoMsg);
+
+            /** PlayerExcInfoMsg moneyCount. */
+            public moneyCount: number;
+
+            /** PlayerExcInfoMsg KADCount. */
+            public KADCount: number;
+
+            /** PlayerExcInfoMsg logTime. */
+            public logTime: (number|Long);
+
+            /**
+             * Encodes the specified PlayerExcInfoMsg message. Does not implicitly {@link com.message.PlayerExcInfoMsg.verify|verify} messages.
+             * @param message PlayerExcInfoMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IPlayerExcInfoMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a PlayerExcInfoMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PlayerExcInfoMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.PlayerExcInfoMsg;
+        }
+
+        /** Properties of a C_GET_MONEY_EXCHANGE_INFO. */
+        interface IC_GET_MONEY_EXCHANGE_INFO {
+        }
+
+        /** Represents a C_GET_MONEY_EXCHANGE_INFO. */
+        class C_GET_MONEY_EXCHANGE_INFO implements IC_GET_MONEY_EXCHANGE_INFO {
+
+            /**
+             * Constructs a new C_GET_MONEY_EXCHANGE_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MONEY_EXCHANGE_INFO);
+
+            /**
+             * Encodes the specified C_GET_MONEY_EXCHANGE_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_EXCHANGE_INFO.verify|verify} messages.
+             * @param message C_GET_MONEY_EXCHANGE_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MONEY_EXCHANGE_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MONEY_EXCHANGE_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MONEY_EXCHANGE_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_EXCHANGE_INFO;
+        }
+
+        /** Properties of a S_GET_MONEY_EXCHANGE_INFO. */
+        interface IS_GET_MONEY_EXCHANGE_INFO {
+
+            /** S_GET_MONEY_EXCHANGE_INFO moneyExchangeMsg */
+            moneyExchangeMsg?: (com.message.IMoneyExchangeMsg|null);
+
+            /** S_GET_MONEY_EXCHANGE_INFO playerExcInfoMsg */
+            playerExcInfoMsg?: (com.message.IPlayerExcInfoMsg[]|null);
+        }
+
+        /** Represents a S_GET_MONEY_EXCHANGE_INFO. */
+        class S_GET_MONEY_EXCHANGE_INFO implements IS_GET_MONEY_EXCHANGE_INFO {
+
+            /**
+             * Constructs a new S_GET_MONEY_EXCHANGE_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MONEY_EXCHANGE_INFO);
+
+            /** S_GET_MONEY_EXCHANGE_INFO moneyExchangeMsg. */
+            public moneyExchangeMsg?: (com.message.IMoneyExchangeMsg|null);
+
+            /** S_GET_MONEY_EXCHANGE_INFO playerExcInfoMsg. */
+            public playerExcInfoMsg: com.message.IPlayerExcInfoMsg[];
+
+            /**
+             * Encodes the specified S_GET_MONEY_EXCHANGE_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_EXCHANGE_INFO.verify|verify} messages.
+             * @param message S_GET_MONEY_EXCHANGE_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MONEY_EXCHANGE_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MONEY_EXCHANGE_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MONEY_EXCHANGE_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_EXCHANGE_INFO;
+        }
+
+        /** Properties of a C_MONEY_EXCHANGE_KAD. */
+        interface IC_MONEY_EXCHANGE_KAD {
+
+            /** C_MONEY_EXCHANGE_KAD moneyCount */
+            moneyCount?: (number|null);
+        }
+
+        /** Represents a C_MONEY_EXCHANGE_KAD. */
+        class C_MONEY_EXCHANGE_KAD implements IC_MONEY_EXCHANGE_KAD {
+
+            /**
+             * Constructs a new C_MONEY_EXCHANGE_KAD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_MONEY_EXCHANGE_KAD);
+
+            /** C_MONEY_EXCHANGE_KAD moneyCount. */
+            public moneyCount: number;
+
+            /**
+             * Encodes the specified C_MONEY_EXCHANGE_KAD message. Does not implicitly {@link com.message.C_MONEY_EXCHANGE_KAD.verify|verify} messages.
+             * @param message C_MONEY_EXCHANGE_KAD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_MONEY_EXCHANGE_KAD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_MONEY_EXCHANGE_KAD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_MONEY_EXCHANGE_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_MONEY_EXCHANGE_KAD;
+        }
+
+        /** Properties of a S_MONEY_EXCHANGE_KAD. */
+        interface IS_MONEY_EXCHANGE_KAD {
+
+            /** S_MONEY_EXCHANGE_KAD moneyCount */
+            moneyCount?: (number|null);
+
+            /** S_MONEY_EXCHANGE_KAD KADCount */
+            KADCount?: (number|null);
+        }
+
+        /** Represents a S_MONEY_EXCHANGE_KAD. */
+        class S_MONEY_EXCHANGE_KAD implements IS_MONEY_EXCHANGE_KAD {
+
+            /**
+             * Constructs a new S_MONEY_EXCHANGE_KAD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_MONEY_EXCHANGE_KAD);
+
+            /** S_MONEY_EXCHANGE_KAD moneyCount. */
+            public moneyCount: number;
+
+            /** S_MONEY_EXCHANGE_KAD KADCount. */
+            public KADCount: number;
+
+            /**
+             * Encodes the specified S_MONEY_EXCHANGE_KAD message. Does not implicitly {@link com.message.S_MONEY_EXCHANGE_KAD.verify|verify} messages.
+             * @param message S_MONEY_EXCHANGE_KAD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_MONEY_EXCHANGE_KAD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_MONEY_EXCHANGE_KAD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_MONEY_EXCHANGE_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_MONEY_EXCHANGE_KAD;
+        }
+
+        /** Properties of a SysBonusMsg. */
+        interface ISysBonusMsg {
+
+            /** SysBonusMsg sysAllBonus */
+            sysAllBonus?: (number|null);
+
+            /** SysBonusMsg todayAllBonus */
+            todayAllBonus?: (number|null);
+        }
+
+        /** Represents a SysBonusMsg. */
+        class SysBonusMsg implements ISysBonusMsg {
+
+            /**
+             * Constructs a new SysBonusMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.ISysBonusMsg);
+
+            /** SysBonusMsg sysAllBonus. */
+            public sysAllBonus: number;
+
+            /** SysBonusMsg todayAllBonus. */
+            public todayAllBonus: number;
+
+            /**
+             * Encodes the specified SysBonusMsg message. Does not implicitly {@link com.message.SysBonusMsg.verify|verify} messages.
+             * @param message SysBonusMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.ISysBonusMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a SysBonusMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SysBonusMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.SysBonusMsg;
+        }
+
+        /** Properties of a PersonBonusMsg. */
+        interface IPersonBonusMsg {
+
+            /** PersonBonusMsg diamondCount */
+            diamondCount?: (number|null);
+
+            /** PersonBonusMsg info */
+            info?: (string|null);
+
+            /** PersonBonusMsg logTime */
+            logTime?: (number|Long|null);
+        }
+
+        /** Represents a PersonBonusMsg. */
+        class PersonBonusMsg implements IPersonBonusMsg {
+
+            /**
+             * Constructs a new PersonBonusMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IPersonBonusMsg);
+
+            /** PersonBonusMsg diamondCount. */
+            public diamondCount: number;
+
+            /** PersonBonusMsg info. */
+            public info: string;
+
+            /** PersonBonusMsg logTime. */
+            public logTime: (number|Long);
+
+            /**
+             * Encodes the specified PersonBonusMsg message. Does not implicitly {@link com.message.PersonBonusMsg.verify|verify} messages.
+             * @param message PersonBonusMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IPersonBonusMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a PersonBonusMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PersonBonusMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.PersonBonusMsg;
+        }
+
+        /** Properties of a C_GET_BONUS_INFO. */
+        interface IC_GET_BONUS_INFO {
+        }
+
+        /** Represents a C_GET_BONUS_INFO. */
+        class C_GET_BONUS_INFO implements IC_GET_BONUS_INFO {
+
+            /**
+             * Constructs a new C_GET_BONUS_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_BONUS_INFO);
+
+            /**
+             * Encodes the specified C_GET_BONUS_INFO message. Does not implicitly {@link com.message.C_GET_BONUS_INFO.verify|verify} messages.
+             * @param message C_GET_BONUS_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_BONUS_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_BONUS_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_BONUS_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_BONUS_INFO;
+        }
+
+        /** Properties of a S_GET_BONUS_INFO. */
+        interface IS_GET_BONUS_INFO {
+
+            /** S_GET_BONUS_INFO sysBonusMsg */
+            sysBonusMsg?: (com.message.ISysBonusMsg|null);
+
+            /** S_GET_BONUS_INFO personBonusMsg */
+            personBonusMsg?: (com.message.IPersonBonusMsg[]|null);
+        }
+
+        /** Represents a S_GET_BONUS_INFO. */
+        class S_GET_BONUS_INFO implements IS_GET_BONUS_INFO {
+
+            /**
+             * Constructs a new S_GET_BONUS_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_BONUS_INFO);
+
+            /** S_GET_BONUS_INFO sysBonusMsg. */
+            public sysBonusMsg?: (com.message.ISysBonusMsg|null);
+
+            /** S_GET_BONUS_INFO personBonusMsg. */
+            public personBonusMsg: com.message.IPersonBonusMsg[];
+
+            /**
+             * Encodes the specified S_GET_BONUS_INFO message. Does not implicitly {@link com.message.S_GET_BONUS_INFO.verify|verify} messages.
+             * @param message S_GET_BONUS_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_BONUS_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_BONUS_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_BONUS_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_BONUS_INFO;
+        }
+
+        /** Properties of a PersonInjectMsg. */
+        interface IPersonInjectMsg {
+
+            /** PersonInjectMsg KADCount */
+            KADCount?: (number|null);
+
+            /** PersonInjectMsg cycleId */
+            cycleId?: (number|null);
+
+            /** PersonInjectMsg createTime */
+            createTime?: (number|Long|null);
+
+            /** PersonInjectMsg endTime */
+            endTime?: (number|Long|null);
+
+            /** PersonInjectMsg state */
+            state?: (number|null);
+        }
+
+        /** Represents a PersonInjectMsg. */
+        class PersonInjectMsg implements IPersonInjectMsg {
+
+            /**
+             * Constructs a new PersonInjectMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IPersonInjectMsg);
+
+            /** PersonInjectMsg KADCount. */
+            public KADCount: number;
+
+            /** PersonInjectMsg cycleId. */
+            public cycleId: number;
+
+            /** PersonInjectMsg createTime. */
+            public createTime: (number|Long);
+
+            /** PersonInjectMsg endTime. */
+            public endTime: (number|Long);
+
+            /** PersonInjectMsg state. */
+            public state: number;
+
+            /**
+             * Encodes the specified PersonInjectMsg message. Does not implicitly {@link com.message.PersonInjectMsg.verify|verify} messages.
+             * @param message PersonInjectMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IPersonInjectMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a PersonInjectMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PersonInjectMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.PersonInjectMsg;
+        }
+
+        /** Properties of a C_GET_INJECT_INFO. */
+        interface IC_GET_INJECT_INFO {
+        }
+
+        /** Represents a C_GET_INJECT_INFO. */
+        class C_GET_INJECT_INFO implements IC_GET_INJECT_INFO {
+
+            /**
+             * Constructs a new C_GET_INJECT_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_INJECT_INFO);
+
+            /**
+             * Encodes the specified C_GET_INJECT_INFO message. Does not implicitly {@link com.message.C_GET_INJECT_INFO.verify|verify} messages.
+             * @param message C_GET_INJECT_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_INJECT_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_INJECT_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_INJECT_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_INJECT_INFO;
+        }
+
+        /** Properties of a S_GET_INJECT_INFO. */
+        interface IS_GET_INJECT_INFO {
+
+            /** S_GET_INJECT_INFO allInject */
+            allInject?: (number|null);
+
+            /** S_GET_INJECT_INFO personInjectMsg */
+            personInjectMsg?: (com.message.IPersonInjectMsg[]|null);
+        }
+
+        /** Represents a S_GET_INJECT_INFO. */
+        class S_GET_INJECT_INFO implements IS_GET_INJECT_INFO {
+
+            /**
+             * Constructs a new S_GET_INJECT_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_INJECT_INFO);
+
+            /** S_GET_INJECT_INFO allInject. */
+            public allInject: number;
+
+            /** S_GET_INJECT_INFO personInjectMsg. */
+            public personInjectMsg: com.message.IPersonInjectMsg[];
+
+            /**
+             * Encodes the specified S_GET_INJECT_INFO message. Does not implicitly {@link com.message.S_GET_INJECT_INFO.verify|verify} messages.
+             * @param message S_GET_INJECT_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_INJECT_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_INJECT_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_INJECT_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_INJECT_INFO;
+        }
+
+        /** Properties of a C_INJECT_KAD. */
+        interface IC_INJECT_KAD {
+
+            /** C_INJECT_KAD KADCount */
+            KADCount?: (number|null);
+
+            /** C_INJECT_KAD cycleId */
+            cycleId?: (number|null);
+        }
+
+        /** Represents a C_INJECT_KAD. */
+        class C_INJECT_KAD implements IC_INJECT_KAD {
+
+            /**
+             * Constructs a new C_INJECT_KAD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_INJECT_KAD);
+
+            /** C_INJECT_KAD KADCount. */
+            public KADCount: number;
+
+            /** C_INJECT_KAD cycleId. */
+            public cycleId: number;
+
+            /**
+             * Encodes the specified C_INJECT_KAD message. Does not implicitly {@link com.message.C_INJECT_KAD.verify|verify} messages.
+             * @param message C_INJECT_KAD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_INJECT_KAD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_INJECT_KAD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_INJECT_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_INJECT_KAD;
+        }
+
+        /** Properties of a S_INJECT_KAD. */
+        interface IS_INJECT_KAD {
+
+            /** S_INJECT_KAD allInject */
+            allInject?: (number|null);
+
+            /** S_INJECT_KAD personInjectMsg */
+            personInjectMsg?: (com.message.IPersonInjectMsg|null);
+        }
+
+        /** Represents a S_INJECT_KAD. */
+        class S_INJECT_KAD implements IS_INJECT_KAD {
+
+            /**
+             * Constructs a new S_INJECT_KAD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_INJECT_KAD);
+
+            /** S_INJECT_KAD allInject. */
+            public allInject: number;
+
+            /** S_INJECT_KAD personInjectMsg. */
+            public personInjectMsg?: (com.message.IPersonInjectMsg|null);
+
+            /**
+             * Encodes the specified S_INJECT_KAD message. Does not implicitly {@link com.message.S_INJECT_KAD.verify|verify} messages.
+             * @param message S_INJECT_KAD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_INJECT_KAD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_INJECT_KAD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_INJECT_KAD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_INJECT_KAD;
+        }
+
         /** Properties of a S_EXCEPTION_MSG. */
         interface IS_EXCEPTION_MSG {
 
@@ -2202,8 +2856,8 @@ declare namespace com {
             /** PlayerPropertyMsg diamond */
             diamond?: (number|null);
 
-            /** PlayerPropertyMsg frozenDiamond */
-            frozenDiamond?: (number|null);
+            /** PlayerPropertyMsg KAD */
+            KAD?: (number|null);
 
             /** PlayerPropertyMsg available */
             available?: (number|null);
@@ -2227,8 +2881,8 @@ declare namespace com {
             /** PlayerPropertyMsg diamond. */
             public diamond: number;
 
-            /** PlayerPropertyMsg frozenDiamond. */
-            public frozenDiamond: number;
+            /** PlayerPropertyMsg KAD. */
+            public KAD: number;
 
             /** PlayerPropertyMsg available. */
             public available: number;
@@ -2872,6 +3526,16 @@ declare namespace com {
                 S_MARKET_SELL = 1106,
                 C_MARKET_CANCEL = 1107,
                 S_MARKET_CANCEL = 1108,
+                C_GET_MONEY_EXCHANGE_INFO = 1201,
+                S_GET_MONEY_EXCHANGE_INFO = 1202,
+                C_MONEY_EXCHANGE_KAD = 1203,
+                S_MONEY_EXCHANGE_KAD = 1204,
+                C_GET_BONUS_INFO = 1205,
+                S_GET_BONUS_INFO = 1206,
+                C_GET_INJECT_INFO = 1207,
+                S_GET_INJECT_INFO = 1208,
+                C_INJECT_KAD = 1209,
+                S_INJECT_KAD = 1210,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,
@@ -2956,7 +3620,8 @@ declare namespace com {
         enum PropertyID {
             LEVEL = 0,
             MONEY = 1,
-            DIAMOND = 2
+            DIAMOND = 2,
+            KAD = 3
         }
     }
 }
