@@ -6,7 +6,7 @@
 		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0" x="-32.23" y="-146.99" scaleX="1" scaleY="1"/>
 		<e:Group width="692.42" height="316.67" x="32.23" y="146.99" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Image x="363.77" y="12.01000000000002" source="trade_json.kuang_img_png" scaleX="1" scaleY="1"/>
-			<e:Image x="10.770000000000003" y="12.01000000000002" source="trade_json.kuang_img2_png" scaleX="1" scaleY="1"/>
+			<e:Image x="10.770000000000003" y="12.01000000000002" source="trade_json.kuang_img2" scaleX="1" scaleY="1"/>
 			<e:Label text="分红池中总量" y="65" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="-175.20999999999998"/>
 			<e:Label id="txt_total" text="1000000 USDT" y="105" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="-175.20999999999998"/>
 			<e:Label text="个人注入占比" y="65" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="181.79000000000002"/>
@@ -20,33 +20,34 @@
 
 
 		<e:Group width="750" height="781" y="553" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Image source="trade_json.liet_item_png" y="0" scale9Grid="28,27,169,28" anchorOffsetX="0" width="750"
+			<e:Image source="trade_json.liet_item" y="0" scale9Grid="28,27,169,28" anchorOffsetX="0" width="750"
 			         anchorOffsetY="0" height="781" horizontalCenter="0" />
-			<e:Image y="31" anchorOffsetX="0" width="700" anchorOffsetY="0" height="750" source="trade_json.list_bg_png"
+			<e:Image y="31" anchorOffsetX="0" width="700" anchorOffsetY="0" height="750" source="trade_json.list_bg"
 			         scale9Grid="71,124,429,138" horizontalCenter="0" />
-			<e:Image source="trade_json.list_bg2_png" y="118" width="640" horizontalCenter="0" height="663"
+			<e:Image source="trade_json.list_bg2" y="118" width="640" horizontalCenter="0" height="663"
 			         scale9Grid="62,25,375,152" />
-			<e:Image source="trade_json.list_title_png" y="32.91" horizontalCenter="0" />
-			<e:Image y="44.02" source="mainui_json.title_zhuru" horizontalCenter="0" />
-			<e:Label text="使用数量" y="133" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
-			         x="294" />
-			<e:Label text="获得数量" y="133" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
-			         x="535" />
-			<e:Label text="时间" y="133" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="92" />
+			<e:Image source="trade_json.list_title" y="32.91" horizontalCenter="0" />
+			<e:Image y="44.02" horizontalCenter="0"  source="shop_json.title_fenhong"/>
+			<e:Label text="收益" y="133" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
+			         x="376" />
+			<e:Label text="备注" y="133" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
+			         x="562" />
+			<e:Label text="时间" y="133" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="135" />
 		</e:Group>
-		<e:Group width="727.28" height="624.24" x="7.81" y="612.52" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Group id="itemGroup" width="720" height="599" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" y="120" horizontalCenter="0.36000000000001364">
-				<e:Scroller width="720" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" horizontalCenter="0" height="503">
-					<e:List id="item_list" anchorOffsetY="0" anchorOffsetX="0" x="2">
-						<e:layout>
-							<e:VerticalLayout gap="6" />
-						</e:layout>
-					</e:List>
-				</e:Scroller>
+		<e:Group width="630.31" height="707.09" x="63.87" y="619.52" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Group id="itemGroup" width="626" height="585.91" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" y="120" x="0">
+			<e:Scroller width="630" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" height="581" x="0">
+				<e:List id="item_list" anchorOffsetY="0" anchorOffsetX="0" x="2" width="678" height="505">
+				<e:layout>
+					<e:VerticalLayout gap="6"/>
+				</e:layout>
+				</e:List>
+			</e:Scroller>
 			</e:Group>
 		</e:Group>
+
 		<e:Image id="btnReturn" x="645.39" y="1289.39" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47"
 		         source="panel2_json.btn_back" scaleX="1" scaleY="1" />
-		<e:Image id="btn_help" source="trade_json.btn_help_png" x="657.15" y="464.6" />
+		<e:Image id="btn_help" source="trade_json.btn_help" x="657.15" y="464.6" />
 	</e:Group>
 </e:Skin>

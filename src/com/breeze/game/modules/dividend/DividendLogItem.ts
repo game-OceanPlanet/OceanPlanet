@@ -26,7 +26,7 @@ module qmr {
             if(pro){
                 t.txt_des.text = pro.info;
                 t.txt_count.text = NumberUtil.getFloat6Number2String(pro.diamondCount)+HeroModel.USDT;
-                t.txt_time.text = TimeUtil.getDateByTimerSecond(Int64Util.getNumber(pro.logTime));
+                t.txt_time.text = TimeUtil.getDateByTimer(Int64Util.getNumber(pro.logTime));
             }
         }
 	}

@@ -4,7 +4,7 @@
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
 		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0"/>
 		<e:Group width="730" height="277.27" x="9.04" y="1.37" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Image x="3.02" y="0" scale9Grid="237,135,187,29" anchorOffsetX="0" width="725" source="trade_json.exchange_title_img_png"/>
+			<e:Image x="3.02" y="0" scale9Grid="237,135,187,29" anchorOffsetX="0" width="725" source="trade_json.exchange_title_img"/>
 			<e:Label id="txt_kda_total" text="0.00099 KAD" y="21.3" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="111"/>
 			<e:Label text="平台通行证总量：" y="20.39" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="69"/>
 			<e:Label id="txt_exchanged_total" text="0.00099 KAD" y="53.26" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="274" textColor="0xFFF4D6" x="203.96000000000004"/>
@@ -19,19 +19,19 @@
 		<e:Group width="725" x="12" y="301.55" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Label id="txt_exchangeDes" text="可兑换0KAD" y="98.38" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="20.5"/>
 			<e:Group anchorOffsetY="0" height="73" scaleX="1" scaleY="1" anchorOffsetX="0" y="6.13" x="88">
-				<e:Image y="0" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" source="trade_json.input_img_png" x="0" scale9Grid="48,20,170,40" width="590"/>
+				<e:Image y="0" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" source="trade_json.input_img" x="0" scale9Grid="48,20,170,40" width="590"/>
 				<e:EditableText id="text_input_price" height="49" prompt="请输入要兑换的KH数量" size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" y="12" promptColor="0xCECECD" width="579" horizontalCenter="4" textAlign="center"/>
 			</e:Group>
 			<e:Group id="btn_exchange_group" x="88" y="134.84" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
-				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.button_img_png" scale9Grid="78,9,200,61" width="590"/>
+				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.button_img" scale9Grid="78,9,200,61" width="590"/>
 				<e:Label id="txt_button_buy" text="兑换KAD" y="30.18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0x71492e"/>
 			</e:Group>
 		</e:Group>
 		<e:Group width="737.88" height="666.67" x="6.12" y="584.85" anchorOffsetX="0" anchorOffsetY="0">
-			<e:Image source="trade_json.liet_item_png" y="0" scale9Grid="28,27,169,28" anchorOffsetX="0" width="746" anchorOffsetY="0" height="735" x="-4"/>
-			<e:Image y="13" anchorOffsetX="0" width="721" anchorOffsetY="0" height="713" source="trade_json.list_bg_png" scale9Grid="71,124,429,138" x="8"/>
-			<e:Image source="trade_json.list_title_png" y="20" x="149" scale9Grid="194,8,26,53"/>
-			<e:Image source="trade_json.list_bg2_png" y="95" width="706" height="496" scale9Grid="62,25,375,152" anchorOffsetY="0" horizontalCenter="0.060000000000002274"/>
+			<e:Image source="trade_json.liet_item" y="0" scale9Grid="28,27,169,28" anchorOffsetX="0" width="746" anchorOffsetY="0" height="735" x="-4"/>
+			<e:Image y="13" anchorOffsetX="0" width="721" anchorOffsetY="0" height="713" source="trade_json.list_bg" scale9Grid="71,124,429,138" x="8"/>
+			<e:Image source="trade_json.list_title" y="20" x="149" scale9Grid="194,8,26,53"/>
+			<e:Image source="trade_json.list_bg2" y="95" width="706" height="496" scale9Grid="62,25,375,152" anchorOffsetY="0" horizontalCenter="0.060000000000002274"/>
 			<e:Image y="32.02" source="shop_json.title_duihuan" x="323"/>
 		</e:Group>
 		<e:Group width="727.28" height="624.24" x="9.81" y="612.52" anchorOffsetX="0" anchorOffsetY="0">
@@ -49,6 +49,6 @@
 			<e:Label text="我的排名" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" y="572" textColor="0x491c0e" x="574" bold="true"/>
 		</e:Group>
 		<e:Image id="btnReturn" x="680.39" y="1267.39" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back" scaleX="1" scaleY="1"/>
-		<e:Image id="btn_help" source="trade_json.btn_help_png" x="657.15" y="503.6"/>
+		<e:Image id="btn_help" source="trade_json.btn_help" x="657.15" y="503.6"/>
 	</e:Group>
 </e:Skin>

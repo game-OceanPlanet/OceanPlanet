@@ -27,6 +27,7 @@
 "icon_shop":{"x":180,"y":488,"w":89,"h":91,"offX":3,"offY":3,"sourceW":94,"sourceH":94},
 "icon_shop1":{"x":468,"y":488,"w":117,"h":135,"offX":3,"offY":3,"sourceW":122,"sourceH":140},
 "icon_treasury":{"x":585,"y":416,"w":123,"h":121,"offX":3,"offY":3,"sourceW":128,"sourceH":128},
+"icon_usdt":{"x":828,"y":494,"w":65,"h":83,"offX":15,"offY":6,"sourceW":94,"sourceH":94},
 "item_di1":{"x":0,"y":228,"w":351,"h":125,"offX":0,"offY":0,"sourceW":351,"sourceH":125},
 "main_dikuang2":{"x":0,"y":150,"w":756,"h":78,"offX":0,"offY":0,"sourceW":756,"sourceH":78},
 "panel_frame2":{"x":0,"y":488,"w":180,"h":45,"offX":3,"offY":3,"sourceW":185,"sourceH":50},

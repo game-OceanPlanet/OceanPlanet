@@ -5,14 +5,14 @@
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
 		<e:Group anchorOffsetX="0" anchorOffsetY="0" x="45" y="373">
 			<e:Image anchorOffsetX="0" anchorOffsetY="0" x="63" y="65.06" scale9Grid="179,101,22,55" width="546.19"
-			         height="554.73"  source="panel2_json.alertbg1_png"/>
+			         height="554.73"  source="panel2_json.alertbg1"/>
 			<e:CheckBox id="checkbox" label="本次登录不再提示" skinName="CheckBoxLoginSkin" y="465.36"  horizontalCenter="23"/>
 			<e:Image anchorOffsetX="0" anchorOffsetY="0" x="70" y="170" width="528" height="268"
-			         scale9Grid="35,29,212,178"  source="panel2_json.alertbg2_png"/>
+			         scale9Grid="35,29,212,178"  source="panel2_json.alertbg2"/>
 			<e:Label id="txt_itemdesc" text="已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量" size="26"
 			         fontFamily="specialGameFont" scaleX="1" scaleY="1" width="433" lineSpacing="5" y="195" anchorOffsetX="0"
 			         textColor="0x04031e" x="118" />
-			<e:Image y="67" x="197"  source="panel2_json.title_bg_png"/>
+			<e:Image y="67" x="197"  source="panel2_json.title_bg"/>
 			<e:Label id="txt_title" text="说 明" y="75" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="313"
 			         textColor="0xb28208" />
 			<e:Image id="btnClose" x="541" y="32" source="mainui_json.btn_close0" />
@@ -22,7 +22,7 @@
 				         textColor="0xFFF4D6" horizontalCenter="0" />
 			</e:Group>
 			<e:Group id="btn_buy_group1" anchorOffsetX="0" anchorOffsetY="0" y="525" x="381">
-				<e:Image id="btn_buy1" x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.btn_red" />
+				<e:Image id="btn_buy1" x="0" y="0" scaleX="1" scaleY="1" source="shop_json.btn_red" />
 				<e:Label id="txt_price_gold1" text="购  买" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 				         textColor="0xFFF4D6" horizontalCenter="0" />
 			</e:Group>
