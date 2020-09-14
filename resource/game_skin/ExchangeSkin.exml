@@ -48,7 +48,7 @@
 			<e:Label text="我的排名" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" y="572" textColor="0x491c0e" x="324" bold="true"/>
 			<e:Label text="我的排名" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" y="572" textColor="0x491c0e" x="574" bold="true"/>
 		</e:Group>
-		<e:Image id="btnReturn" x="680.39" y="1267.39" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="mainui_json.btn_back" scaleX="1" scaleY="1"/>
+		<e:Image id="btnReturn" x="680.39" y="1267.39" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back" scaleX="1" scaleY="1"/>
 		<e:Image id="btn_help" source="trade_json.btn_help_png" x="657.15" y="503.6"/>
 	</e:Group>
 </e:Skin>

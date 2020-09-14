@@ -76,6 +76,6 @@
 				</e:Scroller>
 			</e:Group>
 		</e:Group>
-		<e:Image id="btnReturn" x="697.39" y="1289.39" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="mainui_json.btn_back" scaleX="1" scaleY="1"/>
+		<e:Image id="btnReturn" x="697.39" y="1289.39" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back" scaleX="1" scaleY="1"/>
 	</e:Group>
 </e:Skin>
