@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AlertShopItemNewSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
+		<e:Group anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0" horizontalCenter="0">
+			<e:Image anchorOffsetX="0" width="746"
+			         anchorOffsetY="0" height="675"  horizontalCenter="0" verticalCenter="0" scaleX="0.7" scaleY="0.7" source="mainui_json.alert_bg" scale9Grid="177,27,20,28"/>
+			<e:Image anchorOffsetX="0" width="485" anchorOffsetY="0" height="440"
+			          source="mainui_json.alertbg2" scale9Grid="35,29,212,178" horizontalCenter="2" verticalCenter="0.5"/>
+			<e:Image x="249" y="322" source="mainui_json.img_dollar" scaleX="0.5" scaleY="0.5"/>
+			<e:Image source="mainui_json.btn_check" x="117" y="269" anchorOffsetX="0" width="288" scale9Grid="23,19,2,7"/>
+			<e:Label text="总价：" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491C0E" width="87.67" lineSpacing="5" verticalCenter="112" horizontalCenter="-39.5" textAlign="center" anchorOffsetX="0" anchorOffsetY="0" height="28.67"/>
+			<e:Label id="txt_itemdesc" text="已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量已兑换总数量" size="26" fontFamily="specialGameFont"
+			         scaleX="1" scaleY="1" textColor="0x491c0e" width="385" lineSpacing="5"  verticalCenter="-60" horizontalCenter="0"/>
+			<e:Label id="txt_price" text="100" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491C0E" width="87.67" lineSpacing="5" verticalCenter="112" horizontalCenter="54.5" textAlign="center" anchorOffsetX="0" anchorOffsetY="0" height="28.67"/>
+			<e:Image y="1.66"  horizontalCenter="0.5" source="mainui_json.title_bg"/>
+			<e:Label id="txt_title" text="购 买" y="10.66" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1"
+			          horizontalCenter="0.5" textColor="0xb28208"/>
+
+			<e:Group id="btn_buy_group" anchorOffsetX="0" anchorOffsetY="0" bottom="50" horizontalCenter="0">
+				<e:Image id="btn_buy" x="0" y="0" scaleX="1" scaleY="1" source="shop_json.btn_common1"/>
+				<e:Label id="txt_price_gold" text="购  买" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
+			</e:Group>
+			<e:EditableText id="txt_account" height="49" prompt="请输入聊天内容..." size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" y="269" promptColor="0xCECECD" width="270" textAlign="center" x="127"/>
+			<e:Image id="btnClose" source="mainui_json.btn_close0" right="-12" top="-18"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

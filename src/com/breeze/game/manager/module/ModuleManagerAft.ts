@@ -23,8 +23,8 @@ module qmr
             modulelManager.registerClass(ModuleNameConst.TRADE_VIEW, qmr.TradeView);
             modulelManager.registerClass(ModuleNameConst.EXCHANGE_VIEW, qmr.ExchangeView);
             modulelManager.registerClass(ModuleNameConst.INVITE_CODE_VIEW, qmr.InviteCodeView);
-            modulelManager.registerClass(ModuleNameConst.INJECT_VIEW, qmr.DividendView);
-            modulelManager.registerClass(ModuleNameConst.DIVIDEND_VIEW, qmr.InjectView);
+            modulelManager.registerClass(ModuleNameConst.INJECT_VIEW, qmr.InjectView);
+            modulelManager.registerClass(ModuleNameConst.DIVIDEND_VIEW, qmr.DividendView);
         }
     }
 }

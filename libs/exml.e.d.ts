@@ -54,6 +54,8 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
+declare class AlertShopItemNewSkin extends eui.Skin{
+}
 declare class AlertShopItemSkin extends eui.Skin{
 }
 declare class BuyGoodItemSkin extends eui.Skin{
@@ -81,6 +83,8 @@ declare class Mainui extends eui.Skin{
 declare class MoneyLogItemSkin extends eui.Skin{
 }
 declare class MoneyLogSkin extends eui.Skin{
+}
+declare class NoticeBuyDescSkin extends eui.Skin{
 }
 declare class NoticeSkin extends eui.Skin{
 }
