@@ -40,7 +40,7 @@ public img_head:eui.Image;
                 return;
             }
 
-            if(cfg.price < HeroModel.instance.totalMoney){
+            if(cfg.price > HeroModel.instance.totalMoney){
                 TipManagerCommon.getInstance().createCommonTip("货币不足");
                 return;
             }
@@ -54,7 +54,7 @@ public img_head:eui.Image;
             if(!cfg){
                 return;
             }
-            if(cfg.UBuyPrice < HeroModel.instance.totalUSDT){
+            if(cfg.UBuyPrice > HeroModel.instance.totalUSDT){
                 TipManagerCommon.getInstance().createCommonTip("货币不足");
                 return;
             }
