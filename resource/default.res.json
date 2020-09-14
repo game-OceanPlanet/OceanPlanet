@@ -220,6 +220,16 @@
 			"url": "assets/ui4.jpg",
 			"type": "image",
 			"name": "ui4_jpg"
+		},
+		{
+			"url": "assets/ui6.png",
+			"type": "image",
+			"name": "ui6_png"
+		},
+		{
+			"url": "assets/ui5.png",
+			"type": "image",
+			"name": "ui5_png"
 		}
 	]
 }
