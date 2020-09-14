@@ -271,7 +271,7 @@ public txt_totalUsdt:eui.Label;
 				egret.clearInterval(t.__timekey);
 			}
 
-			if(t.__currMoney < t.__dayTotal){
+			if(t.__secondSpeed > 0){
 				t.__timekey = egret.setInterval(t.onTimeRun, t, 1000);
 			} else {
 				t.stopTime();
@@ -286,6 +286,7 @@ public txt_totalUsdt:eui.Label;
 				return;
 			}
             t.__currMoney += t.__secondSpeed;
+            HeroModel.instance.pendingMoney = t.__currMoney;
             t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney) + HeroModel.KH;
 		}
 
@@ -296,7 +297,7 @@ public txt_totalUsdt:eui.Label;
 				egret.clearInterval(t.__timekey);
 			}
 			t.__timekey = -1;
-			t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__dayTotal) + HeroModel.KH;
+			t.txt_curr.text = NumberUtil.getFloat4Number2String(HeroModel.instance.getPetPendingMoney()) + HeroModel.KH;
 		}
     }
 }

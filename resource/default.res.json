@@ -260,6 +260,12 @@
 			"type": "sheet",
 			"name": "panelui_json",
 			"subkeys": "AnZhuoTuBiao,GuiMo,GuiMoShuoMing,JianTou,JiaoYi,PingGuoTuBiao,ShenSeTouMingDi,ShiMingRenZhengTuBiao,ShuRuKuang1,TiCheng,TuanDuiGuiMo,anniu_1,anniu_2,anniu_3,anniu_4"
+		},
+		{
+			"url": "sheet/commp.json",
+			"type": "sheet",
+			"name": "commp_json",
+			"subkeys": "LieBiaoKuang2,LieBiaoKuang3,btn_common,btn_common1,btn_red,item_icon,item_icon1,panel_frame4"
 		}
 	]
 }

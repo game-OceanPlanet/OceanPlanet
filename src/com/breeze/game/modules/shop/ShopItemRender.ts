@@ -39,6 +39,12 @@ public img_head:eui.Image;
             if(!cfg){
                 return;
             }
+
+            if(cfg.price < HeroModel.instance.totalMoney){
+                TipManagerCommon.getInstance().createCommonTip("货币不足");
+                return;
+            }
+
             PetController.instance.getBuyFish(cfg.id);
         }
 
@@ -46,6 +52,10 @@ public img_head:eui.Image;
         {
             let cfg:PetCfg = this.data;
             if(!cfg){
+                return;
+            }
+            if(cfg.UBuyPrice < HeroModel.instance.totalUSDT){
+                TipManagerCommon.getInstance().createCommonTip("货币不足");
                 return;
             }
             PetController.instance.getBuyFishByUSDT(cfg.id);
@@ -59,8 +69,8 @@ public img_head:eui.Image;
                 t.txt_1.text = cfg.produce + "";
                 t.txt_2.text = cfg.limitTime + "";
                 t.txt_3.text = cfg.monthly + "%";
-                t.txt_price_gold.text = cfg.price + HeroModel.KH;
-                t.txt_price_USDT.text = cfg.UBuyPrice + HeroModel.USDT;
+                t.txt_price_gold.text = NumberUtil.getFloat4Number2String(cfg.price) + HeroModel.KH;
+                t.txt_price_USDT.text =  NumberUtil.getFloat4Number2String(cfg.UBuyPrice) + HeroModel.USDT;
                 var itemRes:string = ResPathUtilAft.getHeadUrl(cfg.id+"");
                 t.img_head.source = itemRes;
             }

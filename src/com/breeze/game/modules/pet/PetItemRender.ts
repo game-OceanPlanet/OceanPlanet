@@ -11,7 +11,7 @@ public txt_total:eui.Label;
 public txt_leftTime:eui.Label;
 public txt_todayGained:eui.Label;
 public txt_todayCanGain:eui.Label;
-public txt_totalLeft:eui.Label;
+
 
 
         private _endTime:number = 0;
@@ -35,14 +35,14 @@ public txt_totalLeft:eui.Label;
             if(info){
                 let cfg:PetCfg = ConfigManager.getConf(ConfigEnum.PET, info.fishId);
                 t.txt_name.text = cfg.name + "(Lv." + cfg.level + ")";
-                t.txt_gain.text = Number(info.extMoney.toFixed(4)) + HeroModel.KH;//鱼生累计已经产出金币,包括遗漏的
+                t.txt_gain.text = NumberUtil.getFloat4Number2String(info.extMoney) + HeroModel.KH;//鱼生累计已经产出金币,包括遗漏的
                 let left:number = cfg.produce - info.extMoney;
-                t.txt_left.text = Number(left.toFixed(4)) + HeroModel.KH;
-                t.txt_total.text = cfg.produce+"";
+                t.txt_left.text = NumberUtil.getFloat4Number2String(left) + HeroModel.KH;
+                t.txt_total.text = NumberUtil.getFloat4Number2String(cfg.produce) + HeroModel.KH;
 
-                t.txt_totalLeft.text = Number(info.leftMoney.toFixed(4))+ HeroModel.KH;//鱼生累计遗漏未领取金币
-                t.txt_todayGained.text = Number(info.todayGotMoney.toFixed(4)) + HeroModel.KH;//今日已经领取金币
-                t.txt_todayCanGain.text = Number(info.todayCurMoney.toFixed(4)) + HeroModel.KH;//今日当前可领取金币
+                // t.txt_totalLeft.text =NumberUtil.getFloat4Number2String(info.leftMoney)+ HeroModel.KH;//鱼生累计遗漏未领取金币
+                t.txt_todayGained.text = NumberUtil.getFloat4Number2String(info.todayGotMoney) + HeroModel.KH;//今日已经领取金币
+                t.txt_todayCanGain.text = NumberUtil.getFloat4Number2String(info.todayCurMoney) + HeroModel.KH;//今日当前可领取金币
                 
                 var itemRes:string = ResPathUtilAft.getHeadUrl(cfg.id+"");
                 t.img_head.source = itemRes;

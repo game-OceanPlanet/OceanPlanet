@@ -59,28 +59,28 @@ module qmr {
             let msg:string;
             switch(s){
                 case TradeTypeEnum.MONEY_REWARD:
-                    msg = "领取"
+                    msg = "领奖"
                     break;
                 case TradeTypeEnum.MONEY_BUY_FISH:
-                    msg = "金币买鱼"
+                    msg = "KAD买鱼"
                     break;
                 case TradeTypeEnum.OCT_SELL_MONEY:
-                    msg = "OTC-卖给Ta"
+                    msg = "交易卖出"//"OTC-卖给Ta"
                     break;
                 case TradeTypeEnum.OCT_SOMEONE_SELL_ME:
-                    msg = "OTC-卖给我"
+                    msg = "交易购买"//"OTC-卖给我"
                     break;
                 case TradeTypeEnum.DIAMOND_BUY_FISH:
-                    msg = "U买鱼"
+                    msg = "USDT买鱼"//"U买鱼"
                     break;
                     case TradeTypeEnum.OCT_BUY_MONEY_COST_U:
-                    msg = "OTC-买入金币（挂单）"
+                    msg = "买入金币"//"OTC-买入金币（挂单）"
                     break;
                     case TradeTypeEnum.OCT_SELL_MONEY_GOT_U:
-                    msg = "OTC-卖给Ta，获得U"
+                    msg = "卖出金币"//"OTC-卖给Ta，获得U"
                     break;
                     case TradeTypeEnum.OCT_CANCEL_GOT_U:
-                    msg = "OTC-撤单，获得U"
+                    msg = "撤单"//"OTC-撤单，获得U"
                     break;
             }
             return msg;

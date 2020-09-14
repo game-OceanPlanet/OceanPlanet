@@ -62,8 +62,8 @@ public txt_revoke:eui.Label;
             let pro:com.message.BuyGoodMsg = t.data;
             if(pro){
                 t.txt_id.text = pro.playerId.toString();
-                t.txt_price.text = pro.diamondPrice + "";
-                t.txt_count.text = pro.moneyCount + "";
+                t.txt_price.text = pro.diamondPrice + HeroModel.USDT;
+                t.txt_count.text = pro.moneyCount+HeroModel.KH;
                 t.txt_time.text = TimeUtil.getDateByTimer(Int64Util.getNumber(pro.createTime));
                 t.btn_revoke.visible = Int64Util.getNumber(pro.playerId) == HeroModel.instance.playerId;
                 t.btn_sell_group.visible = Int64Util.getNumber(pro.playerId) != HeroModel.instance.playerId;

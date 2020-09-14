@@ -4,10 +4,12 @@ module qmr
 	{
 		public all_group:eui.Group;
 public btnClose:eui.Image;
-public txt_total:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
+public txt_totalGold:eui.Label;
+public txt_totalUSDT:eui.Label;
 public btnReturn:eui.Image;
+
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -48,10 +50,17 @@ public btnReturn:eui.Image;
 		private updateView():void
 		{
             let t = this;
-            let logs:com.message.MoneyLogMsg[] = HeroModel.instance.moneyLogs;
+			let logs:com.message.MoneyLogMsg[] = HeroModel.instance.moneyLogs;
+			if(logs){
+				logs.sort((a, b)=>{
+					return Int64Util.getNumber(b.logTime) - Int64Util.getNumber(a.logTime);
+				});
+			}
+			
 			t._arrCollection.replaceAll(logs);
 			
-			t.txt_total.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+			t.txt_totalGold.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+			t.txt_totalUSDT.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalUSDT) + HeroModel.USDT;
 		}
 
 		public dispose(): void

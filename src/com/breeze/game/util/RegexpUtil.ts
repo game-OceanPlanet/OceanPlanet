@@ -36,11 +36,13 @@ module qmr {
          * 判断输入内容是否为空
          * 
          */
-        public static IsNull(value) {
+        public static IsNull(value):boolean {
             var str = value.trim();
             if (str.length == 0) {
                 TipManagerCommon.getInstance().createCommonColorTip('对不起，文本框不能为空或者为空格!');//请将“文本框”改成你需要验证的属性名称!
+                return true;
             }
+            return false;
         }
 
         // //判断日期类型是否为YYYY-MM-DD格式的类型
@@ -68,66 +70,76 @@ module qmr {
         /**
          * 判断日期类型是否为hh:mm:ss格式的类型
          */
-        public static IsTime(value) {
+        public static IsTime(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
                 let reg = /^((20|21|22|23|[0-1]\d):[0-5][0-9])(:[0-5][0-9])?$/
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的日期格式不正确!");//请将“日期”改成你需要验证的属性名称!
+                    return false;
                 }
             }
+            return true;
         }
 
         /**
          * 判断输入的字符是否为英文字母
          */
-        public static IsLetter(value) {
+        public static IsLetter(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
                 let reg = /^[a-zA-Z]+$/;
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的英文字母类型格式不正确!");//请将“英文字母类型”改成你需要验证的属性名称!
+                    return false;
                 }
             }
+            return true;
         }
 
         /**
          * 判断输入的字符是否为整数
          */
-        public static IsInteger(value) {
+        public static IsInteger(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
                 let reg = /^[-+]?\d*$/;
                 if (!reg.test(str)) {
-                    TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的整数类型格式不正确!");//请将“整数类型”要换成你要验证的那个属性名称！
+                    TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的格式不正确!");//请将“整数类型”要换成你要验证的那个属性名称！
+                    return false;
                 }
             }
+            return true;
         }
 
         /**
          * 判断输入的字符是否为双精度
          */
-        public static IsDouble(value) {
+        public static IsDouble(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
                 let reg = /^[-+]?\d+(.\d+)?$/;
                 if (!reg.test(str)) {
-                    TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的双精度类型格式不正确!");//请将“双精度类型”要换成你要验证的那个属性名称！
+                    TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的格式不正确!");//请将“双精度类型”要换成你要验证的那个属性名称！
+                    return false;
                 }
             }
+            return true;
         }
 
         /**
          * 判断输入的字符是否为:a-z,A-Z,0-9
          */
-        public static IsString(value) {
+        public static IsString(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
                 let reg = /^[a-zA-Z0-9_]+$/;
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的字符串类型格式不正确!");//请将“字符串类型”要换成你要验证的那个属性名称！
+                    return false;
                 }
             }
+            return true;
         }
 
         /**

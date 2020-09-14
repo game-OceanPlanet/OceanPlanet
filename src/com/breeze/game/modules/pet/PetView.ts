@@ -4,10 +4,12 @@ module qmr
 	{
 		public all_group:eui.Group;
 public btnClose:eui.Image;
-public txt_total:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
+public txt_totalGold:eui.Label;
+public txt_totalUSDT:eui.Label;
 public btnReturn:eui.Image;
+
 
 
 
@@ -57,9 +59,11 @@ public btnReturn:eui.Image;
 			pets.sort((a, b)=>{
 				return b.level - a.level;
 			})
+			
             t._arrCollection.replaceAll(pets);
 			
-			t.txt_total.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+			t.txt_totalGold.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+			t.txt_totalUSDT.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalUSDT) + HeroModel.USDT;
 		}
 
 		public dispose(): void

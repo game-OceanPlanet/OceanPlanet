@@ -185,9 +185,10 @@ module qmr {
             for(var i:number = 0; i < len; i ++){
                 pro  = t.fishInfos[i];
                 id = Int64Util.getNumber(pro.fishId);
-                if(pro.state == 0){
-                    cfg = ConfigManager.getConf(ConfigEnum.PET, id);
-                    let dayNum:number = cfg.produce / cfg.limitTime;
+                cfg = ConfigManager.getConf(ConfigEnum.PET, id);
+                let dayNum:number = cfg.produce / cfg.limitTime;
+                let hadProduce:number = Math.ceil(pro.todayCurMoney + pro.todayGotMoney);//今日总共产生的金币 = 今日已领取 + 今日当前可领取
+                if(pro.state == 0 && hadProduce < dayNum){
                     total += dayNum / 7200;
                 }
             }

@@ -67,8 +67,8 @@ public btnReturn:eui.Image;
 			// t.text_input_price.restrict = reg;
 
 			t._stepLabels = [t.txt_price0,t.txt_price1,t.txt_price2,t.txt_price3,t.txt_price4,t.txt_price5];
-			t._dateLabels = [t.txt_date0,t.txt_date1,t.txt_date2,t.txt_date3,t.txt_date4,t.txt_date5,t.txt_date6,t.txt_date7];
-			t._columns = [t.column_0,t.column_1,t.column_2,t.column_3,t.column_4,t.column_5,t.column_6,t.column_7];
+			t._dateLabels = [t.txt_date0,t.txt_date1,t.txt_date2,t.txt_date3,t.txt_date4,t.txt_date5,t.txt_date6];
+			t._columns = [t.column_0,t.column_1,t.column_2,t.column_3,t.column_4,t.column_5,t.column_6];
 			t._positions = [];
 			for(var i:number = 0; i < t._columns.length; i ++){
 				t._positions[i] = new egret.Point(t._columns[i].x, t._columns[i].y);
@@ -87,6 +87,8 @@ public btnReturn:eui.Image;
             let t = this;
 			t.addClickEvent(t.btnReturn, t.closeView, t);
 			t.addClickEvent(t.btn_buy_group, t.buyClick, t);
+			t.addEvent(t.text_input_price, egret.Event.FOCUS_OUT, t.onFocusOut, t);
+			t.addEvent(t.text_input_count, egret.Event.FOCUS_OUT, t.onFocusOut2, t);
 			
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
@@ -95,6 +97,25 @@ public btnReturn:eui.Image;
 			t.registerNotify(NotifyConst.S_MARKET_BUY, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MARKET_SELL, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MARKET_CANCEL, t.updateView, t);
+		}
+
+		private onFocusOut(): void
+		{
+			let price:string = this.text_input_price.text;
+			if(!RegexpUtil.IsDouble(price)){
+				return;
+			}
+			if(!RegexpUtil.IsInteger(price)){
+				return;
+			}
+		}
+
+		private onFocusOut2(): void
+		{
+			let price:string = this.text_input_count.text;
+			if(!RegexpUtil.IsInteger(price)){
+				return;
+			}
 		}
 
 		private buyClick():void
@@ -106,8 +127,13 @@ public btnReturn:eui.Image;
                 TipManagerCommon.getInstance().createCommonColorTip("请输入购买价格");
                 return;
 			}
+
 			let price:number = Number(str);
 			if(price <= 0){
+				TipManagerCommon.getInstance().createCommonColorTip("输入价格有误");
+                return;
+			}
+			if(!price){
 				TipManagerCommon.getInstance().createCommonColorTip("输入价格有误");
                 return;
 			}
@@ -154,9 +180,13 @@ public btnReturn:eui.Image;
 			t.txt_todayPrice.text = TradeModule.instance.sysDiamonPrice + HeroModel.USDT;
 			t.txt_totalCount.text = totalBuyCount + HeroModel.USDT;
 
+			let yestodayPrice:number;
+			let todayPrice:number;
+			let firstPrice:number = 0.01;
+
 			let historyPros:com.message.HistoryPriceMsg[] = TradeModule.instance.historyPrices;
-			let prices:number[] = [];//最近8天的价格，不足用0补上
-			let days:number[] = [];//最近8天的日期
+			let prices:number[] = [];//最近7天的价格，不足用0补上
+			let days:number[] = [];//最近7天的日期
 			let startTime:number = ServerTime.serverTime;
 			if(historyPros && historyPros.length > 0){
 				historyPros.sort((a, b)=>{
@@ -168,16 +198,31 @@ public btnReturn:eui.Image;
 					days.push(Int64Util.getNumber(historyPros[i].historyTime));
 				}
 				startTime = Int64Util.getNumber(historyPros[0].historyTime);
+
+				todayPrice = historyPros[len - 1].historyPrice;
+				if(len >= 2){
+					yestodayPrice = historyPros[len - 2].historyPrice;
+				}
 			}
 
-			if(prices.length > 8){
-				prices = prices.slice(0, 8);
-				days = days.slice(0, 8);
+			if(!yestodayPrice){
+				yestodayPrice = 0.01;
+			}
+			if(!yestodayPrice){
+				yestodayPrice = firstPrice;
+			}
+
+			t.txt_changeValue.text = Math.ceil((todayPrice - yestodayPrice) * 100 / yestodayPrice) + "%";
+			t.txt_totalChangeValue.text = Math.ceil((todayPrice - firstPrice) * 100 / firstPrice) + "%";
+
+			if(prices.length > 7){
+				prices = prices.slice(0, 7);
+				days = days.slice(0, 7);
 			}
 			
 			let dayMiniSeconds:number = 24 * 3600 * 1000;
 			let index:number = 1;
-			while(prices.length < 8){
+			while(prices.length < 7){
 				prices.push(0);
 				days.push(startTime + dayMiniSeconds * index);
 				index ++;
@@ -204,13 +249,13 @@ public btnReturn:eui.Image;
 			len = prices.length;
 			let dt:Date = new Date();
 			let price:number;
-			let maxHeight:number = 220;
+			let maxHeight:number = 217;
 			for(var i:number = 0; i < len; i ++){
 				dt.setTime(days[i]);
 				price = prices[i];
 				t._dateLabels[i].text = TimeUtil.formatMD(dt);
 				t._columns[i].height = maxPrice > 0 ? maxHeight * price / maxPrice : 0;
-				t._columns[i].y = 230 - t._columns[i].height;
+				// t._columns[i].y = 230 - t._columns[i].height;
 			}
 		}
 
