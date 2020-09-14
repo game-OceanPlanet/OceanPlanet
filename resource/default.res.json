@@ -260,6 +260,31 @@
 			"type": "sheet",
 			"name": "panelui_json",
 			"subkeys": "AnZhuoTuBiao,GuiMo,GuiMoShuoMing,JianTou,JiaoYi,PingGuoTuBiao,ShenSeTouMingDi,ShiMingRenZhengTuBiao,ShuRuKuang1,TiCheng,TuanDuiGuiMo,anniu_1,anniu_2,anniu_3,anniu_4"
+		},
+		{
+			"url": "assets/ui7.png",
+			"type": "image",
+			"name": "ui7_png"
+		},
+		{
+			"url": "assets/ui8.png",
+			"type": "image",
+			"name": "ui8_png"
+		},
+		{
+			"url": "assets/ui10.png",
+			"type": "image",
+			"name": "ui10_png"
+		},
+		{
+			"url": "assets/ui9.png",
+			"type": "image",
+			"name": "ui9_png"
+		},
+		{
+			"url": "unpack/bg/XiaZaiBeiJing.png",
+			"type": "image",
+			"name": "XiaZaiBeiJing_png"
 		}
 	]
 }
