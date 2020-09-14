@@ -27,6 +27,6 @@
 				</e:List>
 			</e:Scroller>
 		</e:Group>
-		<e:Image id="btnReturn" x="655" y="1131" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="mainui_json.btn_back"/>
+		<e:Image id="btnReturn" x="655" y="1131" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back"/>
 	</e:Group>
 </e:Skin>
