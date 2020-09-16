@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="PanelModuleDemo" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image anchorOffsetY="0" verticalCenter="-30" left="0" right="0" source="common_beijing_png"/>
-	<e:Group width="750" height="1334" x="0" y="0">
+	<e:Group id="panelGroup" width="750" height="1334" y="0" horizontalCenter="0">
 		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0" x="0" y="0" scaleX="1" scaleY="1"/>
 		<e:Scroller anchorOffsetY="0" bounces="false" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" height="1334" x="0" y="0" width="750">
 			<e:Group anchorOffsetY="0" anchorOffsetX="0" x="-1" y="1" height="1334" width="750">
-				<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750">
+				<e:Group horizontalCenter="0" anchorOffsetY="0" width="750">
 					<e:Image x="65" y="145" source="trade_json.panel_bg"/>
 					<e:Label text="我的邀请码" y="97" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="263" textColor="0xD9D8FF"/>
 					<e:Label id="txt_code" text="4DRFFGY87" y="203" size="54" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFF0F94" bold="true" horizontalCenter="0"/>
