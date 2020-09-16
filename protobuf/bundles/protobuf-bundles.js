@@ -1937,6 +1937,7 @@ $root.com = (function() {
              * @interface IS_MONEY_EXCHANGE_KAD
              * @property {number|null} [moneyCount] S_MONEY_EXCHANGE_KAD moneyCount
              * @property {number|null} [KADCount] S_MONEY_EXCHANGE_KAD KADCount
+             * @property {com.message.IPlayerExcInfoMsg|null} [playerExcInfoMsg] S_MONEY_EXCHANGE_KAD playerExcInfoMsg
              */
 
             /**
@@ -1971,6 +1972,14 @@ $root.com = (function() {
             S_MONEY_EXCHANGE_KAD.prototype.KADCount = 0;
 
             /**
+             * S_MONEY_EXCHANGE_KAD playerExcInfoMsg.
+             * @member {com.message.IPlayerExcInfoMsg|null|undefined} playerExcInfoMsg
+             * @memberof com.message.S_MONEY_EXCHANGE_KAD
+             * @instance
+             */
+            S_MONEY_EXCHANGE_KAD.prototype.playerExcInfoMsg = null;
+
+            /**
              * Encodes the specified S_MONEY_EXCHANGE_KAD message. Does not implicitly {@link com.message.S_MONEY_EXCHANGE_KAD.verify|verify} messages.
              * @function encode
              * @memberof com.message.S_MONEY_EXCHANGE_KAD
@@ -1986,6 +1995,8 @@ $root.com = (function() {
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.moneyCount);
                 if (message.KADCount != null && message.hasOwnProperty("KADCount"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.KADCount);
+                if (message.playerExcInfoMsg != null && message.hasOwnProperty("playerExcInfoMsg"))
+                    $root.com.message.PlayerExcInfoMsg.encode(message.playerExcInfoMsg, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -2012,6 +2023,9 @@ $root.com = (function() {
                         break;
                     case 2:
                         message.KADCount = reader.double();
+                        break;
+                    case 3:
+                        message.playerExcInfoMsg = $root.com.message.PlayerExcInfoMsg.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7619,6 +7633,8 @@ $root.com = (function() {
              * @property {number} S_GET_INJECT_INFO=1208 S_GET_INJECT_INFO value
              * @property {number} C_INJECT_KAD=1209 C_INJECT_KAD value
              * @property {number} S_INJECT_KAD=1210 S_INJECT_KAD value
+             * @property {number} C_REAL_NAME_VERIFICATION=1221 C_REAL_NAME_VERIFICATION value
+             * @property {number} S_REAL_NAME_VERIFICATION=1222 S_REAL_NAME_VERIFICATION value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -7683,6 +7699,8 @@ $root.com = (function() {
                 values[valuesById[1208] = "S_GET_INJECT_INFO"] = 1208;
                 values[valuesById[1209] = "C_INJECT_KAD"] = 1209;
                 values[valuesById[1210] = "S_INJECT_KAD"] = 1210;
+                values[valuesById[1221] = "C_REAL_NAME_VERIFICATION"] = 1221;
+                values[valuesById[1222] = "S_REAL_NAME_VERIFICATION"] = 1222;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;
@@ -7857,6 +7875,210 @@ $root.com = (function() {
             values[valuesById[2] = "DIAMOND"] = 2;
             values[valuesById[3] = "KAD"] = 3;
             return values;
+        })();
+
+        message.C_REAL_NAME_VERIFICATION = (function() {
+
+            /**
+             * Properties of a C_REAL_NAME_VERIFICATION.
+             * @memberof com.message
+             * @interface IC_REAL_NAME_VERIFICATION
+             * @property {string|null} [mobile] C_REAL_NAME_VERIFICATION mobile
+             * @property {string|null} [name] C_REAL_NAME_VERIFICATION name
+             * @property {string|null} [idNum] C_REAL_NAME_VERIFICATION idNum
+             */
+
+            /**
+             * Constructs a new C_REAL_NAME_VERIFICATION.
+             * @memberof com.message
+             * @classdesc Represents a C_REAL_NAME_VERIFICATION.
+             * @implements IC_REAL_NAME_VERIFICATION
+             * @constructor
+             * @param {com.message.IC_REAL_NAME_VERIFICATION=} [properties] Properties to set
+             */
+            function C_REAL_NAME_VERIFICATION(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_REAL_NAME_VERIFICATION mobile.
+             * @member {string} mobile
+             * @memberof com.message.C_REAL_NAME_VERIFICATION
+             * @instance
+             */
+            C_REAL_NAME_VERIFICATION.prototype.mobile = "";
+
+            /**
+             * C_REAL_NAME_VERIFICATION name.
+             * @member {string} name
+             * @memberof com.message.C_REAL_NAME_VERIFICATION
+             * @instance
+             */
+            C_REAL_NAME_VERIFICATION.prototype.name = "";
+
+            /**
+             * C_REAL_NAME_VERIFICATION idNum.
+             * @member {string} idNum
+             * @memberof com.message.C_REAL_NAME_VERIFICATION
+             * @instance
+             */
+            C_REAL_NAME_VERIFICATION.prototype.idNum = "";
+
+            /**
+             * Encodes the specified C_REAL_NAME_VERIFICATION message. Does not implicitly {@link com.message.C_REAL_NAME_VERIFICATION.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_REAL_NAME_VERIFICATION
+             * @static
+             * @param {com.message.IC_REAL_NAME_VERIFICATION} message C_REAL_NAME_VERIFICATION message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_REAL_NAME_VERIFICATION.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.idNum != null && message.hasOwnProperty("idNum"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.idNum);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_REAL_NAME_VERIFICATION message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_REAL_NAME_VERIFICATION
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_REAL_NAME_VERIFICATION} C_REAL_NAME_VERIFICATION
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_REAL_NAME_VERIFICATION.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_REAL_NAME_VERIFICATION();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.idNum = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_REAL_NAME_VERIFICATION;
+        })();
+
+        message.S_REAL_NAME_VERIFICATION = (function() {
+
+            /**
+             * Properties of a S_REAL_NAME_VERIFICATION.
+             * @memberof com.message
+             * @interface IS_REAL_NAME_VERIFICATION
+             * @property {string|null} [result] S_REAL_NAME_VERIFICATION result
+             * @property {string|null} [remark] S_REAL_NAME_VERIFICATION remark
+             */
+
+            /**
+             * Constructs a new S_REAL_NAME_VERIFICATION.
+             * @memberof com.message
+             * @classdesc Represents a S_REAL_NAME_VERIFICATION.
+             * @implements IS_REAL_NAME_VERIFICATION
+             * @constructor
+             * @param {com.message.IS_REAL_NAME_VERIFICATION=} [properties] Properties to set
+             */
+            function S_REAL_NAME_VERIFICATION(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_REAL_NAME_VERIFICATION result.
+             * @member {string} result
+             * @memberof com.message.S_REAL_NAME_VERIFICATION
+             * @instance
+             */
+            S_REAL_NAME_VERIFICATION.prototype.result = "";
+
+            /**
+             * S_REAL_NAME_VERIFICATION remark.
+             * @member {string} remark
+             * @memberof com.message.S_REAL_NAME_VERIFICATION
+             * @instance
+             */
+            S_REAL_NAME_VERIFICATION.prototype.remark = "";
+
+            /**
+             * Encodes the specified S_REAL_NAME_VERIFICATION message. Does not implicitly {@link com.message.S_REAL_NAME_VERIFICATION.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_REAL_NAME_VERIFICATION
+             * @static
+             * @param {com.message.IS_REAL_NAME_VERIFICATION} message S_REAL_NAME_VERIFICATION message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_REAL_NAME_VERIFICATION.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.result != null && message.hasOwnProperty("result"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.result);
+                if (message.remark != null && message.hasOwnProperty("remark"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.remark);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_REAL_NAME_VERIFICATION message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_REAL_NAME_VERIFICATION
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_REAL_NAME_VERIFICATION} S_REAL_NAME_VERIFICATION
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_REAL_NAME_VERIFICATION.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_REAL_NAME_VERIFICATION();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.result = reader.string();
+                        break;
+                    case 2:
+                        message.remark = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_REAL_NAME_VERIFICATION;
         })();
 
         return message;

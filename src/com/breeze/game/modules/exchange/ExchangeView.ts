@@ -26,6 +26,8 @@ public btn_help:eui.Image;
 			super();
 			this.qmrSkinName = "ExchangeSkin";
 			this.isNeedMask = true;
+
+			this.helpId = HelpId.ID_3;
 		}
 
 		protected initComponent():void
@@ -53,12 +55,27 @@ public btn_help:eui.Image;
 			t.addClickEvent(t.btnReturn, t.closeView, t);
 			t.addClickEvent(t.btn_exchange_group, t.onExchangeClick, t);
 			t.addEvent(t.text_input_price, egret.Event.FOCUS_OUT, t.onFocusOut, t);
+			t.addEvent(t.text_input_price, egret.Event.CHANGE,t.onTextInputChange,t);
 			
 			t.registerNotify(NotifyConst.S_BUY_FISH, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
 			t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_MONEY_EXCHANGE_INFO, t.updateView, t);
+			t.registerNotify(NotifyConst.S_MONEY_EXCHANGE_KAD, t.updateView, t);
+		}
+
+		private onTextInputChange(evt: egret.Event):void
+		{
+			let str:string = evt.target.text;
+			if(RegexpUtil.IsNull(str)){
+				return;
+			}
+            if(!RegexpUtil.IsInteger(str)){
+                return;
+			}
+			this._KHNum = parseInt(str.trim());
+			this.updateKADNum();
 		}
 
 		private onExchangeClick():void
@@ -84,7 +101,7 @@ public btn_help:eui.Image;
 		private updateKADNum():void
 		{
 			let rate:number = DividendModel.instance.exRatio;
-			if(rate > 0){
+			if(!this._KHNum && rate > 0){
 				this.txt_exchangeDes.text = "可兑换"+NumberUtil.getFloat4Number2String(this._KHNum / rate)+HeroModel.KAD;
 			}
 		}
@@ -100,6 +117,11 @@ public btn_help:eui.Image;
 			t.txt_kadTotalSelf.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalKAD)+HeroModel.KAD;
 
 			let logs = md.exchangeLogs;
+			if(logs){
+				logs.sort((a, b)=>{
+					return Int64Util.getNumber(b.logTime) - Int64Util.getNumber(a.logTime);
+				});
+			}
 			t._arrCollection.replaceAll(logs);
 		}
 

@@ -6,6 +6,7 @@ module qmr
 		public static S_SYN_PROPERTY:string = "S_SYN_PROPERTY";//全局属性更新
 		public static TAB_VIEW_GUIDE: string = "TAB_VIEW_GUIDE";   //TabView显示关闭引导
 		public static RED_HOT_UPDATE:string = "RED_HOT_UPDATE";//红点系统更新通知
+		public static SELECT_ITEM_SELECTED:string = "SELECT_ITEM_SELECTED";
 
 		public static S_GET_FINSH_INFO:string = "S_GET_FINSH_INFO";// 获取我的鱼儿
 		public static S_COMBINE_FINSH:string = "S_COMBINE_FINSH";// 合并鱼儿
@@ -26,6 +27,7 @@ module qmr
 		public static S_GET_BONUS_INFO:string = "S_GET_BONUS_INFO";
 		public static S_INJECT_KAD:string = "S_INJECT_KAD";
 		public static S_GET_INJECT_INFO:string = "S_GET_INJECT_INFO";
+		
 	}
 
 }

@@ -185,12 +185,6 @@
 			"name": "TableFishPath_json"
 		},
 		{
-			"url": "sheet/shop.json",
-			"type": "sheet",
-			"name": "shop_json",
-			"subkeys": "btn_close,btn_common,btn_common1,btn_red,item_icon,item_icon1,panel_bar1,panel_bar2,panel_bg,panel_frame4,title_duihuan,title_exchange,title_fenhong,title_img,title_jibi,title_pet,title_renzheng,title_shop,title_tongz,title_tongzheng,title_tuiguang,title_zhuru,title_zichan"
-		},
-		{
 			"url": "unpack/bg/trade_bg.png",
 			"type": "image",
 			"name": "trade_bg_png"
@@ -259,7 +253,7 @@
 			"url": "sheet/panelui.json",
 			"type": "sheet",
 			"name": "panelui_json",
-			"subkeys": "AnZhuoTuBiao,GuiMo,GuiMoShuoMing,JianTou,JiaoYi,PingGuoTuBiao,ShenSeTouMingDi,ShiMingRenZhengTuBiao,ShuRuKuang1,TiCheng,TuanDuiGuiMo,anniu_1,anniu_2,anniu_3,anniu_4"
+			"subkeys": "AnZhuoTuBiao,GuiMo,GuiMoShuoMing,JianTou,JiaoYi,PingGuoTuBiao,ShenSeTouMingDi,ShiMingRenZhengTuBiao,ShuRuKuang1,TiCheng,TuanDuiGuiMo,anniu_1,anniu_2,anniu_3,anniu_4,icon_person1,icon_person2"
 		},
 		{
 			"url": "sheet/commp.json",

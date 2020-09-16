@@ -41,9 +41,19 @@ public txt_revoke:eui.Label;
                 TipManagerCommon.getInstance().createCommonColorTip("持有货币不足");
                 return;
             }
-            let count:number = Int64Util.getNumber(pro.moneyCount);
-            count = count > myCount ? myCount : count;
-            TradeController.instance.getSellOrderRequest(Int64Util.getNumber(pro.buyGoodMsgId), count / 2);
+
+            let msg:string = "本次价格："+ pro.diamondPrice + HeroModel.USDT + "/个" + "\r"
+            + "最大出售数量："+ pro.moneyCount + HeroModel.KH + "\r"
+            + "账户可用余额："+ NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+            PromptController.instance.showPromptInput(
+				msg,
+				function(count:number){
+					let pro:com.message.BuyGoodMsg = t.data;
+                    if(!pro){
+                        return;
+                    }
+                    TradeController.instance.getSellOrderRequest(Int64Util.getNumber(pro.buyGoodMsgId), count);
+			}, t, null, null,"卖出提示", "卖出", pro.moneyCount,0,pro.diamondPrice, HeroModel.instance.totalMoney);
         }
 
         private onRevekeClick():void

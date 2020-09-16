@@ -2,14 +2,16 @@ module qmr
 {
     export class PromptView extends BaseModule
     {
-        public txt_title:eui.Label;
-        public checkbox:eui.CheckBox;
-        public labContent:eui.Label;
-        public btnCancel:eui.Group;
-        public txt_cancel:eui.Label;
-        public btnConfirm:eui.Group;
-        public txt_sure:eui.Label;
-        public btnClose:eui.Image;
+        public panelGroup:eui.Group;
+public checkbox:eui.CheckBox;
+public labContent:eui.Label;
+public txt_title:eui.Label;
+public btnClose:eui.Image;
+public btnSure:eui.Group;
+public txt_sure:eui.Label;
+public btnCancel:eui.Group;
+public txt_cancel:eui.Label;
+
 
 
         private confirmFun: Function;
@@ -21,7 +23,7 @@ module qmr
         public constructor()
         {
             super();
-            this.qmrSkinName = "promptSkin"
+            this.qmrSkinName = "PromptSkin"
             this.isNeedMask = true;
         }
 
@@ -40,9 +42,9 @@ module qmr
         { 
             super.initListener()
             let t = this;
-            t.btnConfirm.scaleX = t.btnConfirm.scaleY = 1.0;
+            t.btnSure.scaleX = t.btnSure.scaleY = 1.0;
             t.btnCancel.scaleX = t.btnCancel.scaleY = 1.0;
-            t.addClickEvent(t.btnConfirm, t.onConfirm, t);
+            t.addClickEvent(t.btnSure, t.onConfirm, t);
             t.addClickEvent(t.btnCancel, t.onClickCancle, t);
             t.addClickEvent(t.btnClose, t.onClickCancle, t);
             t.addEvent(t.checkbox, egret.Event.CHANGE, t.onCheckChange, t);
@@ -53,12 +55,12 @@ module qmr
             if (type == AlertEnumType.GB)
             {
                 this.btnCancel.visible = true;
-                this.btnConfirm.x = 386;
+                this.btnSure.x = 381;
             }
             else
             {
                 this.btnCancel.visible = false;
-                this.btnConfirm.x = 296;
+                this.btnSure.x = 296;
             }
             this.confirmFun = confirmFun;
             this.caller = caller;
@@ -66,7 +68,7 @@ module qmr
             this.confirmData = confirmData;
             this.cacheKey = cacheKey;
             if (!cacheKey || cacheKey == ""){
-                this.checkbox.visible = false;   
+                this.checkbox.visible = false;
             }
             else{
                 this.checkbox.visible = true;

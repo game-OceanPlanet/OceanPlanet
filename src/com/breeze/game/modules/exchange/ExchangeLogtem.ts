@@ -23,9 +23,11 @@ module qmr {
 			let t = this;
             let pro:com.message.PlayerExcInfoMsg = t.data;
             if(pro){
+                let dt:Date = new Date();
                 t.txt_countKAD.text = NumberUtil.getFloat6Number2String(pro.KADCount)+HeroModel.KAD;
                 t.txt_KH.text = NumberUtil.getFloat6Number2String(pro.moneyCount)+HeroModel.KH;
-                t.txt_time.text = TimeUtil.getDateByTimerSecond(Int64Util.getNumber(pro.logTime));
+                dt.setTime(Int64Util.getNumber(pro.logTime) * 1000);
+                t.txt_time.text = TimeUtil.formatColumnDate(dt);
             }
         }
 	}

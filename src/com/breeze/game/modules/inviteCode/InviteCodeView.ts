@@ -3,14 +3,15 @@ module qmr
 	export class InviteCodeView extends BaseModule
 	{
 		public panelGroup:eui.Group;
+public txt_code:eui.Label;
 public text_input_price:eui.EditableText;
-public btn_exchange_group:eui.Group;
+public btn_exchange_group0:eui.Group;
 public txt_button_buy:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
-public txt_code:eui.Label;
+
 
 
 
@@ -21,6 +22,8 @@ public txt_code:eui.Label;
 			super();
 			this.qmrSkinName = "InviteCodeSkin";
 			this.isNeedMask = true;
+
+			this.helpId = HelpId.ID_1;
 		}
 
 		protected initComponent():void
@@ -28,7 +31,7 @@ public txt_code:eui.Label;
 			let t = this;
 			super.initComponent();
 
-            t.item_list.itemRenderer = ShopItemRender;
+            t.item_list.itemRenderer = InviteCodeItem;
             t._arrCollection = new eui.ArrayCollection();
             t.item_list.dataProvider = t._arrCollection;
 		}

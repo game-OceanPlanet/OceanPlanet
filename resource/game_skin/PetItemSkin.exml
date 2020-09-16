@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="PetItemSkin" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="normal,tower"  width="646" height="141">
-	<e:Image id="rank_bgImg" scale9Grid="29,30,35,35" anchorOffsetY="0" anchorOffsetX="0" x="0" y="0" source="shop_json.panel_frame4" height="137"/>
-	<e:Image x="12" verticalCenter="-1.5" source="shop_json.item_icon" width="116" height="116" scale9Grid="14,14,86,86"/>
+	<e:Image id="rank_bgImg" scale9Grid="29,30,35,35" anchorOffsetY="0" anchorOffsetX="0" x="0" y="0" source="commp_json.panel_frame4" height="137"/>
+	<e:Image x="12" verticalCenter="-1.5" width="116" height="116" scale9Grid="14,14,86,86" source="commp_json.item_icon"/>
 	<e:Image id="img_head" width="110" height="110" x="16" verticalCenter="-0.5" source=""/>
 	<e:Label id="txt_name" text="鹏鲲" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" textColor="0x803f07" bold="false" anchorOffsetX="0" y="17" left="140"/>
 	<e:Label id="txt_state" text="正在产币" size="22" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" bold="false" anchorOffsetX="0" y="22" x="500" textColor="0xbb870c"/>

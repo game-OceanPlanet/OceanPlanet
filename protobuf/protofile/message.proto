@@ -63,6 +63,9 @@ message MsgEnum {
 		C_INJECT_KAD				= 1209;  //注入
 		S_INJECT_KAD				= 1210;
 		
+		C_REAL_NAME_VERIFICATION	= 1221;	// 实名验证
+		S_REAL_NAME_VERIFICATION	= 1222;
+		
 
         S_SYN_PROPERTY = 2001; // 同步属性变化
 

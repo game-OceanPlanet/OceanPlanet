@@ -102,6 +102,9 @@ module qmr {
 		/** 注入 */
 		public static C_INJECT_KAD:number = 1209;  
 		public static S_INJECT_KAD:number = 1210;
+		/**  实名验证 */
+		public static C_REAL_NAME_VERIFICATION:number = 1221;
+		public static S_REAL_NAME_VERIFICATION:number = 1222;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

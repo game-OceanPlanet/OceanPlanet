@@ -16,9 +16,9 @@
 			<e:Group anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="169" x="62">
 				<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" width="603"
 				          source="panelui_json.ShuRuKuang1" height="67" scale9Grid="38,8,232,51"/>
-				<e:EditableText id="text_input_price" prompt="输入注入数量" size="28" verticalAlign="middle"
-				                fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" promptColor="0xCECECD"
-				                textAlign="center"  left="0" right="0" top="0" bottom="0" text="请输入6-12位密码"/>
+				<e:EditableText id="text_input_price" prompt="请输入6-12位密码" size="28" verticalAlign="middle"
+				                fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" promptColor="0x91918b"
+				                textAlign="center"  left="0" right="0" top="0" bottom="0" text=""/>
 			</e:Group>
 			<e:Group id="btn_exchange_group0" x="62" y="287" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image scaleX="1" scaleY="1" scale9Grid="78,9,200,61" width="603" source="panelui_json.anniu_1"/>

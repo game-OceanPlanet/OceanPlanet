@@ -2,6 +2,8 @@ module qmr
 {
 	export class ConfigEnum
 	{
+		/**游戏帮助*/
+		static HELPTIP:string='HelpTip';
 		/**宠物*/
 		static PET:string='Pet';
 		/**地图*/
@@ -14,10 +16,10 @@ module qmr
 		static TEMPLATE:string='Template';
 		/**OTC*/
 		static INJECTCYCLE:string='InjectCycle';
+		/**OTC*/
+		static TRADECOST:string='TradeCost';
 		/**全局配置*/
 		static COMMONCONFIG:string='CommonConfig';
-		/**野外boss鼓舞*/
-		static OUTBOSSINSPIRE:string='OutBossInspire';
 		/**技能效果*/
 		static SKILLEFFECT:string='SkillEffect';
 		/**特效*/

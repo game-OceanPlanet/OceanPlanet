@@ -14,3 +14,17 @@ enum PropertyID {
 		DIAMOND = 2;
 		KAD = 3;
 }
+
+
+// 实名验证
+message C_REAL_NAME_VERIFICATION {
+	string mobile=1; // 手机
+	string name=2; // 姓名
+	string idNum = 3; //身份证号码
+}
+
+// 实名验证
+message S_REAL_NAME_VERIFICATION {
+	string result=1; // 认证结果
+	string remark=2; // 备注
+}

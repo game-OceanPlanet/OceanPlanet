@@ -54,10 +54,6 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
-declare class AlertShopItemNewSkin extends eui.Skin{
-}
-declare class AlertShopItemSkin extends eui.Skin{
-}
 declare class BuyGoodItemSkin extends eui.Skin{
 }
 declare class CertificationSkin extends eui.Skin{
@@ -72,6 +68,10 @@ declare class ExchangeItemSkin extends eui.Skin{
 }
 declare class ExchangeSkin extends eui.Skin{
 }
+declare class HelpMainSkin extends eui.Skin{
+}
+declare class HelpTipSkin extends eui.Skin{
+}
 declare class InjectListItemSkin extends eui.Skin{
 }
 declare class InjectListSkin extends eui.Skin{
@@ -80,11 +80,15 @@ declare class InjectLogItemSkin extends eui.Skin{
 }
 declare class InjectSkin extends eui.Skin{
 }
+declare class InviteCodeItemSkin extends eui.Skin{
+}
 declare class InviteCodeSkin extends eui.Skin{
 }
 declare class Mainui extends eui.Skin{
 }
 declare class MineIDSkin extends eui.Skin{
+}
+declare class MineKADLogItemSkin extends eui.Skin{
 }
 declare class MinePassSkin extends eui.Skin{
 }
@@ -92,9 +96,7 @@ declare class MoneyLogItemSkin extends eui.Skin{
 }
 declare class MoneyLogSkin extends eui.Skin{
 }
-declare class NoticeBuyDescSkin extends eui.Skin{
-}
-declare class NoticeSkin extends eui.Skin{
+declare class PanelModuleDemo extends eui.Skin{
 }
 declare class PetItemSkin extends eui.Skin{
 }
@@ -102,7 +104,9 @@ declare class PetViewSkin extends eui.Skin{
 }
 declare class PriceSkin extends eui.Skin{
 }
-declare class promptSkin extends eui.Skin{
+declare class PromptInputSkin extends eui.Skin{
+}
+declare class PromptSkin extends eui.Skin{
 }
 declare class ShopItemSkin extends eui.Skin{
 }

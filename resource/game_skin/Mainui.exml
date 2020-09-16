@@ -3,8 +3,8 @@
         height="1334" width="750">
 	<e:Group height="79" anchorOffsetX="0" anchorOffsetY="0" top="0" left="0" right="-1">
 		<e:Image source="mainui_json.main_dikuang2" scaleX="1" scaleY="1" left="-1" right="-4" y="3" />
-		<e:Image id="btn_home" source="mainui_json.icon_home" x="31" y="42" anchorOffsetX="25" anchorOffsetY="25" />
-		<e:Image id="btn_detail" source="mainui_json.icon_Raiders" x="709" y="54" anchorOffsetX="25" anchorOffsetY="25" />
+
+
 		<e:Label text="海洋星球" y="23" size="40" fontFamily="specialGameFont" x="296" textColor="0xe2dfae" visible="false" />
 		<e:Image source="mainui_json.game_title" y="19" horizontalCenter="0" />
 	</e:Group>

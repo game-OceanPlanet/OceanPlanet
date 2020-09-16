@@ -12,7 +12,7 @@ module qmr {
 			let t = this;
 			let cfg:InjectCycleCfg = t.data;
 			if(cfg){
-				t.txt_cycle.text = cfg.des;
+				t.txt_cycle.text = cfg.des + "/权重"+cfg.weights;
 			}
 		}
 	}

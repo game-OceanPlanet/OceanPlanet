@@ -305,7 +305,7 @@ module qmr
         public static formatMD(date: Date):string
         {
             var time: string =  (date.getMonth() + 1) + "/"
-            + date.getDate() + "/";
+            + date.getDate();
             return time;
         }
 

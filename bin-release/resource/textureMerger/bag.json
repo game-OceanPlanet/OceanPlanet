@@ -1,4 +1,4 @@
 {"file":"bag.png","frames":{
-"xuanzhongxiaoguo_png":{"x":0,"y":0,"w":95,"h":95,"offX":0,"offY":0,"sourceW":95,"sourceH":95},
-"goumaigezibg_png":{"x":0,"y":97,"w":42,"h":43,"offX":0,"offY":0,"sourceW":42,"sourceH":43},
-"jiahao_png":{"x":44,"y":97,"w":42,"h":42,"offX":0,"offY":0,"sourceW":42,"sourceH":42}}}
+"xuanzhongxiaoguo_png":{"x":0,"y":0,"w":28,"h":28,"offX":0,"offY":0,"sourceW":29,"sourceH":29},
+"goumaigezibg_png":{"x":0,"y":30,"w":12,"h":12,"offX":0,"offY":0,"sourceW":13,"sourceH":13},
+"jiahao_png":{"x":14,"y":30,"w":12,"h":12,"offX":0,"offY":0,"sourceW":13,"sourceH":13}}}

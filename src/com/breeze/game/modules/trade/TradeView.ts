@@ -52,6 +52,8 @@ public btnReturn:eui.Image;
 			super();
 			this.qmrSkinName = "PriceSkin";
 			this.isNeedMask = true;
+
+			this.helpId = HelpId.ID_5;
 		}
 
 		protected initComponent():void
@@ -197,7 +199,6 @@ public btnReturn:eui.Image;
 					prices.push(Int64Util.getNumber(historyPros[i].historyPrice));
 					days.push(Int64Util.getNumber(historyPros[i].historyTime));
 				}
-				startTime = Int64Util.getNumber(historyPros[0].historyTime);
 
 				todayPrice = historyPros[len - 1].historyPrice;
 				if(len >= 2){
@@ -222,6 +223,7 @@ public btnReturn:eui.Image;
 			
 			let dayMiniSeconds:number = 24 * 3600 * 1000;
 			let index:number = 1;
+			startTime = days[days.length - 1];
 			while(prices.length < 7){
 				prices.push(0);
 				days.push(startTime + dayMiniSeconds * index);
@@ -232,10 +234,10 @@ public btnReturn:eui.Image;
 			let minPrice:number = 0;
 			for(var i:number = 0; i < prices.length; i ++){
 				maxPrice = maxPrice < prices[i] ? prices[i] : maxPrice;
-				minPrice = minPrice > prices[i] ? prices[i] : minPrice;
+				// minPrice = minPrice > prices[i] ? prices[i] : minPrice;
 			}
 			maxPrice = maxPrice * 1.5;
-			let add:number = (maxPrice - minPrice) / 6;
+			let add:number = (maxPrice - minPrice) / 5;
 			let steps:number[] = [];
 			for(var i:number = 0; i < 6; i ++){
 				steps[i] = minPrice + add * i;
@@ -248,13 +250,21 @@ public btnReturn:eui.Image;
 
 			len = prices.length;
 			let dt:Date = new Date();
+			for(var i:number = 0; i < days.length; i ++){
+				dt.setTime(days[i]);
+				t._dateLabels[i].text = TimeUtil.formatMD(dt);
+			}
+
 			let price:number;
 			let maxHeight:number = 217;
 			for(var i:number = 0; i < len; i ++){
-				dt.setTime(days[i]);
 				price = prices[i];
-				t._dateLabels[i].text = TimeUtil.formatMD(dt);
-				t._columns[i].height = maxPrice > 0 ? maxHeight * price / maxPrice : 0;
+				if(maxPrice > 0){
+					t._columns[i].height = Math.ceil(price / maxPrice * maxHeight);
+				} else {
+					t._columns[i].height = 0;
+				}
+				//steps[i] / maxPrice * maxHeight;
 				// t._columns[i].y = 230 - t._columns[i].height;
 			}
 		}

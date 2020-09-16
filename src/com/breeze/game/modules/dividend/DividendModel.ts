@@ -31,6 +31,15 @@ module qmr {
             }
             t.injectLogs.push(pro);
         }
+
+        public addExchangeLog(pro:com.message.PlayerExcInfoMsg):void
+        {
+            let t = this;
+            if(!t.exchangeLogs){
+                t.exchangeLogs = [];
+            }
+            t.exchangeLogs.push(pro);
+        }
         
     }
 }

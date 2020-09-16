@@ -896,6 +896,9 @@ declare namespace com {
 
             /** S_MONEY_EXCHANGE_KAD KADCount */
             KADCount?: (number|null);
+
+            /** S_MONEY_EXCHANGE_KAD playerExcInfoMsg */
+            playerExcInfoMsg?: (com.message.IPlayerExcInfoMsg|null);
         }
 
         /** Represents a S_MONEY_EXCHANGE_KAD. */
@@ -912,6 +915,9 @@ declare namespace com {
 
             /** S_MONEY_EXCHANGE_KAD KADCount. */
             public KADCount: number;
+
+            /** S_MONEY_EXCHANGE_KAD playerExcInfoMsg. */
+            public playerExcInfoMsg?: (com.message.IPlayerExcInfoMsg|null);
 
             /**
              * Encodes the specified S_MONEY_EXCHANGE_KAD message. Does not implicitly {@link com.message.S_MONEY_EXCHANGE_KAD.verify|verify} messages.
@@ -3536,6 +3542,8 @@ declare namespace com {
                 S_GET_INJECT_INFO = 1208,
                 C_INJECT_KAD = 1209,
                 S_INJECT_KAD = 1210,
+                C_REAL_NAME_VERIFICATION = 1221,
+                S_REAL_NAME_VERIFICATION = 1222,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,
@@ -3622,6 +3630,100 @@ declare namespace com {
             MONEY = 1,
             DIAMOND = 2,
             KAD = 3
+        }
+
+        /** Properties of a C_REAL_NAME_VERIFICATION. */
+        interface IC_REAL_NAME_VERIFICATION {
+
+            /** C_REAL_NAME_VERIFICATION mobile */
+            mobile?: (string|null);
+
+            /** C_REAL_NAME_VERIFICATION name */
+            name?: (string|null);
+
+            /** C_REAL_NAME_VERIFICATION idNum */
+            idNum?: (string|null);
+        }
+
+        /** Represents a C_REAL_NAME_VERIFICATION. */
+        class C_REAL_NAME_VERIFICATION implements IC_REAL_NAME_VERIFICATION {
+
+            /**
+             * Constructs a new C_REAL_NAME_VERIFICATION.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_REAL_NAME_VERIFICATION);
+
+            /** C_REAL_NAME_VERIFICATION mobile. */
+            public mobile: string;
+
+            /** C_REAL_NAME_VERIFICATION name. */
+            public name: string;
+
+            /** C_REAL_NAME_VERIFICATION idNum. */
+            public idNum: string;
+
+            /**
+             * Encodes the specified C_REAL_NAME_VERIFICATION message. Does not implicitly {@link com.message.C_REAL_NAME_VERIFICATION.verify|verify} messages.
+             * @param message C_REAL_NAME_VERIFICATION message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_REAL_NAME_VERIFICATION, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_REAL_NAME_VERIFICATION message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_REAL_NAME_VERIFICATION
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_REAL_NAME_VERIFICATION;
+        }
+
+        /** Properties of a S_REAL_NAME_VERIFICATION. */
+        interface IS_REAL_NAME_VERIFICATION {
+
+            /** S_REAL_NAME_VERIFICATION result */
+            result?: (string|null);
+
+            /** S_REAL_NAME_VERIFICATION remark */
+            remark?: (string|null);
+        }
+
+        /** Represents a S_REAL_NAME_VERIFICATION. */
+        class S_REAL_NAME_VERIFICATION implements IS_REAL_NAME_VERIFICATION {
+
+            /**
+             * Constructs a new S_REAL_NAME_VERIFICATION.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_REAL_NAME_VERIFICATION);
+
+            /** S_REAL_NAME_VERIFICATION result. */
+            public result: string;
+
+            /** S_REAL_NAME_VERIFICATION remark. */
+            public remark: string;
+
+            /**
+             * Encodes the specified S_REAL_NAME_VERIFICATION message. Does not implicitly {@link com.message.S_REAL_NAME_VERIFICATION.verify|verify} messages.
+             * @param message S_REAL_NAME_VERIFICATION message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_REAL_NAME_VERIFICATION, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_REAL_NAME_VERIFICATION message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_REAL_NAME_VERIFICATION
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_REAL_NAME_VERIFICATION;
         }
     }
 }

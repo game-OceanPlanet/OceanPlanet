@@ -36,6 +36,7 @@ message C_MONEY_EXCHANGE_KAD {
 message S_MONEY_EXCHANGE_KAD {
 	double moneyCount = 1;		//兑换金币数量
 	double KADCount = 2;	//得到_KAD的数量
+	PlayerExcInfoMsg playerExcInfoMsg = 3;	//玩家兑换记录信息
 }
 
 //系统分红信息

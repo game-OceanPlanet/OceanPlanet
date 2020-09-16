@@ -20,6 +20,7 @@ module qmr
             this.addSocketListener(MessageID.S_GET_BONUS_INFO, this.getDividendResponse, this, false);
             this.addSocketListener(MessageID.S_INJECT_KAD, this.getInjectResponse, this, false);
             this.addSocketListener(MessageID.S_GET_INJECT_INFO, this.getInjectInfoResponse, this, false);
+            this.addSocketListener(MessageID.S_REAL_NAME_VERIFICATION, this.getIdentifyVerificationResponse, this, false);
 		}
 
         //获取兑换信息
@@ -51,8 +52,7 @@ module qmr
         // 金币兑换平台币KAD
         private getExchangeKADResponse(s: com.message.S_MONEY_EXCHANGE_KAD):void
         {
-            let goldCount:number = s.moneyCount;
-            DividendModel.instance.exAllKAD += goldCount;
+            DividendModel.instance.addExchangeLog(s.playerExcInfoMsg as com.message.PlayerExcInfoMsg);
             this.dispatch(NotifyConst.S_MONEY_EXCHANGE_KAD);
         }
 
@@ -102,6 +102,23 @@ module qmr
             DividendModel.instance.allInject = s.allInject;
             DividendModel.instance.addInjectLog(s.personInjectMsg as com.message.PersonInjectMsg);
             this.dispatch(NotifyConst.S_INJECT_KAD);
+        }
+
+        //实名验证
+		public requestIdVerifCMD(tel:string, name:string, id:string): void
+		{
+            var c: com.message.C_REAL_NAME_VERIFICATION = new com.message.C_REAL_NAME_VERIFICATION();
+            c.mobile = tel;
+            c.name = name;
+            c.idNum = id;
+			this.sendCmd(c, MessageID.C_REAL_NAME_VERIFICATION, true);
+        }
+
+        //实名验证
+        private getIdentifyVerificationResponse(s: com.message.S_REAL_NAME_VERIFICATION):void
+        {
+            let res:string = s.result;
+            let des:string = s.remark;
         }
 
     }

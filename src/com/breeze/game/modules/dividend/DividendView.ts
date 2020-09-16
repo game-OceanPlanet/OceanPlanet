@@ -21,6 +21,8 @@ public btn_help:eui.Image;
 			super();
 			this.qmrSkinName = "DividendSkin";
 			this.isNeedMask = true;
+
+			this.helpId = HelpId.ID_4;
 		}
 
 		protected initComponent():void

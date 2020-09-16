@@ -28,8 +28,18 @@ module qmr {
             *                180/181/189
             *                191/199
             * */
-            let reg = /^1(3[0-9]|4[5,7]|5[0,1,2,3,5,6,7,8,9]|6[2,5,6,7]|7[0,1,7,8]|8[0-9]|9[1,8,9])\d{8}$/;
+            let reg =new RegExp(/^1(3[0-9]|4[5,7]|5[0,1,2,3,5,6,7,8,9]|6[2,5,6,7]|7[0,1,7,8]|8[0-9]|9[1,8,9])\d{8}$/);
             return reg.test(phoneNum);
+        }
+
+        /**
+         * 身份证号码验证
+         * @param code 
+         */
+        public static isIdentifyId(code:string):boolean
+        {
+            let reg =new RegExp(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/);
+            return reg.test(code);
         }
 
         /**
@@ -39,33 +49,11 @@ module qmr {
         public static IsNull(value):boolean {
             var str = value.trim();
             if (str.length == 0) {
-                TipManagerCommon.getInstance().createCommonColorTip('对不起，文本框不能为空或者为空格!');//请将“文本框”改成你需要验证的属性名称!
+                TipManagerCommon.getInstance().createCommonColorTip('对不起，输入内容不能为空或者为空格!');//请将“文本框”改成你需要验证的属性名称!
                 return true;
             }
             return false;
         }
-
-        // //判断日期类型是否为YYYY-MM-DD格式的类型
-        // public static IsDate(value) {
-        //     var str = value.trim();
-        //     if (str.length != 0) {
-        //         let reg = /^(\d{1,4})(-|/)(\d{ 1, 2 }) \2(\d{ 1, 2})$ /;
-        //         var r = str.match(reg);
-        //         if (r == null)
-        //             TipManagerCommon.getInstance().createCommonColorTip('对不起，您输入的日期格式不正确!'); //请将“日期”改成你需要验证的属性名称!
-        //     }
-        // }
-
-        // //判断日期类型是否为YYYY-MM-DD hh:mm:ss格式的类型
-        // public static IsDateTime(value) {
-        //     var str = value.trim();
-        //     if (str.length != 0) {
-        //         let reg = /^(\d{1,4})(-|/)(\d{ 1, 2 }) \2(\d{ 1, 2})(\d{ 1, 2}): (\d{ 1, 2 }): (\d{ 1, 2 }) $/;
-        //         var r = str.match(reg);
-        //         if (r == null)
-        //             TipManagerCommon.getInstance().createCommonColorTip('对不起，您输入的日期格式不正确!'); //请将“日期”改成你需要验证的属性名称!
-        //     }
-        // }
 
         /**
          * 判断日期类型是否为hh:mm:ss格式的类型
@@ -73,7 +61,7 @@ module qmr {
         public static IsTime(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^((20|21|22|23|[0-1]\d):[0-5][0-9])(:[0-5][0-9])?$/
+                let reg =new RegExp(/^((20|21|22|23|[0-1]\d):[0-5][0-9])(:[0-5][0-9])?$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的日期格式不正确!");//请将“日期”改成你需要验证的属性名称!
                     return false;
@@ -88,7 +76,7 @@ module qmr {
         public static IsLetter(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^[a-zA-Z]+$/;
+                let reg =new RegExp(/^[a-zA-Z]+$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的英文字母类型格式不正确!");//请将“英文字母类型”改成你需要验证的属性名称!
                     return false;
@@ -103,7 +91,7 @@ module qmr {
         public static IsInteger(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^[-+]?\d*$/;
+                let reg =new RegExp(/^[-+]?\d*$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的格式不正确!");//请将“整数类型”要换成你要验证的那个属性名称！
                     return false;
@@ -118,7 +106,7 @@ module qmr {
         public static IsDouble(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^[-+]?\d+(.\d+)?$/;
+                let reg =new RegExp(/^[-+]?\d+(.\d+)?$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的格式不正确!");//请将“双精度类型”要换成你要验证的那个属性名称！
                     return false;
@@ -133,7 +121,7 @@ module qmr {
         public static IsString(value):boolean {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^[a-zA-Z0-9_]+$/;
+                let reg =new RegExp(/^[a-zA-Z0-9_]+$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的字符串类型格式不正确!");//请将“字符串类型”要换成你要验证的那个属性名称！
                     return false;
@@ -148,7 +136,7 @@ module qmr {
         public static IsChinese(value) {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^[\u0391-\uFFE5]+$/;
+                let reg =new RegExp(/^[\u0391-\uFFE5]+$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的字符串类型格式不正确!");//请将“字符串类型”要换成你要验证的那个属性名称！
                 }
@@ -161,7 +149,7 @@ module qmr {
         public static IsEmail(value) {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$/;
+                let reg =new RegExp(/^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的字符串类型格式不正确!");//请将“字符串类型”要换成你要验证的那个属性名称！
                 }
@@ -174,7 +162,7 @@ module qmr {
         public static IsZIP(value) {
             var str = value.trim();
             if (str.length != 0) {
-                let reg = /^\d{6}$/;
+                let reg =new RegExp(/^\d{6}$/);
                 if (!reg.test(str)) {
                     TipManagerCommon.getInstance().createCommonColorTip("对不起，您输入的字符串类型格式不正确!");//请将“字符串类型”要换成你要验证的那个属性名称！
                 }
@@ -187,7 +175,7 @@ module qmr {
         public static MaxValue(value, max) {
             var val = value.trim();
             if (value.length != 0) {
-                let reg = /^[-+]?\d*$/;
+                let reg =new RegExp(/^[-+]?\d*$/);
                 if (!reg.test(value)) {//判断是否为数字类型
                     if (val > parseInt(max)) //“123”为自己设定的最大值
                     {

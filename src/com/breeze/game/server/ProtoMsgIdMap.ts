@@ -43,6 +43,7 @@ module qmr {
 			this.msgIdMap[MessageID.S_GET_BONUS_INFO] = com.message.S_GET_BONUS_INFO;
 			this.msgIdMap[MessageID.S_GET_INJECT_INFO] = com.message.S_GET_INJECT_INFO;
 			this.msgIdMap[MessageID.S_INJECT_KAD] = com.message.S_INJECT_KAD;
+			this.msgIdMap[MessageID.S_REAL_NAME_VERIFICATION] = com.message.S_REAL_NAME_VERIFICATION;
 			this.msgIdMap[MessageID.S_SYN_PROPERTY] = com.message.S_SYN_PROPERTY;
 			this.msgIdMap[MessageID.C_SYNC_TIME] = com.message.C_SYNC_TIME;
 			this.msgIdMap[MessageID.S_SYNC_TIME] = com.message.S_SYNC_TIME;

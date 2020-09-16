@@ -1,5 +1,30 @@
 module qmr
 {
+	export class HelpTipCfg extends BaseBean
+	{
+		/**ID*/
+	get id():number
+	{			
+		return this.d["id"];			
+	}
+	/**标题*/
+	get title():string
+	{			
+		return this.d["title"];			
+	}
+	/**参数*/
+	get param():string
+	{			
+		return this.d["param"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="id";
+		}
+	}
+
 	export class PetCfg extends BaseBean
 	{
 		/**宠物ID*/
@@ -295,6 +320,31 @@ module qmr
 		}
 	}
 
+	export class TradeCostCfg extends BaseBean
+	{
+		/**编号*/
+	get id():number
+	{			
+		return this.d["id"];			
+	}
+	/**直推人数*/
+	get count():number
+	{			
+		return this.d["count"];			
+	}
+	/**手续费比例*/
+	get precent():string
+	{			
+		return this.d["precent"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="id";
+		}
+	}
+
 	export class CommonConfigCfg extends BaseBean
 	{
 		/**ID*/
@@ -312,36 +362,6 @@ module qmr
 		{				
 			super(element)
 		this.key="id";
-		}
-	}
-
-	export class OutBossInspireCfg extends BaseBean
-	{
-		/**鼓舞等级*/
-	get level():number
-	{			
-		return this.d["level"];			
-	}
-	/**消耗材料*/
-	get cost():string
-	{			
-		return this.d["cost"];			
-	}
-	/**鼓舞buff：buffId1，buffId2*/
-	get buffs():string
-	{			
-		return this.d["buffs"];			
-	}
-	/**描述*/
-	get dec():string
-	{			
-		return this.d["dec"];			
-	}
-
-		constructor(element)
-		{				
-			super(element)
-		this.key="level";
 		}
 	}
 

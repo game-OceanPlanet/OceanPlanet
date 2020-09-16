@@ -114,25 +114,22 @@ public txt_totalUsdt:eui.Label;
         //实名认证
         private onRealNameClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
-            TipManagerCommon.getInstance().createCommonTip("测试鱼儿合成功能...");
-            HeroModel.instance.testMerge();
-            
+            ModuleManager.showModule(ModuleNameConst.CERTIFICATION_VIEW);
         }
         //通行证
         private onPermitClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.MINE_PASSIED_VIEW);
         }
         //个人中心
         private onPersonClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.MINEID_VIEW);
         }
         //下载
         private onDowonClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.APP_DOWN_VIEW);
         }
 
         //领钱
@@ -167,7 +164,7 @@ public txt_totalUsdt:eui.Label;
         //查看帮助
         private onHelpClick():void
         {
-            TipManagerCommon.getInstance().createCommonTip("功能正在开发中...");
+            ModuleManager.showModule(ModuleNameConst.HELP_MAIN_VIEW);
         }
         //兑换
         private onExchangeClick():void

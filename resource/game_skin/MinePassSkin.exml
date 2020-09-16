@@ -5,24 +5,22 @@
 
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
 		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0" />
-		<e:Group width="725" y="329" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
-			<e:Image scale9Grid="292,141,12,26" anchorOffsetX="0" width="750" source="trade_json.mask_bg" y="0" x="-12"
-			         anchorOffsetY="0" height="1003" />
-			<e:Image source="trade_json.mask_bg" y="16.5" scale9Grid="45,31,271,187" anchorOffsetX="0" width="714" anchorOffsetY="0" height="225" horizontalCenter="0.5"/>
-			<e:Label id="txt_name" text="通证明细" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1"
-			          textColor="0x491c0e" x="24" y="47"/>
-			<e:Label id="txt_id" text="创世账号" y="122.5" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="68" textColor="0xffb738"/>
-			<e:Label id="txt_time" text="2020-09-11 17:59:07" y="174" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491C0E" left="26"/>
-			<e:Label id="txt_count" text="+2.0000000" y="178" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491C0E" right="11"/>
-			<e:Label id="txt_phone" text="12345678911" y="130.5" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491C0E" anchorOffsetX="0" width="167" x="561"/>
-			<e:Image source="panelui_json.GuiMo" x="4" y="106"/>
-			<e:Image source="panelui_json.GuiMo" x="489" y="106"/>
+		<e:Image scale9Grid="292,141,12,26" anchorOffsetX="0" width="750" source="trade_json.mask_bg" y="327.27" x="0" anchorOffsetY="0" height="1003"/>
+		<e:Label id="txt_name" text="通证明细" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491c0e" x="24" y="348.46"/>
 
-		</e:Group>
-		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back"
-		         scaleX="1" scaleY="1" x="703" y="1287" />
+
 
 		<e:Image y="147"  source="nameImg_json.title_tongz" horizontalCenter="0"/>
 		<e:Label id="txt_kda_total" text="2.00000LAND" y="213" size="34" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x878EFF" horizontalCenter="0.5"/>
+		<e:Group id="itemGroup" width="736" height="824" y="408" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-2">
+			<e:Scroller width="738" x="0" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" height="822">
+			<e:List id="item_list" anchorOffsetY="0" anchorOffsetX="0" x="2" width="738" y="4">
+				<e:layout>
+				<e:VerticalLayout gap="6"/>
+				</e:layout>
+			</e:List>
+			</e:Scroller>
+		</e:Group>
+		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back" scaleX="1" scaleY="1" x="703" y="1287"/>
 	</e:Group>
 </e:Skin>

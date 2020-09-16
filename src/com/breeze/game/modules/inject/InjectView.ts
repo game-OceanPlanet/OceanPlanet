@@ -2,20 +2,22 @@ module qmr
 {
 	export class InjectView extends BaseModule
 	{
-		public panelGroup:eui.Group;
-public txt_MyPercent:eui.Label;
+		public txt_MyPercent:eui.Label;
 public txt_selfTotal:eui.Label;
 public txt_kda_total:eui.Label;
 public text_input_price:eui.EditableText;
-public btn_exchange_group:eui.Group;
+public btn_stepSelected:eui.Group;
 public txt_button_buy:eui.Label;
-public btn_exchange_group1:eui.Group;
-public txt_button_buy1:eui.Label;
+public btn_exchange_group:eui.Group;
+public txt_button_buy2:eui.Label;
 public txt_personnum:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
+public selectView:qmr.InjectSelectView;
+
+
 
         private _arrCollection: eui.ArrayCollection;
         private _injectNum:number = 0;
@@ -24,7 +26,9 @@ public btn_help:eui.Image;
 		{
 			super();
 			this.qmrSkinName = "InjectSkin";
-			this.isNeedMask = true;
+            this.isNeedMask = true;
+            
+            this.helpId = HelpId.ID_2;
 		}
 
 		protected initComponent():void
@@ -51,8 +55,10 @@ public btn_help:eui.Image;
 			super.initListener();
             let t = this;
             t.addClickEvent(t.btnReturn, t.closeView, t);
-            t.addClickEvent(t.btn_exchange_group1, t.onInjectClick, t);
+            t.addClickEvent(t.btn_exchange_group, t.onInjectClick, t);
+            t.addClickEvent(t.btn_stepSelected, t.onStepClick, t);
             t.addEvent(t.text_input_price, egret.Event.FOCUS_OUT, t.onFocusOut, t);
+            t.addEvent(t.text_input_price, egret.Event.CHANGE,t.onTextInputChange,t);
 			
 			t.registerNotify(NotifyConst.S_BUY_FISH, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
@@ -60,11 +66,33 @@ public btn_help:eui.Image;
             t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_INJECT_INFO, t.updateView, t);
             t.registerNotify(NotifyConst.S_INJECT_KAD, t.updateView, t);
+
+            t.registerNotify(NotifyConst.SELECT_ITEM_SELECTED, t.onStepSelected, t);
         }
+
+        private selecteWightId:number = 0;
+        private onStepSelected(cfg:InjectCycleCfg):void
+        {
+            if(cfg){
+                this.txt_button_buy.text = cfg.des + "/权重"+cfg.weights;
+                this.selecteWightId = cfg.id;
+            }
+        }
+
+        private onTextInputChange(evt: egret.Event):void
+		{
+            let str:string = evt.target.text;
+            if(RegexpUtil.IsNull(str)){
+				return;
+			}
+            if(!RegexpUtil.IsInteger(str)){
+                return;
+			}
+            this._injectNum = Number(str.trim());
+		}
 
         private onFocusOut(): void
 		{
-			this._injectNum = parseInt(this.text_input_price.text.trim());
 		}
 
         private onInjectClick():void
@@ -76,8 +104,17 @@ public btn_help:eui.Image;
 			if(this._injectNum > HeroModel.instance.totalKAD){
 				TipManagerCommon.getInstance().createCommonTip("对不起您的KAD不足");
 				return;
-			}
-            DividendController.instance.requestInjectCMD(this._injectNum, 1);
+            }
+            if(this.selecteWightId <= 0){
+                TipManagerCommon.getInstance().createCommonTip("对不起您选择的权重有误");
+				return;
+            }
+            DividendController.instance.requestInjectCMD(this._injectNum, this.selecteWightId);
+        }
+
+        private onStepClick():void
+        {
+            this.selectView.show(true);
         }
 
 		private updateView():void
@@ -102,8 +139,12 @@ public btn_help:eui.Image;
                 t.txt_MyPercent.text = "0%";
                 t.txt_selfTotal.text = "0"+HeroModel.KAD;
             }
-            t.txt_personnum.text = HeroModel.instance.totalKAD + HeroModel.KAD;
-
+            t.txt_personnum.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalKAD) + HeroModel.KAD;
+            if(logs){
+				logs.sort((a, b)=>{
+					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
+				});
+			}
             t._arrCollection.replaceAll(logs);
 		}
 
