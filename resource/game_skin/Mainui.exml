@@ -7,13 +7,15 @@
 		<e:Image source="mainui_json.game_title" y="19" horizontalCenter="0" />
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" bottom="0" height="263" left="0" right="0">
-		<e:Image source="mainui_json.home_frame1" y="112" scale9Grid="261,38,274,74"  horizontalCenter="0"/>
-		<e:Image id="btn_bottom_gold" y="107" source="mainui_json.btn_bottom_gold" anchorOffsetX="75"
-		         anchorOffsetY="75"  horizontalCenter="265"/>
+		<e:Image source="mainui_json.home_frame1" y="112" scale9Grid="261,38,274,74" right="-5" left="-5" />
+		<e:Image y="112" scale9Grid="261,38,274,74" source="mainui_json.home_frame2" horizontalCenter="0" />
+		<e:Image id="btn_bottom_gold" y="107" source="mainui_json.btn_bottom_gold" anchorOffsetX="75" anchorOffsetY="75"
+		         horizontalCenter="265" />
 		<e:Image id="btn_bottom_property" y="107" source="mainui_json.btn_bottom_exchange" anchorOffsetX="75"
-		         anchorOffsetY="75"  horizontalCenter="-250"/>
-		<e:Image id="btn_bottom_pet" y="97" source="mainui_json.btn_bottom_pet" anchorOffsetX="100" anchorOffsetY="99"  horizontalCenter="11"/>
-		<e:Group id="effect_group_pet" width="20" height="20" y="93.94"  horizontalCenter="20"/>
+		         anchorOffsetY="75" horizontalCenter="-250" />
+		<e:Image id="btn_bottom_pet" y="97" source="mainui_json.btn_bottom_pet" anchorOffsetX="100" anchorOffsetY="99"
+		         horizontalCenter="11" />
+		<e:Group id="effect_group_pet" width="20" height="20" y="93.94" horizontalCenter="20" />
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" left="1" top="85">
 		<e:Image x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.item_di1" />
