@@ -45,8 +45,9 @@
 					</e:Group>
 				</e:Group>
 				<e:Image id="btnReturn" x="695.68" y="78" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back"/>
-				<e:Image id="btn_help" source="trade_json.btn_help" x="4" y="61.86" scaleX="1" scaleY="1"/>
+
 				<e:Label id="txt_title" text="我的邀请码" y="73.01" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xD9D8FF" horizontalCenter="-12"/>
+				<e:Image id="btn_help" source="trade_json.btn_help" x="60" y="75" scaleX="1" scaleY="1" anchorOffsetX="40" anchorOffsetY="40"/>
 
 
 			</e:Group>

@@ -9,12 +9,12 @@
 
 			<e:Image anchorOffsetX="0" anchorOffsetY="0" x="70" y="102" width="528" height="336"
 			          source="panel2_json.alertbg2" scale9Grid="35,29,212,178"/>
-			<e:Image y="-19" x="197" source="panel2_json.title_bg"/>
+			<e:Image y="0" x="197" source="panel2_json.title_bg"/>
 			<e:Label id="labContent" text="购买数量\r购买数量\r购买数量\r购买数量\r购买数量\r" size="26"
 			         fontFamily="specialGameFont" scaleX="1" scaleY="1" width="480" lineSpacing="10" anchorOffsetX="0"
 			         textColor="0x04031e"  anchorOffsetY="0" horizontalCenter="12" verticalCenter="-48"/>
 
-			<e:Label id="txt_title" text="说 明" y="-11" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="313"
+			<e:Label id="txt_title" text="说 明" y="8" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="313"
 			         textColor="0xb28208"  bold="true"/>
 			<e:Image id="btnClose" x="551" y="-26"  source="panel2_json.btn_close2"/>
 			<e:Group id="btnSure" anchorOffsetX="0" anchorOffsetY="0" x="381" y="527">
