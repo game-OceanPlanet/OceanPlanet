@@ -6,15 +6,15 @@
         "lib": [
             "es5",
             "dom",
-            "es2015.promise"
+            "es2015.promise",
+            "es2015.collection"
         ],
         "types": []
     },
     "include": [
         "src",
         "libs",
-        "protobuf-login/library",
-        "protobuf/bundles",
+        "protobuf/**/*.d.ts",
         "lib-login"
     ]
 }

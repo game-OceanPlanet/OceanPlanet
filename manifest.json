@@ -11,7 +11,8 @@
 		"libs/bin/jszip/jszip.js",
 		"libs/bin/md5/md5.js",
 		"libs/bin/mobile-detect/mobile-detect.js",
-		"protobuf-login/library/protobuf-library.js",
+		"protobuf/library/protobuf-library.js",
+		"protobuf-bundles-login/protobuf-bundles-login.js",
 		"protobuf/bundles/protobuf-bundles.js",
 		"lib-login/login.js"
 	],

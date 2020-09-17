@@ -52,14 +52,14 @@ module qmr
 			ModuleManager.showModule(ModuleNameConst.MAINUI_VIEW, null, LayerConst.TOOLBAR);
 			SceneManager.instance.enterHangMap(3004);
 
-			let isOpen = qmr.SoundManager.getInstance().isMusicSoundOpen;
-			qmr.SoundManager.getInstance().isMusicSoundOpen = false;
-			qmr.SoundManager.getInstance().isMusicSoundOpen = true;
-			qmr.SoundManager.getInstance().isMusicSoundOpen = isOpen;
-			isOpen = qmr.SoundManager.getInstance().isEffectSoundOpen;
-			qmr.SoundManager.getInstance().isEffectSoundOpen = false;
-			qmr.SoundManager.getInstance().isEffectSoundOpen = true;
-            qmr.SoundManager.getInstance().isEffectSoundOpen = isOpen;
+			// let isOpen = qmr.SoundManager.getInstance().isMusicSoundOpen;
+			// qmr.SoundManager.getInstance().isMusicSoundOpen = false;
+			// qmr.SoundManager.getInstance().isMusicSoundOpen = true;
+			// qmr.SoundManager.getInstance().isMusicSoundOpen = isOpen;
+			// isOpen = qmr.SoundManager.getInstance().isEffectSoundOpen;
+			// qmr.SoundManager.getInstance().isEffectSoundOpen = false;
+			// qmr.SoundManager.getInstance().isEffectSoundOpen = true;
+            // qmr.SoundManager.getInstance().isEffectSoundOpen = isOpen;
             
 			this.reqLoadResFinishToServer();//通知服务器资源已加载完毕，服务端开始广播游戏协议
 			//延迟小段时间进入场景，提升视觉体验
