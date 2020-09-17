@@ -24,9 +24,16 @@ module qmr {
 			let t = this;
             let pro:com.message.PersonBonusMsg = t.data;
             if(pro){
-                t.txt_des.text = pro.info;
+                if(pro.info){
+                    let id:number = Number(pro.info);
+                    let cfg:InjectCycleCfg = ConfigManager.getConf(ConfigEnum.INJECTCYCLE,id );
+                    t.txt_des.text = cfg.des;
+                }
+                
                 t.txt_count.text = NumberUtil.getFloat6Number2String(pro.diamondCount)+HeroModel.USDT;
-                t.txt_time.text = TimeUtil.getDateByTimer(Int64Util.getNumber(pro.logTime));
+                let dt:Date = new Date();
+                dt.setTime(Int64Util.getNumber(pro.logTime));
+                t.txt_time.text = TimeUtil.formatColumnDate(dt);
             }
         }
 	}

@@ -11,11 +11,11 @@ public txt_total:eui.Label;
 public txt_leftTime:eui.Label;
 public txt_todayGained:eui.Label;
 public txt_todayCanGain:eui.Label;
-
+public checkbox:eui.CheckBox;
 
 
         private _endTime:number = 0;
-		private _timekey:number = -1;
+        private _timekey:number = -1;
 		
 		public constructor()
 		{
@@ -26,13 +26,34 @@ public txt_todayCanGain:eui.Label;
         protected childrenCreated(): void
 		{
 			super.childrenCreated();
-			let t = this;
+            let t = this;
+            t.checkbox.addEventListener(eui.UIEvent.CHANGE, t.onCheckBoxChange, t);
+        }
+
+        private onCheckBoxChange(e: eui.UIEvent)
+        {
+            let t = this;
+            let info:PetActorInfo = t.data;
+            if(info){
+                NotifyManager.sendNotification(NotifyConst.ON_PET_SELECTED, {id:info.id,selected:t.checkbox.selected});
+            } 
+        }
+
+        public getSelectedState():boolean
+        {
+            return this.checkbox.selected;
+        }
+
+        public setSelectedState(isSelected:boolean):void
+        {
+            this.checkbox.selected = isSelected;
         }
 
 		public dataChanged(): void {
             let t = this;
             let info:PetActorInfo = t.data;
             if(info){
+                t.checkbox.selected = info.id == HeroModel.instance.selectedMergePetId1 || info.id == HeroModel.instance.selectedMergePetId2;
                 let cfg:PetCfg = ConfigManager.getConf(ConfigEnum.PET, info.fishId);
                 t.txt_name.text = cfg.name + "(Lv." + cfg.level + ")";
                 t.txt_gain.text = NumberUtil.getFloat4Number2String(info.extMoney) + HeroModel.KH;//鱼生累计已经产出金币,包括遗漏的
@@ -56,7 +77,6 @@ public txt_todayCanGain:eui.Label;
                 let produceedHours:number = Math.floor(leftSeconds/ 3600);//已经还剩余多少小时
                 let dayCount:number = Math.ceil(produceedHours / 2);//两个小时为一天，这条鱼还剩下多少天,向上取整，比如剩余3.5天取4天
                 let totalLeftSeconds:number = dayCount * 24 * 3600 - produceedSeconds % 7200;
-
                 
                 if(totalLeftSeconds > 0){
                     t._endTime = ServerTime.serverTime + totalLeftSeconds * 1000;

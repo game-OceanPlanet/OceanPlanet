@@ -946,6 +946,9 @@ declare namespace com {
 
             /** SysBonusMsg todayAllBonus */
             todayAllBonus?: (number|null);
+
+            /** SysBonusMsg bonusRatio */
+            bonusRatio?: (number|null);
         }
 
         /** Represents a SysBonusMsg. */
@@ -962,6 +965,9 @@ declare namespace com {
 
             /** SysBonusMsg todayAllBonus. */
             public todayAllBonus: number;
+
+            /** SysBonusMsg bonusRatio. */
+            public bonusRatio: number;
 
             /**
              * Encodes the specified SysBonusMsg message. Does not implicitly {@link com.message.SysBonusMsg.verify|verify} messages.

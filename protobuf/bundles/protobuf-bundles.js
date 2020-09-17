@@ -2046,6 +2046,7 @@ $root.com = (function() {
              * @interface ISysBonusMsg
              * @property {number|null} [sysAllBonus] SysBonusMsg sysAllBonus
              * @property {number|null} [todayAllBonus] SysBonusMsg todayAllBonus
+             * @property {number|null} [bonusRatio] SysBonusMsg bonusRatio
              */
 
             /**
@@ -2080,6 +2081,14 @@ $root.com = (function() {
             SysBonusMsg.prototype.todayAllBonus = 0;
 
             /**
+             * SysBonusMsg bonusRatio.
+             * @member {number} bonusRatio
+             * @memberof com.message.SysBonusMsg
+             * @instance
+             */
+            SysBonusMsg.prototype.bonusRatio = 0;
+
+            /**
              * Encodes the specified SysBonusMsg message. Does not implicitly {@link com.message.SysBonusMsg.verify|verify} messages.
              * @function encode
              * @memberof com.message.SysBonusMsg
@@ -2095,6 +2104,8 @@ $root.com = (function() {
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.sysAllBonus);
                 if (message.todayAllBonus != null && message.hasOwnProperty("todayAllBonus"))
                     writer.uint32(/* id 2, wireType 1 =*/17).double(message.todayAllBonus);
+                if (message.bonusRatio != null && message.hasOwnProperty("bonusRatio"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.bonusRatio);
                 return writer;
             };
 
@@ -2121,6 +2132,9 @@ $root.com = (function() {
                         break;
                     case 2:
                         message.todayAllBonus = reader.double();
+                        break;
+                    case 3:
+                        message.bonusRatio = reader.double();
                         break;
                     default:
                         reader.skipType(tag & 7);

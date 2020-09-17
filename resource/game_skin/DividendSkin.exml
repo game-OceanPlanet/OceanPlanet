@@ -27,7 +27,7 @@
 				<e:Group width="750" height="40" x="0" y="632.46" scaleX="1" scaleY="1">
 					<e:Label text="注入数量" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="382.28" visible="false"/>
 					<e:Label text="备注" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="571.69"/>
-					<e:Label text="时间" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="75.69"/>
+					<e:Label text="时间" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="102.33"/>
 					<e:Label text="数量" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="327.46"/>
 				</e:Group>
 				<e:Group width="647" height="763" x="57.00000000000001" y="522.62" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">

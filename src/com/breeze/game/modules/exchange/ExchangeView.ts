@@ -110,7 +110,7 @@ public btn_help:eui.Image;
 		{
 			let t = this;
 			let md:DividendModel = DividendModel.instance;
-			t.txt_kda_total.text = NumberUtil.getFloat4Number2String(md.sysAllDiamon)+HeroModel.KAD;
+			t.txt_kda_total.text = NumberUtil.getFloat4Number2String(md.sysAllKAD)+HeroModel.KAD;
 			t.txt_exchanged_total.text = NumberUtil.getFloat4Number2String(md.exAllKAD)+HeroModel.KAD;
 			t.txt_rate.text = md.exRatio + HeroModel.KH+"：1"+HeroModel.KAD;
 			t.txt_kh_totalSelf.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney)+HeroModel.KH;

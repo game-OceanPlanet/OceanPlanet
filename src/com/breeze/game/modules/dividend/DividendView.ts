@@ -60,7 +60,7 @@ public btn_help:eui.Image;
 			let t = this;
 			let md:DividendModel = DividendModel.instance;
 			t.txt_total.text = NumberUtil.getFloat4Number2String(md.sysAllBonus);
-			t.txt_dividend_total.text = NumberUtil.getFloat4Number2String(md.sysAllBonus);
+			t.txt_dividend_total.text = NumberUtil.getFloat4Number2String(md.todayAllBonus);
 			
 			let myTotal:number = 0;
 
@@ -71,7 +71,7 @@ public btn_help:eui.Image;
 					myTotal += logs[i].diamondCount;
 				}
 			}
-			let total:number = md.sysAllDiamon;
+			let total:number = md.sysAllBonus;
 			if(total > 0 && myTotal > 0){
 				t.txt_self_pre.text = NumberUtil.getFloat6Number2String(myTotal/total) + "%";
 				t.txt_self_get.text = NumberUtil.getFloat6Number2String(myTotal) + HeroModel.USDT;

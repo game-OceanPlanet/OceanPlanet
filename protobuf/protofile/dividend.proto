@@ -43,6 +43,7 @@ message S_MONEY_EXCHANGE_KAD {
 message SysBonusMsg {
 	double sysAllBonus = 1;  //分红池总量
 	double todayAllBonus = 2; 	//今日分红池总量
+	double bonusRatio = 3; 	//今日分红比例，默认10%
 }
 
 //个人分红记录信息

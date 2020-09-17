@@ -50,6 +50,8 @@ public txt_totalUsdt:eui.Label;
         private baseEffect5: BaseEffect;
         private baseEffectPet: BaseEffect;
 
+
+
         public constructor()
         {
             super();
@@ -243,7 +245,7 @@ public txt_totalUsdt:eui.Label;
 				t.effect_group_pet.addChild(t.baseEffectPet);
 				t.baseEffectPet.playUIEffect("ui_jinjie_zhe", -1, -1, 1);
             }
-            
+
             t.baseEffectPet.touchChildren = t.baseEffectPet.touchEnabled = false;
             t.effect_group_pet.touchEnabled = false;
 

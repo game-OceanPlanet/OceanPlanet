@@ -20,6 +20,9 @@ module qmr {
         public moneyLogs:com.message.MoneyLogMsg[];//获取金币日志信息
         public usdtLogs:com.message.MoneyLogMsg[];//获取U日志信息
 
+        public selectedMergePetId1:number;//选择可以合成的宠物id1
+        public selectedMergePetId2:number;//选择可以合成的宠物id2
+
         public constructor() {
             super();
             let t = this;
@@ -58,8 +61,6 @@ module qmr {
                     }
                 }
             }
-
-            
         }
 
         public getPets():PetActorInfo[]
@@ -110,6 +111,19 @@ module qmr {
                     t.removePet(removeIds[i]);
                 }
             }
+        }
+
+        public getPet(id:number):PetActorInfo
+        {
+            let t = this;
+            let info:PetActorInfo;
+            for(var i:number = 0; i < t.fishInfos.length; i ++){
+                if(id == t.fishInfos[i].id){
+                    info = t.fishInfos[i];
+                    return info;
+                }
+            }
+            return null;
         }
 
         public addPet(pro:com.message.FishMsg):void

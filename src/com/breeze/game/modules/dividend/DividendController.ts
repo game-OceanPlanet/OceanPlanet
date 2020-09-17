@@ -33,7 +33,7 @@ module qmr
         // 获取兑换信息
         private getExchangeResponse(s: com.message.S_GET_MONEY_EXCHANGE_INFO):void
         {
-            DividendModel.instance.sysAllDiamon = Int64Util.getNumber(s.moneyExchangeMsg.sysAllKAD);
+            DividendModel.instance.sysAllKAD = Int64Util.getNumber(s.moneyExchangeMsg.sysAllKAD);
             DividendModel.instance.exAllKAD = Int64Util.getNumber(s.moneyExchangeMsg.exAllKAD);
             DividendModel.instance.exRatio = Int64Util.getNumber(s.moneyExchangeMsg.exRatio);
             DividendModel.instance.exchangeLogs = s.playerExcInfoMsg as com.message.PlayerExcInfoMsg[];
@@ -68,6 +68,7 @@ module qmr
         {
             DividendModel.instance.sysAllBonus = s.sysBonusMsg.sysAllBonus;
             DividendModel.instance.todayAllBonus = s.sysBonusMsg.todayAllBonus;
+            DividendModel.instance.bonusRatio = s.sysBonusMsg.bonusRatio;
             DividendModel.instance.dividenLogs = s.personBonusMsg as com.message.PersonBonusMsg[];
             this.dispatch(NotifyConst.S_GET_BONUS_INFO);
         }
