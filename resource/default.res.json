@@ -57,7 +57,7 @@
 			"url": "sheet/mainui.json",
 			"type": "sheet",
 			"name": "mainui_json",
-			"subkeys": "btn_bottom_exchange,btn_bottom_gold,btn_bottom_pet,btn_download,btn_exchange,btn_get,btn_help,btn_permit,btn_person,btn_price,btn_realname,exchange,game_title,home_frame,home_frame1,icon_Raiders,icon_dividend ,icon_dividend1,icon_gold,icon_gold1,icon_home,icon_injection,icon_injection1,icon_promote,icon_promote1,icon_shop,icon_shop1,icon_treasury,icon_usdt,item_di1,main_dikuang2,panel_frame2,panel_frame3"
+			"subkeys": "btn_bottom_exchange,btn_bottom_gold,btn_bottom_pet,btn_download,btn_exchange,btn_get,btn_help,btn_permit,btn_person,btn_price,btn_realname,exchange,game_title,home_frame,home_frame1,home_frame2,icon_Raiders,icon_dividend ,icon_dividend1,icon_gold,icon_gold1,icon_home,icon_injection,icon_injection1,icon_promote,icon_promote1,icon_shop,icon_shop1,icon_treasury,icon_usdt,item_di1,main_dikuang2,panel_frame2,panel_frame3"
 		},
 		{
 			"url": "unpack/bg/common_beijing.png",

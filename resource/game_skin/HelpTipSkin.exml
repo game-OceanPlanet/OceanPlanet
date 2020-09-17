@@ -2,7 +2,7 @@
 <e:Skin class="HelpTipSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
-		<e:Group anchorOffsetX="0" anchorOffsetY="0" y="272" horizontalCenter="-4">
+		<e:Group anchorOffsetX="0" anchorOffsetY="0" y="272" x="42" width="659" height="744">
 			<e:Image anchorOffsetX="0"
 			         anchorOffsetY="0"  x="46" y="15" scale9Grid="179,101,22,55" width="578" height="729" source="panel2_json.alertbg1"/>
 			<e:Image anchorOffsetX="0" anchorOffsetY="0"
@@ -26,7 +26,7 @@
 
 
 
-			<e:Image id="btnClose" x="565.79" y="-19.07" source="panel2_json.btn_close2"/>
+			<e:Image id="btnClose" x="612" y="28" source="panel2_json.btn_close2" anchorOffsetX="47" anchorOffsetY="47"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>
