@@ -42,7 +42,7 @@ function libs(){
         './js/mobile-detect.min.js',
         './js/egret.web.min.js',
         './js/promise.min.js',
-	]).pipe(concat('libs.min.js')).pipe(gp.dest('./js'));
+	]).pipe(concat('libs.min.js')).pipe(gp.dest('./js'));//12
 	return stream;
 }
 
@@ -63,10 +63,11 @@ function game_login(){
         './js/mobile-detect.min.js',
         './js/egret.web.min.js',
         './js/promise.min.js',
-        './js/protobuf-library.min.js',
+		'./js/protobuf-library.min.js',
+		'./js/protobuf-login.min.js',
         './js/login.thm.js',
         './js/login.min.js'
-	]).pipe(concat('libs-login.min.js')).pipe(gp.dest('./js'));
+	]).pipe(concat('libs-login.min.js')).pipe(gp.dest('./js'));//15
 	return stream;
 }
 
