@@ -133,7 +133,7 @@ public selectView:qmr.InjectSelectView;
 
             let total:number = md.allInject;
             if(total > 0 && myTotal > 0){
-                t.txt_MyPercent.text = NumberUtil.getFloat6Number2String(myTotal/total) + "%";
+                t.txt_MyPercent.text = NumberUtil.getFloat6Number2String(myTotal/total * 100) + "%";
 				t.txt_selfTotal.text = NumberUtil.getFloat6Number2String(myTotal) + HeroModel.KAD;
             } else {
                 t.txt_MyPercent.text = "0%";

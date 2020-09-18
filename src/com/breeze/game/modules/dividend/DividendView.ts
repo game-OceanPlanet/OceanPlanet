@@ -73,7 +73,7 @@ public btn_help:eui.Image;
 			}
 			let total:number = md.sysAllBonus;
 			if(total > 0 && myTotal > 0){
-				t.txt_self_pre.text = NumberUtil.getFloat6Number2String(myTotal/total) + "%";
+				t.txt_self_pre.text = NumberUtil.getFloat6Number2String(myTotal/total * 100) + "%";
 				t.txt_self_get.text = NumberUtil.getFloat6Number2String(myTotal) + HeroModel.USDT;
 			} else {
 				t.txt_self_pre.text = "0%";

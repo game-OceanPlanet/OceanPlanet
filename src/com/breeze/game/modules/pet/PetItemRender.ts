@@ -92,8 +92,10 @@ public checkbox:eui.CheckBox;
 			}
 
 			if(t._endTime > ServerTime.serverTime){
-				t.txt_leftTime.text = TimeUtil.formatRemain4((t._endTime - ServerTime.serverTime)/1000);
-				t._timekey = egret.setInterval(t.updateTime, t, 1000);
+                let second:number = (t._endTime - ServerTime.serverTime)/1000;
+                var day: number = Math.floor(second / 60 / 60 / 24);
+				t.txt_leftTime.text = day + TimeUtil.CN_DAY ;
+				// t._timekey = egret.setInterval(t.updateTime, t, 1000);
 			} else {
 				t.stopTime();
 			}

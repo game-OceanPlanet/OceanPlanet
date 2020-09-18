@@ -101,7 +101,7 @@ public btn_help:eui.Image;
 		private updateKADNum():void
 		{
 			let rate:number = DividendModel.instance.exRatio;
-			if(!this._KHNum && rate > 0){
+			if(this._KHNum > 0 && rate > 0){
 				this.txt_exchangeDes.text = "可兑换"+NumberUtil.getFloat4Number2String(this._KHNum / rate)+HeroModel.KAD;
 			}
 		}
