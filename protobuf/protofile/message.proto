@@ -9,7 +9,9 @@ message MsgEnum {
         C_USER_LOGIN = 1001; // 登录
         S_USER_LOGIN = 1002; // 登录成功
         S_USER_LOGIN_BAN = 1003; // 被封禁提示
+		C_USER_LOGIN_VERIFY_CODE = 1004; //短信登录
         C_LOGIN_REGISTER = 1005; //注册
+		S_LOGIN_REGISTER = 1006;
         C_USER_LOGOUT = 1007; //登出
         S_USER_LOGOUT = 1008;
 
@@ -97,8 +99,11 @@ message MsgEnum {
         ERROR_INPUT_PARAMETER = 1001;
         ERROR_INPUT_NUMBER = 1002;
         NOT_ENOUGH_ITEM_GOODS = 1003;
-        BAG_ITEM_CAN_NOT_USE = 1004;
-        GOODS_NOT_EXIST = 1007;
+        PASSWROD_NOT_RIGHT = 1004;
+		PASSWROD_REPASSWORD_NOT_MATCH = 1005; //密码长度不够
+		PASSWROD_SIZE_NOT_RIGHT = 1006; //密码长度不够
+		VERIFY_CODE_NOT_RIGHT = 1007; //短信验证码不对
+        GOODS_NOT_EXIST = 1008;
         ERROR_CONFIG = 1030; //配置出错
         PLAYER_LEVEL_LIMITED = 1038; //角色等级不足
         ROLE_NOT_FOUND 					= 1047; //角色不存在
@@ -111,6 +116,10 @@ message MsgEnum {
 		NICKNAME_REPEATED = 1171; //角色名重复
 		CAN_NOT_USE_ILLEGAL_CHAR = 1172; //不能使用非法字符
 		CAN_NOT_USE_SENSITIVE_CHAR = 1173; //不能使用敏感字符
+		MOBILE_NOT_RIGHT_PHONE = 1174; //手机号码不正确
+		INVITE_CODE_IS_NULL = 1175; //邀请码不能为空
+		INVITE_CODE_NOT_FOUND = 1176; //邀请码不存在
+		MOBILE_HAS_REGISTER = 1177; //手机号码已经被注册
 
         SIGN_DAY_LARGE = 1178; //签到天数大于开服天数
         SIGN_DAY_NOT_ENOUGH  = 1179; //签到天数不足

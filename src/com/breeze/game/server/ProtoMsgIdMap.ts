@@ -21,6 +21,7 @@ module qmr {
 			this.msgIdMap[MessageID.S_EXCEPTION_MSG] = com.message.S_EXCEPTION_MSG;
 			this.msgIdMap[MessageID.S_USER_LOGIN] = com.message.S_USER_LOGIN;
 			this.msgIdMap[MessageID.S_USER_LOGIN_BAN] = com.message.S_USER_LOGIN_BAN;
+			this.msgIdMap[MessageID.S_LOGIN_REGISTER] = com.message.S_LOGIN_REGISTER;
 			this.msgIdMap[MessageID.S_USER_LOGOUT] = com.message.S_USER_LOGOUT;
 			this.msgIdMap[MessageID.S_USER_LOGIN_INIT_FINISH] = com.message.S_USER_LOGIN_INIT_FINISH;
 			this.msgIdMap[MessageID.S_GET_NICKNAME_INFO] = com.message.S_GET_NICKNAME_INFO;

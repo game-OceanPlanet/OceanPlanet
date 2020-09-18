@@ -2205,11 +2205,11 @@ declare namespace com {
         /** Properties of a C_USER_LOGIN. */
         interface IC_USER_LOGIN {
 
-            /** C_USER_LOGIN username */
-            username?: (number|Long|null);
+            /** C_USER_LOGIN mobile */
+            mobile?: (string|null);
 
-            /** C_USER_LOGIN gameSite */
-            gameSite?: (string|null);
+            /** C_USER_LOGIN password */
+            password?: (string|null);
 
             /** C_USER_LOGIN sparam */
             sparam?: (string|null);
@@ -2224,11 +2224,11 @@ declare namespace com {
              */
             constructor(properties?: com.message.IC_USER_LOGIN);
 
-            /** C_USER_LOGIN username. */
-            public username: (number|Long);
+            /** C_USER_LOGIN mobile. */
+            public mobile: string;
 
-            /** C_USER_LOGIN gameSite. */
-            public gameSite: string;
+            /** C_USER_LOGIN password. */
+            public password: string;
 
             /** C_USER_LOGIN sparam. */
             public sparam: string;
@@ -2250,6 +2250,56 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_USER_LOGIN;
+        }
+
+        /** Properties of a C_USER_LOGIN_VERIFY_CODE. */
+        interface IC_USER_LOGIN_VERIFY_CODE {
+
+            /** C_USER_LOGIN_VERIFY_CODE mobile */
+            mobile?: (string|null);
+
+            /** C_USER_LOGIN_VERIFY_CODE verifyCode */
+            verifyCode?: (string|null);
+
+            /** C_USER_LOGIN_VERIFY_CODE sparam */
+            sparam?: (string|null);
+        }
+
+        /** Represents a C_USER_LOGIN_VERIFY_CODE. */
+        class C_USER_LOGIN_VERIFY_CODE implements IC_USER_LOGIN_VERIFY_CODE {
+
+            /**
+             * Constructs a new C_USER_LOGIN_VERIFY_CODE.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_USER_LOGIN_VERIFY_CODE);
+
+            /** C_USER_LOGIN_VERIFY_CODE mobile. */
+            public mobile: string;
+
+            /** C_USER_LOGIN_VERIFY_CODE verifyCode. */
+            public verifyCode: string;
+
+            /** C_USER_LOGIN_VERIFY_CODE sparam. */
+            public sparam: string;
+
+            /**
+             * Encodes the specified C_USER_LOGIN_VERIFY_CODE message. Does not implicitly {@link com.message.C_USER_LOGIN_VERIFY_CODE.verify|verify} messages.
+             * @param message C_USER_LOGIN_VERIFY_CODE message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_USER_LOGIN_VERIFY_CODE, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_USER_LOGIN_VERIFY_CODE message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_USER_LOGIN_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_USER_LOGIN_VERIFY_CODE;
         }
 
         /** Properties of a S_USER_LOGIN. */
@@ -2293,17 +2343,20 @@ declare namespace com {
         /** Properties of a C_LOGIN_REGISTER. */
         interface IC_LOGIN_REGISTER {
 
-            /** C_LOGIN_REGISTER username */
-            username?: (number|Long|null);
+            /** C_LOGIN_REGISTER mobile */
+            mobile?: (string|null);
 
-            /** C_LOGIN_REGISTER gameSite */
-            gameSite?: (string|null);
+            /** C_LOGIN_REGISTER inviteCode */
+            inviteCode?: (string|null);
 
-            /** C_LOGIN_REGISTER nickname */
-            nickname?: (string|null);
+            /** C_LOGIN_REGISTER password */
+            password?: (string|null);
 
-            /** C_LOGIN_REGISTER heroId */
-            heroId?: (number|null);
+            /** C_LOGIN_REGISTER rePassword */
+            rePassword?: (string|null);
+
+            /** C_LOGIN_REGISTER verifyCode */
+            verifyCode?: (string|null);
 
             /** C_LOGIN_REGISTER sparam */
             sparam?: (string|null);
@@ -2318,17 +2371,20 @@ declare namespace com {
              */
             constructor(properties?: com.message.IC_LOGIN_REGISTER);
 
-            /** C_LOGIN_REGISTER username. */
-            public username: (number|Long);
+            /** C_LOGIN_REGISTER mobile. */
+            public mobile: string;
 
-            /** C_LOGIN_REGISTER gameSite. */
-            public gameSite: string;
+            /** C_LOGIN_REGISTER inviteCode. */
+            public inviteCode: string;
 
-            /** C_LOGIN_REGISTER nickname. */
-            public nickname: string;
+            /** C_LOGIN_REGISTER password. */
+            public password: string;
 
-            /** C_LOGIN_REGISTER heroId. */
-            public heroId: number;
+            /** C_LOGIN_REGISTER rePassword. */
+            public rePassword: string;
+
+            /** C_LOGIN_REGISTER verifyCode. */
+            public verifyCode: string;
 
             /** C_LOGIN_REGISTER sparam. */
             public sparam: string;
@@ -2350,6 +2406,44 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_LOGIN_REGISTER;
+        }
+
+        /** Properties of a S_LOGIN_REGISTER. */
+        interface IS_LOGIN_REGISTER {
+
+            /** S_LOGIN_REGISTER playerId */
+            playerId?: (number|Long|null);
+        }
+
+        /** Represents a S_LOGIN_REGISTER. */
+        class S_LOGIN_REGISTER implements IS_LOGIN_REGISTER {
+
+            /**
+             * Constructs a new S_LOGIN_REGISTER.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_LOGIN_REGISTER);
+
+            /** S_LOGIN_REGISTER playerId. */
+            public playerId: (number|Long);
+
+            /**
+             * Encodes the specified S_LOGIN_REGISTER message. Does not implicitly {@link com.message.S_LOGIN_REGISTER.verify|verify} messages.
+             * @param message S_LOGIN_REGISTER message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_LOGIN_REGISTER, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_LOGIN_REGISTER message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_LOGIN_REGISTER
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_LOGIN_REGISTER;
         }
 
         /** Properties of a C_USER_LOGOUT. */
@@ -2800,17 +2894,20 @@ declare namespace com {
             /** BasePlayerMsg playerId */
             playerId?: (number|Long|null);
 
-            /** BasePlayerMsg name */
-            name?: (string|null);
-
-            /** BasePlayerMsg idNum */
-            idNum?: (string|null);
-
             /** BasePlayerMsg state */
             state?: (number|null);
 
             /** BasePlayerMsg inviteCode */
             inviteCode?: (string|null);
+
+            /** BasePlayerMsg mobile */
+            mobile?: (string|null);
+
+            /** BasePlayerMsg name */
+            name?: (string|null);
+
+            /** BasePlayerMsg idNum */
+            idNum?: (string|null);
         }
 
         /** Represents a BasePlayerMsg. */
@@ -2825,17 +2922,20 @@ declare namespace com {
             /** BasePlayerMsg playerId. */
             public playerId: (number|Long);
 
-            /** BasePlayerMsg name. */
-            public name: string;
-
-            /** BasePlayerMsg idNum. */
-            public idNum: string;
-
             /** BasePlayerMsg state. */
             public state: number;
 
             /** BasePlayerMsg inviteCode. */
             public inviteCode: string;
+
+            /** BasePlayerMsg mobile. */
+            public mobile: string;
+
+            /** BasePlayerMsg name. */
+            public name: string;
+
+            /** BasePlayerMsg idNum. */
+            public idNum: string;
 
             /**
              * Encodes the specified BasePlayerMsg message. Does not implicitly {@link com.message.BasePlayerMsg.verify|verify} messages.
@@ -3033,8 +3133,8 @@ declare namespace com {
             /** BuyGoodMsg playerId */
             playerId?: (number|Long|null);
 
-            /** BuyGoodMsg username */
-            username?: (string|null);
+            /** BuyGoodMsg mobile */
+            mobile?: (string|null);
 
             /** BuyGoodMsg moneyCount */
             moneyCount?: (number|null);
@@ -3061,8 +3161,8 @@ declare namespace com {
             /** BuyGoodMsg playerId. */
             public playerId: (number|Long);
 
-            /** BuyGoodMsg username. */
-            public username: string;
+            /** BuyGoodMsg mobile. */
+            public mobile: string;
 
             /** BuyGoodMsg moneyCount. */
             public moneyCount: number;
@@ -3505,7 +3605,9 @@ declare namespace com {
                 C_USER_LOGIN = 1001,
                 S_USER_LOGIN = 1002,
                 S_USER_LOGIN_BAN = 1003,
+                C_USER_LOGIN_VERIFY_CODE = 1004,
                 C_LOGIN_REGISTER = 1005,
+                S_LOGIN_REGISTER = 1006,
                 C_USER_LOGOUT = 1007,
                 S_USER_LOGOUT = 1008,
                 C_USER_LOGIN_INIT_FINISH = 1009,
@@ -3571,8 +3673,11 @@ declare namespace com {
                 ERROR_INPUT_PARAMETER = 1001,
                 ERROR_INPUT_NUMBER = 1002,
                 NOT_ENOUGH_ITEM_GOODS = 1003,
-                BAG_ITEM_CAN_NOT_USE = 1004,
-                GOODS_NOT_EXIST = 1007,
+                PASSWROD_NOT_RIGHT = 1004,
+                PASSWROD_REPASSWORD_NOT_MATCH = 1005,
+                PASSWROD_SIZE_NOT_RIGHT = 1006,
+                VERIFY_CODE_NOT_RIGHT = 1007,
+                GOODS_NOT_EXIST = 1008,
                 ERROR_CONFIG = 1030,
                 PLAYER_LEVEL_LIMITED = 1038,
                 ROLE_NOT_FOUND = 1047,
@@ -3585,6 +3690,10 @@ declare namespace com {
                 NICKNAME_REPEATED = 1171,
                 CAN_NOT_USE_ILLEGAL_CHAR = 1172,
                 CAN_NOT_USE_SENSITIVE_CHAR = 1173,
+                MOBILE_NOT_RIGHT_PHONE = 1174,
+                INVITE_CODE_IS_NULL = 1175,
+                INVITE_CODE_NOT_FOUND = 1176,
+                MOBILE_HAS_REGISTER = 1177,
                 SIGN_DAY_LARGE = 1178,
                 SIGN_DAY_NOT_ENOUGH = 1179,
                 PLAYER_NOT_EXIST = 1181,

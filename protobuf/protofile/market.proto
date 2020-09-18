@@ -5,7 +5,7 @@ package com.message;
 message BuyGoodMsg {
 	int64 buyGoodMsgId=1; 	// OCT求购唯一ID
 	int64 playerId=2; 				// 玩家编号
-	string username=3; 				// 账号
+	string mobile=3; 				// 账号
 	double moneyCount = 4;		//金币剩余数量
 	double diamondPrice = 5;		//U的单价
 	int64 createTime=6; 		//创建时间

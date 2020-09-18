@@ -128,5 +128,7 @@ declare class GameLoadingViewSkin extends eui.Skin{
 }
 declare class LoginViewSkin extends eui.Skin{
 }
+declare class RegisterSkin extends eui.Skin{
+}
 declare class ServerListTextInputSkin extends eui.Skin{
 }

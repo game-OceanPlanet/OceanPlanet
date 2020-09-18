@@ -4791,8 +4791,8 @@ $root.com = (function() {
              * Properties of a C_USER_LOGIN.
              * @memberof com.message
              * @interface IC_USER_LOGIN
-             * @property {number|Long|null} [username] C_USER_LOGIN username
-             * @property {string|null} [gameSite] C_USER_LOGIN gameSite
+             * @property {string|null} [mobile] C_USER_LOGIN mobile
+             * @property {string|null} [password] C_USER_LOGIN password
              * @property {string|null} [sparam] C_USER_LOGIN sparam
              */
 
@@ -4812,20 +4812,20 @@ $root.com = (function() {
             }
 
             /**
-             * C_USER_LOGIN username.
-             * @member {number|Long} username
+             * C_USER_LOGIN mobile.
+             * @member {string} mobile
              * @memberof com.message.C_USER_LOGIN
              * @instance
              */
-            C_USER_LOGIN.prototype.username = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            C_USER_LOGIN.prototype.mobile = "";
 
             /**
-             * C_USER_LOGIN gameSite.
-             * @member {string} gameSite
+             * C_USER_LOGIN password.
+             * @member {string} password
              * @memberof com.message.C_USER_LOGIN
              * @instance
              */
-            C_USER_LOGIN.prototype.gameSite = "";
+            C_USER_LOGIN.prototype.password = "";
 
             /**
              * C_USER_LOGIN sparam.
@@ -4847,10 +4847,10 @@ $root.com = (function() {
             C_USER_LOGIN.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.username != null && message.hasOwnProperty("username"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.username);
-                if (message.gameSite != null && message.hasOwnProperty("gameSite"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.gameSite);
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.password != null && message.hasOwnProperty("password"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.password);
                 if (message.sparam != null && message.hasOwnProperty("sparam"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.sparam);
                 return writer;
@@ -4875,10 +4875,10 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.username = reader.int64();
+                        message.mobile = reader.string();
                         break;
                     case 2:
-                        message.gameSite = reader.string();
+                        message.password = reader.string();
                         break;
                     case 3:
                         message.sparam = reader.string();
@@ -4892,6 +4892,115 @@ $root.com = (function() {
             };
 
             return C_USER_LOGIN;
+        })();
+
+        message.C_USER_LOGIN_VERIFY_CODE = (function() {
+
+            /**
+             * Properties of a C_USER_LOGIN_VERIFY_CODE.
+             * @memberof com.message
+             * @interface IC_USER_LOGIN_VERIFY_CODE
+             * @property {string|null} [mobile] C_USER_LOGIN_VERIFY_CODE mobile
+             * @property {string|null} [verifyCode] C_USER_LOGIN_VERIFY_CODE verifyCode
+             * @property {string|null} [sparam] C_USER_LOGIN_VERIFY_CODE sparam
+             */
+
+            /**
+             * Constructs a new C_USER_LOGIN_VERIFY_CODE.
+             * @memberof com.message
+             * @classdesc Represents a C_USER_LOGIN_VERIFY_CODE.
+             * @implements IC_USER_LOGIN_VERIFY_CODE
+             * @constructor
+             * @param {com.message.IC_USER_LOGIN_VERIFY_CODE=} [properties] Properties to set
+             */
+            function C_USER_LOGIN_VERIFY_CODE(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_USER_LOGIN_VERIFY_CODE mobile.
+             * @member {string} mobile
+             * @memberof com.message.C_USER_LOGIN_VERIFY_CODE
+             * @instance
+             */
+            C_USER_LOGIN_VERIFY_CODE.prototype.mobile = "";
+
+            /**
+             * C_USER_LOGIN_VERIFY_CODE verifyCode.
+             * @member {string} verifyCode
+             * @memberof com.message.C_USER_LOGIN_VERIFY_CODE
+             * @instance
+             */
+            C_USER_LOGIN_VERIFY_CODE.prototype.verifyCode = "";
+
+            /**
+             * C_USER_LOGIN_VERIFY_CODE sparam.
+             * @member {string} sparam
+             * @memberof com.message.C_USER_LOGIN_VERIFY_CODE
+             * @instance
+             */
+            C_USER_LOGIN_VERIFY_CODE.prototype.sparam = "";
+
+            /**
+             * Encodes the specified C_USER_LOGIN_VERIFY_CODE message. Does not implicitly {@link com.message.C_USER_LOGIN_VERIFY_CODE.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_USER_LOGIN_VERIFY_CODE
+             * @static
+             * @param {com.message.IC_USER_LOGIN_VERIFY_CODE} message C_USER_LOGIN_VERIFY_CODE message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_USER_LOGIN_VERIFY_CODE.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.verifyCode != null && message.hasOwnProperty("verifyCode"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.verifyCode);
+                if (message.sparam != null && message.hasOwnProperty("sparam"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.sparam);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_USER_LOGIN_VERIFY_CODE message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_USER_LOGIN_VERIFY_CODE
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_USER_LOGIN_VERIFY_CODE} C_USER_LOGIN_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_USER_LOGIN_VERIFY_CODE.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_USER_LOGIN_VERIFY_CODE();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    case 2:
+                        message.verifyCode = reader.string();
+                        break;
+                    case 3:
+                        message.sparam = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_USER_LOGIN_VERIFY_CODE;
         })();
 
         message.S_USER_LOGIN = (function() {
@@ -4981,10 +5090,11 @@ $root.com = (function() {
              * Properties of a C_LOGIN_REGISTER.
              * @memberof com.message
              * @interface IC_LOGIN_REGISTER
-             * @property {number|Long|null} [username] C_LOGIN_REGISTER username
-             * @property {string|null} [gameSite] C_LOGIN_REGISTER gameSite
-             * @property {string|null} [nickname] C_LOGIN_REGISTER nickname
-             * @property {number|null} [heroId] C_LOGIN_REGISTER heroId
+             * @property {string|null} [mobile] C_LOGIN_REGISTER mobile
+             * @property {string|null} [inviteCode] C_LOGIN_REGISTER inviteCode
+             * @property {string|null} [password] C_LOGIN_REGISTER password
+             * @property {string|null} [rePassword] C_LOGIN_REGISTER rePassword
+             * @property {string|null} [verifyCode] C_LOGIN_REGISTER verifyCode
              * @property {string|null} [sparam] C_LOGIN_REGISTER sparam
              */
 
@@ -5004,36 +5114,44 @@ $root.com = (function() {
             }
 
             /**
-             * C_LOGIN_REGISTER username.
-             * @member {number|Long} username
+             * C_LOGIN_REGISTER mobile.
+             * @member {string} mobile
              * @memberof com.message.C_LOGIN_REGISTER
              * @instance
              */
-            C_LOGIN_REGISTER.prototype.username = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            C_LOGIN_REGISTER.prototype.mobile = "";
 
             /**
-             * C_LOGIN_REGISTER gameSite.
-             * @member {string} gameSite
+             * C_LOGIN_REGISTER inviteCode.
+             * @member {string} inviteCode
              * @memberof com.message.C_LOGIN_REGISTER
              * @instance
              */
-            C_LOGIN_REGISTER.prototype.gameSite = "";
+            C_LOGIN_REGISTER.prototype.inviteCode = "";
 
             /**
-             * C_LOGIN_REGISTER nickname.
-             * @member {string} nickname
+             * C_LOGIN_REGISTER password.
+             * @member {string} password
              * @memberof com.message.C_LOGIN_REGISTER
              * @instance
              */
-            C_LOGIN_REGISTER.prototype.nickname = "";
+            C_LOGIN_REGISTER.prototype.password = "";
 
             /**
-             * C_LOGIN_REGISTER heroId.
-             * @member {number} heroId
+             * C_LOGIN_REGISTER rePassword.
+             * @member {string} rePassword
              * @memberof com.message.C_LOGIN_REGISTER
              * @instance
              */
-            C_LOGIN_REGISTER.prototype.heroId = 0;
+            C_LOGIN_REGISTER.prototype.rePassword = "";
+
+            /**
+             * C_LOGIN_REGISTER verifyCode.
+             * @member {string} verifyCode
+             * @memberof com.message.C_LOGIN_REGISTER
+             * @instance
+             */
+            C_LOGIN_REGISTER.prototype.verifyCode = "";
 
             /**
              * C_LOGIN_REGISTER sparam.
@@ -5055,16 +5173,18 @@ $root.com = (function() {
             C_LOGIN_REGISTER.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.username != null && message.hasOwnProperty("username"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.username);
-                if (message.gameSite != null && message.hasOwnProperty("gameSite"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.gameSite);
-                if (message.nickname != null && message.hasOwnProperty("nickname"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.nickname);
-                if (message.heroId != null && message.hasOwnProperty("heroId"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.heroId);
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.inviteCode != null && message.hasOwnProperty("inviteCode"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.inviteCode);
+                if (message.password != null && message.hasOwnProperty("password"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.password);
+                if (message.rePassword != null && message.hasOwnProperty("rePassword"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.rePassword);
+                if (message.verifyCode != null && message.hasOwnProperty("verifyCode"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.verifyCode);
                 if (message.sparam != null && message.hasOwnProperty("sparam"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.sparam);
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.sparam);
                 return writer;
             };
 
@@ -5087,18 +5207,21 @@ $root.com = (function() {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.username = reader.int64();
+                        message.mobile = reader.string();
                         break;
                     case 2:
-                        message.gameSite = reader.string();
+                        message.inviteCode = reader.string();
                         break;
                     case 3:
-                        message.nickname = reader.string();
+                        message.password = reader.string();
                         break;
                     case 4:
-                        message.heroId = reader.int32();
+                        message.rePassword = reader.string();
                         break;
                     case 5:
+                        message.verifyCode = reader.string();
+                        break;
+                    case 6:
                         message.sparam = reader.string();
                         break;
                     default:
@@ -5110,6 +5233,87 @@ $root.com = (function() {
             };
 
             return C_LOGIN_REGISTER;
+        })();
+
+        message.S_LOGIN_REGISTER = (function() {
+
+            /**
+             * Properties of a S_LOGIN_REGISTER.
+             * @memberof com.message
+             * @interface IS_LOGIN_REGISTER
+             * @property {number|Long|null} [playerId] S_LOGIN_REGISTER playerId
+             */
+
+            /**
+             * Constructs a new S_LOGIN_REGISTER.
+             * @memberof com.message
+             * @classdesc Represents a S_LOGIN_REGISTER.
+             * @implements IS_LOGIN_REGISTER
+             * @constructor
+             * @param {com.message.IS_LOGIN_REGISTER=} [properties] Properties to set
+             */
+            function S_LOGIN_REGISTER(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_LOGIN_REGISTER playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.S_LOGIN_REGISTER
+             * @instance
+             */
+            S_LOGIN_REGISTER.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified S_LOGIN_REGISTER message. Does not implicitly {@link com.message.S_LOGIN_REGISTER.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_LOGIN_REGISTER
+             * @static
+             * @param {com.message.IS_LOGIN_REGISTER} message S_LOGIN_REGISTER message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_LOGIN_REGISTER.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_LOGIN_REGISTER message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_LOGIN_REGISTER
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_LOGIN_REGISTER} S_LOGIN_REGISTER
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_LOGIN_REGISTER.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_LOGIN_REGISTER();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_LOGIN_REGISTER;
         })();
 
         message.C_USER_LOGOUT = (function() {
@@ -6070,10 +6274,11 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IBasePlayerMsg
              * @property {number|Long|null} [playerId] BasePlayerMsg playerId
-             * @property {string|null} [name] BasePlayerMsg name
-             * @property {string|null} [idNum] BasePlayerMsg idNum
              * @property {number|null} [state] BasePlayerMsg state
              * @property {string|null} [inviteCode] BasePlayerMsg inviteCode
+             * @property {string|null} [mobile] BasePlayerMsg mobile
+             * @property {string|null} [name] BasePlayerMsg name
+             * @property {string|null} [idNum] BasePlayerMsg idNum
              */
 
             /**
@@ -6100,22 +6305,6 @@ $root.com = (function() {
             BasePlayerMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
-             * BasePlayerMsg name.
-             * @member {string} name
-             * @memberof com.message.BasePlayerMsg
-             * @instance
-             */
-            BasePlayerMsg.prototype.name = "";
-
-            /**
-             * BasePlayerMsg idNum.
-             * @member {string} idNum
-             * @memberof com.message.BasePlayerMsg
-             * @instance
-             */
-            BasePlayerMsg.prototype.idNum = "";
-
-            /**
              * BasePlayerMsg state.
              * @member {number} state
              * @memberof com.message.BasePlayerMsg
@@ -6132,6 +6321,30 @@ $root.com = (function() {
             BasePlayerMsg.prototype.inviteCode = "";
 
             /**
+             * BasePlayerMsg mobile.
+             * @member {string} mobile
+             * @memberof com.message.BasePlayerMsg
+             * @instance
+             */
+            BasePlayerMsg.prototype.mobile = "";
+
+            /**
+             * BasePlayerMsg name.
+             * @member {string} name
+             * @memberof com.message.BasePlayerMsg
+             * @instance
+             */
+            BasePlayerMsg.prototype.name = "";
+
+            /**
+             * BasePlayerMsg idNum.
+             * @member {string} idNum
+             * @memberof com.message.BasePlayerMsg
+             * @instance
+             */
+            BasePlayerMsg.prototype.idNum = "";
+
+            /**
              * Encodes the specified BasePlayerMsg message. Does not implicitly {@link com.message.BasePlayerMsg.verify|verify} messages.
              * @function encode
              * @memberof com.message.BasePlayerMsg
@@ -6145,14 +6358,16 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.playerId != null && message.hasOwnProperty("playerId"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.idNum != null && message.hasOwnProperty("idNum"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.idNum);
                 if (message.state != null && message.hasOwnProperty("state"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.state);
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.state);
                 if (message.inviteCode != null && message.hasOwnProperty("inviteCode"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.inviteCode);
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.inviteCode);
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.mobile);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
+                if (message.idNum != null && message.hasOwnProperty("idNum"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.idNum);
                 return writer;
             };
 
@@ -6178,16 +6393,19 @@ $root.com = (function() {
                         message.playerId = reader.int64();
                         break;
                     case 2:
-                        message.name = reader.string();
-                        break;
-                    case 3:
-                        message.idNum = reader.string();
-                        break;
-                    case 4:
                         message.state = reader.int32();
                         break;
-                    case 5:
+                    case 3:
                         message.inviteCode = reader.string();
+                        break;
+                    case 4:
+                        message.mobile = reader.string();
+                        break;
+                    case 5:
+                        message.name = reader.string();
+                        break;
+                    case 6:
+                        message.idNum = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6581,7 +6799,7 @@ $root.com = (function() {
              * @interface IBuyGoodMsg
              * @property {number|Long|null} [buyGoodMsgId] BuyGoodMsg buyGoodMsgId
              * @property {number|Long|null} [playerId] BuyGoodMsg playerId
-             * @property {string|null} [username] BuyGoodMsg username
+             * @property {string|null} [mobile] BuyGoodMsg mobile
              * @property {number|null} [moneyCount] BuyGoodMsg moneyCount
              * @property {number|null} [diamondPrice] BuyGoodMsg diamondPrice
              * @property {number|Long|null} [createTime] BuyGoodMsg createTime
@@ -6619,12 +6837,12 @@ $root.com = (function() {
             BuyGoodMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
-             * BuyGoodMsg username.
-             * @member {string} username
+             * BuyGoodMsg mobile.
+             * @member {string} mobile
              * @memberof com.message.BuyGoodMsg
              * @instance
              */
-            BuyGoodMsg.prototype.username = "";
+            BuyGoodMsg.prototype.mobile = "";
 
             /**
              * BuyGoodMsg moneyCount.
@@ -6666,8 +6884,8 @@ $root.com = (function() {
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.buyGoodMsgId);
                 if (message.playerId != null && message.hasOwnProperty("playerId"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.playerId);
-                if (message.username != null && message.hasOwnProperty("username"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.username);
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.mobile);
                 if (message.moneyCount != null && message.hasOwnProperty("moneyCount"))
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.moneyCount);
                 if (message.diamondPrice != null && message.hasOwnProperty("diamondPrice"))
@@ -6702,7 +6920,7 @@ $root.com = (function() {
                         message.playerId = reader.int64();
                         break;
                     case 3:
-                        message.username = reader.string();
+                        message.mobile = reader.string();
                         break;
                     case 4:
                         message.moneyCount = reader.double();
@@ -7604,7 +7822,9 @@ $root.com = (function() {
              * @property {number} C_USER_LOGIN=1001 C_USER_LOGIN value
              * @property {number} S_USER_LOGIN=1002 S_USER_LOGIN value
              * @property {number} S_USER_LOGIN_BAN=1003 S_USER_LOGIN_BAN value
+             * @property {number} C_USER_LOGIN_VERIFY_CODE=1004 C_USER_LOGIN_VERIFY_CODE value
              * @property {number} C_LOGIN_REGISTER=1005 C_LOGIN_REGISTER value
+             * @property {number} S_LOGIN_REGISTER=1006 S_LOGIN_REGISTER value
              * @property {number} C_USER_LOGOUT=1007 C_USER_LOGOUT value
              * @property {number} S_USER_LOGOUT=1008 S_USER_LOGOUT value
              * @property {number} C_USER_LOGIN_INIT_FINISH=1009 C_USER_LOGIN_INIT_FINISH value
@@ -7670,7 +7890,9 @@ $root.com = (function() {
                 values[valuesById[1001] = "C_USER_LOGIN"] = 1001;
                 values[valuesById[1002] = "S_USER_LOGIN"] = 1002;
                 values[valuesById[1003] = "S_USER_LOGIN_BAN"] = 1003;
+                values[valuesById[1004] = "C_USER_LOGIN_VERIFY_CODE"] = 1004;
                 values[valuesById[1005] = "C_LOGIN_REGISTER"] = 1005;
+                values[valuesById[1006] = "S_LOGIN_REGISTER"] = 1006;
                 values[valuesById[1007] = "C_USER_LOGOUT"] = 1007;
                 values[valuesById[1008] = "S_USER_LOGOUT"] = 1008;
                 values[valuesById[1009] = "C_USER_LOGIN_INIT_FINISH"] = 1009;
@@ -7739,8 +7961,11 @@ $root.com = (function() {
              * @property {number} ERROR_INPUT_PARAMETER=1001 ERROR_INPUT_PARAMETER value
              * @property {number} ERROR_INPUT_NUMBER=1002 ERROR_INPUT_NUMBER value
              * @property {number} NOT_ENOUGH_ITEM_GOODS=1003 NOT_ENOUGH_ITEM_GOODS value
-             * @property {number} BAG_ITEM_CAN_NOT_USE=1004 BAG_ITEM_CAN_NOT_USE value
-             * @property {number} GOODS_NOT_EXIST=1007 GOODS_NOT_EXIST value
+             * @property {number} PASSWROD_NOT_RIGHT=1004 PASSWROD_NOT_RIGHT value
+             * @property {number} PASSWROD_REPASSWORD_NOT_MATCH=1005 PASSWROD_REPASSWORD_NOT_MATCH value
+             * @property {number} PASSWROD_SIZE_NOT_RIGHT=1006 PASSWROD_SIZE_NOT_RIGHT value
+             * @property {number} VERIFY_CODE_NOT_RIGHT=1007 VERIFY_CODE_NOT_RIGHT value
+             * @property {number} GOODS_NOT_EXIST=1008 GOODS_NOT_EXIST value
              * @property {number} ERROR_CONFIG=1030 ERROR_CONFIG value
              * @property {number} PLAYER_LEVEL_LIMITED=1038 PLAYER_LEVEL_LIMITED value
              * @property {number} ROLE_NOT_FOUND=1047 ROLE_NOT_FOUND value
@@ -7753,6 +7978,10 @@ $root.com = (function() {
              * @property {number} NICKNAME_REPEATED=1171 NICKNAME_REPEATED value
              * @property {number} CAN_NOT_USE_ILLEGAL_CHAR=1172 CAN_NOT_USE_ILLEGAL_CHAR value
              * @property {number} CAN_NOT_USE_SENSITIVE_CHAR=1173 CAN_NOT_USE_SENSITIVE_CHAR value
+             * @property {number} MOBILE_NOT_RIGHT_PHONE=1174 MOBILE_NOT_RIGHT_PHONE value
+             * @property {number} INVITE_CODE_IS_NULL=1175 INVITE_CODE_IS_NULL value
+             * @property {number} INVITE_CODE_NOT_FOUND=1176 INVITE_CODE_NOT_FOUND value
+             * @property {number} MOBILE_HAS_REGISTER=1177 MOBILE_HAS_REGISTER value
              * @property {number} SIGN_DAY_LARGE=1178 SIGN_DAY_LARGE value
              * @property {number} SIGN_DAY_NOT_ENOUGH=1179 SIGN_DAY_NOT_ENOUGH value
              * @property {number} PLAYER_NOT_EXIST=1181 PLAYER_NOT_EXIST value
@@ -7764,8 +7993,11 @@ $root.com = (function() {
                 values[valuesById[1001] = "ERROR_INPUT_PARAMETER"] = 1001;
                 values[valuesById[1002] = "ERROR_INPUT_NUMBER"] = 1002;
                 values[valuesById[1003] = "NOT_ENOUGH_ITEM_GOODS"] = 1003;
-                values[valuesById[1004] = "BAG_ITEM_CAN_NOT_USE"] = 1004;
-                values[valuesById[1007] = "GOODS_NOT_EXIST"] = 1007;
+                values[valuesById[1004] = "PASSWROD_NOT_RIGHT"] = 1004;
+                values[valuesById[1005] = "PASSWROD_REPASSWORD_NOT_MATCH"] = 1005;
+                values[valuesById[1006] = "PASSWROD_SIZE_NOT_RIGHT"] = 1006;
+                values[valuesById[1007] = "VERIFY_CODE_NOT_RIGHT"] = 1007;
+                values[valuesById[1008] = "GOODS_NOT_EXIST"] = 1008;
                 values[valuesById[1030] = "ERROR_CONFIG"] = 1030;
                 values[valuesById[1038] = "PLAYER_LEVEL_LIMITED"] = 1038;
                 values[valuesById[1047] = "ROLE_NOT_FOUND"] = 1047;
@@ -7778,6 +8010,10 @@ $root.com = (function() {
                 values[valuesById[1171] = "NICKNAME_REPEATED"] = 1171;
                 values[valuesById[1172] = "CAN_NOT_USE_ILLEGAL_CHAR"] = 1172;
                 values[valuesById[1173] = "CAN_NOT_USE_SENSITIVE_CHAR"] = 1173;
+                values[valuesById[1174] = "MOBILE_NOT_RIGHT_PHONE"] = 1174;
+                values[valuesById[1175] = "INVITE_CODE_IS_NULL"] = 1175;
+                values[valuesById[1176] = "INVITE_CODE_NOT_FOUND"] = 1176;
+                values[valuesById[1177] = "MOBILE_HAS_REGISTER"] = 1177;
                 values[valuesById[1178] = "SIGN_DAY_LARGE"] = 1178;
                 values[valuesById[1179] = "SIGN_DAY_NOT_ENOUGH"] = 1179;
                 values[valuesById[1181] = "PLAYER_NOT_EXIST"] = 1181;

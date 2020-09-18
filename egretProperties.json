@@ -44,8 +44,8 @@
       "path": "protobuf/library"
     },
     {
-      "name": "protobuf-bundles-login",
-      "path": "protobuf-bundles-login"
+      "name": "protobuf-login",
+      "path": "protobuf-login"
     },
     {
       "name": "protobuf-bundles",

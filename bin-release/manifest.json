@@ -14,7 +14,7 @@
 	],
 	"game": [
 		"js/protobuf-library.min.js",
-		"js/protobuf-bundles-login.min.js",
+		"js/protobuf-bundles.min.js",
 		"js/protobuf-bundles.min.js",
 		"js/login.min.js",
 		"js/login.thm.js",
