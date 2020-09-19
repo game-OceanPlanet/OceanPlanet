@@ -68,8 +68,7 @@
 		"resource/login_skins/GameLoadingProgressBarSkin.exml",
 		"resource/login_skins/GameLoadingViewSkin.exml",
 		"resource/login_skins/ServerListTextInputSkin.exml",
-		"resource/login_skins/LoginViewSkin.exml",
-		"resource/login_skins/RegisterSkin.exml"
+		"resource/login_skins/LoginViewSkin.exml"
 	],
 	"path": "resource/default.thm.json"
 }

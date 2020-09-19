@@ -189,45 +189,54 @@ module qmr
 
 		/**拷贝字符串到剪贴板 */
 		public static copyClipBoard(message: string): void {
-			if (1) {
-				window.wx['setClipboardData']({
-					data: message,
-					success(res) {
-						window.wx['getClipboardData']({
-							success(res) {
-								// console.log(res.data)
-							}
-						})
-					}
-				})
-			} else if (1) {
-				window.qq['setClipboardData']({
-					data: message,
-					success(res) {
-						window.qq['getClipboardData']({
-							success(res) {
-								TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
-							}
-						})
-					}
-				})
-			} else if (1) {
-				window.qg['setClipboardData']({
-					data: message,
-					success(res) {
-						TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
-					}
-				})
-			} else {
-				let input = document.createElement("input");
-				input.value = message;
-				document.body.appendChild(input);
-				input.select();
-				input.setSelectionRange(0, input.value.length);
-				document.execCommand('Copy');
-				document.body.removeChild(input);
-				TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
-			}
+			// if (1) {
+			// 	window.wx['setClipboardData']({
+			// 		data: message,
+			// 		success(res) {
+			// 			window.wx['getClipboardData']({
+			// 				success(res) {
+			// 					// console.log(res.data)
+			// 				}
+			// 			})
+			// 		}
+			// 	})
+			// } else if (1) {
+			// 	window.qq['setClipboardData']({
+			// 		data: message,
+			// 		success(res) {
+			// 			window.qq['getClipboardData']({
+			// 				success(res) {
+			// 					TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
+			// 				}
+			// 			})
+			// 		}
+			// 	})
+			// } else if (1) {
+			// 	window.qg['setClipboardData']({
+			// 		data: message,
+			// 		success(res) {
+			// 			TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
+			// 		}
+			// 	})
+			// } else {
+			// 	let input = document.createElement("input");
+			// 	input.value = message;
+			// 	document.body.appendChild(input);
+			// 	input.select();
+			// 	input.setSelectionRange(0, input.value.length);
+			// 	document.execCommand('Copy');
+			// 	document.body.removeChild(input);
+			// 	TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
+			// }
+
+			let input = document.createElement("input");
+			input.value = message;
+			document.body.appendChild(input);
+			input.select();
+			input.setSelectionRange(0, input.value.length);
+			document.execCommand('Copy');
+			document.body.removeChild(input);
+			TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
 		}
 	}
 }
