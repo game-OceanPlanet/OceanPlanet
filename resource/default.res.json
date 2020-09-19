@@ -265,6 +265,16 @@
 			"url": "unpack/bg/XiaZaiBeiJing.png",
 			"type": "image",
 			"name": "XiaZaiBeiJing_png"
+		},
+		{
+			"url": "assets/ui12.jpg",
+			"type": "image",
+			"name": "ui12_jpg"
+		},
+		{
+			"url": "assets/ui11.jpg",
+			"type": "image",
+			"name": "ui11_jpg"
 		}
 	]
 }
