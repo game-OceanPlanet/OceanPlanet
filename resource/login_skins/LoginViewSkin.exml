@@ -8,7 +8,7 @@
 			<e:Image id="imgWindFast" y="517.88" scaleX="1" scaleY="1" visible="true" />
 			<e:Image id="imgWindMiddle" y="856.06" scaleX="1" scaleY="1" x="10" visible="true" />
 		</e:Group>
-		<e:Group id="group_login" horizontalCenter="8.5" verticalCenter="-51">
+		<e:Group id="group_login" horizontalCenter="8.5" verticalCenter="-51" visible="false">
 			<e:Image anchorOffsetY="0" y="4" scaleX="1" scaleY="1"
 			         x="0"  source="loginPanel_json.backpack_heidi" anchorOffsetX="0" width="558.3" height="491.36"/>
 			<e:Group id="gpRead" y="433" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0"
@@ -38,7 +38,7 @@
 			          x="106" y="250"/>
 			<e:Image id="btn_register_back" source="loginPanel_json.ui_denglu_anniu" scaleX="1" scaleY="1" x="106" y="332"/>
 		</e:Group>
-		<e:Group id="group_register" horizontalCenter="8.5" verticalCenter="-9" anchorOffsetY="0" height="768" visible="false">
+		<e:Group id="group_register" horizontalCenter="8.5" verticalCenter="-9" anchorOffsetY="0" height="768">
 			<e:Image anchorOffsetY="0" y="4" scaleX="1" scaleY="1" source="loginPanel_json.backpack_heidi" x="0" anchorOffsetX="0" width="558.3" height="739.36"/>
 			<e:Group id="gpRead0" y="687" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" visible="true" x="32">
 			<e:Image source="loginPanel_json.point" x="5" y="9"/>
