@@ -88,7 +88,7 @@ module qmr {
 
             // DataCenter.Instance;
 
-            // let sprite = qr.QRCode.create("http://www.baidu.com");
+            // let sprite = GameUtil.createCode("http://www.baidu.com");
             // this.addChild(sprite);
         }
 

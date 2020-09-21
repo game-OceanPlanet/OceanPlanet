@@ -1,4 +1,4 @@
-class GameFunctions {
+class GameUtil {
 
     //多个条件同时满足即解锁 id:vale,id:value,...
     static analysisMultiUnlock(value: string): boolean {
@@ -71,7 +71,7 @@ class GameFunctions {
     static LoadDB(con: eui.Group, res: string, getDb: Function, posX: number = 0, posY: number = 0, img?: eui.Image) {
         let _self = this;
 
-        let dic = GameFunctions.dbDic;
+        let dic = GameUtil.dbDic;
         if (dic[res]) {
             dic[res] = undefined;
             delete dic[res];
@@ -113,6 +113,11 @@ class GameFunctions {
         let p = armatureDisplay.parent;
         p && p.removeChild(armatureDisplay);
         // GameFunctions.dbDic[res] = $loop.loopTime + 30000;
+    }
+
+    //动态生成二维码
+    public static createCode(url: string): egret.Sprite {
+        return qr.QRCode.create(url);
     }
 }
 
