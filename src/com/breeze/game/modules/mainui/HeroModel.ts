@@ -7,7 +7,6 @@ module qmr {
         
         public IdentityPro:com.message.BasePlayerMsg;
         public playerPro:com.message.PlayerPropertyMsg;
-        public teamPro:com.message.TeamMsg;
 
         private fishInfos:PetActorInfo[];
         private fishIds:number[];

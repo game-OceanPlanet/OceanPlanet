@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="MinePassSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing">
-	<e:Image anchorOffsetY="0" verticalCenter="-30" left="0" right="0" source="common_beijing_png" visible="false" />
+	<e:Image anchorOffsetY="0" verticalCenter="-30" left="0" right="0" source="common_beijing_png" />
 
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
 		<e:Image source="trade_bg_png" verticalCenter="2" horizontalCenter="0" />

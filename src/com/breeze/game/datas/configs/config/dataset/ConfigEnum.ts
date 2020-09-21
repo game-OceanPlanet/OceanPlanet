@@ -18,8 +18,14 @@ module qmr
 		static INJECTCYCLE:string='InjectCycle';
 		/**OTC*/
 		static TRADECOST:string='TradeCost';
+		/**直推收益*/
+		static DIRECTRATE:string='DirectRate';
+		/**团队收益*/
+		static TEAMRATE:string='TeamRate';
 		/**全局配置*/
 		static COMMONCONFIG:string='CommonConfig';
+		/**野外boss鼓舞*/
+		static OUTBOSSINSPIRE:string='OutBossInspire';
 		/**技能效果*/
 		static SKILLEFFECT:string='SkillEffect';
 		/**特效*/
