@@ -104,9 +104,6 @@ module qmr
 			t.leaveMap();
 		}
 
-		private _endTimeKey;
-		private count:number = 0;
-
 		/** 进入地图instanceId 副本id/角色id */
 		public enterMap(instanceId: number, chapterMap: number = 0): void
 		{

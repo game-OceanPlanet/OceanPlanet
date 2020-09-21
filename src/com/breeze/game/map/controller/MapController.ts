@@ -24,9 +24,36 @@ module qmr {
 
         }
 
+        public addDragon():void
+        {
+            let t = this;
+            let c:eui.Group = new eui.Group();
+            SceneManager.instance.addToBottom(c);
+            c.x = StageUtil.stageWidth/2 - 200 + Math.ceil(300 * Math.random());
+            c.y = StageUtil.stageHeight/2- 100 + Math.ceil(200 * Math.random());
+            let armatureDisplay: dragonBones.EgretArmatureDisplay;
+
+            let roleImg: eui.Image;
+            
+            //龙骨
+            GameFunctions.LoadDB(c, "long", (db: dragonBones.EgretArmatureDisplay, img: eui.Image) => {
+                armatureDisplay = db;
+                roleImg = img;
+                if (roleImg) {
+                    roleImg.x = 0;
+                    roleImg.y = 0;
+                }
+            }, 0, 0);
+        }
+
         public addPlayer(info: PetActorInfo): void {
             let t = this;
             t.playerInfos.set(info.id, info);
+
+            if(info.fishId == 15){
+                t.addDragon();
+                return;
+            }
 
             let actor: PetActor = t.playerUnits.get(info.id);
             if (!actor) {

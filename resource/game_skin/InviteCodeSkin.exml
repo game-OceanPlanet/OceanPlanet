@@ -7,7 +7,7 @@
 		<e:Scroller anchorOffsetY="0" bounces="false" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off"
 		            height="1334" x="0" y="0" width="750">
 			<e:Group anchorOffsetY="0" anchorOffsetX="0" x="-1" y="1" height="1334" width="750">
-				<e:Group width="750" height="200" y="0" x="0" locked="true">
+				<e:Group width="750" y="0" x="0">
 					<e:Image source="panelui_json.TuanDuiGuiMo" x="30" y="280" scaleX="1" scaleY="1" />
 					<e:Image source="panelui_json.TuanDuiGuiMo" y="280" scaleX="1" scaleY="1"  x="421"/>
 					<e:Image source="panelui_json.GuiMo" y="130"  horizontalCenter="-194"/>
@@ -24,9 +24,9 @@
 					<e:Label id="txt_shouxufei" text="50%" y="240" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xD9D8FF" horizontalCenter="196"/>
 					<e:Label text="团队规模" y="348" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFFFFF" horizontalCenter="196"/>
 					<e:Label id="txt_teamticheng" text="0" y="393" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFFFFF" horizontalCenter="196.5"/>
-					<e:Label id="txt_tips" text="直推规模达到10人团队规模达到50人自动解锁2星特权" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x4f1c0d" width="230" verticalAlign="middle" textAlign="center" horizontalCenter="0" verticalCenter="575" lineSpacing="5"/>
+					<e:Label id="txt_tips" text="直推规模达到10人团队规模达到50人自动解锁2星特权" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x4f1c0d" width="230" verticalAlign="middle" textAlign="center" lineSpacing="5" y="629.34" horizontalCenter="0"/>
 				</e:Group>
-				<e:Group horizontalCenter="0" anchorOffsetY="0" width="750" y="750" locked="true">
+				<e:Group horizontalCenter="0" anchorOffsetY="0" width="750" y="750">
 					<e:Image x="65" y="145" source="trade_json.panel_bg" />
 					<e:Label id="txt_code" text="4DRFFGY87" y="203" size="54" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 					         textColor="0xFF0F94" bold="true" horizontalCenter="0" />
@@ -45,6 +45,7 @@
 							         textColor="0x71492E" width="350" textAlign="center" x="95" height="49" verticalAlign="middle" />
 						</e:Group>
 					</e:Group>
+					<e:Label id="txt_title" text="我的邀请码" y="84" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xD9D8FF" horizontalCenter="0" x="275"/>
 				</e:Group>
 				<e:Group width="750" height="1070" y="1272.94" anchorOffsetX="0" anchorOffsetY="0"
 				         scaleX="1" scaleY="1" horizontalCenter="0">
@@ -82,8 +83,7 @@
 					</e:Group>
 				</e:Group>
 				<e:Image id="btnReturn" x="695.68" y="78" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back" />
-				<e:Label id="txt_title" text="我的邀请码" y="834" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1"
-				         textColor="0xD9D8FF" horizontalCenter="0" />
+
 				<e:Image id="btn_help" source="trade_json.btn_help" x="60" y="75" scaleX="1" scaleY="1" anchorOffsetX="40"
 				         anchorOffsetY="40" />
 			</e:Group>
