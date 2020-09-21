@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RechargeSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<e:Image anchorOffsetY="0" verticalCenter="-30" left="0" right="0" source="common_beijing_png" />
+	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
+		<e:Image source="trade_bg_png" verticalCenter="0"  horizontalCenter="0"/>
+		<e:Group id="but_changePwd0" y="416" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0">
+			<e:Image scaleX="1" scaleY="1" source="panelui_json.anniu_2" scale9Grid="43,9,261,61" width="603"/>
+			<e:Label text="保存图片" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" horizontalCenter="0" verticalCenter="0" textColor="0xFFFFFF"/>
+		</e:Group>
+		<e:Image id="img_code" source="header_png" y="100" width="300" height="300" horizontalCenter="0"/>
+
+
+
+
+
+		<e:Label text="充值" y="40" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
+
+		<e:Group width="725" x="12" y="508" anchorOffsetX="0" anchorOffsetY="0">
+
+
+
+
+			<e:Group id="but_changePwd" x="64" y="100" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
+				<e:Image scaleX="1" scaleY="1" source="panelui_json.anniu_2" scale9Grid="43,9,261,61" width="603"/>
+				<e:Label text="复制地址" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" horizontalCenter="0" verticalCenter="0" textColor="0xffffff"/>
+			</e:Group>
+			<e:Group id="btn_logout" x="64" y="594" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
+				<e:Image scaleX="1" scaleY="1" scale9Grid="43,9,261,61" width="603" source="panelui_json.anniu_3"/>
+				<e:Label text="㉤长时间未到账？" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" textColor="0x001738" rotation="359.73" verticalCenter="0" horizontalCenter="0"/>
+			</e:Group>
+			<e:Label id="txt_md5" text="0xlkdjfsfowremerfsd54f6541sfd" y="16" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" width="750" height="270" scale9Grid="35,29,212,178" source="panel2_json.alertbg2" horizontalCenter="0" verticalCenter="8"/>
+			<e:Label id="txt_detail" text="验证码验证码验证验证码验证码验证码码验证码验证码验证码验证码验证码" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0" verticalCenter="14" width="650" textAlign="center" verticalAlign="middle"/>
+
+		</e:Group>
+
+
+		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47"
+		         source="panel2_json.btn_back" scaleX="1" scaleY="1"  x="703" y="1287"/>
+
+	</e:Group>
+</e:Skin>
