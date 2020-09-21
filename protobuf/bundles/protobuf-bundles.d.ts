@@ -3342,6 +3342,8 @@ declare namespace com {
                 S_USE_KEY = 1014,
                 C_GIVE_KEY = 1015,
                 S_GIVE_KEY = 1016,
+                C_GET_KEY_LIST = 1017,
+                S_GET_KEY_LIST = 1018,
                 C_GET_FISH_INFO = 1051,
                 S_GET_FISH_INFO = 1052,
                 C_BUY_FISH = 1053,
@@ -3424,7 +3426,7 @@ declare namespace com {
                 INVITE_CODE_IS_NULL = 1175,
                 INVITE_CODE_NOT_FOUND = 1176,
                 MOBILE_HAS_REGISTER = 1177,
-                SIGN_DAY_LARGE = 1178,
+                HAVE_USE_KEY = 1178,
                 SIGN_DAY_NOT_ENOUGH = 1179,
                 PLAYER_NOT_EXIST = 1181,
                 FISH_MAX_LIMIT = 1201
@@ -3660,6 +3662,162 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_MODIFY_PASSWORD;
         }
 
+        /** Properties of a KeyLogMsg. */
+        interface IKeyLogMsg {
+
+            /** KeyLogMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** KeyLogMsg bePlayerId */
+            bePlayerId?: (number|Long|null);
+
+            /** KeyLogMsg type */
+            type?: (number|null);
+
+            /** KeyLogMsg beforeMoney */
+            beforeMoney?: (number|null);
+
+            /** KeyLogMsg changeMoney */
+            changeMoney?: (number|null);
+
+            /** KeyLogMsg afterMoney */
+            afterMoney?: (number|null);
+
+            /** KeyLogMsg logTime */
+            logTime?: (number|Long|null);
+
+            /** KeyLogMsg info */
+            info?: (string|null);
+        }
+
+        /** Represents a KeyLogMsg. */
+        class KeyLogMsg implements IKeyLogMsg {
+
+            /**
+             * Constructs a new KeyLogMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IKeyLogMsg);
+
+            /** KeyLogMsg playerId. */
+            public playerId: (number|Long);
+
+            /** KeyLogMsg bePlayerId. */
+            public bePlayerId: (number|Long);
+
+            /** KeyLogMsg type. */
+            public type: number;
+
+            /** KeyLogMsg beforeMoney. */
+            public beforeMoney: number;
+
+            /** KeyLogMsg changeMoney. */
+            public changeMoney: number;
+
+            /** KeyLogMsg afterMoney. */
+            public afterMoney: number;
+
+            /** KeyLogMsg logTime. */
+            public logTime: (number|Long);
+
+            /** KeyLogMsg info. */
+            public info: string;
+
+            /**
+             * Encodes the specified KeyLogMsg message. Does not implicitly {@link com.message.KeyLogMsg.verify|verify} messages.
+             * @param message KeyLogMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IKeyLogMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a KeyLogMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns KeyLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.KeyLogMsg;
+        }
+
+        /** Properties of a C_GET_KEY_LIST. */
+        interface IC_GET_KEY_LIST {
+        }
+
+        /** Represents a C_GET_KEY_LIST. */
+        class C_GET_KEY_LIST implements IC_GET_KEY_LIST {
+
+            /**
+             * Constructs a new C_GET_KEY_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_KEY_LIST);
+
+            /**
+             * Encodes the specified C_GET_KEY_LIST message. Does not implicitly {@link com.message.C_GET_KEY_LIST.verify|verify} messages.
+             * @param message C_GET_KEY_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_KEY_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_KEY_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_KEY_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_KEY_LIST;
+        }
+
+        /** Properties of a S_GET_KEY_LIST. */
+        interface IS_GET_KEY_LIST {
+
+            /** S_GET_KEY_LIST keyLogMsg */
+            keyLogMsg?: (com.message.IKeyLogMsg[]|null);
+
+            /** S_GET_KEY_LIST keyCount */
+            keyCount?: (number|null);
+        }
+
+        /** Represents a S_GET_KEY_LIST. */
+        class S_GET_KEY_LIST implements IS_GET_KEY_LIST {
+
+            /**
+             * Constructs a new S_GET_KEY_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_KEY_LIST);
+
+            /** S_GET_KEY_LIST keyLogMsg. */
+            public keyLogMsg: com.message.IKeyLogMsg[];
+
+            /** S_GET_KEY_LIST keyCount. */
+            public keyCount: number;
+
+            /**
+             * Encodes the specified S_GET_KEY_LIST message. Does not implicitly {@link com.message.S_GET_KEY_LIST.verify|verify} messages.
+             * @param message S_GET_KEY_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_KEY_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_KEY_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_KEY_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_KEY_LIST;
+        }
+
         /** Properties of a C_USE_KEY. */
         interface IC_USE_KEY {
         }
@@ -3880,7 +4038,7 @@ declare namespace com {
             /** DirectInfoMsg name */
             name?: (string|null);
 
-            /** DirectInfoMsg state */
+            /** 激活+实名状态,0未实名，1已激活，2已实名 */
             state?: (number|null);
 
             /** DirectInfoMsg effectDirectNum */
@@ -3902,7 +4060,7 @@ declare namespace com {
             /** DirectInfoMsg name. */
             public name: string;
 
-            /** DirectInfoMsg state. */
+            /** 激活+实名状态,0未实名，1已激活，2已实名 */
             public state: number;
 
             /** DirectInfoMsg effectDirectNum. */

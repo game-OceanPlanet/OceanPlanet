@@ -7233,6 +7233,8 @@ $root.com = (function() {
              * @property {number} S_USE_KEY=1014 S_USE_KEY value
              * @property {number} C_GIVE_KEY=1015 C_GIVE_KEY value
              * @property {number} S_GIVE_KEY=1016 S_GIVE_KEY value
+             * @property {number} C_GET_KEY_LIST=1017 C_GET_KEY_LIST value
+             * @property {number} S_GET_KEY_LIST=1018 S_GET_KEY_LIST value
              * @property {number} C_GET_FISH_INFO=1051 C_GET_FISH_INFO value
              * @property {number} S_GET_FISH_INFO=1052 S_GET_FISH_INFO value
              * @property {number} C_BUY_FISH=1053 C_BUY_FISH value
@@ -7307,6 +7309,8 @@ $root.com = (function() {
                 values[valuesById[1014] = "S_USE_KEY"] = 1014;
                 values[valuesById[1015] = "C_GIVE_KEY"] = 1015;
                 values[valuesById[1016] = "S_GIVE_KEY"] = 1016;
+                values[valuesById[1017] = "C_GET_KEY_LIST"] = 1017;
+                values[valuesById[1018] = "S_GET_KEY_LIST"] = 1018;
                 values[valuesById[1051] = "C_GET_FISH_INFO"] = 1051;
                 values[valuesById[1052] = "S_GET_FISH_INFO"] = 1052;
                 values[valuesById[1053] = "C_BUY_FISH"] = 1053;
@@ -7392,7 +7396,7 @@ $root.com = (function() {
              * @property {number} INVITE_CODE_IS_NULL=1175 INVITE_CODE_IS_NULL value
              * @property {number} INVITE_CODE_NOT_FOUND=1176 INVITE_CODE_NOT_FOUND value
              * @property {number} MOBILE_HAS_REGISTER=1177 MOBILE_HAS_REGISTER value
-             * @property {number} SIGN_DAY_LARGE=1178 SIGN_DAY_LARGE value
+             * @property {number} HAVE_USE_KEY=1178 HAVE_USE_KEY value
              * @property {number} SIGN_DAY_NOT_ENOUGH=1179 SIGN_DAY_NOT_ENOUGH value
              * @property {number} PLAYER_NOT_EXIST=1181 PLAYER_NOT_EXIST value
              * @property {number} FISH_MAX_LIMIT=1201 FISH_MAX_LIMIT value
@@ -7424,7 +7428,7 @@ $root.com = (function() {
                 values[valuesById[1175] = "INVITE_CODE_IS_NULL"] = 1175;
                 values[valuesById[1176] = "INVITE_CODE_NOT_FOUND"] = 1176;
                 values[valuesById[1177] = "MOBILE_HAS_REGISTER"] = 1177;
-                values[valuesById[1178] = "SIGN_DAY_LARGE"] = 1178;
+                values[valuesById[1178] = "HAVE_USE_KEY"] = 1178;
                 values[valuesById[1179] = "SIGN_DAY_NOT_ENOUGH"] = 1179;
                 values[valuesById[1181] = "PLAYER_NOT_EXIST"] = 1181;
                 values[valuesById[1201] = "FISH_MAX_LIMIT"] = 1201;
@@ -7933,6 +7937,351 @@ $root.com = (function() {
             return S_MODIFY_PASSWORD;
         })();
 
+        message.KeyLogMsg = (function() {
+
+            /**
+             * Properties of a KeyLogMsg.
+             * @memberof com.message
+             * @interface IKeyLogMsg
+             * @property {number|Long|null} [playerId] KeyLogMsg playerId
+             * @property {number|Long|null} [bePlayerId] KeyLogMsg bePlayerId
+             * @property {number|null} [type] KeyLogMsg type
+             * @property {number|null} [beforeMoney] KeyLogMsg beforeMoney
+             * @property {number|null} [changeMoney] KeyLogMsg changeMoney
+             * @property {number|null} [afterMoney] KeyLogMsg afterMoney
+             * @property {number|Long|null} [logTime] KeyLogMsg logTime
+             * @property {string|null} [info] KeyLogMsg info
+             */
+
+            /**
+             * Constructs a new KeyLogMsg.
+             * @memberof com.message
+             * @classdesc Represents a KeyLogMsg.
+             * @implements IKeyLogMsg
+             * @constructor
+             * @param {com.message.IKeyLogMsg=} [properties] Properties to set
+             */
+            function KeyLogMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * KeyLogMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * KeyLogMsg bePlayerId.
+             * @member {number|Long} bePlayerId
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.bePlayerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * KeyLogMsg type.
+             * @member {number} type
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.type = 0;
+
+            /**
+             * KeyLogMsg beforeMoney.
+             * @member {number} beforeMoney
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.beforeMoney = 0;
+
+            /**
+             * KeyLogMsg changeMoney.
+             * @member {number} changeMoney
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.changeMoney = 0;
+
+            /**
+             * KeyLogMsg afterMoney.
+             * @member {number} afterMoney
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.afterMoney = 0;
+
+            /**
+             * KeyLogMsg logTime.
+             * @member {number|Long} logTime
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.logTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * KeyLogMsg info.
+             * @member {string} info
+             * @memberof com.message.KeyLogMsg
+             * @instance
+             */
+            KeyLogMsg.prototype.info = "";
+
+            /**
+             * Encodes the specified KeyLogMsg message. Does not implicitly {@link com.message.KeyLogMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.KeyLogMsg
+             * @static
+             * @param {com.message.IKeyLogMsg} message KeyLogMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            KeyLogMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.bePlayerId != null && message.hasOwnProperty("bePlayerId"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.bePlayerId);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.type);
+                if (message.beforeMoney != null && message.hasOwnProperty("beforeMoney"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.beforeMoney);
+                if (message.changeMoney != null && message.hasOwnProperty("changeMoney"))
+                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.changeMoney);
+                if (message.afterMoney != null && message.hasOwnProperty("afterMoney"))
+                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.afterMoney);
+                if (message.logTime != null && message.hasOwnProperty("logTime"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int64(message.logTime);
+                if (message.info != null && message.hasOwnProperty("info"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.info);
+                return writer;
+            };
+
+            /**
+             * Decodes a KeyLogMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.KeyLogMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.KeyLogMsg} KeyLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            KeyLogMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.KeyLogMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    case 2:
+                        message.bePlayerId = reader.int64();
+                        break;
+                    case 4:
+                        message.type = reader.int32();
+                        break;
+                    case 5:
+                        message.beforeMoney = reader.double();
+                        break;
+                    case 6:
+                        message.changeMoney = reader.double();
+                        break;
+                    case 7:
+                        message.afterMoney = reader.double();
+                        break;
+                    case 8:
+                        message.logTime = reader.int64();
+                        break;
+                    case 9:
+                        message.info = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return KeyLogMsg;
+        })();
+
+        message.C_GET_KEY_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_KEY_LIST.
+             * @memberof com.message
+             * @interface IC_GET_KEY_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_KEY_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_KEY_LIST.
+             * @implements IC_GET_KEY_LIST
+             * @constructor
+             * @param {com.message.IC_GET_KEY_LIST=} [properties] Properties to set
+             */
+            function C_GET_KEY_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_KEY_LIST message. Does not implicitly {@link com.message.C_GET_KEY_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_KEY_LIST
+             * @static
+             * @param {com.message.IC_GET_KEY_LIST} message C_GET_KEY_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_KEY_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_KEY_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_KEY_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_KEY_LIST} C_GET_KEY_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_KEY_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_KEY_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_KEY_LIST;
+        })();
+
+        message.S_GET_KEY_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_KEY_LIST.
+             * @memberof com.message
+             * @interface IS_GET_KEY_LIST
+             * @property {Array.<com.message.IKeyLogMsg>|null} [keyLogMsg] S_GET_KEY_LIST keyLogMsg
+             * @property {number|null} [keyCount] S_GET_KEY_LIST keyCount
+             */
+
+            /**
+             * Constructs a new S_GET_KEY_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_KEY_LIST.
+             * @implements IS_GET_KEY_LIST
+             * @constructor
+             * @param {com.message.IS_GET_KEY_LIST=} [properties] Properties to set
+             */
+            function S_GET_KEY_LIST(properties) {
+                this.keyLogMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_KEY_LIST keyLogMsg.
+             * @member {Array.<com.message.IKeyLogMsg>} keyLogMsg
+             * @memberof com.message.S_GET_KEY_LIST
+             * @instance
+             */
+            S_GET_KEY_LIST.prototype.keyLogMsg = $util.emptyArray;
+
+            /**
+             * S_GET_KEY_LIST keyCount.
+             * @member {number} keyCount
+             * @memberof com.message.S_GET_KEY_LIST
+             * @instance
+             */
+            S_GET_KEY_LIST.prototype.keyCount = 0;
+
+            /**
+             * Encodes the specified S_GET_KEY_LIST message. Does not implicitly {@link com.message.S_GET_KEY_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_KEY_LIST
+             * @static
+             * @param {com.message.IS_GET_KEY_LIST} message S_GET_KEY_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_KEY_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.keyLogMsg != null && message.keyLogMsg.length)
+                    for (var i = 0; i < message.keyLogMsg.length; ++i)
+                        $root.com.message.KeyLogMsg.encode(message.keyLogMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.keyCount != null && message.hasOwnProperty("keyCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.keyCount);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_KEY_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_KEY_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_KEY_LIST} S_GET_KEY_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_KEY_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_KEY_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.keyLogMsg && message.keyLogMsg.length))
+                            message.keyLogMsg = [];
+                        message.keyLogMsg.push($root.com.message.KeyLogMsg.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.keyCount = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_KEY_LIST;
+        })();
+
         message.C_USE_KEY = (function() {
 
             /**
@@ -8401,7 +8750,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IDirectInfoMsg
              * @property {string|null} [name] DirectInfoMsg name
-             * @property {number|null} [state] DirectInfoMsg state
+             * @property {number|null} [state] 激活+实名状态,0未实名，1已激活，2已实名
              * @property {number|null} [effectDirectNum] DirectInfoMsg effectDirectNum
              * @property {number|null} [allEffectNum] DirectInfoMsg allEffectNum
              */
@@ -8430,7 +8779,7 @@ $root.com = (function() {
             DirectInfoMsg.prototype.name = "";
 
             /**
-             * DirectInfoMsg state.
+             * 激活+实名状态,0未实名，1已激活，2已实名
              * @member {number} state
              * @memberof com.message.DirectInfoMsg
              * @instance

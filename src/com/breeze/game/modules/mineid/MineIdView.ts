@@ -5,14 +5,11 @@ module qmr
 		public panelGroup:eui.Group;
 public txt_name:eui.Label;
 public txt_kda_total:eui.Label;
-public text_input_price:eui.EditableText;
-public btn_exchange_group0:eui.Group;
-public txt_button_buy0:eui.Label;
-public btn_exchange_group1:eui.Group;
-public txt_button_buy1:eui.Label;
-public btn_exchange_group2:eui.Group;
-public txt_button_buy2:eui.Label;
+public text_input_pwd:eui.EditableText;
+public but_changePwd:eui.Group;
+public btn_logout:eui.Group;
 public btnReturn:eui.Image;
+
 
 		
 		public constructor()
@@ -39,19 +36,43 @@ public btnReturn:eui.Image;
 			super.initListener();
             let t = this;
             t.addClickEvent(t.btnReturn, t.closeView, t);
-            t.addClickEvent(t.btn_exchange_group1, t.onSetPwd, t);
-            t.addClickEvent(t.btn_exchange_group2, t.onLogout, t);
+            t.addClickEvent(t.but_changePwd, t.onSetPwd, t);
+            t.addClickEvent(t.btn_logout, t.onLogout, t);
         }
         
         private onSetPwd():void
         {
-            TipManagerCommon.getInstance().createCommonTip("敬请期待");
+			let t = this;
+			let pwd:string = t.text_input_pwd.text.trim();
+			if(RegexpUtil.IsNull(pwd)){
+				return;
+			}
+
+			if(pwd.length < 6){
+				TipManagerCommon.getInstance().createCommonColorTip("请输入至少6位数的密码");
+				return;
+			}
+
+			if(pwd.length > 12){
+				TipManagerCommon.getInstance().createCommonColorTip("输入的密码长度不能多于12位");
+				return;
+			}
+			let tel:string = HeroModel.instance.IdentityPro.mobile;
+			let vcode:string = "8888";
+
+			TeamController.instance.requestChangePwdCMD(tel, pwd, vcode);
         }
 
         private onLogout():void
         {
-            TipManagerCommon.getInstance().createCommonTip("敬请期待");
-        }
+			PromptController.instance.showPrompt("                       确定退出游戏？", this.backGame, this);
+		}
+		
+		// 尝试重新加载游戏，不能加载退出游戏 
+		private backGame()
+		{
+			PlatformManager.instance.platform.reloadGame();
+		}
 
 		private updateView():void
 		{

@@ -57,6 +57,9 @@ module qmr {
 		/**  赠送激活秘钥 */
 		public static C_GIVE_KEY:number = 1015; 
 		public static S_GIVE_KEY:number = 1016;
+		/**  获取激活秘钥记录 */
+		public static C_GET_KEY_LIST:number = 1017;  
+		public static S_GET_KEY_LIST:number = 1018;
 		/** 获取我的鱼儿 */
 		public static C_GET_FISH_INFO:number = 1051; 
 		public static S_GET_FISH_INFO:number = 1052;

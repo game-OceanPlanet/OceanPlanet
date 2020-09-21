@@ -17,7 +17,7 @@ message S_USER_LOGIN_INIT_FINISH{
 
 message BasePlayerMsg{
 	int64 playerId=1; // 玩家编号
-	int32 state = 2;//实名验证状态0未实名，1已经实名 
+	int32 state = 2; //激活+实名状态,0未实名，1已激活，2已实名 
 	string inviteCode=3;  //邀请码
 	string mobile=4; //手机号码
 	string name=5; // 姓名

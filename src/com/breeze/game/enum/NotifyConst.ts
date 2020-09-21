@@ -32,6 +32,10 @@ module qmr
 
 		public static S_GET_MY_TEAM_INFO:string = "S_GET_MY_TEAM_INFO";
 		public static S_GET_MY_TEAM_LIST:string = "S_GET_MY_TEAM_LIST";
+		public static S_MODIFY_PASSWORD:string = "S_MODIFY_PASSWORD";
+		public static S_GET_KEY_LIST:string = "S_GET_KEY_LIST";
+		public static S_USE_KEY:string = "S_USE_KEY";
+		public static S_GIVE_KEY:string = "S_GIVE_KEY";
 		
 	}
 

@@ -24,6 +24,8 @@ message MsgEnum {
 		S_USE_KEY			= 1014;
 		C_GIVE_KEY			= 1015; // 赠送激活秘钥
 		S_GIVE_KEY			= 1016;
+		C_GET_KEY_LIST		= 1017;  // 获取激活秘钥记录
+		S_GET_KEY_LIST		= 1018;
 
 		//fish
 		C_GET_FISH_INFO		= 1051; //获取我的鱼儿
@@ -127,8 +129,7 @@ message MsgEnum {
 		INVITE_CODE_IS_NULL = 1175; //邀请码不能为空
 		INVITE_CODE_NOT_FOUND = 1176; //邀请码不存在
 		MOBILE_HAS_REGISTER = 1177; //手机号码已经被注册
-
-        SIGN_DAY_LARGE = 1178; //签到天数大于开服天数
+        HAVE_USE_KEY = 1178; //你的账号已经激活，无需再激活
         SIGN_DAY_NOT_ENOUGH  = 1179; //签到天数不足
 		PLAYER_NOT_EXIST = 1181;//玩家不存在
 		FISH_MAX_LIMIT = 1201; //已经是最大的鱼了,无法合成下一等级

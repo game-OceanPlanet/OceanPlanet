@@ -27,6 +27,7 @@ module qmr {
 			this.msgIdMap[MessageID.S_MODIFY_PASSWORD] = com.message.S_MODIFY_PASSWORD;
 			this.msgIdMap[MessageID.S_USE_KEY] = com.message.S_USE_KEY;
 			this.msgIdMap[MessageID.S_GIVE_KEY] = com.message.S_GIVE_KEY;
+			this.msgIdMap[MessageID.S_GET_KEY_LIST] = com.message.S_GET_KEY_LIST;
 			this.msgIdMap[MessageID.S_GET_FISH_INFO] = com.message.S_GET_FISH_INFO;
 			this.msgIdMap[MessageID.S_BUY_FISH] = com.message.S_BUY_FISH;
 			this.msgIdMap[MessageID.S_COMBINE_FISH] = com.message.S_COMBINE_FISH;
