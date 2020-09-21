@@ -28,8 +28,8 @@ class FishBehavior {
             let angle = this.getAngleByPoint({ x: item[data[2]].x * this.$scalew, y: item[data[2]].y * this.$scaleh }, { x: item[data[2] + 1].x * this.$scalew, y: item[data[2] + 1].y * this.$scaleh }) - 90;
 
             let dataS = [data[0], data[1], data[2] + 1]
-            data[0].rotation = angle;
-            egret.Tween.get(data[0]).to({ x: (item[data[2] + 1].x * this.$scalew) + 70, y: item[data[2] + 1].y * this.$scaleh }, 500).call(this.onanimationButtonsData, this, [dataS])
+            // data[0].rotation = angle;
+            egret.Tween.get(data[0]).to({ x: (item[data[2] + 1].x * this.$scalew) + 70, y: item[data[2] + 1].y * this.$scaleh, rotation: angle }, 500).call(this.onanimationButtonsData, this, [dataS])
         }
         else {
             this.SequentialMovement = 0;

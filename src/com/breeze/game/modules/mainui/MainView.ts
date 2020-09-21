@@ -48,7 +48,10 @@ module qmr {
         private baseEffect5: BaseEffect;
         private baseEffectPet: BaseEffect;
 
+        public long: eui.Group;
 
+        private roleImg: eui.Image;
+        private armatureDisplay: dragonBones.EgretArmatureDisplay;
 
         public constructor() {
             super();
@@ -89,6 +92,16 @@ module qmr {
             t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
 
             // DataCenter.Instance;
+
+            //龙骨
+            GameFunctions.LoadDB(t.long, "long", (db: dragonBones.EgretArmatureDisplay, img: eui.Image) => {
+                t.armatureDisplay = db;
+                t.roleImg = img;
+                if (t.roleImg) {
+                    t.roleImg.x = 0;
+                    t.roleImg.y = 0;
+                }
+            }, 0, 0);
         }
 
         protected addedToStage(evt: egret.Event): void {

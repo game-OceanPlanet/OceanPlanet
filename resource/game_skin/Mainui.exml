@@ -73,4 +73,5 @@
 		<e:Image id="btn_help" source="mainui_json.btn_help" y="204" anchorOffsetX="68" anchorOffsetY="51" x="82" scaleX="1"
 		         scaleY="1" />
 	</e:Group>
+	<e:Group id="long" horizontalCenter="0" verticalCenter="0" width="200" height="200" />
 </e:Skin>
