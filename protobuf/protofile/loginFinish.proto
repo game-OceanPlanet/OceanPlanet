@@ -13,7 +13,6 @@ message S_USER_LOGIN_INIT_FINISH{
 	PlayerPropertyMsg property=2;   //属性信息
 	BasePlayerMsg basePlayerMsg =3;  //基础信息
 	repeated FishMsg fishMsg = 4; //鱼信息
-	TeamMsg teamMsg=5;          //团队信息	
 }
 
 message BasePlayerMsg{
@@ -30,20 +29,7 @@ message PlayerPropertyMsg {
 	double money=3; //当前持有金币
 	double diamond=4; //当前持有u
 	double KAD=5; //KAD
-	int32 available = 6; //是否有效用户
+	int32 keyCount = 6; //激活秘钥数量
 }
 
-message TeamMsg{
-	int64 playerId=1; // 玩家编号
-	int32 count = 2; //团队人数
-	int32 realCount = 3;//团队有效人数
-	repeated TeamMemberMsg teamMemberMsg = 4; //直推成员信息列表
-}
-
-message TeamMemberMsg{
-    int64 playerId=1; // 玩家编号
-    int32 state = 4;//实名验证状态0未实名，1已经实名 
-    int32 available = 6; //是否有效用户
-
-}
 

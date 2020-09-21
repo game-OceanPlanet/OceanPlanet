@@ -5707,358 +5707,6 @@ $root.com = (function() {
             return S_SYNC_TIME;
         })();
 
-        message.C_GET_NICKNAME_INFO = (function() {
-
-            /**
-             * Properties of a C_GET_NICKNAME_INFO.
-             * @memberof com.message
-             * @interface IC_GET_NICKNAME_INFO
-             * @property {string|null} [nickName] C_GET_NICKNAME_INFO nickName
-             */
-
-            /**
-             * Constructs a new C_GET_NICKNAME_INFO.
-             * @memberof com.message
-             * @classdesc Represents a C_GET_NICKNAME_INFO.
-             * @implements IC_GET_NICKNAME_INFO
-             * @constructor
-             * @param {com.message.IC_GET_NICKNAME_INFO=} [properties] Properties to set
-             */
-            function C_GET_NICKNAME_INFO(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * C_GET_NICKNAME_INFO nickName.
-             * @member {string} nickName
-             * @memberof com.message.C_GET_NICKNAME_INFO
-             * @instance
-             */
-            C_GET_NICKNAME_INFO.prototype.nickName = "";
-
-            /**
-             * Encodes the specified C_GET_NICKNAME_INFO message. Does not implicitly {@link com.message.C_GET_NICKNAME_INFO.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_GET_NICKNAME_INFO
-             * @static
-             * @param {com.message.IC_GET_NICKNAME_INFO} message C_GET_NICKNAME_INFO message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_GET_NICKNAME_INFO.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.nickName != null && message.hasOwnProperty("nickName"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.nickName);
-                return writer;
-            };
-
-            /**
-             * Decodes a C_GET_NICKNAME_INFO message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_GET_NICKNAME_INFO
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_GET_NICKNAME_INFO} C_GET_NICKNAME_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_GET_NICKNAME_INFO.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_NICKNAME_INFO();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.nickName = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_GET_NICKNAME_INFO;
-        })();
-
-        message.S_GET_NICKNAME_INFO = (function() {
-
-            /**
-             * Properties of a S_GET_NICKNAME_INFO.
-             * @memberof com.message
-             * @interface IS_GET_NICKNAME_INFO
-             * @property {string|null} [nickName] S_GET_NICKNAME_INFO nickName
-             * @property {boolean|null} [canUse] S_GET_NICKNAME_INFO canUse
-             */
-
-            /**
-             * Constructs a new S_GET_NICKNAME_INFO.
-             * @memberof com.message
-             * @classdesc Represents a S_GET_NICKNAME_INFO.
-             * @implements IS_GET_NICKNAME_INFO
-             * @constructor
-             * @param {com.message.IS_GET_NICKNAME_INFO=} [properties] Properties to set
-             */
-            function S_GET_NICKNAME_INFO(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_GET_NICKNAME_INFO nickName.
-             * @member {string} nickName
-             * @memberof com.message.S_GET_NICKNAME_INFO
-             * @instance
-             */
-            S_GET_NICKNAME_INFO.prototype.nickName = "";
-
-            /**
-             * S_GET_NICKNAME_INFO canUse.
-             * @member {boolean} canUse
-             * @memberof com.message.S_GET_NICKNAME_INFO
-             * @instance
-             */
-            S_GET_NICKNAME_INFO.prototype.canUse = false;
-
-            /**
-             * Encodes the specified S_GET_NICKNAME_INFO message. Does not implicitly {@link com.message.S_GET_NICKNAME_INFO.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_GET_NICKNAME_INFO
-             * @static
-             * @param {com.message.IS_GET_NICKNAME_INFO} message S_GET_NICKNAME_INFO message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_GET_NICKNAME_INFO.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.nickName != null && message.hasOwnProperty("nickName"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.nickName);
-                if (message.canUse != null && message.hasOwnProperty("canUse"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.canUse);
-                return writer;
-            };
-
-            /**
-             * Decodes a S_GET_NICKNAME_INFO message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_GET_NICKNAME_INFO
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_GET_NICKNAME_INFO} S_GET_NICKNAME_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_GET_NICKNAME_INFO.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_NICKNAME_INFO();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.nickName = reader.string();
-                        break;
-                    case 2:
-                        message.canUse = reader.bool();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_GET_NICKNAME_INFO;
-        })();
-
-        message.C_SEND_SDK_DATA = (function() {
-
-            /**
-             * Properties of a C_SEND_SDK_DATA.
-             * @memberof com.message
-             * @interface IC_SEND_SDK_DATA
-             * @property {string|null} [reportStr] C_SEND_SDK_DATA reportStr
-             * @property {string|null} [reportUrl] C_SEND_SDK_DATA reportUrl
-             */
-
-            /**
-             * Constructs a new C_SEND_SDK_DATA.
-             * @memberof com.message
-             * @classdesc Represents a C_SEND_SDK_DATA.
-             * @implements IC_SEND_SDK_DATA
-             * @constructor
-             * @param {com.message.IC_SEND_SDK_DATA=} [properties] Properties to set
-             */
-            function C_SEND_SDK_DATA(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * C_SEND_SDK_DATA reportStr.
-             * @member {string} reportStr
-             * @memberof com.message.C_SEND_SDK_DATA
-             * @instance
-             */
-            C_SEND_SDK_DATA.prototype.reportStr = "";
-
-            /**
-             * C_SEND_SDK_DATA reportUrl.
-             * @member {string} reportUrl
-             * @memberof com.message.C_SEND_SDK_DATA
-             * @instance
-             */
-            C_SEND_SDK_DATA.prototype.reportUrl = "";
-
-            /**
-             * Encodes the specified C_SEND_SDK_DATA message. Does not implicitly {@link com.message.C_SEND_SDK_DATA.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_SEND_SDK_DATA
-             * @static
-             * @param {com.message.IC_SEND_SDK_DATA} message C_SEND_SDK_DATA message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_SEND_SDK_DATA.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.reportStr != null && message.hasOwnProperty("reportStr"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.reportStr);
-                if (message.reportUrl != null && message.hasOwnProperty("reportUrl"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.reportUrl);
-                return writer;
-            };
-
-            /**
-             * Decodes a C_SEND_SDK_DATA message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_SEND_SDK_DATA
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_SEND_SDK_DATA} C_SEND_SDK_DATA
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_SEND_SDK_DATA.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_SEND_SDK_DATA();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.reportStr = reader.string();
-                        break;
-                    case 2:
-                        message.reportUrl = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_SEND_SDK_DATA;
-        })();
-
-        message.S_SEND_SDK_DATA = (function() {
-
-            /**
-             * Properties of a S_SEND_SDK_DATA.
-             * @memberof com.message
-             * @interface IS_SEND_SDK_DATA
-             * @property {boolean|null} [canUse] S_SEND_SDK_DATA canUse
-             */
-
-            /**
-             * Constructs a new S_SEND_SDK_DATA.
-             * @memberof com.message
-             * @classdesc Represents a S_SEND_SDK_DATA.
-             * @implements IS_SEND_SDK_DATA
-             * @constructor
-             * @param {com.message.IS_SEND_SDK_DATA=} [properties] Properties to set
-             */
-            function S_SEND_SDK_DATA(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_SEND_SDK_DATA canUse.
-             * @member {boolean} canUse
-             * @memberof com.message.S_SEND_SDK_DATA
-             * @instance
-             */
-            S_SEND_SDK_DATA.prototype.canUse = false;
-
-            /**
-             * Encodes the specified S_SEND_SDK_DATA message. Does not implicitly {@link com.message.S_SEND_SDK_DATA.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_SEND_SDK_DATA
-             * @static
-             * @param {com.message.IS_SEND_SDK_DATA} message S_SEND_SDK_DATA message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_SEND_SDK_DATA.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.canUse != null && message.hasOwnProperty("canUse"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.canUse);
-                return writer;
-            };
-
-            /**
-             * Decodes a S_SEND_SDK_DATA message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_SEND_SDK_DATA
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_SEND_SDK_DATA} S_SEND_SDK_DATA
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_SEND_SDK_DATA.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SEND_SDK_DATA();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.canUse = reader.bool();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_SEND_SDK_DATA;
-        })();
-
         message.C_USER_LOGIN_INIT_FINISH = (function() {
 
             /**
@@ -6136,7 +5784,6 @@ $root.com = (function() {
              * @property {com.message.IPlayerPropertyMsg|null} [property] S_USER_LOGIN_INIT_FINISH property
              * @property {com.message.IBasePlayerMsg|null} [basePlayerMsg] S_USER_LOGIN_INIT_FINISH basePlayerMsg
              * @property {Array.<com.message.IFishMsg>|null} [fishMsg] S_USER_LOGIN_INIT_FINISH fishMsg
-             * @property {com.message.ITeamMsg|null} [teamMsg] S_USER_LOGIN_INIT_FINISH teamMsg
              */
 
             /**
@@ -6188,14 +5835,6 @@ $root.com = (function() {
             S_USER_LOGIN_INIT_FINISH.prototype.fishMsg = $util.emptyArray;
 
             /**
-             * S_USER_LOGIN_INIT_FINISH teamMsg.
-             * @member {com.message.ITeamMsg|null|undefined} teamMsg
-             * @memberof com.message.S_USER_LOGIN_INIT_FINISH
-             * @instance
-             */
-            S_USER_LOGIN_INIT_FINISH.prototype.teamMsg = null;
-
-            /**
              * Encodes the specified S_USER_LOGIN_INIT_FINISH message. Does not implicitly {@link com.message.S_USER_LOGIN_INIT_FINISH.verify|verify} messages.
              * @function encode
              * @memberof com.message.S_USER_LOGIN_INIT_FINISH
@@ -6216,8 +5855,6 @@ $root.com = (function() {
                 if (message.fishMsg != null && message.fishMsg.length)
                     for (var i = 0; i < message.fishMsg.length; ++i)
                         $root.com.message.FishMsg.encode(message.fishMsg[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.teamMsg != null && message.hasOwnProperty("teamMsg"))
-                    $root.com.message.TeamMsg.encode(message.teamMsg, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -6252,9 +5889,6 @@ $root.com = (function() {
                         if (!(message.fishMsg && message.fishMsg.length))
                             message.fishMsg = [];
                         message.fishMsg.push($root.com.message.FishMsg.decode(reader, reader.uint32()));
-                        break;
-                    case 5:
-                        message.teamMsg = $root.com.message.TeamMsg.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6428,7 +6062,7 @@ $root.com = (function() {
              * @property {number|null} [money] PlayerPropertyMsg money
              * @property {number|null} [diamond] PlayerPropertyMsg diamond
              * @property {number|null} [KAD] PlayerPropertyMsg KAD
-             * @property {number|null} [available] PlayerPropertyMsg available
+             * @property {number|null} [keyCount] PlayerPropertyMsg keyCount
              */
 
             /**
@@ -6479,12 +6113,12 @@ $root.com = (function() {
             PlayerPropertyMsg.prototype.KAD = 0;
 
             /**
-             * PlayerPropertyMsg available.
-             * @member {number} available
+             * PlayerPropertyMsg keyCount.
+             * @member {number} keyCount
              * @memberof com.message.PlayerPropertyMsg
              * @instance
              */
-            PlayerPropertyMsg.prototype.available = 0;
+            PlayerPropertyMsg.prototype.keyCount = 0;
 
             /**
              * Encodes the specified PlayerPropertyMsg message. Does not implicitly {@link com.message.PlayerPropertyMsg.verify|verify} messages.
@@ -6506,8 +6140,8 @@ $root.com = (function() {
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.diamond);
                 if (message.KAD != null && message.hasOwnProperty("KAD"))
                     writer.uint32(/* id 5, wireType 1 =*/41).double(message.KAD);
-                if (message.available != null && message.hasOwnProperty("available"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.available);
+                if (message.keyCount != null && message.hasOwnProperty("keyCount"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.keyCount);
                 return writer;
             };
 
@@ -6542,7 +6176,7 @@ $root.com = (function() {
                         message.KAD = reader.double();
                         break;
                     case 6:
-                        message.available = reader.int32();
+                        message.keyCount = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6553,242 +6187,6 @@ $root.com = (function() {
             };
 
             return PlayerPropertyMsg;
-        })();
-
-        message.TeamMsg = (function() {
-
-            /**
-             * Properties of a TeamMsg.
-             * @memberof com.message
-             * @interface ITeamMsg
-             * @property {number|Long|null} [playerId] TeamMsg playerId
-             * @property {number|null} [count] TeamMsg count
-             * @property {number|null} [realCount] TeamMsg realCount
-             * @property {Array.<com.message.ITeamMemberMsg>|null} [teamMemberMsg] TeamMsg teamMemberMsg
-             */
-
-            /**
-             * Constructs a new TeamMsg.
-             * @memberof com.message
-             * @classdesc Represents a TeamMsg.
-             * @implements ITeamMsg
-             * @constructor
-             * @param {com.message.ITeamMsg=} [properties] Properties to set
-             */
-            function TeamMsg(properties) {
-                this.teamMemberMsg = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * TeamMsg playerId.
-             * @member {number|Long} playerId
-             * @memberof com.message.TeamMsg
-             * @instance
-             */
-            TeamMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * TeamMsg count.
-             * @member {number} count
-             * @memberof com.message.TeamMsg
-             * @instance
-             */
-            TeamMsg.prototype.count = 0;
-
-            /**
-             * TeamMsg realCount.
-             * @member {number} realCount
-             * @memberof com.message.TeamMsg
-             * @instance
-             */
-            TeamMsg.prototype.realCount = 0;
-
-            /**
-             * TeamMsg teamMemberMsg.
-             * @member {Array.<com.message.ITeamMemberMsg>} teamMemberMsg
-             * @memberof com.message.TeamMsg
-             * @instance
-             */
-            TeamMsg.prototype.teamMemberMsg = $util.emptyArray;
-
-            /**
-             * Encodes the specified TeamMsg message. Does not implicitly {@link com.message.TeamMsg.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.TeamMsg
-             * @static
-             * @param {com.message.ITeamMsg} message TeamMsg message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            TeamMsg.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.playerId != null && message.hasOwnProperty("playerId"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
-                if (message.count != null && message.hasOwnProperty("count"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.count);
-                if (message.realCount != null && message.hasOwnProperty("realCount"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.realCount);
-                if (message.teamMemberMsg != null && message.teamMemberMsg.length)
-                    for (var i = 0; i < message.teamMemberMsg.length; ++i)
-                        $root.com.message.TeamMemberMsg.encode(message.teamMemberMsg[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a TeamMsg message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.TeamMsg
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.TeamMsg} TeamMsg
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            TeamMsg.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.TeamMsg();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.playerId = reader.int64();
-                        break;
-                    case 2:
-                        message.count = reader.int32();
-                        break;
-                    case 3:
-                        message.realCount = reader.int32();
-                        break;
-                    case 4:
-                        if (!(message.teamMemberMsg && message.teamMemberMsg.length))
-                            message.teamMemberMsg = [];
-                        message.teamMemberMsg.push($root.com.message.TeamMemberMsg.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return TeamMsg;
-        })();
-
-        message.TeamMemberMsg = (function() {
-
-            /**
-             * Properties of a TeamMemberMsg.
-             * @memberof com.message
-             * @interface ITeamMemberMsg
-             * @property {number|Long|null} [playerId] TeamMemberMsg playerId
-             * @property {number|null} [state] TeamMemberMsg state
-             * @property {number|null} [available] TeamMemberMsg available
-             */
-
-            /**
-             * Constructs a new TeamMemberMsg.
-             * @memberof com.message
-             * @classdesc Represents a TeamMemberMsg.
-             * @implements ITeamMemberMsg
-             * @constructor
-             * @param {com.message.ITeamMemberMsg=} [properties] Properties to set
-             */
-            function TeamMemberMsg(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * TeamMemberMsg playerId.
-             * @member {number|Long} playerId
-             * @memberof com.message.TeamMemberMsg
-             * @instance
-             */
-            TeamMemberMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * TeamMemberMsg state.
-             * @member {number} state
-             * @memberof com.message.TeamMemberMsg
-             * @instance
-             */
-            TeamMemberMsg.prototype.state = 0;
-
-            /**
-             * TeamMemberMsg available.
-             * @member {number} available
-             * @memberof com.message.TeamMemberMsg
-             * @instance
-             */
-            TeamMemberMsg.prototype.available = 0;
-
-            /**
-             * Encodes the specified TeamMemberMsg message. Does not implicitly {@link com.message.TeamMemberMsg.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.TeamMemberMsg
-             * @static
-             * @param {com.message.ITeamMemberMsg} message TeamMemberMsg message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            TeamMemberMsg.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.playerId != null && message.hasOwnProperty("playerId"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
-                if (message.state != null && message.hasOwnProperty("state"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.state);
-                if (message.available != null && message.hasOwnProperty("available"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.available);
-                return writer;
-            };
-
-            /**
-             * Decodes a TeamMemberMsg message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.TeamMemberMsg
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.TeamMemberMsg} TeamMemberMsg
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            TeamMemberMsg.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.TeamMemberMsg();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.playerId = reader.int64();
-                        break;
-                    case 4:
-                        message.state = reader.int32();
-                        break;
-                    case 6:
-                        message.available = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return TeamMemberMsg;
         })();
 
         message.BuyGoodMsg = (function() {
@@ -7829,10 +7227,12 @@ $root.com = (function() {
              * @property {number} S_USER_LOGOUT=1008 S_USER_LOGOUT value
              * @property {number} C_USER_LOGIN_INIT_FINISH=1009 C_USER_LOGIN_INIT_FINISH value
              * @property {number} S_USER_LOGIN_INIT_FINISH=1010 S_USER_LOGIN_INIT_FINISH value
-             * @property {number} C_GET_NICKNAME_INFO=1030 C_GET_NICKNAME_INFO value
-             * @property {number} S_GET_NICKNAME_INFO=1031 S_GET_NICKNAME_INFO value
-             * @property {number} C_SEND_SDK_DATA=1032 C_SEND_SDK_DATA value
-             * @property {number} S_SEND_SDK_DATA=1033 S_SEND_SDK_DATA value
+             * @property {number} C_MODIFY_PASSWORD=1011 C_MODIFY_PASSWORD value
+             * @property {number} S_MODIFY_PASSWORD=1012 S_MODIFY_PASSWORD value
+             * @property {number} C_USE_KEY=1013 C_USE_KEY value
+             * @property {number} S_USE_KEY=1014 S_USE_KEY value
+             * @property {number} C_GIVE_KEY=1015 C_GIVE_KEY value
+             * @property {number} S_GIVE_KEY=1016 S_GIVE_KEY value
              * @property {number} C_GET_FISH_INFO=1051 C_GET_FISH_INFO value
              * @property {number} S_GET_FISH_INFO=1052 S_GET_FISH_INFO value
              * @property {number} C_BUY_FISH=1053 C_BUY_FISH value
@@ -7869,6 +7269,10 @@ $root.com = (function() {
              * @property {number} S_INJECT_KAD=1210 S_INJECT_KAD value
              * @property {number} C_REAL_NAME_VERIFICATION=1221 C_REAL_NAME_VERIFICATION value
              * @property {number} S_REAL_NAME_VERIFICATION=1222 S_REAL_NAME_VERIFICATION value
+             * @property {number} C_GET_MY_TEAM_INFO=1301 C_GET_MY_TEAM_INFO value
+             * @property {number} S_GET_MY_TEAM_INFO=1302 S_GET_MY_TEAM_INFO value
+             * @property {number} C_GET_MY_TEAM_LIST=1303 C_GET_MY_TEAM_LIST value
+             * @property {number} S_GET_MY_TEAM_LIST=1304 S_GET_MY_TEAM_LIST value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -7897,10 +7301,12 @@ $root.com = (function() {
                 values[valuesById[1008] = "S_USER_LOGOUT"] = 1008;
                 values[valuesById[1009] = "C_USER_LOGIN_INIT_FINISH"] = 1009;
                 values[valuesById[1010] = "S_USER_LOGIN_INIT_FINISH"] = 1010;
-                values[valuesById[1030] = "C_GET_NICKNAME_INFO"] = 1030;
-                values[valuesById[1031] = "S_GET_NICKNAME_INFO"] = 1031;
-                values[valuesById[1032] = "C_SEND_SDK_DATA"] = 1032;
-                values[valuesById[1033] = "S_SEND_SDK_DATA"] = 1033;
+                values[valuesById[1011] = "C_MODIFY_PASSWORD"] = 1011;
+                values[valuesById[1012] = "S_MODIFY_PASSWORD"] = 1012;
+                values[valuesById[1013] = "C_USE_KEY"] = 1013;
+                values[valuesById[1014] = "S_USE_KEY"] = 1014;
+                values[valuesById[1015] = "C_GIVE_KEY"] = 1015;
+                values[valuesById[1016] = "S_GIVE_KEY"] = 1016;
                 values[valuesById[1051] = "C_GET_FISH_INFO"] = 1051;
                 values[valuesById[1052] = "S_GET_FISH_INFO"] = 1052;
                 values[valuesById[1053] = "C_BUY_FISH"] = 1053;
@@ -7937,6 +7343,10 @@ $root.com = (function() {
                 values[valuesById[1210] = "S_INJECT_KAD"] = 1210;
                 values[valuesById[1221] = "C_REAL_NAME_VERIFICATION"] = 1221;
                 values[valuesById[1222] = "S_REAL_NAME_VERIFICATION"] = 1222;
+                values[valuesById[1301] = "C_GET_MY_TEAM_INFO"] = 1301;
+                values[valuesById[1302] = "S_GET_MY_TEAM_INFO"] = 1302;
+                values[valuesById[1303] = "C_GET_MY_TEAM_LIST"] = 1303;
+                values[valuesById[1304] = "S_GET_MY_TEAM_LIST"] = 1304;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;
@@ -8117,6 +7527,7 @@ $root.com = (function() {
          * @property {number} MONEY=1 MONEY value
          * @property {number} DIAMOND=2 DIAMOND value
          * @property {number} KAD=3 KAD value
+         * @property {number} KEY=4 KEY value
          */
         message.PropertyID = (function() {
             var valuesById = {}, values = Object.create(valuesById);
@@ -8124,6 +7535,7 @@ $root.com = (function() {
             values[valuesById[1] = "MONEY"] = 1;
             values[valuesById[2] = "DIAMOND"] = 2;
             values[valuesById[3] = "KAD"] = 3;
+            values[valuesById[4] = "KEY"] = 4;
             return values;
         })();
 
@@ -8329,6 +7741,1136 @@ $root.com = (function() {
             };
 
             return S_REAL_NAME_VERIFICATION;
+        })();
+
+        message.C_MODIFY_PASSWORD = (function() {
+
+            /**
+             * Properties of a C_MODIFY_PASSWORD.
+             * @memberof com.message
+             * @interface IC_MODIFY_PASSWORD
+             * @property {string|null} [mobile] C_MODIFY_PASSWORD mobile
+             * @property {string|null} [password] C_MODIFY_PASSWORD password
+             * @property {string|null} [verifyCode] C_MODIFY_PASSWORD verifyCode
+             */
+
+            /**
+             * Constructs a new C_MODIFY_PASSWORD.
+             * @memberof com.message
+             * @classdesc Represents a C_MODIFY_PASSWORD.
+             * @implements IC_MODIFY_PASSWORD
+             * @constructor
+             * @param {com.message.IC_MODIFY_PASSWORD=} [properties] Properties to set
+             */
+            function C_MODIFY_PASSWORD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_MODIFY_PASSWORD mobile.
+             * @member {string} mobile
+             * @memberof com.message.C_MODIFY_PASSWORD
+             * @instance
+             */
+            C_MODIFY_PASSWORD.prototype.mobile = "";
+
+            /**
+             * C_MODIFY_PASSWORD password.
+             * @member {string} password
+             * @memberof com.message.C_MODIFY_PASSWORD
+             * @instance
+             */
+            C_MODIFY_PASSWORD.prototype.password = "";
+
+            /**
+             * C_MODIFY_PASSWORD verifyCode.
+             * @member {string} verifyCode
+             * @memberof com.message.C_MODIFY_PASSWORD
+             * @instance
+             */
+            C_MODIFY_PASSWORD.prototype.verifyCode = "";
+
+            /**
+             * Encodes the specified C_MODIFY_PASSWORD message. Does not implicitly {@link com.message.C_MODIFY_PASSWORD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_MODIFY_PASSWORD
+             * @static
+             * @param {com.message.IC_MODIFY_PASSWORD} message C_MODIFY_PASSWORD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_MODIFY_PASSWORD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.password != null && message.hasOwnProperty("password"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.password);
+                if (message.verifyCode != null && message.hasOwnProperty("verifyCode"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.verifyCode);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_MODIFY_PASSWORD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_MODIFY_PASSWORD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_MODIFY_PASSWORD} C_MODIFY_PASSWORD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_MODIFY_PASSWORD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_MODIFY_PASSWORD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    case 2:
+                        message.password = reader.string();
+                        break;
+                    case 3:
+                        message.verifyCode = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_MODIFY_PASSWORD;
+        })();
+
+        message.S_MODIFY_PASSWORD = (function() {
+
+            /**
+             * Properties of a S_MODIFY_PASSWORD.
+             * @memberof com.message
+             * @interface IS_MODIFY_PASSWORD
+             * @property {string|null} [mobile] S_MODIFY_PASSWORD mobile
+             */
+
+            /**
+             * Constructs a new S_MODIFY_PASSWORD.
+             * @memberof com.message
+             * @classdesc Represents a S_MODIFY_PASSWORD.
+             * @implements IS_MODIFY_PASSWORD
+             * @constructor
+             * @param {com.message.IS_MODIFY_PASSWORD=} [properties] Properties to set
+             */
+            function S_MODIFY_PASSWORD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_MODIFY_PASSWORD mobile.
+             * @member {string} mobile
+             * @memberof com.message.S_MODIFY_PASSWORD
+             * @instance
+             */
+            S_MODIFY_PASSWORD.prototype.mobile = "";
+
+            /**
+             * Encodes the specified S_MODIFY_PASSWORD message. Does not implicitly {@link com.message.S_MODIFY_PASSWORD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_MODIFY_PASSWORD
+             * @static
+             * @param {com.message.IS_MODIFY_PASSWORD} message S_MODIFY_PASSWORD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_MODIFY_PASSWORD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_MODIFY_PASSWORD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_MODIFY_PASSWORD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_MODIFY_PASSWORD} S_MODIFY_PASSWORD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_MODIFY_PASSWORD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_MODIFY_PASSWORD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_MODIFY_PASSWORD;
+        })();
+
+        message.C_USE_KEY = (function() {
+
+            /**
+             * Properties of a C_USE_KEY.
+             * @memberof com.message
+             * @interface IC_USE_KEY
+             */
+
+            /**
+             * Constructs a new C_USE_KEY.
+             * @memberof com.message
+             * @classdesc Represents a C_USE_KEY.
+             * @implements IC_USE_KEY
+             * @constructor
+             * @param {com.message.IC_USE_KEY=} [properties] Properties to set
+             */
+            function C_USE_KEY(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_USE_KEY message. Does not implicitly {@link com.message.C_USE_KEY.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_USE_KEY
+             * @static
+             * @param {com.message.IC_USE_KEY} message C_USE_KEY message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_USE_KEY.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_USE_KEY message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_USE_KEY
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_USE_KEY} C_USE_KEY
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_USE_KEY.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_USE_KEY();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_USE_KEY;
+        })();
+
+        message.S_USE_KEY = (function() {
+
+            /**
+             * Properties of a S_USE_KEY.
+             * @memberof com.message
+             * @interface IS_USE_KEY
+             * @property {number|null} [keyCount] S_USE_KEY keyCount
+             */
+
+            /**
+             * Constructs a new S_USE_KEY.
+             * @memberof com.message
+             * @classdesc Represents a S_USE_KEY.
+             * @implements IS_USE_KEY
+             * @constructor
+             * @param {com.message.IS_USE_KEY=} [properties] Properties to set
+             */
+            function S_USE_KEY(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_USE_KEY keyCount.
+             * @member {number} keyCount
+             * @memberof com.message.S_USE_KEY
+             * @instance
+             */
+            S_USE_KEY.prototype.keyCount = 0;
+
+            /**
+             * Encodes the specified S_USE_KEY message. Does not implicitly {@link com.message.S_USE_KEY.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_USE_KEY
+             * @static
+             * @param {com.message.IS_USE_KEY} message S_USE_KEY message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_USE_KEY.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.keyCount != null && message.hasOwnProperty("keyCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.keyCount);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_USE_KEY message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_USE_KEY
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_USE_KEY} S_USE_KEY
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_USE_KEY.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_USE_KEY();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 2:
+                        message.keyCount = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_USE_KEY;
+        })();
+
+        message.C_GIVE_KEY = (function() {
+
+            /**
+             * Properties of a C_GIVE_KEY.
+             * @memberof com.message
+             * @interface IC_GIVE_KEY
+             * @property {string|null} [mobile] C_GIVE_KEY mobile
+             */
+
+            /**
+             * Constructs a new C_GIVE_KEY.
+             * @memberof com.message
+             * @classdesc Represents a C_GIVE_KEY.
+             * @implements IC_GIVE_KEY
+             * @constructor
+             * @param {com.message.IC_GIVE_KEY=} [properties] Properties to set
+             */
+            function C_GIVE_KEY(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_GIVE_KEY mobile.
+             * @member {string} mobile
+             * @memberof com.message.C_GIVE_KEY
+             * @instance
+             */
+            C_GIVE_KEY.prototype.mobile = "";
+
+            /**
+             * Encodes the specified C_GIVE_KEY message. Does not implicitly {@link com.message.C_GIVE_KEY.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GIVE_KEY
+             * @static
+             * @param {com.message.IC_GIVE_KEY} message C_GIVE_KEY message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GIVE_KEY.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GIVE_KEY message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GIVE_KEY
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GIVE_KEY} C_GIVE_KEY
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GIVE_KEY.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GIVE_KEY();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GIVE_KEY;
+        })();
+
+        message.S_GIVE_KEY = (function() {
+
+            /**
+             * Properties of a S_GIVE_KEY.
+             * @memberof com.message
+             * @interface IS_GIVE_KEY
+             * @property {string|null} [mobile] S_GIVE_KEY mobile
+             * @property {number|null} [keyCount] S_GIVE_KEY keyCount
+             */
+
+            /**
+             * Constructs a new S_GIVE_KEY.
+             * @memberof com.message
+             * @classdesc Represents a S_GIVE_KEY.
+             * @implements IS_GIVE_KEY
+             * @constructor
+             * @param {com.message.IS_GIVE_KEY=} [properties] Properties to set
+             */
+            function S_GIVE_KEY(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GIVE_KEY mobile.
+             * @member {string} mobile
+             * @memberof com.message.S_GIVE_KEY
+             * @instance
+             */
+            S_GIVE_KEY.prototype.mobile = "";
+
+            /**
+             * S_GIVE_KEY keyCount.
+             * @member {number} keyCount
+             * @memberof com.message.S_GIVE_KEY
+             * @instance
+             */
+            S_GIVE_KEY.prototype.keyCount = 0;
+
+            /**
+             * Encodes the specified S_GIVE_KEY message. Does not implicitly {@link com.message.S_GIVE_KEY.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GIVE_KEY
+             * @static
+             * @param {com.message.IS_GIVE_KEY} message S_GIVE_KEY message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GIVE_KEY.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.keyCount != null && message.hasOwnProperty("keyCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.keyCount);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GIVE_KEY message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GIVE_KEY
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GIVE_KEY} S_GIVE_KEY
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GIVE_KEY.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GIVE_KEY();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    case 2:
+                        message.keyCount = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GIVE_KEY;
+        })();
+
+        message.MyTeamMsg = (function() {
+
+            /**
+             * Properties of a MyTeamMsg.
+             * @memberof com.message
+             * @interface IMyTeamMsg
+             * @property {string|null} [superName] MyTeamMsg superName
+             * @property {number|null} [count] MyTeamMsg count
+             * @property {number|null} [allCount] MyTeamMsg allCount
+             * @property {number|null} [effectDirectNum] MyTeamMsg effectDirectNum
+             * @property {number|null} [allEffectNum] MyTeamMsg allEffectNum
+             */
+
+            /**
+             * Constructs a new MyTeamMsg.
+             * @memberof com.message
+             * @classdesc Represents a MyTeamMsg.
+             * @implements IMyTeamMsg
+             * @constructor
+             * @param {com.message.IMyTeamMsg=} [properties] Properties to set
+             */
+            function MyTeamMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MyTeamMsg superName.
+             * @member {string} superName
+             * @memberof com.message.MyTeamMsg
+             * @instance
+             */
+            MyTeamMsg.prototype.superName = "";
+
+            /**
+             * MyTeamMsg count.
+             * @member {number} count
+             * @memberof com.message.MyTeamMsg
+             * @instance
+             */
+            MyTeamMsg.prototype.count = 0;
+
+            /**
+             * MyTeamMsg allCount.
+             * @member {number} allCount
+             * @memberof com.message.MyTeamMsg
+             * @instance
+             */
+            MyTeamMsg.prototype.allCount = 0;
+
+            /**
+             * MyTeamMsg effectDirectNum.
+             * @member {number} effectDirectNum
+             * @memberof com.message.MyTeamMsg
+             * @instance
+             */
+            MyTeamMsg.prototype.effectDirectNum = 0;
+
+            /**
+             * MyTeamMsg allEffectNum.
+             * @member {number} allEffectNum
+             * @memberof com.message.MyTeamMsg
+             * @instance
+             */
+            MyTeamMsg.prototype.allEffectNum = 0;
+
+            /**
+             * Encodes the specified MyTeamMsg message. Does not implicitly {@link com.message.MyTeamMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.MyTeamMsg
+             * @static
+             * @param {com.message.IMyTeamMsg} message MyTeamMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MyTeamMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.superName != null && message.hasOwnProperty("superName"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.superName);
+                if (message.count != null && message.hasOwnProperty("count"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.count);
+                if (message.allCount != null && message.hasOwnProperty("allCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.allCount);
+                if (message.effectDirectNum != null && message.hasOwnProperty("effectDirectNum"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.effectDirectNum);
+                if (message.allEffectNum != null && message.hasOwnProperty("allEffectNum"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.allEffectNum);
+                return writer;
+            };
+
+            /**
+             * Decodes a MyTeamMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.MyTeamMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.MyTeamMsg} MyTeamMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MyTeamMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.MyTeamMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.superName = reader.string();
+                        break;
+                    case 2:
+                        message.count = reader.int32();
+                        break;
+                    case 3:
+                        message.allCount = reader.int32();
+                        break;
+                    case 4:
+                        message.effectDirectNum = reader.int32();
+                        break;
+                    case 5:
+                        message.allEffectNum = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return MyTeamMsg;
+        })();
+
+        message.DirectInfoMsg = (function() {
+
+            /**
+             * Properties of a DirectInfoMsg.
+             * @memberof com.message
+             * @interface IDirectInfoMsg
+             * @property {string|null} [name] DirectInfoMsg name
+             * @property {number|null} [state] DirectInfoMsg state
+             * @property {number|null} [effectDirectNum] DirectInfoMsg effectDirectNum
+             * @property {number|null} [allEffectNum] DirectInfoMsg allEffectNum
+             */
+
+            /**
+             * Constructs a new DirectInfoMsg.
+             * @memberof com.message
+             * @classdesc Represents a DirectInfoMsg.
+             * @implements IDirectInfoMsg
+             * @constructor
+             * @param {com.message.IDirectInfoMsg=} [properties] Properties to set
+             */
+            function DirectInfoMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DirectInfoMsg name.
+             * @member {string} name
+             * @memberof com.message.DirectInfoMsg
+             * @instance
+             */
+            DirectInfoMsg.prototype.name = "";
+
+            /**
+             * DirectInfoMsg state.
+             * @member {number} state
+             * @memberof com.message.DirectInfoMsg
+             * @instance
+             */
+            DirectInfoMsg.prototype.state = 0;
+
+            /**
+             * DirectInfoMsg effectDirectNum.
+             * @member {number} effectDirectNum
+             * @memberof com.message.DirectInfoMsg
+             * @instance
+             */
+            DirectInfoMsg.prototype.effectDirectNum = 0;
+
+            /**
+             * DirectInfoMsg allEffectNum.
+             * @member {number} allEffectNum
+             * @memberof com.message.DirectInfoMsg
+             * @instance
+             */
+            DirectInfoMsg.prototype.allEffectNum = 0;
+
+            /**
+             * Encodes the specified DirectInfoMsg message. Does not implicitly {@link com.message.DirectInfoMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.DirectInfoMsg
+             * @static
+             * @param {com.message.IDirectInfoMsg} message DirectInfoMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DirectInfoMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.state);
+                if (message.effectDirectNum != null && message.hasOwnProperty("effectDirectNum"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.effectDirectNum);
+                if (message.allEffectNum != null && message.hasOwnProperty("allEffectNum"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.allEffectNum);
+                return writer;
+            };
+
+            /**
+             * Decodes a DirectInfoMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.DirectInfoMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.DirectInfoMsg} DirectInfoMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DirectInfoMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.DirectInfoMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.name = reader.string();
+                        break;
+                    case 2:
+                        message.state = reader.int32();
+                        break;
+                    case 3:
+                        message.effectDirectNum = reader.int32();
+                        break;
+                    case 4:
+                        message.allEffectNum = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return DirectInfoMsg;
+        })();
+
+        message.C_GET_MY_TEAM_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_MY_TEAM_INFO.
+             * @memberof com.message
+             * @interface IC_GET_MY_TEAM_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_MY_TEAM_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MY_TEAM_INFO.
+             * @implements IC_GET_MY_TEAM_INFO
+             * @constructor
+             * @param {com.message.IC_GET_MY_TEAM_INFO=} [properties] Properties to set
+             */
+            function C_GET_MY_TEAM_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MY_TEAM_INFO message. Does not implicitly {@link com.message.C_GET_MY_TEAM_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MY_TEAM_INFO
+             * @static
+             * @param {com.message.IC_GET_MY_TEAM_INFO} message C_GET_MY_TEAM_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MY_TEAM_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MY_TEAM_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MY_TEAM_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MY_TEAM_INFO} C_GET_MY_TEAM_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MY_TEAM_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MY_TEAM_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MY_TEAM_INFO;
+        })();
+
+        message.S_GET_MY_TEAM_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_MY_TEAM_INFO.
+             * @memberof com.message
+             * @interface IS_GET_MY_TEAM_INFO
+             * @property {com.message.IMyTeamMsg|null} [myTeamMsg] S_GET_MY_TEAM_INFO myTeamMsg
+             */
+
+            /**
+             * Constructs a new S_GET_MY_TEAM_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MY_TEAM_INFO.
+             * @implements IS_GET_MY_TEAM_INFO
+             * @constructor
+             * @param {com.message.IS_GET_MY_TEAM_INFO=} [properties] Properties to set
+             */
+            function S_GET_MY_TEAM_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MY_TEAM_INFO myTeamMsg.
+             * @member {com.message.IMyTeamMsg|null|undefined} myTeamMsg
+             * @memberof com.message.S_GET_MY_TEAM_INFO
+             * @instance
+             */
+            S_GET_MY_TEAM_INFO.prototype.myTeamMsg = null;
+
+            /**
+             * Encodes the specified S_GET_MY_TEAM_INFO message. Does not implicitly {@link com.message.S_GET_MY_TEAM_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MY_TEAM_INFO
+             * @static
+             * @param {com.message.IS_GET_MY_TEAM_INFO} message S_GET_MY_TEAM_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MY_TEAM_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.myTeamMsg != null && message.hasOwnProperty("myTeamMsg"))
+                    $root.com.message.MyTeamMsg.encode(message.myTeamMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MY_TEAM_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MY_TEAM_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MY_TEAM_INFO} S_GET_MY_TEAM_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MY_TEAM_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MY_TEAM_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.myTeamMsg = $root.com.message.MyTeamMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MY_TEAM_INFO;
+        })();
+
+        message.C_GET_MY_TEAM_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_MY_TEAM_LIST.
+             * @memberof com.message
+             * @interface IC_GET_MY_TEAM_LIST
+             * @property {number|null} [page] C_GET_MY_TEAM_LIST page
+             * @property {number|null} [pageSize] C_GET_MY_TEAM_LIST pageSize
+             */
+
+            /**
+             * Constructs a new C_GET_MY_TEAM_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MY_TEAM_LIST.
+             * @implements IC_GET_MY_TEAM_LIST
+             * @constructor
+             * @param {com.message.IC_GET_MY_TEAM_LIST=} [properties] Properties to set
+             */
+            function C_GET_MY_TEAM_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_GET_MY_TEAM_LIST page.
+             * @member {number} page
+             * @memberof com.message.C_GET_MY_TEAM_LIST
+             * @instance
+             */
+            C_GET_MY_TEAM_LIST.prototype.page = 0;
+
+            /**
+             * C_GET_MY_TEAM_LIST pageSize.
+             * @member {number} pageSize
+             * @memberof com.message.C_GET_MY_TEAM_LIST
+             * @instance
+             */
+            C_GET_MY_TEAM_LIST.prototype.pageSize = 0;
+
+            /**
+             * Encodes the specified C_GET_MY_TEAM_LIST message. Does not implicitly {@link com.message.C_GET_MY_TEAM_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MY_TEAM_LIST
+             * @static
+             * @param {com.message.IC_GET_MY_TEAM_LIST} message C_GET_MY_TEAM_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MY_TEAM_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.page != null && message.hasOwnProperty("page"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.page);
+                if (message.pageSize != null && message.hasOwnProperty("pageSize"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.pageSize);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MY_TEAM_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MY_TEAM_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MY_TEAM_LIST} C_GET_MY_TEAM_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MY_TEAM_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MY_TEAM_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.page = reader.int32();
+                        break;
+                    case 2:
+                        message.pageSize = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MY_TEAM_LIST;
+        })();
+
+        message.S_GET_MY_TEAM_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_MY_TEAM_LIST.
+             * @memberof com.message
+             * @interface IS_GET_MY_TEAM_LIST
+             * @property {number|null} [page] S_GET_MY_TEAM_LIST page
+             * @property {number|null} [pageSize] S_GET_MY_TEAM_LIST pageSize
+             * @property {Array.<com.message.IDirectInfoMsg>|null} [directInfoMsg] S_GET_MY_TEAM_LIST directInfoMsg
+             */
+
+            /**
+             * Constructs a new S_GET_MY_TEAM_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MY_TEAM_LIST.
+             * @implements IS_GET_MY_TEAM_LIST
+             * @constructor
+             * @param {com.message.IS_GET_MY_TEAM_LIST=} [properties] Properties to set
+             */
+            function S_GET_MY_TEAM_LIST(properties) {
+                this.directInfoMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MY_TEAM_LIST page.
+             * @member {number} page
+             * @memberof com.message.S_GET_MY_TEAM_LIST
+             * @instance
+             */
+            S_GET_MY_TEAM_LIST.prototype.page = 0;
+
+            /**
+             * S_GET_MY_TEAM_LIST pageSize.
+             * @member {number} pageSize
+             * @memberof com.message.S_GET_MY_TEAM_LIST
+             * @instance
+             */
+            S_GET_MY_TEAM_LIST.prototype.pageSize = 0;
+
+            /**
+             * S_GET_MY_TEAM_LIST directInfoMsg.
+             * @member {Array.<com.message.IDirectInfoMsg>} directInfoMsg
+             * @memberof com.message.S_GET_MY_TEAM_LIST
+             * @instance
+             */
+            S_GET_MY_TEAM_LIST.prototype.directInfoMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_MY_TEAM_LIST message. Does not implicitly {@link com.message.S_GET_MY_TEAM_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MY_TEAM_LIST
+             * @static
+             * @param {com.message.IS_GET_MY_TEAM_LIST} message S_GET_MY_TEAM_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MY_TEAM_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.page != null && message.hasOwnProperty("page"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.page);
+                if (message.pageSize != null && message.hasOwnProperty("pageSize"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.pageSize);
+                if (message.directInfoMsg != null && message.directInfoMsg.length)
+                    for (var i = 0; i < message.directInfoMsg.length; ++i)
+                        $root.com.message.DirectInfoMsg.encode(message.directInfoMsg[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MY_TEAM_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MY_TEAM_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MY_TEAM_LIST} S_GET_MY_TEAM_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MY_TEAM_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MY_TEAM_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.page = reader.int32();
+                        break;
+                    case 2:
+                        message.pageSize = reader.int32();
+                        break;
+                    case 3:
+                        if (!(message.directInfoMsg && message.directInfoMsg.length))
+                            message.directInfoMsg = [];
+                        message.directInfoMsg.push($root.com.message.DirectInfoMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MY_TEAM_LIST;
         })();
 
         return message;

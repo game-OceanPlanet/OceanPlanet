@@ -3,16 +3,20 @@ module qmr
 	export class InviteCodeView extends BaseModule
 	{
 		public panelGroup:eui.Group;
+public txt_guimo:eui.Label;
+public txt_teamguimo:eui.Label;
+public txt_ticheng:eui.Label;
+public txt_shouxufei:eui.Label;
+public txt_teamticheng:eui.Label;
+public txt_tips:eui.Label;
 public txt_code:eui.Label;
 public btn_copy_code:eui.Group;
 public btn_copy_address:eui.Group;
+public txt_title:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
-public txt_title:eui.Label;
 public btn_help:eui.Image;
-
-
 
 
 
@@ -41,6 +45,8 @@ public btn_help:eui.Image;
 			super.initData();
 			let t = this;
 			t.updateView();
+			TeamController.instance.requestTeamInfoCMD();
+			TeamController.instance.requestMyTeamListCMD()
 		}
 		
 		protected initListener(): void
@@ -55,6 +61,9 @@ public btn_help:eui.Image;
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
 			t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
+			
+			t.registerNotify(NotifyConst.S_GET_MY_TEAM_INFO, t.updateView, t);
+			t.registerNotify(NotifyConst.S_GET_MY_TEAM_LIST, t.updateView, t);
 		}
 
 		private copyCode():void
@@ -63,7 +72,6 @@ public btn_help:eui.Image;
 			if(code){
 				StringUtils.copyClipBoard(code);
 			}
-			
 		}
 
 		private copyAddress():void
@@ -82,6 +90,27 @@ public btn_help:eui.Image;
 			if(pro){
 				t.txt_code.text = pro.inviteCode;
 			}
+
+			let info:com.message.MyTeamMsg = TeamModdel.instance.myTeam;
+			if(info){
+				t.txt_guimo.text = info.count + "";
+				t.txt_teamguimo.text = info.allCount + "";
+
+				let id:number = TeamModdel.instance.getTradeConstIdByCount(info.count);
+				let costCfg:TradeCostCfg = ConfigManager.getConf(ConfigEnum.TRADECOST, id);
+				t.txt_shouxufei.text = parseInt(costCfg.precent) * 100 + "%";
+
+				id = TeamModdel.instance.getteamRateCfgsIdByCount(info.count, info.allCount);
+				let rateCfg:TeamRateCfg = ConfigManager.getConf(ConfigEnum.TEAMRATE, id);
+				t.txt_teamticheng.text = rateCfg.precent + "%";
+
+				id = TeamModdel.instance.getdirectRateCfgsIdByCount(info.count);
+				let directCfg:DirectRateCfg = ConfigManager.getConf(ConfigEnum.DIRECTRATE, id);
+				t.txt_ticheng.text = directCfg.precent + "%";
+			}
+
+			let teams:com.message.DirectInfoMsg[] = TeamModdel.instance.teamers;
+			t._arrCollection.replaceAll(teams);
 		}
 
 		public dispose(): void

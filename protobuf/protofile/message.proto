@@ -18,12 +18,12 @@ message MsgEnum {
         C_USER_LOGIN_INIT_FINISH = 1009; // 登录注册完成请求 角色信息
         S_USER_LOGIN_INIT_FINISH = 1010; // 登录注册完成请求 角色信息
 
-
-        C_GET_NICKNAME_INFO           = 1030;	// 客户端核查随机名字是否可以使用
-        S_GET_NICKNAME_INFO           = 1031;
-
-        C_SEND_SDK_DATA               = 1032;	// 客户端通知sdk上报数据操作
-        S_SEND_SDK_DATA               = 1033;
+		C_MODIFY_PASSWORD	= 1011;  // 修改密码
+		S_MODIFY_PASSWORD	= 1012;
+		C_USE_KEY			= 1013;  // 自己使用激活秘钥
+		S_USE_KEY			= 1014;
+		C_GIVE_KEY			= 1015; // 赠送激活秘钥
+		S_GIVE_KEY			= 1016;
 
 		//fish
 		C_GET_FISH_INFO		= 1051; //获取我的鱼儿
@@ -67,6 +67,13 @@ message MsgEnum {
 		
 		C_REAL_NAME_VERIFICATION	= 1221;	// 实名验证
 		S_REAL_NAME_VERIFICATION	= 1222;
+		
+		
+		//team
+		C_GET_MY_TEAM_INFO			= 1301; //获取我的团队信息
+		S_GET_MY_TEAM_INFO			= 1302;
+		C_GET_MY_TEAM_LIST			= 1303; //获取我的直推成员信息
+		S_GET_MY_TEAM_LIST			= 1304;
 		
 
         S_SYN_PROPERTY = 2001; // 同步属性变化

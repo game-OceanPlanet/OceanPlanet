@@ -24,8 +24,9 @@ module qmr {
 			this.msgIdMap[MessageID.S_LOGIN_REGISTER] = com.message.S_LOGIN_REGISTER;
 			this.msgIdMap[MessageID.S_USER_LOGOUT] = com.message.S_USER_LOGOUT;
 			this.msgIdMap[MessageID.S_USER_LOGIN_INIT_FINISH] = com.message.S_USER_LOGIN_INIT_FINISH;
-			this.msgIdMap[MessageID.S_GET_NICKNAME_INFO] = com.message.S_GET_NICKNAME_INFO;
-			this.msgIdMap[MessageID.S_SEND_SDK_DATA] = com.message.S_SEND_SDK_DATA;
+			this.msgIdMap[MessageID.S_MODIFY_PASSWORD] = com.message.S_MODIFY_PASSWORD;
+			this.msgIdMap[MessageID.S_USE_KEY] = com.message.S_USE_KEY;
+			this.msgIdMap[MessageID.S_GIVE_KEY] = com.message.S_GIVE_KEY;
 			this.msgIdMap[MessageID.S_GET_FISH_INFO] = com.message.S_GET_FISH_INFO;
 			this.msgIdMap[MessageID.S_BUY_FISH] = com.message.S_BUY_FISH;
 			this.msgIdMap[MessageID.S_COMBINE_FISH] = com.message.S_COMBINE_FISH;
@@ -45,6 +46,8 @@ module qmr {
 			this.msgIdMap[MessageID.S_GET_INJECT_INFO] = com.message.S_GET_INJECT_INFO;
 			this.msgIdMap[MessageID.S_INJECT_KAD] = com.message.S_INJECT_KAD;
 			this.msgIdMap[MessageID.S_REAL_NAME_VERIFICATION] = com.message.S_REAL_NAME_VERIFICATION;
+			this.msgIdMap[MessageID.S_GET_MY_TEAM_INFO] = com.message.S_GET_MY_TEAM_INFO;
+			this.msgIdMap[MessageID.S_GET_MY_TEAM_LIST] = com.message.S_GET_MY_TEAM_LIST;
 			this.msgIdMap[MessageID.S_SYN_PROPERTY] = com.message.S_SYN_PROPERTY;
 			this.msgIdMap[MessageID.C_SYNC_TIME] = com.message.C_SYNC_TIME;
 			this.msgIdMap[MessageID.S_SYNC_TIME] = com.message.S_SYNC_TIME;

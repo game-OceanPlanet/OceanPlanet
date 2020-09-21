@@ -59,22 +59,4 @@ message S_SYNC_TIME {
 	int64 time=1; //ms
 }
 
-// 客户端核查随机名字是否可以使用
-message C_GET_NICKNAME_INFO {
-	string nickName = 1;	// 核查的随机昵称
-}
 
-message S_GET_NICKNAME_INFO {
-	string nickName = 1;	// 核查的随机昵称
-	bool canUse = 2;		// 是否可用，true可用false不可用
-}
-
-// 客户端通知sdk上报数据操作
-message C_SEND_SDK_DATA {
-	string reportStr = 1;	// 要上报的字符串数据
-	string reportUrl = 2;	// 要上报的url参数
-}
-
-message S_SEND_SDK_DATA {
-	bool canUse = 1;		// 上报结果，true成功false失败
-}

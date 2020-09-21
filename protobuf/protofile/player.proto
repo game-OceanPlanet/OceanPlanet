@@ -13,6 +13,7 @@ enum PropertyID {
 		MONEY = 1;
 		DIAMOND = 2;
 		KAD = 3;
+		KEY = 4;
 }
 
 
@@ -27,4 +28,38 @@ message C_REAL_NAME_VERIFICATION {
 message S_REAL_NAME_VERIFICATION {
 	string result=1; // 认证结果
 	string remark=2; // 备注
+}
+
+
+// 修改密码
+message C_MODIFY_PASSWORD {
+	string mobile=1; // 手机号码
+	string password=2; // 新密码
+	string verifyCode=3; //短信验证码
+}
+
+// 修改密码
+message S_MODIFY_PASSWORD {
+	string mobile=1; // 成功返回手机号码
+}
+
+// 自己使用激活秘钥
+message C_USE_KEY {
+}
+
+// 自己使用激活秘钥
+message S_USE_KEY {
+	int32 keyCount = 2; //剩余激活秘钥数量
+}
+
+
+// 赠送激活秘钥
+message C_GIVE_KEY {
+	string mobile=1; // 手机号码
+}
+
+// 赠送激活秘钥
+message S_GIVE_KEY {
+	string mobile=1;  // 手机号码
+	int32 keyCount = 2; //剩余激活秘钥数量
 }

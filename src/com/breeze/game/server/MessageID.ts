@@ -48,12 +48,15 @@ module qmr {
 		public static C_USER_LOGIN_INIT_FINISH:number = 1009; 
 		/**  登录注册完成请求 角色信息 */
 		public static S_USER_LOGIN_INIT_FINISH:number = 1010; 
-		/**  客户端核查随机名字是否可以使用 */
-		public static C_GET_NICKNAME_INFO:number = 1030;
-		public static S_GET_NICKNAME_INFO:number = 1031;
-		/**  客户端通知sdk上报数据操作 */
-		public static C_SEND_SDK_DATA:number = 1032;
-		public static S_SEND_SDK_DATA:number = 1033;
+		/**  修改密码 */
+		public static C_MODIFY_PASSWORD:number = 1011;  
+		public static S_MODIFY_PASSWORD:number = 1012;
+		/**  自己使用激活秘钥 */
+		public static C_USE_KEY:number = 1013;  
+		public static S_USE_KEY:number = 1014;
+		/**  赠送激活秘钥 */
+		public static C_GIVE_KEY:number = 1015; 
+		public static S_GIVE_KEY:number = 1016;
 		/** 获取我的鱼儿 */
 		public static C_GET_FISH_INFO:number = 1051; 
 		public static S_GET_FISH_INFO:number = 1052;
@@ -108,6 +111,12 @@ module qmr {
 		/**  实名验证 */
 		public static C_REAL_NAME_VERIFICATION:number = 1221;
 		public static S_REAL_NAME_VERIFICATION:number = 1222;
+		/** 获取我的团队信息 */
+		public static C_GET_MY_TEAM_INFO:number = 1301; 
+		public static S_GET_MY_TEAM_INFO:number = 1302;
+		/** 获取我的直推成员信息 */
+		public static C_GET_MY_TEAM_LIST:number = 1303; 
+		public static S_GET_MY_TEAM_LIST:number = 1304;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

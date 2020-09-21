@@ -29,6 +29,9 @@ module qmr
 		public static S_GET_INJECT_INFO:string = "S_GET_INJECT_INFO";
 
 		public static ON_PET_SELECTED:string = "ON_PET_SELECTED";
+
+		public static S_GET_MY_TEAM_INFO:string = "S_GET_MY_TEAM_INFO";
+		public static S_GET_MY_TEAM_LIST:string = "S_GET_MY_TEAM_LIST";
 		
 	}
 
