@@ -71,7 +71,7 @@ public btn_help:eui.Image;
 					myTotal += logs[i].diamondCount;
 				}
 			}
-			let total:number = md.sysAllBonus;
+			let total:number = md.todayAllBonus;
 			if(total > 0 && myTotal > 0){
 				t.txt_self_pre.text = NumberUtil.getFloat6Number2String(myTotal/total * 100) + "%";
 				t.txt_self_get.text = NumberUtil.getFloat6Number2String(myTotal) + HeroModel.USDT;

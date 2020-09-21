@@ -11,9 +11,9 @@ public img_head2:eui.Image;
 public img_head3:eui.Image;
 public btn_revoke:eui.Group;
 public btn_merge:eui.Label;
-public btnReturn:eui.Image;
+// public btnReturn:eui.Image;
 public effect_group_pet:eui.Group;
-public effect_group_merge:eui.Group;
+// public effect_group_merge:eui.Group;
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -57,7 +57,7 @@ public effect_group_merge:eui.Group;
 			super.initListener();
             let t = this;
 			t.addClickEvent(t.btnClose, t.closeView, t);
-			t.addClickEvent(t.btnReturn, t.closeView, t);
+			// t.addClickEvent(t.btnReturn, t.closeView, t);
 			t.addClickEvent(t.btn_merge, t.onMergeClick, t);
 			
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
