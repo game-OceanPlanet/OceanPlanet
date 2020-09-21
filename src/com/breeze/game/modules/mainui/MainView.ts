@@ -101,7 +101,7 @@ module qmr {
                     t.roleImg.x = 0;
                     t.roleImg.y = 0;
                 }
-            }, 0, 0);
+            }, 200, 0);
         }
 
         protected addedToStage(evt: egret.Event): void {
