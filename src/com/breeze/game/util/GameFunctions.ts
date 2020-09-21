@@ -78,7 +78,8 @@ class GameFunctions {
         }
 
         function loadComplete(res: string) {
-            if (con && con.stage && con.parent) {
+            // if (con && con.stage && con.parent) {
+            if (con && con.parent) {
                 let egretFactory = dragonBones.EgretFactory.factory;
                 let armatureDisplay = egretFactory.buildArmatureDisplay("armatureName", res, null, res);
                 if (armatureDisplay) {

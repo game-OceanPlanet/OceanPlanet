@@ -44,15 +44,21 @@ class ResManager {
 
         var loadedCount = 0;
         var checkFinish = () => {
-            if (loadedCount >= 3) {
+            let skeing: boolean = RES.getRes(ske);
+            let texing: boolean = RES.getRes(tex);
+            let tex_imging: boolean = RES.getRes(tex_img);
+
+            if (loadedCount >= 3 && skeing && texing && tex_imging) {
                 // if (!me._dbresDict.hasKey(name)) {
                 //     me._dbresDict.add(name, true);
                 // }
                 compFunc && compFunc.call(thisObject, param);
+                // egret.error("回调参数 = " + loadedCount, skeing, texing, tex_imging);
             }
+            // egret.error("loadedCount = " + loadedCount, skeing, texing, tex_imging);
         };
 
-        if (!RES.hasRes(ske)) {
+        if (!RES.getRes(ske)) {
             ResUtils.getResByUrl(ske, (data, key) => {
                 egretFactory.parseDragonBonesData(data, name);
                 loadedCount++;
@@ -62,7 +68,7 @@ class ResManager {
             loadedCount++;
         }
 
-        if (!RES.hasRes(tex)) {
+        if (!RES.getRes(tex) || !RES.getRes(tex_img)) {
             var texData = null;
             var texImgData = null;
             var checkTexFinish = () => {
