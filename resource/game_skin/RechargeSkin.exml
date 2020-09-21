@@ -27,11 +27,11 @@
 			</e:Group>
 			<e:Group id="btn_logout" x="64" y="594" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image scaleX="1" scaleY="1" scale9Grid="43,9,261,61" width="603" source="panelui_json.anniu_3"/>
-				<e:Label text="㉤长时间未到账？" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" textColor="0x001738" rotation="359.73" verticalCenter="0" horizontalCenter="0"/>
+				<e:Label text="㉤长时间未到账？" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" textColor="0x001738" rotation="359.73" verticalCenter="4" horizontalCenter="17.5"/>
 			</e:Group>
 			<e:Label id="txt_md5" text="0xlkdjfsfowremerfsd54f6541sfd" y="16" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" width="750" height="270" scale9Grid="35,29,212,178" source="panel2_json.alertbg2" horizontalCenter="0" verticalCenter="8"/>
-			<e:Label id="txt_detail" text="验证码验证码验证验证码验证码验证码码验证码验证码验证码验证码验证码" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0" verticalCenter="14" width="650" textAlign="center" verticalAlign="middle"/>
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" width="750" height="306.36" scale9Grid="35,29,212,178" source="panel2_json.alertbg2" horizontalCenter="0.5" verticalCenter="26.5"/>
+			<e:Label id="txt_detail" text="1. 请勿向上诉地址充值任何非ERC20的USDT资产，否则资产将不可找回\r\r2. 充值至上诉地址后需要整个网络节点确认，12次网络确认后可到账\r\r3. 最小充值金额1USDT，小于最小金额的充值将不会到账且无法返回" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" width="649.58" textAlign="left" verticalAlign="top" y="254.65" left="34" anchorOffsetY="0" height="224" anchorOffsetX="0"/>
 
 		</e:Group>
 

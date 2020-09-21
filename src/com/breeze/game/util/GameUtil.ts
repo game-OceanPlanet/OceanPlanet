@@ -1,70 +1,5 @@
 class GameUtil {
 
-    //多个条件同时满足即解锁 id:vale,id:value,...
-    static analysisMultiUnlock(value: string): boolean {
-
-        let unlock = true;
-        if (value) {
-            let arr = value.split(",");
-            for (var i = 0; i < arr.length; i++) {
-                var element = arr[i];
-                let con = element.split(":");
-                switch (parseInt(con[0])) {
-                    case UnlockType.Role_Level:
-                        break;
-                    case UnlockType.Vip_Level:
-                        break;
-                    case UnlockType.Clan_Level:
-                        break;
-                    case UnlockType.Under_Level:
-                        break;
-                    case UnlockType.Copy_Level:
-                    case UnlockType.Open_Day:
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-        return unlock;
-    }
-
-    //多个条件同时满足 解锁条件转义字符串
-    static analysisMultiUnlockString(value: string): string {
-
-        let unlock = [];
-        if (value) {
-            let arr = value.split(",");
-            for (var i = 0; i < arr.length; i++) {
-                var element = arr[i];
-                let con = element.split(":");
-                let unlockstr = "";
-                switch (parseInt(con[0])) {
-                    case UnlockType.Role_Level:
-                        unlock.push(unlockstr);
-                        break;
-                    case UnlockType.Vip_Level:
-                        unlock.push(unlockstr);
-                        break;
-                    case UnlockType.Clan_Level:
-                        unlock.push(unlockstr);
-                        break;
-                    case UnlockType.Copy_Level:
-                        break;
-                    case UnlockType.Under_Level:
-                        break;
-                    case UnlockType.Open_Day:
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-        let lockStr = unlock.join("且");
-        return lockStr;
-    }
-
     static dbDic: { [key: string]: number } = {};
 
     //加载骨骼动画
@@ -119,13 +54,4 @@ class GameUtil {
     public static createCode(url: string): egret.Sprite {
         return qr.QRCode.create(url);
     }
-}
-
-enum UnlockType {
-    Role_Level = 1,//等级
-    Copy_Level = 2,//关卡
-    Clan_Level = 3, //帮派
-    Under_Level = 4,//历练
-    Vip_Level = 5,//vip
-    Open_Day = 6,//开服天数
 }

@@ -101,5 +101,7 @@ module qmr {
         }
         
 
+        public keyLogs:com.message.KeyLogMsg[];//激活秘钥日志信息
+
     }
 }

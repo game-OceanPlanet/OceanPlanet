@@ -23,7 +23,7 @@
 		<e:Group width="750" y="508" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
 			<e:Image scale9Grid="292,141,12,26" anchorOffsetX="0" width="750" source="trade_json.mask_bg" y="0"
 			         anchorOffsetY="0" height="826"  horizontalCenter="0"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" width="750" height="270" scale9Grid="35,29,212,178" source="panel2_json.alertbg2" horizontalCenter="0" verticalCenter="8"/>
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" width="750" height="288.18" scale9Grid="35,29,212,178" source="panel2_json.alertbg2" horizontalCenter="0" verticalCenter="17"/>
 			<e:Label text="验证码" y="111" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="60"/>
 			<e:Label id="txt_name2" text="0            USDT" y="51.18" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
 			<e:Group anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="170.52" x="62" width="418.15">
@@ -46,7 +46,7 @@
 			</e:Group>
 			<e:Label text="到账数量" y="23.18" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
 			          x="50"/>
-			<e:Label id="txt_detail" text="验证码验证码验证验证码验证码验证码码验证码验证码验证码验证码验证码" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0" verticalCenter="14" width="650" textAlign="center" verticalAlign="middle"/>
+			<e:Label id="txt_detail" text="1. 提币地址必须为0x开头的ERC20地址，否则将无法到账\r\r2. 首次提现门槛为30USDT，后续提现门槛为100USDT\r\r3. 每次提现收取5%手续费，最低15USDT的手续费，提现后12次网络确认后到账" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" textAlign="left" verticalAlign="top" x="50" y="318.7" anchorOffsetY="0" anchorOffsetX="0" width="633.55"/>
 		</e:Group>
 		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back"
 		         scaleX="1" scaleY="1" x="703" y="1287" />

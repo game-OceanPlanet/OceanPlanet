@@ -54,6 +54,10 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
+declare class ActiveKeyItemSkin extends eui.Skin{
+}
+declare class ActiveKeySkin extends eui.Skin{
+}
 declare class BuyGoodItemSkin extends eui.Skin{
 }
 declare class CertificationSkin extends eui.Skin{
@@ -108,6 +112,8 @@ declare class PromptInputSkin extends eui.Skin{
 }
 declare class PromptSkin extends eui.Skin{
 }
+declare class RechargeSkin extends eui.Skin{
+}
 declare class ShopItemSkin extends eui.Skin{
 }
 declare class ShopSkin extends eui.Skin{
@@ -115,6 +121,8 @@ declare class ShopSkin extends eui.Skin{
 declare class USDTLogItemSkin extends eui.Skin{
 }
 declare class USDTLogVSkin extends eui.Skin{
+}
+declare class WithdrawalSkin extends eui.Skin{
 }
 declare class CheckBoxLoginSkin extends eui.Skin{
 }

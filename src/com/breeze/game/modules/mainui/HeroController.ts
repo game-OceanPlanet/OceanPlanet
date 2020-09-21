@@ -47,6 +47,7 @@ module qmr
 			HeroModel.instance.totalMoney = Int64Util.getNumber(s.property.money);
 			HeroModel.instance.totalUSDT = Int64Util.getNumber(s.property.diamond);
 			HeroModel.instance.totalKAD = Int64Util.getNumber(s.property.KAD);
+			HeroModel.instance.keyCount = Int64Util.getNumber(s.property.keyCount);
 
 			ModuleManager.showModule(ModuleNameConst.MAINUI_VIEW, null, LayerConst.TOOLBAR);
 			SceneManager.instance.enterHangMap(3004);
@@ -86,6 +87,9 @@ module qmr
 						HeroModel.instance.totalUSDT = value;
 						break;
 					case com.message.PropertyID.KAD:
+						HeroModel.instance.totalKAD = value;
+						break;
+					case com.message.PropertyID.KEY:
 						HeroModel.instance.totalKAD = value;
 						break;
 				}

@@ -35,7 +35,7 @@
 				         width="432" x="98">
 					<e:Image source="loginPanel_json.ShuRuKuangDi" x="32.67" anchorOffsetX="0" width="79" verticalCenter="0" />
 					<e:TextInput id="txt_password" maxChars="35" x="113.33" prompt="请输入密码" skinName="ServerListTextInputSkin"
-					             anchorOffsetX="0" width="318" height="53" verticalCenter="1" />
+					             anchorOffsetX="0" width="318" height="53" verticalCenter="1"  inputType="password"/>
 					<e:Label id="txt_pwd_des" stroke="1" text="密码:" x="38" y="32" fontFamily="specialGameFont" size="28"
 					         textColor="0xffffff" />
 				</e:Group>
@@ -51,7 +51,7 @@
 				         horizontalCenter="0.5" textColor="0x50d8f4" />
 			</e:Group>
 		</e:Group>
-		<e:Group id="group_register" horizontalCenter="2" verticalCenter="11" anchorOffsetY="0" height="768">
+		<e:Group id="group_register" horizontalCenter="2" verticalCenter="11" anchorOffsetY="0" height="768" visible="false">
 			<e:Image anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" source="loginPanel_json.DengLuKuang"
 			         scale9Grid="326,406,34,78" horizontalCenter="-0.5" verticalCenter="62" height="852" />
 			<e:Group id="gpRead0" y="788.33" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" visible="true" x="93.34">

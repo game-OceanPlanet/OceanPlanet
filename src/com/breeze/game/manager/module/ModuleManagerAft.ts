@@ -27,12 +27,16 @@ module qmr
             modulelManager.registerClass(ModuleNameConst.INVITE_CODE_VIEW, qmr.InviteCodeView);
             modulelManager.registerClass(ModuleNameConst.INJECT_VIEW, qmr.InjectView);
             modulelManager.registerClass(ModuleNameConst.DIVIDEND_VIEW, qmr.DividendView);
+            modulelManager.registerClass(ModuleNameConst.ACT_KEY_VIEW, qmr.ActiveKeyView);
+
 
             modulelManager.registerClass(ModuleNameConst.APP_DOWN_VIEW, qmr.AppDownloadView);
             modulelManager.registerClass(ModuleNameConst.MINE_PASSIED_VIEW, qmr.MinePassIdView);
             modulelManager.registerClass(ModuleNameConst.MINEID_VIEW, qmr.MineIdView);
             modulelManager.registerClass(ModuleNameConst.CERTIFICATION_VIEW, qmr.CertificationView);
             modulelManager.registerClass(ModuleNameConst.HELP_MAIN_VIEW, qmr.HelpMain);
+            modulelManager.registerClass(ModuleNameConst.RECHARGE_VIEW, qmr.RechargeView);
+            modulelManager.registerClass(ModuleNameConst.WIHTDRAWAL_VIEW, qmr.WithdrawalView);
         }
     }
 }

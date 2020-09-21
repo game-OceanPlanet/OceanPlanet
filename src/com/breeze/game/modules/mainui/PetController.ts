@@ -75,7 +75,7 @@ module qmr
         // 购买鱼儿
         private getBuyFishResponse(s: com.message.S_BUY_FISH):void
         {
-            TipManagerCommon.getInstance().createCommonColorTip("购买成功");
+            TipManagerCommon.getInstance().createCommonColorTip("购买成功", true);
 			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
             this.dispatch(NotifyConst.S_BUY_FISH);
         }
@@ -91,7 +91,7 @@ module qmr
         // U购买鱼
         private getBuyFishByUSDTResponse(s: com.message.S_DIAMOND_BUY_FISH):void
         {
-            TipManagerCommon.getInstance().createCommonColorTip("购买成功");
+            TipManagerCommon.getInstance().createCommonColorTip("购买成功", true);
 			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
             this.dispatch(NotifyConst.S_DIAMOND_BUY_FISH);
 		}

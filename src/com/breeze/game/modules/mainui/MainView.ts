@@ -28,7 +28,10 @@ module qmr {
         public effect_group_pet: eui.Group;
         public txt_totalGold: eui.Label;
         public txt_totalUsdt: eui.Label;
-
+        public btn_ActKey:eui.Image;
+        public btn_recharge:eui.Image;
+        public btn_withdrawal:eui.Image;
+        
 
 
 
@@ -67,6 +70,7 @@ module qmr {
             t.addClickEvent(t.btn_shop, t.onShopClick, t);
             t.addClickEvent(t.btn_dividend, t.onDividendClick, t);
             t.addClickEvent(t.btn_promote, t.onPromoteClick, t);
+            t.addClickEvent(t.btn_ActKey, t.onKeyClick, t);
 
             t.addClickEvent(t.btn_bottom_pet, t.onPetViewClick, t);
             t.addClickEvent(t.btn_bottom_property, t.onPropertyViewClick, t);
@@ -77,6 +81,8 @@ module qmr {
             t.addClickEvent(t.btn_permit, t.onPermitClick, t);
             t.addClickEvent(t.btn_download, t.onDowonClick, t);
             t.addClickEvent(t.btn_help, t.onHelpClick, t);
+            t.addClickEvent(t.btn_recharge, t.onRechargeClick, t);
+            t.addClickEvent(t.btn_withdrawal, t.onWithdrawalClick, t);
 
 
             t.registerNotify(NotifyConst.S_GET_FINSH_INFO, t.updateView, t);
@@ -175,6 +181,21 @@ module qmr {
         //推广
         private onPromoteClick(): void {
             ModuleManager.showModule(ModuleNameConst.INVITE_CODE_VIEW);
+        }
+         //激活码
+        private onKeyClick():void
+        {
+            ModuleManager.showModule(ModuleNameConst.ACT_KEY_VIEW);
+        }
+        //充值
+        private onRechargeClick():void
+        {
+            ModuleManager.showModule(ModuleNameConst.RECHARGE_VIEW);
+        }
+        //提现
+        private onWithdrawalClick():void
+        {
+            ModuleManager.showModule(ModuleNameConst.WIHTDRAWAL_VIEW);
         }
 
 
