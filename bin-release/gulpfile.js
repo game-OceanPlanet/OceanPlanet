@@ -77,8 +77,7 @@ function game_main(){
 
     let stream = gp.src([
 		'./js/protobuf-bundles.min.js',
-		'./js/default.thm.min.js',
-		'./js/dragonBones.min.js',
+        './js/default.thm.min.js',
         './js/main.min.js'
 	]).
 	pipe(concat('main-game.min.js')).pipe(gp.dest('./js'))

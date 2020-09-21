@@ -87,6 +87,9 @@ module qmr {
             t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
 
             // DataCenter.Instance;
+
+            // let sprite = GameUtil.createCode("http://www.baidu.com");
+            // this.addChild(sprite);
         }
 
         protected addedToStage(evt: egret.Event): void {

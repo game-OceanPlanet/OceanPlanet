@@ -345,66 +345,6 @@ module qmr
 		}
 	}
 
-	export class DirectRateCfg extends BaseBean
-	{
-		/**编号*/
-	get id():number
-	{			
-		return this.d["id"];			
-	}
-	/**直推人数*/
-	get count():number
-	{			
-		return this.d["count"];			
-	}
-	/**直推收益,每次领币百分比提成*/
-	get precent():string
-	{			
-		return this.d["precent"];			
-	}
-
-		constructor(element)
-		{				
-			super(element)
-		this.key="id";
-		}
-	}
-
-	export class TeamRateCfg extends BaseBean
-	{
-		/**编号*/
-	get id():number
-	{			
-		return this.d["id"];			
-	}
-	/**团队人数*/
-	get allCount():number
-	{			
-		return this.d["allCount"];			
-	}
-	/**直推人数*/
-	get directCount():number
-	{			
-		return this.d["directCount"];			
-	}
-	/**非直推人数*/
-	get otherCount():number
-	{			
-		return this.d["otherCount"];			
-	}
-	/**团队收益,非直每次领币百分比提成*/
-	get precent():string
-	{			
-		return this.d["precent"];			
-	}
-
-		constructor(element)
-		{				
-			super(element)
-		this.key="id";
-		}
-	}
-
 	export class CommonConfigCfg extends BaseBean
 	{
 		/**ID*/
@@ -422,36 +362,6 @@ module qmr
 		{				
 			super(element)
 		this.key="id";
-		}
-	}
-
-	export class OutBossInspireCfg extends BaseBean
-	{
-		/**鼓舞等级*/
-	get level():number
-	{			
-		return this.d["level"];			
-	}
-	/**消耗材料*/
-	get cost():string
-	{			
-		return this.d["cost"];			
-	}
-	/**鼓舞buff：buffId1，buffId2*/
-	get buffs():string
-	{			
-		return this.d["buffs"];			
-	}
-	/**描述*/
-	get dec():string
-	{			
-		return this.d["dec"];			
-	}
-
-		constructor(element)
-		{				
-			super(element)
-		this.key="level";
 		}
 	}
 

@@ -7,6 +7,7 @@ module qmr {
         
         public IdentityPro:com.message.BasePlayerMsg;
         public playerPro:com.message.PlayerPropertyMsg;
+        public teamPro:com.message.TeamMsg;
 
         private fishInfos:PetActorInfo[];
         private fishIds:number[];
@@ -15,7 +16,6 @@ module qmr {
         public totalMoney:number = 0;//总共持有金币的数量
         public totalUSDT:number = 0;//当前玩家USDT的数量
         public totalKAD:number = 0;//当前玩家KAD的数量
-        public keyCount:number = 0;//激活秘钥数量
 
         public moneyLogs:com.message.MoneyLogMsg[];//获取金币日志信息
         public usdtLogs:com.message.MoneyLogMsg[];//获取U日志信息
