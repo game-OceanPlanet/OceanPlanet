@@ -9,12 +9,13 @@
 			<e:Label text="保存图片" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" horizontalCenter="0" verticalCenter="0" textColor="0xFFFFFF"/>
 		</e:Group>
 		<e:Image id="img_code" source="header_png" y="100" width="300" height="300" horizontalCenter="0"/>
+		<e:Label text="充值" y="27.01" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xD9D8FF" horizontalCenter="10" id="txt_title" x="323"/>
 
 
 
 
 
-		<e:Label text="充值" y="40" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
+
 
 		<e:Group width="725" x="12" y="508" anchorOffsetX="0" anchorOffsetY="0">
 
@@ -37,7 +38,7 @@
 
 
 		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47"
-		         source="panel2_json.btn_back" scaleX="1" scaleY="1"  x="703" y="1287"/>
+		         source="panel2_json.btn_back" scaleX="1" scaleY="1"  x="703" y="65"/>
 
 	</e:Group>
 </e:Skin>

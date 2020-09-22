@@ -6,6 +6,7 @@
 		<e:Image source="trade_bg_png"  horizontalCenter="0" verticalCenter="0"/>
 		<e:Label id="txt_name0" text="可用0.0073USDT" y="348" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="50"/>
 		<e:Label id="txt_name1" text="0            USDT" y="450.42" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
+		<e:Label text="提现" y="57.01" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xD9D8FF" horizontalCenter="0" id="txt_title" x="323"/>
 		<e:Group anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="109.91" horizontalCenter="0">
 			<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" width="603" source="panelui_json.ShuRuKuang1" height="67" scale9Grid="38,8,232,51"/>
 			<e:EditableText id="text_input_pwd0" prompt="输入或长按粘贴地址" size="28" verticalAlign="middle" fontFamily="specialGameFont" anchorOffsetX="0" promptColor="0x91918b" textAlign="center" left="0" right="0" top="0" bottom="0" text="" textColor="0xffffff"/>
@@ -49,6 +50,6 @@
 			<e:Label id="txt_detail" text="1. 提币地址必须为0x开头的ERC20地址，否则将无法到账\r\r2. 首次提现门槛为30USDT，后续提现门槛为100USDT\r\r3. 每次提现收取5%手续费，最低15USDT的手续费，提现后12次网络确认后到账" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" textAlign="left" verticalAlign="top" x="50" y="318.7" anchorOffsetY="0" anchorOffsetX="0" width="633.55"/>
 		</e:Group>
 		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back"
-		         scaleX="1" scaleY="1" x="703" y="1287" />
+		         scaleX="1" scaleY="1" x="703" y="80" />
 	</e:Group>
 </e:Skin>
