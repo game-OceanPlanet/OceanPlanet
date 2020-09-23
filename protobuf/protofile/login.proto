@@ -19,8 +19,8 @@ message C_USER_LOGIN_VERIFY_CODE {
 
 // 登录返回
 message S_USER_LOGIN {
-	int64 playerId=1; // 玩家编号
-	int32 fromGame=4; // 游戏入口，1海洋，2深海
+	int64 playerId = 1; // 玩家编号
+	int32 fromGame = 2; // 游戏入口，1海洋，2深海
 }
 
 // 注册

@@ -5087,7 +5087,7 @@ $root.com = (function() {
                 if (message.playerId != null && message.hasOwnProperty("playerId"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
                 if (message.fromGame != null && message.hasOwnProperty("fromGame"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.fromGame);
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.fromGame);
                 return writer;
             };
 
@@ -5112,7 +5112,7 @@ $root.com = (function() {
                     case 1:
                         message.playerId = reader.int64();
                         break;
-                    case 4:
+                    case 2:
                         message.fromGame = reader.int32();
                         break;
                     default:
@@ -9019,6 +9019,7 @@ $root.com = (function() {
              * @property {number|null} [state] DirectInfoMsg state
              * @property {number|null} [effectDirectNum] DirectInfoMsg effectDirectNum
              * @property {number|null} [allEffectNum] DirectInfoMsg allEffectNum
+             * @property {number|null} [money] DirectInfoMsg money
              */
 
             /**
@@ -9069,6 +9070,14 @@ $root.com = (function() {
             DirectInfoMsg.prototype.allEffectNum = 0;
 
             /**
+             * DirectInfoMsg money.
+             * @member {number} money
+             * @memberof com.message.DirectInfoMsg
+             * @instance
+             */
+            DirectInfoMsg.prototype.money = 0;
+
+            /**
              * Encodes the specified DirectInfoMsg message. Does not implicitly {@link com.message.DirectInfoMsg.verify|verify} messages.
              * @function encode
              * @memberof com.message.DirectInfoMsg
@@ -9088,6 +9097,8 @@ $root.com = (function() {
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.effectDirectNum);
                 if (message.allEffectNum != null && message.hasOwnProperty("allEffectNum"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.allEffectNum);
+                if (message.money != null && message.hasOwnProperty("money"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.money);
                 return writer;
             };
 
@@ -9120,6 +9131,9 @@ $root.com = (function() {
                         break;
                     case 4:
                         message.allEffectNum = reader.int32();
+                        break;
+                    case 5:
+                        message.money = reader.double();
                         break;
                     default:
                         reader.skipType(tag & 7);

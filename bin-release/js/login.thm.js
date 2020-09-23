@@ -1014,7 +1014,7 @@ window.skins=window.skins||{};
 	__extends(LoginViewSkin, _super);
 	function LoginViewSkin() {
 		_super.call(this);
-		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","lbUserBook","lbPrivacyPolicy","gpRead","txt_account_des","txt_account","groupAccount","txt_password","txt_pwd_des","groupAccount0","btn_login","btn_register_back","btn_login_way","group_login","groupWind","lbUserBook0","lbPrivacyPolicy0","gpRead0","txt_register_tel","groupAccount1","txt_register_invitecode","groupAccount2","txt_register_pwd","groupAccount3","txt_register_repwd","groupAccount4","txt_register_verifycode","groupAccount5","btn_register","btn_login_back","group_register"];
+		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","gpRead","txt_account_des","txt_account","groupAccount","txt_password","txt_pwd_des","groupAccount0","btn_login","btn_register_back","btn_login_way","group_login","lbUserBook0","lbPrivacyPolicy0","gpRead0","txt_register_tel","groupAccount1","txt_register_invitecode","groupAccount2","txt_register_pwd","groupAccount3","txt_register_repwd","groupAccount4","txt_register_verifycode","groupAccount5","btn_register","btn_login_back","group_register"];
 		
 		this.height = 1334;
 		this.width = 750;
@@ -1028,7 +1028,7 @@ window.skins=window.skins||{};
 		t.bottom = 0;
 		t.horizontalCenter = 0;
 		t.top = 0;
-		t.elementsContent = [this._Image1_i(),this.groupWind_i(),this.group_register_i()];
+		t.elementsContent = [this._Image1_i(),this.groupWind_i(),this.group_login_i(),this.group_register_i()];
 		return t;
 	};
 	_proto._Image1_i = function () {
@@ -1052,7 +1052,7 @@ window.skins=window.skins||{};
 		t.width = 750;
 		t.x = 0;
 		t.y = -468;
-		t.elementsContent = [this.imgWindSlow_i(),this.imgWindFast_i(),this.imgWindMiddle_i(),this.group_login_i()];
+		t.elementsContent = [this.imgWindSlow_i(),this.imgWindFast_i(),this.imgWindMiddle_i()];
 		return t;
 	};
 	_proto.imgWindSlow_i = function () {
@@ -1086,10 +1086,10 @@ window.skins=window.skins||{};
 	_proto.group_login_i = function () {
 		var t = new eui.Group();
 		this.group_login = t;
-		t.horizontalCenter = 0;
+		t.horizontalCenter = 0.5;
 		t.scaleX = 1;
 		t.scaleY = 1;
-		t.verticalCenter = 0;
+		t.verticalCenter = -29;
 		t.x = 48;
 		t.y = 313;
 		t.elementsContent = [this._Image2_i(),this.gpRead_i(),this.groupAccount_i(),this.groupAccount0_i(),this.btn_login_i(),this.btn_register_back_i(),this.btn_login_way_i()];
@@ -1268,6 +1268,7 @@ window.skins=window.skins||{};
 		var t = new eui.TextInput();
 		this.txt_password = t;
 		t.anchorOffsetX = 0;
+		t.displayAsPassword = true;
 		t.height = 53;
 		t.inputType = "password";
 		t.maxChars = 35;
@@ -1356,7 +1357,7 @@ window.skins=window.skins||{};
 		t.anchorOffsetY = 0;
 		t.height = 768;
 		t.horizontalCenter = 2;
-		t.verticalCenter = 11;
+		t.verticalCenter = -98;
 		t.visible = false;
 		t.elementsContent = [this._Image8_i(),this.gpRead0_i(),this.groupAccount1_i(),this.groupAccount2_i(),this.groupAccount3_i(),this.groupAccount4_i(),this.groupAccount5_i(),this.btn_register_i(),this.btn_login_back_i()];
 		return t;

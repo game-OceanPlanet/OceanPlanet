@@ -47,7 +47,7 @@ public btnReturn:eui.Image;
 		{
             let t = this;
             let playerPro:com.message.BasePlayerMsg = HeroModel.instance.IdentityPro;
-            let isIdentify:boolean = playerPro.state == 1;//实名验证状态0未实名，1已经实名 
+            let isIdentify:boolean = playerPro.state == 2;//激活+实名状态,0未实名，1已激活，2已实名 
             t.identifyView.visible = !isIdentify;
             t.identifyedView.visible = isIdentify;
 
@@ -56,8 +56,8 @@ public btnReturn:eui.Image;
 
             if(isIdentify){
                 t.txt_name_show.text = NumberUtil.getPersonNameShow(playerPro.name);
-                t.txt_id_show.text = NumberUtil.getIdentifyNumberShow(playerPro.idNum);
-                t.txt_tel_show.text = NumberUtil.getTelNumberShow(Int64Util.getNumber(playerPro.playerId));
+                t.txt_id_show.text = playerPro.idNum;
+                t.txt_tel_show.text = NumberUtil.getTelNumberShow(Int64Util.getNumber(playerPro.mobile));
             } else {
 
             }
@@ -79,6 +79,11 @@ public btnReturn:eui.Image;
             }
             if(!RegexpUtil.isIdentifyId(id)){
                 TipManagerCommon.getInstance().createCommonTip("请输入正确的身份证");
+                return;
+            }
+
+            if(HeroModel.instance.IdentityPro.state == 0){
+                TipManagerCommon.getInstance().createCommonTip("实名认证之前请先激活账号");
                 return;
             }
 

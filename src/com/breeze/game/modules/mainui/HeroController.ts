@@ -39,6 +39,10 @@ module qmr
 		 */
 		private onRecUseLoginInitFinish(s: com.message.S_USER_LOGIN_INIT_FINISH): void
 		{
+			PetController.instance;
+			HeroController.instance;
+			MapController.instance;
+			TradeController.instance;
             GlobalConfig.userId = Int64Util.getNumber(s.playerId);
             HeroModel.instance.playerPro = s.property as com.message.PlayerPropertyMsg;
             HeroModel.instance.IdentityPro = s.basePlayerMsg as com.message.BasePlayerMsg;
@@ -52,14 +56,14 @@ module qmr
 			ModuleManager.showModule(ModuleNameConst.MAINUI_VIEW, null, LayerConst.TOOLBAR);
 			SceneManager.instance.enterHangMap(3004);
 
-			// let isOpen = qmr.SoundManager.getInstance().isMusicSoundOpen;
-			// qmr.SoundManager.getInstance().isMusicSoundOpen = false;
-			// qmr.SoundManager.getInstance().isMusicSoundOpen = true;
-			// qmr.SoundManager.getInstance().isMusicSoundOpen = isOpen;
-			// isOpen = qmr.SoundManager.getInstance().isEffectSoundOpen;
-			// qmr.SoundManager.getInstance().isEffectSoundOpen = false;
-			// qmr.SoundManager.getInstance().isEffectSoundOpen = true;
-            // qmr.SoundManager.getInstance().isEffectSoundOpen = isOpen;
+			let isOpen = qmr.SoundManager.getInstance().isMusicSoundOpen;
+			qmr.SoundManager.getInstance().isMusicSoundOpen = false;
+			qmr.SoundManager.getInstance().isMusicSoundOpen = true;
+			qmr.SoundManager.getInstance().isMusicSoundOpen = isOpen;
+			isOpen = qmr.SoundManager.getInstance().isEffectSoundOpen;
+			qmr.SoundManager.getInstance().isEffectSoundOpen = false;
+			qmr.SoundManager.getInstance().isEffectSoundOpen = true;
+            qmr.SoundManager.getInstance().isEffectSoundOpen = isOpen;
             
 			this.reqLoadResFinishToServer();//通知服务器资源已加载完毕，服务端开始广播游戏协议
 			//延迟小段时间进入场景，提升视觉体验

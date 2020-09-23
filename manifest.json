@@ -131,6 +131,7 @@
 		"bin-debug/com/breeze/game/tip/FloatImgLabel.js",
 		"bin-debug/com/breeze/game/tip/FloatManager.js",
 		"bin-debug/com/breeze/game/tip/FloatTip.js",
+		"bin-debug/com/breeze/game/util/BesselImgUtil.js",
 		"bin-debug/com/breeze/game/util/ColorUtil.js",
 		"bin-debug/com/breeze/game/util/DisplayUtils.js",
 		"bin-debug/com/breeze/game/util/FilterUtil.js",

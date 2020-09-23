@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="InviteCodeSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui"
-        xmlns:w="http://ns.egret.com/wing">
+        xmlns:w="http://ns.egret.com/wing" xmlns:qmr="qmr.*">
 	<e:Image anchorOffsetY="0" verticalCenter="-30" left="0" right="0" source="common_beijing_png" />
 	<e:Group id="panelGroup" width="750" height="1334" y="0" horizontalCenter="0">
 		<e:Image source="trade_bg_png" horizontalCenter="0" x="0" scaleX="1" scaleY="1"  verticalCenter="0"/>
@@ -58,15 +58,15 @@
 					         anchorOffsetY="0" horizontalCenter="0" anchorOffsetX="0" />
 					<e:Image x="329.65" y="48.68" source="nameImg_json.title_tuiguang" />
 				</e:Group>
-				<e:Group width="750" height="40" x="0" y="1409.78" scaleX="1" scaleY="1">
-					<e:Label text="注入数量" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
-					         x="382.28" visible="false" />
+				<e:Group width="750" height="40" x="0" y="1409" scaleX="1" scaleY="1">
+					<e:Label text="收益" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
+					         x="408.11" />
 					<e:Label text="状态" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
-					         x="531.55" />
+					         x="564.87" />
 					<e:Label text="账号" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
 					         x="95.69" />
 					<e:Label text="规模" y="0" size="36" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
-					         horizontalCenter="-34" />
+					         horizontalCenter="-76" />
 				</e:Group>
 				<e:Group width="647" height="763" x="57.00000000000001" y="1299.94" anchorOffsetX="0" anchorOffsetY="0" scaleX="1"
 				         scaleY="1">

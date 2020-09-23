@@ -47,7 +47,7 @@
 			</e:Group>
 			<e:Label text="到账数量" y="23.18" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6"
 			          x="50"/>
-			<e:Label id="txt_detail" text="1. 提币地址必须为0x开头的ERC20地址，否则将无法到账\r\r2. 首次提现门槛为30USDT，后续提现门槛为100USDT\r\r3. 每次提现收取5%手续费，最低15USDT的手续费，提现后12次网络确认后到账" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" textAlign="left" verticalAlign="top" x="50" y="318.7" anchorOffsetY="0" anchorOffsetX="0" width="633.55"/>
+			<e:Label id="txt_detail" text="1. 提币地址必须为0x开头的ERC20地址，否则将无法到账\r\r2. 提现门槛为30USDT，每次提现收取5USDT手续费，提现后12次网络确认后到账" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" textAlign="left" verticalAlign="top" x="50" y="339.7" anchorOffsetY="0" anchorOffsetX="0" width="633.55"/>
 		</e:Group>
 		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47" source="panel2_json.btn_back"
 		         scaleX="1" scaleY="1" x="703" y="80" />

@@ -39,15 +39,15 @@ module qmr {
 		 * 身份证号脱敏
 		 * @param id 
 		 */
-		public static getIdentifyNumberShow(id:string):string
-		{
-			if(!RegexpUtil.isIdentifyId(id)){
-				return "159****2233";
-			}
-			let reg:RegExp = new RegExp(/(?<=\d{4})\d+(?=[\dX]{3})/);
-			id = id.replace(reg, "***********");
-			return id;
-		}
+		// public static getIdentifyNumberShow(id:string):string
+		// {
+		// 	if(!RegexpUtil.isIdentifyId(id)){
+		// 		return "159****2233";
+		// 	}
+		// 	let reg:RegExp = new RegExp(/(?<=\d{4})\d+(?=[\dX]{3})/);
+		// 	id = id.replace(reg, "***********");
+		// 	return id;
+		// }
 
 		/**
 		 * 电话号码脱敏

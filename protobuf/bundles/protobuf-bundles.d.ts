@@ -4167,6 +4167,9 @@ declare namespace com {
 
             /** DirectInfoMsg allEffectNum */
             allEffectNum?: (number|null);
+
+            /** DirectInfoMsg money */
+            money?: (number|null);
         }
 
         /** Represents a DirectInfoMsg. */
@@ -4189,6 +4192,9 @@ declare namespace com {
 
             /** DirectInfoMsg allEffectNum. */
             public allEffectNum: number;
+
+            /** DirectInfoMsg money. */
+            public money: number;
 
             /**
              * Encodes the specified DirectInfoMsg message. Does not implicitly {@link com.message.DirectInfoMsg.verify|verify} messages.

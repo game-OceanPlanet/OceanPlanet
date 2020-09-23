@@ -67,6 +67,11 @@ module qmr
 		// 购买鱼儿
         public getBuyFish(configId:number):void
         {
+            ////激活+实名状态,0未实名，1已激活，2已实名 
+            if(HeroModel.instance.IdentityPro.state != 2){
+                TipManagerCommon.getInstance().createCommonColorTip("对不起，您没有实名认证无法购买");
+                return;
+            }
             var c: com.message.C_BUY_FISH = new com.message.C_BUY_FISH();
             c.fishConfigId = configId;
 			this.sendCmd(c, MessageID.C_BUY_FISH, true);
@@ -75,7 +80,8 @@ module qmr
         // 购买鱼儿
         private getBuyFishResponse(s: com.message.S_BUY_FISH):void
         {
-            TipManagerCommon.getInstance().createCommonColorTip("购买成功", true);
+            let cfg:PetCfg = ConfigManager.getConf(ConfigEnum.PET, s.fishMsg.fishId);
+            TipManagerCommon.getInstance().createCommonTip("恭喜获得一条"+"<font color ='0xfff200'>"+cfg.name+"</font>", 0);
 			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
             this.dispatch(NotifyConst.S_BUY_FISH);
         }

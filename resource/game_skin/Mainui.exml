@@ -20,7 +20,7 @@
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" left="1" top="70">
 		<e:Image x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.item_di1" />
-		<e:Image x="54" y="58" source="mainui_json.icon_gold1" />
+		<e:Image id="money_icon" x="54" y="58" source="mainui_json.icon_gold1" />
 		<e:Label text="待领数量" y="30" size="26" fontFamily="specialGameFont" horizontalCenter="-8" textColor="0x71492e" />
 		<e:Label id="txt_curr" text="1.0001 JT" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-7.5"
 		         textColor="0xffffff" />

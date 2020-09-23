@@ -10,6 +10,7 @@ public btn_logout:eui.Group;
 public txt_md5:eui.Label;
 public txt_detail:eui.Label;
 public btnReturn:eui.Image;
+public codeGroup:eui.Group;
 
 
 
@@ -50,7 +51,13 @@ public btnReturn:eui.Image;
 		private updateView():void
 		{
 			let t = this;
-
+			while(t.codeGroup.numChildren > 0){
+				t.codeGroup.removeChildAt(0);
+			}
+			let sp:egret.Sprite = GameUtil.createCode("0x4487e2ac1b5e2acc92cc8251a31b9343849dbe08");
+			t.codeGroup.addChild(sp);
+			sp.x = (256 - sp.width) / 2;
+			sp.x = (256 - sp.height) / 2;
 		}
 
 		public dispose(): void

@@ -3,6 +3,7 @@ module qmr {
 		public txt_state:eui.Label;
 public txt_id:eui.Label;
 public txt_team:eui.Label;
+public txt_money:eui.Label;
 
 		
 		public constructor()
@@ -26,6 +27,7 @@ public txt_team:eui.Label;
 				t.txt_team.text = pro.effectDirectNum+" 人";
 				let des = t.getState(pro.state);
 				t.txt_state.textFlow = HtmlUtil.getHtmlString(des);
+				t.txt_money.text = pro.money + HeroModel.KH;
             }
 		}
 		

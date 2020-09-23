@@ -18,7 +18,7 @@ module qr {
          * QR图的大小(size)被定义为版本（Version)，版本号从1到40。版本1就是一个21*21的矩阵，每增加一个版本号，矩阵的大小就增加4个模块(Module)，
          * 因此，版本40就是一个177*177的矩阵。（版本越高，意味着存储的内容越多，纠错能力也越强）。
          * */
-        public static create(msg:string,width:number=200,height:number=200,errorCorrectLevel=QRErrorCorrectLevel.M,typeNumer:number = 4, color=0):egret.Sprite{
+        public static create(msg:string,width:number=256,height:number=256,errorCorrectLevel=QRErrorCorrectLevel.M,typeNumer:number = 4, color=0):egret.Sprite{
           var _htOption = {
                 color:color,
                 width : width,

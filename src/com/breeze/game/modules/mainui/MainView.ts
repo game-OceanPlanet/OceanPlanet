@@ -31,9 +31,7 @@ module qmr {
         public btn_ActKey:eui.Image;
         public btn_recharge:eui.Image;
         public btn_withdrawal:eui.Image;
-        
-
-
+        public money_icon:eui.Image;
 
 
         private __timekey: number;
@@ -91,11 +89,33 @@ module qmr {
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
             t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
             t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
+        }
 
-            // DataCenter.Instance;
+        private startPoint:egret.Point;
+        private endPoint:egret.Point;
+        public getMoneyStartPont():egret.Point
+        {
+            let t = this;
+            if(!t.startPoint){
+                t.startPoint = new egret.Point();
+            }
 
-            // let sprite = GameUtil.createCode("http://www.baidu.com");
-            // this.addChild(sprite);
+            t.money_icon.localToGlobal(0, 0,t.startPoint);
+            t.startPoint.x += 24;
+            t.startPoint.y += 24;
+            return t.startPoint;
+        }
+
+        public getMoneyEndPont():egret.Point
+        {
+            let t = this;
+            if(!t.endPoint){
+                t.endPoint = new egret.Point();
+            }
+
+            t.txt_totalUsdt.localToGlobal(0, 0,t.endPoint);
+            t.endPoint.x += 55;
+            return t.endPoint;
         }
 
         protected addedToStage(evt: egret.Event): void {
@@ -135,6 +155,9 @@ module qmr {
         //领钱
         private onGetClick(): void {
             let t = this;
+
+            BesselImgUtil.flyMoney(t.getMoneyStartPont(), t.getMoneyEndPont());
+
             if (t.__lastGetMoneyTime - egret.getTimer() > 0) {
                 let pendingMoney: number = t.__currMoney;
                 HeroModel.instance.pendingMoney = 0;
