@@ -5,19 +5,10 @@
 	         source="commp_json.panel_frame4"  height="100"/>
 	<e:Image source="commp_json.item_icon1" x="16" y="10"  anchorOffsetX="0" width="80" anchorOffsetY="0" height="84"/>
 	<e:Label id="txt_name" text="激活秘钥" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center"
-	         textColor="0x803f07" bold="false" anchorOffsetX="0" y="10" left="164" />
-	<e:Label text="类型：" y="46" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="164" />
-	<e:Label text="时间：" y="70" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="164" />
-	<e:Label text="赠送者：" y="46" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="392" />
-	<e:Label id="txt_1" text="10.526TJ" y="46" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1"
-	         textColor="0x553B24" left="225" />
+	         textColor="0x803f07" bold="false" anchorOffsetX="0" y="10" left="109" />
+	<e:Label id="txt_des" text="描述" y="46" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="109" />
+	<e:Label text="时间：" y="70" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="109" />
 	<e:Label id="txt_2" text="30天" y="71" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24"
-	         left="225" />
-	<e:Label id="txt_3" text="10%" y="46" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1"
-	         textColor="0x553B24" left="471" />
-	<e:Label text="获得者：" y="71" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="392"/>
-	<e:Label id="txt_4" text="10%" y="71" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="471"/>
+	         left="170" />
 	<e:Image id="img_head" width="73" height="79" x="20" y="13"  anchorOffsetX="0" anchorOffsetY="0"/>
-	<e:Label text="描述：" y="18" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="391"/>
-	<e:Label id="txt_5" text="10%" y="19" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="471"/>
 </e:Skin>

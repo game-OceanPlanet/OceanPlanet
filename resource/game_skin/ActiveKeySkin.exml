@@ -8,19 +8,23 @@
 				<e:Group horizontalCenter="0" anchorOffsetY="0" width="750">
 					<e:Image x="67" y="145" source="trade_json.panel_bg"/>
 					<e:Label text="我的激活码" y="97" size="40" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="263" textColor="0xD9D8FF"/>
-					<e:Label id="txt_unused" text="100" y="223" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="-6.5" x="123"/>
+					<e:Label id="txt_unused" text="100" y="215" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="-6.5" x="123"/>
 					<e:Label text="剩余激活码" y="187" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="-6" x="110"/>
-					<e:Group id="btn_use" x="380" y="286" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49" scaleX="1" scaleY="1">
+					<e:Group id="btn_use" x="380" y="263" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49" scaleX="1" scaleY="1">
 						<e:Image x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common"/>
 						<e:Label text="使 用" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0x803F07"/>
 					</e:Group>
-					<e:Group id="btn_give" x="382" y="465" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49" scaleX="1" scaleY="1">
+					<e:Group id="btn_give" x="382" y="476" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49" scaleX="1" scaleY="1">
 						<e:Image x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common1"/>
 						<e:Label text="赠 送" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0xFFF4D6"/>
 					</e:Group>
-					<e:Group anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="360" x="195">
+					<e:Group anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="302" x="195">
 						<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" width="358" source="panelui_json.ShuRuKuang1" height="67" scale9Grid="38,8,232,51"/>
-						<e:EditableText id="text_input_count" prompt="输入要赠送的手机号" size="28" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" promptColor="0x0b27dd" textAlign="center" left="0" right="5" top="0" bottom="0" text=""/>
+						<e:EditableText id="text_input_tel" prompt="输入要赠送的手机号" size="28" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" promptColor="0x0B27DD" textAlign="center" left="0" right="5" top="0" bottom="0" text=""/>
+					</e:Group>
+					<e:Group anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="374" x="195">
+						<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" width="358" source="panelui_json.ShuRuKuang1" height="67" scale9Grid="38,8,232,51"/>
+						<e:EditableText id="text_input_count" prompt="输入要赠送的数量" size="28" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" promptColor="0x0b27dd" textAlign="center" left="0" right="5" top="0" bottom="0" text=""/>
 					</e:Group>
 				</e:Group>
 				<e:Group width="750" height="1070" y="528.94" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="1" x="1" scaleX="1" scaleY="1">

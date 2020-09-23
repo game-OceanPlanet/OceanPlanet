@@ -40,6 +40,7 @@ module qmr {
 			this.msgIdMap[MessageID.S_MARKET_BUY] = com.message.S_MARKET_BUY;
 			this.msgIdMap[MessageID.S_MARKET_SELL] = com.message.S_MARKET_SELL;
 			this.msgIdMap[MessageID.S_MARKET_CANCEL] = com.message.S_MARKET_CANCEL;
+			this.msgIdMap[MessageID.S_GET_OCT_BUYGOOD_LIST] = com.message.S_GET_OCT_BUYGOOD_LIST;
 			this.msgIdMap[MessageID.S_GET_MONEY_EXCHANGE_INFO] = com.message.S_GET_MONEY_EXCHANGE_INFO;
 			this.msgIdMap[MessageID.S_MONEY_EXCHANGE_KAD] = com.message.S_MONEY_EXCHANGE_KAD;
 			this.msgIdMap[MessageID.C_GET_BONUS_INFO] = com.message.C_GET_BONUS_INFO;

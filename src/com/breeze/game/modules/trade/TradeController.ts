@@ -19,6 +19,7 @@ module qmr
 			this.addSocketListener(MessageID.S_MARKET_BUY, this.getBuyOrderResponse, this, false);
 			this.addSocketListener(MessageID.S_MARKET_SELL, this.getSellOrderResponse, this, false);
 			this.addSocketListener(MessageID.S_MARKET_CANCEL, this.getBuyOrderRevokeResponse, this, false);
+			this.addSocketListener(MessageID.S_GET_OCT_BUYGOOD_LIST, this.getListCResponse, this, false);
 		}
 
         //获取otc信息
@@ -32,10 +33,25 @@ module qmr
         private getOTCResponse(s: com.message.S_GET_OCT_MARKET_INFO):void
         {
             TradeModule.instance.sysDiamonPrice = Int64Util.getNumber(s.sysDiamondPrice);
-            TradeModule.instance.buyGoodsList = s.buyGoodMsgList as com.message.BuyGoodMsg[];
             TradeModule.instance.historyPrices = s.historyPriceMsgList as com.message.HistoryPriceMsg[];
             this.dispatch(NotifyConst.S_GET_OCT_MARKET_INFO);
+		}
+
+		//求: 获取OCT求购信息
+		public requestOTCList(): void
+		{
+			var c: com.message.C_GET_OCT_BUYGOOD_LIST = new com.message.C_GET_OCT_BUYGOOD_LIST();
+			c.page = 1;
+			c.pageSize = 100;
+			this.sendCmd(c, MessageID.C_GET_OCT_BUYGOOD_LIST, true);
         }
+		
+		// 响应: 获取OCT求购信息
+        private getListCResponse(s: com.message.S_GET_OCT_BUYGOOD_LIST):void
+        {
+			TradeModule.instance.buyGoodsList = s.buyGoodMsgList as com.message.BuyGoodMsg[];
+            this.dispatch(NotifyConst.S_GET_OCT_BUYGOOD_LIST);
+		}
 
         //请求: 买入金币（挂单）
         public getBuyOrderRequest(count:number, price:number):void

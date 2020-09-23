@@ -6,11 +6,13 @@ module qmr
 public txt_unused:eui.Label;
 public btn_use:eui.Group;
 public btn_give:eui.Group;
+public text_input_tel:eui.EditableText;
 public text_input_count:eui.EditableText;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
+
 
 
 
@@ -35,6 +37,9 @@ public btn_help:eui.Image;
             t.item_list.itemRenderer = ActiveKeyItem;
             t._arrCollection = new eui.ArrayCollection();
             t.item_list.dataProvider = t._arrCollection;
+
+            t.text_input_tel.restrict = "0-9";
+            t.text_input_count.restrict = "0-9";
 		}
 
 		protected initData(): void {
@@ -65,21 +70,43 @@ public btn_help:eui.Image;
         
         private onGive():void
         {
-            let tel:string = this.text_input_count.text;
+            let tel:string = this.text_input_tel.text;
             if(RegexpUtil.IsNull(tel)){
+                TipManagerCommon.getInstance().createCommonColorTip("赠送的手机号码不能为空");
                 return;
             }
             if(!RegexpUtil.isPhoneNumber(tel)){
                 TipManagerCommon.getInstance().createCommonColorTip("请输入正确的手机号码");
                 return;
             }
-            TeamController.instance.requestGiveCMD(tel);
+
+            let count:string = this.text_input_count.text;
+            if(RegexpUtil.IsNull(count)){
+                TipManagerCommon.getInstance().createCommonColorTip("赠送的数量不能为空");
+                return;
+            }
+            let c:number = parseInt(count);
+            if(c <= 0){
+                TipManagerCommon.getInstance().createCommonColorTip("赠送的数量输入有误");
+                return;
+            }
+
+            if(c > HeroModel.instance.keyCount){
+                TipManagerCommon.getInstance().createCommonColorTip("秘钥数量不足");
+                return;
+            }
+            if(HeroModel.instance.IdentityPro.mobile == tel){
+                TipManagerCommon.getInstance().createCommonColorTip("不能赠送给自己");
+                return;
+            }
+
+            TeamController.instance.requestGiveCMD(tel, c);
         }
 
         private onUse():void
         {
             let state:number = HeroModel.instance.IdentityPro.state;//激活+实名状态,0未实名，1已激活，2已实名 
-            if(state == 1){
+            if(state == 1 || state == 2){
                 TipManagerCommon.getInstance().createCommonColorTip("账号已激活，不能再次使用激活码");
                 return;
             }
@@ -87,6 +114,7 @@ public btn_help:eui.Image;
                 TipManagerCommon.getInstance().createCommonColorTip("您没有可用激活码，无法使用");
                 return;
             }
+            
             TeamController.instance.requestUseKeyCMD();
         }
 
@@ -95,7 +123,12 @@ public btn_help:eui.Image;
 			let t = this;
 			
             t.txt_unused.text = HeroModel.instance.keyCount+"";
-			let logs = TeamModdel.instance.keyLogs;
+            let logs = TeamModdel.instance.keyLogs;
+            if(logs && logs.length > 0){
+                logs.sort((a, b)=>{
+                    return Int64Util.getNumber(b.logTime)  - Int64Util.getNumber(a.logTime);
+                })
+            }
 			
 			t._arrCollection.replaceAll(logs);
 		}

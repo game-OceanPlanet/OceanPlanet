@@ -96,6 +96,9 @@ module qmr {
 		/** C->S 请求: 撤单 */
 		public static C_MARKET_CANCEL:number = 1107; 
 		public static S_MARKET_CANCEL:number = 1108;
+		/** S->C 响应: 获取OCT求购信息 */
+		public static C_GET_OCT_BUYGOOD_LIST:number = 1109; 
+		public static S_GET_OCT_BUYGOOD_LIST:number = 1110;
 		/** 获取兑换信息 */
 		public static C_GET_MONEY_EXCHANGE_INFO:number = 1201;
 		public static S_GET_MONEY_EXCHANGE_INFO:number = 1202;

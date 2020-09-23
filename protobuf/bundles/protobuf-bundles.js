@@ -4794,6 +4794,7 @@ $root.com = (function() {
              * @property {string|null} [mobile] C_USER_LOGIN mobile
              * @property {string|null} [password] C_USER_LOGIN password
              * @property {string|null} [sparam] C_USER_LOGIN sparam
+             * @property {number|null} [fromGame] C_USER_LOGIN fromGame
              */
 
             /**
@@ -4836,6 +4837,14 @@ $root.com = (function() {
             C_USER_LOGIN.prototype.sparam = "";
 
             /**
+             * C_USER_LOGIN fromGame.
+             * @member {number} fromGame
+             * @memberof com.message.C_USER_LOGIN
+             * @instance
+             */
+            C_USER_LOGIN.prototype.fromGame = 0;
+
+            /**
              * Encodes the specified C_USER_LOGIN message. Does not implicitly {@link com.message.C_USER_LOGIN.verify|verify} messages.
              * @function encode
              * @memberof com.message.C_USER_LOGIN
@@ -4853,6 +4862,8 @@ $root.com = (function() {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.password);
                 if (message.sparam != null && message.hasOwnProperty("sparam"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.sparam);
+                if (message.fromGame != null && message.hasOwnProperty("fromGame"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.fromGame);
                 return writer;
             };
 
@@ -4883,6 +4894,9 @@ $root.com = (function() {
                     case 3:
                         message.sparam = reader.string();
                         break;
+                    case 4:
+                        message.fromGame = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -4903,6 +4917,7 @@ $root.com = (function() {
              * @property {string|null} [mobile] C_USER_LOGIN_VERIFY_CODE mobile
              * @property {string|null} [verifyCode] C_USER_LOGIN_VERIFY_CODE verifyCode
              * @property {string|null} [sparam] C_USER_LOGIN_VERIFY_CODE sparam
+             * @property {number|null} [fromGame] C_USER_LOGIN_VERIFY_CODE fromGame
              */
 
             /**
@@ -4945,6 +4960,14 @@ $root.com = (function() {
             C_USER_LOGIN_VERIFY_CODE.prototype.sparam = "";
 
             /**
+             * C_USER_LOGIN_VERIFY_CODE fromGame.
+             * @member {number} fromGame
+             * @memberof com.message.C_USER_LOGIN_VERIFY_CODE
+             * @instance
+             */
+            C_USER_LOGIN_VERIFY_CODE.prototype.fromGame = 0;
+
+            /**
              * Encodes the specified C_USER_LOGIN_VERIFY_CODE message. Does not implicitly {@link com.message.C_USER_LOGIN_VERIFY_CODE.verify|verify} messages.
              * @function encode
              * @memberof com.message.C_USER_LOGIN_VERIFY_CODE
@@ -4962,6 +4985,8 @@ $root.com = (function() {
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.verifyCode);
                 if (message.sparam != null && message.hasOwnProperty("sparam"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.sparam);
+                if (message.fromGame != null && message.hasOwnProperty("fromGame"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.fromGame);
                 return writer;
             };
 
@@ -4992,6 +5017,9 @@ $root.com = (function() {
                     case 3:
                         message.sparam = reader.string();
                         break;
+                    case 4:
+                        message.fromGame = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5010,6 +5038,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IS_USER_LOGIN
              * @property {number|Long|null} [playerId] S_USER_LOGIN playerId
+             * @property {number|null} [fromGame] S_USER_LOGIN fromGame
              */
 
             /**
@@ -5036,6 +5065,14 @@ $root.com = (function() {
             S_USER_LOGIN.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
+             * S_USER_LOGIN fromGame.
+             * @member {number} fromGame
+             * @memberof com.message.S_USER_LOGIN
+             * @instance
+             */
+            S_USER_LOGIN.prototype.fromGame = 0;
+
+            /**
              * Encodes the specified S_USER_LOGIN message. Does not implicitly {@link com.message.S_USER_LOGIN.verify|verify} messages.
              * @function encode
              * @memberof com.message.S_USER_LOGIN
@@ -5049,6 +5086,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.playerId != null && message.hasOwnProperty("playerId"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.fromGame != null && message.hasOwnProperty("fromGame"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.fromGame);
                 return writer;
             };
 
@@ -5073,6 +5112,9 @@ $root.com = (function() {
                     case 1:
                         message.playerId = reader.int64();
                         break;
+                    case 4:
+                        message.fromGame = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5096,6 +5138,7 @@ $root.com = (function() {
              * @property {string|null} [rePassword] C_LOGIN_REGISTER rePassword
              * @property {string|null} [verifyCode] C_LOGIN_REGISTER verifyCode
              * @property {string|null} [sparam] C_LOGIN_REGISTER sparam
+             * @property {number|null} [fromGame] C_LOGIN_REGISTER fromGame
              */
 
             /**
@@ -5162,6 +5205,14 @@ $root.com = (function() {
             C_LOGIN_REGISTER.prototype.sparam = "";
 
             /**
+             * C_LOGIN_REGISTER fromGame.
+             * @member {number} fromGame
+             * @memberof com.message.C_LOGIN_REGISTER
+             * @instance
+             */
+            C_LOGIN_REGISTER.prototype.fromGame = 0;
+
+            /**
              * Encodes the specified C_LOGIN_REGISTER message. Does not implicitly {@link com.message.C_LOGIN_REGISTER.verify|verify} messages.
              * @function encode
              * @memberof com.message.C_LOGIN_REGISTER
@@ -5185,6 +5236,8 @@ $root.com = (function() {
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.verifyCode);
                 if (message.sparam != null && message.hasOwnProperty("sparam"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.sparam);
+                if (message.fromGame != null && message.hasOwnProperty("fromGame"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.fromGame);
                 return writer;
             };
 
@@ -5224,6 +5277,9 @@ $root.com = (function() {
                     case 6:
                         message.sparam = reader.string();
                         break;
+                    case 7:
+                        message.fromGame = reader.int32();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -5242,6 +5298,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IS_LOGIN_REGISTER
              * @property {number|Long|null} [playerId] S_LOGIN_REGISTER playerId
+             * @property {number|null} [fromGame] S_LOGIN_REGISTER fromGame
              */
 
             /**
@@ -5268,6 +5325,14 @@ $root.com = (function() {
             S_LOGIN_REGISTER.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
+             * S_LOGIN_REGISTER fromGame.
+             * @member {number} fromGame
+             * @memberof com.message.S_LOGIN_REGISTER
+             * @instance
+             */
+            S_LOGIN_REGISTER.prototype.fromGame = 0;
+
+            /**
              * Encodes the specified S_LOGIN_REGISTER message. Does not implicitly {@link com.message.S_LOGIN_REGISTER.verify|verify} messages.
              * @function encode
              * @memberof com.message.S_LOGIN_REGISTER
@@ -5281,6 +5346,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.playerId != null && message.hasOwnProperty("playerId"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.fromGame != null && message.hasOwnProperty("fromGame"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.fromGame);
                 return writer;
             };
 
@@ -5304,6 +5371,9 @@ $root.com = (function() {
                     switch (tag >>> 3) {
                     case 1:
                         message.playerId = reader.int64();
+                        break;
+                    case 4:
+                        message.fromGame = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6510,7 +6580,6 @@ $root.com = (function() {
              * @interface IS_GET_OCT_MARKET_INFO
              * @property {number|null} [sysDiamondPrice] S_GET_OCT_MARKET_INFO sysDiamondPrice
              * @property {Array.<com.message.IHistoryPriceMsg>|null} [historyPriceMsgList] S_GET_OCT_MARKET_INFO historyPriceMsgList
-             * @property {Array.<com.message.IBuyGoodMsg>|null} [buyGoodMsgList] S_GET_OCT_MARKET_INFO buyGoodMsgList
              */
 
             /**
@@ -6523,7 +6592,6 @@ $root.com = (function() {
              */
             function S_GET_OCT_MARKET_INFO(properties) {
                 this.historyPriceMsgList = [];
-                this.buyGoodMsgList = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -6547,14 +6615,6 @@ $root.com = (function() {
             S_GET_OCT_MARKET_INFO.prototype.historyPriceMsgList = $util.emptyArray;
 
             /**
-             * S_GET_OCT_MARKET_INFO buyGoodMsgList.
-             * @member {Array.<com.message.IBuyGoodMsg>} buyGoodMsgList
-             * @memberof com.message.S_GET_OCT_MARKET_INFO
-             * @instance
-             */
-            S_GET_OCT_MARKET_INFO.prototype.buyGoodMsgList = $util.emptyArray;
-
-            /**
              * Encodes the specified S_GET_OCT_MARKET_INFO message. Does not implicitly {@link com.message.S_GET_OCT_MARKET_INFO.verify|verify} messages.
              * @function encode
              * @memberof com.message.S_GET_OCT_MARKET_INFO
@@ -6571,9 +6631,6 @@ $root.com = (function() {
                 if (message.historyPriceMsgList != null && message.historyPriceMsgList.length)
                     for (var i = 0; i < message.historyPriceMsgList.length; ++i)
                         $root.com.message.HistoryPriceMsg.encode(message.historyPriceMsgList[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.buyGoodMsgList != null && message.buyGoodMsgList.length)
-                    for (var i = 0; i < message.buyGoodMsgList.length; ++i)
-                        $root.com.message.BuyGoodMsg.encode(message.buyGoodMsgList[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -6603,6 +6660,181 @@ $root.com = (function() {
                             message.historyPriceMsgList = [];
                         message.historyPriceMsgList.push($root.com.message.HistoryPriceMsg.decode(reader, reader.uint32()));
                         break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_OCT_MARKET_INFO;
+        })();
+
+        message.C_GET_OCT_BUYGOOD_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @interface IC_GET_OCT_BUYGOOD_LIST
+             * @property {number|null} [page] C_GET_OCT_BUYGOOD_LIST page
+             * @property {number|null} [pageSize] C_GET_OCT_BUYGOOD_LIST pageSize
+             */
+
+            /**
+             * Constructs a new C_GET_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_OCT_BUYGOOD_LIST.
+             * @implements IC_GET_OCT_BUYGOOD_LIST
+             * @constructor
+             * @param {com.message.IC_GET_OCT_BUYGOOD_LIST=} [properties] Properties to set
+             */
+            function C_GET_OCT_BUYGOOD_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_GET_OCT_BUYGOOD_LIST page.
+             * @member {number} page
+             * @memberof com.message.C_GET_OCT_BUYGOOD_LIST
+             * @instance
+             */
+            C_GET_OCT_BUYGOOD_LIST.prototype.page = 0;
+
+            /**
+             * C_GET_OCT_BUYGOOD_LIST pageSize.
+             * @member {number} pageSize
+             * @memberof com.message.C_GET_OCT_BUYGOOD_LIST
+             * @instance
+             */
+            C_GET_OCT_BUYGOOD_LIST.prototype.pageSize = 0;
+
+            /**
+             * Encodes the specified C_GET_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.C_GET_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_OCT_BUYGOOD_LIST
+             * @static
+             * @param {com.message.IC_GET_OCT_BUYGOOD_LIST} message C_GET_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_OCT_BUYGOOD_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.page != null && message.hasOwnProperty("page"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.page);
+                if (message.pageSize != null && message.hasOwnProperty("pageSize"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.pageSize);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_OCT_BUYGOOD_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_OCT_BUYGOOD_LIST} C_GET_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_OCT_BUYGOOD_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_OCT_BUYGOOD_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.page = reader.int32();
+                        break;
+                    case 2:
+                        message.pageSize = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_OCT_BUYGOOD_LIST;
+        })();
+
+        message.S_GET_OCT_BUYGOOD_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @interface IS_GET_OCT_BUYGOOD_LIST
+             * @property {Array.<com.message.IBuyGoodMsg>|null} [buyGoodMsgList] S_GET_OCT_BUYGOOD_LIST buyGoodMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_OCT_BUYGOOD_LIST.
+             * @implements IS_GET_OCT_BUYGOOD_LIST
+             * @constructor
+             * @param {com.message.IS_GET_OCT_BUYGOOD_LIST=} [properties] Properties to set
+             */
+            function S_GET_OCT_BUYGOOD_LIST(properties) {
+                this.buyGoodMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_OCT_BUYGOOD_LIST buyGoodMsgList.
+             * @member {Array.<com.message.IBuyGoodMsg>} buyGoodMsgList
+             * @memberof com.message.S_GET_OCT_BUYGOOD_LIST
+             * @instance
+             */
+            S_GET_OCT_BUYGOOD_LIST.prototype.buyGoodMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.S_GET_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_OCT_BUYGOOD_LIST
+             * @static
+             * @param {com.message.IS_GET_OCT_BUYGOOD_LIST} message S_GET_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_OCT_BUYGOOD_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.buyGoodMsgList != null && message.buyGoodMsgList.length)
+                    for (var i = 0; i < message.buyGoodMsgList.length; ++i)
+                        $root.com.message.BuyGoodMsg.encode(message.buyGoodMsgList[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_OCT_BUYGOOD_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_OCT_BUYGOOD_LIST} S_GET_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_OCT_BUYGOOD_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_OCT_BUYGOOD_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
                     case 4:
                         if (!(message.buyGoodMsgList && message.buyGoodMsgList.length))
                             message.buyGoodMsgList = [];
@@ -6616,7 +6848,7 @@ $root.com = (function() {
                 return message;
             };
 
-            return S_GET_OCT_MARKET_INFO;
+            return S_GET_OCT_BUYGOOD_LIST;
         })();
 
         message.C_MARKET_BUY = (function() {
@@ -7259,6 +7491,8 @@ $root.com = (function() {
              * @property {number} S_MARKET_SELL=1106 S_MARKET_SELL value
              * @property {number} C_MARKET_CANCEL=1107 C_MARKET_CANCEL value
              * @property {number} S_MARKET_CANCEL=1108 S_MARKET_CANCEL value
+             * @property {number} C_GET_OCT_BUYGOOD_LIST=1109 C_GET_OCT_BUYGOOD_LIST value
+             * @property {number} S_GET_OCT_BUYGOOD_LIST=1110 S_GET_OCT_BUYGOOD_LIST value
              * @property {number} C_GET_MONEY_EXCHANGE_INFO=1201 C_GET_MONEY_EXCHANGE_INFO value
              * @property {number} S_GET_MONEY_EXCHANGE_INFO=1202 S_GET_MONEY_EXCHANGE_INFO value
              * @property {number} C_MONEY_EXCHANGE_KAD=1203 C_MONEY_EXCHANGE_KAD value
@@ -7335,6 +7569,8 @@ $root.com = (function() {
                 values[valuesById[1106] = "S_MARKET_SELL"] = 1106;
                 values[valuesById[1107] = "C_MARKET_CANCEL"] = 1107;
                 values[valuesById[1108] = "S_MARKET_CANCEL"] = 1108;
+                values[valuesById[1109] = "C_GET_OCT_BUYGOOD_LIST"] = 1109;
+                values[valuesById[1110] = "S_GET_OCT_BUYGOOD_LIST"] = 1110;
                 values[valuesById[1201] = "C_GET_MONEY_EXCHANGE_INFO"] = 1201;
                 values[valuesById[1202] = "S_GET_MONEY_EXCHANGE_INFO"] = 1202;
                 values[valuesById[1203] = "C_MONEY_EXCHANGE_KAD"] = 1203;
@@ -7397,9 +7633,10 @@ $root.com = (function() {
              * @property {number} INVITE_CODE_NOT_FOUND=1176 INVITE_CODE_NOT_FOUND value
              * @property {number} MOBILE_HAS_REGISTER=1177 MOBILE_HAS_REGISTER value
              * @property {number} HAVE_USE_KEY=1178 HAVE_USE_KEY value
-             * @property {number} SIGN_DAY_NOT_ENOUGH=1179 SIGN_DAY_NOT_ENOUGH value
+             * @property {number} PLAYER_NOT_ACTIVATION=1179 PLAYER_NOT_ACTIVATION value
              * @property {number} PLAYER_NOT_EXIST=1181 PLAYER_NOT_EXIST value
              * @property {number} FISH_MAX_LIMIT=1201 FISH_MAX_LIMIT value
+             * @property {number} CAN_NOT_SEND_TO_YOURSELF=1202 CAN_NOT_SEND_TO_YOURSELF value
              */
             MsgEnum.ExceptionCode = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -7429,9 +7666,10 @@ $root.com = (function() {
                 values[valuesById[1176] = "INVITE_CODE_NOT_FOUND"] = 1176;
                 values[valuesById[1177] = "MOBILE_HAS_REGISTER"] = 1177;
                 values[valuesById[1178] = "HAVE_USE_KEY"] = 1178;
-                values[valuesById[1179] = "SIGN_DAY_NOT_ENOUGH"] = 1179;
+                values[valuesById[1179] = "PLAYER_NOT_ACTIVATION"] = 1179;
                 values[valuesById[1181] = "PLAYER_NOT_EXIST"] = 1181;
                 values[valuesById[1201] = "FISH_MAX_LIMIT"] = 1201;
+                values[valuesById[1202] = "CAN_NOT_SEND_TO_YOURSELF"] = 1202;
                 return values;
             })();
 
@@ -8355,6 +8593,7 @@ $root.com = (function() {
              * Properties of a S_USE_KEY.
              * @memberof com.message
              * @interface IS_USE_KEY
+             * @property {number|null} [state] S_USE_KEY state
              * @property {number|null} [keyCount] S_USE_KEY keyCount
              */
 
@@ -8372,6 +8611,14 @@ $root.com = (function() {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * S_USE_KEY state.
+             * @member {number} state
+             * @memberof com.message.S_USE_KEY
+             * @instance
+             */
+            S_USE_KEY.prototype.state = 0;
 
             /**
              * S_USE_KEY keyCount.
@@ -8393,6 +8640,8 @@ $root.com = (function() {
             S_USE_KEY.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
                 if (message.keyCount != null && message.hasOwnProperty("keyCount"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.keyCount);
                 return writer;
@@ -8416,6 +8665,9 @@ $root.com = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
+                    case 1:
+                        message.state = reader.int32();
+                        break;
                     case 2:
                         message.keyCount = reader.int32();
                         break;
@@ -8437,6 +8689,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IC_GIVE_KEY
              * @property {string|null} [mobile] C_GIVE_KEY mobile
+             * @property {number|null} [giveCount] C_GIVE_KEY giveCount
              */
 
             /**
@@ -8463,6 +8716,14 @@ $root.com = (function() {
             C_GIVE_KEY.prototype.mobile = "";
 
             /**
+             * C_GIVE_KEY giveCount.
+             * @member {number} giveCount
+             * @memberof com.message.C_GIVE_KEY
+             * @instance
+             */
+            C_GIVE_KEY.prototype.giveCount = 0;
+
+            /**
              * Encodes the specified C_GIVE_KEY message. Does not implicitly {@link com.message.C_GIVE_KEY.verify|verify} messages.
              * @function encode
              * @memberof com.message.C_GIVE_KEY
@@ -8476,6 +8737,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.mobile != null && message.hasOwnProperty("mobile"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.giveCount != null && message.hasOwnProperty("giveCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.giveCount);
                 return writer;
             };
 
@@ -8499,6 +8762,9 @@ $root.com = (function() {
                     switch (tag >>> 3) {
                     case 1:
                         message.mobile = reader.string();
+                        break;
+                    case 2:
+                        message.giveCount = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8750,7 +9016,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IDirectInfoMsg
              * @property {string|null} [name] DirectInfoMsg name
-             * @property {number|null} [state] 激活+实名状态,0未实名，1已激活，2已实名
+             * @property {number|null} [state] DirectInfoMsg state
              * @property {number|null} [effectDirectNum] DirectInfoMsg effectDirectNum
              * @property {number|null} [allEffectNum] DirectInfoMsg allEffectNum
              */
@@ -8779,7 +9045,7 @@ $root.com = (function() {
             DirectInfoMsg.prototype.name = "";
 
             /**
-             * 激活+实名状态,0未实名，1已激活，2已实名
+             * DirectInfoMsg state.
              * @member {number} state
              * @memberof com.message.DirectInfoMsg
              * @instance

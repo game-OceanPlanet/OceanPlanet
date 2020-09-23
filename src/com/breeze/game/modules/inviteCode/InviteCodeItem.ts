@@ -1,9 +1,9 @@
 module qmr {
 	export class InviteCodeItem extends  eui.ItemRenderer {
-		public rank_bgImg:eui.Image;
-public txt_time:eui.Label;
-public txt_count:eui.Label;
-public txt_name:eui.Label;
+		public txt_state:eui.Label;
+public txt_id:eui.Label;
+public txt_team:eui.Label;
+
 		
 		public constructor()
 		{
@@ -20,10 +20,42 @@ public txt_name:eui.Label;
         
 		public dataChanged(): void {
 			let t = this;
-            let pro:com.message.MoneyLogMsg = t.data;
+            let pro:com.message.DirectInfoMsg = t.data;
             if(pro){
-                
+				t.txt_id.text = pro.name;
+				t.txt_team.text = pro.effectDirectNum+" 人";
+				let des = t.getState(pro.state);
+				t.txt_state.textFlow = HtmlUtil.getHtmlString(des);
             }
-        }
+		}
+		
+		private getState(state:number):string
+		{
+			let s:string = "";
+			switch(state){
+				case 0:
+					s = "<font color ='0xdd1900'>未激活</font>";
+					break;
+				case 1:
+					if(PlatformConfig.GameId == 1){
+						s = "<font color ='0x09a608'>已激活</font>"// + "<font color ='0x803F07'>(海洋星球)</font>";
+					} else  if(PlatformConfig.GameId == 2){
+						s = "<font color ='0xdd1900'>未激活</font>";// + "<font color ='0x803F07'>(海洋星球)</font>";
+					}
+					break;
+				case 2:
+					if(PlatformConfig.GameId == 1){
+						s = "<font color ='0xdd1900'>未激活</font>"; // + "<font color ='0x803F07'>(海洋部落)</font>";
+					} else  if(PlatformConfig.GameId == 2){
+						s = "<font color ='0x09a608'>已激活</font>";// + "<font color ='0x803F07'>(海洋部落)</font>";
+					}
+					break;
+				case 3:
+					s = "<font color ='0x09a608'>已激活</font>"
+					break;
+			}
+
+			return s;
+		}
 	}
 }

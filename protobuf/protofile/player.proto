@@ -45,14 +45,14 @@ message S_MODIFY_PASSWORD {
 
 //激活秘钥日志信息
 message KeyLogMsg {
-	int64 playerId=1; // 玩家编号
-	int64 bePlayerId=2; // 鱼的唯一ID
-	int32 type=4; //  类型,301自己使用，302赠送
+	int64 playerId=1; // 301:使用者，302赠送者，303被赠送者
+	int64 bePlayerId=2; // 301:0, 302:被赠送玩家id,303赠送者
+	int32 type=4; //  类型,301自己使用，302赠送， 303被赠送
 	double beforeMoney=5; //变化前的钱
 	double changeMoney=6; //增加或减少值
 	double afterMoney=7; //变化后的钱
 	int64 logTime=8; //日志时间
-	string info=9; //记录信息
+	string info=9; //记录信息， 301:“”, 302:被赠送玩家id,303赠送者
 }
 
 // 获取激活秘钥记录
@@ -72,6 +72,7 @@ message C_USE_KEY {
 
 // 自己使用激活秘钥
 message S_USE_KEY {
+	int32 state = 1; //激活+实名状态,0未实名，1已激活，2已实名 
 	int32 keyCount = 2; //剩余激活秘钥数量
 }
 
@@ -79,6 +80,7 @@ message S_USE_KEY {
 // 赠送激活秘钥
 message C_GIVE_KEY {
 	string mobile=1; // 手机号码
+	int32 giveCount = 2; //赠送秘钥数量
 }
 
 // 赠送激活秘钥

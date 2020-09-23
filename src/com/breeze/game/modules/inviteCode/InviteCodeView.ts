@@ -3,14 +3,21 @@ module qmr
 	export class InviteCodeView extends BaseModule
 	{
 		public panelGroup:eui.Group;
+public txt_guimo:eui.Label;
+public txt_teamguimo:eui.Label;
+public txt_ticheng:eui.Label;
+public txt_shouxufei:eui.Label;
+public txt_teamticheng:eui.Label;
+public txt_tips:eui.Label;
 public txt_code:eui.Label;
 public btn_copy_code:eui.Group;
 public btn_copy_address:eui.Group;
+public txt_title:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
-public txt_title:eui.Label;
 public btn_help:eui.Image;
+
 
 
 
@@ -41,6 +48,8 @@ public btn_help:eui.Image;
 			super.initData();
 			let t = this;
 			t.updateView();
+			TeamController.instance.requestTeamInfoCMD();
+			TeamController.instance.requestMyTeamListCMD();
 		}
 		
 		protected initListener(): void
@@ -55,6 +64,8 @@ public btn_help:eui.Image;
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
 			t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
+			t.registerNotify(NotifyConst.S_GET_MY_TEAM_INFO, t.updateView, t);
+			t.registerNotify(NotifyConst.S_GET_MY_TEAM_LIST, t.updateView, t);
 		}
 
 		private copyCode():void
@@ -82,6 +93,32 @@ public btn_help:eui.Image;
 			if(pro){
 				t.txt_code.text = pro.inviteCode;
 			}
+
+			let teamPro:com.message.MyTeamMsg = TeamModdel.instance.myTeam;
+			if(teamPro){
+				t.txt_guimo.text = teamPro.count + "人";
+				t.txt_teamguimo.text = teamPro.allCount + "人";
+
+				if(teamPro.count > 0){
+					let dirCfg:DirectRateCfg = TeamModdel.instance.getdirectRateCfgsIdByCount(teamPro.count);
+					if(dirCfg){
+						t.txt_ticheng.text = dirCfg.precent + "%";
+					}
+				}
+				
+				let teamCfg:TeamRateCfg = TeamModdel.instance.getteamRateCfgsIdByCount(teamPro.count, teamPro.allCount);
+				if(teamCfg){
+					t.txt_teamticheng.text = teamCfg.precent + "%";
+				}
+
+				let tradeCfg:TradeCostCfg = TeamModdel.instance.getTradeConstIdByCount(teamPro.count);
+				if(tradeCfg){
+					t.txt_shouxufei.text = Number(tradeCfg.precent) * 100 + "%";
+				}
+			}
+
+			let logs:com.message.DirectInfoMsg[] = TeamModdel.instance.teamers;
+			t._arrCollection.replaceAll(logs);
 		}
 
 		public dispose(): void

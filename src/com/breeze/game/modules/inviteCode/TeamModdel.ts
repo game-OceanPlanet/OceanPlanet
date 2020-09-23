@@ -50,7 +50,7 @@ module qmr {
         }
 
         private tradeCostCfgs:TradeCostCfg[];
-        public getTradeConstIdByCount(count:number):number
+        public getTradeConstIdByCount(count:number):TradeCostCfg
         {
             let t = this;
             if(!t.tradeCostCfgs){
@@ -60,14 +60,14 @@ module qmr {
             let len:number = t.tradeCostCfgs.length;
             for(var i:number = 0; i < len; i ++){
                 if(count >= t.tradeCostCfgs[i].count){
-                    return t.tradeCostCfgs[i].id;
+                    return t.tradeCostCfgs[i];
                 }
             }
-            return 1;
+            return null;
         }
 
         private teamRateCfgs:TeamRateCfg[];
-        public getteamRateCfgsIdByCount(count:number, all:number):number
+        public getteamRateCfgsIdByCount(count:number, all:number):TeamRateCfg
         {
             let t = this;
             if(!t.teamRateCfgs){
@@ -77,14 +77,14 @@ module qmr {
             let len:number = t.teamRateCfgs.length;
             for(var i:number = 0; i < len; i ++){
                 if(all >= t.teamRateCfgs[i].allCount && count >= t.teamRateCfgs[i].directCount){
-                    return t.teamRateCfgs[i].id;
+                    return t.teamRateCfgs[i];
                 }
             }
-            return 1;
+            return null;
         }
 
         private directRateCfgs:DirectRateCfg[];
-        public getdirectRateCfgsIdByCount(count:number):number
+        public getdirectRateCfgsIdByCount(count:number):DirectRateCfg
         {
             let t = this;
             if(!t.directRateCfgs){
@@ -94,10 +94,10 @@ module qmr {
             let len:number = t.directRateCfgs.length;
             for(var i:number = 0; i < len; i ++){
                 if(count >= t.directRateCfgs[i].count){
-                    return t.directRateCfgs[i].id;
+                    return t.directRateCfgs[i];
                 }
             }
-            return 1;
+            return null;
         }
         
 

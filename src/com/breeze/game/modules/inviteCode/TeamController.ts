@@ -100,15 +100,18 @@ module qmr
         private getUseKeyResponse(s: com.message.S_USE_KEY):void
         {
             HeroModel.instance.keyCount = s.keyCount;
+            HeroModel.instance.IdentityPro.state = s.state;
             TipManagerCommon.getInstance().createCommonColorTip("激活成功", true);
             this.dispatch(NotifyConst.S_USE_KEY);
+            this.requestMyKeyCMD();
         }
 
         //赠送激活秘钥
-		public requestGiveCMD(tel:string): void
+		public requestGiveCMD(tel:string, count:number): void
 		{
             var c: com.message.C_GIVE_KEY = new com.message.C_GIVE_KEY();
             c.mobile = tel;
+            c.giveCount = count;
 			this.sendCmd(c, MessageID.C_GIVE_KEY, true);
         }
         
@@ -118,6 +121,7 @@ module qmr
             HeroModel.instance.keyCount = s.keyCount;
             TipManagerCommon.getInstance().createCommonColorTip("赠送成功", true);
             this.dispatch(NotifyConst.S_GIVE_KEY);
+            this.requestMyKeyCMD();
         }
 
     }

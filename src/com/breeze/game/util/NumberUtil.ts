@@ -53,7 +53,7 @@ module qmr {
 		 * 电话号码脱敏
 		 * @param tel 
 		 */
-		public static getTelNumberShow(tel:number):string
+		public static getTelNumberShow(tel):string
 		{
 			if(!RegexpUtil.isPhoneNumber(tel)){
 				return "159****2233";

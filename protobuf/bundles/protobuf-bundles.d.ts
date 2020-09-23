@@ -2213,6 +2213,9 @@ declare namespace com {
 
             /** C_USER_LOGIN sparam */
             sparam?: (string|null);
+
+            /** C_USER_LOGIN fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a C_USER_LOGIN. */
@@ -2232,6 +2235,9 @@ declare namespace com {
 
             /** C_USER_LOGIN sparam. */
             public sparam: string;
+
+            /** C_USER_LOGIN fromGame. */
+            public fromGame: number;
 
             /**
              * Encodes the specified C_USER_LOGIN message. Does not implicitly {@link com.message.C_USER_LOGIN.verify|verify} messages.
@@ -2263,6 +2269,9 @@ declare namespace com {
 
             /** C_USER_LOGIN_VERIFY_CODE sparam */
             sparam?: (string|null);
+
+            /** C_USER_LOGIN_VERIFY_CODE fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a C_USER_LOGIN_VERIFY_CODE. */
@@ -2282,6 +2291,9 @@ declare namespace com {
 
             /** C_USER_LOGIN_VERIFY_CODE sparam. */
             public sparam: string;
+
+            /** C_USER_LOGIN_VERIFY_CODE fromGame. */
+            public fromGame: number;
 
             /**
              * Encodes the specified C_USER_LOGIN_VERIFY_CODE message. Does not implicitly {@link com.message.C_USER_LOGIN_VERIFY_CODE.verify|verify} messages.
@@ -2307,6 +2319,9 @@ declare namespace com {
 
             /** S_USER_LOGIN playerId */
             playerId?: (number|Long|null);
+
+            /** S_USER_LOGIN fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a S_USER_LOGIN. */
@@ -2320,6 +2335,9 @@ declare namespace com {
 
             /** S_USER_LOGIN playerId. */
             public playerId: (number|Long);
+
+            /** S_USER_LOGIN fromGame. */
+            public fromGame: number;
 
             /**
              * Encodes the specified S_USER_LOGIN message. Does not implicitly {@link com.message.S_USER_LOGIN.verify|verify} messages.
@@ -2360,6 +2378,9 @@ declare namespace com {
 
             /** C_LOGIN_REGISTER sparam */
             sparam?: (string|null);
+
+            /** C_LOGIN_REGISTER fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a C_LOGIN_REGISTER. */
@@ -2389,6 +2410,9 @@ declare namespace com {
             /** C_LOGIN_REGISTER sparam. */
             public sparam: string;
 
+            /** C_LOGIN_REGISTER fromGame. */
+            public fromGame: number;
+
             /**
              * Encodes the specified C_LOGIN_REGISTER message. Does not implicitly {@link com.message.C_LOGIN_REGISTER.verify|verify} messages.
              * @param message C_LOGIN_REGISTER message or plain object to encode
@@ -2413,6 +2437,9 @@ declare namespace com {
 
             /** S_LOGIN_REGISTER playerId */
             playerId?: (number|Long|null);
+
+            /** S_LOGIN_REGISTER fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a S_LOGIN_REGISTER. */
@@ -2426,6 +2453,9 @@ declare namespace com {
 
             /** S_LOGIN_REGISTER playerId. */
             public playerId: (number|Long);
+
+            /** S_LOGIN_REGISTER fromGame. */
+            public fromGame: number;
 
             /**
              * Encodes the specified S_LOGIN_REGISTER message. Does not implicitly {@link com.message.S_LOGIN_REGISTER.verify|verify} messages.
@@ -3000,9 +3030,6 @@ declare namespace com {
 
             /** S_GET_OCT_MARKET_INFO historyPriceMsgList */
             historyPriceMsgList?: (com.message.IHistoryPriceMsg[]|null);
-
-            /** S_GET_OCT_MARKET_INFO buyGoodMsgList */
-            buyGoodMsgList?: (com.message.IBuyGoodMsg[]|null);
         }
 
         /** Represents a S_GET_OCT_MARKET_INFO. */
@@ -3019,9 +3046,6 @@ declare namespace com {
 
             /** S_GET_OCT_MARKET_INFO historyPriceMsgList. */
             public historyPriceMsgList: com.message.IHistoryPriceMsg[];
-
-            /** S_GET_OCT_MARKET_INFO buyGoodMsgList. */
-            public buyGoodMsgList: com.message.IBuyGoodMsg[];
 
             /**
              * Encodes the specified S_GET_OCT_MARKET_INFO message. Does not implicitly {@link com.message.S_GET_OCT_MARKET_INFO.verify|verify} messages.
@@ -3040,6 +3064,88 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCT_MARKET_INFO;
+        }
+
+        /** Properties of a C_GET_OCT_BUYGOOD_LIST. */
+        interface IC_GET_OCT_BUYGOOD_LIST {
+
+            /** C_GET_OCT_BUYGOOD_LIST page */
+            page?: (number|null);
+
+            /** C_GET_OCT_BUYGOOD_LIST pageSize */
+            pageSize?: (number|null);
+        }
+
+        /** Represents a C_GET_OCT_BUYGOOD_LIST. */
+        class C_GET_OCT_BUYGOOD_LIST implements IC_GET_OCT_BUYGOOD_LIST {
+
+            /**
+             * Constructs a new C_GET_OCT_BUYGOOD_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_OCT_BUYGOOD_LIST);
+
+            /** C_GET_OCT_BUYGOOD_LIST page. */
+            public page: number;
+
+            /** C_GET_OCT_BUYGOOD_LIST pageSize. */
+            public pageSize: number;
+
+            /**
+             * Encodes the specified C_GET_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.C_GET_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @param message C_GET_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_OCT_BUYGOOD_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_OCT_BUYGOOD_LIST;
+        }
+
+        /** Properties of a S_GET_OCT_BUYGOOD_LIST. */
+        interface IS_GET_OCT_BUYGOOD_LIST {
+
+            /** S_GET_OCT_BUYGOOD_LIST buyGoodMsgList */
+            buyGoodMsgList?: (com.message.IBuyGoodMsg[]|null);
+        }
+
+        /** Represents a S_GET_OCT_BUYGOOD_LIST. */
+        class S_GET_OCT_BUYGOOD_LIST implements IS_GET_OCT_BUYGOOD_LIST {
+
+            /**
+             * Constructs a new S_GET_OCT_BUYGOOD_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_OCT_BUYGOOD_LIST);
+
+            /** S_GET_OCT_BUYGOOD_LIST buyGoodMsgList. */
+            public buyGoodMsgList: com.message.IBuyGoodMsg[];
+
+            /**
+             * Encodes the specified S_GET_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.S_GET_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @param message S_GET_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_OCT_BUYGOOD_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCT_BUYGOOD_LIST;
         }
 
         /** Properties of a C_MARKET_BUY. */
@@ -3368,6 +3474,8 @@ declare namespace com {
                 S_MARKET_SELL = 1106,
                 C_MARKET_CANCEL = 1107,
                 S_MARKET_CANCEL = 1108,
+                C_GET_OCT_BUYGOOD_LIST = 1109,
+                S_GET_OCT_BUYGOOD_LIST = 1110,
                 C_GET_MONEY_EXCHANGE_INFO = 1201,
                 S_GET_MONEY_EXCHANGE_INFO = 1202,
                 C_MONEY_EXCHANGE_KAD = 1203,
@@ -3427,9 +3535,10 @@ declare namespace com {
                 INVITE_CODE_NOT_FOUND = 1176,
                 MOBILE_HAS_REGISTER = 1177,
                 HAVE_USE_KEY = 1178,
-                SIGN_DAY_NOT_ENOUGH = 1179,
+                PLAYER_NOT_ACTIVATION = 1179,
                 PLAYER_NOT_EXIST = 1181,
-                FISH_MAX_LIMIT = 1201
+                FISH_MAX_LIMIT = 1201,
+                CAN_NOT_SEND_TO_YOURSELF = 1202
             }
         }
 
@@ -3853,6 +3962,9 @@ declare namespace com {
         /** Properties of a S_USE_KEY. */
         interface IS_USE_KEY {
 
+            /** S_USE_KEY state */
+            state?: (number|null);
+
             /** S_USE_KEY keyCount */
             keyCount?: (number|null);
         }
@@ -3865,6 +3977,9 @@ declare namespace com {
              * @param [properties] Properties to set
              */
             constructor(properties?: com.message.IS_USE_KEY);
+
+            /** S_USE_KEY state. */
+            public state: number;
 
             /** S_USE_KEY keyCount. */
             public keyCount: number;
@@ -3893,6 +4008,9 @@ declare namespace com {
 
             /** C_GIVE_KEY mobile */
             mobile?: (string|null);
+
+            /** C_GIVE_KEY giveCount */
+            giveCount?: (number|null);
         }
 
         /** Represents a C_GIVE_KEY. */
@@ -3906,6 +4024,9 @@ declare namespace com {
 
             /** C_GIVE_KEY mobile. */
             public mobile: string;
+
+            /** C_GIVE_KEY giveCount. */
+            public giveCount: number;
 
             /**
              * Encodes the specified C_GIVE_KEY message. Does not implicitly {@link com.message.C_GIVE_KEY.verify|verify} messages.
@@ -4038,7 +4159,7 @@ declare namespace com {
             /** DirectInfoMsg name */
             name?: (string|null);
 
-            /** 激活+实名状态,0未实名，1已激活，2已实名 */
+            /** DirectInfoMsg state */
             state?: (number|null);
 
             /** DirectInfoMsg effectDirectNum */
@@ -4060,7 +4181,7 @@ declare namespace com {
             /** DirectInfoMsg name. */
             public name: string;
 
-            /** 激活+实名状态,0未实名，1已激活，2已实名 */
+            /** DirectInfoMsg state. */
             public state: number;
 
             /** DirectInfoMsg effectDirectNum. */

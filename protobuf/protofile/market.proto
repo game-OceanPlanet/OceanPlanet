@@ -26,6 +26,16 @@ message C_GET_OCT_MARKET_INFO {
 message S_GET_OCT_MARKET_INFO {
 	double sysDiamondPrice = 1;									//今日系统U的指导价
 	repeated HistoryPriceMsg historyPriceMsgList = 3;		//系统指导价历史信息
+}
+
+//C->S 请求: 获取OCT求购信息
+message C_GET_OCT_BUYGOOD_LIST {
+	int32 page = 1;				//求购第几页
+	int32 pageSize = 2;				//求购一页多少条记录
+}
+
+//S->C 响应: 获取OCT求购信息
+message S_GET_OCT_BUYGOOD_LIST {
 	repeated BuyGoodMsg buyGoodMsgList = 4;						//OCT求购信息
 }
 

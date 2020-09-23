@@ -150,6 +150,7 @@ module qmr {
         private onPriceClick(): void {
             ModuleManager.showModule(ModuleNameConst.TRADE_VIEW);
             TradeController.instance.requestOTCInfo();
+            TradeController.instance.requestOTCList();
         }
 
         //查看宠物面板

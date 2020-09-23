@@ -54,6 +54,8 @@ message MsgEnum {
 		S_MARKET_SELL			= 1106;
 		C_MARKET_CANCEL			= 1107; //C->S 请求: 撤单
 		S_MARKET_CANCEL			= 1108;
+		C_GET_OCT_BUYGOOD_LIST	= 1109; //S->C 响应: 获取OCT求购信息
+		S_GET_OCT_BUYGOOD_LIST  = 1110;
 		
 		//Bonus
 		C_GET_MONEY_EXCHANGE_INFO 	= 1201;	//获取兑换信息
@@ -130,9 +132,10 @@ message MsgEnum {
 		INVITE_CODE_NOT_FOUND = 1176; //邀请码不存在
 		MOBILE_HAS_REGISTER = 1177; //手机号码已经被注册
         HAVE_USE_KEY = 1178; //你的账号已经激活，无需再激活
-        SIGN_DAY_NOT_ENOUGH  = 1179; //签到天数不足
+        PLAYER_NOT_ACTIVATION  = 1179; //玩家未激活，无法操作
 		PLAYER_NOT_EXIST = 1181;//玩家不存在
 		FISH_MAX_LIMIT = 1201; //已经是最大的鱼了,无法合成下一等级
+		CAN_NOT_SEND_TO_YOURSELF = 1202; //不能给自己赠送激活秘钥
 		
 	
   }

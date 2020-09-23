@@ -99,6 +99,7 @@ public btnReturn:eui.Image;
 			t.registerNotify(NotifyConst.S_MARKET_BUY, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MARKET_SELL, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MARKET_CANCEL, t.updateView, t);
+			t.registerNotify(NotifyConst.S_GET_OCT_BUYGOOD_LIST, t.updateView, t);
 		}
 
 		private onFocusOut(): void

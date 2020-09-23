@@ -24,17 +24,17 @@
 				</e:Group>
 				<e:Group x="30.02" y="4.01" anchorOffsetX="0" anchorOffsetY="0">
 					<e:Image source="panel1_json.panel_bar1" x="0" y="0" scaleX="1" scaleY="1" anchorOffsetY="0" height="568" scale9Grid="87,25,523,63"/>
-					<e:Image source="trade_json.img_merge" x="67" y="20"/>
-					<e:Image width="116" height="116" scaleX="1" scaleY="1" y="144.03" x="118.85" source="trade_json.image_kuang1" scale9Grid="20,24,64,60"/>
-					<e:Image width="116" height="116" scaleX="1" scaleY="1" y="144.03" x="415.3" source="trade_json.image_kuang1" scale9Grid="23,22,60,64"/>
-					<e:Image x="207.97" y="270.34" source="trade_json.img_merge_jiantou"/>
-					<e:Image x="456.69" y="269" scaleX="-1" source="trade_json.img_merge_jiantou"/>
-					<e:Image id="img_head" scaleX="1" scaleY="1" y="147.03" x="122.85" source="" width="110" height="110"/>
-					<e:Image id="img_head2" width="110" height="110" source="" scaleX="1" scaleY="1" y="147.03" x="419.3"/>
-					<e:Image scaleX="1" scaleY="1" y="321.31" x="254.34" source="trade_json.img_kuang2" scale9Grid="40,35,55,54" anchorOffsetX="0" width="156" anchorOffsetY="0" height="156"/>
-					<e:Image id="img_head3" width="110" height="110" source="" scaleX="1" scaleY="1" y="344.01" x="276.52"/>
-					<e:Group id="effect_group_pet" width="20" height="20" x="329.75" y="268.4" scaleX="1" scaleY="1"/>
-					<e:Group id="btn_revoke" x="229.12" y="470" anchorOffsetX="0" anchorOffsetY="0">
+					<e:Image source="trade_json.img_merge" x="89" y="20"/>
+					<e:Image width="116" height="116" scaleX="1" scaleY="1" y="144.03" x="140.85" source="trade_json.image_kuang1" scale9Grid="20,24,64,60"/>
+					<e:Image width="116" height="116" scaleX="1" scaleY="1" y="144.03" x="437.3" source="trade_json.image_kuang1" scale9Grid="23,22,60,64"/>
+					<e:Image x="230" y="270" source="trade_json.img_merge_jiantou"/>
+					<e:Image x="478.69" y="270" scaleX="-1" source="trade_json.img_merge_jiantou"/>
+					<e:Image id="img_head" scaleX="1" scaleY="1" y="146" x="144" source="" width="110" height="110"/>
+					<e:Image id="img_head2" width="110" height="110" source="" scaleX="1" scaleY="1" y="146" x="441"/>
+					<e:Image scaleX="1" scaleY="1" y="321" x="276" source="trade_json.img_kuang2" scale9Grid="40,35,55,54" anchorOffsetX="0" width="156" anchorOffsetY="0" height="156"/>
+					<e:Image id="img_head3" width="110" height="110" source="" scaleX="1" scaleY="1" y="344.01" x="298.52"/>
+					<e:Group id="effect_group_pet" width="20" height="20" x="351.75" y="268.4" scaleX="1" scaleY="1"/>
+					<e:Group id="btn_revoke" x="250" y="470" anchorOffsetX="0" anchorOffsetY="0">
 					<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.btn_red2"/>
 					<e:Label id="btn_merge" text="合 成" y="30.64" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="0.5" textColor="0xfff4d6"/>
 					</e:Group>
