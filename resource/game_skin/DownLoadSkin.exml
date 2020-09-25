@@ -3,7 +3,7 @@
         xmlns:w="http://ns.egret.com/wing">
 	<e:Image anchorOffsetY="0" verticalCenter="-30" left="0" right="0" source="common_beijing_png"  visible="false"/>
 	<e:Group id="panelGroup" horizontalCenter="0" anchorOffsetY="0" width="750" height="1334">
-		<e:Image  source="XiaZaiBeiJing_png" horizontalCenter="1" verticalCenter="-3"/>
+		<e:Image  source="XiaZaiBeiJing_png" y="0" horizontalCenter="0"/>
 
 
 
