@@ -85,16 +85,16 @@ module qmr
 			}
 		}
 
-		public static addInputListener(textInput: eui.TextInput, thisObject: any)
+		public static addInputListener(textInput, thisObject: any)
 		{
-			textInput.addEventListener(egret.FocusEvent.FOCUS_IN, LabelUtil.focusInTxtHandler, thisObject)
-			textInput.addEventListener(egret.FocusEvent.FOCUS_OUT, LabelUtil.focusInTxtHandler, thisObject)
+			textInput.addEventListener(egret.FocusEvent.FOCUS_IN, LabelUtil.focusInTxtHandler, thisObject);
+			textInput.addEventListener(egret.FocusEvent.FOCUS_OUT, LabelUtil.focusInTxtHandler, thisObject);
 		}
 
-		public static removeInputListener(textInput: eui.TextInput, thisObject: any)
+		public static removeInputListener(textInput, thisObject: any)
 		{
-			textInput.addEventListener(egret.FocusEvent.FOCUS_IN, LabelUtil.focusInTxtHandler, thisObject)
-			textInput.addEventListener(egret.FocusEvent.FOCUS_OUT, LabelUtil.focusInTxtHandler, thisObject)
+			textInput.addEventListener(egret.FocusEvent.FOCUS_IN, LabelUtil.focusInTxtHandler, thisObject);
+			textInput.addEventListener(egret.FocusEvent.FOCUS_OUT, LabelUtil.focusInTxtHandler, thisObject);
 		}
 
 		public static focusInTxtHandler()
@@ -106,10 +106,10 @@ module qmr
 					setTimeout(function ()
 					{
 						if(window.scrollTo){
-							window.scrollTo(0, document.body.clientHeight);
+							window.scrollTo(0, 100);
 						}
 						
-					}, 400);
+					}, 200);
 				}
 			};
 			inputFocus();

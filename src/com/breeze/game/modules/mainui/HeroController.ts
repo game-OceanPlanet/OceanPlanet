@@ -43,7 +43,7 @@ module qmr
 			HeroController.instance;
 			MapController.instance;
 			TradeController.instance;
-            GlobalConfig.userId = Int64Util.getNumber(s.playerId);
+            HeroModel.instance.uid = Int64Util.getNumber(s.playerId);
             HeroModel.instance.playerPro = s.property as com.message.PlayerPropertyMsg;
             HeroModel.instance.IdentityPro = s.basePlayerMsg as com.message.BasePlayerMsg;
             HeroModel.instance.updateData(s.fishMsg as com.message.FishMsg[]);

@@ -12,6 +12,7 @@ public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
+public txt_state:eui.Label;
 
 
 
@@ -66,6 +67,9 @@ public btn_help:eui.Image;
             t.registerNotify(NotifyConst.S_GET_KEY_LIST, t.updateView, t);
             t.registerNotify(NotifyConst.S_USE_KEY, t.updateView, t);
             t.registerNotify(NotifyConst.S_GIVE_KEY, t.updateView, t);
+
+            LabelUtil.addInputListener(t.text_input_tel, t);
+            LabelUtil.addInputListener(t.text_input_count, t);
         }
         
         private onGive():void
@@ -130,7 +134,8 @@ public btn_help:eui.Image;
                 })
             }
 			
-			t._arrCollection.replaceAll(logs);
+            t._arrCollection.replaceAll(logs);
+            t.txt_state.text = HeroModel.instance.IdentityPro.state == 0 ? "未激活":"已激活";//;//激活+实名状态,0未实名，1已激活，2已实名
 		}
 
 		public dispose(): void

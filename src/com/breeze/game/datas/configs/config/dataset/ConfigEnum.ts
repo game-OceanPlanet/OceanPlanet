@@ -30,8 +30,6 @@ module qmr
 		static SKILLEFFECT:string='SkillEffect';
 		/**特效*/
 		static EFFECTDATA:string='EffectData';
-		/**消息*/
-		static CODECFG:string='CodeCfg';
 		/**中文配置*/
 		static CLIENTCN:string='ClientCn';
 	}

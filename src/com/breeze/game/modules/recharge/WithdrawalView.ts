@@ -4,13 +4,15 @@ module qmr
 	{
 		public panelGroup:eui.Group;
 public txt_name0:eui.Label;
-public txt_name1:eui.Label;
-public text_input_pwd0:eui.EditableText;
-public text_input_pwd1:eui.EditableText;
+public txt_cost:eui.Label;
+public txt_title:eui.Label;
+public text_input_address:eui.EditableText;
+public text_input_count:eui.EditableText;
+public txt_receive_account:eui.Label;
 public txt_name:eui.Label;
 public txt_kda_total:eui.Label;
-public txt_name2:eui.Label;
-public text_input_pwd:eui.EditableText;
+public text_input_vcode:eui.EditableText;
+public txt_vcodeDes:eui.Label;
 public btn_logout:eui.Group;
 public txt_detail:eui.Label;
 public btnReturn:eui.Image;

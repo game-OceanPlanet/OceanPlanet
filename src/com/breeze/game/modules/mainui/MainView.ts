@@ -29,8 +29,6 @@ module qmr {
         public txt_totalGold: eui.Label;
         public txt_totalUsdt: eui.Label;
         public btn_ActKey:eui.Image;
-        public btn_recharge:eui.Image;
-        public btn_withdrawal:eui.Image;
         public money_icon:eui.Image;
 
 
@@ -79,8 +77,6 @@ module qmr {
             t.addClickEvent(t.btn_permit, t.onPermitClick, t);
             t.addClickEvent(t.btn_download, t.onDowonClick, t);
             t.addClickEvent(t.btn_help, t.onHelpClick, t);
-            t.addClickEvent(t.btn_recharge, t.onRechargeClick, t);
-            t.addClickEvent(t.btn_withdrawal, t.onWithdrawalClick, t);
 
 
             t.registerNotify(NotifyConst.S_GET_FINSH_INFO, t.updateView, t);
@@ -211,17 +207,6 @@ module qmr {
         {
             ModuleManager.showModule(ModuleNameConst.ACT_KEY_VIEW);
         }
-        //充值
-        private onRechargeClick():void
-        {
-            ModuleManager.showModule(ModuleNameConst.RECHARGE_VIEW);
-        }
-        //提现
-        private onWithdrawalClick():void
-        {
-            ModuleManager.showModule(ModuleNameConst.WIHTDRAWAL_VIEW);
-        }
-
 
         /**
         * @description 初始化数据,需被子类继承

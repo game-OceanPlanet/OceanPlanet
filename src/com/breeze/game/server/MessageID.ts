@@ -60,6 +60,9 @@ module qmr {
 		/**  获取激活秘钥记录 */
 		public static C_GET_KEY_LIST:number = 1017;  
 		public static S_GET_KEY_LIST:number = 1018;
+		/**  发送短信验证码返回 */
+		public static C_SEND_VERIFY_CODE:number = 1019;  
+		public static S_SEND_VERIFY_CODE:number = 1020;
 		/** 获取我的鱼儿 */
 		public static C_GET_FISH_INFO:number = 1051; 
 		public static S_GET_FISH_INFO:number = 1052;
@@ -123,6 +126,15 @@ module qmr {
 		/** 获取我的直推成员信息 */
 		public static C_GET_MY_TEAM_LIST:number = 1303; 
 		public static S_GET_MY_TEAM_LIST:number = 1304;
+		/**  获取我的充值地址 */
+		public static C_GET_MY_ADDRESS:number = 1401;
+		public static S_GET_MY_ADDRESS:number = 1402;
+		/**  获取提现记录 */
+		public static C_GET_EXTRACT_LIST:number = 1403;
+		public static S_GET_EXTRACT_LIST:number = 1404;
+		/**  获取充值记录 */
+		public static C_GET_RECHARGE_LIST:number = 1405;
+		public static S_GET_RECHARGE_LIST:number = 1406;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

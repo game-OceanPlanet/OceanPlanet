@@ -4,7 +4,8 @@ module qmr {
         public static USDT:string = " USDT"; //U币，相当于RMB
         public static KAD:string = " KAD";   //平台币，也就是证通
         public static TIMES:number = 1;
-        
+
+        public uid:number;
         public IdentityPro:com.message.BasePlayerMsg;
         public playerPro:com.message.PlayerPropertyMsg;
 

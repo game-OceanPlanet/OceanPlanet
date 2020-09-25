@@ -63,6 +63,8 @@ public btn_help:eui.Image;
 			t.registerNotify(NotifyConst.S_SYN_PROPERTY, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_MONEY_EXCHANGE_INFO, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MONEY_EXCHANGE_KAD, t.updateView, t);
+
+			LabelUtil.addInputListener(t.text_input_price, t);
 		}
 
 		private onTextInputChange(evt: egret.Event):void

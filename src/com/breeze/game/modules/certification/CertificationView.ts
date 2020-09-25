@@ -41,6 +41,10 @@ public btnReturn:eui.Image;
             let t = this;
             t.addClickEvent(t.btnReturn, t.closeView, t);
             t.addClickEvent(t.btn_Identify, t.onIdentifyClick, t);
+
+            LabelUtil.addInputListener(t.text_name, t);
+            LabelUtil.addInputListener(t.text_id, t);
+            LabelUtil.addInputListener(t.text_tel, t);
 		}
 
 		private updateView():void

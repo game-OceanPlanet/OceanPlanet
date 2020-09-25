@@ -5386,6 +5386,182 @@ $root.com = (function() {
             return S_LOGIN_REGISTER;
         })();
 
+        message.C_SEND_VERIFY_CODE = (function() {
+
+            /**
+             * Properties of a C_SEND_VERIFY_CODE.
+             * @memberof com.message
+             * @interface IC_SEND_VERIFY_CODE
+             * @property {string|null} [mobile] C_SEND_VERIFY_CODE mobile
+             */
+
+            /**
+             * Constructs a new C_SEND_VERIFY_CODE.
+             * @memberof com.message
+             * @classdesc Represents a C_SEND_VERIFY_CODE.
+             * @implements IC_SEND_VERIFY_CODE
+             * @constructor
+             * @param {com.message.IC_SEND_VERIFY_CODE=} [properties] Properties to set
+             */
+            function C_SEND_VERIFY_CODE(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_SEND_VERIFY_CODE mobile.
+             * @member {string} mobile
+             * @memberof com.message.C_SEND_VERIFY_CODE
+             * @instance
+             */
+            C_SEND_VERIFY_CODE.prototype.mobile = "";
+
+            /**
+             * Encodes the specified C_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.C_SEND_VERIFY_CODE.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_SEND_VERIFY_CODE
+             * @static
+             * @param {com.message.IC_SEND_VERIFY_CODE} message C_SEND_VERIFY_CODE message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_SEND_VERIFY_CODE.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_SEND_VERIFY_CODE message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_SEND_VERIFY_CODE
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_SEND_VERIFY_CODE} C_SEND_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_SEND_VERIFY_CODE.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_SEND_VERIFY_CODE();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_SEND_VERIFY_CODE;
+        })();
+
+        message.S_SEND_VERIFY_CODE = (function() {
+
+            /**
+             * Properties of a S_SEND_VERIFY_CODE.
+             * @memberof com.message
+             * @interface IS_SEND_VERIFY_CODE
+             * @property {string|null} [mobile] S_SEND_VERIFY_CODE mobile
+             * @property {number|null} [state] S_SEND_VERIFY_CODE state
+             */
+
+            /**
+             * Constructs a new S_SEND_VERIFY_CODE.
+             * @memberof com.message
+             * @classdesc Represents a S_SEND_VERIFY_CODE.
+             * @implements IS_SEND_VERIFY_CODE
+             * @constructor
+             * @param {com.message.IS_SEND_VERIFY_CODE=} [properties] Properties to set
+             */
+            function S_SEND_VERIFY_CODE(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SEND_VERIFY_CODE mobile.
+             * @member {string} mobile
+             * @memberof com.message.S_SEND_VERIFY_CODE
+             * @instance
+             */
+            S_SEND_VERIFY_CODE.prototype.mobile = "";
+
+            /**
+             * S_SEND_VERIFY_CODE state.
+             * @member {number} state
+             * @memberof com.message.S_SEND_VERIFY_CODE
+             * @instance
+             */
+            S_SEND_VERIFY_CODE.prototype.state = 0;
+
+            /**
+             * Encodes the specified S_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.S_SEND_VERIFY_CODE.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SEND_VERIFY_CODE
+             * @static
+             * @param {com.message.IS_SEND_VERIFY_CODE} message S_SEND_VERIFY_CODE message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SEND_VERIFY_CODE.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.state);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SEND_VERIFY_CODE message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SEND_VERIFY_CODE
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SEND_VERIFY_CODE} S_SEND_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SEND_VERIFY_CODE.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SEND_VERIFY_CODE();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.mobile = reader.string();
+                        break;
+                    case 2:
+                        message.state = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SEND_VERIFY_CODE;
+        })();
+
         message.C_USER_LOGOUT = (function() {
 
             /**
@@ -7467,6 +7643,8 @@ $root.com = (function() {
              * @property {number} S_GIVE_KEY=1016 S_GIVE_KEY value
              * @property {number} C_GET_KEY_LIST=1017 C_GET_KEY_LIST value
              * @property {number} S_GET_KEY_LIST=1018 S_GET_KEY_LIST value
+             * @property {number} C_SEND_VERIFY_CODE=1019 C_SEND_VERIFY_CODE value
+             * @property {number} S_SEND_VERIFY_CODE=1020 S_SEND_VERIFY_CODE value
              * @property {number} C_GET_FISH_INFO=1051 C_GET_FISH_INFO value
              * @property {number} S_GET_FISH_INFO=1052 S_GET_FISH_INFO value
              * @property {number} C_BUY_FISH=1053 C_BUY_FISH value
@@ -7509,6 +7687,12 @@ $root.com = (function() {
              * @property {number} S_GET_MY_TEAM_INFO=1302 S_GET_MY_TEAM_INFO value
              * @property {number} C_GET_MY_TEAM_LIST=1303 C_GET_MY_TEAM_LIST value
              * @property {number} S_GET_MY_TEAM_LIST=1304 S_GET_MY_TEAM_LIST value
+             * @property {number} C_GET_MY_ADDRESS=1401 C_GET_MY_ADDRESS value
+             * @property {number} S_GET_MY_ADDRESS=1402 S_GET_MY_ADDRESS value
+             * @property {number} C_GET_EXTRACT_LIST=1403 C_GET_EXTRACT_LIST value
+             * @property {number} S_GET_EXTRACT_LIST=1404 S_GET_EXTRACT_LIST value
+             * @property {number} C_GET_RECHARGE_LIST=1405 C_GET_RECHARGE_LIST value
+             * @property {number} S_GET_RECHARGE_LIST=1406 S_GET_RECHARGE_LIST value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -7545,6 +7729,8 @@ $root.com = (function() {
                 values[valuesById[1016] = "S_GIVE_KEY"] = 1016;
                 values[valuesById[1017] = "C_GET_KEY_LIST"] = 1017;
                 values[valuesById[1018] = "S_GET_KEY_LIST"] = 1018;
+                values[valuesById[1019] = "C_SEND_VERIFY_CODE"] = 1019;
+                values[valuesById[1020] = "S_SEND_VERIFY_CODE"] = 1020;
                 values[valuesById[1051] = "C_GET_FISH_INFO"] = 1051;
                 values[valuesById[1052] = "S_GET_FISH_INFO"] = 1052;
                 values[valuesById[1053] = "C_BUY_FISH"] = 1053;
@@ -7587,6 +7773,12 @@ $root.com = (function() {
                 values[valuesById[1302] = "S_GET_MY_TEAM_INFO"] = 1302;
                 values[valuesById[1303] = "C_GET_MY_TEAM_LIST"] = 1303;
                 values[valuesById[1304] = "S_GET_MY_TEAM_LIST"] = 1304;
+                values[valuesById[1401] = "C_GET_MY_ADDRESS"] = 1401;
+                values[valuesById[1402] = "S_GET_MY_ADDRESS"] = 1402;
+                values[valuesById[1403] = "C_GET_EXTRACT_LIST"] = 1403;
+                values[valuesById[1404] = "S_GET_EXTRACT_LIST"] = 1404;
+                values[valuesById[1405] = "C_GET_RECHARGE_LIST"] = 1405;
+                values[valuesById[1406] = "S_GET_RECHARGE_LIST"] = 1406;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;
@@ -7637,6 +7829,13 @@ $root.com = (function() {
              * @property {number} PLAYER_NOT_EXIST=1181 PLAYER_NOT_EXIST value
              * @property {number} FISH_MAX_LIMIT=1201 FISH_MAX_LIMIT value
              * @property {number} CAN_NOT_SEND_TO_YOURSELF=1202 CAN_NOT_SEND_TO_YOURSELF value
+             * @property {number} MOBILE_NOT_RIGHT=1203 MOBILE_NOT_RIGHT value
+             * @property {number} MOBILE_NOT_THE_LOGIN_ONE=1204 MOBILE_NOT_THE_LOGIN_ONE value
+             * @property {number} ID_NUM_NOT_RIGHT=1205 ID_NUM_NOT_RIGHT value
+             * @property {number} ALREADY_VERIFY_NOT_NEED=1206 ALREADY_VERIFY_NOT_NEED value
+             * @property {number} MOBILE_IDNUM_ALREADY_VERIFY=1207 MOBILE_IDNUM_ALREADY_VERIFY value
+             * @property {number} VERIFY_HAVE_ERROR_CHECK=1208 VERIFY_HAVE_ERROR_CHECK value
+             * @property {number} NOT_VERIFY_CANT_DO=1209 NOT_VERIFY_CANT_DO value
              */
             MsgEnum.ExceptionCode = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -7670,6 +7869,13 @@ $root.com = (function() {
                 values[valuesById[1181] = "PLAYER_NOT_EXIST"] = 1181;
                 values[valuesById[1201] = "FISH_MAX_LIMIT"] = 1201;
                 values[valuesById[1202] = "CAN_NOT_SEND_TO_YOURSELF"] = 1202;
+                values[valuesById[1203] = "MOBILE_NOT_RIGHT"] = 1203;
+                values[valuesById[1204] = "MOBILE_NOT_THE_LOGIN_ONE"] = 1204;
+                values[valuesById[1205] = "ID_NUM_NOT_RIGHT"] = 1205;
+                values[valuesById[1206] = "ALREADY_VERIFY_NOT_NEED"] = 1206;
+                values[valuesById[1207] = "MOBILE_IDNUM_ALREADY_VERIFY"] = 1207;
+                values[valuesById[1208] = "VERIFY_HAVE_ERROR_CHECK"] = 1208;
+                values[valuesById[1209] = "NOT_VERIFY_CANT_DO"] = 1209;
                 return values;
             })();
 
@@ -8870,6 +9076,422 @@ $root.com = (function() {
             };
 
             return S_GIVE_KEY;
+        })();
+
+        message.C_GET_MY_ADDRESS = (function() {
+
+            /**
+             * Properties of a C_GET_MY_ADDRESS.
+             * @memberof com.message
+             * @interface IC_GET_MY_ADDRESS
+             */
+
+            /**
+             * Constructs a new C_GET_MY_ADDRESS.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MY_ADDRESS.
+             * @implements IC_GET_MY_ADDRESS
+             * @constructor
+             * @param {com.message.IC_GET_MY_ADDRESS=} [properties] Properties to set
+             */
+            function C_GET_MY_ADDRESS(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MY_ADDRESS message. Does not implicitly {@link com.message.C_GET_MY_ADDRESS.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MY_ADDRESS
+             * @static
+             * @param {com.message.IC_GET_MY_ADDRESS} message C_GET_MY_ADDRESS message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MY_ADDRESS.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MY_ADDRESS message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MY_ADDRESS
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MY_ADDRESS} C_GET_MY_ADDRESS
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MY_ADDRESS.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MY_ADDRESS();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MY_ADDRESS;
+        })();
+
+        message.S_GET_MY_ADDRESS = (function() {
+
+            /**
+             * Properties of a S_GET_MY_ADDRESS.
+             * @memberof com.message
+             * @interface IS_GET_MY_ADDRESS
+             * @property {string|null} [address] S_GET_MY_ADDRESS address
+             */
+
+            /**
+             * Constructs a new S_GET_MY_ADDRESS.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MY_ADDRESS.
+             * @implements IS_GET_MY_ADDRESS
+             * @constructor
+             * @param {com.message.IS_GET_MY_ADDRESS=} [properties] Properties to set
+             */
+            function S_GET_MY_ADDRESS(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MY_ADDRESS address.
+             * @member {string} address
+             * @memberof com.message.S_GET_MY_ADDRESS
+             * @instance
+             */
+            S_GET_MY_ADDRESS.prototype.address = "";
+
+            /**
+             * Encodes the specified S_GET_MY_ADDRESS message. Does not implicitly {@link com.message.S_GET_MY_ADDRESS.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MY_ADDRESS
+             * @static
+             * @param {com.message.IS_GET_MY_ADDRESS} message S_GET_MY_ADDRESS message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MY_ADDRESS.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.address != null && message.hasOwnProperty("address"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.address);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MY_ADDRESS message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MY_ADDRESS
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MY_ADDRESS} S_GET_MY_ADDRESS
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MY_ADDRESS.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MY_ADDRESS();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.address = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MY_ADDRESS;
+        })();
+
+        message.C_GET_EXTRACT_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_EXTRACT_LIST.
+             * @memberof com.message
+             * @interface IC_GET_EXTRACT_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_EXTRACT_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_EXTRACT_LIST.
+             * @implements IC_GET_EXTRACT_LIST
+             * @constructor
+             * @param {com.message.IC_GET_EXTRACT_LIST=} [properties] Properties to set
+             */
+            function C_GET_EXTRACT_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_EXTRACT_LIST message. Does not implicitly {@link com.message.C_GET_EXTRACT_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_EXTRACT_LIST
+             * @static
+             * @param {com.message.IC_GET_EXTRACT_LIST} message C_GET_EXTRACT_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_EXTRACT_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_EXTRACT_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_EXTRACT_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_EXTRACT_LIST} C_GET_EXTRACT_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_EXTRACT_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_EXTRACT_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_EXTRACT_LIST;
+        })();
+
+        message.S_GET_EXTRACT_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_EXTRACT_LIST.
+             * @memberof com.message
+             * @interface IS_GET_EXTRACT_LIST
+             */
+
+            /**
+             * Constructs a new S_GET_EXTRACT_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_EXTRACT_LIST.
+             * @implements IS_GET_EXTRACT_LIST
+             * @constructor
+             * @param {com.message.IS_GET_EXTRACT_LIST=} [properties] Properties to set
+             */
+            function S_GET_EXTRACT_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified S_GET_EXTRACT_LIST message. Does not implicitly {@link com.message.S_GET_EXTRACT_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_EXTRACT_LIST
+             * @static
+             * @param {com.message.IS_GET_EXTRACT_LIST} message S_GET_EXTRACT_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_EXTRACT_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_EXTRACT_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_EXTRACT_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_EXTRACT_LIST} S_GET_EXTRACT_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_EXTRACT_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_EXTRACT_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_EXTRACT_LIST;
+        })();
+
+        message.C_GET_RECHARGE_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_RECHARGE_LIST.
+             * @memberof com.message
+             * @interface IC_GET_RECHARGE_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_RECHARGE_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_RECHARGE_LIST.
+             * @implements IC_GET_RECHARGE_LIST
+             * @constructor
+             * @param {com.message.IC_GET_RECHARGE_LIST=} [properties] Properties to set
+             */
+            function C_GET_RECHARGE_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_RECHARGE_LIST message. Does not implicitly {@link com.message.C_GET_RECHARGE_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_RECHARGE_LIST
+             * @static
+             * @param {com.message.IC_GET_RECHARGE_LIST} message C_GET_RECHARGE_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_RECHARGE_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_RECHARGE_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_RECHARGE_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_RECHARGE_LIST} C_GET_RECHARGE_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_RECHARGE_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_RECHARGE_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_RECHARGE_LIST;
+        })();
+
+        message.S_GET_RECHARGE_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_RECHARGE_LIST.
+             * @memberof com.message
+             * @interface IS_GET_RECHARGE_LIST
+             */
+
+            /**
+             * Constructs a new S_GET_RECHARGE_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_RECHARGE_LIST.
+             * @implements IS_GET_RECHARGE_LIST
+             * @constructor
+             * @param {com.message.IS_GET_RECHARGE_LIST=} [properties] Properties to set
+             */
+            function S_GET_RECHARGE_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified S_GET_RECHARGE_LIST message. Does not implicitly {@link com.message.S_GET_RECHARGE_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_RECHARGE_LIST
+             * @static
+             * @param {com.message.IS_GET_RECHARGE_LIST} message S_GET_RECHARGE_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_RECHARGE_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_RECHARGE_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_RECHARGE_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_RECHARGE_LIST} S_GET_RECHARGE_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_RECHARGE_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_RECHARGE_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_RECHARGE_LIST;
         })();
 
         message.MyTeamMsg = (function() {

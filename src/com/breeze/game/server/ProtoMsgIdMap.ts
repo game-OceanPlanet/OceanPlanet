@@ -28,6 +28,7 @@ module qmr {
 			this.msgIdMap[MessageID.S_USE_KEY] = com.message.S_USE_KEY;
 			this.msgIdMap[MessageID.S_GIVE_KEY] = com.message.S_GIVE_KEY;
 			this.msgIdMap[MessageID.S_GET_KEY_LIST] = com.message.S_GET_KEY_LIST;
+			this.msgIdMap[MessageID.S_SEND_VERIFY_CODE] = com.message.S_SEND_VERIFY_CODE;
 			this.msgIdMap[MessageID.S_GET_FISH_INFO] = com.message.S_GET_FISH_INFO;
 			this.msgIdMap[MessageID.S_BUY_FISH] = com.message.S_BUY_FISH;
 			this.msgIdMap[MessageID.S_COMBINE_FISH] = com.message.S_COMBINE_FISH;
@@ -50,6 +51,9 @@ module qmr {
 			this.msgIdMap[MessageID.S_REAL_NAME_VERIFICATION] = com.message.S_REAL_NAME_VERIFICATION;
 			this.msgIdMap[MessageID.S_GET_MY_TEAM_INFO] = com.message.S_GET_MY_TEAM_INFO;
 			this.msgIdMap[MessageID.S_GET_MY_TEAM_LIST] = com.message.S_GET_MY_TEAM_LIST;
+			this.msgIdMap[MessageID.S_GET_MY_ADDRESS] = com.message.S_GET_MY_ADDRESS;
+			this.msgIdMap[MessageID.S_GET_EXTRACT_LIST] = com.message.S_GET_EXTRACT_LIST;
+			this.msgIdMap[MessageID.S_GET_RECHARGE_LIST] = com.message.S_GET_RECHARGE_LIST;
 			this.msgIdMap[MessageID.S_SYN_PROPERTY] = com.message.S_SYN_PROPERTY;
 			this.msgIdMap[MessageID.C_SYNC_TIME] = com.message.C_SYNC_TIME;
 			this.msgIdMap[MessageID.S_SYNC_TIME] = com.message.S_SYNC_TIME;

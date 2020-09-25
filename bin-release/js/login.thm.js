@@ -1014,7 +1014,7 @@ window.skins=window.skins||{};
 	__extends(LoginViewSkin, _super);
 	function LoginViewSkin() {
 		_super.call(this);
-		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","gpRead","txt_account_des","txt_account","groupAccount","txt_password","txt_pwd_des","groupAccount0","btn_login","btn_register_back","btn_login_way","group_login","lbUserBook0","lbPrivacyPolicy0","gpRead0","txt_register_tel","groupAccount1","txt_register_invitecode","groupAccount2","txt_register_pwd","groupAccount3","txt_register_repwd","groupAccount4","txt_register_verifycode","groupAccount5","btn_register","btn_login_back","group_register"];
+		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","gpRead","txt_account_des2","txt_account_des","txt_account","groupAccount","txt_password","txt_pwd_des","txt_password2","txt_pwd_des2","txt_vcode","btn_getCode","groupAccount0","btn_login","btn_register_back","btn_login_way","group_login","lbUserBook0","lbPrivacyPolicy0","gpRead0","txt_register_tel","groupAccount1","txt_register_invitecode","groupAccount2","txt_register_pwd","groupAccount3","txt_register_repwd","groupAccount4","txt_register_verifycode","txt_vcode2","btn_getCode2","groupAccount5","btn_register","btn_login_back","group_register"];
 		
 		this.height = 1334;
 		this.width = 750;
@@ -1086,12 +1086,11 @@ window.skins=window.skins||{};
 	_proto.group_login_i = function () {
 		var t = new eui.Group();
 		this.group_login = t;
+		t.bottom = 287;
 		t.horizontalCenter = 0.5;
 		t.scaleX = 1;
 		t.scaleY = 1;
-		t.verticalCenter = -29;
 		t.x = 48;
-		t.y = 313;
 		t.elementsContent = [this._Image2_i(),this.gpRead_i(),this.groupAccount_i(),this.groupAccount0_i(),this.btn_login_i(),this.btn_register_back_i(),this.btn_login_way_i()];
 		return t;
 	};
@@ -1191,7 +1190,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 98;
 		t.y = 123;
-		t.elementsContent = [this._Image4_i(),this._Image5_i(),this.txt_account_des_i(),this.txt_account_i()];
+		t.elementsContent = [this._Image4_i(),this._Image5_i(),this.txt_account_des2_i(),this.txt_account_des_i(),this.txt_account_i()];
 		return t;
 	};
 	_proto._Image4_i = function () {
@@ -1199,8 +1198,8 @@ window.skins=window.skins||{};
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShuRuKuangDi";
 		t.verticalCenter = 0;
-		t.width = 79;
-		t.x = 32.67;
+		t.width = 109;
+		t.x = 2.67;
 		return t;
 	};
 	_proto._Image5_i = function () {
@@ -1210,6 +1209,18 @@ window.skins=window.skins||{};
 		t.width = 321;
 		t.x = 110;
 		t.y = 16;
+		return t;
+	};
+	_proto.txt_account_des2_i = function () {
+		var t = new eui.Label();
+		this.txt_account_des2 = t;
+		t.fontFamily = "specialGameFont";
+		t.size = 28;
+		t.stroke = 1;
+		t.text = "手机号:";
+		t.textColor = 0xFFFFFF;
+		t.x = 10;
+		t.y = 32;
 		return t;
 	};
 	_proto.txt_account_des_i = function () {
@@ -1230,14 +1241,14 @@ window.skins=window.skins||{};
 		t.anchorOffsetX = 0;
 		t.fontFamily = "specialGameFont";
 		t.height = 49;
-		t.left = "119";
 		t.prompt = "请输入账号";
 		t.promptColor = 0xcececd;
-		t.right = "11";
 		t.size = 24;
 		t.text = "";
 		t.textColor = 0x687a7a;
 		t.verticalAlign = "middle";
+		t.width = 302;
+		t.x = 119;
 		t.y = 21.33;
 		return t;
 	};
@@ -1252,7 +1263,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 98;
 		t.y = 235;
-		t.elementsContent = [this._Image6_i(),this.txt_password_i(),this.txt_pwd_des_i()];
+		t.elementsContent = [this._Image6_i(),this.txt_password_i(),this.txt_pwd_des_i(),this.txt_password2_i(),this.txt_pwd_des2_i(),this.btn_getCode_i()];
 		return t;
 	};
 	_proto._Image6_i = function () {
@@ -1260,8 +1271,8 @@ window.skins=window.skins||{};
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShuRuKuangDi";
 		t.verticalCenter = 0;
-		t.width = 79;
-		t.x = 32.67;
+		t.width = 110;
+		t.x = 1.67;
 		return t;
 	};
 	_proto.txt_password_i = function () {
@@ -1291,6 +1302,64 @@ window.skins=window.skins||{};
 		t.y = 32;
 		return t;
 	};
+	_proto.txt_password2_i = function () {
+		var t = new eui.TextInput();
+		this.txt_password2 = t;
+		t.anchorOffsetX = 0;
+		t.height = 53;
+		t.maxChars = 35;
+		t.prompt = "请输入验证码";
+		t.skinName = "ServerListTextInputSkin";
+		t.width = 174;
+		t.x = 113.33;
+		t.y = 20;
+		return t;
+	};
+	_proto.txt_pwd_des2_i = function () {
+		var t = new eui.Label();
+		this.txt_pwd_des2 = t;
+		t.fontFamily = "specialGameFont";
+		t.size = 28;
+		t.stroke = 1;
+		t.text = "验证码:";
+		t.textColor = 0xFFFFFF;
+		t.x = 10;
+		t.y = 32;
+		return t;
+	};
+	_proto.btn_getCode_i = function () {
+		var t = new eui.Group();
+		this.btn_getCode = t;
+		t.x = 290;
+		t.y = 19.98;
+		t.elementsContent = [this._Image7_i(),this.txt_vcode_i()];
+		return t;
+	};
+	_proto._Image7_i = function () {
+		var t = new eui.Image();
+		t.anchorOffsetX = 170;
+		t.anchorOffsetY = 33;
+		t.scaleX = 1;
+		t.scaleY = 1;
+		t.source = "loginPanel_json.YanZhengMa";
+		t.x = 170;
+		t.y = 33;
+		return t;
+	};
+	_proto.txt_vcode_i = function () {
+		var t = new eui.Label();
+		this.txt_vcode = t;
+		t.fontFamily = "specialGameFont";
+		t.horizontalCenter = 2;
+		t.scaleX = 1;
+		t.scaleY = 1;
+		t.size = 24;
+		t.strokeColor = 0x842813;
+		t.text = "获取验证码";
+		t.textColor = 0xffffff;
+		t.y = 15;
+		return t;
+	};
 	_proto.btn_login_i = function () {
 		var t = new eui.Image();
 		this.btn_login = t;
@@ -1310,10 +1379,10 @@ window.skins=window.skins||{};
 		this.btn_register_back = t;
 		t.x = 158;
 		t.y = 442.98;
-		t.elementsContent = [this._Image7_i(),this._Label3_i()];
+		t.elementsContent = [this._Image8_i(),this._Label3_i()];
 		return t;
 	};
-	_proto._Image7_i = function () {
+	_proto._Image8_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 170;
 		t.anchorOffsetY = 33;
@@ -1334,7 +1403,7 @@ window.skins=window.skins||{};
 		t.size = 24;
 		t.strokeColor = 0x842813;
 		t.text = "没有账号？去注册";
-		t.textColor = 0x50D8F4;
+		t.textColor = 0x50d8f4;
 		t.x = 73.34;
 		t.y = 22.019999999999982;
 		return t;
@@ -1344,25 +1413,25 @@ window.skins=window.skins||{};
 		this.btn_login_way = t;
 		t.fontFamily = "specialGameFont";
 		t.horizontalCenter = 0.5;
-		t.size = 24;
+		t.size = 26;
 		t.strokeColor = 0x842813;
-		t.text = "切换登录方式";
-		t.textColor = 0x50d8f4;
-		t.y = 645.33;
+		t.text = "短信验证码登录";
+		t.textColor = 0xfff200;
+		t.y = 643.33;
 		return t;
 	};
 	_proto.group_register_i = function () {
 		var t = new eui.Group();
 		this.group_register = t;
 		t.anchorOffsetY = 0;
+		t.bottom = 326;
 		t.height = 768;
 		t.horizontalCenter = 2;
-		t.verticalCenter = -98;
 		t.visible = false;
-		t.elementsContent = [this._Image8_i(),this.gpRead0_i(),this.groupAccount1_i(),this.groupAccount2_i(),this.groupAccount3_i(),this.groupAccount4_i(),this.groupAccount5_i(),this.btn_register_i(),this.btn_login_back_i()];
+		t.elementsContent = [this._Image9_i(),this.gpRead0_i(),this.groupAccount1_i(),this.groupAccount2_i(),this.groupAccount3_i(),this.groupAccount4_i(),this.groupAccount5_i(),this.btn_register_i(),this.btn_login_back_i()];
 		return t;
 	};
-	_proto._Image8_i = function () {
+	_proto._Image9_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.anchorOffsetY = 0;
@@ -1386,7 +1455,7 @@ window.skins=window.skins||{};
 		t.x = 93.34;
 		t.y = 788.33;
 		t.layout = this._HorizontalLayout2_i();
-		t.elementsContent = [this._Image9_i(),this._Label4_i(),this.lbUserBook0_i(),this._Label5_i(),this.lbPrivacyPolicy0_i()];
+		t.elementsContent = [this._Image10_i(),this._Label4_i(),this.lbUserBook0_i(),this._Label5_i(),this.lbPrivacyPolicy0_i()];
 		return t;
 	};
 	_proto._HorizontalLayout2_i = function () {
@@ -1394,7 +1463,7 @@ window.skins=window.skins||{};
 		t.verticalAlign = "middle";
 		return t;
 	};
-	_proto._Image9_i = function () {
+	_proto._Image10_i = function () {
 		var t = new eui.Image();
 		t.source = "loginPanel_json.point";
 		t.x = 5;
@@ -1461,10 +1530,10 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 138.72;
-		t.elementsContent = [this._Image10_i(),this._Image11_i(),this.txt_register_tel_i(),this._Label6_i()];
+		t.elementsContent = [this._Image11_i(),this._Image12_i(),this.txt_register_tel_i(),this._Label6_i()];
 		return t;
 	};
-	_proto._Image10_i = function () {
+	_proto._Image11_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShuRuKuangDi";
@@ -1473,7 +1542,7 @@ window.skins=window.skins||{};
 		t.x = -23;
 		return t;
 	};
-	_proto._Image11_i = function () {
+	_proto._Image12_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShenSeShuRuKuang";
@@ -1523,10 +1592,10 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 218.1;
-		t.elementsContent = [this._Image12_i(),this.txt_register_invitecode_i(),this._Label7_i()];
+		t.elementsContent = [this._Image13_i(),this.txt_register_invitecode_i(),this._Label7_i()];
 		return t;
 	};
-	_proto._Image12_i = function () {
+	_proto._Image13_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShuRuKuangDi";
@@ -1572,10 +1641,10 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 297.2;
-		t.elementsContent = [this._Image13_i(),this._Image14_i(),this.txt_register_pwd_i(),this._Label8_i()];
+		t.elementsContent = [this._Image14_i(),this._Image15_i(),this.txt_register_pwd_i(),this._Label8_i()];
 		return t;
 	};
-	_proto._Image13_i = function () {
+	_proto._Image14_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShuRuKuangDi";
@@ -1584,7 +1653,7 @@ window.skins=window.skins||{};
 		t.x = -23;
 		return t;
 	};
-	_proto._Image14_i = function () {
+	_proto._Image15_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShenSeShuRuKuang";
@@ -1630,10 +1699,10 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 376.3;
-		t.elementsContent = [this._Image15_i(),this._Image16_i(),this.txt_register_repwd_i(),this._Label9_i()];
+		t.elementsContent = [this._Image16_i(),this._Image17_i(),this.txt_register_repwd_i(),this._Label9_i()];
 		return t;
 	};
-	_proto._Image15_i = function () {
+	_proto._Image16_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShuRuKuangDi";
@@ -1642,7 +1711,7 @@ window.skins=window.skins||{};
 		t.x = -23;
 		return t;
 	};
-	_proto._Image16_i = function () {
+	_proto._Image17_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShenSeShuRuKuang";
@@ -1688,10 +1757,10 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 456.4;
-		t.elementsContent = [this._Image17_i(),this._Image18_i(),this.txt_register_verifycode_i(),this._Label10_i()];
+		t.elementsContent = [this._Image18_i(),this._Image19_i(),this.txt_register_verifycode_i(),this._Label10_i(),this.btn_getCode2_i()];
 		return t;
 	};
-	_proto._Image17_i = function () {
+	_proto._Image18_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShuRuKuangDi";
@@ -1700,7 +1769,7 @@ window.skins=window.skins||{};
 		t.x = -23;
 		return t;
 	};
-	_proto._Image18_i = function () {
+	_proto._Image19_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 0;
 		t.source = "loginPanel_json.ShenSeShuRuKuang";
@@ -1718,7 +1787,7 @@ window.skins=window.skins||{};
 		t.prompt = "请输入验证码";
 		t.skinName = "ServerListTextInputSkin";
 		t.verticalCenter = -6;
-		t.width = 318;
+		t.width = 173;
 		t.x = 113.33;
 		return t;
 	};
@@ -1732,6 +1801,39 @@ window.skins=window.skins||{};
 		t.textColor = 0xFFFFFF;
 		t.x = 12.66;
 		t.y = 25.35;
+		return t;
+	};
+	_proto.btn_getCode2_i = function () {
+		var t = new eui.Group();
+		this.btn_getCode2 = t;
+		t.x = 290;
+		t.y = 12;
+		t.elementsContent = [this._Image20_i(),this.txt_vcode2_i()];
+		return t;
+	};
+	_proto._Image20_i = function () {
+		var t = new eui.Image();
+		t.anchorOffsetX = 170;
+		t.anchorOffsetY = 33;
+		t.scaleX = 1;
+		t.scaleY = 1;
+		t.source = "loginPanel_json.YanZhengMa";
+		t.x = 170;
+		t.y = 33;
+		return t;
+	};
+	_proto.txt_vcode2_i = function () {
+		var t = new eui.Label();
+		this.txt_vcode2 = t;
+		t.fontFamily = "specialGameFont";
+		t.horizontalCenter = 2;
+		t.scaleX = 1;
+		t.scaleY = 1;
+		t.size = 24;
+		t.strokeColor = 0x842813;
+		t.text = "获取验证码";
+		t.textColor = 0xFFFFFF;
+		t.y = 14;
 		return t;
 	};
 	_proto.btn_register_i = function () {
@@ -1753,10 +1855,10 @@ window.skins=window.skins||{};
 		this.btn_login_back = t;
 		t.x = 174.67;
 		t.y = 662.98;
-		t.elementsContent = [this._Image19_i(),this._Label11_i()];
+		t.elementsContent = [this._Image21_i(),this._Label11_i()];
 		return t;
 	};
-	_proto._Image19_i = function () {
+	_proto._Image21_i = function () {
 		var t = new eui.Image();
 		t.anchorOffsetX = 170;
 		t.anchorOffsetY = 33;

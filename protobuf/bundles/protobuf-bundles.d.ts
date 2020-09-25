@@ -2476,6 +2476,88 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_LOGIN_REGISTER;
         }
 
+        /** Properties of a C_SEND_VERIFY_CODE. */
+        interface IC_SEND_VERIFY_CODE {
+
+            /** C_SEND_VERIFY_CODE mobile */
+            mobile?: (string|null);
+        }
+
+        /** Represents a C_SEND_VERIFY_CODE. */
+        class C_SEND_VERIFY_CODE implements IC_SEND_VERIFY_CODE {
+
+            /**
+             * Constructs a new C_SEND_VERIFY_CODE.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_SEND_VERIFY_CODE);
+
+            /** C_SEND_VERIFY_CODE mobile. */
+            public mobile: string;
+
+            /**
+             * Encodes the specified C_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.C_SEND_VERIFY_CODE.verify|verify} messages.
+             * @param message C_SEND_VERIFY_CODE message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_SEND_VERIFY_CODE, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_SEND_VERIFY_CODE message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_SEND_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_SEND_VERIFY_CODE;
+        }
+
+        /** Properties of a S_SEND_VERIFY_CODE. */
+        interface IS_SEND_VERIFY_CODE {
+
+            /** S_SEND_VERIFY_CODE mobile */
+            mobile?: (string|null);
+
+            /** S_SEND_VERIFY_CODE state */
+            state?: (number|null);
+        }
+
+        /** Represents a S_SEND_VERIFY_CODE. */
+        class S_SEND_VERIFY_CODE implements IS_SEND_VERIFY_CODE {
+
+            /**
+             * Constructs a new S_SEND_VERIFY_CODE.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SEND_VERIFY_CODE);
+
+            /** S_SEND_VERIFY_CODE mobile. */
+            public mobile: string;
+
+            /** S_SEND_VERIFY_CODE state. */
+            public state: number;
+
+            /**
+             * Encodes the specified S_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.S_SEND_VERIFY_CODE.verify|verify} messages.
+             * @param message S_SEND_VERIFY_CODE message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SEND_VERIFY_CODE, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SEND_VERIFY_CODE message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SEND_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SEND_VERIFY_CODE;
+        }
+
         /** Properties of a C_USER_LOGOUT. */
         interface IC_USER_LOGOUT {
 
@@ -3450,6 +3532,8 @@ declare namespace com {
                 S_GIVE_KEY = 1016,
                 C_GET_KEY_LIST = 1017,
                 S_GET_KEY_LIST = 1018,
+                C_SEND_VERIFY_CODE = 1019,
+                S_SEND_VERIFY_CODE = 1020,
                 C_GET_FISH_INFO = 1051,
                 S_GET_FISH_INFO = 1052,
                 C_BUY_FISH = 1053,
@@ -3492,6 +3576,12 @@ declare namespace com {
                 S_GET_MY_TEAM_INFO = 1302,
                 C_GET_MY_TEAM_LIST = 1303,
                 S_GET_MY_TEAM_LIST = 1304,
+                C_GET_MY_ADDRESS = 1401,
+                S_GET_MY_ADDRESS = 1402,
+                C_GET_EXTRACT_LIST = 1403,
+                S_GET_EXTRACT_LIST = 1404,
+                C_GET_RECHARGE_LIST = 1405,
+                S_GET_RECHARGE_LIST = 1406,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,
@@ -3538,7 +3628,14 @@ declare namespace com {
                 PLAYER_NOT_ACTIVATION = 1179,
                 PLAYER_NOT_EXIST = 1181,
                 FISH_MAX_LIMIT = 1201,
-                CAN_NOT_SEND_TO_YOURSELF = 1202
+                CAN_NOT_SEND_TO_YOURSELF = 1202,
+                MOBILE_NOT_RIGHT = 1203,
+                MOBILE_NOT_THE_LOGIN_ONE = 1204,
+                ID_NUM_NOT_RIGHT = 1205,
+                ALREADY_VERIFY_NOT_NEED = 1206,
+                MOBILE_IDNUM_ALREADY_VERIFY = 1207,
+                VERIFY_HAVE_ERROR_CHECK = 1208,
+                NOT_VERIFY_CANT_DO = 1209
             }
         }
 
@@ -4089,6 +4186,204 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GIVE_KEY;
+        }
+
+        /** Properties of a C_GET_MY_ADDRESS. */
+        interface IC_GET_MY_ADDRESS {
+        }
+
+        /** Represents a C_GET_MY_ADDRESS. */
+        class C_GET_MY_ADDRESS implements IC_GET_MY_ADDRESS {
+
+            /**
+             * Constructs a new C_GET_MY_ADDRESS.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MY_ADDRESS);
+
+            /**
+             * Encodes the specified C_GET_MY_ADDRESS message. Does not implicitly {@link com.message.C_GET_MY_ADDRESS.verify|verify} messages.
+             * @param message C_GET_MY_ADDRESS message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MY_ADDRESS, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MY_ADDRESS message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MY_ADDRESS
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MY_ADDRESS;
+        }
+
+        /** Properties of a S_GET_MY_ADDRESS. */
+        interface IS_GET_MY_ADDRESS {
+
+            /** S_GET_MY_ADDRESS address */
+            address?: (string|null);
+        }
+
+        /** Represents a S_GET_MY_ADDRESS. */
+        class S_GET_MY_ADDRESS implements IS_GET_MY_ADDRESS {
+
+            /**
+             * Constructs a new S_GET_MY_ADDRESS.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MY_ADDRESS);
+
+            /** S_GET_MY_ADDRESS address. */
+            public address: string;
+
+            /**
+             * Encodes the specified S_GET_MY_ADDRESS message. Does not implicitly {@link com.message.S_GET_MY_ADDRESS.verify|verify} messages.
+             * @param message S_GET_MY_ADDRESS message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MY_ADDRESS, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MY_ADDRESS message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MY_ADDRESS
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MY_ADDRESS;
+        }
+
+        /** Properties of a C_GET_EXTRACT_LIST. */
+        interface IC_GET_EXTRACT_LIST {
+        }
+
+        /** Represents a C_GET_EXTRACT_LIST. */
+        class C_GET_EXTRACT_LIST implements IC_GET_EXTRACT_LIST {
+
+            /**
+             * Constructs a new C_GET_EXTRACT_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_EXTRACT_LIST);
+
+            /**
+             * Encodes the specified C_GET_EXTRACT_LIST message. Does not implicitly {@link com.message.C_GET_EXTRACT_LIST.verify|verify} messages.
+             * @param message C_GET_EXTRACT_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_EXTRACT_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_EXTRACT_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_EXTRACT_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_EXTRACT_LIST;
+        }
+
+        /** Properties of a S_GET_EXTRACT_LIST. */
+        interface IS_GET_EXTRACT_LIST {
+        }
+
+        /** Represents a S_GET_EXTRACT_LIST. */
+        class S_GET_EXTRACT_LIST implements IS_GET_EXTRACT_LIST {
+
+            /**
+             * Constructs a new S_GET_EXTRACT_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_EXTRACT_LIST);
+
+            /**
+             * Encodes the specified S_GET_EXTRACT_LIST message. Does not implicitly {@link com.message.S_GET_EXTRACT_LIST.verify|verify} messages.
+             * @param message S_GET_EXTRACT_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_EXTRACT_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_EXTRACT_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_EXTRACT_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_EXTRACT_LIST;
+        }
+
+        /** Properties of a C_GET_RECHARGE_LIST. */
+        interface IC_GET_RECHARGE_LIST {
+        }
+
+        /** Represents a C_GET_RECHARGE_LIST. */
+        class C_GET_RECHARGE_LIST implements IC_GET_RECHARGE_LIST {
+
+            /**
+             * Constructs a new C_GET_RECHARGE_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_RECHARGE_LIST);
+
+            /**
+             * Encodes the specified C_GET_RECHARGE_LIST message. Does not implicitly {@link com.message.C_GET_RECHARGE_LIST.verify|verify} messages.
+             * @param message C_GET_RECHARGE_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_RECHARGE_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_RECHARGE_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_RECHARGE_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_RECHARGE_LIST;
+        }
+
+        /** Properties of a S_GET_RECHARGE_LIST. */
+        interface IS_GET_RECHARGE_LIST {
+        }
+
+        /** Represents a S_GET_RECHARGE_LIST. */
+        class S_GET_RECHARGE_LIST implements IS_GET_RECHARGE_LIST {
+
+            /**
+             * Constructs a new S_GET_RECHARGE_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_RECHARGE_LIST);
+
+            /**
+             * Encodes the specified S_GET_RECHARGE_LIST message. Does not implicitly {@link com.message.S_GET_RECHARGE_LIST.verify|verify} messages.
+             * @param message S_GET_RECHARGE_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_RECHARGE_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_RECHARGE_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_RECHARGE_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_RECHARGE_LIST;
         }
 
         /** Properties of a MyTeamMsg. */

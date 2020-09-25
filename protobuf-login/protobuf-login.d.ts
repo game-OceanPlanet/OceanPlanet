@@ -99,6 +99,9 @@ declare namespace com {
 
             /** C_USER_LOGIN sparam */
             sparam?: (string|null);
+
+            /** C_USER_LOGIN fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a C_USER_LOGIN. */
@@ -119,6 +122,9 @@ declare namespace com {
             /** C_USER_LOGIN sparam. */
             public sparam: string;
 
+            /** C_USER_LOGIN fromGame. */
+            public fromGame: number;
+
             /**
              * Encodes the specified C_USER_LOGIN message. Does not implicitly {@link com.message.C_USER_LOGIN.verify|verify} messages.
              * @param message C_USER_LOGIN message or plain object to encode
@@ -138,11 +144,70 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_USER_LOGIN;
         }
 
+        /** Properties of a C_USER_LOGIN_VERIFY_CODE. */
+        interface IC_USER_LOGIN_VERIFY_CODE {
+
+            /** C_USER_LOGIN_VERIFY_CODE mobile */
+            mobile?: (string|null);
+
+            /** C_USER_LOGIN_VERIFY_CODE verifyCode */
+            verifyCode?: (string|null);
+
+            /** C_USER_LOGIN_VERIFY_CODE sparam */
+            sparam?: (string|null);
+
+            /** C_USER_LOGIN_VERIFY_CODE fromGame */
+            fromGame?: (number|null);
+        }
+
+        /** Represents a C_USER_LOGIN_VERIFY_CODE. */
+        class C_USER_LOGIN_VERIFY_CODE implements IC_USER_LOGIN_VERIFY_CODE {
+
+            /**
+             * Constructs a new C_USER_LOGIN_VERIFY_CODE.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_USER_LOGIN_VERIFY_CODE);
+
+            /** C_USER_LOGIN_VERIFY_CODE mobile. */
+            public mobile: string;
+
+            /** C_USER_LOGIN_VERIFY_CODE verifyCode. */
+            public verifyCode: string;
+
+            /** C_USER_LOGIN_VERIFY_CODE sparam. */
+            public sparam: string;
+
+            /** C_USER_LOGIN_VERIFY_CODE fromGame. */
+            public fromGame: number;
+
+            /**
+             * Encodes the specified C_USER_LOGIN_VERIFY_CODE message. Does not implicitly {@link com.message.C_USER_LOGIN_VERIFY_CODE.verify|verify} messages.
+             * @param message C_USER_LOGIN_VERIFY_CODE message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_USER_LOGIN_VERIFY_CODE, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_USER_LOGIN_VERIFY_CODE message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_USER_LOGIN_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_USER_LOGIN_VERIFY_CODE;
+        }
+
         /** Properties of a S_USER_LOGIN. */
         interface IS_USER_LOGIN {
 
             /** S_USER_LOGIN playerId */
             playerId?: (number|Long|null);
+
+            /** S_USER_LOGIN fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a S_USER_LOGIN. */
@@ -156,6 +221,9 @@ declare namespace com {
 
             /** S_USER_LOGIN playerId. */
             public playerId: (number|Long);
+
+            /** S_USER_LOGIN fromGame. */
+            public fromGame: number;
 
             /**
              * Encodes the specified S_USER_LOGIN message. Does not implicitly {@link com.message.S_USER_LOGIN.verify|verify} messages.
@@ -196,6 +264,9 @@ declare namespace com {
 
             /** C_LOGIN_REGISTER sparam */
             sparam?: (string|null);
+
+            /** C_LOGIN_REGISTER fromGame */
+            fromGame?: (number|null);
         }
 
         /** Represents a C_LOGIN_REGISTER. */
@@ -225,6 +296,9 @@ declare namespace com {
             /** C_LOGIN_REGISTER sparam. */
             public sparam: string;
 
+            /** C_LOGIN_REGISTER fromGame. */
+            public fromGame: number;
+
             /**
              * Encodes the specified C_LOGIN_REGISTER message. Does not implicitly {@link com.message.C_LOGIN_REGISTER.verify|verify} messages.
              * @param message C_LOGIN_REGISTER message or plain object to encode
@@ -242,6 +316,132 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_LOGIN_REGISTER;
+        }
+
+        /** Properties of a S_LOGIN_REGISTER. */
+        interface IS_LOGIN_REGISTER {
+
+            /** S_LOGIN_REGISTER playerId */
+            playerId?: (number|Long|null);
+
+            /** S_LOGIN_REGISTER fromGame */
+            fromGame?: (number|null);
+        }
+
+        /** Represents a S_LOGIN_REGISTER. */
+        class S_LOGIN_REGISTER implements IS_LOGIN_REGISTER {
+
+            /**
+             * Constructs a new S_LOGIN_REGISTER.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_LOGIN_REGISTER);
+
+            /** S_LOGIN_REGISTER playerId. */
+            public playerId: (number|Long);
+
+            /** S_LOGIN_REGISTER fromGame. */
+            public fromGame: number;
+
+            /**
+             * Encodes the specified S_LOGIN_REGISTER message. Does not implicitly {@link com.message.S_LOGIN_REGISTER.verify|verify} messages.
+             * @param message S_LOGIN_REGISTER message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_LOGIN_REGISTER, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_LOGIN_REGISTER message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_LOGIN_REGISTER
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_LOGIN_REGISTER;
+        }
+
+        /** Properties of a C_SEND_VERIFY_CODE. */
+        interface IC_SEND_VERIFY_CODE {
+
+            /** C_SEND_VERIFY_CODE mobile */
+            mobile?: (string|null);
+        }
+
+        /** Represents a C_SEND_VERIFY_CODE. */
+        class C_SEND_VERIFY_CODE implements IC_SEND_VERIFY_CODE {
+
+            /**
+             * Constructs a new C_SEND_VERIFY_CODE.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_SEND_VERIFY_CODE);
+
+            /** C_SEND_VERIFY_CODE mobile. */
+            public mobile: string;
+
+            /**
+             * Encodes the specified C_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.C_SEND_VERIFY_CODE.verify|verify} messages.
+             * @param message C_SEND_VERIFY_CODE message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_SEND_VERIFY_CODE, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_SEND_VERIFY_CODE message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_SEND_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_SEND_VERIFY_CODE;
+        }
+
+        /** Properties of a S_SEND_VERIFY_CODE. */
+        interface IS_SEND_VERIFY_CODE {
+
+            /** S_SEND_VERIFY_CODE mobile */
+            mobile?: (string|null);
+
+            /** S_SEND_VERIFY_CODE state */
+            state?: (number|null);
+        }
+
+        /** Represents a S_SEND_VERIFY_CODE. */
+        class S_SEND_VERIFY_CODE implements IS_SEND_VERIFY_CODE {
+
+            /**
+             * Constructs a new S_SEND_VERIFY_CODE.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SEND_VERIFY_CODE);
+
+            /** S_SEND_VERIFY_CODE mobile. */
+            public mobile: string;
+
+            /** S_SEND_VERIFY_CODE state. */
+            public state: number;
+
+            /**
+             * Encodes the specified S_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.S_SEND_VERIFY_CODE.verify|verify} messages.
+             * @param message S_SEND_VERIFY_CODE message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SEND_VERIFY_CODE, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SEND_VERIFY_CODE message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SEND_VERIFY_CODE
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SEND_VERIFY_CODE;
         }
 
         /** Properties of a C_USER_LOGOUT. */
@@ -426,170 +626,6 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_TIME;
-        }
-
-        /** Properties of a C_GET_NICKNAME_INFO. */
-        interface IC_GET_NICKNAME_INFO {
-
-            /** C_GET_NICKNAME_INFO nickName */
-            nickName?: (string|null);
-        }
-
-        /** Represents a C_GET_NICKNAME_INFO. */
-        class C_GET_NICKNAME_INFO implements IC_GET_NICKNAME_INFO {
-
-            /**
-             * Constructs a new C_GET_NICKNAME_INFO.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_GET_NICKNAME_INFO);
-
-            /** C_GET_NICKNAME_INFO nickName. */
-            public nickName: string;
-
-            /**
-             * Encodes the specified C_GET_NICKNAME_INFO message. Does not implicitly {@link com.message.C_GET_NICKNAME_INFO.verify|verify} messages.
-             * @param message C_GET_NICKNAME_INFO message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_GET_NICKNAME_INFO, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_GET_NICKNAME_INFO message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_GET_NICKNAME_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_NICKNAME_INFO;
-        }
-
-        /** Properties of a S_GET_NICKNAME_INFO. */
-        interface IS_GET_NICKNAME_INFO {
-
-            /** S_GET_NICKNAME_INFO nickName */
-            nickName?: (string|null);
-
-            /** S_GET_NICKNAME_INFO canUse */
-            canUse?: (boolean|null);
-        }
-
-        /** Represents a S_GET_NICKNAME_INFO. */
-        class S_GET_NICKNAME_INFO implements IS_GET_NICKNAME_INFO {
-
-            /**
-             * Constructs a new S_GET_NICKNAME_INFO.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_GET_NICKNAME_INFO);
-
-            /** S_GET_NICKNAME_INFO nickName. */
-            public nickName: string;
-
-            /** S_GET_NICKNAME_INFO canUse. */
-            public canUse: boolean;
-
-            /**
-             * Encodes the specified S_GET_NICKNAME_INFO message. Does not implicitly {@link com.message.S_GET_NICKNAME_INFO.verify|verify} messages.
-             * @param message S_GET_NICKNAME_INFO message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_GET_NICKNAME_INFO, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_GET_NICKNAME_INFO message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_GET_NICKNAME_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_NICKNAME_INFO;
-        }
-
-        /** Properties of a C_SEND_SDK_DATA. */
-        interface IC_SEND_SDK_DATA {
-
-            /** C_SEND_SDK_DATA reportStr */
-            reportStr?: (string|null);
-
-            /** C_SEND_SDK_DATA reportUrl */
-            reportUrl?: (string|null);
-        }
-
-        /** Represents a C_SEND_SDK_DATA. */
-        class C_SEND_SDK_DATA implements IC_SEND_SDK_DATA {
-
-            /**
-             * Constructs a new C_SEND_SDK_DATA.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_SEND_SDK_DATA);
-
-            /** C_SEND_SDK_DATA reportStr. */
-            public reportStr: string;
-
-            /** C_SEND_SDK_DATA reportUrl. */
-            public reportUrl: string;
-
-            /**
-             * Encodes the specified C_SEND_SDK_DATA message. Does not implicitly {@link com.message.C_SEND_SDK_DATA.verify|verify} messages.
-             * @param message C_SEND_SDK_DATA message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_SEND_SDK_DATA, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_SEND_SDK_DATA message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_SEND_SDK_DATA
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_SEND_SDK_DATA;
-        }
-
-        /** Properties of a S_SEND_SDK_DATA. */
-        interface IS_SEND_SDK_DATA {
-
-            /** S_SEND_SDK_DATA canUse */
-            canUse?: (boolean|null);
-        }
-
-        /** Represents a S_SEND_SDK_DATA. */
-        class S_SEND_SDK_DATA implements IS_SEND_SDK_DATA {
-
-            /**
-             * Constructs a new S_SEND_SDK_DATA.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_SEND_SDK_DATA);
-
-            /** S_SEND_SDK_DATA canUse. */
-            public canUse: boolean;
-
-            /**
-             * Encodes the specified S_SEND_SDK_DATA message. Does not implicitly {@link com.message.S_SEND_SDK_DATA.verify|verify} messages.
-             * @param message S_SEND_SDK_DATA message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_SEND_SDK_DATA, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_SEND_SDK_DATA message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_SEND_SDK_DATA
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SEND_SDK_DATA;
         }
     }
 }

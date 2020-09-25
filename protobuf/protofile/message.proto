@@ -26,6 +26,9 @@ message MsgEnum {
 		S_GIVE_KEY			= 1016;
 		C_GET_KEY_LIST		= 1017;  // 获取激活秘钥记录
 		S_GET_KEY_LIST		= 1018;
+		
+		C_SEND_VERIFY_CODE	= 1019;  // 发送短信验证码返回
+		S_SEND_VERIFY_CODE	= 1020;
 
 		//fish
 		C_GET_FISH_INFO		= 1051; //获取我的鱼儿
@@ -79,6 +82,13 @@ message MsgEnum {
 		C_GET_MY_TEAM_LIST			= 1303; //获取我的直推成员信息
 		S_GET_MY_TEAM_LIST			= 1304;
 		
+		//recharge
+		C_GET_MY_ADDRESS			= 1401;	// 获取我的充值地址
+		S_GET_MY_ADDRESS			= 1402;
+		C_GET_EXTRACT_LIST			= 1403;	// 获取提现记录
+		S_GET_EXTRACT_LIST			= 1404;
+		C_GET_RECHARGE_LIST			= 1405;	// 获取充值记录
+		S_GET_RECHARGE_LIST			= 1406;
 
         S_SYN_PROPERTY = 2001; // 同步属性变化
 
@@ -136,6 +146,13 @@ message MsgEnum {
 		PLAYER_NOT_EXIST = 1181;//玩家不存在
 		FISH_MAX_LIMIT = 1201; //已经是最大的鱼了,无法合成下一等级
 		CAN_NOT_SEND_TO_YOURSELF = 1202; //不能给自己赠送激活秘钥
+		MOBILE_NOT_RIGHT = 1203; //输入的手机号码有误
+		MOBILE_NOT_THE_LOGIN_ONE = 1204; //输入的手机号码不是当前注册的号码
+		ID_NUM_NOT_RIGHT = 1205; //输入的身份证号码有误
+		ALREADY_VERIFY_NOT_NEED = 1206; //已经实名验证，无需再实名验证
+		MOBILE_IDNUM_ALREADY_VERIFY = 1207; //该手机号码和身份证号码已经实名验证，无需再实名验证
+		VERIFY_HAVE_ERROR_CHECK = 1208; //实名验证有误，请检查输入后再尝试
+		NOT_VERIFY_CANT_DO = 1209; //未进行实名验证，无法操作
 		
 	
   }

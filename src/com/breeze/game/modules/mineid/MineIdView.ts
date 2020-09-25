@@ -6,11 +6,16 @@ module qmr
 public txt_name:eui.Label;
 public txt_kda_total:eui.Label;
 public text_input_pwd:eui.EditableText;
+public btn_getCode:eui.Group;
+public text_input_vcode:eui.EditableText;
 public but_changePwd:eui.Group;
 public btn_logout:eui.Group;
 public btnReturn:eui.Image;
+public txt_vcodedes:eui.Label;
 
 
+private __leftTime:number = 0;
+		private __timekey:number;
 		
 		public constructor()
 		{
@@ -37,7 +42,30 @@ public btnReturn:eui.Image;
             let t = this;
             t.addClickEvent(t.btnReturn, t.closeView, t);
             t.addClickEvent(t.but_changePwd, t.onSetPwd, t);
-            t.addClickEvent(t.btn_logout, t.onLogout, t);
+			t.addClickEvent(t.btn_logout, t.onLogout, t);
+			t.addClickEvent(t.btn_getCode, t.getVcode1, t);
+
+			LabelUtil.addInputListener(t.text_input_pwd, t);
+			LabelUtil.addInputListener(t.text_input_vcode, t);
+        }
+		
+		private getVcode1():void
+        {
+            if(this.__leftTime > 0){
+                TipManagerCommon.getInstance().createCommonColorTip("请稍后再试");
+                return;
+            }
+            let pwd: string = this.text_input_pwd.text.trim();
+            if (pwd.length == 0)
+            {
+                TipManagerCommon.getInstance().createCommonColorTip("请输入新密码");
+                return;
+            }
+
+			let tel:string = HeroModel.instance.IdentityPro.mobile;
+            LoginController.instance.reqVerifyCode(tel);
+            this.__leftTime = 59;
+            this.updateCd();
         }
         
         private onSetPwd():void
@@ -57,10 +85,15 @@ public btnReturn:eui.Image;
 				TipManagerCommon.getInstance().createCommonColorTip("输入的密码长度不能多于12位");
 				return;
 			}
-			let tel:string = HeroModel.instance.IdentityPro.mobile;
-			let vcode:string = "8888";
+			let verifycode:string = this.text_input_vcode.text.trim();
+			if(verifycode.length == 0){
+                TipManagerCommon.getInstance().createCommonColorTip("请输入验证码");
+                return;
+            }
 
-			TeamController.instance.requestChangePwdCMD(tel, pwd, vcode);
+			let tel:string = HeroModel.instance.IdentityPro.mobile;
+
+			TeamController.instance.requestChangePwdCMD(tel, pwd, verifycode);
         }
 
         private onLogout():void
@@ -81,6 +114,41 @@ public btnReturn:eui.Image;
             t.txt_kda_total.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalKAD) + HeroModel.KAD;
             t.txt_name.text = "ID："+NumberUtil.getTelNumberShow(Int64Util.getNumber(playerPro.playerId));
 		}
+
+		private updateCd():void
+        {
+            let t = this;
+            if(t.__leftTime > 0){
+                if (t.__timekey != -1){
+                    egret.clearInterval(t.__timekey);
+                }
+                t.__timekey = egret.setInterval(t.updateTime, t, 1000);
+                t.txt_vcodedes.text = CommonTool.formatTime1(t.__leftTime)+"s";
+            } else {
+                t.stopTime();
+            }
+        }
+
+        private updateTime(){
+			let t = this;
+			if(this.__leftTime <= 0){
+				t.txt_vcodedes.text = "获取验证码";
+				return;
+			}
+			t.txt_vcodedes.text = CommonTool.formatTime1(t.__leftTime)+"s";
+			t.__leftTime --;
+		}
+
+		private stopTime(): void
+		{
+			let t = this;
+			if (t.__timekey != -1){
+				egret.clearInterval(t.__timekey);
+			}
+            t.__timekey = -1;
+			t.txt_vcodedes.text = "";
+		}
+
 
 		public dispose(): void
 		{

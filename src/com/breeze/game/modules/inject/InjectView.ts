@@ -68,6 +68,8 @@ public selectView:qmr.InjectSelectView;
             t.registerNotify(NotifyConst.S_INJECT_KAD, t.updateView, t);
 
             t.registerNotify(NotifyConst.SELECT_ITEM_SELECTED, t.onStepSelected, t);
+
+            LabelUtil.addInputListener(t.text_input_price, t);
         }
 
         private selecteWightId:number = 0;

@@ -67,9 +67,9 @@
 		         scaleX="1" scaleY="1" />
 		<e:Image id="btn_permit" source="mainui_json.btn_permit" y="328" anchorOffsetX="68" anchorOffsetY="51" x="68"
 		         scaleX="1" scaleY="1" />
-		<e:Image id="btn_ActKey" y="-30.19999999999999" anchorOffsetX="68" anchorOffsetY="51" source="mainui_json.btn_realname" x="68" scaleX="1" scaleY="1"/>
-		<e:Image id="btn_recharge" y="-149.6" anchorOffsetX="68" anchorOffsetY="51" source="mainui_json.btn_realname" x="68" scaleX="1" scaleY="1"/>
-		<e:Image id="btn_withdrawal" y="-269" anchorOffsetX="68" anchorOffsetY="51" source="mainui_json.btn_realname" x="68" scaleX="1" scaleY="1"/>
+		<e:Image id="btn_ActKey" y="-30.19999999999999" anchorOffsetX="68" anchorOffsetY="51" x="68" scaleX="1" scaleY="1" source="mainui_json.icon_jihuoma"/>
+
+
 	</e:Group>
 	<e:Group width="150" height="379" anchorOffsetX="0" anchorOffsetY="0" right="0" bottom="265">
 		<e:Image id="btn_download" source="mainui_json.btn_download" y="328" anchorOffsetX="68" anchorOffsetY="51" x="82"

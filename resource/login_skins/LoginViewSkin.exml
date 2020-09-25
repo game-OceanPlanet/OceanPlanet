@@ -9,7 +9,7 @@
 			<e:Image id="imgWindMiddle" y="856.06" scaleX="1" scaleY="1" x="10" visible="true" />
 
 		</e:Group>
-		<e:Group id="group_login" horizontalCenter="0.5" verticalCenter="-29" x="48" y="313" scaleX="1" scaleY="1">
+		<e:Group id="group_login" horizontalCenter="0.5" x="48" scaleX="1" scaleY="1" bottom="287">
 			<e:Image anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" source="loginPanel_json.DengLuKuang" x="0" y="0"/>
 			<e:Group id="gpRead" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" visible="true" y="540" x="89">
 			<e:Image source="loginPanel_json.point" x="5" y="9"/>
@@ -22,24 +22,31 @@
 			</e:layout>
 			</e:Group>
 			<e:Group id="groupAccount" y="123" visible="true" scaleX="1" scaleY="1" anchorOffsetY="0" height="91" anchorOffsetX="0" width="432" x="98">
-			<e:Image source="loginPanel_json.ShuRuKuangDi" x="32.67" anchorOffsetX="0" width="79" verticalCenter="0"/>
+			<e:Image source="loginPanel_json.ShuRuKuangDi" x="2.67" anchorOffsetX="0" width="109" verticalCenter="0"/>
 			<e:Image source="loginPanel_json.ShenSeShuRuKuang" x="110" y="16" anchorOffsetX="0" width="321"/>
+				<e:Label id="txt_account_des2" stroke="1" text="手机号:" x="10" y="32" fontFamily="specialGameFont" size="28" textColor="0xFFFFFF"/>
 			<e:Label id="txt_account_des" stroke="1" text="账号:" x="38" y="32" fontFamily="specialGameFont" size="28" textColor="0xffffff"/>
-			<e:EditableText id="txt_account" height="49" prompt="请输入账号" size="24" verticalAlign="middle" fontFamily="specialGameFont" anchorOffsetX="0" y="21.33" promptColor="0xcececd" left="119" right="11" textColor="0x687a7a" text=""/>
+			<e:EditableText id="txt_account" height="49" prompt="请输入账号" size="24" verticalAlign="middle" fontFamily="specialGameFont" anchorOffsetX="0" y="21.33" promptColor="0xcececd" textColor="0x687a7a" text="" width="302" x="119"/>
 			</e:Group>
 			<e:Group id="groupAccount0" y="235" scaleX="1" scaleY="1" anchorOffsetY="0" height="91" anchorOffsetX="0" width="432" x="98">
-			<e:Image source="loginPanel_json.ShuRuKuangDi" x="32.67" anchorOffsetX="0" width="79" verticalCenter="0"/>
+			<e:Image source="loginPanel_json.ShuRuKuangDi" x="1.67" anchorOffsetX="0" width="110" verticalCenter="0"/>
 			<e:TextInput id="txt_password" maxChars="35" x="113.33" prompt="请输入密码" skinName="ServerListTextInputSkin" anchorOffsetX="0" width="318" height="53" verticalCenter="1" displayAsPassword="true" inputType="password"/>
 			<e:Label id="txt_pwd_des" stroke="1" text="密码:" x="38" y="32" fontFamily="specialGameFont" size="28" textColor="0xffffff"/>
+				<e:TextInput id="txt_password2" maxChars="35" x="113.33" prompt="请输入验证码" skinName="ServerListTextInputSkin" anchorOffsetX="0" width="174" height="53" y="20"/>
+				<e:Label id="txt_pwd_des2" stroke="1" text="验证码:" x="10" y="32" fontFamily="specialGameFont" size="28" textColor="0xFFFFFF"/>
+				<e:Group id="btn_getCode" x="290" y="19.98">
+					<e:Image scaleX="1" scaleY="1" y="33" x="170" anchorOffsetX="170" anchorOffsetY="33" source="loginPanel_json.YanZhengMa"/>
+					<e:Label id="txt_vcode" text="获取验证码" fontFamily="specialGameFont" strokeColor="0x842813" size="24" y="15" scaleX="1" scaleY="1" textColor="0xffffff" horizontalCenter="2"/>
+				</e:Group>
 			</e:Group>
 			<e:Image id="btn_login" scaleX="1" scaleY="1" y="383" source="loginPanel_json.KaiShiYouXi2" x="329" width="349" height="82" anchorOffsetX="175" anchorOffsetY="41"/>
 			<e:Group id="btn_register_back" x="158" y="442.98">
 			<e:Image scaleX="1" scaleY="1" y="33" source="loginPanel_json.ZhuCe" x="170" width="340" height="66" anchorOffsetX="170" anchorOffsetY="33"/>
-			<e:Label text="没有账号？去注册" fontFamily="specialGameFont" strokeColor="0x842813" size="24" y="22.019999999999982" textColor="0x50D8F4" x="73.34" scaleX="1" scaleY="1"/>
+			<e:Label text="没有账号？去注册" fontFamily="specialGameFont" strokeColor="0x842813" size="24" y="22.019999999999982" x="73.34" scaleX="1" scaleY="1" textColor="0x50d8f4"/>
 			</e:Group>
-			<e:Label id="btn_login_way" text="切换登录方式" fontFamily="specialGameFont" strokeColor="0x842813" size="24" y="645.33" horizontalCenter="0.5" textColor="0x50d8f4"/>
+			<e:Label id="btn_login_way" text="短信验证码登录" fontFamily="specialGameFont" strokeColor="0x842813" size="26" y="643.33" horizontalCenter="0.5" textColor="0xfff200"/>
 		</e:Group>
-		<e:Group id="group_register" horizontalCenter="2" verticalCenter="-98" anchorOffsetY="0" height="768" visible="false">
+		<e:Group id="group_register" horizontalCenter="2" anchorOffsetY="0" height="768" bottom="326" visible="false">
 			<e:Image anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" source="loginPanel_json.DengLuKuang"
 			         scale9Grid="326,406,34,78" horizontalCenter="-0.5" verticalCenter="62" height="852" />
 			<e:Group id="gpRead0" y="788.33" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" visible="true" x="93.34">
@@ -95,9 +102,13 @@
 				<e:Image source="loginPanel_json.ShuRuKuangDi" x="-23" anchorOffsetX="0" width="140" verticalCenter="-5" />
 				<e:Image source="loginPanel_json.ShenSeShuRuKuang" x="110" y="9.35" anchorOffsetX="0" width="321" />
 				<e:TextInput id="txt_register_verifycode" maxChars="35" x="113.33" prompt="请输入验证码"
-				             skinName="ServerListTextInputSkin" anchorOffsetX="0" width="318" height="53" verticalCenter="-6" />
+				             skinName="ServerListTextInputSkin" anchorOffsetX="0" width="173" height="53" verticalCenter="-6" />
 				<e:Label stroke="1" text="验证码:" x="12.66" y="25.35" fontFamily="specialGameFont" size="28" textAlign="right"
 				         textColor="0xFFFFFF" />
+				<e:Group id="btn_getCode2" x="290" y="12">
+					<e:Image scaleX="1" scaleY="1" y="33" x="170" anchorOffsetX="170" anchorOffsetY="33" source="loginPanel_json.YanZhengMa"/>
+					<e:Label id="txt_vcode2" text="获取验证码" fontFamily="specialGameFont" strokeColor="0x842813" size="24" y="14" scaleX="1" scaleY="1" textColor="0xFFFFFF" horizontalCenter="2"/>
+				</e:Group>
 			</e:Group>
 			<e:Image id="btn_register" scaleX="1" scaleY="1" x="342" y="604" source="loginPanel_json.MaShangZhuCe"  width="352" height="82" anchorOffsetX="176" anchorOffsetY="41"/>
 			<e:Group id="btn_login_back" x="174.67" y="662.98">

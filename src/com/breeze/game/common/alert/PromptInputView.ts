@@ -51,6 +51,8 @@ public btnClose:eui.Image;
             t.addEvent(t.txt_account, egret.Event.CHANGE,t.onTextInputChange,t);
 
             t.txt_account.restrict = "0-9";
+            
+            LabelUtil.addInputListener(t.txt_account, t);
         }
 
         private onTextInputChange(evt: egret.Event):void
