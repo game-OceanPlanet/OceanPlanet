@@ -189,54 +189,98 @@ module qmr
 
 		/**拷贝字符串到剪贴板 */
 		public static copyClipBoard(message: string): void {
-			// if (1) {
-			// 	window.wx['setClipboardData']({
-			// 		data: message,
-			// 		success(res) {
-			// 			window.wx['getClipboardData']({
-			// 				success(res) {
-			// 					// console.log(res.data)
-			// 				}
-			// 			})
-			// 		}
-			// 	})
-			// } else if (1) {
-			// 	window.qq['setClipboardData']({
-			// 		data: message,
-			// 		success(res) {
-			// 			window.qq['getClipboardData']({
-			// 				success(res) {
-			// 					TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
-			// 				}
-			// 			})
-			// 		}
-			// 	})
-			// } else if (1) {
-			// 	window.qg['setClipboardData']({
-			// 		data: message,
-			// 		success(res) {
-			// 			TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
-			// 		}
-			// 	})
-			// } else {
-			// 	let input = document.createElement("input");
-			// 	input.value = message;
-			// 	document.body.appendChild(input);
-			// 	input.select();
-			// 	input.setSelectionRange(0, input.value.length);
-			// 	document.execCommand('Copy');
-			// 	document.body.removeChild(input);
-			// 	TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
-			// }
-
-			let input = document.createElement("input");
-			input.value = message;
-			document.body.appendChild(input);
-			input.select();
-			input.setSelectionRange(0, input.value.length);
-			document.execCommand('Copy');
-			document.body.removeChild(input);
-			TipManagerCommon.getInstance().createCommonColorTip("复制成功！", true);
+			if (window.wx) {
+				window.wx['setClipboardData']({
+					data: message,
+					success(res) {
+						window.wx['getClipboardData']({
+							success(res) {
+								// console.log(res.data)
+							}
+						})
+					}
+				})
+			} else if (window.qq) {
+				window.qq['setClipboardData']({
+					data: message,
+					success(res) {
+						window.qq['getClipboardData']({
+							success(res) {
+								TipManagerCommon.getInstance().createCommonColorTip("已经复制到剪贴板", true);
+							}
+						})
+					}
+				})
+			} else if (window.qg) {
+				window.qg['setClipboardData']({
+					data: message,
+					success(res) {
+						TipManagerCommon.getInstance().createCommonColorTip("已经复制到剪贴板", true);
+					}
+				})
+			} else {
+				if(WebBrowerUtil.OS.toLocaleLowerCase() == "ios"){
+					// let jsCopy = window["jsCopy"];
+					// if(jsCopy){
+					// 	jsCopy(message);
+					// }
+					StringUtils.jsCopy(message);
+				} else {
+					let input = document.createElement("input");
+					input.value = message;
+					document.body.appendChild(input);
+					input.select();
+					input.setSelectionRange(0, input.value.length);
+					document.execCommand('Copy');
+					document.body.removeChild(input);
+					TipManagerCommon.getInstance().createCommonColorTip("已经复制到剪贴板", true);
+				}
+			}
 		}
+
+		// 复制文案功能:
+        public static jsCopy(message) {
+			var u = navigator.userAgent;
+			//苹果
+			if (u.match(/(iPhone|iPod|iPad);?/i)) { //ios
+			  //   alert('苹果啊');
+			  let input = document.createElement('input');
+			  input.id = "copy-input";
+			  input.readOnly = true;        // 防止ios聚焦触发键盘事件
+			  input.setAttribute('readOnly','readOnly');
+			  input.style.position = "absolute";
+			  input.style.left = "-1000px";
+			  input.style.zIndex = "-1000";
+			  document.body.appendChild(input)
+  
+			  input.value = message;
+  
+			  StringUtils.selectText(input, 0, message.length);
+  
+			  var successful = document.execCommand('copy');
+			  if(successful){
+				TipManagerCommon.getInstance().createCommonColorTip("已经复制到剪贴板", true);
+			  } else {
+				TipManagerCommon.getInstance().createCommonColorTip("复制失败，请手动复制链接");
+			  }
+
+			  // 移除选中的元素
+			  window.getSelection().removeAllRanges();
+			}
+		  };
+  
+		  public static selectText(textbox, startIndex, stopIndex) {
+			if (textbox.createTextRange) {//ie
+				const range = textbox.createTextRange();
+				range.collapse(true);
+				range.moveStart('character', startIndex);//起始光标
+				range.moveEnd('character', stopIndex - startIndex);//结束光标
+				range.select();//不兼容苹果
+			} else {//firefox/chrome
+				textbox.select();
+				textbox.setSelectionRange(startIndex, stopIndex);
+				textbox.focus();
+			}
+		  }
 	}
 }

@@ -57,17 +57,19 @@ module qmr
 	{			
 		return this.d["monthly"];			
 	}
-	/**每日产出*/
+	/**总产出*/
 	get produce():number
 	{			
 		return this.d["produce"];			
 	}
-	/**直推人数*/
+	/**U购买需要
+直推人数*/
 	get directPerson():number
 	{			
 		return this.d["directPerson"];			
 	}
-	/**团队规模*/
+	/**U购买需要
+团队规模*/
 	get teamPerson():number
 	{			
 		return this.d["teamPerson"];			
@@ -76,6 +78,11 @@ module qmr
 	get UBuyPrice():number
 	{			
 		return this.d["UBuyPrice"];			
+	}
+	/**U购买限制数量*/
+	get UBuyLimit():number
+	{			
+		return this.d["UBuyLimit"];			
 	}
 	/**购买价格*/
 	get price():number
@@ -396,6 +403,31 @@ module qmr
 	get precent():string
 	{			
 		return this.d["precent"];			
+	}
+
+		constructor(element)
+		{				
+			super(element)
+		this.key="id";
+		}
+	}
+
+	export class TeamStarCfg extends BaseBean
+	{
+		/**星级*/
+	get id():number
+	{			
+		return this.d["id"];			
+	}
+	/**直推人数*/
+	get count():number
+	{			
+		return this.d["count"];			
+	}
+	/**团队人数*/
+	get total():number
+	{			
+		return this.d["total"];			
 	}
 
 		constructor(element)

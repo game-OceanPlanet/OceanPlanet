@@ -2,10 +2,11 @@ module qmr
 {
 	export class InjectView extends BaseModule
 	{
-		public txt_MyPercent:eui.Label;
+		public panelGroup:eui.Group;
+public txt_MyPercent:eui.Label;
 public txt_selfTotal:eui.Label;
 public txt_kda_total:eui.Label;
-public text_input_price:eui.EditableText;
+public text_input_price:eui.TextInput;
 public btn_stepSelected:eui.Group;
 public txt_button_buy:eui.Label;
 public btn_exchange_group:eui.Group;
@@ -13,9 +14,11 @@ public txt_button_buy2:eui.Label;
 public txt_personnum:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
-public btnReturn:eui.Image;
-public btn_help:eui.Image;
 public selectView:qmr.InjectSelectView;
+public btn_help:eui.Image;
+public txt_title:eui.Label;
+public btnReturn:eui.Image;
+
 
 
 
@@ -28,7 +31,7 @@ public selectView:qmr.InjectSelectView;
 			this.qmrSkinName = "InjectSkin";
             this.isNeedMask = true;
             
-            this.helpId = HelpId.ID_2;
+            this.helpId = HelpIdEnum.TIP_3;
 		}
 
 		protected initComponent():void

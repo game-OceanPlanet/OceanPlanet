@@ -115,6 +115,8 @@ module qmr
             HeroModel.instance.totalMoney = Int64Util.getNumber(s.money);
             HeroModel.instance.pendingMoney = 0;
             this.dispatch(NotifyConst.S_GET_MONEY_REWARD);
+
+            this.getMyFishInfo();
 		}
 
 		// 领取金币奖励

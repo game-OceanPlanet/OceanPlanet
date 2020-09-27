@@ -58,7 +58,7 @@ module qmr {
                 t.tradeCostCfgs = cfgs;
             }
             let len:number = t.tradeCostCfgs.length;
-            for(var i:number = 0; i < len; i ++){
+            for(var i:number = len - 1; i >= 0; i --){
                 if(count >= t.tradeCostCfgs[i].count){
                     return t.tradeCostCfgs[i];
                 }
@@ -75,7 +75,7 @@ module qmr {
                 t.teamRateCfgs = cfgs;
             }
             let len:number = t.teamRateCfgs.length;
-            for(var i:number = 0; i < len; i ++){
+            for(var i:number = len - 1; i >= 0; i --){
                 if(all >= t.teamRateCfgs[i].allCount && count >= t.teamRateCfgs[i].directCount){
                     return t.teamRateCfgs[i];
                 }
@@ -92,14 +92,31 @@ module qmr {
                 t.directRateCfgs = cfgs;
             }
             let len:number = t.directRateCfgs.length;
-            for(var i:number = 0; i < len; i ++){
+            for(var i:number = len - 1; i >= 0; i --){
                 if(count >= t.directRateCfgs[i].count){
                     return t.directRateCfgs[i];
                 }
             }
             return null;
         }
-        
+
+        private teamStars:TeamStarCfg[];
+        public getteamStarCfgsIdByCount(count:number, all:number):TeamStarCfg
+        {
+            let t = this;
+            if(!t.teamStars){
+                let cfgs:TeamStarCfg[] = ConfigManager.getBean(ConfigEnum.TEAMRATE).values;
+                t.teamStars = cfgs;
+            }
+            let len:number = t.teamRateCfgs.length;
+            for(var i:number = len - 1; i >= 0; i --){
+                if(all >= t.teamStars[i].total && count >= t.teamStars[i].count){
+                    return t.teamStars[i];
+                }
+            }
+            return t.teamStars[0];
+        }
+       
 
         public keyLogs:com.message.KeyLogMsg[];//激活秘钥日志信息
 

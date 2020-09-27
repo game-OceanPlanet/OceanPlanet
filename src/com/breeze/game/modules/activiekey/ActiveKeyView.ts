@@ -4,18 +4,15 @@ module qmr
 	{
 		public panelGroup:eui.Group;
 public txt_unused:eui.Label;
+public txt_state:eui.Label;
 public btn_use:eui.Group;
 public btn_give:eui.Group;
-public text_input_tel:eui.EditableText;
-public text_input_count:eui.EditableText;
+public text_input_tel:eui.TextInput;
+public text_input_count:eui.TextInput;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
-public txt_state:eui.Label;
-
-
-
 
 
 
@@ -27,7 +24,7 @@ public txt_state:eui.Label;
 			this.qmrSkinName = "ActiveKeySkin";
 			this.isNeedMask = true;
 
-			this.helpId = HelpId.ID_4;
+			this.helpId = HelpIdEnum.TIP_9;
 		}
 
 		protected initComponent():void
@@ -135,7 +132,8 @@ public txt_state:eui.Label;
             }
 			
             t._arrCollection.replaceAll(logs);
-            t.txt_state.text = HeroModel.instance.IdentityPro.state == 0 ? "未激活":"已激活";//;//激活+实名状态,0未实名，1已激活，2已实名
+            t.txt_state.text = HeroModel.instance.IdentityPro.state == 0 ? "（未激活）":"（已激活）";//;//激活+实名状态,0未实名，1已激活，2已实名
+            t.txt_state.textColor = HeroModel.instance.IdentityPro.state == 0 ? 0xF73225:0x0EF712;
 		}
 
 		public dispose(): void

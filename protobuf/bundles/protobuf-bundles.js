@@ -5393,6 +5393,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IC_SEND_VERIFY_CODE
              * @property {string|null} [mobile] C_SEND_VERIFY_CODE mobile
+             * @property {number|null} [type] C_SEND_VERIFY_CODE type
              */
 
             /**
@@ -5419,6 +5420,14 @@ $root.com = (function() {
             C_SEND_VERIFY_CODE.prototype.mobile = "";
 
             /**
+             * C_SEND_VERIFY_CODE type.
+             * @member {number} type
+             * @memberof com.message.C_SEND_VERIFY_CODE
+             * @instance
+             */
+            C_SEND_VERIFY_CODE.prototype.type = 0;
+
+            /**
              * Encodes the specified C_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.C_SEND_VERIFY_CODE.verify|verify} messages.
              * @function encode
              * @memberof com.message.C_SEND_VERIFY_CODE
@@ -5432,6 +5441,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.mobile != null && message.hasOwnProperty("mobile"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.mobile);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
                 return writer;
             };
 
@@ -5455,6 +5466,9 @@ $root.com = (function() {
                     switch (tag >>> 3) {
                     case 1:
                         message.mobile = reader.string();
+                        break;
+                    case 2:
+                        message.type = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6030,6 +6044,7 @@ $root.com = (function() {
              * @property {com.message.IPlayerPropertyMsg|null} [property] S_USER_LOGIN_INIT_FINISH property
              * @property {com.message.IBasePlayerMsg|null} [basePlayerMsg] S_USER_LOGIN_INIT_FINISH basePlayerMsg
              * @property {Array.<com.message.IFishMsg>|null} [fishMsg] S_USER_LOGIN_INIT_FINISH fishMsg
+             * @property {string|null} [buyFishStr] S_USER_LOGIN_INIT_FINISH buyFishStr
              */
 
             /**
@@ -6081,6 +6096,14 @@ $root.com = (function() {
             S_USER_LOGIN_INIT_FINISH.prototype.fishMsg = $util.emptyArray;
 
             /**
+             * S_USER_LOGIN_INIT_FINISH buyFishStr.
+             * @member {string} buyFishStr
+             * @memberof com.message.S_USER_LOGIN_INIT_FINISH
+             * @instance
+             */
+            S_USER_LOGIN_INIT_FINISH.prototype.buyFishStr = "";
+
+            /**
              * Encodes the specified S_USER_LOGIN_INIT_FINISH message. Does not implicitly {@link com.message.S_USER_LOGIN_INIT_FINISH.verify|verify} messages.
              * @function encode
              * @memberof com.message.S_USER_LOGIN_INIT_FINISH
@@ -6101,6 +6124,8 @@ $root.com = (function() {
                 if (message.fishMsg != null && message.fishMsg.length)
                     for (var i = 0; i < message.fishMsg.length; ++i)
                         $root.com.message.FishMsg.encode(message.fishMsg[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.buyFishStr != null && message.hasOwnProperty("buyFishStr"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.buyFishStr);
                 return writer;
             };
 
@@ -6135,6 +6160,9 @@ $root.com = (function() {
                         if (!(message.fishMsg && message.fishMsg.length))
                             message.fishMsg = [];
                         message.fishMsg.push($root.com.message.FishMsg.decode(reader, reader.uint32()));
+                        break;
+                    case 5:
+                        message.buyFishStr = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7811,9 +7839,9 @@ $root.com = (function() {
              * @property {number} ERROR_CONFIG=1030 ERROR_CONFIG value
              * @property {number} PLAYER_LEVEL_LIMITED=1038 PLAYER_LEVEL_LIMITED value
              * @property {number} ROLE_NOT_FOUND=1047 ROLE_NOT_FOUND value
-             * @property {number} MAIL_NOT_FOUND=1048 MAIL_NOT_FOUND value
-             * @property {number} MAIL_NO_ACCESSORY=1049 MAIL_NO_ACCESSORY value
-             * @property {number} MAIL_ACCESSORY_RECEIVED=1050 MAIL_ACCESSORY_RECEIVED value
+             * @property {number} MONEY_NOT_ENOUGH_REWARD=1048 MONEY_NOT_ENOUGH_REWARD value
+             * @property {number} CAN_NOT_BUY_BY_U=1049 CAN_NOT_BUY_BY_U value
+             * @property {number} U_BUY_FISH_LIMITED=1050 U_BUY_FISH_LIMITED value
              * @property {number} MAIL_DELETEFAILD_BYACCESSORY=1051 MAIL_DELETEFAILD_BYACCESSORY value
              * @property {number} PLAYER_NOT_FOUND=1052 PLAYER_NOT_FOUND value
              * @property {number} USERNAME_REPEATED=1170 USERNAME_REPEATED value
@@ -7851,9 +7879,9 @@ $root.com = (function() {
                 values[valuesById[1030] = "ERROR_CONFIG"] = 1030;
                 values[valuesById[1038] = "PLAYER_LEVEL_LIMITED"] = 1038;
                 values[valuesById[1047] = "ROLE_NOT_FOUND"] = 1047;
-                values[valuesById[1048] = "MAIL_NOT_FOUND"] = 1048;
-                values[valuesById[1049] = "MAIL_NO_ACCESSORY"] = 1049;
-                values[valuesById[1050] = "MAIL_ACCESSORY_RECEIVED"] = 1050;
+                values[valuesById[1048] = "MONEY_NOT_ENOUGH_REWARD"] = 1048;
+                values[valuesById[1049] = "CAN_NOT_BUY_BY_U"] = 1049;
+                values[valuesById[1050] = "U_BUY_FISH_LIMITED"] = 1050;
                 values[valuesById[1051] = "MAIL_DELETEFAILD_BYACCESSORY"] = 1051;
                 values[valuesById[1052] = "PLAYER_NOT_FOUND"] = 1052;
                 values[valuesById[1170] = "USERNAME_REPEATED"] = 1170;

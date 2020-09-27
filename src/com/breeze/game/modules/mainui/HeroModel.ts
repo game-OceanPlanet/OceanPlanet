@@ -25,6 +25,8 @@ module qmr {
         public selectedMergePetId1:number;//选择可以合成的宠物id1
         public selectedMergePetId2:number;//选择可以合成的宠物id2
 
+        private buyFishStr:string;//用u购买鱼的累计数量：id1,数量;id2,数量
+        private hadBuyFishIds:Dictionary;
         public constructor() {
             super();
             let t = this;
@@ -43,6 +45,47 @@ module qmr {
                 return Int64Util.getNumber(this.playerPro.playerId);
             }
             return 0;
+        }
+
+        public setHadBuyFishes(fishes:string):void
+        {
+            let t = this;
+            t.buyFishStr = fishes;
+            if(!t.hadBuyFishIds){
+                t.hadBuyFishIds = new Dictionary();
+            }
+
+            if(fishes){
+                let ss:string[] = fishes.split(";");
+                let len:number = ss.length;
+                if(len > 0){
+                    for(var i:number = 0; i < len; i ++){
+                        let s = ss[i];
+                        if(s){
+                            let ids:string[] = s.split(",");
+                            t.hadBuyFishIds[ids[0]] = ids[1];
+                        }
+                    }
+                }
+            }
+
+        }
+        public getHadBuyFishes():Dictionary
+        {
+            return this.hadBuyFishIds;
+        }
+
+        public getBuyCount(id:number):number
+        {
+            let t = this;
+            if(!t.hadBuyFishIds){
+                return 0;
+            }
+            let count:number = t.hadBuyFishIds.get(id);
+            if(!count){
+                return 0;
+            }
+            return count;
         }
 
         public testMerge():void

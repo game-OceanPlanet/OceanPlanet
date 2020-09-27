@@ -8,19 +8,22 @@ public txt_name_show:eui.Label;
 public txt_tel_show:eui.Label;
 public txt_id_show:eui.Label;
 public identifyView:eui.Group;
-public text_name:eui.EditableText;
-public text_id:eui.EditableText;
-public text_tel:eui.EditableText;
+public text_name:eui.TextInput;
+public text_id:eui.TextInput;
+public text_tel:eui.TextInput;
 public btn_Identify:eui.Group;
 public txt_button_buy1:eui.Label;
 public txt_detail:eui.Label;
 public btnReturn:eui.Image;
-		
+public btn_help:eui.Image;
+
+
 		public constructor()
 		{
 			super();
 			this.qmrSkinName = "CertificationSkin";
-			this.isNeedMask = true;
+            this.isNeedMask = true;
+            this.helpId = HelpIdEnum.TIP_2;
 		}
 
 		protected initComponent():void
@@ -41,6 +44,8 @@ public btnReturn:eui.Image;
             let t = this;
             t.addClickEvent(t.btnReturn, t.closeView, t);
             t.addClickEvent(t.btn_Identify, t.onIdentifyClick, t);
+
+            t.registerNotify(NotifyConst.S_REAL_NAME_VERIFICATION, t.updateView, t);
 
             LabelUtil.addInputListener(t.text_name, t);
             LabelUtil.addInputListener(t.text_id, t);

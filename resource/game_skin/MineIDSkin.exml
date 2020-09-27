@@ -16,9 +16,8 @@
 			<e:Group anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="169" x="62">
 				<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" width="603"
 				          source="panelui_json.ShuRuKuang1" height="67" scale9Grid="38,8,232,51"/>
-				<e:EditableText id="text_input_pwd" prompt="请输入6-12位密码" size="28" verticalAlign="middle"
-				                fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" promptColor="0x91918b"
-				                textAlign="center"  left="0" right="0" top="0" bottom="0" text=""/>
+				<e:TextInput id="text_input_pwd" maxChars="35" prompt="请输入6-12位密码" anchorOffsetY="0" height="52" anchorOffsetX="0" width="449" textColor="0xdceeef" y="7" x="70" skinName="InputTextSkin3"/>
+
 			</e:Group>
 			<e:Group x="62" y="287" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image scaleX="1" scaleY="1" scale9Grid="78,9,200,61" width="603" source="panelui_json.anniu_1"/>
@@ -27,7 +26,8 @@
 					<e:Image scaleX="1" scaleY="1" y="33" x="110.7" anchorOffsetX="110.7" anchorOffsetY="33" source="trade_json.button_img" scale9Grid="43,9,258,61" width="224"/>
 					<e:Label id="txt_vcodedes" text="获取验证码" fontFamily="specialGameFont" strokeColor="0x842813" size="30" y="27" scaleX="1" scaleY="1" horizontalCenter="2" textColor="0xdb9518"/>
 				</e:Group>
-				<e:EditableText id="text_input_vcode" prompt="请输入短信验证码" size="28" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" promptColor="0x91918B" textAlign="center" text="" x="0" y="0" scaleX="1" scaleY="1" width="440" height="70"/>
+				<e:TextInput id="text_input_vcode" maxChars="35" prompt="请输入短信验证码" anchorOffsetY="0" height="52" anchorOffsetX="0" width="449" textColor="0xdceeef" y="7" x="73" skinName="InputTextSkin3"/>
+
 			</e:Group>
 
 			<e:Group id="but_changePwd" x="64" y="404" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
@@ -45,6 +45,8 @@
 
 		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47"
 		         source="panel2_json.btn_back" scaleX="1" scaleY="1"  x="703" y="1287"/>
+
+
 
 	</e:Group>
 </e:Skin>

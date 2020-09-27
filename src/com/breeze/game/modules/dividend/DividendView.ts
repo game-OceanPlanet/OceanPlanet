@@ -22,7 +22,7 @@ public btn_help:eui.Image;
 			this.qmrSkinName = "DividendSkin";
 			this.isNeedMask = true;
 
-			this.helpId = HelpId.ID_4;
+			this.helpId = HelpIdEnum.TIP_5;
 		}
 
 		protected initComponent():void

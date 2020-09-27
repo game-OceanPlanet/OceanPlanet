@@ -9,13 +9,15 @@ public txt_rate:eui.Label;
 public txt_kh_totalSelf:eui.Label;
 public txt_kadTotalSelf:eui.Label;
 public txt_exchangeDes:eui.Label;
-public text_input_price:eui.EditableText;
+public text_input_price:eui.TextInput;
 public btn_exchange_group:eui.Group;
 public txt_button_buy:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
+public txt_title:eui.Label;
+
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -27,7 +29,7 @@ public btn_help:eui.Image;
 			this.qmrSkinName = "ExchangeSkin";
 			this.isNeedMask = true;
 
-			this.helpId = HelpId.ID_3;
+			this.helpId = HelpIdEnum.TIP_4;
 		}
 
 		protected initComponent():void

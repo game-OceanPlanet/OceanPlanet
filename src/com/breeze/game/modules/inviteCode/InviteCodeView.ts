@@ -31,7 +31,7 @@ public btn_help:eui.Image;
 			this.qmrSkinName = "InviteCodeSkin";
 			this.isNeedMask = true;
 
-			this.helpId = HelpId.ID_1;
+			this.helpId = HelpIdEnum.TIP_6;
 		}
 
 		protected initComponent():void
@@ -81,7 +81,7 @@ public btn_help:eui.Image;
 		{
 			let code:string = this.txt_code.text.trim();
 			if(code){
-				let address:string = "http://129.226.177.253/game.html?code="+code+"&register=1";
+				let address:string = "http://www.siychina.com/game.html?code="+code+"&register=1";
 				StringUtils.copyClipBoard(address);
 			}
 		}
@@ -115,6 +115,9 @@ public btn_help:eui.Image;
 				if(tradeCfg){
 					t.txt_shouxufei.text = Number(tradeCfg.precent) * 100 + "%";
 				}
+
+				let starCfg:TeamStarCfg = TeamModdel.instance.getteamStarCfgsIdByCount(teamPro.count, teamPro.allCount);
+				LabelUtil.setLabelText(t.txt_tips, ClientCnEnum.CN_105, [teamPro.count, teamPro.allCount, starCfg.id]);
 			}
 
 			let logs:com.message.DirectInfoMsg[] = TeamModdel.instance.teamers;

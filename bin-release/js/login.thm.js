@@ -638,6 +638,90 @@ window.skins=window.skins||{};
 		return t;
 	};
 	return VSliderSkin;
+})(eui.Skin);generateEUI.paths['resource/login_skins/InputTextSkin3.exml'] = window.InputTextSkin3 = (function (_super) {
+	__extends(InputTextSkin3, _super);
+	function InputTextSkin3() {
+		_super.call(this);
+		this.skinParts = ["textDisplay","promptDisplay"];
+		
+		this.minHeight = 40;
+		this.minWidth = 300;
+		this.elementsContent = [this._Image1_i(),this._Rect1_i(),this.textDisplay_i()];
+		this.promptDisplay_i();
+		
+		this.states = [
+			new eui.State ("normal",
+				[
+				])
+			,
+			new eui.State ("disabled",
+				[
+					new eui.SetProperty("textDisplay","textColor",0xff0000),
+					new eui.SetProperty("textDisplay","height",30)
+				])
+			,
+			new eui.State ("normalWithPrompt",
+				[
+					new eui.AddItems("promptDisplay","",1,"")
+				])
+			,
+			new eui.State ("disabledWithPrompt",
+				[
+					new eui.AddItems("promptDisplay","",1,"")
+				])
+		];
+	}
+	var _proto = InputTextSkin3.prototype;
+
+	_proto._Image1_i = function () {
+		var t = new eui.Image();
+		t.percentHeight = 100;
+		t.scale9Grid = new egret.Rectangle(1,3,8,8);
+		t.source = "";
+		t.percentWidth = 100;
+		return t;
+	};
+	_proto._Rect1_i = function () {
+		var t = new eui.Rect();
+		t.fillColor = 0xffffff;
+		t.percentHeight = 100;
+		t.visible = false;
+		t.percentWidth = 100;
+		return t;
+	};
+	_proto.textDisplay_i = function () {
+		var t = new eui.EditableText();
+		this.textDisplay = t;
+		t.fontFamily = "specialGameFont";
+		t.left = "10";
+		t.promptColor = 0xdceeef;
+		t.right = "10";
+		t.size = 30;
+		t.text = "";
+		t.textAlign = "center";
+		t.textColor = 0x000000;
+		t.verticalAlign = "middle";
+		t.verticalCenter = "0";
+		t.percentWidth = 100;
+		return t;
+	};
+	_proto.promptDisplay_i = function () {
+		var t = new eui.Label();
+		this.promptDisplay = t;
+		t.borderColor = 0xc2efe9;
+		t.fontFamily = "specialGameFont";
+		t.height = 24;
+		t.left = 10;
+		t.right = 10;
+		t.size = 24;
+		t.textAlign = "center";
+		t.textColor = 0xa9a9a9;
+		t.touchEnabled = false;
+		t.verticalCenter = 0;
+		t.percentWidth = 100;
+		return t;
+	};
+	return InputTextSkin3;
 })(eui.Skin);generateEUI.paths['resource/login_skins/CheckBoxLoginSkin.exml'] = window.CheckBoxLoginSkin = (function (_super) {
 	__extends(CheckBoxLoginSkin, _super);
 	function CheckBoxLoginSkin() {
@@ -931,6 +1015,71 @@ window.skins=window.skins||{};
 		return t;
 	};
 	return GameLoadingViewSkin;
+})(eui.Skin);generateEUI.paths['resource/login_skins/InputTextSkin2.exml'] = window.InputTextSkin2 = (function (_super) {
+	__extends(InputTextSkin2, _super);
+	function InputTextSkin2() {
+		_super.call(this);
+		this.skinParts = ["textDisplay"];
+		
+		this.minHeight = 40;
+		this.minWidth = 300;
+		this.elementsContent = [this._Image1_i(),this._Rect1_i(),this.textDisplay_i()];
+		this.states = [
+			new eui.State ("normal",
+				[
+				])
+			,
+			new eui.State ("disabled",
+				[
+					new eui.SetProperty("textDisplay","textColor",0xff0000),
+					new eui.SetProperty("textDisplay","height",30)
+				])
+			,
+			new eui.State ("normalWithPrompt",
+				[
+				])
+			,
+			new eui.State ("disabledWithPrompt",
+				[
+				])
+		];
+	}
+	var _proto = InputTextSkin2.prototype;
+
+	_proto._Image1_i = function () {
+		var t = new eui.Image();
+		t.percentHeight = 100;
+		t.scale9Grid = new egret.Rectangle(1,3,8,8);
+		t.source = "";
+		t.percentWidth = 100;
+		return t;
+	};
+	_proto._Rect1_i = function () {
+		var t = new eui.Rect();
+		t.fillColor = 0xffffff;
+		t.percentHeight = 100;
+		t.visible = false;
+		t.percentWidth = 100;
+		return t;
+	};
+	_proto.textDisplay_i = function () {
+		var t = new eui.EditableText();
+		this.textDisplay = t;
+		t.borderColor = 0xcdf3f7;
+		t.fontFamily = "specialGameFont";
+		t.left = "10";
+		t.promptColor = 0xdceeef;
+		t.right = "10";
+		t.size = 30;
+		t.text = "";
+		t.textAlign = "center";
+		t.textColor = 0x000000;
+		t.verticalAlign = "middle";
+		t.verticalCenter = "0";
+		t.percentWidth = 100;
+		return t;
+	};
+	return InputTextSkin2;
 })(eui.Skin);generateEUI.paths['resource/login_skins/ServerListTextInputSkin.exml'] = window.ServerListTextInputSkin = (function (_super) {
 	__extends(ServerListTextInputSkin, _super);
 	function ServerListTextInputSkin() {
@@ -1004,7 +1153,6 @@ window.skins=window.skins||{};
 		t.size = 24;
 		t.textColor = 0xa9a9a9;
 		t.touchEnabled = false;
-		t.verticalAlign = "middle";
 		t.verticalCenter = 0;
 		t.percentWidth = 100;
 		return t;
@@ -1014,15 +1162,15 @@ window.skins=window.skins||{};
 	__extends(LoginViewSkin, _super);
 	function LoginViewSkin() {
 		_super.call(this);
-		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","gpRead","txt_account_des2","txt_account_des","txt_account","groupAccount","txt_password","txt_pwd_des","txt_password2","txt_pwd_des2","txt_vcode","btn_getCode","groupAccount0","btn_login","btn_register_back","btn_login_way","group_login","lbUserBook0","lbPrivacyPolicy0","gpRead0","txt_register_tel","groupAccount1","txt_register_invitecode","groupAccount2","txt_register_pwd","groupAccount3","txt_register_repwd","groupAccount4","txt_register_verifycode","txt_vcode2","btn_getCode2","groupAccount5","btn_register","btn_login_back","group_register"];
+		this.skinParts = ["imgWindSlow","imgWindFast","imgWindMiddle","groupWind","lbUserBook","lbPrivacyPolicy","gpRead","txt_account","group_account","txt_password","group_pwd","txt_vcode","group_vcode","btn_getCode","btn_login","btn_register_back","btn_login_way","group_login","lbUserBook0","lbPrivacyPolicy0","gpRead0","txt_register_tel","groupAccount1","txt_register_invitecode","groupAccount2","txt_register_pwd","groupAccount3","txt_register_repwd","groupAccount4","txt_register_verifycode","txt_vcode2","btn_getCode2","groupAccount5","btn_register","btn_login_back","group_register"];
 		
 		this.height = 1334;
 		this.width = 750;
-		this.elementsContent = [this._Group1_i()];
+		this.elementsContent = [this._Group3_i()];
 	}
 	var _proto = LoginViewSkin.prototype;
 
-	_proto._Group1_i = function () {
+	_proto._Group3_i = function () {
 		var t = new eui.Group();
 		t.anchorOffsetY = 0;
 		t.bottom = 0;
@@ -1086,12 +1234,12 @@ window.skins=window.skins||{};
 	_proto.group_login_i = function () {
 		var t = new eui.Group();
 		this.group_login = t;
-		t.bottom = 287;
-		t.horizontalCenter = 0.5;
+		t.bottom = 289;
+		t.horizontalCenter = -2.5;
 		t.scaleX = 1;
 		t.scaleY = 1;
 		t.x = 48;
-		t.elementsContent = [this._Image2_i(),this.gpRead_i(),this.groupAccount_i(),this.groupAccount0_i(),this.btn_login_i(),this.btn_register_back_i(),this.btn_login_way_i()];
+		t.elementsContent = [this._Image2_i(),this.gpRead_i(),this._Group1_i(),this._Group2_i(),this.btn_login_i(),this.btn_register_back_i(),this.btn_login_way_i()];
 		return t;
 	};
 	_proto._Image2_i = function () {
@@ -1178,9 +1326,8 @@ window.skins=window.skins||{};
 		t.y = 13;
 		return t;
 	};
-	_proto.groupAccount_i = function () {
+	_proto._Group1_i = function () {
 		var t = new eui.Group();
-		this.groupAccount = t;
 		t.anchorOffsetX = 0;
 		t.anchorOffsetY = 0;
 		t.height = 91;
@@ -1190,7 +1337,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 98;
 		t.y = 123;
-		t.elementsContent = [this._Image4_i(),this._Image5_i(),this.txt_account_des2_i(),this.txt_account_des_i(),this.txt_account_i()];
+		t.elementsContent = [this._Image4_i(),this._Image5_i(),this.group_account_i()];
 		return t;
 	};
 	_proto._Image4_i = function () {
@@ -1211,50 +1358,42 @@ window.skins=window.skins||{};
 		t.y = 16;
 		return t;
 	};
-	_proto.txt_account_des2_i = function () {
+	_proto.group_account_i = function () {
+		var t = new eui.Group();
+		this.group_account = t;
+		t.anchorOffsetY = 0;
+		t.height = 53;
+		t.x = 18;
+		t.y = 21;
+		t.elementsContent = [this.txt_account_i(),this._Label3_i()];
+		return t;
+	};
+	_proto.txt_account_i = function () {
+		var t = new eui.TextInput();
+		this.txt_account = t;
+		t.anchorOffsetX = 0;
+		t.anchorOffsetY = 0;
+		t.height = 52;
+		t.maxChars = 35;
+		t.prompt = "请输入手机号";
+		t.skinName = "InputTextSkin2";
+		t.textColor = 0xdceeef;
+		t.width = 313;
+		t.x = 95;
+		return t;
+	};
+	_proto._Label3_i = function () {
 		var t = new eui.Label();
-		this.txt_account_des2 = t;
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
 		t.stroke = 1;
 		t.text = "手机号:";
-		t.textColor = 0xFFFFFF;
-		t.x = 10;
-		t.y = 32;
+		t.x = -5.66;
+		t.y = 11;
 		return t;
 	};
-	_proto.txt_account_des_i = function () {
-		var t = new eui.Label();
-		this.txt_account_des = t;
-		t.fontFamily = "specialGameFont";
-		t.size = 28;
-		t.stroke = 1;
-		t.text = "账号:";
-		t.textColor = 0xffffff;
-		t.x = 38;
-		t.y = 32;
-		return t;
-	};
-	_proto.txt_account_i = function () {
-		var t = new eui.EditableText();
-		this.txt_account = t;
-		t.anchorOffsetX = 0;
-		t.fontFamily = "specialGameFont";
-		t.height = 49;
-		t.prompt = "请输入账号";
-		t.promptColor = 0xcececd;
-		t.size = 24;
-		t.text = "";
-		t.textColor = 0x687a7a;
-		t.verticalAlign = "middle";
-		t.width = 302;
-		t.x = 119;
-		t.y = 21.33;
-		return t;
-	};
-	_proto.groupAccount0_i = function () {
+	_proto._Group2_i = function () {
 		var t = new eui.Group();
-		this.groupAccount0 = t;
 		t.anchorOffsetX = 0;
 		t.anchorOffsetY = 0;
 		t.height = 91;
@@ -1263,7 +1402,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 98;
 		t.y = 235;
-		t.elementsContent = [this._Image6_i(),this.txt_password_i(),this.txt_pwd_des_i(),this.txt_password2_i(),this.txt_pwd_des2_i(),this.btn_getCode_i()];
+		t.elementsContent = [this._Image6_i(),this.group_pwd_i(),this.group_vcode_i(),this.btn_getCode_i()];
 		return t;
 	};
 	_proto._Image6_i = function () {
@@ -1275,56 +1414,67 @@ window.skins=window.skins||{};
 		t.x = 1.67;
 		return t;
 	};
+	_proto.group_pwd_i = function () {
+		var t = new eui.Group();
+		this.group_pwd = t;
+		t.anchorOffsetY = 0;
+		t.height = 53;
+		t.x = 18;
+		t.y = 21;
+		t.elementsContent = [this.txt_password_i(),this._Label4_i()];
+		return t;
+	};
 	_proto.txt_password_i = function () {
 		var t = new eui.TextInput();
 		this.txt_password = t;
-		t.anchorOffsetX = 0;
-		t.displayAsPassword = true;
-		t.height = 53;
-		t.inputType = "password";
+		t.anchorOffsetY = 0;
+		t.height = 52;
 		t.maxChars = 35;
 		t.prompt = "请输入密码";
 		t.skinName = "ServerListTextInputSkin";
-		t.verticalCenter = 1;
-		t.width = 318;
-		t.x = 113.33;
+		t.x = 95;
 		return t;
 	};
-	_proto.txt_pwd_des_i = function () {
+	_proto._Label4_i = function () {
 		var t = new eui.Label();
-		this.txt_pwd_des = t;
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
 		t.stroke = 1;
 		t.text = "密码:";
-		t.textColor = 0xffffff;
-		t.x = 38;
-		t.y = 32;
+		t.x = 11.68;
+		t.y = 11;
 		return t;
 	};
-	_proto.txt_password2_i = function () {
-		var t = new eui.TextInput();
-		this.txt_password2 = t;
-		t.anchorOffsetX = 0;
+	_proto.group_vcode_i = function () {
+		var t = new eui.Group();
+		this.group_vcode = t;
+		t.anchorOffsetY = 0;
 		t.height = 53;
+		t.visible = false;
+		t.x = 18;
+		t.y = 21;
+		t.elementsContent = [this.txt_vcode_i(),this._Label5_i()];
+		return t;
+	};
+	_proto.txt_vcode_i = function () {
+		var t = new eui.TextInput();
+		this.txt_vcode = t;
+		t.anchorOffsetY = 0;
+		t.height = 52;
 		t.maxChars = 35;
 		t.prompt = "请输入验证码";
 		t.skinName = "ServerListTextInputSkin";
-		t.width = 174;
-		t.x = 113.33;
-		t.y = 20;
+		t.x = 95;
 		return t;
 	};
-	_proto.txt_pwd_des2_i = function () {
+	_proto._Label5_i = function () {
 		var t = new eui.Label();
-		this.txt_pwd_des2 = t;
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
 		t.stroke = 1;
 		t.text = "验证码:";
-		t.textColor = 0xFFFFFF;
-		t.x = 10;
-		t.y = 32;
+		t.x = -7;
+		t.y = 11;
 		return t;
 	};
 	_proto.btn_getCode_i = function () {
@@ -1332,7 +1482,7 @@ window.skins=window.skins||{};
 		this.btn_getCode = t;
 		t.x = 290;
 		t.y = 19.98;
-		t.elementsContent = [this._Image7_i(),this.txt_vcode_i()];
+		t.elementsContent = [this._Image7_i(),this._Label6_i()];
 		return t;
 	};
 	_proto._Image7_i = function () {
@@ -1346,9 +1496,8 @@ window.skins=window.skins||{};
 		t.y = 33;
 		return t;
 	};
-	_proto.txt_vcode_i = function () {
+	_proto._Label6_i = function () {
 		var t = new eui.Label();
-		this.txt_vcode = t;
 		t.fontFamily = "specialGameFont";
 		t.horizontalCenter = 2;
 		t.scaleX = 1;
@@ -1379,7 +1528,7 @@ window.skins=window.skins||{};
 		this.btn_register_back = t;
 		t.x = 158;
 		t.y = 442.98;
-		t.elementsContent = [this._Image8_i(),this._Label3_i()];
+		t.elementsContent = [this._Image8_i(),this._Label7_i()];
 		return t;
 	};
 	_proto._Image8_i = function () {
@@ -1395,7 +1544,7 @@ window.skins=window.skins||{};
 		t.y = 33;
 		return t;
 	};
-	_proto._Label3_i = function () {
+	_proto._Label7_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.scaleX = 1;
@@ -1441,7 +1590,7 @@ window.skins=window.skins||{};
 		t.scaleX = 1;
 		t.scaleY = 1;
 		t.source = "loginPanel_json.DengLuKuang";
-		t.verticalCenter = 62;
+		t.verticalCenter = 63;
 		return t;
 	};
 	_proto.gpRead0_i = function () {
@@ -1455,7 +1604,7 @@ window.skins=window.skins||{};
 		t.x = 93.34;
 		t.y = 788.33;
 		t.layout = this._HorizontalLayout2_i();
-		t.elementsContent = [this._Image10_i(),this._Label4_i(),this.lbUserBook0_i(),this._Label5_i(),this.lbPrivacyPolicy0_i()];
+		t.elementsContent = [this._Image10_i(),this._Label8_i(),this.lbUserBook0_i(),this._Label9_i(),this.lbPrivacyPolicy0_i()];
 		return t;
 	};
 	_proto._HorizontalLayout2_i = function () {
@@ -1470,7 +1619,7 @@ window.skins=window.skins||{};
 		t.y = 9;
 		return t;
 	};
-	_proto._Label4_i = function () {
+	_proto._Label8_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.size = 24;
@@ -1494,7 +1643,7 @@ window.skins=window.skins||{};
 		t.y = 23;
 		return t;
 	};
-	_proto._Label5_i = function () {
+	_proto._Label9_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.size = 24;
@@ -1530,7 +1679,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 138.72;
-		t.elementsContent = [this._Image11_i(),this._Image12_i(),this.txt_register_tel_i(),this._Label6_i()];
+		t.elementsContent = [this._Image11_i(),this._Image12_i(),this.txt_register_tel_i(),this._Label10_i()];
 		return t;
 	};
 	_proto._Image11_i = function () {
@@ -1552,23 +1701,20 @@ window.skins=window.skins||{};
 		return t;
 	};
 	_proto.txt_register_tel_i = function () {
-		var t = new eui.EditableText();
+		var t = new eui.TextInput();
 		this.txt_register_tel = t;
 		t.anchorOffsetX = 0;
-		t.fontFamily = "specialGameFont";
-		t.height = 49;
-		t.left = "119";
+		t.height = 53;
+		t.maxChars = 35;
 		t.prompt = "请输入手机号";
-		t.promptColor = 0xCECECD;
-		t.right = "11";
-		t.size = 24;
-		t.text = "";
-		t.textColor = 0x687A7A;
-		t.verticalAlign = "middle";
-		t.y = 14.68;
+		t.skinName = "InputTextSkin2";
+		t.textColor = 0xffffff;
+		t.verticalCenter = -6;
+		t.width = 318;
+		t.x = 113.33;
 		return t;
 	};
-	_proto._Label6_i = function () {
+	_proto._Label10_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
@@ -1592,7 +1738,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 218.1;
-		t.elementsContent = [this._Image13_i(),this.txt_register_invitecode_i(),this._Label7_i()];
+		t.elementsContent = [this._Image13_i(),this.txt_register_invitecode_i(),this._Label11_i()];
 		return t;
 	};
 	_proto._Image13_i = function () {
@@ -1617,7 +1763,7 @@ window.skins=window.skins||{};
 		t.x = 113.33;
 		return t;
 	};
-	_proto._Label7_i = function () {
+	_proto._Label11_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
@@ -1641,7 +1787,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 297.2;
-		t.elementsContent = [this._Image14_i(),this._Image15_i(),this.txt_register_pwd_i(),this._Label8_i()];
+		t.elementsContent = [this._Image14_i(),this._Image15_i(),this.txt_register_pwd_i(),this._Label12_i()];
 		return t;
 	};
 	_proto._Image14_i = function () {
@@ -1675,7 +1821,7 @@ window.skins=window.skins||{};
 		t.x = 113.33;
 		return t;
 	};
-	_proto._Label8_i = function () {
+	_proto._Label12_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
@@ -1699,7 +1845,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 376.3;
-		t.elementsContent = [this._Image16_i(),this._Image17_i(),this.txt_register_repwd_i(),this._Label9_i()];
+		t.elementsContent = [this._Image16_i(),this._Image17_i(),this.txt_register_repwd_i(),this._Label13_i()];
 		return t;
 	};
 	_proto._Image16_i = function () {
@@ -1733,7 +1879,7 @@ window.skins=window.skins||{};
 		t.x = 113.33;
 		return t;
 	};
-	_proto._Label9_i = function () {
+	_proto._Label13_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
@@ -1757,7 +1903,7 @@ window.skins=window.skins||{};
 		t.width = 432;
 		t.x = 124.34;
 		t.y = 456.4;
-		t.elementsContent = [this._Image18_i(),this._Image19_i(),this.txt_register_verifycode_i(),this._Label10_i(),this.btn_getCode2_i()];
+		t.elementsContent = [this._Image18_i(),this._Image19_i(),this.txt_register_verifycode_i(),this._Label14_i(),this.btn_getCode2_i()];
 		return t;
 	};
 	_proto._Image18_i = function () {
@@ -1791,7 +1937,7 @@ window.skins=window.skins||{};
 		t.x = 113.33;
 		return t;
 	};
-	_proto._Label10_i = function () {
+	_proto._Label14_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.size = 28;
@@ -1855,7 +2001,7 @@ window.skins=window.skins||{};
 		this.btn_login_back = t;
 		t.x = 174.67;
 		t.y = 662.98;
-		t.elementsContent = [this._Image21_i(),this._Label11_i()];
+		t.elementsContent = [this._Image21_i(),this._Label15_i()];
 		return t;
 	};
 	_proto._Image21_i = function () {
@@ -1871,7 +2017,7 @@ window.skins=window.skins||{};
 		t.y = 33;
 		return t;
 	};
-	_proto._Label11_i = function () {
+	_proto._Label15_i = function () {
 		var t = new eui.Label();
 		t.fontFamily = "specialGameFont";
 		t.scaleX = 1;

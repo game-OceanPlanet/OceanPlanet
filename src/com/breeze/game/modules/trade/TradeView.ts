@@ -7,20 +7,19 @@ public txt_totalCount:eui.Label;
 public txt_totalChangeValue:eui.Label;
 public txt_todayPrice:eui.Label;
 public txt_changeValue:eui.Label;
-public txt_price5:eui.Label;
-public txt_price2:eui.Label;
-public txt_price3:eui.Label;
-public txt_price4:eui.Label;
 public txt_price0:eui.Label;
+public txt_price3:eui.Label;
+public txt_price2:eui.Label;
 public txt_price1:eui.Label;
+public txt_price5:eui.Label;
+public txt_price4:eui.Label;
 public txt_date0:eui.Label;
+public txt_date1:eui.Label;
 public txt_date2:eui.Label;
 public txt_date3:eui.Label;
 public txt_date4:eui.Label;
 public txt_date5:eui.Label;
 public txt_date6:eui.Label;
-public txt_date7:eui.Label;
-public txt_date1:eui.Label;
 public column_0:eui.Image;
 public column_1:eui.Image;
 public column_2:eui.Image;
@@ -28,16 +27,18 @@ public column_3:eui.Image;
 public column_4:eui.Image;
 public column_5:eui.Image;
 public column_6:eui.Image;
-public column_7:eui.Image;
 public input_group0:eui.Group;
-public text_input_price:eui.EditableText;
+public text_input_price:eui.TextInput;
 public input_group:eui.Group;
-public text_input_count:eui.EditableText;
+public text_input_count:eui.TextInput;
 public btn_buy_group:eui.Group;
 public txt_button_buy:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
+public btn_help:eui.Image;
+public txt_title:eui.Label;
+
 
 
 
@@ -53,7 +54,7 @@ public btnReturn:eui.Image;
 			this.qmrSkinName = "PriceSkin";
 			this.isNeedMask = true;
 
-			this.helpId = HelpId.ID_5;
+			this.helpId = HelpId.ID_1;
 		}
 
 		protected initComponent():void

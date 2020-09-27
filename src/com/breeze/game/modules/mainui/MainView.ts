@@ -272,9 +272,9 @@ module qmr {
             t.__secondSpeed = md.getProduceMoneySpeed();
             t.__dayTotal = md.getEveryDayProduceMoney();
 
-            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney) + HeroModel.KH;
-            t.txt_totalGold.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
-            t.txt_totalUsdt.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalUSDT) + HeroModel.USDT;
+            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney);
+            t.txt_totalGold.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney);
+            t.txt_totalUsdt.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalUSDT);
 
 
             if (t.__timekey != -1) {
@@ -291,13 +291,13 @@ module qmr {
         private onTimeRun() {
             let t = this;
             if (t.__currMoney >= t.__dayTotal) {
-                t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__dayTotal) + HeroModel.KH;
+                t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__dayTotal);
                 t.stopTime();
                 return;
             }
             t.__currMoney += t.__secondSpeed;
             HeroModel.instance.pendingMoney = t.__currMoney;
-            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney) + HeroModel.KH;
+            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney);
         }
 
         private stopTime(): void {
@@ -306,7 +306,7 @@ module qmr {
                 egret.clearInterval(t.__timekey);
             }
             t.__timekey = -1;
-            t.txt_curr.text = NumberUtil.getFloat4Number2String(HeroModel.instance.getPetPendingMoney()) + HeroModel.KH;
+            t.txt_curr.text = NumberUtil.getFloat4Number2String(HeroModel.instance.getPetPendingMoney());
         }
     }
 }

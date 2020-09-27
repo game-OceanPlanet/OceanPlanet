@@ -32,6 +32,7 @@
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
 		"resource/game_skin/ActiveKeyItemSkin.exml",
+		"resource/login_skins/InputTextSkin3.exml",
 		"resource/game_skin/ActiveKeySkin.exml",
 		"resource/game_skin/BuyGoodItemSkin.exml",
 		"resource/game_skin/CertificationSkin.exml",
@@ -71,6 +72,7 @@
 		"resource/login_skins/DisConnectSkin.exml",
 		"resource/login_skins/GameLoadingProgressBarSkin.exml",
 		"resource/login_skins/GameLoadingViewSkin.exml",
+		"resource/login_skins/InputTextSkin2.exml",
 		"resource/login_skins/ServerListTextInputSkin.exml",
 		"resource/login_skins/LoginViewSkin.exml"
 	],

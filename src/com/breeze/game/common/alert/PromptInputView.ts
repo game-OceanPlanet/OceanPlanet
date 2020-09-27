@@ -9,8 +9,9 @@ public txt_price:eui.Label;
 public txt_title:eui.Label;
 public btnSure:eui.Group;
 public txt_sure:eui.Label;
-public txt_account:eui.EditableText;
+public txt_account:eui.TextInput;
 public btnClose:eui.Image;
+
 
 
         private confirmFun: Function;

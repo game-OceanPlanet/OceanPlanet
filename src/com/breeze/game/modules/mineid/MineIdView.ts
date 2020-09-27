@@ -5,13 +5,14 @@ module qmr
 		public panelGroup:eui.Group;
 public txt_name:eui.Label;
 public txt_kda_total:eui.Label;
-public text_input_pwd:eui.EditableText;
+public text_input_pwd:eui.TextInput;
 public btn_getCode:eui.Group;
-public text_input_vcode:eui.EditableText;
+public txt_vcodedes:eui.Label;
+public text_input_vcode:eui.TextInput;
 public but_changePwd:eui.Group;
 public btn_logout:eui.Group;
 public btnReturn:eui.Image;
-public txt_vcodedes:eui.Label;
+
 
 
 private __leftTime:number = 0;
@@ -63,7 +64,7 @@ private __leftTime:number = 0;
             }
 
 			let tel:string = HeroModel.instance.IdentityPro.mobile;
-            LoginController.instance.reqVerifyCode(tel);
+            LoginController.instance.reqVerifyCode(tel, 3);
             this.__leftTime = 59;
             this.updateCd();
         }
@@ -112,7 +113,7 @@ private __leftTime:number = 0;
             let t = this;
             let playerPro:com.message.BasePlayerMsg = HeroModel.instance.IdentityPro;
             t.txt_kda_total.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalKAD) + HeroModel.KAD;
-            t.txt_name.text = "ID："+NumberUtil.getTelNumberShow(Int64Util.getNumber(playerPro.playerId));
+            t.txt_name.text = "ID："+NumberUtil.getTelNumberShow(Int64Util.getNumber(playerPro.mobile));
 		}
 
 		private updateCd():void

@@ -120,6 +120,9 @@ module qmr
         {
             let res:string = s.result;
             let des:string = s.remark;
+            this.dispatch(NotifyConst.S_REAL_NAME_VERIFICATION);
+
+            TipManagerCommon.getInstance().createCommonColorTip("实名认证成功", true);
         }
 
     }

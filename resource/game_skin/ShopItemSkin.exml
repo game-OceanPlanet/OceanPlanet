@@ -15,15 +15,16 @@
 	         left="230" />
 	<e:Label id="txt_3" text="10%" y="110" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 	         textColor="0x553B24" left="230" />
-	<e:Group id="btn_buy_group" x="536" y="56" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49">
+	<e:Group id="btn_buy_group" x="536" y="81" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49">
 		<e:Image id="btn_buy" x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common1" />
 		<e:Label id="txt_price_gold" text="购  买" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 		         horizontalCenter="0.5" textColor="0xfff4d6" />
 	</e:Group>
-	<e:Group id="btn_buy_group2" x="537" y="111" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49">
+	<e:Group id="btn_buy_group2" x="537" y="100" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49">
 		<e:Image id="btn_buy2" x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common" />
-		<e:Label id="txt_price_USDT" text="购  买" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
+		<e:Label id="txt_price_USDT" text="限购1条" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 		         horizontalCenter="0.5" textColor="0x803f07" />
 	</e:Group>
 	<e:Image id="img_head" width="128" height="128" x="20" y="13" />
+	<e:Label id="txt_price_USDTLimit" text="限购1条" y="128" size="22" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="214.5" textColor="0xdd1900"/>
 </e:Skin>

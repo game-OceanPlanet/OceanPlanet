@@ -22,7 +22,7 @@
 		<e:Image x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.item_di1" />
 		<e:Image id="money_icon" x="54" y="58" source="mainui_json.icon_gold1" />
 		<e:Label text="待领数量" y="30" size="26" fontFamily="specialGameFont" horizontalCenter="-8" textColor="0x71492e" />
-		<e:Label id="txt_curr" text="1.0001 JT" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-7.5"
+		<e:Label id="txt_curr" text="0" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-7.5"
 		         textColor="0xffffff" />
 		<e:Group id="btn_get_group" anchorOffsetX="0" anchorOffsetY="0" x="233" y="6">
 			<e:Image id="btn_get" scaleX="1" scaleY="1" source="mainui_json.btn_get" width="114" height="113" anchorOffsetX="57"
@@ -33,11 +33,13 @@
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" right="1" top="70">
 		<e:Image scaleX="1" scaleY="1" y="0" x="0" source="mainui_json.item_di1" />
-		<e:Image source="mainui_json.panel_frame3" x="58.23" y="19.91" anchorOffsetY="0" height="39.94" />
-		<e:Label id="txt_totalUsdt" text="1.000001 JT" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-24.5"
+		<e:Image x="50.23" y="16.91" anchorOffsetY="0"  source="mainui_json.panel_frame2" scale9Grid="32,6,120,38" height="40" anchorOffsetX="0" width="255"/>
+		<e:Image x="35" y="58" source="mainui_json.icon_gold1"/>
+		<e:Image source="mainui_json.icon_usdt" x="35" y="12" width="50" height="50"/>
+		<e:Label id="txt_totalGold" text="0" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-24.5"
 		         textColor="0xFFFFFF" />
-		<e:Label id="txt_totalGold" text="1.000001 JT" y="27.58" size="22" fontFamily="specialGameFont"
-		         horizontalCenter="-24.5" textColor="0xffffff" />
+		<e:Label id="txt_totalUsdt" text="0" y="26.58" size="22" fontFamily="specialGameFont"
+		         horizontalCenter="-24" textColor="0xffffff" />
 		<e:Group id="btn_price_group" anchorOffsetX="0" anchorOffsetY="0" y="5" x="233">
 			<e:Image id="btn_price" x="57" y="56" scaleX="1" scaleY="1" source="mainui_json.btn_price" anchorOffsetX="57"
 			         anchorOffsetY="56" />

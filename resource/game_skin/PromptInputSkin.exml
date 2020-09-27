@@ -22,7 +22,7 @@
 				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common1"/>
 				<e:Label id="txt_sure" text="购  买" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
 			</e:Group>
-			<e:EditableText id="txt_account" height="49" prompt="请输入数量" size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" y="299.67" promptColor="0xCECECD" width="270" textAlign="center" x="171.02"/>
+			<e:TextInput id="txt_account" maxChars="35" prompt="请输入数量" anchorOffsetY="0" height="52" anchorOffsetX="0" width="281" textColor="0xdceeef" y="296.67" x="168.5" skinName="InputTextSkin3"/>
 			<e:Image id="btnClose" right="-32" top="-24" source="panel2_json.btn_close2"/>
 		</e:Group>
 	</e:Group>

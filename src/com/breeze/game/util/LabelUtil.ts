@@ -91,12 +91,6 @@ module qmr
 			textInput.addEventListener(egret.FocusEvent.FOCUS_OUT, LabelUtil.focusInTxtHandler, thisObject);
 		}
 
-		public static removeInputListener(textInput, thisObject: any)
-		{
-			textInput.addEventListener(egret.FocusEvent.FOCUS_IN, LabelUtil.focusInTxtHandler, thisObject);
-			textInput.addEventListener(egret.FocusEvent.FOCUS_OUT, LabelUtil.focusInTxtHandler, thisObject);
-		}
-
 		public static focusInTxtHandler()
 		{
 			var inputFocus = function ()
@@ -106,7 +100,7 @@ module qmr
 					setTimeout(function ()
 					{
 						if(window.scrollTo){
-							window.scrollTo(0, 100);
+							window.scrollTo(0, 150);
 						}
 						
 					}, 200);

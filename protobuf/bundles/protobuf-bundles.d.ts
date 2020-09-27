@@ -2481,6 +2481,9 @@ declare namespace com {
 
             /** C_SEND_VERIFY_CODE mobile */
             mobile?: (string|null);
+
+            /** C_SEND_VERIFY_CODE type */
+            type?: (number|null);
         }
 
         /** Represents a C_SEND_VERIFY_CODE. */
@@ -2494,6 +2497,9 @@ declare namespace com {
 
             /** C_SEND_VERIFY_CODE mobile. */
             public mobile: string;
+
+            /** C_SEND_VERIFY_CODE type. */
+            public type: number;
 
             /**
              * Encodes the specified C_SEND_VERIFY_CODE message. Does not implicitly {@link com.message.C_SEND_VERIFY_CODE.verify|verify} messages.
@@ -2788,6 +2794,9 @@ declare namespace com {
 
             /** S_USER_LOGIN_INIT_FINISH fishMsg */
             fishMsg?: (com.message.IFishMsg[]|null);
+
+            /** S_USER_LOGIN_INIT_FINISH buyFishStr */
+            buyFishStr?: (string|null);
         }
 
         /** Represents a S_USER_LOGIN_INIT_FINISH. */
@@ -2810,6 +2819,9 @@ declare namespace com {
 
             /** S_USER_LOGIN_INIT_FINISH fishMsg. */
             public fishMsg: com.message.IFishMsg[];
+
+            /** S_USER_LOGIN_INIT_FINISH buyFishStr. */
+            public buyFishStr: string;
 
             /**
              * Encodes the specified S_USER_LOGIN_INIT_FINISH message. Does not implicitly {@link com.message.S_USER_LOGIN_INIT_FINISH.verify|verify} messages.
@@ -3611,9 +3623,9 @@ declare namespace com {
                 ERROR_CONFIG = 1030,
                 PLAYER_LEVEL_LIMITED = 1038,
                 ROLE_NOT_FOUND = 1047,
-                MAIL_NOT_FOUND = 1048,
-                MAIL_NO_ACCESSORY = 1049,
-                MAIL_ACCESSORY_RECEIVED = 1050,
+                MONEY_NOT_ENOUGH_REWARD = 1048,
+                CAN_NOT_BUY_BY_U = 1049,
+                U_BUY_FISH_LIMITED = 1050,
                 MAIL_DELETEFAILD_BYACCESSORY = 1051,
                 PLAYER_NOT_FOUND = 1052,
                 USERNAME_REPEATED = 1170,

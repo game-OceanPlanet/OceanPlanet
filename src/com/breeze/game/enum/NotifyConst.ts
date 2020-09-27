@@ -37,6 +37,7 @@ module qmr
 		public static S_GET_KEY_LIST:string = "S_GET_KEY_LIST";
 		public static S_USE_KEY:string = "S_USE_KEY";
 		public static S_GIVE_KEY:string = "S_GIVE_KEY";
+		public static S_REAL_NAME_VERIFICATION:string = "S_REAL_NAME_VERIFICATION";
 
 		public static S_GET_MY_ADDRESS:string = "S_GET_MY_ADDRESS";
 		

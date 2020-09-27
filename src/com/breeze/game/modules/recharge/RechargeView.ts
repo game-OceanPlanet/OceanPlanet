@@ -11,6 +11,7 @@ public txt_md5:eui.Label;
 public txt_detail:eui.Label;
 public btnReturn:eui.Image;
 public codeGroup:eui.Group;
+public btn_help:eui.Image;
 
 
 
@@ -20,7 +21,7 @@ public codeGroup:eui.Group;
 			this.qmrSkinName = "RechargeSkin";
 			this.isNeedMask = true;
 
-			this.helpId = HelpId.ID_4;
+			this.helpId = HelpIdEnum.TIP_8;
 		}
 
 		protected initComponent():void

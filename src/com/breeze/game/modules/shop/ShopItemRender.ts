@@ -12,6 +12,7 @@ public btn_buy_group2:eui.Group;
 public btn_buy2:eui.Image;
 public txt_price_USDT:eui.Label;
 public img_head:eui.Image;
+public txt_price_USDTLimit:eui.Label;
 
 
 
@@ -64,6 +65,10 @@ public img_head:eui.Image;
 		public dataChanged(): void {
 			let t = this;
             let cfg:PetCfg = t.data;
+            t.btn_buy_group.visible = true;
+            t.btn_buy_group2.visible = false;
+            t.txt_price_USDTLimit.visible = false;
+            t.btn_buy_group.y = 81;
             if(cfg){
                 t.txt_name.text = cfg.name + "(Lv." + cfg.level + ")";
                 t.txt_1.text = cfg.produce + "";
@@ -73,6 +78,19 @@ public img_head:eui.Image;
                 t.txt_price_USDT.text =  NumberUtil.getFloat4Number2String(cfg.UBuyPrice) + HeroModel.USDT;
                 var itemRes:string = ResPathUtilAft.getHeadUrl(cfg.id+"");
                 t.img_head.source = itemRes;
+
+                let teamPro:com.message.MyTeamMsg = TeamModdel.instance.myTeam;
+                if(teamPro){
+                    if(teamPro.count >= cfg.directPerson && teamPro.allCount >= cfg.teamPerson){
+                        t.btn_buy_group2.visible = true;
+                        t.txt_price_USDTLimit.visible = true;
+                        t.btn_buy_group2.y = 100;
+                        t.btn_buy_group.y = 43;
+                        t.txt_price_USDTLimit.text = ""
+                        let hadBuyCount:number = HeroModel.instance.getBuyCount(cfg.id);
+                        LabelUtil.setLabelText(t.txt_price_USDTLimit, ClientCnEnum.CN_106, [hadBuyCount ,cfg.UBuyLimit]);
+                    }
+                }
             }
 		}
 	}

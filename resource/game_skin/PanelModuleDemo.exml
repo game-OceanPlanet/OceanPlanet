@@ -12,7 +12,8 @@
 					<e:Group width="725" x="12" y="269.55" anchorOffsetX="0" anchorOffsetY="0">
 					<e:Group anchorOffsetY="0" height="81" scaleX="1" scaleY="1" anchorOffsetX="0" y="6" x="88" width="590">
 						<e:Image y="2" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="48,20,170,40" width="350" source="trade_json.button_img" x="97"/>
-						<e:EditableText id="text_input_price" height="49" prompt="请输入要兑换的KH数量" size="24" verticalAlign="middle" fontFamily="specialGameFont" textColor="0xFFFFFF" anchorOffsetX="0" y="16" promptColor="0xCECECD" width="350" textAlign="center" x="99"/>
+						<e:TextInput id="text_input_price" maxChars="35" prompt="请输入要兑换的KH数量" anchorOffsetY="0" height="52" anchorOffsetX="0" width="339" textColor="0xdceeef" y="16" x="104" skinName="InputTextSkin3"/>
+
 					</e:Group>
 					<e:Group id="btn_exchange_group0" x="88" y="106.84" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" width="589">
 						<e:Image x="95" y="1" scaleX="1" scaleY="1" source="trade_json.button_img" scale9Grid="78,9,200,61" width="350"/>

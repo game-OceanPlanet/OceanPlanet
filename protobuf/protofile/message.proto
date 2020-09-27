@@ -128,9 +128,9 @@ message MsgEnum {
         ERROR_CONFIG = 1030; //配置出错
         PLAYER_LEVEL_LIMITED = 1038; //角色等级不足
         ROLE_NOT_FOUND 					= 1047; //角色不存在
-        MAIL_NOT_FOUND 					= 1048; //邮件不存在
-        MAIL_NO_ACCESSORY 				= 1049; //邮件无附件
-        MAIL_ACCESSORY_RECEIVED 		= 1050; //附件已领取
+        MONEY_NOT_ENOUGH_REWARD			= 1048; //可领取的金币不足
+        CAN_NOT_BUY_BY_U 				= 1049; //该鱼不能通过U购买
+        U_BUY_FISH_LIMITED 				= 1050; //用U购买该鱼已达上限
         MAIL_DELETEFAILD_BYACCESSORY 	= 1051; //有附件删除失败
         PLAYER_NOT_FOUND = 1052; //找不到角色
 		USERNAME_REPEATED = 1170; //用户名重复

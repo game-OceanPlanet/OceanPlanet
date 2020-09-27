@@ -52,6 +52,7 @@ module qmr
 			HeroModel.instance.totalUSDT = Int64Util.getNumber(s.property.diamond);
 			HeroModel.instance.totalKAD = Int64Util.getNumber(s.property.KAD);
 			HeroModel.instance.keyCount = Int64Util.getNumber(s.property.keyCount);
+			HeroModel.instance.setHadBuyFishes(s.buyFishStr);
 
 			ModuleManager.showModule(ModuleNameConst.MAINUI_VIEW, null, LayerConst.TOOLBAR);
 			SceneManager.instance.enterHangMap(3004);

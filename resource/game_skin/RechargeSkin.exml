@@ -40,6 +40,7 @@
 		<e:Image id="btnReturn" width="94" height="94" anchorOffsetX="47" anchorOffsetY="47"
 		         source="panel2_json.btn_back" scaleX="1" scaleY="1"  x="703" y="65"/>
 		<e:Group id="codeGroup" width="256" height="256" x="255.04" y="120" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Image id="btn_help" source="trade_json.btn_help" x="54" y="57" scaleX="1" scaleY="1" anchorOffsetX="40" anchorOffsetY="40"/>
 
 	</e:Group>
 </e:Skin>

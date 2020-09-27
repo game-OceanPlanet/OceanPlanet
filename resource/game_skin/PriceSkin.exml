@@ -49,11 +49,13 @@
 				<e:Label text="数量" y="106" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" x="28"/>
 				<e:Group id="input_group0" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="7" x="97">
 				<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" source="trade_json.input_img2" scale9Grid="96,28,56,19" width="528"/>
-				<e:EditableText id="text_input_price" height="49" prompt="购买价格" size="28" verticalAlign="middle" fontFamily="specialGameFont"  anchorOffsetX="0" promptColor="0x91918b" textAlign="center" verticalCenter="0" left="0" right="0"/>
+					<e:TextInput id="text_input_price" maxChars="35" prompt="购买价格" anchorOffsetY="0" height="52" anchorOffsetX="0" width="402" textColor="0xdceeef" y="6" x="58" skinName="InputTextSkin3"/>
+
 				</e:Group>
 				<e:Group id="input_group" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="89" x="97">
 				<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" source="trade_json.input_img2" scale9Grid="94,9,61,60" width="528"/>
-				<e:EditableText id="text_input_count" height="49" prompt="购买数量" size="28" verticalAlign="middle" fontFamily="specialGameFont"  anchorOffsetX="0" promptColor="0x91918b" textAlign="center" verticalCenter="0" left="0" right="0"/>
+					<e:TextInput id="text_input_count" maxChars="35" prompt="购买数量" anchorOffsetY="0" height="52" anchorOffsetX="0" width="402" textColor="0xdceeef" y="6" x="58" skinName="InputTextSkin3"/>
+
 				</e:Group>
 				<e:Group id="btn_buy_group" x="188" y="167" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.button_img"/>

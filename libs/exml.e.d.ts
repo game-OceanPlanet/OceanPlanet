@@ -134,6 +134,10 @@ declare class GameLoadingProgressBarSkin extends eui.Skin{
 }
 declare class GameLoadingViewSkin extends eui.Skin{
 }
+declare class InputTextSkin2 extends eui.Skin{
+}
+declare class InputTextSkin3 extends eui.Skin{
+}
 declare class LoginViewSkin extends eui.Skin{
 }
 declare class ServerListTextInputSkin extends eui.Skin{

@@ -43,7 +43,7 @@ module qmr
             let currPage:number = TeamModdel.instance.getCurrentPageIndex();
             let nextPage:number = currPage + 1;
             var c: com.message.C_GET_MY_TEAM_LIST = new com.message.C_GET_MY_TEAM_LIST();
-            c.page = nextPage;
+            c.page = 1;
             c.pageSize = TeamModdel.PAGE_SIZE;
 			this.sendCmd(c, MessageID.C_GET_MY_TEAM_LIST, true);
         }
