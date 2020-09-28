@@ -1703,6 +1703,9 @@ declare namespace com {
 
             /** S_DIAMOND_BUY_FISH fishMsg */
             fishMsg?: (com.message.IFishMsg|null);
+
+            /** S_DIAMOND_BUY_FISH buyFishStr */
+            buyFishStr?: (string|null);
         }
 
         /** Represents a S_DIAMOND_BUY_FISH. */
@@ -1716,6 +1719,9 @@ declare namespace com {
 
             /** S_DIAMOND_BUY_FISH fishMsg. */
             public fishMsg?: (com.message.IFishMsg|null);
+
+            /** S_DIAMOND_BUY_FISH buyFishStr. */
+            public buyFishStr: string;
 
             /**
              * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.

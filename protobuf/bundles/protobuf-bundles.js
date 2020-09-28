@@ -3700,6 +3700,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IS_DIAMOND_BUY_FISH
              * @property {com.message.IFishMsg|null} [fishMsg] S_DIAMOND_BUY_FISH fishMsg
+             * @property {string|null} [buyFishStr] S_DIAMOND_BUY_FISH buyFishStr
              */
 
             /**
@@ -3726,6 +3727,14 @@ $root.com = (function() {
             S_DIAMOND_BUY_FISH.prototype.fishMsg = null;
 
             /**
+             * S_DIAMOND_BUY_FISH buyFishStr.
+             * @member {string} buyFishStr
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @instance
+             */
+            S_DIAMOND_BUY_FISH.prototype.buyFishStr = "";
+
+            /**
              * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.
              * @function encode
              * @memberof com.message.S_DIAMOND_BUY_FISH
@@ -3739,6 +3748,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
                     $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.buyFishStr != null && message.hasOwnProperty("buyFishStr"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.buyFishStr);
                 return writer;
             };
 
@@ -3762,6 +3773,9 @@ $root.com = (function() {
                     switch (tag >>> 3) {
                     case 1:
                         message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.buyFishStr = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);

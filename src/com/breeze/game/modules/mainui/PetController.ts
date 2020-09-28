@@ -98,7 +98,8 @@ module qmr
         private getBuyFishByUSDTResponse(s: com.message.S_DIAMOND_BUY_FISH):void
         {
             TipManagerCommon.getInstance().createCommonColorTip("购买成功", true);
-			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
+            HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
+            HeroModel.instance.setHadBuyFishes(s.buyFishStr);
             this.dispatch(NotifyConst.S_DIAMOND_BUY_FISH);
 		}
 		

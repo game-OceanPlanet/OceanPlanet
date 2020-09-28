@@ -73,6 +73,9 @@ module qmr
 				GameLoadingView.getInstance().hideSelf();
 			}, this);
 			timer.start();
+
+			TeamController.instance.requestTeamInfoCMD();
+			TeamController.instance.requestMyTeamListCMD();
 		}
 		
 		private resSynProp(s: com.message.S_SYN_PROPERTY): void
