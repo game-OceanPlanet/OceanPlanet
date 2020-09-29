@@ -98,7 +98,7 @@ module qmr
 						HeroModel.instance.totalKAD = value;
 						break;
 					case com.message.PropertyID.KEY:
-						HeroModel.instance.totalKAD = value;
+						HeroModel.instance.keyCount = value;
 						break;
 				}
 			})
