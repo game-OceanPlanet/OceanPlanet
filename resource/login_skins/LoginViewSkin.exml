@@ -43,7 +43,7 @@
 					<e:TextInput id="txt_password" maxChars="35" x="95" prompt="请输入密码" skinName="ServerListTextInputSkin" anchorOffsetY="0" height="52"/>
 					<e:Label stroke="1" text="密码:" x="11.68" y="11" fontFamily="specialGameFont" size="28"/>
 				</e:Group>
-				<e:Group id="group_vcode" x="18" y="21" anchorOffsetY="0" height="53">
+				<e:Group id="group_vcode" x="18" y="21" anchorOffsetY="0" height="53" visible="false">
 					<e:TextInput id="txt_vcode" maxChars="35" x="95" prompt="请输入验证码" skinName="ServerListTextInputSkin" anchorOffsetY="0" height="52"/>
 					<e:Label stroke="1" text="验证码:" x="-7" y="11" fontFamily="specialGameFont" size="28"/>
 				</e:Group>
@@ -131,7 +131,7 @@
 			<e:Image id="btn_register" scaleX="1" scaleY="1" x="342" y="604" source="loginPanel_json.MaShangZhuCe"  width="352" height="82" anchorOffsetX="176" anchorOffsetY="41"/>
 			<e:Group id="btn_login_back" x="174.67" y="662.98">
 				<e:Image scaleX="1" scaleY="1" y="33" source="loginPanel_json.ZhuCe" x="170"  width="340" height="66" anchorOffsetX="170" anchorOffsetY="33"/>
-				<e:Label text="已有账号？去登录" fontFamily="specialGameFont" strokeColor="0x842813" size="24" y="22.019999999999982"
+				<e:Label text="没有账号？去注册" fontFamily="specialGameFont" strokeColor="0x842813" size="24" y="22.019999999999982"
 				         textColor="0x50D8F4" x="73.34" scaleX="1" scaleY="1" />
 			</e:Group>
 		</e:Group>
