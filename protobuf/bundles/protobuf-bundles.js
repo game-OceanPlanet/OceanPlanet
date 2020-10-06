@@ -12013,6 +12013,8 @@ $root.com = (function() {
              * @property {number} VERIFY_HAVE_ERROR_CHECK=1208 VERIFY_HAVE_ERROR_CHECK value
              * @property {number} NOT_VERIFY_CANT_DO=1209 NOT_VERIFY_CANT_DO value
              * @property {number} SIGN_HOUR_NOT_ENOUGH=1210 SIGN_HOUR_NOT_ENOUGH value
+             * @property {number} TEAM_EFFECT_NUM_NOT_ENOUGH=1211 TEAM_EFFECT_NUM_NOT_ENOUGH value
+             * @property {number} TEAM_EFFECT_RATE_NOT_ENOUGH=1212 TEAM_EFFECT_RATE_NOT_ENOUGH value
              */
             MsgEnum.ExceptionCode = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -12054,6 +12056,8 @@ $root.com = (function() {
                 values[valuesById[1208] = "VERIFY_HAVE_ERROR_CHECK"] = 1208;
                 values[valuesById[1209] = "NOT_VERIFY_CANT_DO"] = 1209;
                 values[valuesById[1210] = "SIGN_HOUR_NOT_ENOUGH"] = 1210;
+                values[valuesById[1211] = "TEAM_EFFECT_NUM_NOT_ENOUGH"] = 1211;
+                values[valuesById[1212] = "TEAM_EFFECT_RATE_NOT_ENOUGH"] = 1212;
                 return values;
             })();
 
@@ -12710,6 +12714,7 @@ $root.com = (function() {
              * Properties of a S_CASH_OUT_APPLY.
              * @memberof com.message
              * @interface IS_CASH_OUT_APPLY
+             * @property {number|null} [success] S_CASH_OUT_APPLY success
              * @property {com.message.ICashOutOrderMsg|null} [cashOutOrderMsg] S_CASH_OUT_APPLY cashOutOrderMsg
              */
 
@@ -12727,6 +12732,14 @@ $root.com = (function() {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * S_CASH_OUT_APPLY success.
+             * @member {number} success
+             * @memberof com.message.S_CASH_OUT_APPLY
+             * @instance
+             */
+            S_CASH_OUT_APPLY.prototype.success = 0;
 
             /**
              * S_CASH_OUT_APPLY cashOutOrderMsg.
@@ -12750,6 +12763,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.cashOutOrderMsg != null && message.hasOwnProperty("cashOutOrderMsg"))
                     $root.com.message.CashOutOrderMsg.encode(message.cashOutOrderMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.success != null && message.hasOwnProperty("success"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.success);
                 return writer;
             };
 
@@ -12771,6 +12786,9 @@ $root.com = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
+                    case 2:
+                        message.success = reader.int32();
+                        break;
                     case 1:
                         message.cashOutOrderMsg = $root.com.message.CashOutOrderMsg.decode(reader, reader.uint32());
                         break;
@@ -13214,6 +13232,7 @@ $root.com = (function() {
              * @property {number|null} [allEffectNum] MyTeamMsg allEffectNum
              * @property {number|null} [directActivity] MyTeamMsg directActivity
              * @property {number|null} [areaActivity] MyTeamMsg areaActivity
+             * @property {number|null} [cashEffectNum] MyTeamMsg cashEffectNum
              */
 
             /**
@@ -13288,6 +13307,14 @@ $root.com = (function() {
             MyTeamMsg.prototype.areaActivity = 0;
 
             /**
+             * MyTeamMsg cashEffectNum.
+             * @member {number} cashEffectNum
+             * @memberof com.message.MyTeamMsg
+             * @instance
+             */
+            MyTeamMsg.prototype.cashEffectNum = 0;
+
+            /**
              * Encodes the specified MyTeamMsg message. Does not implicitly {@link com.message.MyTeamMsg.verify|verify} messages.
              * @function encode
              * @memberof com.message.MyTeamMsg
@@ -13313,6 +13340,8 @@ $root.com = (function() {
                     writer.uint32(/* id 6, wireType 0 =*/48).int32(message.directActivity);
                 if (message.areaActivity != null && message.hasOwnProperty("areaActivity"))
                     writer.uint32(/* id 7, wireType 0 =*/56).int32(message.areaActivity);
+                if (message.cashEffectNum != null && message.hasOwnProperty("cashEffectNum"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int32(message.cashEffectNum);
                 return writer;
             };
 
@@ -13354,6 +13383,9 @@ $root.com = (function() {
                         break;
                     case 7:
                         message.areaActivity = reader.int32();
+                        break;
+                    case 8:
+                        message.cashEffectNum = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);

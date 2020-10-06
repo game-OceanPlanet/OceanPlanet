@@ -100,21 +100,21 @@ module qmr {
             return null;
         }
 
-        private teamStars:TeamStarCfg[];
-        public getteamStarCfgsIdByCount(count:number, all:number):TeamStarCfg
+        private teamStars:PetCfg[];
+        public getteamStarCfgsIdByCount(count:number, all:number):PetCfg
         {
             let t = this;
             if(!t.teamStars){
-                let cfgs:TeamStarCfg[] = ConfigManager.getBean(ConfigEnum.TEAMSTAR).values;
+                let cfgs:PetCfg[] = ConfigManager.getBean(ConfigEnum.PET).values;
                 t.teamStars = cfgs;
             }
             let len:number = t.teamStars.length;
             for(var i:number = len - 1; i >= 0; i --){
-                if(all >= t.teamStars[i].total && count >= t.teamStars[i].count){
+                if(all >= t.teamStars[i].teamPerson && count >= t.teamStars[i].directPerson && t.teamStars[i].UBuyStar > 0){
                     return t.teamStars[i];
                 }
             }
-            return t.teamStars[0];
+            return t.teamStars[1];
         }
        
 

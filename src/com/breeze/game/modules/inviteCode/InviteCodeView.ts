@@ -81,7 +81,7 @@ public btn_help:eui.Image;
 		{
 			let code:string = this.txt_code.text.trim();
 			if(code){
-				let address:string = "http://www.siychina.com/game.html?code="+code+"&register=1";
+				let address:string = "http://www.siychina.com/opt/game.html?code="+code+"&register=1";
 				StringUtils.copyClipBoard(address);
 			}
 		}
@@ -116,8 +116,8 @@ public btn_help:eui.Image;
 					t.txt_shouxufei.text = Number(tradeCfg.precent) * 100 + "%";
 				}
 
-				let starCfg:TeamStarCfg = TeamModdel.instance.getteamStarCfgsIdByCount(teamPro.count, teamPro.allCount);
-				LabelUtil.setLabelText(t.txt_tips, ClientCnEnum.CN_105, starCfg.count, starCfg.total, starCfg.id);
+				let petCfg:PetCfg = TeamModdel.instance.getteamStarCfgsIdByCount(teamPro.count, teamPro.allCount);
+				LabelUtil.setLabelText(t.txt_tips, ClientCnEnum.CN_105, petCfg.directPerson, petCfg.teamPerson);
 			}
 
 			let logs:com.message.DirectInfoMsg[] = TeamModdel.instance.teamers;

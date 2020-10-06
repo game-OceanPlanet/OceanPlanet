@@ -56,10 +56,10 @@ module qmr {
             let msg: string;
             switch (s) {
                 case TradeTypeEnum.MONEY_REWARD:
-                    msg = "领取HK"
+                    msg = "领取KH"
                     break;
                 case TradeTypeEnum.MONEY_BUY_FISH:
-                    msg = "KAD买鱼"
+                    msg = "KH买鱼"
                     break;
                 case TradeTypeEnum.OCT_SELL_MONEY:
                     msg = "交易卖出"//"OTC-卖给Ta"
@@ -68,7 +68,7 @@ module qmr {
                     msg = "交易购买"//"OTC-卖给我"
                     break;
                 case TradeTypeEnum.MONEY_EXCHANGE_KAD:
-                    msg = "兑换消耗HK"//"KAD-用金币兑换KAD，消耗金币"
+                    msg = "兑换消耗KH"//"KAD-用金币兑换KAD，消耗金币"
                     break;
                 case TradeTypeEnum.DIRECT_MONEY_REWARD:
                     msg = "直推奖励"//"KAD-直推成员领取金币，得到金币"
@@ -80,10 +80,10 @@ module qmr {
                     msg = "USDT买鱼"//"U买鱼"
                     break;
                 case TradeTypeEnum.OCT_BUY_MONEY_COST_U:
-                    msg = "买入金币"//"OTC-买入金币（挂单）"
+                    msg = "买入KH"//"OTC-买入金币（挂单）"
                     break;
                 case TradeTypeEnum.OCT_SELL_MONEY_GOT_U:
-                    msg = "卖出金币"//"OTC-卖给Ta，获得U"
+                    msg = "卖出KH"//"OTC-卖给Ta，获得U"
                     break;
                 case TradeTypeEnum.OCT_CANCEL_GOT_U:
                     msg = "撤单"//"OTC-撤单，获得U"

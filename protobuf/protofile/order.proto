@@ -45,6 +45,7 @@ message C_CASH_OUT_APPLY {
 
 //提现
 message S_CASH_OUT_APPLY {
+	int32 success = 2;		//状态，0成功，其他是失败
 	CashOutOrderMsg cashOutOrderMsg = 1;		//提现订单记录信息
 }
 

@@ -81,14 +81,14 @@ public txt_price_USDTLimit:eui.Label;
 
                 let teamPro:com.message.MyTeamMsg = TeamModdel.instance.myTeam;
                 if(teamPro){
-                    if(teamPro.count >= cfg.directPerson && teamPro.allCount >= cfg.teamPerson){
+                    if(teamPro.count >= cfg.directPerson && teamPro.allCount >= cfg.teamPerson && cfg.UBuyStar > 0){
                         t.btn_buy_group2.visible = true;
                         t.txt_price_USDTLimit.visible = true;
                         t.btn_buy_group2.y = 100;
                         t.btn_buy_group.y = 43;
                         t.txt_price_USDTLimit.text = ""
                         let hadBuyCount:number = HeroModel.instance.getBuyCount(cfg.id);
-                        LabelUtil.setLabelText(t.txt_price_USDTLimit, ClientCnEnum.CN_106, hadBuyCount ,cfg.UBuyLimit);
+                        LabelUtil.setLabelText(t.txt_price_USDTLimit, ClientCnEnum.CN_106, hadBuyCount ,cfg.UBuyPrice);
                     }
                 }
             }

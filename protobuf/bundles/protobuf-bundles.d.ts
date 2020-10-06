@@ -5557,7 +5557,9 @@ declare namespace com {
                 MOBILE_IDNUM_ALREADY_VERIFY = 1207,
                 VERIFY_HAVE_ERROR_CHECK = 1208,
                 NOT_VERIFY_CANT_DO = 1209,
-                SIGN_HOUR_NOT_ENOUGH = 1210
+                SIGN_HOUR_NOT_ENOUGH = 1210,
+                TEAM_EFFECT_NUM_NOT_ENOUGH = 1211,
+                TEAM_EFFECT_RATE_NOT_ENOUGH = 1212
             }
         }
 
@@ -5858,6 +5860,9 @@ declare namespace com {
         /** Properties of a S_CASH_OUT_APPLY. */
         interface IS_CASH_OUT_APPLY {
 
+            /** S_CASH_OUT_APPLY success */
+            success?: (number|null);
+
             /** S_CASH_OUT_APPLY cashOutOrderMsg */
             cashOutOrderMsg?: (com.message.ICashOutOrderMsg|null);
         }
@@ -5870,6 +5875,9 @@ declare namespace com {
              * @param [properties] Properties to set
              */
             constructor(properties?: com.message.IS_CASH_OUT_APPLY);
+
+            /** S_CASH_OUT_APPLY success. */
+            public success: number;
 
             /** S_CASH_OUT_APPLY cashOutOrderMsg. */
             public cashOutOrderMsg?: (com.message.ICashOutOrderMsg|null);
@@ -6114,6 +6122,9 @@ declare namespace com {
 
             /** MyTeamMsg areaActivity */
             areaActivity?: (number|null);
+
+            /** MyTeamMsg cashEffectNum */
+            cashEffectNum?: (number|null);
         }
 
         /** Represents a MyTeamMsg. */
@@ -6145,6 +6156,9 @@ declare namespace com {
 
             /** MyTeamMsg areaActivity. */
             public areaActivity: number;
+
+            /** MyTeamMsg cashEffectNum. */
+            public cashEffectNum: number;
 
             /**
              * Encodes the specified MyTeamMsg message. Does not implicitly {@link com.message.MyTeamMsg.verify|verify} messages.

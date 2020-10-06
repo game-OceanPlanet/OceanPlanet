@@ -10,6 +10,7 @@ message MyTeamMsg {
 	int32 allEffectNum = 5;		//当天团队有效人数
 	int32 directActivity = 6;			//深海部落，直推活跃度
 	int32 areaActivity = 7;			//深海部落，小区活跃度
+	int32 cashEffectNum = 8;			//获取5级鱼有效用户人数，团队中达到10％5级以上动物：cashEffectNum/allEffectNum，（allEffectNum可能为0）
 }
 
 //所有直推成员信息

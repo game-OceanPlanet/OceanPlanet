@@ -181,8 +181,11 @@ public txt_title:eui.Label;
 				for(var i:number = 0; i < len;i ++){
 					totalBuyCount += Int64Util.getNumber(pros[i].moneyCount);
 				}
+			} else {
+				pros = [];
 			}
-			t._arrCollection.replaceAll(pros);
+			// t._arrCollection.replaceAll(pros);
+			t._arrCollection.source = pros;
 			
 			t.txt_todayPrice.text = TradeModule.instance.sysDiamonPrice + HeroModel.USDT;
 			t.txt_totalCount.text = totalBuyCount + HeroModel.USDT;
