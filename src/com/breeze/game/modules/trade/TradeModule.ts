@@ -56,10 +56,10 @@ module qmr {
             let msg: string;
             switch (s) {
                 case TradeTypeEnum.MONEY_REWARD:
-                    msg = "领取KH"
+                    msg = "领取HK"
                     break;
                 case TradeTypeEnum.MONEY_BUY_FISH:
-                    msg = "KH买鱼"
+                    msg = "KAD买鱼"
                     break;
                 case TradeTypeEnum.OCT_SELL_MONEY:
                     msg = "交易卖出"//"OTC-卖给Ta"
@@ -68,7 +68,7 @@ module qmr {
                     msg = "交易购买"//"OTC-卖给我"
                     break;
                 case TradeTypeEnum.MONEY_EXCHANGE_KAD:
-                    msg = "兑换消耗KH"//"KAD-用金币兑换KAD，消耗金币"
+                    msg = "兑换消耗HK"//"KAD-用金币兑换KAD，消耗金币"
                     break;
                 case TradeTypeEnum.DIRECT_MONEY_REWARD:
                     msg = "直推奖励"//"KAD-直推成员领取金币，得到金币"
@@ -80,10 +80,10 @@ module qmr {
                     msg = "USDT买鱼"//"U买鱼"
                     break;
                 case TradeTypeEnum.OCT_BUY_MONEY_COST_U:
-                    msg = "买入KH"//"OTC-买入金币（挂单）"
+                    msg = "买入金币"//"OTC-买入金币（挂单）"
                     break;
                 case TradeTypeEnum.OCT_SELL_MONEY_GOT_U:
-                    msg = "卖出KH"//"OTC-卖给Ta，获得U"
+                    msg = "卖出金币"//"OTC-卖给Ta，获得U"
                     break;
                 case TradeTypeEnum.OCT_CANCEL_GOT_U:
                     msg = "撤单"//"OTC-撤单，获得U"
@@ -145,6 +145,38 @@ module qmr {
                     break;
             }
             return msg;
+        }
+
+        public getMoneyType(s): string {
+            //类型,1=领取鱼日产金币,2=金币买鱼,101=U买鱼
+
+            if(s < 100){
+                return "金币";
+            }
+            if(s < 200){
+                return "USDT";
+            }
+            if(s < 300){
+                return "KAD";
+            }
+            if(s < 400){
+                return "激活秘钥";
+            }
+            if(s < 500){
+                return "领养名额";
+            }
+            if(s < 600){
+                return "金币";
+            }
+            if(s < 700){
+                return "加速积分";
+            }
+
+            if(s == 1000){
+                return "(系统)";
+            }
+
+            return "";
         }
     }
 }
