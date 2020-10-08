@@ -3,21 +3,26 @@ module qmr
 	export class WithdrawalView extends BaseModule
 	{
 		public panelGroup:eui.Group;
-public txt_count:eui.Label;
+public CN_445:eui.Label;
 public txt_cost:eui.Label;
-public txt_title:eui.Label;
+public CN_260:eui.Label;
 public text_input_address:eui.TextInput;
 public text_input_count:eui.TextInput;
 public txt_receive_account:eui.Label;
-public txt_name:eui.Label;
-public txt_kda_total:eui.Label;
+public CN_441:eui.Label;
+public CN_440:eui.Label;
+public CN_329:eui.Label;
+public CN_442:eui.Label;
 public text_input_vcode:eui.TextInput;
+public CN_443:eui.Label;
 public btn_getCode:eui.Group;
-public txt_vcodeDes:eui.Label;
+public CN_444:eui.Label;
 public btn_ok:eui.Group;
-public txt_detail:eui.Label;
+public CN_447:eui.Label;
+public CN_446:eui.Label;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
+
 
 
 
@@ -41,6 +46,8 @@ private __leftTime:number = 0;
 		{
 			let t = this;
 			super.initComponent();
+
+			t.showTxtNames = ["CN_445","CN_260","CN_441","CN_440","CN_329","CN_442","CN_443","CN_444","CN_447","CN_446"];
 		}
 
 		protected initData(): void {
@@ -116,8 +123,7 @@ private __leftTime:number = 0;
 		private updateView():void
 		{
 			let t = this;
-			let msg: string = LabelUtil.getCNMessage("CN_233");
-			t.txt_count.text = msg + HeroModel.instance.totalUSDT + HeroModel.USDT;
+			LabelUtil.setLabelText(t.CN_445, "CN_445", HeroModel.instance.totalUSDT);
 		}
 
 		private getVcode():void
@@ -184,7 +190,7 @@ private __leftTime:number = 0;
                     egret.clearInterval(t.__timekey);
                 }
                 t.__timekey = egret.setInterval(t.updateTime, t, 1000);
-                t.txt_vcodeDes.text = CommonTool.formatTime1(t.__leftTime)+"s";
+                t.CN_444.text = CommonTool.formatTime1(t.__leftTime)+"s";
             } else {
                 t.stopTime();
             }
@@ -193,10 +199,10 @@ private __leftTime:number = 0;
         private updateTime(){
 			let t = this;
 			if(this.__leftTime <= 0){
-				t.txt_vcodeDes.text = "获取验证码";
+				LabelUtil.setLabelText(t.CN_444, "CN_444");
 				return;
 			}
-			t.txt_vcodeDes.text = CommonTool.formatTime1(t.__leftTime)+"s";
+			t.CN_444.text = CommonTool.formatTime1(t.__leftTime)+"s";
 			t.__leftTime --;
 		}
 
@@ -207,7 +213,7 @@ private __leftTime:number = 0;
 				egret.clearInterval(t.__timekey);
 			}
             t.__timekey = -1;
-			t.txt_vcodeDes.text = "";
+			LabelUtil.setLabelText(t.CN_444, "CN_444");
 		}
 
 		public dispose(): void

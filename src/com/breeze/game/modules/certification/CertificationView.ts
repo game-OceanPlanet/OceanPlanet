@@ -12,10 +12,13 @@ public text_name:eui.TextInput;
 public text_id:eui.TextInput;
 public text_tel:eui.TextInput;
 public btn_Identify:eui.Group;
-public txt_button_buy1:eui.Label;
 public txt_detail:eui.Label;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
+public CN_378:eui.Label;
+public CN_379:eui.Label;
+public CN_381:eui.Label;
+public CN_380:eui.Label;
 
 
 		public constructor()
@@ -29,7 +32,16 @@ public btn_help:eui.Image;
 		protected initComponent():void
 		{
 			let t = this;
-			super.initComponent();
+            super.initComponent();
+            t.showTxtNames = ["CN_378","CN_379","CN_381","CN_380"];
+        }
+        
+        protected switchLange(){
+			let t = this;
+			super.switchLange();
+			t.text_name.prompt = LabelUtil.getCNMessage("CN_382");
+            t.text_id.prompt = LabelUtil.getCNMessage("CN_383");
+            t.text_tel.prompt = LabelUtil.getCNMessage("CN_384");
 		}
 
 		protected initData(): void {

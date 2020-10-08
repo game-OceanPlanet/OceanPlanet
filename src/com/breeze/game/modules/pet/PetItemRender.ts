@@ -1,17 +1,22 @@
 module qmr {
 	export class PetItemRender extends  eui.ItemRenderer {
-		public rank_bgImg:eui.Image;
-public img_head:eui.Image;
+		public img_head:eui.Image;
 public txt_name:eui.Label;
 public txt_state:eui.Label;
-public t:eui.Label;
+public CN_302:eui.Label;
+public CN_303:eui.Label;
+public CN_304:eui.Label;
 public txt_gain:eui.Label;
 public txt_left:eui.Label;
 public txt_total:eui.Label;
+public CN_301:eui.Label;
 public txt_leftTime:eui.Label;
+public CN_299:eui.Label;
+public CN_300:eui.Label;
 public txt_todayGained:eui.Label;
 public txt_todayCanGain:eui.Label;
 public checkbox:eui.CheckBox;
+
 
 
         private _endTime:number = 0;
@@ -28,6 +33,20 @@ public checkbox:eui.CheckBox;
 			super.childrenCreated();
             let t = this;
             t.checkbox.addEventListener(eui.UIEvent.CHANGE, t.onCheckBoxChange, t);
+            t.switchLanguage();
+        }
+
+        private switchLanguage():void
+        {
+            let t = this;
+            t.CN_302.text = LabelUtil.getCNMessage("CN_302");
+            t.CN_303.text = LabelUtil.getCNMessage("CN_303");
+            t.CN_304.text = LabelUtil.getCNMessage("CN_304");
+            t.CN_299.text = LabelUtil.getCNMessage("CN_299");
+            t.CN_300.text = LabelUtil.getCNMessage("CN_300");
+            t.CN_301.text = LabelUtil.getCNMessage("CN_301");
+
+            t.checkbox.label = LabelUtil.getCNMessage("CN_305");
         }
 
         private onCheckBoxChange(e: eui.UIEvent)
@@ -55,7 +74,7 @@ public checkbox:eui.CheckBox;
             if(info){
                 t.checkbox.selected = info.id == HeroModel.instance.selectedMergePetId1 || info.id == HeroModel.instance.selectedMergePetId2;
                 let cfg:PetCfg = ConfigManager.getConf(ConfigEnum.PET, info.fishId);
-                t.txt_name.text = cfg.name + "(Lv." + cfg.level + ")";
+                t.txt_name.text = LabelUtil.getCNMessage(cfg.name) + "(Lv." + cfg.level + ")";
                 t.txt_gain.text = NumberUtil.getFloat4Number2String(info.extMoney) + HeroModel.KH;//鱼生累计已经产出金币,包括遗漏的
                 let left:number = cfg.produce - info.extMoney;
                 t.txt_left.text = NumberUtil.getFloat4Number2String(left) + HeroModel.KH;
@@ -127,16 +146,19 @@ public checkbox:eui.CheckBox;
             let msg:string;
             switch(s){
                 case 0:
-                    msg = "生产中"
+                    msg = "CN_306"
                     break;
                 case 1:
-                    msg = "停产中"
+                    msg = "CN_307"
                     break;
                 case 2:
-                    msg = "已过期"
+                    msg = "CN_308"
                     break;
             }
-            return msg;
+            if(msg){
+                return LabelUtil.getCNMessage(msg);
+            }
+            return "";
         }
 
 	}

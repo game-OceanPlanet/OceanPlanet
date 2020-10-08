@@ -36,7 +36,7 @@
 					<e:Group id="effect_group_pet" width="20" height="20" x="355.74" y="197.72" scaleX="1" scaleY="1"/>
 					<e:Group id="btn_merge" x="250" y="399" anchorOffsetX="0" anchorOffsetY="0">
 					<e:Image x="0" y="0" scaleX="1" scaleY="1" source="trade_json.btn_red2"/>
-					<e:Label text="合 成" y="27.64" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="1" textColor="0xfff4d6"/>
+					<e:Label id="CN_298" text="" y="27.64" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="1" textColor="0xfff4d6"/>
 					</e:Group>
 				</e:Group>
 			</e:Group>

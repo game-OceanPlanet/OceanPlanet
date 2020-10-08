@@ -12,7 +12,8 @@ module qmr {
 			let t = this;
 			let cfg:InjectCycleCfg = t.data;
 			if(cfg){
-				t.txt_cycle.text = cfg.des + "/权重"+cfg.weights;
+				let des:string = ConfigManagerAft.getCNValue(cfg.des);
+				LabelUtil.setLabelText(t.txt_cycle, "CN_428", des, cfg.weights);
 			}
 		}
 	}

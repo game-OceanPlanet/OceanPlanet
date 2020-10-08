@@ -8,6 +8,7 @@ public txt_kda_total:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
+public CN_397:eui.Label;
 
 
 private _arrCollection: eui.ArrayCollection;
@@ -26,7 +27,9 @@ private _arrCollection: eui.ArrayCollection;
             
             t.item_list.itemRenderer = MineKADLogItem;
             t._arrCollection = new eui.ArrayCollection();
-            t.item_list.dataProvider = t._arrCollection;
+			t.item_list.dataProvider = t._arrCollection;
+			
+			t.showTxtNames = ["CN_397"];
 		}
 
 		protected initData(): void {
@@ -48,8 +51,6 @@ private _arrCollection: eui.ArrayCollection;
 		{
             let t = this;
             t.txt_kda_total.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalKAD) + HeroModel.KAD;
-
-
 		}
 
 		public dispose(): void

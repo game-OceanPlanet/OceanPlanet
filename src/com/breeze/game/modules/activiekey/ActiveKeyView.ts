@@ -3,6 +3,7 @@ module qmr
 	export class ActiveKeyView extends BaseModule
 	{
 		public panelGroup:eui.Group;
+
 public txt_unused:eui.Label;
 public txt_state:eui.Label;
 public btn_use:eui.Group;
@@ -13,8 +14,10 @@ public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
-
-
+public CN_365:eui.Label;
+public CN_366:eui.Label;
+public CN_367:eui.Label;
+public CN_368:eui.Label;
 
 		private _arrCollection: eui.ArrayCollection;
 		
@@ -38,6 +41,15 @@ public btn_help:eui.Image;
 
             t.text_input_tel.restrict = "0-9";
             t.text_input_count.restrict = "0-9";
+
+            t.showTxtNames = ["CN_365","CN_366","CN_367","CN_368"];
+        }
+        
+        protected switchLange(){
+			let t = this;
+			super.switchLange();
+			t.text_input_tel.prompt = LabelUtil.getCNMessage("CN_369");
+			t.text_input_count.prompt = LabelUtil.getCNMessage("CN_370");
 		}
 
 		protected initData(): void {

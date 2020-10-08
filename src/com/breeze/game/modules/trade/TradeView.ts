@@ -5,8 +5,12 @@ module qmr
 		public panelGroup:eui.Group;
 public txt_totalCount:eui.Label;
 public txt_totalChangeValue:eui.Label;
+public CN_325:eui.Label;
+public CN_327:eui.Label;
 public txt_todayPrice:eui.Label;
 public txt_changeValue:eui.Label;
+public CN_324:eui.Label;
+public CN_326:eui.Label;
 public txt_price0:eui.Label;
 public txt_price3:eui.Label;
 public txt_price2:eui.Label;
@@ -27,18 +31,21 @@ public column_3:eui.Image;
 public column_4:eui.Image;
 public column_5:eui.Image;
 public column_6:eui.Image;
+public CN_328:eui.Label;
+public CN_329:eui.Label;
 public input_group0:eui.Group;
 public text_input_price:eui.TextInput;
 public input_group:eui.Group;
 public text_input_count:eui.TextInput;
 public btn_buy_group:eui.Group;
-public txt_button_buy:eui.Label;
+public CN_256:eui.Label;
+public CN_331:eui.Label;
+public CN_330:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
-public txt_title:eui.Label;
-
+public CN_332:eui.Label;
 
 
 
@@ -76,12 +83,21 @@ public txt_title:eui.Label;
 			for(var i:number = 0; i < t._columns.length; i ++){
 				t._positions[i] = new egret.Point(t._columns[i].x, t._columns[i].y);
 			}
+
+			t.showTxtNames = ["CN_325","CN_327","CN_328","CN_329","CN_324","CN_326","CN_331","CN_330","CN_332"];
 		}
 
 		protected initData(): void {
 			super.initData();
 			let t = this;
 			t.updateView();
+		}
+
+		protected switchLange(){
+			let t = this;
+			super.switchLange();
+			t.text_input_price.prompt = LabelUtil.getCNMessage("CN_333");
+			t.text_input_count.prompt = LabelUtil.getCNMessage("CN_334");
 		}
 		
 		protected initListener(): void

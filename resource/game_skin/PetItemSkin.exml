@@ -5,17 +5,17 @@
 	<e:Image id="img_head" width="110" height="110" x="16" source="" y="15"/>
 	<e:Label id="txt_name" text="鹏鲲" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" textColor="0x803f07" bold="false" anchorOffsetX="0" y="17" left="140"/>
 	<e:Label id="txt_state" text="正在产币" size="22" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" bold="false" anchorOffsetX="0" y="22" x="500" textColor="0xbb870c"/>
-	<e:Label id="t" text="产出：" y="55" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="437"/>
-	<e:Label text="剩余：" y="81" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="437"/>
-	<e:Label text="总量：" y="109" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="437"/>
+	<e:Label id="CN_302" text="" y="55" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="437"/>
+	<e:Label id="CN_303" text="" y="81" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="437"/>
+	<e:Label id="CN_304" text="" y="109" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="437"/>
 	<e:Label id="txt_gain" text="10.526JT" y="55" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="498" textColor="0x09a608"/>
 	<e:Label id="txt_left" text="90JT" y="81" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="498" textColor="0x09a608"/>
 	<e:Label id="txt_total" text="1000JT" y="109" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="498" textColor="0x09a608"/>
-	<e:Label text="剩余时间：" y="110" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="142" textColor="0x553b24"/>
+	<e:Label id="CN_301" text="" y="110" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="142" textColor="0x553b24"/>
 	<e:Label id="txt_leftTime" text="00：00" y="110" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" left="236"/>
-	<e:Label text="今日已领取：" y="55" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="139"/>
-	<e:Label text="今日可领取：" y="81" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="139"/>
+	<e:Label id="CN_299" text="" y="55" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="139"/>
+	<e:Label id="CN_300" text="" y="81" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="139"/>
 	<e:Label id="txt_todayGained" text="90JT" y="55" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="256" textColor="0x09a608"/>
 	<e:Label id="txt_todayCanGain" text="1000JT" y="81" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" left="256" textColor="0x09a608"/>
-	<e:CheckBox id="checkbox" label="选择合成高级宠物" skinName="CheckBoxLoginSkin" y="140" horizontalCenter="23.5"/>
+	<e:CheckBox id="checkbox" label="aa" skinName="CheckBoxLoginSkin" y="140" horizontalCenter="23.5"/>
 </e:Skin>

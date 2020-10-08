@@ -34,7 +34,9 @@ public effect_group_pet:eui.Group;
 
             t.item_list.itemRenderer = PetItemRender;
             t._arrCollection = new eui.ArrayCollection();
-            t.item_list.dataProvider = t._arrCollection;
+			t.item_list.dataProvider = t._arrCollection;
+			
+			t.showTxtNames = ["CN_298"];
 		}
 
 		protected initData(): void {

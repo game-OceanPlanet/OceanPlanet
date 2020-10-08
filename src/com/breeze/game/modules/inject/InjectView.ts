@@ -3,24 +3,31 @@ module qmr
 	export class InjectView extends BaseModule
 	{
 		public panelGroup:eui.Group;
+
 public txt_MyPercent:eui.Label;
 public txt_selfTotal:eui.Label;
 public txt_kda_total:eui.Label;
 public text_input_price:eui.TextInput;
 public btn_stepSelected:eui.Group;
-public txt_button_buy:eui.Label;
 public btn_exchange_group:eui.Group;
-public txt_button_buy2:eui.Label;
 public txt_personnum:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public selectView:qmr.InjectSelectView;
 public btn_help:eui.Image;
-public txt_title:eui.Label;
 public btnReturn:eui.Image;
 
-
-
+public CN_340:eui.Label;
+public CN_344:eui.Label;
+public CN_338:eui.Label;
+public CN_339:eui.Label;
+public CN_336:eui.Label;
+public CN_337:eui.Label;
+public CN_335:eui.Label;
+public CN_343:eui.Label;
+public CN_342:eui.Label;
+public CN_341:eui.Label;
+public CN_345:eui.Label;
 
         private _arrCollection: eui.ArrayCollection;
         private _injectNum:number = 0;
@@ -44,6 +51,7 @@ public btnReturn:eui.Image;
             t.item_list.dataProvider = t._arrCollection;
 
             t.text_input_price.restrict = "0-9";
+            t.showTxtNames = ["CN_340","CN_344","CN_338","CN_339","CN_336","CN_337","CN_335","CN_343","CN_342","CN_342","CN_345","CN_341"];
 		}
 
 		protected initData(): void {
@@ -51,6 +59,12 @@ public btnReturn:eui.Image;
 			let t = this;
             t.updateView();
             DividendController.instance.requestInjectInfoCMD();
+        }
+        
+        protected switchLange(){
+			let t = this;
+			super.switchLange();
+			t.text_input_price.prompt = LabelUtil.getCNMessage("CN_346");
 		}
 		
 		protected initListener(): void
@@ -78,8 +92,10 @@ public btnReturn:eui.Image;
         private selecteWightId:number = 0;
         private onStepSelected(cfg:InjectCycleCfg):void
         {
+            let t = this;
             if(cfg){
-                this.txt_button_buy.text = cfg.des + "/权重"+cfg.weights;
+                let des:string = ConfigManagerAft.getCNValue(cfg.des);
+                LabelUtil.setLabelText(t.CN_341, "CN_428", des, cfg.weights);
                 this.selecteWightId = cfg.id;
             }
         }

@@ -8,16 +8,23 @@ public txt_exchanged_total:eui.Label;
 public txt_rate:eui.Label;
 public txt_kh_totalSelf:eui.Label;
 public txt_kadTotalSelf:eui.Label;
-public txt_exchangeDes:eui.Label;
 public text_input_price:eui.TextInput;
 public btn_exchange_group:eui.Group;
-public txt_button_buy:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
-public txt_title:eui.Label;
-
+public CN_395:eui.Label;
+public CN_385:eui.Label;
+public CN_386:eui.Label;
+public CN_387:eui.Label;
+public CN_388:eui.Label;
+public CN_389:eui.Label;
+public CN_390:eui.Label;
+public CN_391:eui.Label;
+public CN_394:eui.Label;
+public CN_392:eui.Label;
+public CN_393:eui.Label;
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -41,6 +48,14 @@ public txt_title:eui.Label;
             t._arrCollection = new eui.ArrayCollection();
 			t.item_list.dataProvider = t._arrCollection;
 			t.text_input_price.restrict = "0-9";
+
+			t.showTxtNames = ["CN_395","CN_385","CN_386","CN_387","CN_388","CN_389","CN_391","CN_394","CN_392","CN_393"];
+		}
+
+		protected switchLange(){
+			let t = this;
+			super.switchLange();
+			t.text_input_price.prompt = LabelUtil.getCNMessage("CN_396");
 		}
 
 		protected initData(): void {
@@ -104,9 +119,10 @@ public txt_title:eui.Label;
 
 		private updateKADNum():void
 		{
+			let t = this;
 			let rate:number = DividendModel.instance.exRatio;
 			if(this._KHNum > 0 && rate > 0){
-				this.txt_exchangeDes.text = "可兑换"+NumberUtil.getFloat4Number2String(this._KHNum / rate)+HeroModel.KAD;
+				LabelUtil.setLabelText(t.CN_390, "CN_390", NumberUtil.getFloat4Number2String(this._KHNum / rate));
 			}
 		}
 

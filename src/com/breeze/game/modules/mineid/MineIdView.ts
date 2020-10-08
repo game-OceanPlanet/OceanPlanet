@@ -12,7 +12,10 @@ public text_input_vcode:eui.TextInput;
 public but_changePwd:eui.Group;
 public btn_logout:eui.Group;
 public btnReturn:eui.Image;
-
+public CN_371:eui.Label;
+public CN_375:eui.Label;
+public CN_372:eui.Label;
+public CN_374:eui.Label;
 
 
 private __leftTime:number = 0;
@@ -29,6 +32,14 @@ private __leftTime:number = 0;
 		{
 			let t = this;
 			super.initComponent();
+			t.showTxtNames = ["CN_371","CN_375","CN_372","CN_374"];
+		}
+
+		protected switchLange(){
+			let t = this;
+			super.switchLange();
+			t.text_input_pwd.prompt = LabelUtil.getCNMessage("CN_376");
+			t.text_input_vcode.prompt = LabelUtil.getCNMessage("CN_377");
 		}
 
 		protected initData(): void {
@@ -128,7 +139,7 @@ private __leftTime:number = 0;
         private updateTime(){
 			let t = this;
 			if(this.__leftTime <= 0){
-				t.txt_vcodedes.text = "获取验证码";
+				t.txt_vcodedes.text = LabelUtil.getCNMessage("CN_373");
 				return;
 			}
 			t.txt_vcodedes.text = CommonTool.formatTime1(t.__leftTime)+"s";

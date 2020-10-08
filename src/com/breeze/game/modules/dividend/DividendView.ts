@@ -3,15 +3,25 @@ module qmr
 	export class DividendView extends BaseModule
 	{
 		public panelGroup:eui.Group;
+
 public txt_total:eui.Label;
 public txt_self_pre:eui.Label;
+
 public txt_self_get:eui.Label;
 public txt_dividend_total:eui.Label;
+
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
-
+public CN_272:eui.Label;
+public CN_348:eui.Label;
+public CN_347:eui.Label;
+public CN_350:eui.Label;
+public CN_349:eui.Label;
+public CN_352:eui.Label;
+public CN_351:eui.Label;
+public CN_329:eui.Label;
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -40,6 +50,8 @@ public btn_help:eui.Image;
 			let t = this;
 			t.updateView();
 			DividendController.instance.requestDividendCMD();
+
+			t.showTxtNames = ["CN_272","CN_348","CN_347","CN_350","CN_349","CN_352","CN_351","CN_329"];
 		}
 		
 		protected initListener(): void

@@ -44,8 +44,8 @@ module qmr
             }
             let cfg:HelpTipCfg = ConfigManager.getConf(ConfigEnum.HELPTIP, id);
             if(cfg){
-                t.txt_title.text = cfg.title;
-                t.txt_content.textFlow = HtmlUtil.getHtmlString(cfg.param);
+				LabelUtil.setLabelText(t.txt_title, cfg.title);
+				LabelUtil.setLabelText(t.txt_content, cfg.param);
             }
 		}
 
