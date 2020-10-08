@@ -35,7 +35,6 @@ module qmr {
         private __timekey: number;
         private __dayTotal: number;//每天总共产出多少金币
         private __secondSpeed: number;//每秒产生的金币
-        private __currMoney: number;//当前可以领取的金币
         private __totalMoney: number;//我的总资产
 
         private __lastGetMoneyTime: number = 0;//上次零钱的时间点
@@ -155,9 +154,10 @@ module qmr {
             BesselImgUtil.flyMoney(t.getMoneyStartPont(), t.getMoneyEndPont());
 
             if (t.__lastGetMoneyTime - egret.getTimer() > 0) {
-                let pendingMoney: number = t.__currMoney;
+                let count:number = t.getCurrentWaitMoney();
                 HeroModel.instance.pendingMoney = 0;
-                HeroModel.instance.totalMoney += pendingMoney;
+                HeroModel.instance.totalMoney += count;
+                HeroModel.instance.lastGetMoneyServerTime = ServerTime.serverTime;
                 t.updateView();
                 return;
             }
@@ -267,12 +267,12 @@ module qmr {
             let t = this;
 
             let md: HeroModel = HeroModel.instance;
-            t.__currMoney = md.pendingMoney;
             t.__totalMoney = md.totalMoney;
             t.__secondSpeed = md.getProduceMoneySpeed();
             t.__dayTotal = md.getEveryDayProduceMoney();
 
-            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney);
+            let count:number = t.getCurrentWaitMoney();
+            t.txt_curr.text = NumberUtil.getFloat4Number2String(count);
             t.txt_totalGold.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney);
             t.txt_totalUsdt.text = NumberUtil.getFloat4Number2String(HeroModel.instance.totalUSDT);
 
@@ -290,14 +290,15 @@ module qmr {
 
         private onTimeRun() {
             let t = this;
-            if (t.__currMoney >= t.__dayTotal) {
+            let count:number = t.getCurrentWaitMoney();
+            
+            if (count >= t.__dayTotal) {
                 t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__dayTotal);
                 t.stopTime();
                 return;
             }
-            t.__currMoney += t.__secondSpeed;
-            HeroModel.instance.pendingMoney = t.__currMoney;
-            t.txt_curr.text = NumberUtil.getFloat4Number2String(t.__currMoney);
+            
+            t.txt_curr.text = NumberUtil.getFloat4Number2String(count);
         }
 
         private stopTime(): void {
@@ -307,6 +308,14 @@ module qmr {
             }
             t.__timekey = -1;
             t.txt_curr.text = NumberUtil.getFloat4Number2String(HeroModel.instance.getPetPendingMoney());
+        }
+
+        private getCurrentWaitMoney():number
+        {
+            let sec:number = Math.floor(ServerTime.serverTime - HeroModel.instance.lastGetMoneyServerTime) / 1000;
+            let add:number = this.__secondSpeed * sec;
+            let count:number = HeroModel.instance.pendingMoney + add;
+            return count;
         }
     }
 }

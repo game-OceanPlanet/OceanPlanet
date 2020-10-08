@@ -6,9 +6,9 @@
 	<e:Image source="commp_json.item_icon1" x="16" y="10" />
 	<e:Label id="txt_name" text="鹏鲲" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center"
 	         textColor="0x803f07" bold="false" anchorOffsetX="0" y="25" left="169" />
-	<e:Label text="产出：" y="61" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169" />
-	<e:Label text="周期：" y="85" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169" />
-	<e:Label text="月化：" y="110" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169" />
+	<e:Label id="CN_115" text="产出：" y="61" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169" />
+	<e:Label id="CN_116" text="周期：" y="85" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169" />
+	<e:Label id="CN_117" text="月化：" y="110" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24" x="169" />
 	<e:Label id="txt_1" text="10.526TJ" y="61" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 	         textColor="0x553B24" left="230" />
 	<e:Label id="txt_2" text="30天" y="86" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x553B24"

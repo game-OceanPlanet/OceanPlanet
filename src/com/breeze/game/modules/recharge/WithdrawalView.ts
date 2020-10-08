@@ -116,13 +116,14 @@ private __leftTime:number = 0;
 		private updateView():void
 		{
 			let t = this;
-			t.txt_count.text = "可用" + HeroModel.instance.totalUSDT + HeroModel.USDT;
+			let msg: string = LabelUtil.getCNMessage("CN_233");
+			t.txt_count.text = msg + HeroModel.instance.totalUSDT + HeroModel.USDT;
 		}
 
 		private getVcode():void
         {
             if(this.__leftTime > 0){
-                TipManagerCommon.getInstance().createCommonColorTip("请稍后再试");
+                TipManagerCommon.getInstance().showLanTip("CN_174");
                 return;
             }
 
@@ -142,7 +143,7 @@ private __leftTime:number = 0;
 
 			let head:string = address.substr(0, 2);
 			if(head != "0x"){
-				TipManagerCommon.getInstance().createCommonColorTip("提现地址输入有误");
+				TipManagerCommon.getInstance().showLanTip("CN_234");
 				return;
 			}
 
@@ -155,13 +156,13 @@ private __leftTime:number = 0;
 			}
 			let count:number = parseFloat(countstr);
 			if(count <= 0){
-				TipManagerCommon.getInstance().createCommonColorTip("提现数量输入有误");
+				TipManagerCommon.getInstance().showLanTip("CN_235");
                 return;
 			}
 
 			let minCount:number = Number(ConfigManagerAft.getCommonConfig(2028));
 			if(count < minCount){
-				TipManagerCommon.getInstance().createCommonColorTip("最少提现"+minCount+"USDT");
+				TipManagerCommon.getInstance().showLanTip("CN_236", minCount);
                 return;
 			}
 

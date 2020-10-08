@@ -85,11 +85,11 @@ public txt_title:eui.Label;
 		private onExchangeClick():void
 		{
 			if(this._KHNum <= 0){
-				TipManagerCommon.getInstance().createCommonTip("输入金币数量有误");
+				TipManagerCommon.getInstance().showLanTip("CN_199");
 				return;
 			}
 			if(this._KHNum > HeroModel.instance.totalMoney){
-				TipManagerCommon.getInstance().createCommonTip("对不起您的金币不足");
+				TipManagerCommon.getInstance().showLanTip("CN_200");
 				return;
 			}
 

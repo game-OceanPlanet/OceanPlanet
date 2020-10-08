@@ -38,22 +38,20 @@ public txt_revoke:eui.Label;
             }
             let myCount:number = HeroModel.instance.totalMoney;
             if(myCount <= 0){
-                TipManagerCommon.getInstance().createCommonColorTip("持有货币不足");
+                TipManagerCommon.getInstance().showLanTip("CN_237");
                 return;
             }
 
-            let msg:string = "本次价格："+ pro.diamondPrice + HeroModel.USDT + "/个" + "\r"
-            + "最大出售数量："+ pro.moneyCount + HeroModel.KH + "\r"
-            + "账户可用余额："+ NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney) + HeroModel.KH;
+            let str:string = LabelUtil.getCNMessage("CN_238", pro.diamondPrice,pro.moneyCount,NumberUtil.getFloat4Number2String(HeroModel.instance.totalMoney));
             PromptController.instance.showPromptInput(
-				msg,
+				str,
 				function(count:number){
 					let pro:com.message.BuyGoodMsg = t.data;
                     if(!pro){
                         return;
                     }
                     TradeController.instance.getSellOrderRequest(Int64Util.getNumber(pro.buyGoodMsgId), count);
-			}, t, null, null,"卖出提示", "卖出", pro.moneyCount,0,pro.diamondPrice, HeroModel.instance.totalMoney);
+			}, t, null, null,LabelUtil.getCNMessage("CN_239"), LabelUtil.getCNMessage("CN_240"), pro.moneyCount,0,pro.diamondPrice, HeroModel.instance.totalMoney);
         }
 
         private onRevekeClick():void

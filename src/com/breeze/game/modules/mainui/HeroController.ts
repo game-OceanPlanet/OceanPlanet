@@ -48,6 +48,7 @@ module qmr
             HeroModel.instance.IdentityPro = s.basePlayerMsg as com.message.BasePlayerMsg;
             HeroModel.instance.updateData(s.fishMsg as com.message.FishMsg[]);
 			HeroModel.instance.pendingMoney = HeroModel.instance.getPetPendingMoney();
+			HeroModel.instance.lastGetMoneyServerTime = ServerTime.serverTime;
 			HeroModel.instance.totalMoney = Int64Util.getNumber(s.property.money);
 			HeroModel.instance.totalUSDT = Int64Util.getNumber(s.property.diamond);
 			HeroModel.instance.totalKAD = Int64Util.getNumber(s.property.KAD);

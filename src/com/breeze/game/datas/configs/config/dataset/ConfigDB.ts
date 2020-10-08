@@ -647,29 +647,4 @@ module qmr
 		}
 	}
 
-	export class ClientCnCfg extends BaseBean
-	{
-		/**键*/
-	get id():string
-	{			
-		return this.d["id"];			
-	}
-	/**值*/
-	get value():string
-	{			
-		return this.d["value"];			
-	}
-	/**颜色:1：绿色，0：红色 --默认不填不设置颜色*/
-	get colerType():number
-	{			
-		return this.d["colerType"];			
-	}
-
-		constructor(element)
-		{				
-			super(element)
-		this.key="id";
-		}
-	}
-
 }

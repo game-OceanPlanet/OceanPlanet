@@ -100,16 +100,16 @@ public effect_group_pet:eui.Group;
 			let pro1:com.message.FishMsg = HeroModel.instance.getPet(id1);
 			let pro2:com.message.FishMsg = HeroModel.instance.getPet(id2);
 			if(!pro1 || !pro2){
-				TipManagerCommon.getInstance().createCommonTip("请选择需要合成的宠物");
+				TipManagerCommon.getInstance().showLanTip("CN_211");
 				return;
 			}
 			
 			if(pro1.fishId != pro2.fishId){
-				TipManagerCommon.getInstance().createCommonTip("请选择两条相同的宠物进行合成");
+				TipManagerCommon.getInstance().showLanTip("CN_212");
 				return;
 			}
 			if(pro1.fishId == 15){
-				TipManagerCommon.getInstance().createCommonTip("当前宠物已经是最高等级");
+				TipManagerCommon.getInstance().showLanTip("CN_213");
 				return;
 			}
 			PetController.instance.getCombineFish(id1, id2);

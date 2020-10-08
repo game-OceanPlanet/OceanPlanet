@@ -40,12 +40,12 @@ public btnReturn:eui.Image;
         
         private downAndroid():void
         {
-            TipManagerCommon.getInstance().createCommonTip("敬请期待");
+            TipManagerCommon.getInstance().showLanTip("CN_196");
         }
 
         private downIOS():void
         {
-            TipManagerCommon.getInstance().createCommonTip("敬请期待");
+            TipManagerCommon.getInstance().showLanTip("CN_196");
         }
 
 		private updateView():void

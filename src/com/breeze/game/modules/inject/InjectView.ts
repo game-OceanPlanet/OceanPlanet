@@ -103,15 +103,15 @@ public btnReturn:eui.Image;
         private onInjectClick():void
         {
             if(this._injectNum <= 0){
-				TipManagerCommon.getInstance().createCommonTip("输入KAD数量有误");
+				TipManagerCommon.getInstance().showLanTip("CN_207");
 				return;
 			}
 			if(this._injectNum > HeroModel.instance.totalKAD){
-				TipManagerCommon.getInstance().createCommonTip("对不起您的KAD不足");
+				TipManagerCommon.getInstance().showLanTip("CN_208");
 				return;
             }
             if(this.selecteWightId <= 0){
-                TipManagerCommon.getInstance().createCommonTip("对不起您选择的权重有误");
+                TipManagerCommon.getInstance().showLanTip("CN_209");
 				return;
             }
             DividendController.instance.requestInjectCMD(this._injectNum, this.selecteWightId);

@@ -83,16 +83,16 @@ public btn_help:eui.Image;
                 return;
             }
             if(!RegexpUtil.isPhoneNumber(tel)){
-                TipManagerCommon.getInstance().createCommonTip("请输入正确的手机号");
+                TipManagerCommon.getInstance().showLanTip("CN_176");
                 return;
             }
             if(!RegexpUtil.isIdentifyId(id)){
-                TipManagerCommon.getInstance().createCommonTip("请输入正确的身份证");
+                TipManagerCommon.getInstance().showLanTip("CN_197");
                 return;
             }
 
             if(HeroModel.instance.IdentityPro.state == 0){
-                TipManagerCommon.getInstance().createCommonTip("实名认证之前请先激活账号");
+                TipManagerCommon.getInstance().showLanTip("CN_198");
                 return;
             }
 

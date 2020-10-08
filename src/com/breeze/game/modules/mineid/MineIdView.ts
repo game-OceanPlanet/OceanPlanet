@@ -53,13 +53,13 @@ private __leftTime:number = 0;
 		private getVcode1():void
         {
             if(this.__leftTime > 0){
-                TipManagerCommon.getInstance().createCommonColorTip("请稍后再试");
+                TipManagerCommon.getInstance().showLanTip("CN_174");
                 return;
             }
             let pwd: string = this.text_input_pwd.text.trim();
             if (pwd.length == 0)
             {
-                TipManagerCommon.getInstance().createCommonColorTip("请输入新密码");
+                TipManagerCommon.getInstance().showLanTip("CN_229");
                 return;
             }
 
@@ -77,18 +77,13 @@ private __leftTime:number = 0;
 				return;
 			}
 
-			if(pwd.length < 6){
-				TipManagerCommon.getInstance().createCommonColorTip("请输入至少6位数的密码");
-				return;
-			}
-
-			if(pwd.length > 12){
-				TipManagerCommon.getInstance().createCommonColorTip("输入的密码长度不能多于12位");
+			if(pwd.length < 6 || pwd.length > 12){
+				TipManagerCommon.getInstance().showLanTip("CN_179");
 				return;
 			}
 			let verifycode:string = this.text_input_vcode.text.trim();
 			if(verifycode.length == 0){
-                TipManagerCommon.getInstance().createCommonColorTip("请输入验证码");
+                TipManagerCommon.getInstance().showLanTip("CN_182");
                 return;
             }
 
@@ -99,7 +94,7 @@ private __leftTime:number = 0;
 
         private onLogout():void
         {
-			PromptController.instance.showPrompt("                       确定退出游戏？", this.backGame, this);
+			PromptController.instance.showPrompt("CN_230", this.backGame, this);
 		}
 		
 		// 尝试重新加载游戏，不能加载退出游戏 

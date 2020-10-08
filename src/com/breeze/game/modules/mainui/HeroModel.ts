@@ -17,6 +17,7 @@ module qmr {
         public totalUSDT:number = 0;//当前玩家USDT的数量
         public totalKAD:number = 0;//当前玩家KAD的数量
         public keyCount:number = 0;//剩余激活秘钥数量
+        public lastGetMoneyServerTime:number = 0;//最后一次获取待领取金币的服务器时间戳
 
 
         public moneyLogs:com.message.MoneyLogMsg[];//获取金币日志信息

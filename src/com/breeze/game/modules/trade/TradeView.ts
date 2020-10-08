@@ -131,40 +131,40 @@ public txt_title:eui.Label;
 			let str:string = t.text_input_price.text.trim();
 			if (str.length == 0)
             {
-                TipManagerCommon.getInstance().createCommonColorTip("请输入购买价格");
+                TipManagerCommon.getInstance().showLanTip("CN_241");
                 return;
 			}
 
 			let price:number = Number(str);
 			if(price <= 0){
-				TipManagerCommon.getInstance().createCommonColorTip("输入价格有误");
+				TipManagerCommon.getInstance().showLanTip("CN_242");
                 return;
 			}
 			if(!price){
-				TipManagerCommon.getInstance().createCommonColorTip("输入价格有误");
+				TipManagerCommon.getInstance().showLanTip("CN_242");
                 return;
 			}
 			str = t.text_input_count.text.trim();
 			if (str.length == 0)
             {
-                TipManagerCommon.getInstance().createCommonColorTip("请输入购买数量");
+                TipManagerCommon.getInstance().showLanTip("CN_243");
                 return;
 			}
 
 			let count:number = Number(str);
 			if(count <= 0){
-				TipManagerCommon.getInstance().createCommonColorTip("输入数量有误");
+				TipManagerCommon.getInstance().showLanTip("CN_244");
                 return;
 			}
 
 			if(price > TradeModule.instance.sysDiamonPrice){
-				TipManagerCommon.getInstance().createCommonColorTip("购买的价格不能大于系统指导价格");
+				TipManagerCommon.getInstance().showLanTip("CN_245");
                 return;
 			}
 
 			let money:number = count * price;
 			if(money > HeroModel.instance.totalUSDT){
-				TipManagerCommon.getInstance().createCommonColorTip("对不起购买货币不足");
+				TipManagerCommon.getInstance().showLanTip("CN_246");
 				return;
 			}
 			TradeController.instance.getBuyOrderRequest(count, price);

@@ -42,7 +42,7 @@ public txt_price_USDTLimit:eui.Label;
             }
 
             if(cfg.price > HeroModel.instance.totalMoney){
-                TipManagerCommon.getInstance().createCommonTip("货币不足");
+                TipManagerCommon.getInstance().showLanTip("CN_131");
                 return;
             }
 
@@ -56,7 +56,7 @@ public txt_price_USDTLimit:eui.Label;
                 return;
             }
             if(cfg.UBuyPrice > HeroModel.instance.totalUSDT){
-                TipManagerCommon.getInstance().createCommonTip("货币不足");
+                TipManagerCommon.getInstance().showLanTip("CN_131");
                 return;
             }
             PetController.instance.getBuyFishByUSDT(cfg.id);

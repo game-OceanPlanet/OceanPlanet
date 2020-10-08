@@ -55,7 +55,7 @@ public btn_help:eui.Image;
 
 		private saveImg():void
 		{
-			TipManagerCommon.getInstance().createCommonColorTip("保存成功",true);
+			TipManagerCommon.getInstance().showLanTip("CN_231");
 		}
 
 		private copyAddress():void
@@ -64,7 +64,7 @@ public btn_help:eui.Image;
 			if(address){
 				StringUtils.copyClipBoard(address);
 			} else {
-				TipManagerCommon.getInstance().createCommonColorTip("没有地址可用");
+				TipManagerCommon.getInstance().showLanTip("CN_232");
 			}
 			
 		}
