@@ -8,7 +8,7 @@
 			<e:Image y="55.28000000000003" anchorOffsetY="0" anchorOffsetX="0" source="panel1_json.panel_bg" x="30" scale9Grid="44,31,267,158" width="697" height="975.54" scaleX="1" scaleY="1"/>
 			<e:Image source="panel1_json.panel_bar2" x="30" y="922.44" scaleX="1" scaleY="1"/>
 			<e:Image source="panel1_json.title_img" x="5" y="27" scaleX="1" scaleY="1"/>
-			<e:Image x="320" y="30.32" source="nameImg_json.title_pet"/>
+			<e:Image id="title_pet" x="320" y="30.32" source="nameImg_json.title_pet"/>
 			<e:Image id="btnClose" source="panel1_json.btn_close" x="637.87" y="6.93"/>
 		</e:Group>
 		<e:Scroller anchorOffsetY="0" bounces="false" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" x="0" y="236" width="750" height="903">

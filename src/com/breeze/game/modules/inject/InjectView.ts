@@ -28,6 +28,7 @@ public CN_343:eui.Label;
 public CN_342:eui.Label;
 public CN_341:eui.Label;
 public CN_345:eui.Label;
+public title_zhuru:eui.Image;
 
         private _arrCollection: eui.ArrayCollection;
         private _injectNum:number = 0;
@@ -64,7 +65,12 @@ public CN_345:eui.Label;
         protected switchLange(){
 			let t = this;
 			super.switchLange();
-			t.text_input_price.prompt = LabelUtil.getCNMessage("CN_346");
+            t.text_input_price.prompt = LabelUtil.getCNMessage("CN_346");
+            if(GlobalConfig.isCN){
+                t.title_zhuru.source = "nameImg_json.title_zhuru";
+            } else {
+                t.title_zhuru.source = "nameImg_en_json.title_zhuru";
+            }
 		}
 		
 		protected initListener(): void

@@ -46,6 +46,7 @@ public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
 public CN_332:eui.Label;
+public title_duihuan:eui.Image;
 
 
 
@@ -98,6 +99,11 @@ public CN_332:eui.Label;
 			super.switchLange();
 			t.text_input_price.prompt = LabelUtil.getCNMessage("CN_333");
 			t.text_input_count.prompt = LabelUtil.getCNMessage("CN_334");
+			if(GlobalConfig.isCN){
+                t.title_duihuan.source = "nameImg_json.title_duihuan";
+            } else {
+                t.title_duihuan.source = "nameImg_en_json.title_duihuan";
+            }
 		}
 		
 		protected initListener(): void

@@ -1,35 +1,51 @@
 module qmr {
     export class MainView extends BaseModule {
-        public btn_home: eui.Image;
-        public btn_detail: eui.Image;
-        public btn_bottom_gold: eui.Image;
-        public btn_bottom_property: eui.Image;
-        public btn_bottom_pet: eui.Image;
-        public txt_curr: eui.Label;
-        public btn_get_group: eui.Group;
-        public btn_get: eui.Image;
-        public btn_price_group: eui.Group;
-        public btn_price: eui.Image;
-        public btn_exchange: eui.Image;
-        public btn_injection: eui.Image;
-        public btn_shop: eui.Image;
-        public btn_dividend: eui.Image;
-        public btn_promote: eui.Image;
-        public btn_realname: eui.Image;
-        public btn_person: eui.Image;
-        public btn_permit: eui.Image;
-        public btn_download: eui.Image;
-        public btn_help: eui.Image;
-        public effect_group_1: eui.Group;
-        public effect_group_2: eui.Group;
-        public effect_group_3: eui.Group;
-        public effect_group_4: eui.Group;
-        public effect_group_5: eui.Group;
-        public effect_group_pet: eui.Group;
-        public txt_totalGold: eui.Label;
-        public txt_totalUsdt: eui.Label;
-        public btn_ActKey:eui.Image;
-        public money_icon:eui.Image;
+        public game_title:eui.Image;
+public btn_bottom_gold:eui.Image;
+public btn_bottom_property:eui.Image;
+public btn_bottom_pet:eui.Image;
+public effect_group_pet:eui.Group;
+public title_pet:eui.Image;
+public title_jibi:eui.Image;
+public title_zichan:eui.Image;
+public money_icon:eui.Image;
+public CN_448:eui.Label;
+public txt_curr:eui.Label;
+public btn_get_group:eui.Group;
+public btn_get:eui.Image;
+public img_reward:eui.Image;
+public txt_totalGold:eui.Label;
+public txt_totalUsdt:eui.Label;
+public btn_price_group:eui.Group;
+public img_price:eui.Image;
+public effect_group_3:eui.Group;
+public effect_group_1:eui.Group;
+public effect_group_2:eui.Group;
+public effect_group_4:eui.Group;
+public effect_group_5:eui.Group;
+public btn_exchange:eui.Image;
+public btn_injection:eui.Image;
+public btn_shop:eui.Image;
+public btn_dividend:eui.Image;
+public btn_promote:eui.Image;
+public img_name_shop:eui.Image;
+public img_name_divide:eui.Image;
+public title_push:eui.Image;
+public img_exchange2:eui.Image;
+public img_name_inject:eui.Image;
+public btn_realname:eui.Image;
+public btn_person:eui.Image;
+public btn_permit:eui.Image;
+public btn_ActKey:eui.Image;
+public img_name_person:eui.Image;
+public img_name_certify:eui.Image;
+public img_name_code:eui.Image;
+public img_passport:eui.Image;
+public btn_download:eui.Image;
+public btn_help:eui.Image;
+public img_name_down:eui.Image;
+public img_name_help:eui.Image;
+
 
 
         private __timekey: number;
@@ -50,6 +66,54 @@ module qmr {
             super();
             this.qmrSkinName = "Mainui";
         }
+
+        protected initComponent():void
+		{
+            let t = this;
+            t.showTxtNames = ["CN_448"];
+        }
+
+        protected switchLange(){
+			let t = this;
+			super.switchLange();
+			if(GlobalConfig.isCN){
+                t.game_title.source = "nameImg_json.game_title";
+                t.img_reward.source = "nameImg_json.img_reward";
+                t.img_price.source = "nameImg_json.img_price";
+                t.img_name_shop.source = "nameImg_json.img_name_shop";
+                t.img_exchange2.source = "nameImg_json.img_exchange2";
+                t.img_name_inject.source = "nameImg_json.img_name_inject";
+                t.img_name_divide.source = "nameImg_json.img_name_divide";
+                t.title_push.source = "nameImg_json.title_push";
+                t.img_name_code.source = "nameImg_json.img_name_code";
+                t.img_name_person.source = "nameImg_json.img_name_person";
+                t.img_name_certify.source = "nameImg_json.img_name_certify";
+                t.img_passport.source = "nameImg_json.img_passport";
+                t.img_name_help.source = "nameImg_json.img_name_help";
+                t.img_name_down.source = "nameImg_json.img_name_down";
+                t.title_zichan.source = "nameImg_json.title_zichan";
+                t.title_pet.source = "nameImg_json.title_pet";
+                t.title_jibi.source = "nameImg_json.title_jibi";
+            } else {
+                t.game_title.source = "nameImg_en_json.game_title";
+                t.img_reward.source = "nameImg_en_json.img_reward";
+                t.img_price.source = "nameImg_en_json.img_price";
+                t.img_name_shop.source = "nameImg_en_json.img_name_shop";
+                t.img_exchange2.source = "nameImg_en_json.img_exchange2";
+                t.img_name_inject.source = "nameImg_en_json.img_name_inject";
+                t.img_name_divide.source = "nameImg_en_json.img_name_divide";
+                t.title_push.source = "nameImg_en_json.title_push";
+                t.img_name_code.source = "nameImg_en_json.img_name_code";
+                t.img_name_person.source = "nameImg_en_json.img_name_person";
+                t.img_name_certify.source = "nameImg_en_json.img_name_certify";
+                t.img_passport.source = "nameImg_en_json.img_passport";
+                t.img_name_help.source = "nameImg_en_json.img_name_help";
+                t.img_name_down.source = "nameImg_en_json.img_name_down";
+                t.title_zichan.source = "nameImg_en_json.title_zichan";
+                t.title_pet.source = "nameImg_en_json.title_pet";
+                t.title_jibi.source = "nameImg_en_json.title_jibi";
+            }
+		}
 
         /**
          * @description 初始化事件

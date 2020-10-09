@@ -77,7 +77,7 @@ public CN_258:eui.Label;
             t.CN_258.visible = false;
             t.btn_buy_group.y = 81;
             if(cfg){
-                t.txt_name.text = cfg.name + "(Lv." + cfg.level + ")";
+                t.txt_name.text =  LabelUtil.getCNMessage(cfg.name) + "(Lv." + cfg.level + ")";
                 t.txt_1.text = cfg.produce + "";
                 t.txt_2.text = cfg.limitTime + "";
                 t.txt_3.text = cfg.monthly + "%";

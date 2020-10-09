@@ -25,6 +25,7 @@ public CN_391:eui.Label;
 public CN_394:eui.Label;
 public CN_392:eui.Label;
 public CN_393:eui.Label;
+public title_duihuan:eui.Image;
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -56,6 +57,12 @@ public CN_393:eui.Label;
 			let t = this;
 			super.switchLange();
 			t.text_input_price.prompt = LabelUtil.getCNMessage("CN_396");
+
+			if(GlobalConfig.isCN){
+                t.title_duihuan.source = "nameImg_json.title_duihuan";
+            } else {
+                t.title_duihuan.source = "nameImg_en_json.title_duihuan";
+            }
 		}
 
 		protected initData(): void {

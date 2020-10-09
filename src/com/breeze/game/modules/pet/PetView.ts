@@ -14,6 +14,8 @@ public btn_merge:eui.Label;
 // public btnReturn:eui.Image;
 public effect_group_pet:eui.Group;
 // public effect_group_merge:eui.Group;
+public title_pet:eui.Image;
+
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -37,6 +39,16 @@ public effect_group_pet:eui.Group;
 			t.item_list.dataProvider = t._arrCollection;
 			
 			t.showTxtNames = ["CN_298"];
+		}
+
+		protected switchLange(){
+			let t = this;
+			super.switchLange();
+            if(GlobalConfig.isCN){
+                t.title_pet.source = "nameImg_json.title_pet";
+            } else {
+                t.title_pet.source = "nameImg_en_json.title_pet";
+            }
 		}
 
 		protected initData(): void {

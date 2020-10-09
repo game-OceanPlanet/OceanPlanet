@@ -10,7 +10,7 @@
 
 
 
-		<e:Image y="147"  source="nameImg_json.title_tongz" horizontalCenter="0"/>
+		<e:Image id="title_tongz" y="147"  source="nameImg_json.title_tongz" horizontalCenter="0"/>
 		<e:Label id="txt_kda_total" text="2.00000LAND" y="213" size="34" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x878EFF" horizontalCenter="0.5"/>
 		<e:Group id="itemGroup" width="736" height="824" y="408" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-2">
 			<e:Scroller width="738" x="0" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" height="822">

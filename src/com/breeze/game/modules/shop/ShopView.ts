@@ -9,6 +9,8 @@ public item_list:eui.List;
 public btnReturn:eui.Image;
 public txt_totalUSDT:eui.Label;
 public txt_totalGold:eui.Label;
+public title_shop:eui.Image;
+
 
 		private _arrCollection: eui.ArrayCollection;
 		
@@ -27,6 +29,16 @@ public txt_totalGold:eui.Label;
             t.item_list.itemRenderer = ShopItemRender;
             t._arrCollection = new eui.ArrayCollection();
             t.item_list.dataProvider = t._arrCollection;
+		}
+
+		protected switchLange(){
+			let t = this;
+			super.switchLange();
+			if(GlobalConfig.isCN){
+                t.title_shop.source = "nameImg_json.title_shop";
+            } else {
+                t.title_shop.source = "nameImg_en_json.title_shop";
+            }
 		}
 
 		protected initData(): void {

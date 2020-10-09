@@ -57,7 +57,7 @@
 			"url": "sheet/mainui.json",
 			"type": "sheet",
 			"name": "mainui_json",
-			"subkeys": "bg_icon_main,bg_icon_name,btn_bottom_exchange,btn_bottom_gold,btn_bottom_pet,btn_download,btn_english,btn_exchange,btn_get,btn_help,btn_lan_chinese,btn_permit,btn_person,btn_realname,exchange,home_frame,home_frame1,home_frame2,icon_Raiders,icon_dividend ,icon_gold,icon_gold1,icon_home,icon_injection1,icon_jihuoma,icon_promote1,icon_shop,icon_treasury,icon_usdt,item_di1,main_dikuang2,panel_frame2,panel_frame3,title_main"
+			"subkeys": "bg_icon_main,bg_icon_name,btn_bottom_exchange,btn_bottom_gold,btn_bottom_pet,btn_download,btn_exchange,btn_get,btn_help,btn_permit,btn_person,btn_realname,exchange,home_frame,home_frame1,home_frame2,icon_Raiders,icon_dividend ,icon_gold,icon_gold1,icon_home,icon_injection1,icon_jihuoma,icon_promote1,icon_shop,icon_treasury,icon_usdt,item_di1,main_dikuang2,panel_frame2,panel_frame3"
 		},
 		{
 			"url": "unpack/bg/common_beijing.png",
@@ -241,7 +241,7 @@
 			"url": "sheet/nameImg.json",
 			"type": "sheet",
 			"name": "nameImg_json",
-			"subkeys": "game_title,img_exchange2,img_name_certify,img_name_code,img_name_divide,img_name_down,img_name_fanyan,img_name_help,img_name_inject,img_name_lingyang,img_name_person,img_name_shop,img_name_tuiguang,img_passport,img_pet,img_price,img_reward,title_duihuan,title_exchange,title_fenhong,title_jibi,title_pet,title_push,title_renzheng,title_shop,title_tongz,title_tongzheng,title_tuiguang,title_zhuru,title_zichan"
+			"subkeys": "game_title,img_exchange2,img_name_certify,img_name_code,img_name_divide,img_name_down,img_name_fanyan,img_name_help,img_name_inject,img_name_lingyang,img_name_person,img_name_shop,img_name_tuiguang,img_passport,img_pet,img_price,img_reward,title_duihuan,title_exchange,title_fenhong,title_jibi,title_main,title_pet,title_push,title_renzheng,title_shop,title_tongz,title_tongzheng,title_tuiguang,title_zhuru,title_zichan"
 		},
 		{
 			"url": "sheet/panel1.json",
@@ -275,6 +275,12 @@
 			"url": "assets/ui11.jpg",
 			"type": "image",
 			"name": "ui11_jpg"
+		},
+		{
+			"url": "sheet/nameImg_en.json",
+			"type": "sheet",
+			"name": "nameImg_en_json",
+			"subkeys": "Login,Sign,game_title,game_title2,img_assets,img_exchange2,img_jibi,img_name_certify,img_name_code,img_name_divide,img_name_down,img_name_fanyan,img_name_help,img_name_inject,img_name_lingyang,img_name_person,img_name_shop,img_name_tuiguang,img_passport,img_pet,img_price,img_reward,title_account,title_duihuan,title_exchange,title_fenhong,title_jibi,title_pet,title_push,title_renzheng,title_shop,title_tongz,title_tongzheng,title_tuiguang,title_zhuru,title_zichan"
 		}
 	]
 }

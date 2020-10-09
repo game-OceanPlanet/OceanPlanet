@@ -4,8 +4,8 @@
 	<e:Group height="79" anchorOffsetX="0" anchorOffsetY="0" top="0" left="0" right="-1">
 		<e:Image source="mainui_json.main_dikuang2" scaleX="1" scaleY="-1" y="5.57" left="0" right="-5"/>
 		<e:Image source="mainui_json.main_dikuang2" scaleX="1" scaleY="1" left="-1" right="-4" y="0" />
-		<e:Label text="海洋星球" y="23" size="40" fontFamily="specialGameFont" x="296" textColor="0xe2dfae" visible="false" />
-		<e:Image y="19" horizontalCenter="0"  source="nameImg_json.game_title"/>
+
+		<e:Image id="game_title" y="19" horizontalCenter="0"  source="nameImg_json.game_title"/>
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" bottom="0" height="263" left="0" right="0">
 		<e:Image source="mainui_json.home_frame1" y="112" scale9Grid="261,38,274,74" right="-5" left="-5" />
@@ -17,14 +17,14 @@
 		<e:Image id="btn_bottom_pet" y="97" source="mainui_json.btn_bottom_pet" anchorOffsetX="100" anchorOffsetY="99"
 		         horizontalCenter="8.5" />
 		<e:Group id="effect_group_pet" width="20" height="20" y="93.94" horizontalCenter="20" />
-		<e:Image source="nameImg_json.title_pet" y="154" horizontalCenter="10.5"/>
-		<e:Image source="nameImg_json.title_jibi" y="153" horizontalCenter="256.5"/>
-		<e:Image source="nameImg_json.title_zichan" y="153" horizontalCenter="-253.5"/>
+		<e:Image id="title_pet" source="nameImg_json.title_pet" y="154" horizontalCenter="10.5"/>
+		<e:Image id="title_jibi" source="nameImg_json.title_jibi" y="153" horizontalCenter="256.5"/>
+		<e:Image id="title_zichan" source="nameImg_json.title_zichan" y="153" horizontalCenter="-253.5"/>
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" left="1" top="70">
 		<e:Image x="0" y="0" scaleX="1" scaleY="1" source="mainui_json.item_di1" />
 		<e:Image id="money_icon" x="54" y="58" source="mainui_json.icon_gold1" />
-		<e:Label text="待领数量" y="30" size="26" fontFamily="specialGameFont" horizontalCenter="-8" textColor="0x71492e" />
+		<e:Label id="CN_448" text="" y="30" size="26" fontFamily="specialGameFont" horizontalCenter="-8" textColor="0x71492e" />
 		<e:Label id="txt_curr" text="0" y="70" size="22" fontFamily="specialGameFont" horizontalCenter="-7.5"
 		         textColor="0xffffff" />
 		<e:Group id="btn_get_group" anchorOffsetX="0" anchorOffsetY="0" x="233" y="6">
@@ -32,7 +32,7 @@
 			         anchorOffsetY="56" x="57" y="56" />
 			<e:Label text="领  钱" textColor="0xE88012" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 			         visible="false" />
-			<e:Image source="nameImg_json.img_reward" x="30" y="40"/>
+			<e:Image id="img_reward" source="nameImg_json.img_reward" y="40" horizontalCenter="3"/>
 		</e:Group>
 	</e:Group>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" right="1" top="70">
@@ -47,7 +47,7 @@
 		<e:Group id="btn_price_group" anchorOffsetX="0" anchorOffsetY="0" y="5" x="233">
 			<e:Image x="57" y="56" scaleX="1" scaleY="1" anchorOffsetX="57"
 			         anchorOffsetY="56"  source="mainui_json.btn_get"/>
-			<e:Image source="nameImg_json.img_price" x="30" y="40"/>
+			<e:Image id="img_price" source="nameImg_json.img_price" y="40" horizontalCenter="3"/>
 		</e:Group>
 	</e:Group>
 	<e:Group top="201" anchorOffsetX="0" width="718.19" anchorOffsetY="0" height="160.6" right="-1">
@@ -77,11 +77,11 @@
 		          source="mainui_json.icon_dividend "/>
 		<e:Image id="btn_promote" source="mainui_json.icon_promote1" x="605" y="19" scaleX="1" scaleY="1"
 		         />
-		<e:Image source="nameImg_json.img_name_shop" x="81" y="108"/>
-		<e:Image source="nameImg_json.img_name_divide" x="486.25" y="108"/>
-		<e:Image source="nameImg_json.title_push" x="621" y="108"/>
-		<e:Image source="nameImg_json.img_exchange2" x="214.75" y="108"/>
-		<e:Image source="nameImg_json.img_name_inject" x="350.5" y="108"/>
+		<e:Image id="img_name_shop" source="nameImg_json.img_name_shop" y="108" horizontalCenter="-247.09500000000003"/>
+		<e:Image id="img_name_divide" source="nameImg_json.img_name_divide" y="108" horizontalCenter="158.40499999999997"/>
+		<e:Image id="title_push" source="nameImg_json.title_push" y="108" horizontalCenter="293.905"/>
+		<e:Image id="img_exchange2" source="nameImg_json.img_exchange2" y="108" horizontalCenter="-112.09500000000003"/>
+		<e:Image id="img_name_inject" source="nameImg_json.img_name_inject" y="108" horizontalCenter="23.904999999999973"/>
 	</e:Group>
 	<e:Group width="134" height="379" anchorOffsetX="0" left="0" anchorOffsetY="0" bottom="265">
 		<e:Image id="btn_realname" y="6.2" source="mainui_json.btn_realname" x="19"
@@ -92,12 +92,12 @@
 		         scaleX="1" scaleY="1" />
 		<e:Image id="btn_ActKey" y="-118.2" x="19" scaleX="1" scaleY="1" source="mainui_json.icon_jihuoma"/>
 
-		<e:Image source="nameImg_json.img_name_person" x="-1" y="92.66666666666667"/>
+		<e:Image id="img_name_person" source="nameImg_json.img_name_person" y="92.66666666666667" horizontalCenter="-4.5"/>
 	
-		<e:Image source="nameImg_json.img_name_certify" x="-1" y="217.33333333333334"/>
+		<e:Image id="img_name_certify" source="nameImg_json.img_name_certify" y="217.33333333333334" horizontalCenter="-4.5"/>
 			
-		<e:Image source="nameImg_json.img_name_code" x="12" y="-32"/>
-		<e:Image source="nameImg_json.img_passport" x="9" y="342"/>
+		<e:Image id="img_name_code" source="nameImg_json.img_name_code" y="-32" horizontalCenter="-4"/>
+		<e:Image id="img_passport" source="nameImg_json.img_passport" y="342" horizontalCenter="-4.5"/>
 			
 
 			
@@ -109,8 +109,8 @@
 		         scaleX="1" scaleY="1" />
 		<e:Image id="btn_help" source="mainui_json.btn_help" y="123" x="5" scaleX="1"
 		         scaleY="1" />
-		<e:Image source="nameImg_json.img_name_down" x="12" y="344" scaleX="1" scaleY="1"/>
-		<e:Image source="nameImg_json.img_name_help" x="13" y="211"/>
+		<e:Image id="img_name_down" source="nameImg_json.img_name_down" y="344" scaleX="1" scaleY="1" horizontalCenter="1.5"/>
+		<e:Image id="img_name_help" source="nameImg_json.img_name_help" y="211" horizontalCenter="1.5"/>
 	</e:Group>
 
 </e:Skin>

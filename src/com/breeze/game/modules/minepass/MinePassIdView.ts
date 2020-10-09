@@ -9,6 +9,7 @@ public itemGroup:eui.Group;
 public item_list:eui.List;
 public btnReturn:eui.Image;
 public CN_397:eui.Label;
+public title_tongz:eui.Image;
 
 
 private _arrCollection: eui.ArrayCollection;
@@ -30,6 +31,16 @@ private _arrCollection: eui.ArrayCollection;
 			t.item_list.dataProvider = t._arrCollection;
 			
 			t.showTxtNames = ["CN_397"];
+		}
+
+		protected switchLange(){
+			let t = this;
+			super.switchLange();
+            if(GlobalConfig.isCN){
+                t.title_tongz.source = "nameImg_json.title_tongz";
+            } else {
+                t.title_tongz.source = "nameImg_en_json.title_tongz";
+            }
 		}
 
 		protected initData(): void {

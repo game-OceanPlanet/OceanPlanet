@@ -22,6 +22,7 @@ public CN_349:eui.Label;
 public CN_352:eui.Label;
 public CN_351:eui.Label;
 public CN_329:eui.Label;
+public title_fenhong:eui.Image;
 
 
 		private _arrCollection: eui.ArrayCollection;
@@ -52,6 +53,11 @@ public CN_329:eui.Label;
 			DividendController.instance.requestDividendCMD();
 
 			t.showTxtNames = ["CN_272","CN_348","CN_347","CN_350","CN_349","CN_352","CN_351","CN_329"];
+			if(GlobalConfig.isCN){
+                t.title_fenhong.source = "nameImg_json.title_fenhong";
+            } else {
+                t.title_fenhong.source = "nameImg_en_json.title_fenhong";
+            }
 		}
 		
 		protected initListener(): void
