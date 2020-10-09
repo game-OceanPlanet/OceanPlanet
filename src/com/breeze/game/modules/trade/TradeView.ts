@@ -85,7 +85,7 @@ public title_duihuan:eui.Image;
 				t._positions[i] = new egret.Point(t._columns[i].x, t._columns[i].y);
 			}
 
-			t.showTxtNames = ["CN_325","CN_327","CN_328","CN_329","CN_324","CN_326","CN_331","CN_330","CN_332"];
+			t.showTxtNames = ["CN_325","CN_327","CN_328","CN_329","CN_324","CN_326","CN_331","CN_330","CN_332","CN_256"];
 		}
 
 		protected initData(): void {
