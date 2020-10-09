@@ -84,9 +84,9 @@
 		<e:Image id="img_name_inject" source="nameImg_json.img_name_inject" y="108" horizontalCenter="23.904999999999973"/>
 	</e:Group>
 	<e:Group width="134" height="379" anchorOffsetX="0" left="0" anchorOffsetY="0" bottom="265">
-		<e:Image id="btn_realname" y="6.2" source="mainui_json.btn_realname" x="19"
+		<e:Image id="btn_person" y="6.2" source="mainui_json.btn_realname" x="19"
 		         scaleX="1" scaleY="1" />
-		<e:Image id="btn_person" y="129.6" source="mainui_json.btn_person" x="19"
+		<e:Image id="btn_realname" y="129.6" source="mainui_json.btn_person" x="19"
 		         scaleX="1" scaleY="1" />
 		<e:Image id="btn_permit" source="mainui_json.btn_permit" y="254" x="19"
 		         scaleX="1" scaleY="1" />
