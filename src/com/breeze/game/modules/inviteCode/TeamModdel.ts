@@ -109,9 +109,11 @@ module qmr {
                 t.teamStars = cfgs;
             }
             let len:number = t.teamStars.length;
-            for(var i:number = len - 1; i >= 0; i --){
-                if(all >= t.teamStars[i].teamPerson && count >= t.teamStars[i].directPerson && t.teamStars[i].UBuyStar > 0){
-                    return t.teamStars[i];
+            for(var i:number = 0; i < len; i ++){
+                if(t.teamStars[i].UBuyStar > 0){
+                    if(all < t.teamStars[i].teamPerson || count < t.teamStars[i].directPerson){
+                        return t.teamStars[i];
+                    }
                 }
             }
             return t.teamStars[1];
