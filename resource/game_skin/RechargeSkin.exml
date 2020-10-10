@@ -24,7 +24,7 @@
 
 			<e:Group id="but_changePwd" x="64" y="100" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image scaleX="1" scaleY="1" source="panelui_json.anniu_2" scale9Grid="43,9,261,61" width="603" x="1"/>
-				<e:Label id="CN_437" text="" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" horizontalCenter="0" textColor="0xffffff" y="40"/>
+				<e:Label id="CN_437" text="" size="28" fontFamily="specialGameFont" scaleX="1" scaleY="1" textAlign="center" verticalAlign="middle" horizontalCenter="0" textColor="0xffffff" verticalCenter="0.5"/>
 			</e:Group>
 			<e:Group id="btn_logout" x="64" y="594" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
 				<e:Image scaleX="1" scaleY="1" scale9Grid="43,9,261,61" width="603" source="panelui_json.anniu_3"/>

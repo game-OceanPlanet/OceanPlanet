@@ -43,7 +43,19 @@ public title_fenhong:eui.Image;
 
             t.item_list.itemRenderer = DividendLogItem;
             t._arrCollection = new eui.ArrayCollection();
-            t.item_list.dataProvider = t._arrCollection;
+			t.item_list.dataProvider = t._arrCollection;
+			t.showTxtNames = ["CN_272","CN_348","CN_347","CN_350","CN_349","CN_352","CN_351","CN_329"];
+		}
+
+		protected switchLange():void
+		{
+			let t = this;
+			super.switchLange();
+			if(GlobalConfig.isCN){
+                t.title_fenhong.source = "nameImg_json.title_fenhong";
+            } else {
+                t.title_fenhong.source = "nameImg_en_json.title_fenhong";
+            }
 		}
 
 		protected initData(): void {
@@ -51,13 +63,6 @@ public title_fenhong:eui.Image;
 			let t = this;
 			t.updateView();
 			DividendController.instance.requestDividendCMD();
-
-			t.showTxtNames = ["CN_272","CN_348","CN_347","CN_350","CN_349","CN_352","CN_351","CN_329"];
-			if(GlobalConfig.isCN){
-                t.title_fenhong.source = "nameImg_json.title_fenhong";
-            } else {
-                t.title_fenhong.source = "nameImg_en_json.title_fenhong";
-            }
 		}
 		
 		protected initListener(): void

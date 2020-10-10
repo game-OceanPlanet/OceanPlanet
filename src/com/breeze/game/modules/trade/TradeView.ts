@@ -39,6 +39,7 @@ public input_group:eui.Group;
 public text_input_count:eui.TextInput;
 public btn_buy_group:eui.Group;
 public CN_256:eui.Label;
+public title_duihuan:eui.Image;
 public CN_331:eui.Label;
 public CN_330:eui.Label;
 public itemGroup:eui.Group;
@@ -46,7 +47,7 @@ public item_list:eui.List;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
 public CN_332:eui.Label;
-public title_duihuan:eui.Image;
+
 
 
 
