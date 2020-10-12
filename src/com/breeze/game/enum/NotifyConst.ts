@@ -18,6 +18,7 @@ module qmr
 		public static S_GET_DIAMOND_LOG_LIST:string = "S_GET_DIAMOND_LOG_LIST";
 		public static S_DIAMOND_BUY_FISH:string = "S_DIAMOND_BUY_FISH";
 		public static S_GET_OCT_BUYGOOD_LIST:string = "S_GET_OCT_BUYGOOD_LIST";
+		public static S_GET_MY_OCT_BUYGOOD_LIST:string = "S_GET_MY_OCT_BUYGOOD_LIST";
 
 		public static S_GET_OCT_MARKET_INFO:string = "S_GET_OCT_MARKET_INFO";
 		public static S_MARKET_BUY:string = "S_MARKET_BUY";

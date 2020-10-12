@@ -3,6 +3,7 @@ module qmr {
         public sysDiamonPrice: number = 0;//今日系统U的指导价
         public historyPrices: com.message.HistoryPriceMsg[];//系统指导价历史信息
         public buyGoodsList: com.message.BuyGoodMsg[];//OCT求购信息
+        public myBuyGoodsList: com.message.BuyGoodMsg[];//OCT求购信息
 
         public constructor() {
             super();

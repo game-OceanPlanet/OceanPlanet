@@ -57,8 +57,10 @@ message MsgEnum {
 		S_MARKET_SELL			= 1106;
 		C_MARKET_CANCEL			= 1107; //C->S 请求: 撤单
 		S_MARKET_CANCEL			= 1108;
-		C_GET_OCT_BUYGOOD_LIST	= 1109; //S->C 响应: 获取OCT求购信息
+		C_GET_OCT_BUYGOOD_LIST	= 1109; //请求 获取OCT求购信息
 		S_GET_OCT_BUYGOOD_LIST  = 1110;
+		C_GET_MY_OCT_BUYGOOD_LIST 	= 1111; //请求: 获取我的OCT求购信息
+		S_GET_MY_OCT_BUYGOOD_LIST	= 1112;
 		
 		//Bonus
 		C_GET_MONEY_EXCHANGE_INFO 	= 1201;	//获取兑换信息

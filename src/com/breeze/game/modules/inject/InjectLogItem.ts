@@ -30,7 +30,8 @@ public txt_end:eui.Label;
 				t.txt_start.text = TimeUtil.formatColumnDate(dt);
 				dt.setTime(endTime);
 				// t.txt_end.text = TimeUtil.formatColumnDate(dt);
-				t.txt_end.text = cfg.des + "/权重"+cfg.weights;
+				let des:string = LabelUtil.getCNMessage(cfg.des);
+				t.txt_end.text = des + "/权重"+cfg.weights;
 				t.txt_state.text = endTime > ServerTime.serverTime ? "进行中":"已到期";
             }
         }

@@ -66,7 +66,8 @@ module qmr
 			this.dispatch(NotifyConst.S_CASH_OUT_APPLY);
 			
 			if(s.success == 0){
-				PromptController.instance.showPrompt("提现操作成功，请等待时间审核确认通过后到账", null);
+				let des:string = LabelUtil.getCNMessage("CN_463");
+				PromptController.instance.showPrompt(des, null);
 			} else {
 				let count = Number(ConfigManagerAft.getCommonConfig(2030));//团队规模
 				let count2 = Number(ConfigManagerAft.getCommonConfig(2031)) * 100;//比例

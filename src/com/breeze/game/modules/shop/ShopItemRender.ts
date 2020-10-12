@@ -94,7 +94,7 @@ public CN_258:eui.Label;
                         t.btn_buy_group2.y = 100;
                         t.btn_buy_group.y = 43;
                         let hadBuyCount:number = HeroModel.instance.getBuyCount(cfg.id);
-                        LabelUtil.setLabelText(t.CN_258, ClientCnEnum.CN_106, hadBuyCount ,cfg.UBuyPrice);
+                        LabelUtil.setLabelText(t.CN_258, ClientCnEnum.CN_106, hadBuyCount ,cfg.UBuyLimit);
                     }
                 }
             }

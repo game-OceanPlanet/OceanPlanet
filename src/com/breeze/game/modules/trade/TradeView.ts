@@ -39,15 +39,17 @@ public input_group:eui.Group;
 public text_input_count:eui.TextInput;
 public btn_buy_group:eui.Group;
 public CN_256:eui.Label;
-public title_duihuan:eui.Image;
 public CN_331:eui.Label;
 public CN_330:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
+public btn_allList:eui.Group;
+public CN_540:eui.Label;
+public btn_myList:eui.Group;
+public CN_539:eui.Label;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
 public CN_332:eui.Label;
-
 
 
 
@@ -86,7 +88,7 @@ public CN_332:eui.Label;
 				t._positions[i] = new egret.Point(t._columns[i].x, t._columns[i].y);
 			}
 
-			t.showTxtNames = ["CN_325","CN_327","CN_328","CN_329","CN_324","CN_326","CN_331","CN_330","CN_332","CN_256"];
+			t.showTxtNames = ["CN_325","CN_327","CN_328","CN_329","CN_324","CN_326","CN_331","CN_330","CN_332","CN_256","CN_540","CN_539"];
 		}
 
 		protected initData(): void {
@@ -100,11 +102,6 @@ public CN_332:eui.Label;
 			super.switchLange();
 			t.text_input_price.prompt = LabelUtil.getCNMessage("CN_333");
 			t.text_input_count.prompt = LabelUtil.getCNMessage("CN_334");
-			if(GlobalConfig.isCN){
-                t.title_duihuan.source = "nameImg_json.title_duihuan";
-            } else {
-                t.title_duihuan.source = "nameImg_en_json.title_duihuan";
-            }
 		}
 		
 		protected initListener(): void
@@ -113,8 +110,10 @@ public CN_332:eui.Label;
             let t = this;
 			t.addClickEvent(t.btnReturn, t.closeView, t);
 			t.addClickEvent(t.btn_buy_group, t.buyClick, t);
-			t.addEvent(t.text_input_price, egret.Event.FOCUS_OUT, t.onFocusOut, t);
-			t.addEvent(t.text_input_count, egret.Event.FOCUS_OUT, t.onFocusOut2, t);
+			// t.addEvent(t.text_input_price, egret.Event.FOCUS_OUT, t.onFocusOut, t);
+			// t.addEvent(t.text_input_count, egret.Event.FOCUS_OUT, t.onFocusOut2, t);
+			t.addClickEvent(t.btn_allList, t.showAll, t);
+            t.addClickEvent(t.btn_myList, t.showMe, t);
 			
             t.registerNotify(NotifyConst.S_GET_MONEY_REWARD, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_MONEY_INFO, t.updateView, t);
@@ -124,10 +123,41 @@ public CN_332:eui.Label;
 			t.registerNotify(NotifyConst.S_MARKET_SELL, t.updateView, t);
 			t.registerNotify(NotifyConst.S_MARKET_CANCEL, t.updateView, t);
 			t.registerNotify(NotifyConst.S_GET_OCT_BUYGOOD_LIST, t.updateView, t);
+			t.registerNotify(NotifyConst.S_GET_MY_OCT_BUYGOOD_LIST, t.updateView, t);
 
 			LabelUtil.addInputListener(t.text_input_price, t);
 			LabelUtil.addInputListener(t.text_input_count, t);
 		}
+
+		private showAll():void
+        {
+			let t = this;
+			let pros:com.message.BuyGoodMsg[] = [];
+			if(TradeModule.instance.buyGoodsList){
+				pros = pros.concat(TradeModule.instance.buyGoodsList);
+			}
+			if(pros && pros.length > 1){
+				pros.sort((a, b)=>{
+					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
+				})
+			}
+			t._arrCollection.source = pros;
+		}
+		
+		private showMe():void
+        {
+            let t = this;
+			let pros:com.message.BuyGoodMsg[] = [];
+			if(TradeModule.instance.myBuyGoodsList){
+				pros = pros.concat(TradeModule.instance.myBuyGoodsList);
+			}
+			if(pros && pros.length > 1){
+				pros.sort((a, b)=>{
+					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
+				})
+			}
+			t._arrCollection.source = pros;
+        }
 
 		private onFocusOut(): void
 		{
@@ -180,8 +210,15 @@ public CN_332:eui.Label;
                 return;
 			}
 
-			if(price > TradeModule.instance.sysDiamonPrice){
-				TipManagerCommon.getInstance().showLanTip("CN_245");
+			let max:number = Number(ConfigManagerAft.getCommonConfig(1029));
+			if(price > TradeModule.instance.sysDiamonPrice * max){
+				TipManagerCommon.getInstance().showLanTip("CN_542");
+                return;
+			}
+
+			let min:number = Number(ConfigManagerAft.getCommonConfig(1004));
+			if(price < TradeModule.instance.sysDiamonPrice){
+				TipManagerCommon.getInstance().showLanTip("CN_542");
                 return;
 			}
 
@@ -196,22 +233,31 @@ public CN_332:eui.Label;
 		private updateView():void
 		{
             let t = this;
-			let pros:com.message.BuyGoodMsg[] = TradeModule.instance.buyGoodsList;
+			let pros:com.message.BuyGoodMsg[] = [];
+			if(TradeModule.instance.buyGoodsList){
+				pros = pros.concat(TradeModule.instance.buyGoodsList);
+			}
+			
 			let totalBuyCount:number = 0;
 			let len:number;
 			if(pros && pros.length > 0){
 				len = pros.length;
 				for(var i:number = 0; i < len;i ++){
-					totalBuyCount += Int64Util.getNumber(pros[i].moneyCount);
+					totalBuyCount += Int64Util.getNumber(pros[i].moneyCount) * pros[i].diamondPrice;
 				}
 			} else {
 				pros = [];
+			}
+			if(pros && pros.length > 1){
+				pros.sort((a, b)=>{
+					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
+				})
 			}
 			// t._arrCollection.replaceAll(pros);
 			t._arrCollection.source = pros;
 			
 			t.txt_todayPrice.text = TradeModule.instance.sysDiamonPrice + HeroModel.USDT;
-			t.txt_totalCount.text = totalBuyCount + HeroModel.USDT;
+			t.txt_totalCount.text = NumberUtil.getFloat4Number2String(totalBuyCount) + HeroModel.USDT;
 
 			let yestodayPrice:number;
 			let todayPrice:number;

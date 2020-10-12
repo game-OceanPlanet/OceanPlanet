@@ -11141,6 +11141,158 @@ $root.com = (function() {
             return S_GET_OCT_BUYGOOD_LIST;
         })();
 
+        message.C_GET_MY_OCT_BUYGOOD_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_MY_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @interface IC_GET_MY_OCT_BUYGOOD_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_MY_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MY_OCT_BUYGOOD_LIST.
+             * @implements IC_GET_MY_OCT_BUYGOOD_LIST
+             * @constructor
+             * @param {com.message.IC_GET_MY_OCT_BUYGOOD_LIST=} [properties] Properties to set
+             */
+            function C_GET_MY_OCT_BUYGOOD_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MY_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.C_GET_MY_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MY_OCT_BUYGOOD_LIST
+             * @static
+             * @param {com.message.IC_GET_MY_OCT_BUYGOOD_LIST} message C_GET_MY_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MY_OCT_BUYGOOD_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MY_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MY_OCT_BUYGOOD_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MY_OCT_BUYGOOD_LIST} C_GET_MY_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MY_OCT_BUYGOOD_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MY_OCT_BUYGOOD_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MY_OCT_BUYGOOD_LIST;
+        })();
+
+        message.S_GET_MY_OCT_BUYGOOD_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_MY_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @interface IS_GET_MY_OCT_BUYGOOD_LIST
+             * @property {Array.<com.message.IBuyGoodMsg>|null} [buyGoodMsgList] S_GET_MY_OCT_BUYGOOD_LIST buyGoodMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_MY_OCT_BUYGOOD_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MY_OCT_BUYGOOD_LIST.
+             * @implements IS_GET_MY_OCT_BUYGOOD_LIST
+             * @constructor
+             * @param {com.message.IS_GET_MY_OCT_BUYGOOD_LIST=} [properties] Properties to set
+             */
+            function S_GET_MY_OCT_BUYGOOD_LIST(properties) {
+                this.buyGoodMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MY_OCT_BUYGOOD_LIST buyGoodMsgList.
+             * @member {Array.<com.message.IBuyGoodMsg>} buyGoodMsgList
+             * @memberof com.message.S_GET_MY_OCT_BUYGOOD_LIST
+             * @instance
+             */
+            S_GET_MY_OCT_BUYGOOD_LIST.prototype.buyGoodMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_MY_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.S_GET_MY_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MY_OCT_BUYGOOD_LIST
+             * @static
+             * @param {com.message.IS_GET_MY_OCT_BUYGOOD_LIST} message S_GET_MY_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MY_OCT_BUYGOOD_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.buyGoodMsgList != null && message.buyGoodMsgList.length)
+                    for (var i = 0; i < message.buyGoodMsgList.length; ++i)
+                        $root.com.message.BuyGoodMsg.encode(message.buyGoodMsgList[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MY_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MY_OCT_BUYGOOD_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MY_OCT_BUYGOOD_LIST} S_GET_MY_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MY_OCT_BUYGOOD_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MY_OCT_BUYGOOD_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 4:
+                        if (!(message.buyGoodMsgList && message.buyGoodMsgList.length))
+                            message.buyGoodMsgList = [];
+                        message.buyGoodMsgList.push($root.com.message.BuyGoodMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MY_OCT_BUYGOOD_LIST;
+        })();
+
         message.C_MARKET_BUY = (function() {
 
             /**
@@ -11785,6 +11937,8 @@ $root.com = (function() {
              * @property {number} S_MARKET_CANCEL=1108 S_MARKET_CANCEL value
              * @property {number} C_GET_OCT_BUYGOOD_LIST=1109 C_GET_OCT_BUYGOOD_LIST value
              * @property {number} S_GET_OCT_BUYGOOD_LIST=1110 S_GET_OCT_BUYGOOD_LIST value
+             * @property {number} C_GET_MY_OCT_BUYGOOD_LIST=1111 C_GET_MY_OCT_BUYGOOD_LIST value
+             * @property {number} S_GET_MY_OCT_BUYGOOD_LIST=1112 S_GET_MY_OCT_BUYGOOD_LIST value
              * @property {number} C_GET_MONEY_EXCHANGE_INFO=1201 C_GET_MONEY_EXCHANGE_INFO value
              * @property {number} S_GET_MONEY_EXCHANGE_INFO=1202 S_GET_MONEY_EXCHANGE_INFO value
              * @property {number} C_MONEY_EXCHANGE_KAD=1203 C_MONEY_EXCHANGE_KAD value
@@ -11902,6 +12056,8 @@ $root.com = (function() {
                 values[valuesById[1108] = "S_MARKET_CANCEL"] = 1108;
                 values[valuesById[1109] = "C_GET_OCT_BUYGOOD_LIST"] = 1109;
                 values[valuesById[1110] = "S_GET_OCT_BUYGOOD_LIST"] = 1110;
+                values[valuesById[1111] = "C_GET_MY_OCT_BUYGOOD_LIST"] = 1111;
+                values[valuesById[1112] = "S_GET_MY_OCT_BUYGOOD_LIST"] = 1112;
                 values[valuesById[1201] = "C_GET_MONEY_EXCHANGE_INFO"] = 1201;
                 values[valuesById[1202] = "S_GET_MONEY_EXCHANGE_INFO"] = 1202;
                 values[valuesById[1203] = "C_MONEY_EXCHANGE_KAD"] = 1203;

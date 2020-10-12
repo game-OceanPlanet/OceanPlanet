@@ -46,7 +46,7 @@ module qmr
             if(cfg){
 				LabelUtil.setLabelText(t.txt_title, cfg.title);
 				LabelUtil.setLabelText(t.txt_content, cfg.param);
-            }
+			}
 		}
 
 		public dispose(): void

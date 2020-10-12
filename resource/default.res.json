@@ -193,7 +193,7 @@
 			"url": "sheet/trade.json",
 			"type": "sheet",
 			"name": "trade_json",
-			"subkeys": "btn_help,btn_recharge,btn_red2,btn_tixian,button_img,exchange_title_img,hengtiao,image_kuang1,img_kuang2,img_merge,img_merge_jiantou,input_img,input_img2,kuang_img,kuang_img2,liet_item,list_bg,list_bg2,list_kuang,list_title,mask_bg,panel_bg,panel_bg2,zhuzi,zhuziditu"
+			"subkeys": "btn_help,btn_recharge,btn_red2,btn_tixian,button_img,exchange_title_img,hengtiao,image_kuang1,img_kuang2,img_merge,img_merge_jiantou,img_paidui1,img_paidui2,input_img,input_img2,kuang_img,kuang_img2,liet_item,list_bg,list_bg2,list_kuang,list_title,mask_bg,panel_bg,panel_bg2,zhuzi,zhuziditu"
 		},
 		{
 			"url": "assets/ui1.png",

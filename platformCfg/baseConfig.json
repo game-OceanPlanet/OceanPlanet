@@ -27,7 +27,7 @@
 	"isShowNotice":1,
 	"max_hw_ratio":2.16,
 	"min_hw_ratio":1.333,
-	"connectAddress":"ws://www.siychina.com/s1",
+	"connectAddress":"ws://www.szare.cn/s1",
 	"GameId":1,
 	"InviteAddress":"http://www.szare.cn/ocp/game.html",
 	"AppDownAddress":"http://www.szare.cn/app/6830372.apk"

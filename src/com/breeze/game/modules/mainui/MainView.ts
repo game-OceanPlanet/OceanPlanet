@@ -234,6 +234,7 @@ public img_name_help:eui.Image;
             ModuleManager.showModule(ModuleNameConst.TRADE_VIEW);
             TradeController.instance.requestOTCInfo();
             TradeController.instance.requestOTCList();
+            TradeController.instance.requestMyOTCList();
         }
 
         //查看宠物面板

@@ -5120,6 +5120,76 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCT_BUYGOOD_LIST;
         }
 
+        /** Properties of a C_GET_MY_OCT_BUYGOOD_LIST. */
+        interface IC_GET_MY_OCT_BUYGOOD_LIST {
+        }
+
+        /** Represents a C_GET_MY_OCT_BUYGOOD_LIST. */
+        class C_GET_MY_OCT_BUYGOOD_LIST implements IC_GET_MY_OCT_BUYGOOD_LIST {
+
+            /**
+             * Constructs a new C_GET_MY_OCT_BUYGOOD_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MY_OCT_BUYGOOD_LIST);
+
+            /**
+             * Encodes the specified C_GET_MY_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.C_GET_MY_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @param message C_GET_MY_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MY_OCT_BUYGOOD_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MY_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MY_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MY_OCT_BUYGOOD_LIST;
+        }
+
+        /** Properties of a S_GET_MY_OCT_BUYGOOD_LIST. */
+        interface IS_GET_MY_OCT_BUYGOOD_LIST {
+
+            /** S_GET_MY_OCT_BUYGOOD_LIST buyGoodMsgList */
+            buyGoodMsgList?: (com.message.IBuyGoodMsg[]|null);
+        }
+
+        /** Represents a S_GET_MY_OCT_BUYGOOD_LIST. */
+        class S_GET_MY_OCT_BUYGOOD_LIST implements IS_GET_MY_OCT_BUYGOOD_LIST {
+
+            /**
+             * Constructs a new S_GET_MY_OCT_BUYGOOD_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MY_OCT_BUYGOOD_LIST);
+
+            /** S_GET_MY_OCT_BUYGOOD_LIST buyGoodMsgList. */
+            public buyGoodMsgList: com.message.IBuyGoodMsg[];
+
+            /**
+             * Encodes the specified S_GET_MY_OCT_BUYGOOD_LIST message. Does not implicitly {@link com.message.S_GET_MY_OCT_BUYGOOD_LIST.verify|verify} messages.
+             * @param message S_GET_MY_OCT_BUYGOOD_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MY_OCT_BUYGOOD_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MY_OCT_BUYGOOD_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MY_OCT_BUYGOOD_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MY_OCT_BUYGOOD_LIST;
+        }
+
         /** Properties of a C_MARKET_BUY. */
         interface IC_MARKET_BUY {
 
@@ -5450,6 +5520,8 @@ declare namespace com {
                 S_MARKET_CANCEL = 1108,
                 C_GET_OCT_BUYGOOD_LIST = 1109,
                 S_GET_OCT_BUYGOOD_LIST = 1110,
+                C_GET_MY_OCT_BUYGOOD_LIST = 1111,
+                S_GET_MY_OCT_BUYGOOD_LIST = 1112,
                 C_GET_MONEY_EXCHANGE_INFO = 1201,
                 S_GET_MONEY_EXCHANGE_INFO = 1202,
                 C_MONEY_EXCHANGE_KAD = 1203,
