@@ -240,14 +240,14 @@ public CN_332:eui.Label;
 			
 			let totalBuyCount:number = 0;
 			let len:number;
-			if(pros && pros.length > 0){
-				len = pros.length;
-				for(var i:number = 0; i < len;i ++){
-					totalBuyCount += Int64Util.getNumber(pros[i].moneyCount) * pros[i].diamondPrice;
-				}
-			} else {
-				pros = [];
-			}
+			// if(pros && pros.length > 0){
+			// 	len = pros.length;
+			// 	for(var i:number = 0; i < len;i ++){
+			// 		totalBuyCount += Int64Util.getNumber(pros[i].moneyCount) * pros[i].diamondPrice;
+			// 	}
+			// } else {
+			// 	pros = [];
+			// }
 			if(pros && pros.length > 1){
 				pros.sort((a, b)=>{
 					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
@@ -257,7 +257,8 @@ public CN_332:eui.Label;
 			t._arrCollection.source = pros;
 			
 			t.txt_todayPrice.text = TradeModule.instance.sysDiamonPrice + HeroModel.USDT;
-			t.txt_totalCount.text = NumberUtil.getFloat4Number2String(totalBuyCount) + HeroModel.USDT;
+			// t.txt_totalCount.text = NumberUtil.getFloat4Number2String(totalBuyCount) + HeroModel.USDT;
+			t.txt_totalCount.text = NumberUtil.getFloat4Number2String(TradeModule.instance.allDiamond) + HeroModel.USDT;
 
 			let yestodayPrice:number;
 			let todayPrice:number;

@@ -2,6 +2,7 @@ module qmr {
     export class TradeModule extends BaseModel {
         public sysDiamonPrice: number = 0;//今日系统U的指导价
         public historyPrices: com.message.HistoryPriceMsg[];//系统指导价历史信息
+        public allDiamond:number;//求购U的总值
         public buyGoodsList: com.message.BuyGoodMsg[];//OCT求购信息
         public myBuyGoodsList: com.message.BuyGoodMsg[];//OCT求购信息
 
@@ -104,6 +105,12 @@ module qmr {
                 case TradeTypeEnum.DOLPHIN_HATCH_COST_U:
                     msg = "CN_276"//"孵化海豚，消耗U"
                     break;
+                case TradeTypeEnum.CASH_OUT_COST_U:
+                    msg = "CN_260"//"提现，消耗u"
+                    break;
+                case TradeTypeEnum.CASH_OUT_REFUSE_GOT_U:
+                    msg = "CN_543"//"玩家提现被拒绝，返还U和手续费，获得U"
+                    break;
                 case TradeTypeEnum.EXCHANGE_GOT_KAD:
                     msg = "CN_277"//"KAD-用金币兑换KAD，得到KAD"
                     break;
@@ -132,6 +139,9 @@ module qmr {
                 case TradeTypeEnum.DOLPHIN_EXCHANGE_GOT_COUNT:
                     msg = "CN_285"//"用海豚金币兑换， 获得领养名额"
                     break;
+                case TradeTypeEnum.DOLPHIN_TEAM_BUY_GOT_BUY_COUNT:
+                    msg = "CN_267"//"非直推下级购买海豚, 团队用户获得领养名额"
+                    break;
                 case TradeTypeEnum.DOLPHIN_EXCHANGE_COST_MONEY:
                     msg = "CN_286"//"用海豚金币兑换领养名额, 消耗海豚金币"
                     break;
@@ -141,8 +151,20 @@ module qmr {
                 case TradeTypeEnum.DOLPHIN_SIGN_IN_GOT_MONEY:
                     msg = "CN_288"//"签到, 获得海豚金币"
                     break;
+                case TradeTypeEnum.DOLPHIN_DIRECT_BUY_GOT_MONEY:
+                    msg = "CN_266"//"下级购买海豚, 直推用户获得海豚金币"
+                    break;
                 case TradeTypeEnum.DOLPHIN_SPEED_COST_SPEED_COUNT:
                     msg = "CN_289"//"加速海豚状态, 消耗加速积分"
+                    break;
+                case TradeTypeEnum.DOLPHIN_DIRECT_BUY_GOT_SPEED_COUNT:
+                    msg = "CN_266"//"直推下级购买海豚, 直推用户获得加速积分"
+                    break;
+                case TradeTypeEnum.DOLPHIN_TEAM_BUY_GOT_SPEED_COUNT:
+                    msg = "CN_267"//"非直推下级购买海豚, 团队用户获得加速积分"
+                    break;
+                case TradeTypeEnum.ADMIN_CURRENCY_OPERATION:
+                    msg = "CN_297"//"非直推下级购买海豚, 团队用户获得加速积分"
                     break;
             }
             if(msg){
@@ -181,7 +203,7 @@ module qmr {
                 id = "CN_297";
             }
 
-            else if(id){
+            if(id){
                 return LabelUtil.getCNMessage(id);
             }
             return "";

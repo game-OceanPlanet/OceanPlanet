@@ -25,6 +25,7 @@ message C_GET_OCT_MARKET_INFO {
 //S->C 响应: 获取otc信息
 message S_GET_OCT_MARKET_INFO {
 	double sysDiamondPrice = 1;									//今日系统U的指导价
+	double allDiamond = 2;									//求购U的总值
 	repeated HistoryPriceMsg historyPriceMsgList = 3;		//系统指导价历史信息
 }
 

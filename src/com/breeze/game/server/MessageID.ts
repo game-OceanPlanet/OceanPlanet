@@ -147,6 +147,25 @@ module qmr {
 		/** 提现 */
 		public static C_CASH_OUT_APPLY:number = 1505;
 		public static S_CASH_OUT_APPLY:number = 1506;
+		/**  获取全局配置 */
+		public static C_GET_SYS_CONFIG:number = 1601;  
+		public static S_GET_SYS_CONFIG:number = 1602;
+		public static S_SYNC_SYS_CONFIG:number = 1603;
+		public static C_GET_DIRECT_RATE_CONFIG:number = 1605;
+		public static S_GET_DIRECT_RATE_CONFIG:number = 1606;
+		public static S_SYNC_DIRECT_RATE_CONFIG:number = 1607;
+		public static C_GET_FISH_CONFIG:number = 1609;
+		public static S_GET_FISH_CONFIG:number = 1610;
+		public static S_SYNC_FISH_CONFIG:number = 1611;
+		public static C_GET_INJECT_CYCLE_CONFIG:number = 1613;
+		public static S_GET_INJECT_CYCLE_CONFIG:number = 1614;
+		public static S_SYNC_INJECT_CYCLE_CONFIG:number = 1615;
+		public static C_GET_TEAM_RATE_CONFIG:number = 1617;
+		public static S_GET_TEAM_RATE_CONFIG:number = 1618;
+		public static S_SYNC_TEAM_RATE_CONFIG:number = 1619;
+		public static C_GET_TRADE_RATE_CONFIG:number = 1621;
+		public static S_GET_TRADE_RATE_CONFIG:number = 1622;
+		public static S_SYNC_TRADE_RATE_CONFIG:number = 1623;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */

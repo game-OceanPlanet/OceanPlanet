@@ -679,6 +679,2268 @@ $root.com = (function() {
             return ItemListMsg;
         })();
 
+        message.SysConfigMsg = (function() {
+
+            /**
+             * Properties of a SysConfigMsg.
+             * @memberof com.message
+             * @interface ISysConfigMsg
+             * @property {number|Long|null} [id] SysConfigMsg id
+             * @property {string|null} [param] SysConfigMsg param
+             * @property {string|null} [srcDec] SysConfigMsg srcDec
+             */
+
+            /**
+             * Constructs a new SysConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents a SysConfigMsg.
+             * @implements ISysConfigMsg
+             * @constructor
+             * @param {com.message.ISysConfigMsg=} [properties] Properties to set
+             */
+            function SysConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SysConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.SysConfigMsg
+             * @instance
+             */
+            SysConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * SysConfigMsg param.
+             * @member {string} param
+             * @memberof com.message.SysConfigMsg
+             * @instance
+             */
+            SysConfigMsg.prototype.param = "";
+
+            /**
+             * SysConfigMsg srcDec.
+             * @member {string} srcDec
+             * @memberof com.message.SysConfigMsg
+             * @instance
+             */
+            SysConfigMsg.prototype.srcDec = "";
+
+            /**
+             * Encodes the specified SysConfigMsg message. Does not implicitly {@link com.message.SysConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.SysConfigMsg
+             * @static
+             * @param {com.message.ISysConfigMsg} message SysConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SysConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.param != null && message.hasOwnProperty("param"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.param);
+                if (message.srcDec != null && message.hasOwnProperty("srcDec"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.srcDec);
+                return writer;
+            };
+
+            /**
+             * Decodes a SysConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.SysConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.SysConfigMsg} SysConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SysConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.SysConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.param = reader.string();
+                        break;
+                    case 3:
+                        message.srcDec = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return SysConfigMsg;
+        })();
+
+        message.C_GET_SYS_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_SYS_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_SYS_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_SYS_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_SYS_CONFIG.
+             * @implements IC_GET_SYS_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_SYS_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_SYS_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_SYS_CONFIG message. Does not implicitly {@link com.message.C_GET_SYS_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_SYS_CONFIG
+             * @static
+             * @param {com.message.IC_GET_SYS_CONFIG} message C_GET_SYS_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_SYS_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_SYS_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_SYS_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_SYS_CONFIG} C_GET_SYS_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_SYS_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_SYS_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_SYS_CONFIG;
+        })();
+
+        message.S_GET_SYS_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_SYS_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_SYS_CONFIG
+             * @property {Array.<com.message.ISysConfigMsg>|null} [sysConfigMsgList] S_GET_SYS_CONFIG sysConfigMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_SYS_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_SYS_CONFIG.
+             * @implements IS_GET_SYS_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_SYS_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_SYS_CONFIG(properties) {
+                this.sysConfigMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_SYS_CONFIG sysConfigMsgList.
+             * @member {Array.<com.message.ISysConfigMsg>} sysConfigMsgList
+             * @memberof com.message.S_GET_SYS_CONFIG
+             * @instance
+             */
+            S_GET_SYS_CONFIG.prototype.sysConfigMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_SYS_CONFIG message. Does not implicitly {@link com.message.S_GET_SYS_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_SYS_CONFIG
+             * @static
+             * @param {com.message.IS_GET_SYS_CONFIG} message S_GET_SYS_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_SYS_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sysConfigMsgList != null && message.sysConfigMsgList.length)
+                    for (var i = 0; i < message.sysConfigMsgList.length; ++i)
+                        $root.com.message.SysConfigMsg.encode(message.sysConfigMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_SYS_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_SYS_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_SYS_CONFIG} S_GET_SYS_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_SYS_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_SYS_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.sysConfigMsgList && message.sysConfigMsgList.length))
+                            message.sysConfigMsgList = [];
+                        message.sysConfigMsgList.push($root.com.message.SysConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_SYS_CONFIG;
+        })();
+
+        message.S_SYNC_SYS_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_SYS_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_SYS_CONFIG
+             * @property {com.message.ISysConfigMsg|null} [sysConfigMsg] S_SYNC_SYS_CONFIG sysConfigMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_SYS_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_SYS_CONFIG.
+             * @implements IS_SYNC_SYS_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_SYS_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_SYS_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_SYS_CONFIG sysConfigMsg.
+             * @member {com.message.ISysConfigMsg|null|undefined} sysConfigMsg
+             * @memberof com.message.S_SYNC_SYS_CONFIG
+             * @instance
+             */
+            S_SYNC_SYS_CONFIG.prototype.sysConfigMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_SYS_CONFIG message. Does not implicitly {@link com.message.S_SYNC_SYS_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_SYS_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_SYS_CONFIG} message S_SYNC_SYS_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_SYS_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sysConfigMsg != null && message.hasOwnProperty("sysConfigMsg"))
+                    $root.com.message.SysConfigMsg.encode(message.sysConfigMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_SYS_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_SYS_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_SYS_CONFIG} S_SYNC_SYS_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_SYS_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_SYS_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.sysConfigMsg = $root.com.message.SysConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_SYS_CONFIG;
+        })();
+
+        message.DirectRateConfigMsg = (function() {
+
+            /**
+             * Properties of a DirectRateConfigMsg.
+             * @memberof com.message
+             * @interface IDirectRateConfigMsg
+             * @property {number|Long|null} [id] DirectRateConfigMsg id
+             * @property {number|null} [count] DirectRateConfigMsg count
+             * @property {number|null} [precent] DirectRateConfigMsg precent
+             * @property {string|null} [dec] DirectRateConfigMsg dec
+             */
+
+            /**
+             * Constructs a new DirectRateConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents a DirectRateConfigMsg.
+             * @implements IDirectRateConfigMsg
+             * @constructor
+             * @param {com.message.IDirectRateConfigMsg=} [properties] Properties to set
+             */
+            function DirectRateConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DirectRateConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.DirectRateConfigMsg
+             * @instance
+             */
+            DirectRateConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * DirectRateConfigMsg count.
+             * @member {number} count
+             * @memberof com.message.DirectRateConfigMsg
+             * @instance
+             */
+            DirectRateConfigMsg.prototype.count = 0;
+
+            /**
+             * DirectRateConfigMsg precent.
+             * @member {number} precent
+             * @memberof com.message.DirectRateConfigMsg
+             * @instance
+             */
+            DirectRateConfigMsg.prototype.precent = 0;
+
+            /**
+             * DirectRateConfigMsg dec.
+             * @member {string} dec
+             * @memberof com.message.DirectRateConfigMsg
+             * @instance
+             */
+            DirectRateConfigMsg.prototype.dec = "";
+
+            /**
+             * Encodes the specified DirectRateConfigMsg message. Does not implicitly {@link com.message.DirectRateConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.DirectRateConfigMsg
+             * @static
+             * @param {com.message.IDirectRateConfigMsg} message DirectRateConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DirectRateConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.count != null && message.hasOwnProperty("count"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.count);
+                if (message.precent != null && message.hasOwnProperty("precent"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.precent);
+                if (message.dec != null && message.hasOwnProperty("dec"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dec);
+                return writer;
+            };
+
+            /**
+             * Decodes a DirectRateConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.DirectRateConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.DirectRateConfigMsg} DirectRateConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DirectRateConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.DirectRateConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.count = reader.int32();
+                        break;
+                    case 3:
+                        message.precent = reader.double();
+                        break;
+                    case 4:
+                        message.dec = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return DirectRateConfigMsg;
+        })();
+
+        message.C_GET_DIRECT_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_DIRECT_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_DIRECT_RATE_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_DIRECT_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_DIRECT_RATE_CONFIG.
+             * @implements IC_GET_DIRECT_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_DIRECT_RATE_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_DIRECT_RATE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_DIRECT_RATE_CONFIG message. Does not implicitly {@link com.message.C_GET_DIRECT_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_DIRECT_RATE_CONFIG
+             * @static
+             * @param {com.message.IC_GET_DIRECT_RATE_CONFIG} message C_GET_DIRECT_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_DIRECT_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_DIRECT_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_DIRECT_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_DIRECT_RATE_CONFIG} C_GET_DIRECT_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_DIRECT_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_DIRECT_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_DIRECT_RATE_CONFIG;
+        })();
+
+        message.S_GET_DIRECT_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_DIRECT_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_DIRECT_RATE_CONFIG
+             * @property {Array.<com.message.IDirectRateConfigMsg>|null} [configMsgList] S_GET_DIRECT_RATE_CONFIG configMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_DIRECT_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_DIRECT_RATE_CONFIG.
+             * @implements IS_GET_DIRECT_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_DIRECT_RATE_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_DIRECT_RATE_CONFIG(properties) {
+                this.configMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_DIRECT_RATE_CONFIG configMsgList.
+             * @member {Array.<com.message.IDirectRateConfigMsg>} configMsgList
+             * @memberof com.message.S_GET_DIRECT_RATE_CONFIG
+             * @instance
+             */
+            S_GET_DIRECT_RATE_CONFIG.prototype.configMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_DIRECT_RATE_CONFIG message. Does not implicitly {@link com.message.S_GET_DIRECT_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_DIRECT_RATE_CONFIG
+             * @static
+             * @param {com.message.IS_GET_DIRECT_RATE_CONFIG} message S_GET_DIRECT_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_DIRECT_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsgList != null && message.configMsgList.length)
+                    for (var i = 0; i < message.configMsgList.length; ++i)
+                        $root.com.message.DirectRateConfigMsg.encode(message.configMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_DIRECT_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_DIRECT_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_DIRECT_RATE_CONFIG} S_GET_DIRECT_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_DIRECT_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_DIRECT_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.configMsgList && message.configMsgList.length))
+                            message.configMsgList = [];
+                        message.configMsgList.push($root.com.message.DirectRateConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_DIRECT_RATE_CONFIG;
+        })();
+
+        message.S_SYNC_DIRECT_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_DIRECT_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_DIRECT_RATE_CONFIG
+             * @property {com.message.IDirectRateConfigMsg|null} [configMsg] S_SYNC_DIRECT_RATE_CONFIG configMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_DIRECT_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_DIRECT_RATE_CONFIG.
+             * @implements IS_SYNC_DIRECT_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_DIRECT_RATE_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_DIRECT_RATE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_DIRECT_RATE_CONFIG configMsg.
+             * @member {com.message.IDirectRateConfigMsg|null|undefined} configMsg
+             * @memberof com.message.S_SYNC_DIRECT_RATE_CONFIG
+             * @instance
+             */
+            S_SYNC_DIRECT_RATE_CONFIG.prototype.configMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_DIRECT_RATE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_DIRECT_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_DIRECT_RATE_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_DIRECT_RATE_CONFIG} message S_SYNC_DIRECT_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_DIRECT_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsg != null && message.hasOwnProperty("configMsg"))
+                    $root.com.message.DirectRateConfigMsg.encode(message.configMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_DIRECT_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_DIRECT_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_DIRECT_RATE_CONFIG} S_SYNC_DIRECT_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_DIRECT_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_DIRECT_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.configMsg = $root.com.message.DirectRateConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_DIRECT_RATE_CONFIG;
+        })();
+
+        message.FishConfigMsg = (function() {
+
+            /**
+             * Properties of a FishConfigMsg.
+             * @memberof com.message
+             * @interface IFishConfigMsg
+             * @property {number|Long|null} [id] FishConfigMsg id
+             * @property {string|null} [name] FishConfigMsg name
+             * @property {number|null} [level] FishConfigMsg level
+             * @property {number|null} [limitTime] FishConfigMsg limitTime
+             * @property {number|null} [monthly] FishConfigMsg monthly
+             * @property {number|Long|null} [produce] FishConfigMsg produce
+             * @property {number|null} [directPerson] FishConfigMsg directPerson
+             * @property {number|null} [teamPerson] FishConfigMsg teamPerson
+             * @property {number|null} [ubuyPrice] FishConfigMsg ubuyPrice
+             * @property {number|null} [ubuyLimit] FishConfigMsg ubuyLimit
+             * @property {number|null} [ubuyStar] FishConfigMsg ubuyStar
+             * @property {number|null} [price] FishConfigMsg price
+             */
+
+            /**
+             * Constructs a new FishConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents a FishConfigMsg.
+             * @implements IFishConfigMsg
+             * @constructor
+             * @param {com.message.IFishConfigMsg=} [properties] Properties to set
+             */
+            function FishConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FishConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * FishConfigMsg name.
+             * @member {string} name
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.name = "";
+
+            /**
+             * FishConfigMsg level.
+             * @member {number} level
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.level = 0;
+
+            /**
+             * FishConfigMsg limitTime.
+             * @member {number} limitTime
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.limitTime = 0;
+
+            /**
+             * FishConfigMsg monthly.
+             * @member {number} monthly
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.monthly = 0;
+
+            /**
+             * FishConfigMsg produce.
+             * @member {number|Long} produce
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.produce = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * FishConfigMsg directPerson.
+             * @member {number} directPerson
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.directPerson = 0;
+
+            /**
+             * FishConfigMsg teamPerson.
+             * @member {number} teamPerson
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.teamPerson = 0;
+
+            /**
+             * FishConfigMsg ubuyPrice.
+             * @member {number} ubuyPrice
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.ubuyPrice = 0;
+
+            /**
+             * FishConfigMsg ubuyLimit.
+             * @member {number} ubuyLimit
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.ubuyLimit = 0;
+
+            /**
+             * FishConfigMsg ubuyStar.
+             * @member {number} ubuyStar
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.ubuyStar = 0;
+
+            /**
+             * FishConfigMsg price.
+             * @member {number} price
+             * @memberof com.message.FishConfigMsg
+             * @instance
+             */
+            FishConfigMsg.prototype.price = 0;
+
+            /**
+             * Encodes the specified FishConfigMsg message. Does not implicitly {@link com.message.FishConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.FishConfigMsg
+             * @static
+             * @param {com.message.IFishConfigMsg} message FishConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FishConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                if (message.level != null && message.hasOwnProperty("level"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.level);
+                if (message.limitTime != null && message.hasOwnProperty("limitTime"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.limitTime);
+                if (message.monthly != null && message.hasOwnProperty("monthly"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.monthly);
+                if (message.produce != null && message.hasOwnProperty("produce"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int64(message.produce);
+                if (message.directPerson != null && message.hasOwnProperty("directPerson"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.directPerson);
+                if (message.teamPerson != null && message.hasOwnProperty("teamPerson"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int32(message.teamPerson);
+                if (message.ubuyPrice != null && message.hasOwnProperty("ubuyPrice"))
+                    writer.uint32(/* id 9, wireType 1 =*/73).double(message.ubuyPrice);
+                if (message.ubuyLimit != null && message.hasOwnProperty("ubuyLimit"))
+                    writer.uint32(/* id 10, wireType 0 =*/80).int32(message.ubuyLimit);
+                if (message.ubuyStar != null && message.hasOwnProperty("ubuyStar"))
+                    writer.uint32(/* id 11, wireType 0 =*/88).int32(message.ubuyStar);
+                if (message.price != null && message.hasOwnProperty("price"))
+                    writer.uint32(/* id 12, wireType 0 =*/96).int32(message.price);
+                return writer;
+            };
+
+            /**
+             * Decodes a FishConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.FishConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.FishConfigMsg} FishConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FishConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.FishConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.name = reader.string();
+                        break;
+                    case 3:
+                        message.level = reader.int32();
+                        break;
+                    case 4:
+                        message.limitTime = reader.int32();
+                        break;
+                    case 5:
+                        message.monthly = reader.int32();
+                        break;
+                    case 6:
+                        message.produce = reader.int64();
+                        break;
+                    case 7:
+                        message.directPerson = reader.int32();
+                        break;
+                    case 8:
+                        message.teamPerson = reader.int32();
+                        break;
+                    case 9:
+                        message.ubuyPrice = reader.double();
+                        break;
+                    case 10:
+                        message.ubuyLimit = reader.int32();
+                        break;
+                    case 11:
+                        message.ubuyStar = reader.int32();
+                        break;
+                    case 12:
+                        message.price = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return FishConfigMsg;
+        })();
+
+        message.C_GET_FISH_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_FISH_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_FISH_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_FISH_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_FISH_CONFIG.
+             * @implements IC_GET_FISH_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_FISH_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_FISH_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_FISH_CONFIG message. Does not implicitly {@link com.message.C_GET_FISH_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_FISH_CONFIG
+             * @static
+             * @param {com.message.IC_GET_FISH_CONFIG} message C_GET_FISH_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_FISH_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_FISH_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_FISH_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_FISH_CONFIG} C_GET_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_FISH_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_FISH_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_FISH_CONFIG;
+        })();
+
+        message.S_GET_FISH_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_FISH_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_FISH_CONFIG
+             * @property {Array.<com.message.IFishConfigMsg>|null} [configMsgList] S_GET_FISH_CONFIG configMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_FISH_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_FISH_CONFIG.
+             * @implements IS_GET_FISH_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_FISH_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_FISH_CONFIG(properties) {
+                this.configMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_FISH_CONFIG configMsgList.
+             * @member {Array.<com.message.IFishConfigMsg>} configMsgList
+             * @memberof com.message.S_GET_FISH_CONFIG
+             * @instance
+             */
+            S_GET_FISH_CONFIG.prototype.configMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_FISH_CONFIG message. Does not implicitly {@link com.message.S_GET_FISH_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_FISH_CONFIG
+             * @static
+             * @param {com.message.IS_GET_FISH_CONFIG} message S_GET_FISH_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_FISH_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsgList != null && message.configMsgList.length)
+                    for (var i = 0; i < message.configMsgList.length; ++i)
+                        $root.com.message.FishConfigMsg.encode(message.configMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_FISH_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_FISH_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_FISH_CONFIG} S_GET_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_FISH_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_FISH_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.configMsgList && message.configMsgList.length))
+                            message.configMsgList = [];
+                        message.configMsgList.push($root.com.message.FishConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_FISH_CONFIG;
+        })();
+
+        message.S_SYNC_FISH_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_FISH_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_FISH_CONFIG
+             * @property {com.message.IFishConfigMsg|null} [configMsg] S_SYNC_FISH_CONFIG configMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_FISH_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_FISH_CONFIG.
+             * @implements IS_SYNC_FISH_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_FISH_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_FISH_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_FISH_CONFIG configMsg.
+             * @member {com.message.IFishConfigMsg|null|undefined} configMsg
+             * @memberof com.message.S_SYNC_FISH_CONFIG
+             * @instance
+             */
+            S_SYNC_FISH_CONFIG.prototype.configMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_FISH_CONFIG message. Does not implicitly {@link com.message.S_SYNC_FISH_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_FISH_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_FISH_CONFIG} message S_SYNC_FISH_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_FISH_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsg != null && message.hasOwnProperty("configMsg"))
+                    $root.com.message.FishConfigMsg.encode(message.configMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_FISH_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_FISH_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_FISH_CONFIG} S_SYNC_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_FISH_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_FISH_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.configMsg = $root.com.message.FishConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_FISH_CONFIG;
+        })();
+
+        message.InjectCycleConfigMsg = (function() {
+
+            /**
+             * Properties of an InjectCycleConfigMsg.
+             * @memberof com.message
+             * @interface IInjectCycleConfigMsg
+             * @property {number|Long|null} [id] InjectCycleConfigMsg id
+             * @property {number|null} [cycle] InjectCycleConfigMsg cycle
+             * @property {number|null} [weights] InjectCycleConfigMsg weights
+             * @property {string|null} [dec] InjectCycleConfigMsg dec
+             */
+
+            /**
+             * Constructs a new InjectCycleConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents an InjectCycleConfigMsg.
+             * @implements IInjectCycleConfigMsg
+             * @constructor
+             * @param {com.message.IInjectCycleConfigMsg=} [properties] Properties to set
+             */
+            function InjectCycleConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * InjectCycleConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.InjectCycleConfigMsg
+             * @instance
+             */
+            InjectCycleConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * InjectCycleConfigMsg cycle.
+             * @member {number} cycle
+             * @memberof com.message.InjectCycleConfigMsg
+             * @instance
+             */
+            InjectCycleConfigMsg.prototype.cycle = 0;
+
+            /**
+             * InjectCycleConfigMsg weights.
+             * @member {number} weights
+             * @memberof com.message.InjectCycleConfigMsg
+             * @instance
+             */
+            InjectCycleConfigMsg.prototype.weights = 0;
+
+            /**
+             * InjectCycleConfigMsg dec.
+             * @member {string} dec
+             * @memberof com.message.InjectCycleConfigMsg
+             * @instance
+             */
+            InjectCycleConfigMsg.prototype.dec = "";
+
+            /**
+             * Encodes the specified InjectCycleConfigMsg message. Does not implicitly {@link com.message.InjectCycleConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.InjectCycleConfigMsg
+             * @static
+             * @param {com.message.IInjectCycleConfigMsg} message InjectCycleConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            InjectCycleConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.cycle != null && message.hasOwnProperty("cycle"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.cycle);
+                if (message.weights != null && message.hasOwnProperty("weights"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.weights);
+                if (message.dec != null && message.hasOwnProperty("dec"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dec);
+                return writer;
+            };
+
+            /**
+             * Decodes an InjectCycleConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.InjectCycleConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.InjectCycleConfigMsg} InjectCycleConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            InjectCycleConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.InjectCycleConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.cycle = reader.int32();
+                        break;
+                    case 3:
+                        message.weights = reader.double();
+                        break;
+                    case 4:
+                        message.dec = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return InjectCycleConfigMsg;
+        })();
+
+        message.C_GET_INJECT_CYCLE_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_INJECT_CYCLE_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_INJECT_CYCLE_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_INJECT_CYCLE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_INJECT_CYCLE_CONFIG.
+             * @implements IC_GET_INJECT_CYCLE_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_INJECT_CYCLE_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_INJECT_CYCLE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_INJECT_CYCLE_CONFIG message. Does not implicitly {@link com.message.C_GET_INJECT_CYCLE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_INJECT_CYCLE_CONFIG
+             * @static
+             * @param {com.message.IC_GET_INJECT_CYCLE_CONFIG} message C_GET_INJECT_CYCLE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_INJECT_CYCLE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_INJECT_CYCLE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_INJECT_CYCLE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_INJECT_CYCLE_CONFIG} C_GET_INJECT_CYCLE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_INJECT_CYCLE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_INJECT_CYCLE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_INJECT_CYCLE_CONFIG;
+        })();
+
+        message.S_GET_INJECT_CYCLE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_INJECT_CYCLE_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_INJECT_CYCLE_CONFIG
+             * @property {Array.<com.message.IInjectCycleConfigMsg>|null} [configMsgList] S_GET_INJECT_CYCLE_CONFIG configMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_INJECT_CYCLE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_INJECT_CYCLE_CONFIG.
+             * @implements IS_GET_INJECT_CYCLE_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_INJECT_CYCLE_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_INJECT_CYCLE_CONFIG(properties) {
+                this.configMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_INJECT_CYCLE_CONFIG configMsgList.
+             * @member {Array.<com.message.IInjectCycleConfigMsg>} configMsgList
+             * @memberof com.message.S_GET_INJECT_CYCLE_CONFIG
+             * @instance
+             */
+            S_GET_INJECT_CYCLE_CONFIG.prototype.configMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_INJECT_CYCLE_CONFIG message. Does not implicitly {@link com.message.S_GET_INJECT_CYCLE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_INJECT_CYCLE_CONFIG
+             * @static
+             * @param {com.message.IS_GET_INJECT_CYCLE_CONFIG} message S_GET_INJECT_CYCLE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_INJECT_CYCLE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsgList != null && message.configMsgList.length)
+                    for (var i = 0; i < message.configMsgList.length; ++i)
+                        $root.com.message.InjectCycleConfigMsg.encode(message.configMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_INJECT_CYCLE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_INJECT_CYCLE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_INJECT_CYCLE_CONFIG} S_GET_INJECT_CYCLE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_INJECT_CYCLE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_INJECT_CYCLE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.configMsgList && message.configMsgList.length))
+                            message.configMsgList = [];
+                        message.configMsgList.push($root.com.message.InjectCycleConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_INJECT_CYCLE_CONFIG;
+        })();
+
+        message.S_SYNC_INJECT_CYCLE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_INJECT_CYCLE_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_INJECT_CYCLE_CONFIG
+             * @property {com.message.IInjectCycleConfigMsg|null} [configMsg] S_SYNC_INJECT_CYCLE_CONFIG configMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_INJECT_CYCLE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_INJECT_CYCLE_CONFIG.
+             * @implements IS_SYNC_INJECT_CYCLE_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_INJECT_CYCLE_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_INJECT_CYCLE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_INJECT_CYCLE_CONFIG configMsg.
+             * @member {com.message.IInjectCycleConfigMsg|null|undefined} configMsg
+             * @memberof com.message.S_SYNC_INJECT_CYCLE_CONFIG
+             * @instance
+             */
+            S_SYNC_INJECT_CYCLE_CONFIG.prototype.configMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_INJECT_CYCLE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_INJECT_CYCLE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_INJECT_CYCLE_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_INJECT_CYCLE_CONFIG} message S_SYNC_INJECT_CYCLE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_INJECT_CYCLE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsg != null && message.hasOwnProperty("configMsg"))
+                    $root.com.message.InjectCycleConfigMsg.encode(message.configMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_INJECT_CYCLE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_INJECT_CYCLE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_INJECT_CYCLE_CONFIG} S_SYNC_INJECT_CYCLE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_INJECT_CYCLE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_INJECT_CYCLE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.configMsg = $root.com.message.InjectCycleConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_INJECT_CYCLE_CONFIG;
+        })();
+
+        message.TeamRateConfigMsg = (function() {
+
+            /**
+             * Properties of a TeamRateConfigMsg.
+             * @memberof com.message
+             * @interface ITeamRateConfigMsg
+             * @property {number|Long|null} [id] TeamRateConfigMsg id
+             * @property {number|null} [allCount] TeamRateConfigMsg allCount
+             * @property {number|null} [directCount] TeamRateConfigMsg directCount
+             * @property {number|null} [otherCount] TeamRateConfigMsg otherCount
+             * @property {number|null} [precent] TeamRateConfigMsg precent
+             * @property {string|null} [dec] TeamRateConfigMsg dec
+             */
+
+            /**
+             * Constructs a new TeamRateConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents a TeamRateConfigMsg.
+             * @implements ITeamRateConfigMsg
+             * @constructor
+             * @param {com.message.ITeamRateConfigMsg=} [properties] Properties to set
+             */
+            function TeamRateConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TeamRateConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.TeamRateConfigMsg
+             * @instance
+             */
+            TeamRateConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * TeamRateConfigMsg allCount.
+             * @member {number} allCount
+             * @memberof com.message.TeamRateConfigMsg
+             * @instance
+             */
+            TeamRateConfigMsg.prototype.allCount = 0;
+
+            /**
+             * TeamRateConfigMsg directCount.
+             * @member {number} directCount
+             * @memberof com.message.TeamRateConfigMsg
+             * @instance
+             */
+            TeamRateConfigMsg.prototype.directCount = 0;
+
+            /**
+             * TeamRateConfigMsg otherCount.
+             * @member {number} otherCount
+             * @memberof com.message.TeamRateConfigMsg
+             * @instance
+             */
+            TeamRateConfigMsg.prototype.otherCount = 0;
+
+            /**
+             * TeamRateConfigMsg precent.
+             * @member {number} precent
+             * @memberof com.message.TeamRateConfigMsg
+             * @instance
+             */
+            TeamRateConfigMsg.prototype.precent = 0;
+
+            /**
+             * TeamRateConfigMsg dec.
+             * @member {string} dec
+             * @memberof com.message.TeamRateConfigMsg
+             * @instance
+             */
+            TeamRateConfigMsg.prototype.dec = "";
+
+            /**
+             * Encodes the specified TeamRateConfigMsg message. Does not implicitly {@link com.message.TeamRateConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.TeamRateConfigMsg
+             * @static
+             * @param {com.message.ITeamRateConfigMsg} message TeamRateConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TeamRateConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.allCount != null && message.hasOwnProperty("allCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.allCount);
+                if (message.directCount != null && message.hasOwnProperty("directCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.directCount);
+                if (message.otherCount != null && message.hasOwnProperty("otherCount"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.otherCount);
+                if (message.precent != null && message.hasOwnProperty("precent"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.precent);
+                if (message.dec != null && message.hasOwnProperty("dec"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.dec);
+                return writer;
+            };
+
+            /**
+             * Decodes a TeamRateConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.TeamRateConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.TeamRateConfigMsg} TeamRateConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TeamRateConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.TeamRateConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.allCount = reader.int32();
+                        break;
+                    case 3:
+                        message.directCount = reader.int32();
+                        break;
+                    case 4:
+                        message.otherCount = reader.int32();
+                        break;
+                    case 5:
+                        message.precent = reader.double();
+                        break;
+                    case 6:
+                        message.dec = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return TeamRateConfigMsg;
+        })();
+
+        message.C_GET_TEAM_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_TEAM_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_TEAM_RATE_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_TEAM_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_TEAM_RATE_CONFIG.
+             * @implements IC_GET_TEAM_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_TEAM_RATE_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_TEAM_RATE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_TEAM_RATE_CONFIG message. Does not implicitly {@link com.message.C_GET_TEAM_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_TEAM_RATE_CONFIG
+             * @static
+             * @param {com.message.IC_GET_TEAM_RATE_CONFIG} message C_GET_TEAM_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_TEAM_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_TEAM_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_TEAM_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_TEAM_RATE_CONFIG} C_GET_TEAM_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_TEAM_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_TEAM_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_TEAM_RATE_CONFIG;
+        })();
+
+        message.S_GET_TEAM_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_TEAM_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_TEAM_RATE_CONFIG
+             * @property {Array.<com.message.ITeamRateConfigMsg>|null} [configMsgList] S_GET_TEAM_RATE_CONFIG configMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_TEAM_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_TEAM_RATE_CONFIG.
+             * @implements IS_GET_TEAM_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_TEAM_RATE_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_TEAM_RATE_CONFIG(properties) {
+                this.configMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_TEAM_RATE_CONFIG configMsgList.
+             * @member {Array.<com.message.ITeamRateConfigMsg>} configMsgList
+             * @memberof com.message.S_GET_TEAM_RATE_CONFIG
+             * @instance
+             */
+            S_GET_TEAM_RATE_CONFIG.prototype.configMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_TEAM_RATE_CONFIG message. Does not implicitly {@link com.message.S_GET_TEAM_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_TEAM_RATE_CONFIG
+             * @static
+             * @param {com.message.IS_GET_TEAM_RATE_CONFIG} message S_GET_TEAM_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_TEAM_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsgList != null && message.configMsgList.length)
+                    for (var i = 0; i < message.configMsgList.length; ++i)
+                        $root.com.message.TeamRateConfigMsg.encode(message.configMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_TEAM_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_TEAM_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_TEAM_RATE_CONFIG} S_GET_TEAM_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_TEAM_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_TEAM_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.configMsgList && message.configMsgList.length))
+                            message.configMsgList = [];
+                        message.configMsgList.push($root.com.message.TeamRateConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_TEAM_RATE_CONFIG;
+        })();
+
+        message.S_SYNC_TEAM_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_TEAM_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_TEAM_RATE_CONFIG
+             * @property {com.message.ITeamRateConfigMsg|null} [configMsg] S_SYNC_TEAM_RATE_CONFIG configMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_TEAM_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_TEAM_RATE_CONFIG.
+             * @implements IS_SYNC_TEAM_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_TEAM_RATE_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_TEAM_RATE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_TEAM_RATE_CONFIG configMsg.
+             * @member {com.message.ITeamRateConfigMsg|null|undefined} configMsg
+             * @memberof com.message.S_SYNC_TEAM_RATE_CONFIG
+             * @instance
+             */
+            S_SYNC_TEAM_RATE_CONFIG.prototype.configMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_TEAM_RATE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_TEAM_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_TEAM_RATE_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_TEAM_RATE_CONFIG} message S_SYNC_TEAM_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_TEAM_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsg != null && message.hasOwnProperty("configMsg"))
+                    $root.com.message.TeamRateConfigMsg.encode(message.configMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_TEAM_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_TEAM_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_TEAM_RATE_CONFIG} S_SYNC_TEAM_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_TEAM_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_TEAM_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.configMsg = $root.com.message.TeamRateConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_TEAM_RATE_CONFIG;
+        })();
+
+        message.TradeCostConfigMsg = (function() {
+
+            /**
+             * Properties of a TradeCostConfigMsg.
+             * @memberof com.message
+             * @interface ITradeCostConfigMsg
+             * @property {number|Long|null} [id] TradeCostConfigMsg id
+             * @property {number|null} [count] TradeCostConfigMsg count
+             * @property {number|null} [precent] TradeCostConfigMsg precent
+             * @property {string|null} [dec] TradeCostConfigMsg dec
+             */
+
+            /**
+             * Constructs a new TradeCostConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents a TradeCostConfigMsg.
+             * @implements ITradeCostConfigMsg
+             * @constructor
+             * @param {com.message.ITradeCostConfigMsg=} [properties] Properties to set
+             */
+            function TradeCostConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TradeCostConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.TradeCostConfigMsg
+             * @instance
+             */
+            TradeCostConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * TradeCostConfigMsg count.
+             * @member {number} count
+             * @memberof com.message.TradeCostConfigMsg
+             * @instance
+             */
+            TradeCostConfigMsg.prototype.count = 0;
+
+            /**
+             * TradeCostConfigMsg precent.
+             * @member {number} precent
+             * @memberof com.message.TradeCostConfigMsg
+             * @instance
+             */
+            TradeCostConfigMsg.prototype.precent = 0;
+
+            /**
+             * TradeCostConfigMsg dec.
+             * @member {string} dec
+             * @memberof com.message.TradeCostConfigMsg
+             * @instance
+             */
+            TradeCostConfigMsg.prototype.dec = "";
+
+            /**
+             * Encodes the specified TradeCostConfigMsg message. Does not implicitly {@link com.message.TradeCostConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.TradeCostConfigMsg
+             * @static
+             * @param {com.message.ITradeCostConfigMsg} message TradeCostConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TradeCostConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.count != null && message.hasOwnProperty("count"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.count);
+                if (message.precent != null && message.hasOwnProperty("precent"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.precent);
+                if (message.dec != null && message.hasOwnProperty("dec"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dec);
+                return writer;
+            };
+
+            /**
+             * Decodes a TradeCostConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.TradeCostConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.TradeCostConfigMsg} TradeCostConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TradeCostConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.TradeCostConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.count = reader.int32();
+                        break;
+                    case 3:
+                        message.precent = reader.double();
+                        break;
+                    case 4:
+                        message.dec = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return TradeCostConfigMsg;
+        })();
+
+        message.C_GET_TRADE_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_TRADE_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_TRADE_RATE_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_TRADE_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_TRADE_RATE_CONFIG.
+             * @implements IC_GET_TRADE_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_TRADE_RATE_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_TRADE_RATE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_TRADE_RATE_CONFIG message. Does not implicitly {@link com.message.C_GET_TRADE_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_TRADE_RATE_CONFIG
+             * @static
+             * @param {com.message.IC_GET_TRADE_RATE_CONFIG} message C_GET_TRADE_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_TRADE_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_TRADE_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_TRADE_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_TRADE_RATE_CONFIG} C_GET_TRADE_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_TRADE_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_TRADE_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_TRADE_RATE_CONFIG;
+        })();
+
+        message.S_GET_TRADE_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_TRADE_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_TRADE_RATE_CONFIG
+             * @property {Array.<com.message.ITradeCostConfigMsg>|null} [configMsgList] S_GET_TRADE_RATE_CONFIG configMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_TRADE_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_TRADE_RATE_CONFIG.
+             * @implements IS_GET_TRADE_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_TRADE_RATE_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_TRADE_RATE_CONFIG(properties) {
+                this.configMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_TRADE_RATE_CONFIG configMsgList.
+             * @member {Array.<com.message.ITradeCostConfigMsg>} configMsgList
+             * @memberof com.message.S_GET_TRADE_RATE_CONFIG
+             * @instance
+             */
+            S_GET_TRADE_RATE_CONFIG.prototype.configMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_TRADE_RATE_CONFIG message. Does not implicitly {@link com.message.S_GET_TRADE_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_TRADE_RATE_CONFIG
+             * @static
+             * @param {com.message.IS_GET_TRADE_RATE_CONFIG} message S_GET_TRADE_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_TRADE_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsgList != null && message.configMsgList.length)
+                    for (var i = 0; i < message.configMsgList.length; ++i)
+                        $root.com.message.TradeCostConfigMsg.encode(message.configMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_TRADE_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_TRADE_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_TRADE_RATE_CONFIG} S_GET_TRADE_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_TRADE_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_TRADE_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.configMsgList && message.configMsgList.length))
+                            message.configMsgList = [];
+                        message.configMsgList.push($root.com.message.TradeCostConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_TRADE_RATE_CONFIG;
+        })();
+
+        message.S_SYNC_TRADE_RATE_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_TRADE_RATE_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_TRADE_RATE_CONFIG
+             * @property {com.message.ITradeCostConfigMsg|null} [configMsg] S_SYNC_TRADE_RATE_CONFIG configMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_TRADE_RATE_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_TRADE_RATE_CONFIG.
+             * @implements IS_SYNC_TRADE_RATE_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_TRADE_RATE_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_TRADE_RATE_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_TRADE_RATE_CONFIG configMsg.
+             * @member {com.message.ITradeCostConfigMsg|null|undefined} configMsg
+             * @memberof com.message.S_SYNC_TRADE_RATE_CONFIG
+             * @instance
+             */
+            S_SYNC_TRADE_RATE_CONFIG.prototype.configMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_TRADE_RATE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_TRADE_RATE_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_TRADE_RATE_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_TRADE_RATE_CONFIG} message S_SYNC_TRADE_RATE_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_TRADE_RATE_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsg != null && message.hasOwnProperty("configMsg"))
+                    $root.com.message.TradeCostConfigMsg.encode(message.configMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_TRADE_RATE_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_TRADE_RATE_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_TRADE_RATE_CONFIG} S_SYNC_TRADE_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_TRADE_RATE_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_TRADE_RATE_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.configMsg = $root.com.message.TradeCostConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_TRADE_RATE_CONFIG;
+        })();
+
         message.CROSS_C_SERVER_REGISTER = (function() {
 
             /**
@@ -10869,6 +13131,7 @@ $root.com = (function() {
              * @memberof com.message
              * @interface IS_GET_OCT_MARKET_INFO
              * @property {number|null} [sysDiamondPrice] S_GET_OCT_MARKET_INFO sysDiamondPrice
+             * @property {number|null} [allDiamond] S_GET_OCT_MARKET_INFO allDiamond
              * @property {Array.<com.message.IHistoryPriceMsg>|null} [historyPriceMsgList] S_GET_OCT_MARKET_INFO historyPriceMsgList
              */
 
@@ -10897,6 +13160,14 @@ $root.com = (function() {
             S_GET_OCT_MARKET_INFO.prototype.sysDiamondPrice = 0;
 
             /**
+             * S_GET_OCT_MARKET_INFO allDiamond.
+             * @member {number} allDiamond
+             * @memberof com.message.S_GET_OCT_MARKET_INFO
+             * @instance
+             */
+            S_GET_OCT_MARKET_INFO.prototype.allDiamond = 0;
+
+            /**
              * S_GET_OCT_MARKET_INFO historyPriceMsgList.
              * @member {Array.<com.message.IHistoryPriceMsg>} historyPriceMsgList
              * @memberof com.message.S_GET_OCT_MARKET_INFO
@@ -10918,6 +13189,8 @@ $root.com = (function() {
                     writer = $Writer.create();
                 if (message.sysDiamondPrice != null && message.hasOwnProperty("sysDiamondPrice"))
                     writer.uint32(/* id 1, wireType 1 =*/9).double(message.sysDiamondPrice);
+                if (message.allDiamond != null && message.hasOwnProperty("allDiamond"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.allDiamond);
                 if (message.historyPriceMsgList != null && message.historyPriceMsgList.length)
                     for (var i = 0; i < message.historyPriceMsgList.length; ++i)
                         $root.com.message.HistoryPriceMsg.encode(message.historyPriceMsgList[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -10944,6 +13217,9 @@ $root.com = (function() {
                     switch (tag >>> 3) {
                     case 1:
                         message.sysDiamondPrice = reader.double();
+                        break;
+                    case 2:
+                        message.allDiamond = reader.double();
                         break;
                     case 3:
                         if (!(message.historyPriceMsgList && message.historyPriceMsgList.length))
@@ -11967,6 +14243,24 @@ $root.com = (function() {
              * @property {number} S_GET_FEED_COUNT=1504 S_GET_FEED_COUNT value
              * @property {number} C_CASH_OUT_APPLY=1505 C_CASH_OUT_APPLY value
              * @property {number} S_CASH_OUT_APPLY=1506 S_CASH_OUT_APPLY value
+             * @property {number} C_GET_SYS_CONFIG=1601 C_GET_SYS_CONFIG value
+             * @property {number} S_GET_SYS_CONFIG=1602 S_GET_SYS_CONFIG value
+             * @property {number} S_SYNC_SYS_CONFIG=1603 S_SYNC_SYS_CONFIG value
+             * @property {number} C_GET_DIRECT_RATE_CONFIG=1605 C_GET_DIRECT_RATE_CONFIG value
+             * @property {number} S_GET_DIRECT_RATE_CONFIG=1606 S_GET_DIRECT_RATE_CONFIG value
+             * @property {number} S_SYNC_DIRECT_RATE_CONFIG=1607 S_SYNC_DIRECT_RATE_CONFIG value
+             * @property {number} C_GET_FISH_CONFIG=1609 C_GET_FISH_CONFIG value
+             * @property {number} S_GET_FISH_CONFIG=1610 S_GET_FISH_CONFIG value
+             * @property {number} S_SYNC_FISH_CONFIG=1611 S_SYNC_FISH_CONFIG value
+             * @property {number} C_GET_INJECT_CYCLE_CONFIG=1613 C_GET_INJECT_CYCLE_CONFIG value
+             * @property {number} S_GET_INJECT_CYCLE_CONFIG=1614 S_GET_INJECT_CYCLE_CONFIG value
+             * @property {number} S_SYNC_INJECT_CYCLE_CONFIG=1615 S_SYNC_INJECT_CYCLE_CONFIG value
+             * @property {number} C_GET_TEAM_RATE_CONFIG=1617 C_GET_TEAM_RATE_CONFIG value
+             * @property {number} S_GET_TEAM_RATE_CONFIG=1618 S_GET_TEAM_RATE_CONFIG value
+             * @property {number} S_SYNC_TEAM_RATE_CONFIG=1619 S_SYNC_TEAM_RATE_CONFIG value
+             * @property {number} C_GET_TRADE_RATE_CONFIG=1621 C_GET_TRADE_RATE_CONFIG value
+             * @property {number} S_GET_TRADE_RATE_CONFIG=1622 S_GET_TRADE_RATE_CONFIG value
+             * @property {number} S_SYNC_TRADE_RATE_CONFIG=1623 S_SYNC_TRADE_RATE_CONFIG value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -12086,6 +14380,24 @@ $root.com = (function() {
                 values[valuesById[1504] = "S_GET_FEED_COUNT"] = 1504;
                 values[valuesById[1505] = "C_CASH_OUT_APPLY"] = 1505;
                 values[valuesById[1506] = "S_CASH_OUT_APPLY"] = 1506;
+                values[valuesById[1601] = "C_GET_SYS_CONFIG"] = 1601;
+                values[valuesById[1602] = "S_GET_SYS_CONFIG"] = 1602;
+                values[valuesById[1603] = "S_SYNC_SYS_CONFIG"] = 1603;
+                values[valuesById[1605] = "C_GET_DIRECT_RATE_CONFIG"] = 1605;
+                values[valuesById[1606] = "S_GET_DIRECT_RATE_CONFIG"] = 1606;
+                values[valuesById[1607] = "S_SYNC_DIRECT_RATE_CONFIG"] = 1607;
+                values[valuesById[1609] = "C_GET_FISH_CONFIG"] = 1609;
+                values[valuesById[1610] = "S_GET_FISH_CONFIG"] = 1610;
+                values[valuesById[1611] = "S_SYNC_FISH_CONFIG"] = 1611;
+                values[valuesById[1613] = "C_GET_INJECT_CYCLE_CONFIG"] = 1613;
+                values[valuesById[1614] = "S_GET_INJECT_CYCLE_CONFIG"] = 1614;
+                values[valuesById[1615] = "S_SYNC_INJECT_CYCLE_CONFIG"] = 1615;
+                values[valuesById[1617] = "C_GET_TEAM_RATE_CONFIG"] = 1617;
+                values[valuesById[1618] = "S_GET_TEAM_RATE_CONFIG"] = 1618;
+                values[valuesById[1619] = "S_SYNC_TEAM_RATE_CONFIG"] = 1619;
+                values[valuesById[1621] = "C_GET_TRADE_RATE_CONFIG"] = 1621;
+                values[valuesById[1622] = "S_GET_TRADE_RATE_CONFIG"] = 1622;
+                values[valuesById[1623] = "S_SYNC_TRADE_RATE_CONFIG"] = 1623;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;

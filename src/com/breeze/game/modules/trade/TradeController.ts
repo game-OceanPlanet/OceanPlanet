@@ -33,7 +33,8 @@ module qmr
         // 获取otc信息
         private getOTCResponse(s: com.message.S_GET_OCT_MARKET_INFO):void
         {
-            TradeModule.instance.sysDiamonPrice = Int64Util.getNumber(s.sysDiamondPrice);
+			TradeModule.instance.sysDiamonPrice = Int64Util.getNumber(s.sysDiamondPrice);
+			TradeModule.instance.allDiamond = s.allDiamond;
             TradeModule.instance.historyPrices = s.historyPriceMsgList as com.message.HistoryPriceMsg[];
             this.dispatch(NotifyConst.S_GET_OCT_MARKET_INFO);
 		}

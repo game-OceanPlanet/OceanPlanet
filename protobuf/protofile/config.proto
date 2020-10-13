@@ -1,0 +1,150 @@
+syntax="proto3";
+package com.message;
+
+//-----------------------------全局配置信息---------------
+//全局配置信息
+message SysConfigMsg {
+	int64 id =1; 	// 配置id
+	string param=2; 	// 参数值
+	string srcDec=3; 	// 描述
+}
+
+// 获取全局配置
+message C_GET_SYS_CONFIG {
+}
+
+// 获取全局配置
+message S_GET_SYS_CONFIG {
+	repeated SysConfigMsg sysConfigMsgList = 1; //全局配置信息
+}
+
+// 全局配置修改通知
+message S_SYNC_SYS_CONFIG {
+	SysConfigMsg sysConfigMsg = 1; //全局配置信息
+}
+
+//-----------------------------直推收益配置信息---------------
+//直推收益配置信息
+message DirectRateConfigMsg {
+	int64 id =1; 	// 配置id
+	int32 count =2; 	// 直推人数
+	double precent=3; 	// 直推收益,每次领币百分比提成
+	string dec=4; 	// 描述
+}
+
+// 获取直推收益配置
+message C_GET_DIRECT_RATE_CONFIG {
+}
+
+// 获取直推收益配置
+message S_GET_DIRECT_RATE_CONFIG {
+	repeated DirectRateConfigMsg configMsgList = 1; //直推收益配置信息
+}
+
+// 直推收益配置修改通知
+message S_SYNC_DIRECT_RATE_CONFIG {
+	DirectRateConfigMsg configMsg = 1; //直推收益配置信息
+}
+
+//-----------------------------鱼配置信息---------------
+//鱼配置信息
+message FishConfigMsg {
+	int64 id =1; 	// 配置id
+	string name=2; 	// 宠物名称
+	int32 level =3; 	// 等级
+	int32 limitTime =4; 	// 周期
+	int32 monthly =5; 	// 月化
+	int64 produce =6; 	// 总产出
+	int32 directPerson =7; 	// U购买需要直推人数
+	int32 teamPerson =8; 	// U购买需要团队规模
+	double ubuyPrice =9; 	// U购买需要价格
+	int32 ubuyLimit =10; 	// U购买限制数量
+	int32 ubuyStar =11; 	//U购买星级
+	int32 price =12; 	//金币购买价格
+}
+
+// 获取鱼配置
+message C_GET_FISH_CONFIG {
+}
+
+// 获取鱼配置
+message S_GET_FISH_CONFIG {
+	repeated FishConfigMsg configMsgList = 1; 
+}
+
+// 鱼配置修改通知
+message S_SYNC_FISH_CONFIG {
+	FishConfigMsg configMsg = 1; 
+}
+
+//-----------------------------注入配置信息---------------
+//注入配置信息
+message InjectCycleConfigMsg {
+	int64 id =1; 	// 周期唯一ID
+	int32 cycle =2; 	// 周期时长
+	double weights =3; 	// 权重
+	string dec=4; 	// 描述
+}
+
+// 获取注入配置配置
+message C_GET_INJECT_CYCLE_CONFIG {
+}
+
+// 获取注入配置配置
+message S_GET_INJECT_CYCLE_CONFIG {
+	repeated InjectCycleConfigMsg configMsgList = 1; 
+}
+
+// 注入配置修改通知
+message S_SYNC_INJECT_CYCLE_CONFIG {
+	InjectCycleConfigMsg configMsg = 1; 
+}
+
+//-----------------------------团队收益配置信息---------------
+//团队收益配置信息
+message TeamRateConfigMsg {
+	int64 id =1; 	// 配置id
+	int32 allCount =2; 	// 团队人数
+	int32 directCount =3; 	// 直推人数
+	int32 otherCount =4; 	// 非直推人数
+	double precent=5; 	// 团队收益,非直每次领币百分比提成
+	string dec=6; 	// 描述
+}
+
+// 获取团队收益配置
+message C_GET_TEAM_RATE_CONFIG {
+}
+
+// 获取团队收益配置
+message S_GET_TEAM_RATE_CONFIG {
+	repeated TeamRateConfigMsg configMsgList = 1; 
+}
+
+// 团队收益配置修改通知
+message S_SYNC_TEAM_RATE_CONFIG {
+	TeamRateConfigMsg configMsg = 1; 
+}
+
+//-----------------------------交易手续费配置信息---------------
+//交易手续费配置信息
+message TradeCostConfigMsg {
+	int64 id =1; 	// 配置id
+	int32 count =2; 	// 直推人数
+	double precent=3; 	// 手续费比例
+	string dec=4; 	// 描述
+}
+
+// 交易手续费配置
+message C_GET_TRADE_RATE_CONFIG {
+}
+
+// 获取交易手续费配置
+message S_GET_TRADE_RATE_CONFIG {
+	repeated TradeCostConfigMsg configMsgList = 1;
+}
+
+// 交易手续费配置修改通知
+message S_SYNC_TRADE_RATE_CONFIG {
+	TradeCostConfigMsg configMsg = 1; 
+}
+

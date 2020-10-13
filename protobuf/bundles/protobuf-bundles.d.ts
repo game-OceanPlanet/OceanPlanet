@@ -308,6 +308,1044 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.ItemListMsg;
         }
 
+        /** Properties of a SysConfigMsg. */
+        interface ISysConfigMsg {
+
+            /** SysConfigMsg id */
+            id?: (number|Long|null);
+
+            /** SysConfigMsg param */
+            param?: (string|null);
+
+            /** SysConfigMsg srcDec */
+            srcDec?: (string|null);
+        }
+
+        /** Represents a SysConfigMsg. */
+        class SysConfigMsg implements ISysConfigMsg {
+
+            /**
+             * Constructs a new SysConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.ISysConfigMsg);
+
+            /** SysConfigMsg id. */
+            public id: (number|Long);
+
+            /** SysConfigMsg param. */
+            public param: string;
+
+            /** SysConfigMsg srcDec. */
+            public srcDec: string;
+
+            /**
+             * Encodes the specified SysConfigMsg message. Does not implicitly {@link com.message.SysConfigMsg.verify|verify} messages.
+             * @param message SysConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.ISysConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a SysConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SysConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.SysConfigMsg;
+        }
+
+        /** Properties of a C_GET_SYS_CONFIG. */
+        interface IC_GET_SYS_CONFIG {
+        }
+
+        /** Represents a C_GET_SYS_CONFIG. */
+        class C_GET_SYS_CONFIG implements IC_GET_SYS_CONFIG {
+
+            /**
+             * Constructs a new C_GET_SYS_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_SYS_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_SYS_CONFIG message. Does not implicitly {@link com.message.C_GET_SYS_CONFIG.verify|verify} messages.
+             * @param message C_GET_SYS_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_SYS_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_SYS_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_SYS_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_SYS_CONFIG;
+        }
+
+        /** Properties of a S_GET_SYS_CONFIG. */
+        interface IS_GET_SYS_CONFIG {
+
+            /** S_GET_SYS_CONFIG sysConfigMsgList */
+            sysConfigMsgList?: (com.message.ISysConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_SYS_CONFIG. */
+        class S_GET_SYS_CONFIG implements IS_GET_SYS_CONFIG {
+
+            /**
+             * Constructs a new S_GET_SYS_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_SYS_CONFIG);
+
+            /** S_GET_SYS_CONFIG sysConfigMsgList. */
+            public sysConfigMsgList: com.message.ISysConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_SYS_CONFIG message. Does not implicitly {@link com.message.S_GET_SYS_CONFIG.verify|verify} messages.
+             * @param message S_GET_SYS_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_SYS_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_SYS_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_SYS_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_SYS_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_SYS_CONFIG. */
+        interface IS_SYNC_SYS_CONFIG {
+
+            /** S_SYNC_SYS_CONFIG sysConfigMsg */
+            sysConfigMsg?: (com.message.ISysConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_SYS_CONFIG. */
+        class S_SYNC_SYS_CONFIG implements IS_SYNC_SYS_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_SYS_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_SYS_CONFIG);
+
+            /** S_SYNC_SYS_CONFIG sysConfigMsg. */
+            public sysConfigMsg?: (com.message.ISysConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_SYS_CONFIG message. Does not implicitly {@link com.message.S_SYNC_SYS_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_SYS_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_SYS_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_SYS_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_SYS_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_SYS_CONFIG;
+        }
+
+        /** Properties of a DirectRateConfigMsg. */
+        interface IDirectRateConfigMsg {
+
+            /** DirectRateConfigMsg id */
+            id?: (number|Long|null);
+
+            /** DirectRateConfigMsg count */
+            count?: (number|null);
+
+            /** DirectRateConfigMsg precent */
+            precent?: (number|null);
+
+            /** DirectRateConfigMsg dec */
+            dec?: (string|null);
+        }
+
+        /** Represents a DirectRateConfigMsg. */
+        class DirectRateConfigMsg implements IDirectRateConfigMsg {
+
+            /**
+             * Constructs a new DirectRateConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IDirectRateConfigMsg);
+
+            /** DirectRateConfigMsg id. */
+            public id: (number|Long);
+
+            /** DirectRateConfigMsg count. */
+            public count: number;
+
+            /** DirectRateConfigMsg precent. */
+            public precent: number;
+
+            /** DirectRateConfigMsg dec. */
+            public dec: string;
+
+            /**
+             * Encodes the specified DirectRateConfigMsg message. Does not implicitly {@link com.message.DirectRateConfigMsg.verify|verify} messages.
+             * @param message DirectRateConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IDirectRateConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a DirectRateConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DirectRateConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.DirectRateConfigMsg;
+        }
+
+        /** Properties of a C_GET_DIRECT_RATE_CONFIG. */
+        interface IC_GET_DIRECT_RATE_CONFIG {
+        }
+
+        /** Represents a C_GET_DIRECT_RATE_CONFIG. */
+        class C_GET_DIRECT_RATE_CONFIG implements IC_GET_DIRECT_RATE_CONFIG {
+
+            /**
+             * Constructs a new C_GET_DIRECT_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_DIRECT_RATE_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_DIRECT_RATE_CONFIG message. Does not implicitly {@link com.message.C_GET_DIRECT_RATE_CONFIG.verify|verify} messages.
+             * @param message C_GET_DIRECT_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_DIRECT_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_DIRECT_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_DIRECT_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_DIRECT_RATE_CONFIG;
+        }
+
+        /** Properties of a S_GET_DIRECT_RATE_CONFIG. */
+        interface IS_GET_DIRECT_RATE_CONFIG {
+
+            /** S_GET_DIRECT_RATE_CONFIG configMsgList */
+            configMsgList?: (com.message.IDirectRateConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_DIRECT_RATE_CONFIG. */
+        class S_GET_DIRECT_RATE_CONFIG implements IS_GET_DIRECT_RATE_CONFIG {
+
+            /**
+             * Constructs a new S_GET_DIRECT_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_DIRECT_RATE_CONFIG);
+
+            /** S_GET_DIRECT_RATE_CONFIG configMsgList. */
+            public configMsgList: com.message.IDirectRateConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_DIRECT_RATE_CONFIG message. Does not implicitly {@link com.message.S_GET_DIRECT_RATE_CONFIG.verify|verify} messages.
+             * @param message S_GET_DIRECT_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_DIRECT_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_DIRECT_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_DIRECT_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_DIRECT_RATE_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_DIRECT_RATE_CONFIG. */
+        interface IS_SYNC_DIRECT_RATE_CONFIG {
+
+            /** S_SYNC_DIRECT_RATE_CONFIG configMsg */
+            configMsg?: (com.message.IDirectRateConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_DIRECT_RATE_CONFIG. */
+        class S_SYNC_DIRECT_RATE_CONFIG implements IS_SYNC_DIRECT_RATE_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_DIRECT_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_DIRECT_RATE_CONFIG);
+
+            /** S_SYNC_DIRECT_RATE_CONFIG configMsg. */
+            public configMsg?: (com.message.IDirectRateConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_DIRECT_RATE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_DIRECT_RATE_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_DIRECT_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_DIRECT_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_DIRECT_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_DIRECT_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_DIRECT_RATE_CONFIG;
+        }
+
+        /** Properties of a FishConfigMsg. */
+        interface IFishConfigMsg {
+
+            /** FishConfigMsg id */
+            id?: (number|Long|null);
+
+            /** FishConfigMsg name */
+            name?: (string|null);
+
+            /** FishConfigMsg level */
+            level?: (number|null);
+
+            /** FishConfigMsg limitTime */
+            limitTime?: (number|null);
+
+            /** FishConfigMsg monthly */
+            monthly?: (number|null);
+
+            /** FishConfigMsg produce */
+            produce?: (number|Long|null);
+
+            /** FishConfigMsg directPerson */
+            directPerson?: (number|null);
+
+            /** FishConfigMsg teamPerson */
+            teamPerson?: (number|null);
+
+            /** FishConfigMsg ubuyPrice */
+            ubuyPrice?: (number|null);
+
+            /** FishConfigMsg ubuyLimit */
+            ubuyLimit?: (number|null);
+
+            /** FishConfigMsg ubuyStar */
+            ubuyStar?: (number|null);
+
+            /** FishConfigMsg price */
+            price?: (number|null);
+        }
+
+        /** Represents a FishConfigMsg. */
+        class FishConfigMsg implements IFishConfigMsg {
+
+            /**
+             * Constructs a new FishConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IFishConfigMsg);
+
+            /** FishConfigMsg id. */
+            public id: (number|Long);
+
+            /** FishConfigMsg name. */
+            public name: string;
+
+            /** FishConfigMsg level. */
+            public level: number;
+
+            /** FishConfigMsg limitTime. */
+            public limitTime: number;
+
+            /** FishConfigMsg monthly. */
+            public monthly: number;
+
+            /** FishConfigMsg produce. */
+            public produce: (number|Long);
+
+            /** FishConfigMsg directPerson. */
+            public directPerson: number;
+
+            /** FishConfigMsg teamPerson. */
+            public teamPerson: number;
+
+            /** FishConfigMsg ubuyPrice. */
+            public ubuyPrice: number;
+
+            /** FishConfigMsg ubuyLimit. */
+            public ubuyLimit: number;
+
+            /** FishConfigMsg ubuyStar. */
+            public ubuyStar: number;
+
+            /** FishConfigMsg price. */
+            public price: number;
+
+            /**
+             * Encodes the specified FishConfigMsg message. Does not implicitly {@link com.message.FishConfigMsg.verify|verify} messages.
+             * @param message FishConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IFishConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a FishConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FishConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.FishConfigMsg;
+        }
+
+        /** Properties of a C_GET_FISH_CONFIG. */
+        interface IC_GET_FISH_CONFIG {
+        }
+
+        /** Represents a C_GET_FISH_CONFIG. */
+        class C_GET_FISH_CONFIG implements IC_GET_FISH_CONFIG {
+
+            /**
+             * Constructs a new C_GET_FISH_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_FISH_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_FISH_CONFIG message. Does not implicitly {@link com.message.C_GET_FISH_CONFIG.verify|verify} messages.
+             * @param message C_GET_FISH_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_FISH_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_FISH_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_FISH_CONFIG;
+        }
+
+        /** Properties of a S_GET_FISH_CONFIG. */
+        interface IS_GET_FISH_CONFIG {
+
+            /** S_GET_FISH_CONFIG configMsgList */
+            configMsgList?: (com.message.IFishConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_FISH_CONFIG. */
+        class S_GET_FISH_CONFIG implements IS_GET_FISH_CONFIG {
+
+            /**
+             * Constructs a new S_GET_FISH_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_FISH_CONFIG);
+
+            /** S_GET_FISH_CONFIG configMsgList. */
+            public configMsgList: com.message.IFishConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_FISH_CONFIG message. Does not implicitly {@link com.message.S_GET_FISH_CONFIG.verify|verify} messages.
+             * @param message S_GET_FISH_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_FISH_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_FISH_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_FISH_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_FISH_CONFIG. */
+        interface IS_SYNC_FISH_CONFIG {
+
+            /** S_SYNC_FISH_CONFIG configMsg */
+            configMsg?: (com.message.IFishConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_FISH_CONFIG. */
+        class S_SYNC_FISH_CONFIG implements IS_SYNC_FISH_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_FISH_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_FISH_CONFIG);
+
+            /** S_SYNC_FISH_CONFIG configMsg. */
+            public configMsg?: (com.message.IFishConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_FISH_CONFIG message. Does not implicitly {@link com.message.S_SYNC_FISH_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_FISH_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_FISH_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_FISH_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_FISH_CONFIG;
+        }
+
+        /** Properties of an InjectCycleConfigMsg. */
+        interface IInjectCycleConfigMsg {
+
+            /** InjectCycleConfigMsg id */
+            id?: (number|Long|null);
+
+            /** InjectCycleConfigMsg cycle */
+            cycle?: (number|null);
+
+            /** InjectCycleConfigMsg weights */
+            weights?: (number|null);
+
+            /** InjectCycleConfigMsg dec */
+            dec?: (string|null);
+        }
+
+        /** Represents an InjectCycleConfigMsg. */
+        class InjectCycleConfigMsg implements IInjectCycleConfigMsg {
+
+            /**
+             * Constructs a new InjectCycleConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IInjectCycleConfigMsg);
+
+            /** InjectCycleConfigMsg id. */
+            public id: (number|Long);
+
+            /** InjectCycleConfigMsg cycle. */
+            public cycle: number;
+
+            /** InjectCycleConfigMsg weights. */
+            public weights: number;
+
+            /** InjectCycleConfigMsg dec. */
+            public dec: string;
+
+            /**
+             * Encodes the specified InjectCycleConfigMsg message. Does not implicitly {@link com.message.InjectCycleConfigMsg.verify|verify} messages.
+             * @param message InjectCycleConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IInjectCycleConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an InjectCycleConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns InjectCycleConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.InjectCycleConfigMsg;
+        }
+
+        /** Properties of a C_GET_INJECT_CYCLE_CONFIG. */
+        interface IC_GET_INJECT_CYCLE_CONFIG {
+        }
+
+        /** Represents a C_GET_INJECT_CYCLE_CONFIG. */
+        class C_GET_INJECT_CYCLE_CONFIG implements IC_GET_INJECT_CYCLE_CONFIG {
+
+            /**
+             * Constructs a new C_GET_INJECT_CYCLE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_INJECT_CYCLE_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_INJECT_CYCLE_CONFIG message. Does not implicitly {@link com.message.C_GET_INJECT_CYCLE_CONFIG.verify|verify} messages.
+             * @param message C_GET_INJECT_CYCLE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_INJECT_CYCLE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_INJECT_CYCLE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_INJECT_CYCLE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_INJECT_CYCLE_CONFIG;
+        }
+
+        /** Properties of a S_GET_INJECT_CYCLE_CONFIG. */
+        interface IS_GET_INJECT_CYCLE_CONFIG {
+
+            /** S_GET_INJECT_CYCLE_CONFIG configMsgList */
+            configMsgList?: (com.message.IInjectCycleConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_INJECT_CYCLE_CONFIG. */
+        class S_GET_INJECT_CYCLE_CONFIG implements IS_GET_INJECT_CYCLE_CONFIG {
+
+            /**
+             * Constructs a new S_GET_INJECT_CYCLE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_INJECT_CYCLE_CONFIG);
+
+            /** S_GET_INJECT_CYCLE_CONFIG configMsgList. */
+            public configMsgList: com.message.IInjectCycleConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_INJECT_CYCLE_CONFIG message. Does not implicitly {@link com.message.S_GET_INJECT_CYCLE_CONFIG.verify|verify} messages.
+             * @param message S_GET_INJECT_CYCLE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_INJECT_CYCLE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_INJECT_CYCLE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_INJECT_CYCLE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_INJECT_CYCLE_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_INJECT_CYCLE_CONFIG. */
+        interface IS_SYNC_INJECT_CYCLE_CONFIG {
+
+            /** S_SYNC_INJECT_CYCLE_CONFIG configMsg */
+            configMsg?: (com.message.IInjectCycleConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_INJECT_CYCLE_CONFIG. */
+        class S_SYNC_INJECT_CYCLE_CONFIG implements IS_SYNC_INJECT_CYCLE_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_INJECT_CYCLE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_INJECT_CYCLE_CONFIG);
+
+            /** S_SYNC_INJECT_CYCLE_CONFIG configMsg. */
+            public configMsg?: (com.message.IInjectCycleConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_INJECT_CYCLE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_INJECT_CYCLE_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_INJECT_CYCLE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_INJECT_CYCLE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_INJECT_CYCLE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_INJECT_CYCLE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_INJECT_CYCLE_CONFIG;
+        }
+
+        /** Properties of a TeamRateConfigMsg. */
+        interface ITeamRateConfigMsg {
+
+            /** TeamRateConfigMsg id */
+            id?: (number|Long|null);
+
+            /** TeamRateConfigMsg allCount */
+            allCount?: (number|null);
+
+            /** TeamRateConfigMsg directCount */
+            directCount?: (number|null);
+
+            /** TeamRateConfigMsg otherCount */
+            otherCount?: (number|null);
+
+            /** TeamRateConfigMsg precent */
+            precent?: (number|null);
+
+            /** TeamRateConfigMsg dec */
+            dec?: (string|null);
+        }
+
+        /** Represents a TeamRateConfigMsg. */
+        class TeamRateConfigMsg implements ITeamRateConfigMsg {
+
+            /**
+             * Constructs a new TeamRateConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.ITeamRateConfigMsg);
+
+            /** TeamRateConfigMsg id. */
+            public id: (number|Long);
+
+            /** TeamRateConfigMsg allCount. */
+            public allCount: number;
+
+            /** TeamRateConfigMsg directCount. */
+            public directCount: number;
+
+            /** TeamRateConfigMsg otherCount. */
+            public otherCount: number;
+
+            /** TeamRateConfigMsg precent. */
+            public precent: number;
+
+            /** TeamRateConfigMsg dec. */
+            public dec: string;
+
+            /**
+             * Encodes the specified TeamRateConfigMsg message. Does not implicitly {@link com.message.TeamRateConfigMsg.verify|verify} messages.
+             * @param message TeamRateConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.ITeamRateConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a TeamRateConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TeamRateConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.TeamRateConfigMsg;
+        }
+
+        /** Properties of a C_GET_TEAM_RATE_CONFIG. */
+        interface IC_GET_TEAM_RATE_CONFIG {
+        }
+
+        /** Represents a C_GET_TEAM_RATE_CONFIG. */
+        class C_GET_TEAM_RATE_CONFIG implements IC_GET_TEAM_RATE_CONFIG {
+
+            /**
+             * Constructs a new C_GET_TEAM_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_TEAM_RATE_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_TEAM_RATE_CONFIG message. Does not implicitly {@link com.message.C_GET_TEAM_RATE_CONFIG.verify|verify} messages.
+             * @param message C_GET_TEAM_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_TEAM_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_TEAM_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_TEAM_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_TEAM_RATE_CONFIG;
+        }
+
+        /** Properties of a S_GET_TEAM_RATE_CONFIG. */
+        interface IS_GET_TEAM_RATE_CONFIG {
+
+            /** S_GET_TEAM_RATE_CONFIG configMsgList */
+            configMsgList?: (com.message.ITeamRateConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_TEAM_RATE_CONFIG. */
+        class S_GET_TEAM_RATE_CONFIG implements IS_GET_TEAM_RATE_CONFIG {
+
+            /**
+             * Constructs a new S_GET_TEAM_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_TEAM_RATE_CONFIG);
+
+            /** S_GET_TEAM_RATE_CONFIG configMsgList. */
+            public configMsgList: com.message.ITeamRateConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_TEAM_RATE_CONFIG message. Does not implicitly {@link com.message.S_GET_TEAM_RATE_CONFIG.verify|verify} messages.
+             * @param message S_GET_TEAM_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_TEAM_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_TEAM_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_TEAM_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_TEAM_RATE_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_TEAM_RATE_CONFIG. */
+        interface IS_SYNC_TEAM_RATE_CONFIG {
+
+            /** S_SYNC_TEAM_RATE_CONFIG configMsg */
+            configMsg?: (com.message.ITeamRateConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_TEAM_RATE_CONFIG. */
+        class S_SYNC_TEAM_RATE_CONFIG implements IS_SYNC_TEAM_RATE_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_TEAM_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_TEAM_RATE_CONFIG);
+
+            /** S_SYNC_TEAM_RATE_CONFIG configMsg. */
+            public configMsg?: (com.message.ITeamRateConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_TEAM_RATE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_TEAM_RATE_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_TEAM_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_TEAM_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_TEAM_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_TEAM_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_TEAM_RATE_CONFIG;
+        }
+
+        /** Properties of a TradeCostConfigMsg. */
+        interface ITradeCostConfigMsg {
+
+            /** TradeCostConfigMsg id */
+            id?: (number|Long|null);
+
+            /** TradeCostConfigMsg count */
+            count?: (number|null);
+
+            /** TradeCostConfigMsg precent */
+            precent?: (number|null);
+
+            /** TradeCostConfigMsg dec */
+            dec?: (string|null);
+        }
+
+        /** Represents a TradeCostConfigMsg. */
+        class TradeCostConfigMsg implements ITradeCostConfigMsg {
+
+            /**
+             * Constructs a new TradeCostConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.ITradeCostConfigMsg);
+
+            /** TradeCostConfigMsg id. */
+            public id: (number|Long);
+
+            /** TradeCostConfigMsg count. */
+            public count: number;
+
+            /** TradeCostConfigMsg precent. */
+            public precent: number;
+
+            /** TradeCostConfigMsg dec. */
+            public dec: string;
+
+            /**
+             * Encodes the specified TradeCostConfigMsg message. Does not implicitly {@link com.message.TradeCostConfigMsg.verify|verify} messages.
+             * @param message TradeCostConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.ITradeCostConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a TradeCostConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TradeCostConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.TradeCostConfigMsg;
+        }
+
+        /** Properties of a C_GET_TRADE_RATE_CONFIG. */
+        interface IC_GET_TRADE_RATE_CONFIG {
+        }
+
+        /** Represents a C_GET_TRADE_RATE_CONFIG. */
+        class C_GET_TRADE_RATE_CONFIG implements IC_GET_TRADE_RATE_CONFIG {
+
+            /**
+             * Constructs a new C_GET_TRADE_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_TRADE_RATE_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_TRADE_RATE_CONFIG message. Does not implicitly {@link com.message.C_GET_TRADE_RATE_CONFIG.verify|verify} messages.
+             * @param message C_GET_TRADE_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_TRADE_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_TRADE_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_TRADE_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_TRADE_RATE_CONFIG;
+        }
+
+        /** Properties of a S_GET_TRADE_RATE_CONFIG. */
+        interface IS_GET_TRADE_RATE_CONFIG {
+
+            /** S_GET_TRADE_RATE_CONFIG configMsgList */
+            configMsgList?: (com.message.ITradeCostConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_TRADE_RATE_CONFIG. */
+        class S_GET_TRADE_RATE_CONFIG implements IS_GET_TRADE_RATE_CONFIG {
+
+            /**
+             * Constructs a new S_GET_TRADE_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_TRADE_RATE_CONFIG);
+
+            /** S_GET_TRADE_RATE_CONFIG configMsgList. */
+            public configMsgList: com.message.ITradeCostConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_TRADE_RATE_CONFIG message. Does not implicitly {@link com.message.S_GET_TRADE_RATE_CONFIG.verify|verify} messages.
+             * @param message S_GET_TRADE_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_TRADE_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_TRADE_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_TRADE_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_TRADE_RATE_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_TRADE_RATE_CONFIG. */
+        interface IS_SYNC_TRADE_RATE_CONFIG {
+
+            /** S_SYNC_TRADE_RATE_CONFIG configMsg */
+            configMsg?: (com.message.ITradeCostConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_TRADE_RATE_CONFIG. */
+        class S_SYNC_TRADE_RATE_CONFIG implements IS_SYNC_TRADE_RATE_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_TRADE_RATE_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_TRADE_RATE_CONFIG);
+
+            /** S_SYNC_TRADE_RATE_CONFIG configMsg. */
+            public configMsg?: (com.message.ITradeCostConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_TRADE_RATE_CONFIG message. Does not implicitly {@link com.message.S_SYNC_TRADE_RATE_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_TRADE_RATE_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_TRADE_RATE_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_TRADE_RATE_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_TRADE_RATE_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_TRADE_RATE_CONFIG;
+        }
+
         /** Properties of a CROSS_C_SERVER_REGISTER. */
         interface ICROSS_C_SERVER_REGISTER {
 
@@ -5000,6 +6038,9 @@ declare namespace com {
             /** S_GET_OCT_MARKET_INFO sysDiamondPrice */
             sysDiamondPrice?: (number|null);
 
+            /** S_GET_OCT_MARKET_INFO allDiamond */
+            allDiamond?: (number|null);
+
             /** S_GET_OCT_MARKET_INFO historyPriceMsgList */
             historyPriceMsgList?: (com.message.IHistoryPriceMsg[]|null);
         }
@@ -5015,6 +6056,9 @@ declare namespace com {
 
             /** S_GET_OCT_MARKET_INFO sysDiamondPrice. */
             public sysDiamondPrice: number;
+
+            /** S_GET_OCT_MARKET_INFO allDiamond. */
+            public allDiamond: number;
 
             /** S_GET_OCT_MARKET_INFO historyPriceMsgList. */
             public historyPriceMsgList: com.message.IHistoryPriceMsg[];
@@ -5550,6 +6594,24 @@ declare namespace com {
                 S_GET_FEED_COUNT = 1504,
                 C_CASH_OUT_APPLY = 1505,
                 S_CASH_OUT_APPLY = 1506,
+                C_GET_SYS_CONFIG = 1601,
+                S_GET_SYS_CONFIG = 1602,
+                S_SYNC_SYS_CONFIG = 1603,
+                C_GET_DIRECT_RATE_CONFIG = 1605,
+                S_GET_DIRECT_RATE_CONFIG = 1606,
+                S_SYNC_DIRECT_RATE_CONFIG = 1607,
+                C_GET_FISH_CONFIG = 1609,
+                S_GET_FISH_CONFIG = 1610,
+                S_SYNC_FISH_CONFIG = 1611,
+                C_GET_INJECT_CYCLE_CONFIG = 1613,
+                S_GET_INJECT_CYCLE_CONFIG = 1614,
+                S_SYNC_INJECT_CYCLE_CONFIG = 1615,
+                C_GET_TEAM_RATE_CONFIG = 1617,
+                S_GET_TEAM_RATE_CONFIG = 1618,
+                S_SYNC_TEAM_RATE_CONFIG = 1619,
+                C_GET_TRADE_RATE_CONFIG = 1621,
+                S_GET_TRADE_RATE_CONFIG = 1622,
+                S_SYNC_TRADE_RATE_CONFIG = 1623,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,
