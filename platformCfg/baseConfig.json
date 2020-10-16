@@ -30,5 +30,5 @@
 	"connectAddress":"ws://129.226.177.253/s1",
 	"GameId":1,
 	"InviteAddress":"http://www.szare.cn/ocp/game.html",
-	"AppDownAddress":"http://www.szare.cn/app/6830372.apk"
+	"AppDownAddress":"http://192.168.1.223:8089/app/index.html"
 }

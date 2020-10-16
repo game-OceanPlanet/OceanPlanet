@@ -28,6 +28,12 @@ module qmr {
 
         private buyFishStr:string;//用u购买鱼的累计数量：id1,数量;id2,数量
         private hadBuyFishIds:Dictionary;
+
+        public certificationTime:number = 0;
+        public lastId:string;
+        public lastName:string;
+        public lastTel:string;
+
         public constructor() {
             super();
             let t = this;

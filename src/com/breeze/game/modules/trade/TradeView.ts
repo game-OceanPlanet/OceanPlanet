@@ -238,7 +238,7 @@ public CN_332:eui.Label;
 				pros = pros.concat(TradeModule.instance.buyGoodsList);
 			}
 			
-			let totalBuyCount:number = 0;
+			// let totalBuyCount:number = 0;
 			let len:number;
 			// if(pros && pros.length > 0){
 			// 	len = pros.length;
@@ -250,7 +250,29 @@ public CN_332:eui.Label;
 			// }
 			if(pros && pros.length > 1){
 				pros.sort((a, b)=>{
-					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
+					// if(a.moneyCount == b.moneyCount){
+					// 	if(a.diamondPrice > b.diamondPrice){
+					// 		return 1;
+					// 	} else if(a.diamondPrice < b.diamondPrice){
+					// 		return -1;
+					// 	}
+					// } else if(a.moneyCount > b.moneyCount){
+					// 	return 1;
+					// } else if(a.moneyCount < b.moneyCount){
+					// 	return -1;
+					// }
+					if(a.diamondPrice > b.diamondPrice){
+						return -1;
+					} else if(a.diamondPrice < b.diamondPrice){
+						return 1;
+					}
+					// return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
+					if(a.moneyCount > b.moneyCount){
+						return -1;
+					} else if(a.moneyCount < b.moneyCount){
+						return 1;
+					}
+					return 0;
 				})
 			}
 			// t._arrCollection.replaceAll(pros);

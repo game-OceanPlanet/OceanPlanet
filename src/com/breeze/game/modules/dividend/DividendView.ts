@@ -93,6 +93,10 @@ public title_fenhong:eui.Image;
 				for(var i:number = 0; i < len; i ++){
 					myTotal += logs[i].diamondCount;
 				}
+
+				logs.sort((a, b)=>{
+					return Int64Util.getNumber(b.logTime) - Int64Util.getNumber(a.logTime);
+				});
 			}
 			let total:number = md.todayAllBonus;
 			if(total > 0 && myTotal > 0){

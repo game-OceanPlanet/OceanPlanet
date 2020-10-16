@@ -5426,7 +5426,7 @@ var qmr;
          * @param pwd
          */
         LoginController.prototype.reqLogin = function (tel, pwd) {
-            qmr.GameLoading.getInstance().setLoadingTip("CN_171");
+            qmr.GameLoading.getInstance().setLoadingTip("正在登陆中...");
             egret.log("登陆账号:" + tel, "参数:" + sparam);
             var c = new com.message.C_USER_LOGIN();
             c.mobile = tel;
@@ -5442,7 +5442,7 @@ var qmr;
          * @param code
          */
         LoginController.prototype.reqVerfiyCodeLogin = function (tel, code) {
-            qmr.GameLoading.getInstance().setLoadingTip("CN_171");
+            qmr.GameLoading.getInstance().setLoadingTip("正在登陆中...");
             egret.log("登陆账号:" + tel, "参数:" + sparam);
             var c = new com.message.C_USER_LOGIN_VERIFY_CODE();
             c.mobile = tel;

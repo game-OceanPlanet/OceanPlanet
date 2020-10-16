@@ -82,7 +82,8 @@ module qmr
         private getBuyFishResponse(s: com.message.S_BUY_FISH):void
         {
             let cfg:PetCfg = ConfigManager.getConf(ConfigEnum.PET, s.fishMsg.fishId);
-            TipManagerCommon.getInstance().showLanTip("CN_210",cfg.name);
+            let name:string = LabelUtil.getCNMessage(cfg.name);
+            TipManagerCommon.getInstance().showLanTip("CN_210",name);
 			HeroModel.instance.addPet(s.fishMsg as com.message.FishMsg);
             this.dispatch(NotifyConst.S_BUY_FISH);
         }

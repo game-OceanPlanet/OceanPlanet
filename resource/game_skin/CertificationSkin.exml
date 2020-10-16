@@ -36,7 +36,7 @@
 
 			</e:Group>
 			<e:Group id="btn_Identify" x="88" y="330.71" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" width="589">
-			<e:Image x="4" y="1" scaleX="1" scaleY="1" source="trade_json.button_img" scale9Grid="78,9,200,61" width="534"/>
+			<e:Image x="4" y="2" scaleX="1" scaleY="1" source="trade_json.button_img" scale9Grid="78,9,200,61" width="534"/>
 			<e:Label id="CN_381" text="" y="15.18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x71492E" width="350" textAlign="center" height="49" verticalAlign="middle" horizontalCenter="-24.5"/>
 			</e:Group>
 		</e:Group>

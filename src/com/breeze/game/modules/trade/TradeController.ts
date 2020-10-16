@@ -44,7 +44,7 @@ module qmr
 		{
 			var c: com.message.C_GET_OCT_BUYGOOD_LIST = new com.message.C_GET_OCT_BUYGOOD_LIST();
 			c.page = 1;
-			c.pageSize = 1000;
+			c.pageSize = 500;
 			this.sendCmd(c, MessageID.C_GET_OCT_BUYGOOD_LIST, true);
         }
 		

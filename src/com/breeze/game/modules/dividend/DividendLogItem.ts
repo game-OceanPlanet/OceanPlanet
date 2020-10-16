@@ -27,7 +27,7 @@ module qmr {
                 if(pro.info){
                     let id:number = Number(pro.info);
                     let cfg:InjectCycleCfg = ConfigManager.getConf(ConfigEnum.INJECTCYCLE,id );
-                    t.txt_des.text = cfg.des;
+                    t.txt_des.text = LabelUtil.getCNMessage(cfg.des);
                 }
                 
                 t.txt_count.text = NumberUtil.getFloat6Number2String(pro.diamondCount)+HeroModel.USDT;

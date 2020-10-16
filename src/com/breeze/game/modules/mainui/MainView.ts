@@ -231,10 +231,10 @@ public img_name_help:eui.Image;
         }
         //查看价钱
         private onPriceClick(): void {
-            ModuleManager.showModule(ModuleNameConst.TRADE_VIEW);
             TradeController.instance.requestOTCInfo();
             TradeController.instance.requestOTCList();
             TradeController.instance.requestMyOTCList();
+            ModuleManager.showModule(ModuleNameConst.TRADE_VIEW);
         }
 
         //查看宠物面板
