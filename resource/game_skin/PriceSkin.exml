@@ -87,11 +87,13 @@
 				</e:Group>
 			</e:Group>
 				<e:Group id="btn_allList" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="911.73" x="153.14" width="222" height="105">
-					<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="48,20,170,40" source="trade_json.img_paidui1"/>
+					<e:Image id="btn_img_up" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="48,20,170,40" source="trade_json.img_paidui2"/>
+					<e:Image id="btn_img_select" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="48,20,170,40" source="trade_json.img_paidui1"/>
 					<e:Label id="CN_540" text="" y="29.18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x71492E" width="174" textAlign="center" height="49" verticalAlign="middle" anchorOffsetX="0" horizontalCenter="6"/>
 				</e:Group>
 				<e:Group id="btn_myList" x="397" y="911.73" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" width="222" height="105">
-					<e:Image x="225.76" y="0" scaleX="-1" scaleY="1" scale9Grid="78,9,200,61" source="trade_json.img_paidui2"/>
+					<e:Image id="btn_img_up2" scaleX="-1" scaleY="1" scale9Grid="78,9,200,61" source="trade_json.img_paidui2" x="225"/>
+					<e:Image id="btn_img_select2" x="225" y="0" scaleX="-1" scaleY="1" scale9Grid="78,9,200,61" source="trade_json.img_paidui1" visible="false"/>
 					<e:Label id="CN_539" text="" y="26.18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x71492E" width="160" textAlign="center" height="49" verticalAlign="middle" anchorOffsetX="0" x="39"/>
 				</e:Group>
 

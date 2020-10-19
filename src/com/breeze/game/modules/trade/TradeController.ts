@@ -84,6 +84,7 @@ module qmr
 			TradeModule.instance.addBuyOrder(s.buyGoodMsg as com.message.BuyGoodMsg);
 			this.dispatch(NotifyConst.S_MARKET_BUY);
 			this.requestMyOTCList();
+			TipManagerCommon.getInstance().createCommonTip("挂单成功");
 		}
 		
 		//请求: 卖给Ta，获得U

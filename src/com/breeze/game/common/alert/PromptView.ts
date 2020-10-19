@@ -60,7 +60,7 @@ public txt_cancel:eui.Label;
             else
             {
                 this.btnCancel.visible = false;
-                this.btnSure.x = 296;
+                this.btnSure.x = 286;
             }
             this.confirmFun = confirmFun;
             this.caller = caller;

@@ -11,16 +11,16 @@
 			<e:Image y="0" x="135" source="panel2_json.title_bg" />
 			<e:Label id="labContent" text="购买数量\r购买数量\r购买数量\r购买数量\r购买数量\r" size="26" fontFamily="specialGameFont" scaleX="1"
 			         scaleY="1" width="480" lineSpacing="10" anchorOffsetX="0" textColor="0x04031e" anchorOffsetY="0"
-			         horizontalCenter="-22.5" verticalCenter="-48" />
+			         horizontalCenter="-22.5" verticalCenter="-48"  textAlign="center"/>
 			<e:Label id="txt_title" text="说 明" y="8" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" x="251"
 			         textColor="0xb28208" bold="true" />
 			<e:Image id="btnClose" x="489" y="-26" source="panel2_json.btn_close2" />
-			<e:Group id="btnSure" anchorOffsetX="0" anchorOffsetY="0" right="112" bottom="44">
+			<e:Group id="btnSure" anchorOffsetX="0" anchorOffsetY="0" x="319" y="527">
 				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common1" />
 				<e:Label id="txt_sure" text="确 定" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 				         textColor="0xFFF4D6" horizontalCenter="0" />
 			</e:Group>
-			<e:Group id="btnCancel" anchorOffsetX="0" anchorOffsetY="0" left="96" bottom="44">
+			<e:Group id="btnCancel" anchorOffsetX="0" anchorOffsetY="0" x="96" y="527">
 				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_red" />
 				<e:Label id="txt_cancel" text="取 消" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 				         textColor="0xFFF4D6" horizontalCenter="0" />

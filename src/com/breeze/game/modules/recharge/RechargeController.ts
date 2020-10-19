@@ -67,7 +67,7 @@ module qmr
 			
 			if(s.success == 0){
 				let des:string = LabelUtil.getCNMessage("CN_463");
-				PromptController.instance.showPrompt(des, null);
+				PromptController.instance.showPrompt(des, null, null,null, null, 2);
 			} else {
 				let count = Number(ConfigManagerAft.getCommonConfig(2030));//团队规模
 				let count2 = Number(ConfigManagerAft.getCommonConfig(2031)) * 100;//比例
@@ -77,7 +77,7 @@ module qmr
 
 				let str:string = LabelUtil.getCNMessage(ClientCnEnum.CN_114, count, count2, count3, count4);
 
-				PromptController.instance.showPrompt(str, null);
+				PromptController.instance.showPrompt(str, null, null,null, null, 2);
 			}
 		}
 

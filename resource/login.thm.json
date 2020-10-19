@@ -17,10 +17,10 @@
 		"resource/eui_skins/VSliderSkin.exml",
 		"resource/login_skins/InputTextSkin3.exml",
 		"resource/login_skins/CheckBoxLoginSkin.exml",
+		"resource/login_skins/InputTextSkin2.exml",
 		"resource/login_skins/CommonTipSkin.exml",
 		"resource/login_skins/GameLoadingProgressBarSkin.exml",
 		"resource/login_skins/GameLoadingViewSkin.exml",
-		"resource/login_skins/InputTextSkin2.exml",
 		"resource/login_skins/ServerListTextInputSkin.exml",
 		"resource/login_skins/LoginViewSkin.exml"
 	],

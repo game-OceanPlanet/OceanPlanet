@@ -12,7 +12,7 @@
 			<e:Image x="166.34" y="299.67" anchorOffsetX="0" width="288" scale9Grid="23,19,2,7" source="panel2_json.panel_di"/>
 			<e:Label text="总价：" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491C0E" lineSpacing="5" verticalCenter="126.5" horizontalCenter="-63" textAlign="center" anchorOffsetX="0" anchorOffsetY="0" height="28.67"/>
 			<e:Label id="labContent" text="购买数量\r购买数量\r购买数量\r购买数量\r购买数量\r" size="26" fontFamily="specialGameFont"
-			         scaleX="1" scaleY="1" width="414.33" lineSpacing="10"  verticalCenter="-76.5" horizontalCenter="-14" anchorOffsetX="0" textColor="0x8a5c2b"/>
+			         scaleX="1" scaleY="1" width="414.33" lineSpacing="10"  verticalCenter="-74" horizontalCenter="-12" anchorOffsetX="0" textColor="0x8a5c2b"/>
 			<e:Label id="txt_price" text="100" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0x491C0E" lineSpacing="5" textAlign="center" anchorOffsetX="0" anchorOffsetY="0" height="28.67" y="368.66" left="324"/>
 
 			<e:Label id="txt_title" text="购 买" y="19.31" size="30" fontFamily="specialGameFont" scaleX="1" scaleY="1"
@@ -22,7 +22,7 @@
 				<e:Image x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common1"/>
 				<e:Label id="txt_sure" text="购  买" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1" textColor="0xFFF4D6" horizontalCenter="0"/>
 			</e:Group>
-			<e:TextInput id="txt_account" maxChars="35" prompt="请输入数量" anchorOffsetY="0" height="52" anchorOffsetX="0" width="281" textColor="0xdceeef" y="296.67" x="168.5" skinName="InputTextSkin3"/>
+			<e:TextInput id="txt_account" maxChars="35" prompt="请输入数量" anchorOffsetY="0" height="52" anchorOffsetX="0" width="281" textColor="0xdceeef" y="296.67" x="168.5" skinName="InputTextSkin2"/>
 			<e:Image id="btnClose" right="-32" top="-24" source="panel2_json.btn_close2"/>
 		</e:Group>
 	</e:Group>

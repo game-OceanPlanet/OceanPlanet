@@ -44,12 +44,17 @@ public CN_330:eui.Label;
 public itemGroup:eui.Group;
 public item_list:eui.List;
 public btn_allList:eui.Group;
+public btn_img_select:eui.Image;
+public btn_img_up:eui.Image;
 public CN_540:eui.Label;
 public btn_myList:eui.Group;
+public btn_img_select2:eui.Image;
+public btn_img_up2:eui.Image;
 public CN_539:eui.Label;
 public btnReturn:eui.Image;
 public btn_help:eui.Image;
 public CN_332:eui.Label;
+
 
 
 
@@ -58,6 +63,8 @@ public CN_332:eui.Label;
 		private _dateLabels:eui.Label[];
 		private _columns:eui.Image[];
 		private _positions:egret.Point[];
+
+		private _selectType:number = 0;//0全部 1 自己
 		
 		public constructor()
 		{
@@ -132,32 +139,63 @@ public CN_332:eui.Label;
 		private showAll():void
         {
 			let t = this;
-			let pros:com.message.BuyGoodMsg[] = [];
-			if(TradeModule.instance.buyGoodsList){
-				pros = pros.concat(TradeModule.instance.buyGoodsList);
+			if(t._selectType == 0){
+				return;
 			}
-			if(pros && pros.length > 1){
-				pros.sort((a, b)=>{
-					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
-				})
-			}
-			t._arrCollection.source = pros;
+			t._selectType = 0;
+			t.btn_img_select.visible = true;
+			t.btn_img_select2.visible = false;
+			t.updateList();
 		}
 		
 		private showMe():void
         {
-            let t = this;
-			let pros:com.message.BuyGoodMsg[] = [];
-			if(TradeModule.instance.myBuyGoodsList){
-				pros = pros.concat(TradeModule.instance.myBuyGoodsList);
+			let t = this;
+			if(t._selectType == 1){
+				return;
 			}
+			t._selectType = 1;
+			t.btn_img_select.visible = false;
+			t.btn_img_select2.visible = true;
+			t.updateList();
+		}
+		
+		private updateList():void
+		{
+			let t = this;
+			let pros:com.message.BuyGoodMsg[] = [];
+			if(t._selectType == 0){
+				if(TradeModule.instance.buyGoodsList){
+					pros = pros.concat(TradeModule.instance.buyGoodsList);
+				}
+			} else if(t._selectType == 1){
+				if(TradeModule.instance.myBuyGoodsList){
+					pros = pros.concat(TradeModule.instance.myBuyGoodsList);
+				}
+			}
+			
 			if(pros && pros.length > 1){
 				pros.sort((a, b)=>{
+					if(a.diamondPrice > b.diamondPrice){
+						return -1;
+					} else if(a.diamondPrice < b.diamondPrice){
+						return 1;
+					} else  {
+						if(a.moneyCount > b.moneyCount){
+							return -1;
+						} else if(a.moneyCount < b.moneyCount){
+							return 1;
+						} else {
+							
+						}
+					}
+					
 					return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
 				})
 			}
+			// t._arrCollection.replaceAll(pros);
 			t._arrCollection.source = pros;
-        }
+		}
 
 		private onFocusOut(): void
 		{
@@ -188,6 +226,11 @@ public CN_332:eui.Label;
                 return;
 			}
 
+			if(t.todayTotalCount >= 5){
+				TipManagerCommon.getInstance().createCommonTip("每天挂单总量不能超过5单");
+                return;
+			}
+
 			let price:number = Number(str);
 			if(price <= 0){
 				TipManagerCommon.getInstance().showLanTip("CN_242");
@@ -207,6 +250,11 @@ public CN_332:eui.Label;
 			let count:number = Number(str);
 			if(count <= 0){
 				TipManagerCommon.getInstance().showLanTip("CN_244");
+                return;
+			}
+
+			if(count < 100){
+				TipManagerCommon.getInstance().createCommonTip("挂单数量不能少于100");
                 return;
 			}
 
@@ -230,6 +278,7 @@ public CN_332:eui.Label;
 			TradeController.instance.getBuyOrderRequest(count, price);
 		}
 
+		private todayTotalCount:number = 0;
 		private updateView():void
 		{
             let t = this;
@@ -237,46 +286,25 @@ public CN_332:eui.Label;
 			if(TradeModule.instance.buyGoodsList){
 				pros = pros.concat(TradeModule.instance.buyGoodsList);
 			}
-			
-			// let totalBuyCount:number = 0;
+
+			let totalBuyCount:number = 0;
 			let len:number;
-			// if(pros && pros.length > 0){
-			// 	len = pros.length;
-			// 	for(var i:number = 0; i < len;i ++){
-			// 		totalBuyCount += Int64Util.getNumber(pros[i].moneyCount) * pros[i].diamondPrice;
-			// 	}
-			// } else {
-			// 	pros = [];
-			// }
-			if(pros && pros.length > 1){
-				pros.sort((a, b)=>{
-					// if(a.moneyCount == b.moneyCount){
-					// 	if(a.diamondPrice > b.diamondPrice){
-					// 		return 1;
-					// 	} else if(a.diamondPrice < b.diamondPrice){
-					// 		return -1;
-					// 	}
-					// } else if(a.moneyCount > b.moneyCount){
-					// 	return 1;
-					// } else if(a.moneyCount < b.moneyCount){
-					// 	return -1;
-					// }
-					if(a.diamondPrice > b.diamondPrice){
-						return -1;
-					} else if(a.diamondPrice < b.diamondPrice){
-						return 1;
+			if(pros && pros.length > 0){
+				len = pros.length;
+				let nowDate:Date = new Date();
+				nowDate.setHours(0,0,0);
+				let nowDataTime:number = nowDate.getTime();
+				for(var i:number = 0; i < len;i ++){
+					if(pros[i].playerId == HeroModel.instance.IdentityPro.playerId && nowDataTime < pros[i].createTime){
+						totalBuyCount ++;
 					}
-					// return Int64Util.getNumber(b.createTime) - Int64Util.getNumber(a.createTime);
-					if(a.moneyCount > b.moneyCount){
-						return -1;
-					} else if(a.moneyCount < b.moneyCount){
-						return 1;
-					}
-					return 0;
-				})
+				}
+			} else {
+				pros = [];
 			}
-			// t._arrCollection.replaceAll(pros);
-			t._arrCollection.source = pros;
+			t.todayTotalCount = totalBuyCount;
+			
+			t.updateList();
 			
 			t.txt_todayPrice.text = TradeModule.instance.sysDiamonPrice + HeroModel.USDT;
 			// t.txt_totalCount.text = NumberUtil.getFloat4Number2String(totalBuyCount) + HeroModel.USDT;
@@ -317,8 +345,9 @@ public CN_332:eui.Label;
 			t.txt_totalChangeValue.text = Math.ceil((todayPrice - firstPrice) * 100 / firstPrice) + "%";
 
 			if(prices.length > 7){
-				prices = prices.slice(0, 7);
-				days = days.slice(0, 7);
+				let startIndex:number = prices.length - 7;
+				prices = prices.slice(startIndex, prices.length);
+				days = days.slice(startIndex, days.length);
 			}
 			
 			let dayMiniSeconds:number = 24 * 3600 * 1000;
@@ -366,6 +395,16 @@ public CN_332:eui.Label;
 				}
 				//steps[i] / maxPrice * maxHeight;
 				// t._columns[i].y = 230 - t._columns[i].height;
+			}
+
+			if(t.text_input_price.text == "" || t.text_input_price.text == "0"){
+				let max:number = Number(ConfigManagerAft.getCommonConfig(1029));
+				let maxPrice:number = TradeModule.instance.sysDiamonPrice * max;
+				t.text_input_price.text = maxPrice + "";
+			}
+
+			if(t.text_input_count.text == "" || t.text_input_count.text == "0"){
+				t.text_input_count.text = 100 + "";
 			}
 		}
 

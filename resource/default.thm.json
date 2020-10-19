@@ -60,6 +60,7 @@
 		"resource/game_skin/PetItemSkin.exml",
 		"resource/game_skin/PetViewSkin.exml",
 		"resource/game_skin/PriceSkin.exml",
+		"resource/login_skins/InputTextSkin2.exml",
 		"resource/game_skin/PromptInputSkin.exml",
 		"resource/game_skin/promptSkin.exml",
 		"resource/game_skin/RechargeSkin.exml",
@@ -72,7 +73,6 @@
 		"resource/login_skins/DisConnectSkin.exml",
 		"resource/login_skins/GameLoadingProgressBarSkin.exml",
 		"resource/login_skins/GameLoadingViewSkin.exml",
-		"resource/login_skins/InputTextSkin2.exml",
 		"resource/login_skins/ServerListTextInputSkin.exml",
 		"resource/login_skins/LoginViewSkin.exml"
 	],

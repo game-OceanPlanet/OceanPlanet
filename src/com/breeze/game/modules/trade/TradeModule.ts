@@ -27,7 +27,7 @@ module qmr {
                 t.buyGoodsList = [];
             }
             if (pro) {
-                t.buyGoodsList.push(pro);
+                t.buyGoodsList.unshift(pro);
             }
         }
 
