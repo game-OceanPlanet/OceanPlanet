@@ -12,7 +12,7 @@ module qmr {
             return this._instance || (this._instance = new TeamModdel());
         }
 
-        public static PAGE_SIZE:number = 300;
+        public static PAGE_SIZE:number = 500;
 
         public myTeam:com.message.MyTeamMsg;//团队信息
         public teamers:com.message.DirectInfoMsg[];//获取我的直推成员信息

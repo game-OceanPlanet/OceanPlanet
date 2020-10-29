@@ -148,3 +148,50 @@ message S_SYNC_TRADE_RATE_CONFIG {
 	TradeCostConfigMsg configMsg = 1; 
 }
 
+//-----------------------------深海部落活动买鱼配置信息---------------
+//深海部落活动鱼配置信息
+message DeepFishConfigMsg {
+	int64 id =1; 	// 配置id
+	int64 fishId =3; 	// 鱼配置id
+	double ubuyPrice =9; 	// U购买需要价格
+	string dec=4; 	// 描述
+}
+
+// 获取深海部落活动鱼配置
+message C_GET_DEEP_FISH_CONFIG {
+}
+
+// 获取深海部落活动鱼配置
+message S_GET_DEEP_FISH_CONFIG {
+	repeated DeepFishConfigMsg configMsgList = 1; 
+}
+
+// 深海部落活动鱼配置修改通知
+message S_SYNC_DEEP_FISH_CONFIG {
+	DeepFishConfigMsg configMsg = 1; 
+}
+
+//-----------------------------海洋星球活动抽奖奖励配置信息---------------
+//海洋星球活动抽奖置信息
+message OceanDrawConfigMsg {
+	int64 id =1; 	// 配置id
+	double money =2; 	// 奖励金币数量
+	double diamond =3; 	// 奖励U数量
+	int32  reward =4; 	// 是否参与中奖,0否，1是
+	int32 rate =5; 	// 中奖权重
+	string dec=6; 	// 描述
+}
+
+// 获取海洋星球活动抽奖置信息
+message C_GET_OCEAN_DRAW_CONFIG {
+}
+
+// 获取海洋星球活动抽奖置信息
+message S_GET_OCEAN_DRAW_CONFIG {
+	repeated OceanDrawConfigMsg configMsgList = 1; 
+}
+
+// 海洋星球活动抽奖置修改通知
+message S_SYNC_OCEAN_DRAW_CONFIG {
+	OceanDrawConfigMsg configMsg = 1; 
+}

@@ -58,6 +58,10 @@ declare class ActiveKeyItemSkin extends eui.Skin{
 }
 declare class ActiveKeySkin extends eui.Skin{
 }
+declare class ActiveShopItemSkin extends eui.Skin{
+}
+declare class ActiveShopSkin extends eui.Skin{
+}
 declare class BuyGoodItemSkin extends eui.Skin{
 }
 declare class CertificationSkin extends eui.Skin{
@@ -88,6 +92,8 @@ declare class InviteCodeItemSkin extends eui.Skin{
 }
 declare class InviteCodeSkin extends eui.Skin{
 }
+declare class LoginGiftViewSkin extends eui.Skin{
+}
 declare class Mainui extends eui.Skin{
 }
 declare class MineIDSkin extends eui.Skin{
@@ -113,6 +119,10 @@ declare class PromptInputSkin extends eui.Skin{
 declare class PromptSkin extends eui.Skin{
 }
 declare class RechargeSkin extends eui.Skin{
+}
+declare class RuneLotteryItemSkin extends eui.Skin{
+}
+declare class RuneLotteryViewSkin extends eui.Skin{
 }
 declare class ShopItemSkin extends eui.Skin{
 }

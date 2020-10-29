@@ -37,6 +37,9 @@ module qmr
             modulelManager.registerClass(ModuleNameConst.HELP_MAIN_VIEW, qmr.HelpMain);
             modulelManager.registerClass(ModuleNameConst.RECHARGE_VIEW, qmr.RechargeView);
             modulelManager.registerClass(ModuleNameConst.WIHTDRAWAL_VIEW, qmr.WithdrawalView);
+            modulelManager.registerClass(ModuleNameConst.LOGIN_GIFT_VIEW, qmr.LoginGiftView);
+            modulelManager.registerClass(ModuleNameConst.ACTIVE_SHOP_VIEW, qmr.ActiveShopView);
+            modulelManager.registerClass(ModuleNameConst.RUNE_LOTTERY_VIEW, qmr.RuneLotteryView);
         }
     }
 }

@@ -6,6 +6,1748 @@ declare namespace com {
     /** Namespace message. */
     namespace message {
 
+        /** Properties of a DeapActivityMsg. */
+        interface IDeapActivityMsg {
+
+            /** DeapActivityMsg allCount */
+            allCount?: (number|null);
+
+            /** DeapActivityMsg leftCount */
+            leftCount?: (number|null);
+
+            /** DeapActivityMsg endTime */
+            endTime?: (number|Long|null);
+
+            /** DeapActivityMsg limiteCount */
+            limiteCount?: (number|null);
+        }
+
+        /** Represents a DeapActivityMsg. */
+        class DeapActivityMsg implements IDeapActivityMsg {
+
+            /**
+             * Constructs a new DeapActivityMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IDeapActivityMsg);
+
+            /** DeapActivityMsg allCount. */
+            public allCount: number;
+
+            /** DeapActivityMsg leftCount. */
+            public leftCount: number;
+
+            /** DeapActivityMsg endTime. */
+            public endTime: (number|Long);
+
+            /** DeapActivityMsg limiteCount. */
+            public limiteCount: number;
+
+            /**
+             * Encodes the specified DeapActivityMsg message. Does not implicitly {@link com.message.DeapActivityMsg.verify|verify} messages.
+             * @param message DeapActivityMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IDeapActivityMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a DeapActivityMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DeapActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.DeapActivityMsg;
+        }
+
+        /** Properties of a C_GET_DEAP_ACTIVITY_INFO. */
+        interface IC_GET_DEAP_ACTIVITY_INFO {
+        }
+
+        /** Represents a C_GET_DEAP_ACTIVITY_INFO. */
+        class C_GET_DEAP_ACTIVITY_INFO implements IC_GET_DEAP_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new C_GET_DEAP_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_DEAP_ACTIVITY_INFO);
+
+            /**
+             * Encodes the specified C_GET_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @param message C_GET_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_DEAP_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_DEAP_ACTIVITY_INFO;
+        }
+
+        /** Properties of a S_GET_DEAP_ACTIVITY_INFO. */
+        interface IS_GET_DEAP_ACTIVITY_INFO {
+
+            /** S_GET_DEAP_ACTIVITY_INFO deapActivityMsg */
+            deapActivityMsg?: (com.message.IDeapActivityMsg|null);
+        }
+
+        /** Represents a S_GET_DEAP_ACTIVITY_INFO. */
+        class S_GET_DEAP_ACTIVITY_INFO implements IS_GET_DEAP_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new S_GET_DEAP_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_DEAP_ACTIVITY_INFO);
+
+            /** S_GET_DEAP_ACTIVITY_INFO deapActivityMsg. */
+            public deapActivityMsg?: (com.message.IDeapActivityMsg|null);
+
+            /**
+             * Encodes the specified S_GET_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @param message S_GET_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_DEAP_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_DEAP_ACTIVITY_INFO;
+        }
+
+        /** Properties of a MyDeapActivityMsg. */
+        interface IMyDeapActivityMsg {
+
+            /** MyDeapActivityMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** MyDeapActivityMsg buyCount */
+            buyCount?: (number|null);
+
+            /** MyDeapActivityMsg leftCount */
+            leftCount?: (number|null);
+
+            /** MyDeapActivityMsg endTime */
+            endTime?: (number|Long|null);
+        }
+
+        /** Represents a MyDeapActivityMsg. */
+        class MyDeapActivityMsg implements IMyDeapActivityMsg {
+
+            /**
+             * Constructs a new MyDeapActivityMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IMyDeapActivityMsg);
+
+            /** MyDeapActivityMsg playerId. */
+            public playerId: (number|Long);
+
+            /** MyDeapActivityMsg buyCount. */
+            public buyCount: number;
+
+            /** MyDeapActivityMsg leftCount. */
+            public leftCount: number;
+
+            /** MyDeapActivityMsg endTime. */
+            public endTime: (number|Long);
+
+            /**
+             * Encodes the specified MyDeapActivityMsg message. Does not implicitly {@link com.message.MyDeapActivityMsg.verify|verify} messages.
+             * @param message MyDeapActivityMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IMyDeapActivityMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a MyDeapActivityMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns MyDeapActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.MyDeapActivityMsg;
+        }
+
+        /** Properties of a C_GET_MY_DEAP_ACTIVITY_INFO. */
+        interface IC_GET_MY_DEAP_ACTIVITY_INFO {
+        }
+
+        /** Represents a C_GET_MY_DEAP_ACTIVITY_INFO. */
+        class C_GET_MY_DEAP_ACTIVITY_INFO implements IC_GET_MY_DEAP_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new C_GET_MY_DEAP_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MY_DEAP_ACTIVITY_INFO);
+
+            /**
+             * Encodes the specified C_GET_MY_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_MY_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @param message C_GET_MY_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MY_DEAP_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MY_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MY_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MY_DEAP_ACTIVITY_INFO;
+        }
+
+        /** Properties of a S_GET_MY_DEAP_ACTIVITY_INFO. */
+        interface IS_GET_MY_DEAP_ACTIVITY_INFO {
+
+            /** S_GET_MY_DEAP_ACTIVITY_INFO myDeapActivityMsg */
+            myDeapActivityMsg?: (com.message.IMyDeapActivityMsg|null);
+        }
+
+        /** Represents a S_GET_MY_DEAP_ACTIVITY_INFO. */
+        class S_GET_MY_DEAP_ACTIVITY_INFO implements IS_GET_MY_DEAP_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new S_GET_MY_DEAP_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MY_DEAP_ACTIVITY_INFO);
+
+            /** S_GET_MY_DEAP_ACTIVITY_INFO myDeapActivityMsg. */
+            public myDeapActivityMsg?: (com.message.IMyDeapActivityMsg|null);
+
+            /**
+             * Encodes the specified S_GET_MY_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_MY_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @param message S_GET_MY_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MY_DEAP_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MY_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MY_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MY_DEAP_ACTIVITY_INFO;
+        }
+
+        /** Properties of a C_BUY_DEAP_ACTIVITY_FISH. */
+        interface IC_BUY_DEAP_ACTIVITY_FISH {
+
+            /** C_BUY_DEAP_ACTIVITY_FISH fishId */
+            fishId?: (number|Long|null);
+        }
+
+        /** Represents a C_BUY_DEAP_ACTIVITY_FISH. */
+        class C_BUY_DEAP_ACTIVITY_FISH implements IC_BUY_DEAP_ACTIVITY_FISH {
+
+            /**
+             * Constructs a new C_BUY_DEAP_ACTIVITY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_BUY_DEAP_ACTIVITY_FISH);
+
+            /** C_BUY_DEAP_ACTIVITY_FISH fishId. */
+            public fishId: (number|Long);
+
+            /**
+             * Encodes the specified C_BUY_DEAP_ACTIVITY_FISH message. Does not implicitly {@link com.message.C_BUY_DEAP_ACTIVITY_FISH.verify|verify} messages.
+             * @param message C_BUY_DEAP_ACTIVITY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_BUY_DEAP_ACTIVITY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_BUY_DEAP_ACTIVITY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_BUY_DEAP_ACTIVITY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_BUY_DEAP_ACTIVITY_FISH;
+        }
+
+        /** Properties of a S_BUY_DEAP_ACTIVITY_FISH. */
+        interface IS_BUY_DEAP_ACTIVITY_FISH {
+
+            /** S_BUY_DEAP_ACTIVITY_FISH fishMsg */
+            fishMsg?: (com.message.IFishMsg|null);
+
+            /** S_BUY_DEAP_ACTIVITY_FISH myDeapActivityMsg */
+            myDeapActivityMsg?: (com.message.IMyDeapActivityMsg|null);
+        }
+
+        /** Represents a S_BUY_DEAP_ACTIVITY_FISH. */
+        class S_BUY_DEAP_ACTIVITY_FISH implements IS_BUY_DEAP_ACTIVITY_FISH {
+
+            /**
+             * Constructs a new S_BUY_DEAP_ACTIVITY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_BUY_DEAP_ACTIVITY_FISH);
+
+            /** S_BUY_DEAP_ACTIVITY_FISH fishMsg. */
+            public fishMsg?: (com.message.IFishMsg|null);
+
+            /** S_BUY_DEAP_ACTIVITY_FISH myDeapActivityMsg. */
+            public myDeapActivityMsg?: (com.message.IMyDeapActivityMsg|null);
+
+            /**
+             * Encodes the specified S_BUY_DEAP_ACTIVITY_FISH message. Does not implicitly {@link com.message.S_BUY_DEAP_ACTIVITY_FISH.verify|verify} messages.
+             * @param message S_BUY_DEAP_ACTIVITY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_BUY_DEAP_ACTIVITY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_BUY_DEAP_ACTIVITY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_BUY_DEAP_ACTIVITY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_BUY_DEAP_ACTIVITY_FISH;
+        }
+
+        /** Properties of an OcenActivityMsg. */
+        interface IOcenActivityMsg {
+
+            /** OcenActivityMsg directCount */
+            directCount?: (number|null);
+
+            /** OcenActivityMsg teamCount */
+            teamCount?: (number|null);
+
+            /** OcenActivityMsg endTime */
+            endTime?: (number|Long|null);
+        }
+
+        /** Represents an OcenActivityMsg. */
+        class OcenActivityMsg implements IOcenActivityMsg {
+
+            /**
+             * Constructs a new OcenActivityMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IOcenActivityMsg);
+
+            /** OcenActivityMsg directCount. */
+            public directCount: number;
+
+            /** OcenActivityMsg teamCount. */
+            public teamCount: number;
+
+            /** OcenActivityMsg endTime. */
+            public endTime: (number|Long);
+
+            /**
+             * Encodes the specified OcenActivityMsg message. Does not implicitly {@link com.message.OcenActivityMsg.verify|verify} messages.
+             * @param message OcenActivityMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IOcenActivityMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an OcenActivityMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OcenActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.OcenActivityMsg;
+        }
+
+        /** Properties of a C_GET_OCEAN_ACTIVITY_INFO. */
+        interface IC_GET_OCEAN_ACTIVITY_INFO {
+        }
+
+        /** Represents a C_GET_OCEAN_ACTIVITY_INFO. */
+        class C_GET_OCEAN_ACTIVITY_INFO implements IC_GET_OCEAN_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new C_GET_OCEAN_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_OCEAN_ACTIVITY_INFO);
+
+            /**
+             * Encodes the specified C_GET_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @param message C_GET_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_OCEAN_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_OCEAN_ACTIVITY_INFO;
+        }
+
+        /** Properties of a S_GET_OCEAN_ACTIVITY_INFO. */
+        interface IS_GET_OCEAN_ACTIVITY_INFO {
+
+            /** S_GET_OCEAN_ACTIVITY_INFO ocenActivityMsg */
+            ocenActivityMsg?: (com.message.IOcenActivityMsg|null);
+        }
+
+        /** Represents a S_GET_OCEAN_ACTIVITY_INFO. */
+        class S_GET_OCEAN_ACTIVITY_INFO implements IS_GET_OCEAN_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new S_GET_OCEAN_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_OCEAN_ACTIVITY_INFO);
+
+            /** S_GET_OCEAN_ACTIVITY_INFO ocenActivityMsg. */
+            public ocenActivityMsg?: (com.message.IOcenActivityMsg|null);
+
+            /**
+             * Encodes the specified S_GET_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @param message S_GET_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_OCEAN_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCEAN_ACTIVITY_INFO;
+        }
+
+        /** Properties of a MyOceanActivityMsg. */
+        interface IMyOceanActivityMsg {
+
+            /** MyOceanActivityMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** MyOceanActivityMsg directCount */
+            directCount?: (number|null);
+
+            /** MyOceanActivityMsg teamCount */
+            teamCount?: (number|null);
+
+            /** MyOceanActivityMsg leftCount */
+            leftCount?: (number|null);
+
+            /** MyOceanActivityMsg endTime */
+            endTime?: (number|Long|null);
+        }
+
+        /** Represents a MyOceanActivityMsg. */
+        class MyOceanActivityMsg implements IMyOceanActivityMsg {
+
+            /**
+             * Constructs a new MyOceanActivityMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IMyOceanActivityMsg);
+
+            /** MyOceanActivityMsg playerId. */
+            public playerId: (number|Long);
+
+            /** MyOceanActivityMsg directCount. */
+            public directCount: number;
+
+            /** MyOceanActivityMsg teamCount. */
+            public teamCount: number;
+
+            /** MyOceanActivityMsg leftCount. */
+            public leftCount: number;
+
+            /** MyOceanActivityMsg endTime. */
+            public endTime: (number|Long);
+
+            /**
+             * Encodes the specified MyOceanActivityMsg message. Does not implicitly {@link com.message.MyOceanActivityMsg.verify|verify} messages.
+             * @param message MyOceanActivityMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IMyOceanActivityMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a MyOceanActivityMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns MyOceanActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.MyOceanActivityMsg;
+        }
+
+        /** Properties of a C_GET_MY_OCEAN_ACTIVITY_INFO. */
+        interface IC_GET_MY_OCEAN_ACTIVITY_INFO {
+        }
+
+        /** Represents a C_GET_MY_OCEAN_ACTIVITY_INFO. */
+        class C_GET_MY_OCEAN_ACTIVITY_INFO implements IC_GET_MY_OCEAN_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new C_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MY_OCEAN_ACTIVITY_INFO);
+
+            /**
+             * Encodes the specified C_GET_MY_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_MY_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @param message C_GET_MY_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MY_OCEAN_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MY_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MY_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MY_OCEAN_ACTIVITY_INFO;
+        }
+
+        /** Properties of a S_GET_MY_OCEAN_ACTIVITY_INFO. */
+        interface IS_GET_MY_OCEAN_ACTIVITY_INFO {
+
+            /** S_GET_MY_OCEAN_ACTIVITY_INFO myOceanActivityMsg */
+            myOceanActivityMsg?: (com.message.IMyOceanActivityMsg|null);
+        }
+
+        /** Represents a S_GET_MY_OCEAN_ACTIVITY_INFO. */
+        class S_GET_MY_OCEAN_ACTIVITY_INFO implements IS_GET_MY_OCEAN_ACTIVITY_INFO {
+
+            /**
+             * Constructs a new S_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MY_OCEAN_ACTIVITY_INFO);
+
+            /** S_GET_MY_OCEAN_ACTIVITY_INFO myOceanActivityMsg. */
+            public myOceanActivityMsg?: (com.message.IMyOceanActivityMsg|null);
+
+            /**
+             * Encodes the specified S_GET_MY_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_MY_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @param message S_GET_MY_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MY_OCEAN_ACTIVITY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MY_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MY_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MY_OCEAN_ACTIVITY_INFO;
+        }
+
+        /** Properties of a C_OCEAN_ACTIVITY_DRAW. */
+        interface IC_OCEAN_ACTIVITY_DRAW {
+        }
+
+        /** Represents a C_OCEAN_ACTIVITY_DRAW. */
+        class C_OCEAN_ACTIVITY_DRAW implements IC_OCEAN_ACTIVITY_DRAW {
+
+            /**
+             * Constructs a new C_OCEAN_ACTIVITY_DRAW.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_OCEAN_ACTIVITY_DRAW);
+
+            /**
+             * Encodes the specified C_OCEAN_ACTIVITY_DRAW message. Does not implicitly {@link com.message.C_OCEAN_ACTIVITY_DRAW.verify|verify} messages.
+             * @param message C_OCEAN_ACTIVITY_DRAW message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_OCEAN_ACTIVITY_DRAW, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_OCEAN_ACTIVITY_DRAW message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_OCEAN_ACTIVITY_DRAW
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_OCEAN_ACTIVITY_DRAW;
+        }
+
+        /** Properties of a S_OCEAN_ACTIVITY_DRAW. */
+        interface IS_OCEAN_ACTIVITY_DRAW {
+
+            /** S_OCEAN_ACTIVITY_DRAW rewardId */
+            rewardId?: (number|Long|null);
+
+            /** S_OCEAN_ACTIVITY_DRAW reward */
+            reward?: (string|null);
+
+            /** S_OCEAN_ACTIVITY_DRAW myOceanActivityMsg */
+            myOceanActivityMsg?: (com.message.IMyOceanActivityMsg|null);
+        }
+
+        /** Represents a S_OCEAN_ACTIVITY_DRAW. */
+        class S_OCEAN_ACTIVITY_DRAW implements IS_OCEAN_ACTIVITY_DRAW {
+
+            /**
+             * Constructs a new S_OCEAN_ACTIVITY_DRAW.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_OCEAN_ACTIVITY_DRAW);
+
+            /** S_OCEAN_ACTIVITY_DRAW rewardId. */
+            public rewardId: (number|Long);
+
+            /** S_OCEAN_ACTIVITY_DRAW reward. */
+            public reward: string;
+
+            /** S_OCEAN_ACTIVITY_DRAW myOceanActivityMsg. */
+            public myOceanActivityMsg?: (com.message.IMyOceanActivityMsg|null);
+
+            /**
+             * Encodes the specified S_OCEAN_ACTIVITY_DRAW message. Does not implicitly {@link com.message.S_OCEAN_ACTIVITY_DRAW.verify|verify} messages.
+             * @param message S_OCEAN_ACTIVITY_DRAW message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_OCEAN_ACTIVITY_DRAW, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_OCEAN_ACTIVITY_DRAW message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_OCEAN_ACTIVITY_DRAW
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_OCEAN_ACTIVITY_DRAW;
+        }
+
+        /** Properties of an OceanActivityRankMsg. */
+        interface IOceanActivityRankMsg {
+
+            /** OceanActivityRankMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** OceanActivityRankMsg mobile */
+            mobile?: (string|null);
+
+            /** OceanActivityRankMsg directCount */
+            directCount?: (number|null);
+
+            /** OceanActivityRankMsg teamCount */
+            teamCount?: (number|null);
+
+            /** OceanActivityRankMsg leftCount */
+            leftCount?: (number|null);
+
+            /** OceanActivityRankMsg endTime */
+            endTime?: (number|Long|null);
+        }
+
+        /** Represents an OceanActivityRankMsg. */
+        class OceanActivityRankMsg implements IOceanActivityRankMsg {
+
+            /**
+             * Constructs a new OceanActivityRankMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IOceanActivityRankMsg);
+
+            /** OceanActivityRankMsg playerId. */
+            public playerId: (number|Long);
+
+            /** OceanActivityRankMsg mobile. */
+            public mobile: string;
+
+            /** OceanActivityRankMsg directCount. */
+            public directCount: number;
+
+            /** OceanActivityRankMsg teamCount. */
+            public teamCount: number;
+
+            /** OceanActivityRankMsg leftCount. */
+            public leftCount: number;
+
+            /** OceanActivityRankMsg endTime. */
+            public endTime: (number|Long);
+
+            /**
+             * Encodes the specified OceanActivityRankMsg message. Does not implicitly {@link com.message.OceanActivityRankMsg.verify|verify} messages.
+             * @param message OceanActivityRankMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IOceanActivityRankMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an OceanActivityRankMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OceanActivityRankMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.OceanActivityRankMsg;
+        }
+
+        /** Properties of a C_GET_OCEAN_ACTIVITY_RANK. */
+        interface IC_GET_OCEAN_ACTIVITY_RANK {
+
+            /** C_GET_OCEAN_ACTIVITY_RANK type */
+            type?: (number|null);
+
+            /** C_GET_OCEAN_ACTIVITY_RANK page */
+            page?: (number|null);
+
+            /** C_GET_OCEAN_ACTIVITY_RANK pageSize */
+            pageSize?: (number|null);
+        }
+
+        /** Represents a C_GET_OCEAN_ACTIVITY_RANK. */
+        class C_GET_OCEAN_ACTIVITY_RANK implements IC_GET_OCEAN_ACTIVITY_RANK {
+
+            /**
+             * Constructs a new C_GET_OCEAN_ACTIVITY_RANK.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_OCEAN_ACTIVITY_RANK);
+
+            /** C_GET_OCEAN_ACTIVITY_RANK type. */
+            public type: number;
+
+            /** C_GET_OCEAN_ACTIVITY_RANK page. */
+            public page: number;
+
+            /** C_GET_OCEAN_ACTIVITY_RANK pageSize. */
+            public pageSize: number;
+
+            /**
+             * Encodes the specified C_GET_OCEAN_ACTIVITY_RANK message. Does not implicitly {@link com.message.C_GET_OCEAN_ACTIVITY_RANK.verify|verify} messages.
+             * @param message C_GET_OCEAN_ACTIVITY_RANK message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_OCEAN_ACTIVITY_RANK, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_OCEAN_ACTIVITY_RANK message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_OCEAN_ACTIVITY_RANK
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_OCEAN_ACTIVITY_RANK;
+        }
+
+        /** Properties of a S_GET_OCEAN_ACTIVITY_RANK. */
+        interface IS_GET_OCEAN_ACTIVITY_RANK {
+
+            /** S_GET_OCEAN_ACTIVITY_RANK oceanActivityRankMsg */
+            oceanActivityRankMsg?: (com.message.IOceanActivityRankMsg[]|null);
+        }
+
+        /** Represents a S_GET_OCEAN_ACTIVITY_RANK. */
+        class S_GET_OCEAN_ACTIVITY_RANK implements IS_GET_OCEAN_ACTIVITY_RANK {
+
+            /**
+             * Constructs a new S_GET_OCEAN_ACTIVITY_RANK.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_OCEAN_ACTIVITY_RANK);
+
+            /** S_GET_OCEAN_ACTIVITY_RANK oceanActivityRankMsg. */
+            public oceanActivityRankMsg: com.message.IOceanActivityRankMsg[];
+
+            /**
+             * Encodes the specified S_GET_OCEAN_ACTIVITY_RANK message. Does not implicitly {@link com.message.S_GET_OCEAN_ACTIVITY_RANK.verify|verify} messages.
+             * @param message S_GET_OCEAN_ACTIVITY_RANK message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_OCEAN_ACTIVITY_RANK, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_OCEAN_ACTIVITY_RANK message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_OCEAN_ACTIVITY_RANK
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCEAN_ACTIVITY_RANK;
+        }
+
+        /** Properties of an OceanActivityDrawLogMsg. */
+        interface IOceanActivityDrawLogMsg {
+
+            /** OceanActivityDrawLogMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** OceanActivityDrawLogMsg mobile */
+            mobile?: (string|null);
+
+            /** OceanActivityDrawLogMsg rewardId */
+            rewardId?: (number|Long|null);
+
+            /** OceanActivityDrawLogMsg reward */
+            reward?: (string|null);
+
+            /** OceanActivityDrawLogMsg logTime */
+            logTime?: (number|Long|null);
+        }
+
+        /** Represents an OceanActivityDrawLogMsg. */
+        class OceanActivityDrawLogMsg implements IOceanActivityDrawLogMsg {
+
+            /**
+             * Constructs a new OceanActivityDrawLogMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IOceanActivityDrawLogMsg);
+
+            /** OceanActivityDrawLogMsg playerId. */
+            public playerId: (number|Long);
+
+            /** OceanActivityDrawLogMsg mobile. */
+            public mobile: string;
+
+            /** OceanActivityDrawLogMsg rewardId. */
+            public rewardId: (number|Long);
+
+            /** OceanActivityDrawLogMsg reward. */
+            public reward: string;
+
+            /** OceanActivityDrawLogMsg logTime. */
+            public logTime: (number|Long);
+
+            /**
+             * Encodes the specified OceanActivityDrawLogMsg message. Does not implicitly {@link com.message.OceanActivityDrawLogMsg.verify|verify} messages.
+             * @param message OceanActivityDrawLogMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IOceanActivityDrawLogMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an OceanActivityDrawLogMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OceanActivityDrawLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.OceanActivityDrawLogMsg;
+        }
+
+        /** Properties of a C_GET_OCEAN_ACTIVITY_DRAW_LOG. */
+        interface IC_GET_OCEAN_ACTIVITY_DRAW_LOG {
+        }
+
+        /** Represents a C_GET_OCEAN_ACTIVITY_DRAW_LOG. */
+        class C_GET_OCEAN_ACTIVITY_DRAW_LOG implements IC_GET_OCEAN_ACTIVITY_DRAW_LOG {
+
+            /**
+             * Constructs a new C_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_OCEAN_ACTIVITY_DRAW_LOG);
+
+            /**
+             * Encodes the specified C_GET_OCEAN_ACTIVITY_DRAW_LOG message. Does not implicitly {@link com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG.verify|verify} messages.
+             * @param message C_GET_OCEAN_ACTIVITY_DRAW_LOG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_OCEAN_ACTIVITY_DRAW_LOG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_OCEAN_ACTIVITY_DRAW_LOG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG;
+        }
+
+        /** Properties of a S_GET_OCEAN_ACTIVITY_DRAW_LOG. */
+        interface IS_GET_OCEAN_ACTIVITY_DRAW_LOG {
+
+            /** S_GET_OCEAN_ACTIVITY_DRAW_LOG oceanActivityDrawLogMsg */
+            oceanActivityDrawLogMsg?: (com.message.IOceanActivityDrawLogMsg[]|null);
+        }
+
+        /** Represents a S_GET_OCEAN_ACTIVITY_DRAW_LOG. */
+        class S_GET_OCEAN_ACTIVITY_DRAW_LOG implements IS_GET_OCEAN_ACTIVITY_DRAW_LOG {
+
+            /**
+             * Constructs a new S_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_OCEAN_ACTIVITY_DRAW_LOG);
+
+            /** S_GET_OCEAN_ACTIVITY_DRAW_LOG oceanActivityDrawLogMsg. */
+            public oceanActivityDrawLogMsg: com.message.IOceanActivityDrawLogMsg[];
+
+            /**
+             * Encodes the specified S_GET_OCEAN_ACTIVITY_DRAW_LOG message. Does not implicitly {@link com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG.verify|verify} messages.
+             * @param message S_GET_OCEAN_ACTIVITY_DRAW_LOG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_OCEAN_ACTIVITY_DRAW_LOG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_OCEAN_ACTIVITY_DRAW_LOG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG;
+        }
+
+        /** Properties of a FishMsg. */
+        interface IFishMsg {
+
+            /** FishMsg id */
+            id?: (number|Long|null);
+
+            /** FishMsg level */
+            level?: (number|null);
+
+            /** FishMsg fishId */
+            fishId?: (number|Long|null);
+
+            /** FishMsg state */
+            state?: (number|null);
+
+            /** FishMsg allMoney */
+            allMoney?: (number|null);
+
+            /** FishMsg extMoney */
+            extMoney?: (number|null);
+
+            /** FishMsg leftMoney */
+            leftMoney?: (number|null);
+
+            /** FishMsg todayGotMoney */
+            todayGotMoney?: (number|null);
+
+            /** FishMsg todayCurMoney */
+            todayCurMoney?: (number|null);
+
+            /** FishMsg allDay */
+            allDay?: (number|null);
+        }
+
+        /** Represents a FishMsg. */
+        class FishMsg implements IFishMsg {
+
+            /**
+             * Constructs a new FishMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IFishMsg);
+
+            /** FishMsg id. */
+            public id: (number|Long);
+
+            /** FishMsg level. */
+            public level: number;
+
+            /** FishMsg fishId. */
+            public fishId: (number|Long);
+
+            /** FishMsg state. */
+            public state: number;
+
+            /** FishMsg allMoney. */
+            public allMoney: number;
+
+            /** FishMsg extMoney. */
+            public extMoney: number;
+
+            /** FishMsg leftMoney. */
+            public leftMoney: number;
+
+            /** FishMsg todayGotMoney. */
+            public todayGotMoney: number;
+
+            /** FishMsg todayCurMoney. */
+            public todayCurMoney: number;
+
+            /** FishMsg allDay. */
+            public allDay: number;
+
+            /**
+             * Encodes the specified FishMsg message. Does not implicitly {@link com.message.FishMsg.verify|verify} messages.
+             * @param message FishMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IFishMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a FishMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FishMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.FishMsg;
+        }
+
+        /** Properties of a C_GET_FISH_INFO. */
+        interface IC_GET_FISH_INFO {
+        }
+
+        /** Represents a C_GET_FISH_INFO. */
+        class C_GET_FISH_INFO implements IC_GET_FISH_INFO {
+
+            /**
+             * Constructs a new C_GET_FISH_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_FISH_INFO);
+
+            /**
+             * Encodes the specified C_GET_FISH_INFO message. Does not implicitly {@link com.message.C_GET_FISH_INFO.verify|verify} messages.
+             * @param message C_GET_FISH_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_FISH_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_FISH_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_FISH_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_FISH_INFO;
+        }
+
+        /** Properties of a S_GET_FISH_INFO. */
+        interface IS_GET_FISH_INFO {
+
+            /** S_GET_FISH_INFO fishMsg */
+            fishMsg?: (com.message.IFishMsg[]|null);
+        }
+
+        /** Represents a S_GET_FISH_INFO. */
+        class S_GET_FISH_INFO implements IS_GET_FISH_INFO {
+
+            /**
+             * Constructs a new S_GET_FISH_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_FISH_INFO);
+
+            /** S_GET_FISH_INFO fishMsg. */
+            public fishMsg: com.message.IFishMsg[];
+
+            /**
+             * Encodes the specified S_GET_FISH_INFO message. Does not implicitly {@link com.message.S_GET_FISH_INFO.verify|verify} messages.
+             * @param message S_GET_FISH_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_FISH_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_FISH_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_FISH_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_FISH_INFO;
+        }
+
+        /** Properties of a C_BUY_FISH. */
+        interface IC_BUY_FISH {
+
+            /** C_BUY_FISH fishConfigId */
+            fishConfigId?: (number|null);
+        }
+
+        /** Represents a C_BUY_FISH. */
+        class C_BUY_FISH implements IC_BUY_FISH {
+
+            /**
+             * Constructs a new C_BUY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_BUY_FISH);
+
+            /** C_BUY_FISH fishConfigId. */
+            public fishConfigId: number;
+
+            /**
+             * Encodes the specified C_BUY_FISH message. Does not implicitly {@link com.message.C_BUY_FISH.verify|verify} messages.
+             * @param message C_BUY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_BUY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_BUY_FISH;
+        }
+
+        /** Properties of a S_BUY_FISH. */
+        interface IS_BUY_FISH {
+
+            /** S_BUY_FISH fishMsg */
+            fishMsg?: (com.message.IFishMsg|null);
+        }
+
+        /** Represents a S_BUY_FISH. */
+        class S_BUY_FISH implements IS_BUY_FISH {
+
+            /**
+             * Constructs a new S_BUY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_BUY_FISH);
+
+            /** S_BUY_FISH fishMsg. */
+            public fishMsg?: (com.message.IFishMsg|null);
+
+            /**
+             * Encodes the specified S_BUY_FISH message. Does not implicitly {@link com.message.S_BUY_FISH.verify|verify} messages.
+             * @param message S_BUY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_BUY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_BUY_FISH;
+        }
+
+        /** Properties of a C_DIAMOND_BUY_FISH. */
+        interface IC_DIAMOND_BUY_FISH {
+
+            /** C_DIAMOND_BUY_FISH fishConfigId */
+            fishConfigId?: (number|null);
+        }
+
+        /** Represents a C_DIAMOND_BUY_FISH. */
+        class C_DIAMOND_BUY_FISH implements IC_DIAMOND_BUY_FISH {
+
+            /**
+             * Constructs a new C_DIAMOND_BUY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_DIAMOND_BUY_FISH);
+
+            /** C_DIAMOND_BUY_FISH fishConfigId. */
+            public fishConfigId: number;
+
+            /**
+             * Encodes the specified C_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.C_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @param message C_DIAMOND_BUY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_DIAMOND_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_DIAMOND_BUY_FISH;
+        }
+
+        /** Properties of a S_DIAMOND_BUY_FISH. */
+        interface IS_DIAMOND_BUY_FISH {
+
+            /** S_DIAMOND_BUY_FISH fishMsg */
+            fishMsg?: (com.message.IFishMsg|null);
+
+            /** S_DIAMOND_BUY_FISH buyFishStr */
+            buyFishStr?: (string|null);
+        }
+
+        /** Represents a S_DIAMOND_BUY_FISH. */
+        class S_DIAMOND_BUY_FISH implements IS_DIAMOND_BUY_FISH {
+
+            /**
+             * Constructs a new S_DIAMOND_BUY_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_DIAMOND_BUY_FISH);
+
+            /** S_DIAMOND_BUY_FISH fishMsg. */
+            public fishMsg?: (com.message.IFishMsg|null);
+
+            /** S_DIAMOND_BUY_FISH buyFishStr. */
+            public buyFishStr: string;
+
+            /**
+             * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @param message S_DIAMOND_BUY_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_DIAMOND_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_DIAMOND_BUY_FISH;
+        }
+
+        /** Properties of a C_COMBINE_FISH. */
+        interface IC_COMBINE_FISH {
+
+            /** C_COMBINE_FISH fish1Id */
+            fish1Id?: (number|Long|null);
+
+            /** C_COMBINE_FISH fish2Id */
+            fish2Id?: (number|Long|null);
+        }
+
+        /** Represents a C_COMBINE_FISH. */
+        class C_COMBINE_FISH implements IC_COMBINE_FISH {
+
+            /**
+             * Constructs a new C_COMBINE_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_COMBINE_FISH);
+
+            /** C_COMBINE_FISH fish1Id. */
+            public fish1Id: (number|Long);
+
+            /** C_COMBINE_FISH fish2Id. */
+            public fish2Id: (number|Long);
+
+            /**
+             * Encodes the specified C_COMBINE_FISH message. Does not implicitly {@link com.message.C_COMBINE_FISH.verify|verify} messages.
+             * @param message C_COMBINE_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_COMBINE_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_COMBINE_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_COMBINE_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_COMBINE_FISH;
+        }
+
+        /** Properties of a S_COMBINE_FISH. */
+        interface IS_COMBINE_FISH {
+
+            /** S_COMBINE_FISH fish1Id */
+            fish1Id?: (number|Long|null);
+
+            /** S_COMBINE_FISH fish2Id */
+            fish2Id?: (number|Long|null);
+
+            /** S_COMBINE_FISH fishMsg */
+            fishMsg?: (com.message.IFishMsg|null);
+        }
+
+        /** Represents a S_COMBINE_FISH. */
+        class S_COMBINE_FISH implements IS_COMBINE_FISH {
+
+            /**
+             * Constructs a new S_COMBINE_FISH.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_COMBINE_FISH);
+
+            /** S_COMBINE_FISH fish1Id. */
+            public fish1Id: (number|Long);
+
+            /** S_COMBINE_FISH fish2Id. */
+            public fish2Id: (number|Long);
+
+            /** S_COMBINE_FISH fishMsg. */
+            public fishMsg?: (com.message.IFishMsg|null);
+
+            /**
+             * Encodes the specified S_COMBINE_FISH message. Does not implicitly {@link com.message.S_COMBINE_FISH.verify|verify} messages.
+             * @param message S_COMBINE_FISH message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_COMBINE_FISH, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_COMBINE_FISH message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_COMBINE_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_COMBINE_FISH;
+        }
+
+        /** Properties of a C_GET_MONEY_REWARD. */
+        interface IC_GET_MONEY_REWARD {
+        }
+
+        /** Represents a C_GET_MONEY_REWARD. */
+        class C_GET_MONEY_REWARD implements IC_GET_MONEY_REWARD {
+
+            /**
+             * Constructs a new C_GET_MONEY_REWARD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MONEY_REWARD);
+
+            /**
+             * Encodes the specified C_GET_MONEY_REWARD message. Does not implicitly {@link com.message.C_GET_MONEY_REWARD.verify|verify} messages.
+             * @param message C_GET_MONEY_REWARD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MONEY_REWARD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_REWARD;
+        }
+
+        /** Properties of a S_GET_MONEY_REWARD. */
+        interface IS_GET_MONEY_REWARD {
+
+            /** S_GET_MONEY_REWARD money */
+            money?: (number|null);
+        }
+
+        /** Represents a S_GET_MONEY_REWARD. */
+        class S_GET_MONEY_REWARD implements IS_GET_MONEY_REWARD {
+
+            /**
+             * Constructs a new S_GET_MONEY_REWARD.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MONEY_REWARD);
+
+            /** S_GET_MONEY_REWARD money. */
+            public money: number;
+
+            /**
+             * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
+             * @param message S_GET_MONEY_REWARD message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MONEY_REWARD, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_REWARD;
+        }
+
+        /** Properties of a C_GET_MONEY_INFO. */
+        interface IC_GET_MONEY_INFO {
+        }
+
+        /** Represents a C_GET_MONEY_INFO. */
+        class C_GET_MONEY_INFO implements IC_GET_MONEY_INFO {
+
+            /**
+             * Constructs a new C_GET_MONEY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MONEY_INFO);
+
+            /**
+             * Encodes the specified C_GET_MONEY_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_INFO.verify|verify} messages.
+             * @param message C_GET_MONEY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MONEY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MONEY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_INFO;
+        }
+
+        /** Properties of a S_GET_MONEY_INFO. */
+        interface IS_GET_MONEY_INFO {
+
+            /** S_GET_MONEY_INFO money */
+            money?: (number|null);
+
+            /** S_GET_MONEY_INFO diamond */
+            diamond?: (number|null);
+        }
+
+        /** Represents a S_GET_MONEY_INFO. */
+        class S_GET_MONEY_INFO implements IS_GET_MONEY_INFO {
+
+            /**
+             * Constructs a new S_GET_MONEY_INFO.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MONEY_INFO);
+
+            /** S_GET_MONEY_INFO money. */
+            public money: number;
+
+            /** S_GET_MONEY_INFO diamond. */
+            public diamond: number;
+
+            /**
+             * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
+             * @param message S_GET_MONEY_INFO message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MONEY_INFO, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MONEY_INFO message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_INFO;
+        }
+
+        /** Properties of a MoneyLogMsg. */
+        interface IMoneyLogMsg {
+
+            /** MoneyLogMsg playerId */
+            playerId?: (number|Long|null);
+
+            /** MoneyLogMsg fishId */
+            fishId?: (number|Long|null);
+
+            /** MoneyLogMsg fishConfigId */
+            fishConfigId?: (number|Long|null);
+
+            /** MoneyLogMsg type */
+            type?: (number|null);
+
+            /** MoneyLogMsg beforeMoney */
+            beforeMoney?: (number|null);
+
+            /** MoneyLogMsg changeMoney */
+            changeMoney?: (number|null);
+
+            /** MoneyLogMsg afterMoney */
+            afterMoney?: (number|null);
+
+            /** MoneyLogMsg logTime */
+            logTime?: (number|Long|null);
+
+            /** MoneyLogMsg info */
+            info?: (string|null);
+        }
+
+        /** Represents a MoneyLogMsg. */
+        class MoneyLogMsg implements IMoneyLogMsg {
+
+            /**
+             * Constructs a new MoneyLogMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IMoneyLogMsg);
+
+            /** MoneyLogMsg playerId. */
+            public playerId: (number|Long);
+
+            /** MoneyLogMsg fishId. */
+            public fishId: (number|Long);
+
+            /** MoneyLogMsg fishConfigId. */
+            public fishConfigId: (number|Long);
+
+            /** MoneyLogMsg type. */
+            public type: number;
+
+            /** MoneyLogMsg beforeMoney. */
+            public beforeMoney: number;
+
+            /** MoneyLogMsg changeMoney. */
+            public changeMoney: number;
+
+            /** MoneyLogMsg afterMoney. */
+            public afterMoney: number;
+
+            /** MoneyLogMsg logTime. */
+            public logTime: (number|Long);
+
+            /** MoneyLogMsg info. */
+            public info: string;
+
+            /**
+             * Encodes the specified MoneyLogMsg message. Does not implicitly {@link com.message.MoneyLogMsg.verify|verify} messages.
+             * @param message MoneyLogMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IMoneyLogMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a MoneyLogMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns MoneyLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.MoneyLogMsg;
+        }
+
+        /** Properties of a C_GET_MONEY_LOG_LIST. */
+        interface IC_GET_MONEY_LOG_LIST {
+        }
+
+        /** Represents a C_GET_MONEY_LOG_LIST. */
+        class C_GET_MONEY_LOG_LIST implements IC_GET_MONEY_LOG_LIST {
+
+            /**
+             * Constructs a new C_GET_MONEY_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_MONEY_LOG_LIST);
+
+            /**
+             * Encodes the specified C_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.C_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @param message C_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_MONEY_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_LOG_LIST;
+        }
+
+        /** Properties of a S_GET_MONEY_LOG_LIST. */
+        interface IS_GET_MONEY_LOG_LIST {
+
+            /** S_GET_MONEY_LOG_LIST moneyLogMsg */
+            moneyLogMsg?: (com.message.IMoneyLogMsg[]|null);
+        }
+
+        /** Represents a S_GET_MONEY_LOG_LIST. */
+        class S_GET_MONEY_LOG_LIST implements IS_GET_MONEY_LOG_LIST {
+
+            /**
+             * Constructs a new S_GET_MONEY_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_MONEY_LOG_LIST);
+
+            /** S_GET_MONEY_LOG_LIST moneyLogMsg. */
+            public moneyLogMsg: com.message.IMoneyLogMsg[];
+
+            /**
+             * Encodes the specified S_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.S_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @param message S_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_MONEY_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_LOG_LIST;
+        }
+
+        /** Properties of a C_GET_DIAMOND_LOG_LIST. */
+        interface IC_GET_DIAMOND_LOG_LIST {
+        }
+
+        /** Represents a C_GET_DIAMOND_LOG_LIST. */
+        class C_GET_DIAMOND_LOG_LIST implements IC_GET_DIAMOND_LOG_LIST {
+
+            /**
+             * Constructs a new C_GET_DIAMOND_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_DIAMOND_LOG_LIST);
+
+            /**
+             * Encodes the specified C_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.C_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @param message C_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_DIAMOND_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_DIAMOND_LOG_LIST;
+        }
+
+        /** Properties of a S_GET_DIAMOND_LOG_LIST. */
+        interface IS_GET_DIAMOND_LOG_LIST {
+
+            /** S_GET_DIAMOND_LOG_LIST moneyLogMsg */
+            moneyLogMsg?: (com.message.IMoneyLogMsg[]|null);
+        }
+
+        /** Represents a S_GET_DIAMOND_LOG_LIST. */
+        class S_GET_DIAMOND_LOG_LIST implements IS_GET_DIAMOND_LOG_LIST {
+
+            /**
+             * Constructs a new S_GET_DIAMOND_LOG_LIST.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_DIAMOND_LOG_LIST);
+
+            /** S_GET_DIAMOND_LOG_LIST moneyLogMsg. */
+            public moneyLogMsg: com.message.IMoneyLogMsg[];
+
+            /**
+             * Encodes the specified S_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.S_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @param message S_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_DIAMOND_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_DIAMOND_LOG_LIST;
+        }
+
         /** Properties of an IntIntMapMsg. */
         interface IIntIntMapMsg {
 
@@ -1344,6 +3086,346 @@ declare namespace com {
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_TRADE_RATE_CONFIG;
+        }
+
+        /** Properties of a DeepFishConfigMsg. */
+        interface IDeepFishConfigMsg {
+
+            /** DeepFishConfigMsg id */
+            id?: (number|Long|null);
+
+            /** DeepFishConfigMsg fishId */
+            fishId?: (number|Long|null);
+
+            /** DeepFishConfigMsg ubuyPrice */
+            ubuyPrice?: (number|null);
+
+            /** DeepFishConfigMsg dec */
+            dec?: (string|null);
+        }
+
+        /** Represents a DeepFishConfigMsg. */
+        class DeepFishConfigMsg implements IDeepFishConfigMsg {
+
+            /**
+             * Constructs a new DeepFishConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IDeepFishConfigMsg);
+
+            /** DeepFishConfigMsg id. */
+            public id: (number|Long);
+
+            /** DeepFishConfigMsg fishId. */
+            public fishId: (number|Long);
+
+            /** DeepFishConfigMsg ubuyPrice. */
+            public ubuyPrice: number;
+
+            /** DeepFishConfigMsg dec. */
+            public dec: string;
+
+            /**
+             * Encodes the specified DeepFishConfigMsg message. Does not implicitly {@link com.message.DeepFishConfigMsg.verify|verify} messages.
+             * @param message DeepFishConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IDeepFishConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a DeepFishConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DeepFishConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.DeepFishConfigMsg;
+        }
+
+        /** Properties of a C_GET_DEEP_FISH_CONFIG. */
+        interface IC_GET_DEEP_FISH_CONFIG {
+        }
+
+        /** Represents a C_GET_DEEP_FISH_CONFIG. */
+        class C_GET_DEEP_FISH_CONFIG implements IC_GET_DEEP_FISH_CONFIG {
+
+            /**
+             * Constructs a new C_GET_DEEP_FISH_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_DEEP_FISH_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_DEEP_FISH_CONFIG message. Does not implicitly {@link com.message.C_GET_DEEP_FISH_CONFIG.verify|verify} messages.
+             * @param message C_GET_DEEP_FISH_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_DEEP_FISH_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_DEEP_FISH_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_DEEP_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_DEEP_FISH_CONFIG;
+        }
+
+        /** Properties of a S_GET_DEEP_FISH_CONFIG. */
+        interface IS_GET_DEEP_FISH_CONFIG {
+
+            /** S_GET_DEEP_FISH_CONFIG configMsgList */
+            configMsgList?: (com.message.IDeepFishConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_DEEP_FISH_CONFIG. */
+        class S_GET_DEEP_FISH_CONFIG implements IS_GET_DEEP_FISH_CONFIG {
+
+            /**
+             * Constructs a new S_GET_DEEP_FISH_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_DEEP_FISH_CONFIG);
+
+            /** S_GET_DEEP_FISH_CONFIG configMsgList. */
+            public configMsgList: com.message.IDeepFishConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_DEEP_FISH_CONFIG message. Does not implicitly {@link com.message.S_GET_DEEP_FISH_CONFIG.verify|verify} messages.
+             * @param message S_GET_DEEP_FISH_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_DEEP_FISH_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_DEEP_FISH_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_DEEP_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_DEEP_FISH_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_DEEP_FISH_CONFIG. */
+        interface IS_SYNC_DEEP_FISH_CONFIG {
+
+            /** S_SYNC_DEEP_FISH_CONFIG configMsg */
+            configMsg?: (com.message.IDeepFishConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_DEEP_FISH_CONFIG. */
+        class S_SYNC_DEEP_FISH_CONFIG implements IS_SYNC_DEEP_FISH_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_DEEP_FISH_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_DEEP_FISH_CONFIG);
+
+            /** S_SYNC_DEEP_FISH_CONFIG configMsg. */
+            public configMsg?: (com.message.IDeepFishConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_DEEP_FISH_CONFIG message. Does not implicitly {@link com.message.S_SYNC_DEEP_FISH_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_DEEP_FISH_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_DEEP_FISH_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_DEEP_FISH_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_DEEP_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_DEEP_FISH_CONFIG;
+        }
+
+        /** Properties of an OceanDrawConfigMsg. */
+        interface IOceanDrawConfigMsg {
+
+            /** OceanDrawConfigMsg id */
+            id?: (number|Long|null);
+
+            /** OceanDrawConfigMsg money */
+            money?: (number|null);
+
+            /** OceanDrawConfigMsg diamond */
+            diamond?: (number|null);
+
+            /** OceanDrawConfigMsg reward */
+            reward?: (number|null);
+
+            /** OceanDrawConfigMsg rate */
+            rate?: (number|null);
+
+            /** OceanDrawConfigMsg dec */
+            dec?: (string|null);
+        }
+
+        /** Represents an OceanDrawConfigMsg. */
+        class OceanDrawConfigMsg implements IOceanDrawConfigMsg {
+
+            /**
+             * Constructs a new OceanDrawConfigMsg.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IOceanDrawConfigMsg);
+
+            /** OceanDrawConfigMsg id. */
+            public id: (number|Long);
+
+            /** OceanDrawConfigMsg money. */
+            public money: number;
+
+            /** OceanDrawConfigMsg diamond. */
+            public diamond: number;
+
+            /** OceanDrawConfigMsg reward. */
+            public reward: number;
+
+            /** OceanDrawConfigMsg rate. */
+            public rate: number;
+
+            /** OceanDrawConfigMsg dec. */
+            public dec: string;
+
+            /**
+             * Encodes the specified OceanDrawConfigMsg message. Does not implicitly {@link com.message.OceanDrawConfigMsg.verify|verify} messages.
+             * @param message OceanDrawConfigMsg message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IOceanDrawConfigMsg, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes an OceanDrawConfigMsg message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns OceanDrawConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.OceanDrawConfigMsg;
+        }
+
+        /** Properties of a C_GET_OCEAN_DRAW_CONFIG. */
+        interface IC_GET_OCEAN_DRAW_CONFIG {
+        }
+
+        /** Represents a C_GET_OCEAN_DRAW_CONFIG. */
+        class C_GET_OCEAN_DRAW_CONFIG implements IC_GET_OCEAN_DRAW_CONFIG {
+
+            /**
+             * Constructs a new C_GET_OCEAN_DRAW_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IC_GET_OCEAN_DRAW_CONFIG);
+
+            /**
+             * Encodes the specified C_GET_OCEAN_DRAW_CONFIG message. Does not implicitly {@link com.message.C_GET_OCEAN_DRAW_CONFIG.verify|verify} messages.
+             * @param message C_GET_OCEAN_DRAW_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IC_GET_OCEAN_DRAW_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a C_GET_OCEAN_DRAW_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns C_GET_OCEAN_DRAW_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_OCEAN_DRAW_CONFIG;
+        }
+
+        /** Properties of a S_GET_OCEAN_DRAW_CONFIG. */
+        interface IS_GET_OCEAN_DRAW_CONFIG {
+
+            /** S_GET_OCEAN_DRAW_CONFIG configMsgList */
+            configMsgList?: (com.message.IOceanDrawConfigMsg[]|null);
+        }
+
+        /** Represents a S_GET_OCEAN_DRAW_CONFIG. */
+        class S_GET_OCEAN_DRAW_CONFIG implements IS_GET_OCEAN_DRAW_CONFIG {
+
+            /**
+             * Constructs a new S_GET_OCEAN_DRAW_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_GET_OCEAN_DRAW_CONFIG);
+
+            /** S_GET_OCEAN_DRAW_CONFIG configMsgList. */
+            public configMsgList: com.message.IOceanDrawConfigMsg[];
+
+            /**
+             * Encodes the specified S_GET_OCEAN_DRAW_CONFIG message. Does not implicitly {@link com.message.S_GET_OCEAN_DRAW_CONFIG.verify|verify} messages.
+             * @param message S_GET_OCEAN_DRAW_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_GET_OCEAN_DRAW_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_GET_OCEAN_DRAW_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_GET_OCEAN_DRAW_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_OCEAN_DRAW_CONFIG;
+        }
+
+        /** Properties of a S_SYNC_OCEAN_DRAW_CONFIG. */
+        interface IS_SYNC_OCEAN_DRAW_CONFIG {
+
+            /** S_SYNC_OCEAN_DRAW_CONFIG configMsg */
+            configMsg?: (com.message.IOceanDrawConfigMsg|null);
+        }
+
+        /** Represents a S_SYNC_OCEAN_DRAW_CONFIG. */
+        class S_SYNC_OCEAN_DRAW_CONFIG implements IS_SYNC_OCEAN_DRAW_CONFIG {
+
+            /**
+             * Constructs a new S_SYNC_OCEAN_DRAW_CONFIG.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: com.message.IS_SYNC_OCEAN_DRAW_CONFIG);
+
+            /** S_SYNC_OCEAN_DRAW_CONFIG configMsg. */
+            public configMsg?: (com.message.IOceanDrawConfigMsg|null);
+
+            /**
+             * Encodes the specified S_SYNC_OCEAN_DRAW_CONFIG message. Does not implicitly {@link com.message.S_SYNC_OCEAN_DRAW_CONFIG.verify|verify} messages.
+             * @param message S_SYNC_OCEAN_DRAW_CONFIG message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: com.message.IS_SYNC_OCEAN_DRAW_CONFIG, writer?: protobuf.Writer): protobuf.Writer;
+
+            /**
+             * Decodes a S_SYNC_OCEAN_DRAW_CONFIG message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns S_SYNC_OCEAN_DRAW_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_SYNC_OCEAN_DRAW_CONFIG;
         }
 
         /** Properties of a CROSS_C_SERVER_REGISTER. */
@@ -3756,792 +5838,6 @@ declare namespace com {
             public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.CROSS_S_EXCEPTION_MSG;
         }
 
-        /** Properties of a FishMsg. */
-        interface IFishMsg {
-
-            /** FishMsg id */
-            id?: (number|Long|null);
-
-            /** FishMsg level */
-            level?: (number|null);
-
-            /** FishMsg fishId */
-            fishId?: (number|Long|null);
-
-            /** FishMsg state */
-            state?: (number|null);
-
-            /** FishMsg allMoney */
-            allMoney?: (number|null);
-
-            /** FishMsg extMoney */
-            extMoney?: (number|null);
-
-            /** FishMsg leftMoney */
-            leftMoney?: (number|null);
-
-            /** FishMsg todayGotMoney */
-            todayGotMoney?: (number|null);
-
-            /** FishMsg todayCurMoney */
-            todayCurMoney?: (number|null);
-
-            /** FishMsg allDay */
-            allDay?: (number|null);
-        }
-
-        /** Represents a FishMsg. */
-        class FishMsg implements IFishMsg {
-
-            /**
-             * Constructs a new FishMsg.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IFishMsg);
-
-            /** FishMsg id. */
-            public id: (number|Long);
-
-            /** FishMsg level. */
-            public level: number;
-
-            /** FishMsg fishId. */
-            public fishId: (number|Long);
-
-            /** FishMsg state. */
-            public state: number;
-
-            /** FishMsg allMoney. */
-            public allMoney: number;
-
-            /** FishMsg extMoney. */
-            public extMoney: number;
-
-            /** FishMsg leftMoney. */
-            public leftMoney: number;
-
-            /** FishMsg todayGotMoney. */
-            public todayGotMoney: number;
-
-            /** FishMsg todayCurMoney. */
-            public todayCurMoney: number;
-
-            /** FishMsg allDay. */
-            public allDay: number;
-
-            /**
-             * Encodes the specified FishMsg message. Does not implicitly {@link com.message.FishMsg.verify|verify} messages.
-             * @param message FishMsg message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IFishMsg, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a FishMsg message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns FishMsg
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.FishMsg;
-        }
-
-        /** Properties of a C_GET_FISH_INFO. */
-        interface IC_GET_FISH_INFO {
-        }
-
-        /** Represents a C_GET_FISH_INFO. */
-        class C_GET_FISH_INFO implements IC_GET_FISH_INFO {
-
-            /**
-             * Constructs a new C_GET_FISH_INFO.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_GET_FISH_INFO);
-
-            /**
-             * Encodes the specified C_GET_FISH_INFO message. Does not implicitly {@link com.message.C_GET_FISH_INFO.verify|verify} messages.
-             * @param message C_GET_FISH_INFO message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_GET_FISH_INFO, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_GET_FISH_INFO message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_GET_FISH_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_FISH_INFO;
-        }
-
-        /** Properties of a S_GET_FISH_INFO. */
-        interface IS_GET_FISH_INFO {
-
-            /** S_GET_FISH_INFO fishMsg */
-            fishMsg?: (com.message.IFishMsg[]|null);
-        }
-
-        /** Represents a S_GET_FISH_INFO. */
-        class S_GET_FISH_INFO implements IS_GET_FISH_INFO {
-
-            /**
-             * Constructs a new S_GET_FISH_INFO.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_GET_FISH_INFO);
-
-            /** S_GET_FISH_INFO fishMsg. */
-            public fishMsg: com.message.IFishMsg[];
-
-            /**
-             * Encodes the specified S_GET_FISH_INFO message. Does not implicitly {@link com.message.S_GET_FISH_INFO.verify|verify} messages.
-             * @param message S_GET_FISH_INFO message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_GET_FISH_INFO, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_GET_FISH_INFO message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_GET_FISH_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_FISH_INFO;
-        }
-
-        /** Properties of a C_BUY_FISH. */
-        interface IC_BUY_FISH {
-
-            /** C_BUY_FISH fishConfigId */
-            fishConfigId?: (number|null);
-        }
-
-        /** Represents a C_BUY_FISH. */
-        class C_BUY_FISH implements IC_BUY_FISH {
-
-            /**
-             * Constructs a new C_BUY_FISH.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_BUY_FISH);
-
-            /** C_BUY_FISH fishConfigId. */
-            public fishConfigId: number;
-
-            /**
-             * Encodes the specified C_BUY_FISH message. Does not implicitly {@link com.message.C_BUY_FISH.verify|verify} messages.
-             * @param message C_BUY_FISH message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_BUY_FISH message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_BUY_FISH;
-        }
-
-        /** Properties of a S_BUY_FISH. */
-        interface IS_BUY_FISH {
-
-            /** S_BUY_FISH fishMsg */
-            fishMsg?: (com.message.IFishMsg|null);
-        }
-
-        /** Represents a S_BUY_FISH. */
-        class S_BUY_FISH implements IS_BUY_FISH {
-
-            /**
-             * Constructs a new S_BUY_FISH.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_BUY_FISH);
-
-            /** S_BUY_FISH fishMsg. */
-            public fishMsg?: (com.message.IFishMsg|null);
-
-            /**
-             * Encodes the specified S_BUY_FISH message. Does not implicitly {@link com.message.S_BUY_FISH.verify|verify} messages.
-             * @param message S_BUY_FISH message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_BUY_FISH message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_BUY_FISH;
-        }
-
-        /** Properties of a C_DIAMOND_BUY_FISH. */
-        interface IC_DIAMOND_BUY_FISH {
-
-            /** C_DIAMOND_BUY_FISH fishConfigId */
-            fishConfigId?: (number|null);
-        }
-
-        /** Represents a C_DIAMOND_BUY_FISH. */
-        class C_DIAMOND_BUY_FISH implements IC_DIAMOND_BUY_FISH {
-
-            /**
-             * Constructs a new C_DIAMOND_BUY_FISH.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_DIAMOND_BUY_FISH);
-
-            /** C_DIAMOND_BUY_FISH fishConfigId. */
-            public fishConfigId: number;
-
-            /**
-             * Encodes the specified C_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.C_DIAMOND_BUY_FISH.verify|verify} messages.
-             * @param message C_DIAMOND_BUY_FISH message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_DIAMOND_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_DIAMOND_BUY_FISH message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_DIAMOND_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_DIAMOND_BUY_FISH;
-        }
-
-        /** Properties of a S_DIAMOND_BUY_FISH. */
-        interface IS_DIAMOND_BUY_FISH {
-
-            /** S_DIAMOND_BUY_FISH fishMsg */
-            fishMsg?: (com.message.IFishMsg|null);
-
-            /** S_DIAMOND_BUY_FISH buyFishStr */
-            buyFishStr?: (string|null);
-        }
-
-        /** Represents a S_DIAMOND_BUY_FISH. */
-        class S_DIAMOND_BUY_FISH implements IS_DIAMOND_BUY_FISH {
-
-            /**
-             * Constructs a new S_DIAMOND_BUY_FISH.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_DIAMOND_BUY_FISH);
-
-            /** S_DIAMOND_BUY_FISH fishMsg. */
-            public fishMsg?: (com.message.IFishMsg|null);
-
-            /** S_DIAMOND_BUY_FISH buyFishStr. */
-            public buyFishStr: string;
-
-            /**
-             * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.
-             * @param message S_DIAMOND_BUY_FISH message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_DIAMOND_BUY_FISH, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_DIAMOND_BUY_FISH message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_DIAMOND_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_DIAMOND_BUY_FISH;
-        }
-
-        /** Properties of a C_COMBINE_FISH. */
-        interface IC_COMBINE_FISH {
-
-            /** C_COMBINE_FISH fish1Id */
-            fish1Id?: (number|Long|null);
-
-            /** C_COMBINE_FISH fish2Id */
-            fish2Id?: (number|Long|null);
-        }
-
-        /** Represents a C_COMBINE_FISH. */
-        class C_COMBINE_FISH implements IC_COMBINE_FISH {
-
-            /**
-             * Constructs a new C_COMBINE_FISH.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_COMBINE_FISH);
-
-            /** C_COMBINE_FISH fish1Id. */
-            public fish1Id: (number|Long);
-
-            /** C_COMBINE_FISH fish2Id. */
-            public fish2Id: (number|Long);
-
-            /**
-             * Encodes the specified C_COMBINE_FISH message. Does not implicitly {@link com.message.C_COMBINE_FISH.verify|verify} messages.
-             * @param message C_COMBINE_FISH message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_COMBINE_FISH, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_COMBINE_FISH message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_COMBINE_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_COMBINE_FISH;
-        }
-
-        /** Properties of a S_COMBINE_FISH. */
-        interface IS_COMBINE_FISH {
-
-            /** S_COMBINE_FISH fish1Id */
-            fish1Id?: (number|Long|null);
-
-            /** S_COMBINE_FISH fish2Id */
-            fish2Id?: (number|Long|null);
-
-            /** S_COMBINE_FISH fishMsg */
-            fishMsg?: (com.message.IFishMsg|null);
-        }
-
-        /** Represents a S_COMBINE_FISH. */
-        class S_COMBINE_FISH implements IS_COMBINE_FISH {
-
-            /**
-             * Constructs a new S_COMBINE_FISH.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_COMBINE_FISH);
-
-            /** S_COMBINE_FISH fish1Id. */
-            public fish1Id: (number|Long);
-
-            /** S_COMBINE_FISH fish2Id. */
-            public fish2Id: (number|Long);
-
-            /** S_COMBINE_FISH fishMsg. */
-            public fishMsg?: (com.message.IFishMsg|null);
-
-            /**
-             * Encodes the specified S_COMBINE_FISH message. Does not implicitly {@link com.message.S_COMBINE_FISH.verify|verify} messages.
-             * @param message S_COMBINE_FISH message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_COMBINE_FISH, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_COMBINE_FISH message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_COMBINE_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_COMBINE_FISH;
-        }
-
-        /** Properties of a C_GET_MONEY_REWARD. */
-        interface IC_GET_MONEY_REWARD {
-        }
-
-        /** Represents a C_GET_MONEY_REWARD. */
-        class C_GET_MONEY_REWARD implements IC_GET_MONEY_REWARD {
-
-            /**
-             * Constructs a new C_GET_MONEY_REWARD.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_GET_MONEY_REWARD);
-
-            /**
-             * Encodes the specified C_GET_MONEY_REWARD message. Does not implicitly {@link com.message.C_GET_MONEY_REWARD.verify|verify} messages.
-             * @param message C_GET_MONEY_REWARD message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_GET_MONEY_REWARD, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_GET_MONEY_REWARD message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_GET_MONEY_REWARD
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_REWARD;
-        }
-
-        /** Properties of a S_GET_MONEY_REWARD. */
-        interface IS_GET_MONEY_REWARD {
-
-            /** S_GET_MONEY_REWARD money */
-            money?: (number|null);
-        }
-
-        /** Represents a S_GET_MONEY_REWARD. */
-        class S_GET_MONEY_REWARD implements IS_GET_MONEY_REWARD {
-
-            /**
-             * Constructs a new S_GET_MONEY_REWARD.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_GET_MONEY_REWARD);
-
-            /** S_GET_MONEY_REWARD money. */
-            public money: number;
-
-            /**
-             * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
-             * @param message S_GET_MONEY_REWARD message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_GET_MONEY_REWARD, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_GET_MONEY_REWARD message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_GET_MONEY_REWARD
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_REWARD;
-        }
-
-        /** Properties of a C_GET_MONEY_INFO. */
-        interface IC_GET_MONEY_INFO {
-        }
-
-        /** Represents a C_GET_MONEY_INFO. */
-        class C_GET_MONEY_INFO implements IC_GET_MONEY_INFO {
-
-            /**
-             * Constructs a new C_GET_MONEY_INFO.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_GET_MONEY_INFO);
-
-            /**
-             * Encodes the specified C_GET_MONEY_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_INFO.verify|verify} messages.
-             * @param message C_GET_MONEY_INFO message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_GET_MONEY_INFO, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_GET_MONEY_INFO message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_GET_MONEY_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_INFO;
-        }
-
-        /** Properties of a S_GET_MONEY_INFO. */
-        interface IS_GET_MONEY_INFO {
-
-            /** S_GET_MONEY_INFO money */
-            money?: (number|null);
-
-            /** S_GET_MONEY_INFO diamond */
-            diamond?: (number|null);
-        }
-
-        /** Represents a S_GET_MONEY_INFO. */
-        class S_GET_MONEY_INFO implements IS_GET_MONEY_INFO {
-
-            /**
-             * Constructs a new S_GET_MONEY_INFO.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_GET_MONEY_INFO);
-
-            /** S_GET_MONEY_INFO money. */
-            public money: number;
-
-            /** S_GET_MONEY_INFO diamond. */
-            public diamond: number;
-
-            /**
-             * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
-             * @param message S_GET_MONEY_INFO message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_GET_MONEY_INFO, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_GET_MONEY_INFO message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_GET_MONEY_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_INFO;
-        }
-
-        /** Properties of a MoneyLogMsg. */
-        interface IMoneyLogMsg {
-
-            /** MoneyLogMsg playerId */
-            playerId?: (number|Long|null);
-
-            /** MoneyLogMsg fishId */
-            fishId?: (number|Long|null);
-
-            /** MoneyLogMsg fishConfigId */
-            fishConfigId?: (number|Long|null);
-
-            /** MoneyLogMsg type */
-            type?: (number|null);
-
-            /** MoneyLogMsg beforeMoney */
-            beforeMoney?: (number|null);
-
-            /** MoneyLogMsg changeMoney */
-            changeMoney?: (number|null);
-
-            /** MoneyLogMsg afterMoney */
-            afterMoney?: (number|null);
-
-            /** MoneyLogMsg logTime */
-            logTime?: (number|Long|null);
-
-            /** MoneyLogMsg info */
-            info?: (string|null);
-        }
-
-        /** Represents a MoneyLogMsg. */
-        class MoneyLogMsg implements IMoneyLogMsg {
-
-            /**
-             * Constructs a new MoneyLogMsg.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IMoneyLogMsg);
-
-            /** MoneyLogMsg playerId. */
-            public playerId: (number|Long);
-
-            /** MoneyLogMsg fishId. */
-            public fishId: (number|Long);
-
-            /** MoneyLogMsg fishConfigId. */
-            public fishConfigId: (number|Long);
-
-            /** MoneyLogMsg type. */
-            public type: number;
-
-            /** MoneyLogMsg beforeMoney. */
-            public beforeMoney: number;
-
-            /** MoneyLogMsg changeMoney. */
-            public changeMoney: number;
-
-            /** MoneyLogMsg afterMoney. */
-            public afterMoney: number;
-
-            /** MoneyLogMsg logTime. */
-            public logTime: (number|Long);
-
-            /** MoneyLogMsg info. */
-            public info: string;
-
-            /**
-             * Encodes the specified MoneyLogMsg message. Does not implicitly {@link com.message.MoneyLogMsg.verify|verify} messages.
-             * @param message MoneyLogMsg message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IMoneyLogMsg, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a MoneyLogMsg message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns MoneyLogMsg
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.MoneyLogMsg;
-        }
-
-        /** Properties of a C_GET_MONEY_LOG_LIST. */
-        interface IC_GET_MONEY_LOG_LIST {
-        }
-
-        /** Represents a C_GET_MONEY_LOG_LIST. */
-        class C_GET_MONEY_LOG_LIST implements IC_GET_MONEY_LOG_LIST {
-
-            /**
-             * Constructs a new C_GET_MONEY_LOG_LIST.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_GET_MONEY_LOG_LIST);
-
-            /**
-             * Encodes the specified C_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.C_GET_MONEY_LOG_LIST.verify|verify} messages.
-             * @param message C_GET_MONEY_LOG_LIST message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_GET_MONEY_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_GET_MONEY_LOG_LIST message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_GET_MONEY_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_MONEY_LOG_LIST;
-        }
-
-        /** Properties of a S_GET_MONEY_LOG_LIST. */
-        interface IS_GET_MONEY_LOG_LIST {
-
-            /** S_GET_MONEY_LOG_LIST moneyLogMsg */
-            moneyLogMsg?: (com.message.IMoneyLogMsg[]|null);
-        }
-
-        /** Represents a S_GET_MONEY_LOG_LIST. */
-        class S_GET_MONEY_LOG_LIST implements IS_GET_MONEY_LOG_LIST {
-
-            /**
-             * Constructs a new S_GET_MONEY_LOG_LIST.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_GET_MONEY_LOG_LIST);
-
-            /** S_GET_MONEY_LOG_LIST moneyLogMsg. */
-            public moneyLogMsg: com.message.IMoneyLogMsg[];
-
-            /**
-             * Encodes the specified S_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.S_GET_MONEY_LOG_LIST.verify|verify} messages.
-             * @param message S_GET_MONEY_LOG_LIST message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_GET_MONEY_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_GET_MONEY_LOG_LIST message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_GET_MONEY_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_MONEY_LOG_LIST;
-        }
-
-        /** Properties of a C_GET_DIAMOND_LOG_LIST. */
-        interface IC_GET_DIAMOND_LOG_LIST {
-        }
-
-        /** Represents a C_GET_DIAMOND_LOG_LIST. */
-        class C_GET_DIAMOND_LOG_LIST implements IC_GET_DIAMOND_LOG_LIST {
-
-            /**
-             * Constructs a new C_GET_DIAMOND_LOG_LIST.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IC_GET_DIAMOND_LOG_LIST);
-
-            /**
-             * Encodes the specified C_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.C_GET_DIAMOND_LOG_LIST.verify|verify} messages.
-             * @param message C_GET_DIAMOND_LOG_LIST message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IC_GET_DIAMOND_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a C_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns C_GET_DIAMOND_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.C_GET_DIAMOND_LOG_LIST;
-        }
-
-        /** Properties of a S_GET_DIAMOND_LOG_LIST. */
-        interface IS_GET_DIAMOND_LOG_LIST {
-
-            /** S_GET_DIAMOND_LOG_LIST moneyLogMsg */
-            moneyLogMsg?: (com.message.IMoneyLogMsg[]|null);
-        }
-
-        /** Represents a S_GET_DIAMOND_LOG_LIST. */
-        class S_GET_DIAMOND_LOG_LIST implements IS_GET_DIAMOND_LOG_LIST {
-
-            /**
-             * Constructs a new S_GET_DIAMOND_LOG_LIST.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: com.message.IS_GET_DIAMOND_LOG_LIST);
-
-            /** S_GET_DIAMOND_LOG_LIST moneyLogMsg. */
-            public moneyLogMsg: com.message.IMoneyLogMsg[];
-
-            /**
-             * Encodes the specified S_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.S_GET_DIAMOND_LOG_LIST.verify|verify} messages.
-             * @param message S_GET_DIAMOND_LOG_LIST message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: com.message.IS_GET_DIAMOND_LOG_LIST, writer?: protobuf.Writer): protobuf.Writer;
-
-            /**
-             * Decodes a S_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns S_GET_DIAMOND_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): com.message.S_GET_DIAMOND_LOG_LIST;
-        }
-
         /** Properties of a C_USER_LOGIN. */
         interface IC_USER_LOGIN {
 
@@ -6612,6 +7908,12 @@ declare namespace com {
                 C_GET_TRADE_RATE_CONFIG = 1621,
                 S_GET_TRADE_RATE_CONFIG = 1622,
                 S_SYNC_TRADE_RATE_CONFIG = 1623,
+                C_GET_DEEP_FISH_CONFIG = 1624,
+                S_GET_DEEP_FISH_CONFIG = 1625,
+                S_SYNC_DEEP_FISH_CONFIG = 1626,
+                C_GET_OCEAN_DRAW_CONFIG = 1627,
+                S_GET_OCEAN_DRAW_CONFIG = 1628,
+                S_SYNC_OCEAN_DRAW_CONFIG = 1629,
                 S_SYN_PROPERTY = 2001,
                 C_SYNC_TIME = 2101,
                 S_SYNC_TIME = 2102,
@@ -6642,6 +7944,22 @@ declare namespace com {
                 C_GET_DOLPHIN_WAIT_LIST = 5023,
                 S_GET_DOLPHIN_WAIT_LIST = 5024,
                 S_SYNC_NEW_DOLPHIN = 5030,
+                C_GET_DEAP_ACTIVITY_INFO = 5101,
+                S_GET_DEAP_ACTIVITY_INFO = 5102,
+                C_GET_MY_DEAP_ACTIVITY_INFO = 5103,
+                S_GET_MY_DEAP_ACTIVITY_INFO = 5104,
+                C_BUY_DEAP_ACTIVITY_FISH = 5105,
+                S_BUY_DEAP_ACTIVITY_FISH = 5106,
+                C_GET_OCEAN_ACTIVITY_INFO = 5201,
+                S_GET_OCEAN_ACTIVITY_INFO = 5202,
+                C_GET_MY_OCEAN_ACTIVITY_INFO = 5203,
+                S_GET_MY_OCEAN_ACTIVITY_INFO = 5204,
+                C_OCEAN_ACTIVITY_DRAW = 5205,
+                S_OCEAN_ACTIVITY_DRAW = 5206,
+                C_GET_OCEAN_ACTIVITY_RANK = 5207,
+                S_GET_OCEAN_ACTIVITY_RANK = 5208,
+                C_GET_OCEAN_ACTIVITY_DRAW_LOG = 5209,
+                S_GET_OCEAN_ACTIVITY_DRAW_LOG = 5210,
                 CROSS_C_HEART_BEAT = 100001,
                 CROSS_S_HEART_BEAT = 100002,
                 CROSS_C_SERVER_REGISTER = 100003,
@@ -6693,7 +8011,10 @@ declare namespace com {
                 NOT_VERIFY_CANT_DO = 1209,
                 SIGN_HOUR_NOT_ENOUGH = 1210,
                 TEAM_EFFECT_NUM_NOT_ENOUGH = 1211,
-                TEAM_EFFECT_RATE_NOT_ENOUGH = 1212
+                TEAM_EFFECT_RATE_NOT_ENOUGH = 1212,
+                ACTIVITY_NOT_IN_TIME = 1213,
+                BUY_COUNT_NOT_ENOUGH = 1214,
+                DRAW_COUNT_NOT_ENOUGH = 1215
             }
         }
 

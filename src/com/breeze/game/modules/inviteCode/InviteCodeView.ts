@@ -173,6 +173,17 @@ public txt_copy2:eui.TextInput;
 			}
 
 			let logs:com.message.DirectInfoMsg[] = TeamModdel.instance.teamers;
+			if(logs && logs.length > 0){
+				logs.sort((a, b)=>{
+					if(a.money > b.money){
+						return  -1;
+					} else if(a.money < b.money){
+						return 1;
+					}
+
+					return b.allEffectNum - a.allEffectNum;
+				})
+			}
 			t._arrCollection.replaceAll(logs);
 		}
 

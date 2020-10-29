@@ -21,7 +21,7 @@ module qmr
 
 		protected initComponent(): void
 		{
-			this.lbl_title.text = this._title;
+			// this.lbl_title.text = this._title;
 		}
 
 		protected addedToStage(evt: egret.Event): void

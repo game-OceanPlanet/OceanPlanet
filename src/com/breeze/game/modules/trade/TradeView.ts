@@ -259,14 +259,15 @@ public CN_332:eui.Label;
 			}
 
 			let max:number = Number(ConfigManagerAft.getCommonConfig(1029));
+			let pre:number = max * 100;
 			if(price > TradeModule.instance.sysDiamonPrice * max){
-				TipManagerCommon.getInstance().showLanTip("CN_542");
+				TipManagerCommon.getInstance().showLanTip("CN_542", pre);
                 return;
 			}
 
 			let min:number = Number(ConfigManagerAft.getCommonConfig(1004));
 			if(price < TradeModule.instance.sysDiamonPrice){
-				TipManagerCommon.getInstance().showLanTip("CN_542");
+				TipManagerCommon.getInstance().showLanTip("CN_542", pre);
                 return;
 			}
 
@@ -399,7 +400,7 @@ public CN_332:eui.Label;
 
 			if(t.text_input_price.text == "" || t.text_input_price.text == "0"){
 				let max:number = Number(ConfigManagerAft.getCommonConfig(1029));
-				let maxPrice:number = TradeModule.instance.sysDiamonPrice * max;
+				let maxPrice:number = Math.floor(TradeModule.instance.sysDiamonPrice * max * 100000) / 100000 ;
 				t.text_input_price.text = maxPrice + "";
 			}
 

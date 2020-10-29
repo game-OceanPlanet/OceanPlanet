@@ -50,13 +50,16 @@
 			<e:Image id="img_price" source="nameImg_json.img_price" y="40" horizontalCenter="3"/>
 		</e:Group>
 	</e:Group>
-	<e:Group top="201" anchorOffsetX="0" width="718.19" anchorOffsetY="0" height="160.6" right="-1">
+	<e:Group top="201" anchorOffsetX="0" width="718.19" anchorOffsetY="0" height="277.6" right="-1">
 		<e:Group id="effect_group_3" width="20" height="20" x="110" y="64"/>
 		<e:Group id="effect_group_1" width="20" height="20" x="245.48" y="64" />
 		<e:Group id="effect_group_2" width="20" height="20" x="380.73" y="64" />
 
 		<e:Group id="effect_group_4" width="20" height="20" x="516.73" y="64" />
 		<e:Group id="effect_group_5" width="20" height="20" x="652" y="64" />
+		<e:Group id="effect_group_0" width="20" height="20" x="656" y="219"/>
+		<e:Group id="effect_group_6" width="20" height="20" x="518" y="217"/>
+		<e:Group id="effect_group_7" width="20" height="20" x="387" y="219"/>
 		<e:Image source="mainui_json.bg_icon_main" x="52" y="8"/>
 		<e:Image source="mainui_json.bg_icon_main" x="187.25" y="8"/>
 		<e:Image source="mainui_json.bg_icon_main" x="322.5" y="8"/>
@@ -82,6 +85,9 @@
 		<e:Image id="title_push" source="nameImg_json.title_push" y="108" horizontalCenter="293.905"/>
 		<e:Image id="img_exchange2" source="nameImg_json.img_exchange2" y="108" horizontalCenter="-112.09500000000003"/>
 		<e:Image id="img_name_inject" source="nameImg_json.img_name_inject" y="108" horizontalCenter="23.904999999999973"/>
+		<e:Image id="btn_rank" source="mainui_json.paihangbang" x="603" y="165"/>
+		<e:Image id="btn_active_shop" source="mainui_json.longgongshangdian" x="335" y="164" width="100" height="100"/>
+		<e:Image id="btn_lucktable" source="mainui_json.xingyunzhuanpan" x="464" y="167"/>
 	</e:Group>
 	<e:Group width="134" height="379" anchorOffsetX="0" left="0" anchorOffsetY="0" bottom="265">
 		<e:Image id="btn_person" y="6.2" source="mainui_json.btn_realname" x="19"

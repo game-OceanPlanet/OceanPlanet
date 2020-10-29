@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ActiveShopSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:qmr="qmr.*">
+	<w:Config id="17468711b9b" visible="false" />
+
+<qmr:PanelBgUI id="panelBg" width="100%" skinName="PanelBg" title="背 包" height="1334" horizontalCenter="0" y="0"/>
+	<e:Group id="itemGroup" width="640" height="850" y="198" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+		<e:Image source="common_json.common_dikuang" x="-22" y="-10" scale9Grid="12,12,76,76" anchorOffsetX="0" width="678" anchorOffsetY="0" height="871"/>
+			<e:Label text="可用购买次数：" size="22" fontFamily="specialGameFont"  height="28" verticalAlign="middle" bold="false" y="-42" scaleX="1" scaleY="1" textAlign="center" x="413" textColor="0x553b24"/>
+		<e:Label text="活动剩余时间：" size="22" fontFamily="specialGameFont"  height="28" verticalAlign="middle" bold="false" y="-43" scaleX="1" scaleY="1" textAlign="center" x="35" textColor="0x553b24"/>
+		<e:Label text="全网剩余动物：" size="22" fontFamily="specialGameFont" height="28" verticalAlign="middle" bold="false" y="-69" scaleX="1" scaleY="1" textAlign="center" x="35" textColor="0x553B24"/>
+		<e:Label id="text_allCount" text="9999" fontFamily="specialGameFont" strokeColor="0x803F07" stroke="2" size="22" bold="false" textColor="0xFFF000" y="-67" scaleX="1" scaleY="1" textAlign="center" x="182"/>
+		<e:Label id="txt_time" text="0" size="22" fontFamily="specialGameFont" height="28" verticalAlign="middle" bold="false" y="-42" scaleX="1" scaleY="1" textAlign="center" x="184" textColor="0x09a608"/>
+			<e:Label id="text_count" text="9999" fontFamily="specialGameFont" strokeColor="0x803F07" stroke="2" size="22" bold="false" textColor="0xFFF000" y="-40" scaleX="1" scaleY="1" textAlign="center" x="560"/>
+		<e:Label id="txt_title" text="限时购买" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" textColor="0x803F07" bold="true" anchorOffsetX="0" y="-116.75" horizontalCenter="2.5"/>
+		<e:Scroller width="646" x="-6" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" height="848">
+		<e:List id="item_list" anchorOffsetY="0" anchorOffsetX="0" x="2" height="736">
+			<e:layout>
+			<e:VerticalLayout gap="6"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Image id="btnReturn" anchorOffsetX="47" anchorOffsetY="47" source="basePanel_json.common_fanhui" right="44" bottom="172"/>
+	<e:Image id="btn_help" scaleX="1" scaleY="1" anchorOffsetX="40" anchorOffsetY="40" left="31" top="126" source="common_json.ui_1yuan_wenhao"/>
+</e:Skin>

@@ -23,6 +23,9 @@ public effect_group_1:eui.Group;
 public effect_group_2:eui.Group;
 public effect_group_4:eui.Group;
 public effect_group_5:eui.Group;
+public effect_group_0:eui.Group;
+public effect_group_6:eui.Group;
+public effect_group_7:eui.Group;
 public btn_exchange:eui.Image;
 public btn_injection:eui.Image;
 public btn_shop:eui.Image;
@@ -33,8 +36,11 @@ public img_name_divide:eui.Image;
 public title_push:eui.Image;
 public img_exchange2:eui.Image;
 public img_name_inject:eui.Image;
-public btn_realname:eui.Image;
+public btn_rank:eui.Image;
+public btn_active_shop:eui.Image;
+public btn_lucktable:eui.Image;
 public btn_person:eui.Image;
+public btn_realname:eui.Image;
 public btn_permit:eui.Image;
 public btn_ActKey:eui.Image;
 public img_name_person:eui.Image;
@@ -45,6 +51,7 @@ public btn_download:eui.Image;
 public btn_help:eui.Image;
 public img_name_down:eui.Image;
 public img_name_help:eui.Image;
+
 
 
 
@@ -60,6 +67,9 @@ public img_name_help:eui.Image;
         private baseEffect3: BaseEffect;
         private baseEffect4: BaseEffect;
         private baseEffect5: BaseEffect;
+        private baseEffect0: BaseEffect;
+        private baseEffect6: BaseEffect;
+        private baseEffect7: BaseEffect;
         private baseEffectPet: BaseEffect;
 
         public constructor() {
@@ -140,6 +150,10 @@ public img_name_help:eui.Image;
             t.addClickEvent(t.btn_permit, t.onPermitClick, t);
             t.addClickEvent(t.btn_download, t.onDowonClick, t);
             t.addClickEvent(t.btn_help, t.onHelpClick, t);
+
+            t.addClickEvent(t.btn_rank, t.onRankClick, t);
+            t.addClickEvent(t.btn_lucktable, t.onTableClick, t);
+            t.addClickEvent(t.btn_active_shop, t.onActiveShopClick, t);
 
 
             t.registerNotify(NotifyConst.S_GET_FINSH_INFO, t.updateView, t);
@@ -273,6 +287,24 @@ public img_name_help:eui.Image;
             ModuleManager.showModule(ModuleNameConst.ACT_KEY_VIEW);
         }
 
+         //活动商店
+         private onActiveShopClick():void
+         {
+             ModuleManager.showModule(ModuleNameConst.ACTIVE_SHOP_VIEW);
+         }
+
+          //幸运转盘
+        private onTableClick():void
+        {
+            ModuleManager.showModule(ModuleNameConst.RUNE_LOTTERY_VIEW);
+        }
+
+         //排行榜
+         private onRankClick():void
+         {
+            //  ModuleManager.showModule(ModuleNameConst.ACT_KEY_VIEW);
+         }
+
         /**
         * @description 初始化数据,需被子类继承
         */
@@ -314,6 +346,27 @@ public img_name_help:eui.Image;
                 t.baseEffect5.scaleX = t.baseEffect5.scaleY = 1.5;
                 t.effect_group_5.addChild(t.baseEffect5);
                 t.baseEffect5.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+
+            if (!t.baseEffect0) {
+                t.baseEffect0 = new BaseEffect();
+                t.baseEffect0.scaleX = t.baseEffect0.scaleY = 1.5;
+                t.effect_group_0.addChild(t.baseEffect0);
+                t.baseEffect0.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+
+            if (!t.baseEffect6) {
+                t.baseEffect6 = new BaseEffect();
+                t.baseEffect6.scaleX = t.baseEffect6.scaleY = 1.5;
+                t.effect_group_6.addChild(t.baseEffect6);
+                t.baseEffect6.playUIEffect("uieffect_act", -1, -1, 1);
+            }
+
+            if (!t.baseEffect7) {
+                t.baseEffect7 = new BaseEffect();
+                t.baseEffect7.scaleX = t.baseEffect7.scaleY = 1.5;
+                t.effect_group_7.addChild(t.baseEffect7);
+                t.baseEffect7.playUIEffect("uieffect_act", -1, -1, 1);
             }
 
             if (!t.baseEffectPet) {

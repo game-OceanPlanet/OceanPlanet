@@ -166,6 +166,12 @@ module qmr {
 		public static C_GET_TRADE_RATE_CONFIG:number = 1621;
 		public static S_GET_TRADE_RATE_CONFIG:number = 1622;
 		public static S_SYNC_TRADE_RATE_CONFIG:number = 1623;
+		public static C_GET_DEEP_FISH_CONFIG:number = 1624;
+		public static S_GET_DEEP_FISH_CONFIG:number = 1625;
+		public static S_SYNC_DEEP_FISH_CONFIG:number = 1626;
+		public static C_GET_OCEAN_DRAW_CONFIG:number = 1627;
+		public static S_GET_OCEAN_DRAW_CONFIG:number = 1628;
+		public static S_SYNC_OCEAN_DRAW_CONFIG:number = 1629;
 		/**  同步属性变化 */
 		public static S_SYN_PROPERTY:number = 2001; 
 		/** 同步时间 */
@@ -213,6 +219,30 @@ module qmr {
 		public static S_GET_DOLPHIN_WAIT_LIST:number = 5024;
 		/**  孵化出新的2个海豚通知 */
 		public static S_SYNC_NEW_DOLPHIN:number = 5030; 
+		/** 获取深海活动信息 */
+		public static C_GET_DEAP_ACTIVITY_INFO:number = 5101;
+		public static S_GET_DEAP_ACTIVITY_INFO:number = 5102;
+		/** 获取我的深海活动信息 */
+		public static C_GET_MY_DEAP_ACTIVITY_INFO:number = 5103;
+		public static S_GET_MY_DEAP_ACTIVITY_INFO:number = 5104;
+		/** 买深海活动鱼 */
+		public static C_BUY_DEAP_ACTIVITY_FISH:number = 5105;
+		public static S_BUY_DEAP_ACTIVITY_FISH:number = 5106;
+		/** 获取海洋星球活动信息 */
+		public static C_GET_OCEAN_ACTIVITY_INFO:number = 5201; 
+		public static S_GET_OCEAN_ACTIVITY_INFO:number = 5202;
+		/** 获取海洋星球活动信息 */
+		public static C_GET_MY_OCEAN_ACTIVITY_INFO:number = 5203; 
+		public static S_GET_MY_OCEAN_ACTIVITY_INFO:number = 5204;
+		/** 海洋星球活动-抽奖 */
+		public static C_OCEAN_ACTIVITY_DRAW:number = 5205;
+		public static S_OCEAN_ACTIVITY_DRAW:number = 5206;
+		/** 获取海洋星球活动排名信息 */
+		public static C_GET_OCEAN_ACTIVITY_RANK:number = 5207;
+		public static S_GET_OCEAN_ACTIVITY_RANK:number = 5208;
+		/** 海洋星球活动-抽奖记录 */
+		public static C_GET_OCEAN_ACTIVITY_DRAW_LOG:number = 5209;
+		public static S_GET_OCEAN_ACTIVITY_DRAW_LOG:number = 5210;
 		/**  跨服服务器心跳 */
 		public static CROSS_C_HEART_BEAT:number = 100001;        
 		public static CROSS_S_HEART_BEAT:number = 100002;

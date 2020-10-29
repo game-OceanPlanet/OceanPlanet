@@ -1,0 +1,145 @@
+syntax="proto3";
+package com.message;
+import "fish.proto";
+
+//深海活动信息
+message DeapActivityMsg {
+	int32 allCount = 1;  //全网限制购买数量
+	int32 leftCount = 2;  //全网限制剩余购买数量
+	int64 endTime=3; 			//活动截止时间
+	int32 limiteCount=4; 			//每个玩家限购数量
+}
+
+//获取深海活动信息
+message C_GET_DEAP_ACTIVITY_INFO {
+	
+}
+
+//获取深海活动信息
+message S_GET_DEAP_ACTIVITY_INFO {
+	DeapActivityMsg deapActivityMsg = 1;	//深海活动信息
+}
+
+
+//我的深海活动信息
+message MyDeapActivityMsg {
+	int64 playerId=1; 	 // 玩家编号
+	int32 buyCount = 2;  //已购买海豚数量(领养)
+	int32 leftCount = 3;  //剩余可购买鱼的数量
+	int64 endTime=4; 	 //活动结束时间
+}
+
+//获取我的深海活动信息(活动未开不要请求)
+message C_GET_MY_DEAP_ACTIVITY_INFO {
+	
+}
+
+//获取我的深海活动信息
+message S_GET_MY_DEAP_ACTIVITY_INFO {
+	MyDeapActivityMsg myDeapActivityMsg = 1;	//我的深海活动信息
+}
+
+//买深海活动鱼
+message C_BUY_DEAP_ACTIVITY_FISH {
+	int64 fishId =1; 	// 鱼配置id
+}
+
+//买深海活动鱼
+message S_BUY_DEAP_ACTIVITY_FISH {
+	FishMsg fishMsg = 1; //鱼信息
+	MyDeapActivityMsg myDeapActivityMsg = 2;	//我的深海活动信息
+}
+
+
+//-------------------------------------海洋星球活动---------------------------------------
+
+//海洋星球活动信息
+message OcenActivityMsg {
+	int32 directCount = 1;  //直推5人可以免费获得一次抽奖机会
+	int32 teamCount = 2;  	//团队增加50人也免费获得一次抽奖机会
+	int64 endTime=3; 		//活动截止时间
+}
+
+//获取海洋星球活动信息
+message C_GET_OCEAN_ACTIVITY_INFO {
+	
+}
+
+//获取海洋星球活动信息
+message S_GET_OCEAN_ACTIVITY_INFO {
+	OcenActivityMsg ocenActivityMsg = 1;	//海洋星球活动信息
+}
+
+//我的海洋星球活活动信息
+message MyOceanActivityMsg {
+	int64 playerId=1; 	 // 玩家编号
+	int32 directCount = 2;  //活动期间我的新增直推人数
+	int32 teamCount = 3;  //活动期间我的新增团队人数
+	int32 leftCount = 4;  //剩余抽奖次数
+	int64 endTime=5; 	 //活动结束时间
+}
+
+//获取我的海洋星球活动信息(活动未开不要请求)
+message C_GET_MY_OCEAN_ACTIVITY_INFO {
+	
+}
+
+//获取我的海洋星球活动信息
+message S_GET_MY_OCEAN_ACTIVITY_INFO {
+	MyOceanActivityMsg myOceanActivityMsg = 1;	//我的海洋星球活活动信息
+}
+
+//海洋星球活动-抽奖
+message C_OCEAN_ACTIVITY_DRAW {
+	
+}
+
+//海洋星球活动-抽奖
+message S_OCEAN_ACTIVITY_DRAW {
+	int64 rewardId = 1;  //奖励配置id
+	string reward=2; 	 //奖励内容，id,num
+	MyOceanActivityMsg myOceanActivityMsg = 3;	//我的深海活动信息
+}
+
+//我的海洋星球活活动信息
+message OceanActivityRankMsg {
+	int64 playerId=1; 	 // 玩家编号
+	string mobile=2; 	 // 手机号码
+	int32 directCount = 3;  //活动期间我的新增直推人数
+	int32 teamCount = 4;  //活动期间我的新增团队人数
+	int32 leftCount = 5;  //剩余抽奖次数
+	int64 endTime=6; 	 //活动结束时间
+}
+
+//获取海洋星球活动排名信息
+message C_GET_OCEAN_ACTIVITY_RANK {
+	int32 type = 1;  //1直推排名，2团队排名
+	int32 page = 2;  
+	int32 pageSize = 3; 
+}
+
+//获取海洋星球活动排名信息
+message S_GET_OCEAN_ACTIVITY_RANK {
+	repeated OceanActivityRankMsg oceanActivityRankMsg = 1;	//排名信息
+}
+
+//抽奖记录信息
+message OceanActivityDrawLogMsg {
+	int64 playerId=1; 	 // 玩家编号
+	string mobile=2; 	 // 手机号码
+	int64 rewardId = 3;  //奖励配置id
+	string reward=4; 	 //奖励内容，id,num
+	int64 logTime=5; 	 //时间
+}
+
+//海洋星球活动-抽奖记录
+message C_GET_OCEAN_ACTIVITY_DRAW_LOG {
+	
+}
+
+//海洋星球活动-抽奖记录
+message S_GET_OCEAN_ACTIVITY_DRAW_LOG {
+	repeated OceanActivityDrawLogMsg oceanActivityDrawLogMsg = 2;	//抽奖记录信息
+}
+
+

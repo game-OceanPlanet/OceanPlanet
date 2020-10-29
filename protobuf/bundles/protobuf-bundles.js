@@ -24,6 +24,3784 @@ $root.com = (function() {
          */
         var message = {};
 
+        message.DeapActivityMsg = (function() {
+
+            /**
+             * Properties of a DeapActivityMsg.
+             * @memberof com.message
+             * @interface IDeapActivityMsg
+             * @property {number|null} [allCount] DeapActivityMsg allCount
+             * @property {number|null} [leftCount] DeapActivityMsg leftCount
+             * @property {number|Long|null} [endTime] DeapActivityMsg endTime
+             * @property {number|null} [limiteCount] DeapActivityMsg limiteCount
+             */
+
+            /**
+             * Constructs a new DeapActivityMsg.
+             * @memberof com.message
+             * @classdesc Represents a DeapActivityMsg.
+             * @implements IDeapActivityMsg
+             * @constructor
+             * @param {com.message.IDeapActivityMsg=} [properties] Properties to set
+             */
+            function DeapActivityMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DeapActivityMsg allCount.
+             * @member {number} allCount
+             * @memberof com.message.DeapActivityMsg
+             * @instance
+             */
+            DeapActivityMsg.prototype.allCount = 0;
+
+            /**
+             * DeapActivityMsg leftCount.
+             * @member {number} leftCount
+             * @memberof com.message.DeapActivityMsg
+             * @instance
+             */
+            DeapActivityMsg.prototype.leftCount = 0;
+
+            /**
+             * DeapActivityMsg endTime.
+             * @member {number|Long} endTime
+             * @memberof com.message.DeapActivityMsg
+             * @instance
+             */
+            DeapActivityMsg.prototype.endTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * DeapActivityMsg limiteCount.
+             * @member {number} limiteCount
+             * @memberof com.message.DeapActivityMsg
+             * @instance
+             */
+            DeapActivityMsg.prototype.limiteCount = 0;
+
+            /**
+             * Encodes the specified DeapActivityMsg message. Does not implicitly {@link com.message.DeapActivityMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.DeapActivityMsg
+             * @static
+             * @param {com.message.IDeapActivityMsg} message DeapActivityMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DeapActivityMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.allCount != null && message.hasOwnProperty("allCount"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.allCount);
+                if (message.leftCount != null && message.hasOwnProperty("leftCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.leftCount);
+                if (message.endTime != null && message.hasOwnProperty("endTime"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.endTime);
+                if (message.limiteCount != null && message.hasOwnProperty("limiteCount"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.limiteCount);
+                return writer;
+            };
+
+            /**
+             * Decodes a DeapActivityMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.DeapActivityMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.DeapActivityMsg} DeapActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DeapActivityMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.DeapActivityMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.allCount = reader.int32();
+                        break;
+                    case 2:
+                        message.leftCount = reader.int32();
+                        break;
+                    case 3:
+                        message.endTime = reader.int64();
+                        break;
+                    case 4:
+                        message.limiteCount = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return DeapActivityMsg;
+        })();
+
+        message.C_GET_DEAP_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IC_GET_DEAP_ACTIVITY_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_DEAP_ACTIVITY_INFO.
+             * @implements IC_GET_DEAP_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IC_GET_DEAP_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function C_GET_DEAP_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IC_GET_DEAP_ACTIVITY_INFO} message C_GET_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_DEAP_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_DEAP_ACTIVITY_INFO} C_GET_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_DEAP_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_DEAP_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_DEAP_ACTIVITY_INFO;
+        })();
+
+        message.S_GET_DEAP_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IS_GET_DEAP_ACTIVITY_INFO
+             * @property {com.message.IDeapActivityMsg|null} [deapActivityMsg] S_GET_DEAP_ACTIVITY_INFO deapActivityMsg
+             */
+
+            /**
+             * Constructs a new S_GET_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_DEAP_ACTIVITY_INFO.
+             * @implements IS_GET_DEAP_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IS_GET_DEAP_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function S_GET_DEAP_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_DEAP_ACTIVITY_INFO deapActivityMsg.
+             * @member {com.message.IDeapActivityMsg|null|undefined} deapActivityMsg
+             * @memberof com.message.S_GET_DEAP_ACTIVITY_INFO
+             * @instance
+             */
+            S_GET_DEAP_ACTIVITY_INFO.prototype.deapActivityMsg = null;
+
+            /**
+             * Encodes the specified S_GET_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IS_GET_DEAP_ACTIVITY_INFO} message S_GET_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_DEAP_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.deapActivityMsg != null && message.hasOwnProperty("deapActivityMsg"))
+                    $root.com.message.DeapActivityMsg.encode(message.deapActivityMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_DEAP_ACTIVITY_INFO} S_GET_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_DEAP_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_DEAP_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.deapActivityMsg = $root.com.message.DeapActivityMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_DEAP_ACTIVITY_INFO;
+        })();
+
+        message.MyDeapActivityMsg = (function() {
+
+            /**
+             * Properties of a MyDeapActivityMsg.
+             * @memberof com.message
+             * @interface IMyDeapActivityMsg
+             * @property {number|Long|null} [playerId] MyDeapActivityMsg playerId
+             * @property {number|null} [buyCount] MyDeapActivityMsg buyCount
+             * @property {number|null} [leftCount] MyDeapActivityMsg leftCount
+             * @property {number|Long|null} [endTime] MyDeapActivityMsg endTime
+             */
+
+            /**
+             * Constructs a new MyDeapActivityMsg.
+             * @memberof com.message
+             * @classdesc Represents a MyDeapActivityMsg.
+             * @implements IMyDeapActivityMsg
+             * @constructor
+             * @param {com.message.IMyDeapActivityMsg=} [properties] Properties to set
+             */
+            function MyDeapActivityMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MyDeapActivityMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.MyDeapActivityMsg
+             * @instance
+             */
+            MyDeapActivityMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MyDeapActivityMsg buyCount.
+             * @member {number} buyCount
+             * @memberof com.message.MyDeapActivityMsg
+             * @instance
+             */
+            MyDeapActivityMsg.prototype.buyCount = 0;
+
+            /**
+             * MyDeapActivityMsg leftCount.
+             * @member {number} leftCount
+             * @memberof com.message.MyDeapActivityMsg
+             * @instance
+             */
+            MyDeapActivityMsg.prototype.leftCount = 0;
+
+            /**
+             * MyDeapActivityMsg endTime.
+             * @member {number|Long} endTime
+             * @memberof com.message.MyDeapActivityMsg
+             * @instance
+             */
+            MyDeapActivityMsg.prototype.endTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified MyDeapActivityMsg message. Does not implicitly {@link com.message.MyDeapActivityMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.MyDeapActivityMsg
+             * @static
+             * @param {com.message.IMyDeapActivityMsg} message MyDeapActivityMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MyDeapActivityMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.buyCount != null && message.hasOwnProperty("buyCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.buyCount);
+                if (message.leftCount != null && message.hasOwnProperty("leftCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.leftCount);
+                if (message.endTime != null && message.hasOwnProperty("endTime"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.endTime);
+                return writer;
+            };
+
+            /**
+             * Decodes a MyDeapActivityMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.MyDeapActivityMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.MyDeapActivityMsg} MyDeapActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MyDeapActivityMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.MyDeapActivityMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    case 2:
+                        message.buyCount = reader.int32();
+                        break;
+                    case 3:
+                        message.leftCount = reader.int32();
+                        break;
+                    case 4:
+                        message.endTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return MyDeapActivityMsg;
+        })();
+
+        message.C_GET_MY_DEAP_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_MY_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IC_GET_MY_DEAP_ACTIVITY_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_MY_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MY_DEAP_ACTIVITY_INFO.
+             * @implements IC_GET_MY_DEAP_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IC_GET_MY_DEAP_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function C_GET_MY_DEAP_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MY_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_MY_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MY_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IC_GET_MY_DEAP_ACTIVITY_INFO} message C_GET_MY_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MY_DEAP_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MY_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MY_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MY_DEAP_ACTIVITY_INFO} C_GET_MY_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MY_DEAP_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MY_DEAP_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MY_DEAP_ACTIVITY_INFO;
+        })();
+
+        message.S_GET_MY_DEAP_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_MY_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IS_GET_MY_DEAP_ACTIVITY_INFO
+             * @property {com.message.IMyDeapActivityMsg|null} [myDeapActivityMsg] S_GET_MY_DEAP_ACTIVITY_INFO myDeapActivityMsg
+             */
+
+            /**
+             * Constructs a new S_GET_MY_DEAP_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MY_DEAP_ACTIVITY_INFO.
+             * @implements IS_GET_MY_DEAP_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IS_GET_MY_DEAP_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function S_GET_MY_DEAP_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MY_DEAP_ACTIVITY_INFO myDeapActivityMsg.
+             * @member {com.message.IMyDeapActivityMsg|null|undefined} myDeapActivityMsg
+             * @memberof com.message.S_GET_MY_DEAP_ACTIVITY_INFO
+             * @instance
+             */
+            S_GET_MY_DEAP_ACTIVITY_INFO.prototype.myDeapActivityMsg = null;
+
+            /**
+             * Encodes the specified S_GET_MY_DEAP_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_MY_DEAP_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MY_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IS_GET_MY_DEAP_ACTIVITY_INFO} message S_GET_MY_DEAP_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MY_DEAP_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.myDeapActivityMsg != null && message.hasOwnProperty("myDeapActivityMsg"))
+                    $root.com.message.MyDeapActivityMsg.encode(message.myDeapActivityMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MY_DEAP_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MY_DEAP_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MY_DEAP_ACTIVITY_INFO} S_GET_MY_DEAP_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MY_DEAP_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MY_DEAP_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.myDeapActivityMsg = $root.com.message.MyDeapActivityMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MY_DEAP_ACTIVITY_INFO;
+        })();
+
+        message.C_BUY_DEAP_ACTIVITY_FISH = (function() {
+
+            /**
+             * Properties of a C_BUY_DEAP_ACTIVITY_FISH.
+             * @memberof com.message
+             * @interface IC_BUY_DEAP_ACTIVITY_FISH
+             * @property {number|Long|null} [fishId] C_BUY_DEAP_ACTIVITY_FISH fishId
+             */
+
+            /**
+             * Constructs a new C_BUY_DEAP_ACTIVITY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a C_BUY_DEAP_ACTIVITY_FISH.
+             * @implements IC_BUY_DEAP_ACTIVITY_FISH
+             * @constructor
+             * @param {com.message.IC_BUY_DEAP_ACTIVITY_FISH=} [properties] Properties to set
+             */
+            function C_BUY_DEAP_ACTIVITY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_BUY_DEAP_ACTIVITY_FISH fishId.
+             * @member {number|Long} fishId
+             * @memberof com.message.C_BUY_DEAP_ACTIVITY_FISH
+             * @instance
+             */
+            C_BUY_DEAP_ACTIVITY_FISH.prototype.fishId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified C_BUY_DEAP_ACTIVITY_FISH message. Does not implicitly {@link com.message.C_BUY_DEAP_ACTIVITY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_BUY_DEAP_ACTIVITY_FISH
+             * @static
+             * @param {com.message.IC_BUY_DEAP_ACTIVITY_FISH} message C_BUY_DEAP_ACTIVITY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_BUY_DEAP_ACTIVITY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishId != null && message.hasOwnProperty("fishId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.fishId);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_BUY_DEAP_ACTIVITY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_BUY_DEAP_ACTIVITY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_BUY_DEAP_ACTIVITY_FISH} C_BUY_DEAP_ACTIVITY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_BUY_DEAP_ACTIVITY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_BUY_DEAP_ACTIVITY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishId = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_BUY_DEAP_ACTIVITY_FISH;
+        })();
+
+        message.S_BUY_DEAP_ACTIVITY_FISH = (function() {
+
+            /**
+             * Properties of a S_BUY_DEAP_ACTIVITY_FISH.
+             * @memberof com.message
+             * @interface IS_BUY_DEAP_ACTIVITY_FISH
+             * @property {com.message.IFishMsg|null} [fishMsg] S_BUY_DEAP_ACTIVITY_FISH fishMsg
+             * @property {com.message.IMyDeapActivityMsg|null} [myDeapActivityMsg] S_BUY_DEAP_ACTIVITY_FISH myDeapActivityMsg
+             */
+
+            /**
+             * Constructs a new S_BUY_DEAP_ACTIVITY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a S_BUY_DEAP_ACTIVITY_FISH.
+             * @implements IS_BUY_DEAP_ACTIVITY_FISH
+             * @constructor
+             * @param {com.message.IS_BUY_DEAP_ACTIVITY_FISH=} [properties] Properties to set
+             */
+            function S_BUY_DEAP_ACTIVITY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_BUY_DEAP_ACTIVITY_FISH fishMsg.
+             * @member {com.message.IFishMsg|null|undefined} fishMsg
+             * @memberof com.message.S_BUY_DEAP_ACTIVITY_FISH
+             * @instance
+             */
+            S_BUY_DEAP_ACTIVITY_FISH.prototype.fishMsg = null;
+
+            /**
+             * S_BUY_DEAP_ACTIVITY_FISH myDeapActivityMsg.
+             * @member {com.message.IMyDeapActivityMsg|null|undefined} myDeapActivityMsg
+             * @memberof com.message.S_BUY_DEAP_ACTIVITY_FISH
+             * @instance
+             */
+            S_BUY_DEAP_ACTIVITY_FISH.prototype.myDeapActivityMsg = null;
+
+            /**
+             * Encodes the specified S_BUY_DEAP_ACTIVITY_FISH message. Does not implicitly {@link com.message.S_BUY_DEAP_ACTIVITY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_BUY_DEAP_ACTIVITY_FISH
+             * @static
+             * @param {com.message.IS_BUY_DEAP_ACTIVITY_FISH} message S_BUY_DEAP_ACTIVITY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_BUY_DEAP_ACTIVITY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
+                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.myDeapActivityMsg != null && message.hasOwnProperty("myDeapActivityMsg"))
+                    $root.com.message.MyDeapActivityMsg.encode(message.myDeapActivityMsg, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_BUY_DEAP_ACTIVITY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_BUY_DEAP_ACTIVITY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_BUY_DEAP_ACTIVITY_FISH} S_BUY_DEAP_ACTIVITY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_BUY_DEAP_ACTIVITY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_BUY_DEAP_ACTIVITY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.myDeapActivityMsg = $root.com.message.MyDeapActivityMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_BUY_DEAP_ACTIVITY_FISH;
+        })();
+
+        message.OcenActivityMsg = (function() {
+
+            /**
+             * Properties of an OcenActivityMsg.
+             * @memberof com.message
+             * @interface IOcenActivityMsg
+             * @property {number|null} [directCount] OcenActivityMsg directCount
+             * @property {number|null} [teamCount] OcenActivityMsg teamCount
+             * @property {number|Long|null} [endTime] OcenActivityMsg endTime
+             */
+
+            /**
+             * Constructs a new OcenActivityMsg.
+             * @memberof com.message
+             * @classdesc Represents an OcenActivityMsg.
+             * @implements IOcenActivityMsg
+             * @constructor
+             * @param {com.message.IOcenActivityMsg=} [properties] Properties to set
+             */
+            function OcenActivityMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * OcenActivityMsg directCount.
+             * @member {number} directCount
+             * @memberof com.message.OcenActivityMsg
+             * @instance
+             */
+            OcenActivityMsg.prototype.directCount = 0;
+
+            /**
+             * OcenActivityMsg teamCount.
+             * @member {number} teamCount
+             * @memberof com.message.OcenActivityMsg
+             * @instance
+             */
+            OcenActivityMsg.prototype.teamCount = 0;
+
+            /**
+             * OcenActivityMsg endTime.
+             * @member {number|Long} endTime
+             * @memberof com.message.OcenActivityMsg
+             * @instance
+             */
+            OcenActivityMsg.prototype.endTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified OcenActivityMsg message. Does not implicitly {@link com.message.OcenActivityMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.OcenActivityMsg
+             * @static
+             * @param {com.message.IOcenActivityMsg} message OcenActivityMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OcenActivityMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.directCount != null && message.hasOwnProperty("directCount"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.directCount);
+                if (message.teamCount != null && message.hasOwnProperty("teamCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.teamCount);
+                if (message.endTime != null && message.hasOwnProperty("endTime"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.endTime);
+                return writer;
+            };
+
+            /**
+             * Decodes an OcenActivityMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.OcenActivityMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.OcenActivityMsg} OcenActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OcenActivityMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.OcenActivityMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.directCount = reader.int32();
+                        break;
+                    case 2:
+                        message.teamCount = reader.int32();
+                        break;
+                    case 3:
+                        message.endTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return OcenActivityMsg;
+        })();
+
+        message.C_GET_OCEAN_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IC_GET_OCEAN_ACTIVITY_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_OCEAN_ACTIVITY_INFO.
+             * @implements IC_GET_OCEAN_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IC_GET_OCEAN_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function C_GET_OCEAN_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IC_GET_OCEAN_ACTIVITY_INFO} message C_GET_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_OCEAN_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_OCEAN_ACTIVITY_INFO} C_GET_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_OCEAN_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_OCEAN_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_OCEAN_ACTIVITY_INFO;
+        })();
+
+        message.S_GET_OCEAN_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IS_GET_OCEAN_ACTIVITY_INFO
+             * @property {com.message.IOcenActivityMsg|null} [ocenActivityMsg] S_GET_OCEAN_ACTIVITY_INFO ocenActivityMsg
+             */
+
+            /**
+             * Constructs a new S_GET_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_OCEAN_ACTIVITY_INFO.
+             * @implements IS_GET_OCEAN_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IS_GET_OCEAN_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function S_GET_OCEAN_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_OCEAN_ACTIVITY_INFO ocenActivityMsg.
+             * @member {com.message.IOcenActivityMsg|null|undefined} ocenActivityMsg
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_INFO
+             * @instance
+             */
+            S_GET_OCEAN_ACTIVITY_INFO.prototype.ocenActivityMsg = null;
+
+            /**
+             * Encodes the specified S_GET_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IS_GET_OCEAN_ACTIVITY_INFO} message S_GET_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_OCEAN_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ocenActivityMsg != null && message.hasOwnProperty("ocenActivityMsg"))
+                    $root.com.message.OcenActivityMsg.encode(message.ocenActivityMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_OCEAN_ACTIVITY_INFO} S_GET_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_OCEAN_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_OCEAN_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.ocenActivityMsg = $root.com.message.OcenActivityMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_OCEAN_ACTIVITY_INFO;
+        })();
+
+        message.MyOceanActivityMsg = (function() {
+
+            /**
+             * Properties of a MyOceanActivityMsg.
+             * @memberof com.message
+             * @interface IMyOceanActivityMsg
+             * @property {number|Long|null} [playerId] MyOceanActivityMsg playerId
+             * @property {number|null} [directCount] MyOceanActivityMsg directCount
+             * @property {number|null} [teamCount] MyOceanActivityMsg teamCount
+             * @property {number|null} [leftCount] MyOceanActivityMsg leftCount
+             * @property {number|Long|null} [endTime] MyOceanActivityMsg endTime
+             */
+
+            /**
+             * Constructs a new MyOceanActivityMsg.
+             * @memberof com.message
+             * @classdesc Represents a MyOceanActivityMsg.
+             * @implements IMyOceanActivityMsg
+             * @constructor
+             * @param {com.message.IMyOceanActivityMsg=} [properties] Properties to set
+             */
+            function MyOceanActivityMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MyOceanActivityMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.MyOceanActivityMsg
+             * @instance
+             */
+            MyOceanActivityMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MyOceanActivityMsg directCount.
+             * @member {number} directCount
+             * @memberof com.message.MyOceanActivityMsg
+             * @instance
+             */
+            MyOceanActivityMsg.prototype.directCount = 0;
+
+            /**
+             * MyOceanActivityMsg teamCount.
+             * @member {number} teamCount
+             * @memberof com.message.MyOceanActivityMsg
+             * @instance
+             */
+            MyOceanActivityMsg.prototype.teamCount = 0;
+
+            /**
+             * MyOceanActivityMsg leftCount.
+             * @member {number} leftCount
+             * @memberof com.message.MyOceanActivityMsg
+             * @instance
+             */
+            MyOceanActivityMsg.prototype.leftCount = 0;
+
+            /**
+             * MyOceanActivityMsg endTime.
+             * @member {number|Long} endTime
+             * @memberof com.message.MyOceanActivityMsg
+             * @instance
+             */
+            MyOceanActivityMsg.prototype.endTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified MyOceanActivityMsg message. Does not implicitly {@link com.message.MyOceanActivityMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.MyOceanActivityMsg
+             * @static
+             * @param {com.message.IMyOceanActivityMsg} message MyOceanActivityMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MyOceanActivityMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.directCount != null && message.hasOwnProperty("directCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.directCount);
+                if (message.teamCount != null && message.hasOwnProperty("teamCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.teamCount);
+                if (message.leftCount != null && message.hasOwnProperty("leftCount"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.leftCount);
+                if (message.endTime != null && message.hasOwnProperty("endTime"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int64(message.endTime);
+                return writer;
+            };
+
+            /**
+             * Decodes a MyOceanActivityMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.MyOceanActivityMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.MyOceanActivityMsg} MyOceanActivityMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MyOceanActivityMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.MyOceanActivityMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    case 2:
+                        message.directCount = reader.int32();
+                        break;
+                    case 3:
+                        message.teamCount = reader.int32();
+                        break;
+                    case 4:
+                        message.leftCount = reader.int32();
+                        break;
+                    case 5:
+                        message.endTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return MyOceanActivityMsg;
+        })();
+
+        message.C_GET_MY_OCEAN_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IC_GET_MY_OCEAN_ACTIVITY_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @implements IC_GET_MY_OCEAN_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IC_GET_MY_OCEAN_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function C_GET_MY_OCEAN_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MY_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.C_GET_MY_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MY_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IC_GET_MY_OCEAN_ACTIVITY_INFO} message C_GET_MY_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MY_OCEAN_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MY_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MY_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MY_OCEAN_ACTIVITY_INFO} C_GET_MY_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MY_OCEAN_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MY_OCEAN_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MY_OCEAN_ACTIVITY_INFO;
+        })();
+
+        message.S_GET_MY_OCEAN_ACTIVITY_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @interface IS_GET_MY_OCEAN_ACTIVITY_INFO
+             * @property {com.message.IMyOceanActivityMsg|null} [myOceanActivityMsg] S_GET_MY_OCEAN_ACTIVITY_INFO myOceanActivityMsg
+             */
+
+            /**
+             * Constructs a new S_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MY_OCEAN_ACTIVITY_INFO.
+             * @implements IS_GET_MY_OCEAN_ACTIVITY_INFO
+             * @constructor
+             * @param {com.message.IS_GET_MY_OCEAN_ACTIVITY_INFO=} [properties] Properties to set
+             */
+            function S_GET_MY_OCEAN_ACTIVITY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MY_OCEAN_ACTIVITY_INFO myOceanActivityMsg.
+             * @member {com.message.IMyOceanActivityMsg|null|undefined} myOceanActivityMsg
+             * @memberof com.message.S_GET_MY_OCEAN_ACTIVITY_INFO
+             * @instance
+             */
+            S_GET_MY_OCEAN_ACTIVITY_INFO.prototype.myOceanActivityMsg = null;
+
+            /**
+             * Encodes the specified S_GET_MY_OCEAN_ACTIVITY_INFO message. Does not implicitly {@link com.message.S_GET_MY_OCEAN_ACTIVITY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MY_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {com.message.IS_GET_MY_OCEAN_ACTIVITY_INFO} message S_GET_MY_OCEAN_ACTIVITY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MY_OCEAN_ACTIVITY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.myOceanActivityMsg != null && message.hasOwnProperty("myOceanActivityMsg"))
+                    $root.com.message.MyOceanActivityMsg.encode(message.myOceanActivityMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MY_OCEAN_ACTIVITY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MY_OCEAN_ACTIVITY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MY_OCEAN_ACTIVITY_INFO} S_GET_MY_OCEAN_ACTIVITY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MY_OCEAN_ACTIVITY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MY_OCEAN_ACTIVITY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.myOceanActivityMsg = $root.com.message.MyOceanActivityMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MY_OCEAN_ACTIVITY_INFO;
+        })();
+
+        message.C_OCEAN_ACTIVITY_DRAW = (function() {
+
+            /**
+             * Properties of a C_OCEAN_ACTIVITY_DRAW.
+             * @memberof com.message
+             * @interface IC_OCEAN_ACTIVITY_DRAW
+             */
+
+            /**
+             * Constructs a new C_OCEAN_ACTIVITY_DRAW.
+             * @memberof com.message
+             * @classdesc Represents a C_OCEAN_ACTIVITY_DRAW.
+             * @implements IC_OCEAN_ACTIVITY_DRAW
+             * @constructor
+             * @param {com.message.IC_OCEAN_ACTIVITY_DRAW=} [properties] Properties to set
+             */
+            function C_OCEAN_ACTIVITY_DRAW(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_OCEAN_ACTIVITY_DRAW message. Does not implicitly {@link com.message.C_OCEAN_ACTIVITY_DRAW.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_OCEAN_ACTIVITY_DRAW
+             * @static
+             * @param {com.message.IC_OCEAN_ACTIVITY_DRAW} message C_OCEAN_ACTIVITY_DRAW message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_OCEAN_ACTIVITY_DRAW.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_OCEAN_ACTIVITY_DRAW message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_OCEAN_ACTIVITY_DRAW
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_OCEAN_ACTIVITY_DRAW} C_OCEAN_ACTIVITY_DRAW
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_OCEAN_ACTIVITY_DRAW.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_OCEAN_ACTIVITY_DRAW();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_OCEAN_ACTIVITY_DRAW;
+        })();
+
+        message.S_OCEAN_ACTIVITY_DRAW = (function() {
+
+            /**
+             * Properties of a S_OCEAN_ACTIVITY_DRAW.
+             * @memberof com.message
+             * @interface IS_OCEAN_ACTIVITY_DRAW
+             * @property {number|Long|null} [rewardId] S_OCEAN_ACTIVITY_DRAW rewardId
+             * @property {string|null} [reward] S_OCEAN_ACTIVITY_DRAW reward
+             * @property {com.message.IMyOceanActivityMsg|null} [myOceanActivityMsg] S_OCEAN_ACTIVITY_DRAW myOceanActivityMsg
+             */
+
+            /**
+             * Constructs a new S_OCEAN_ACTIVITY_DRAW.
+             * @memberof com.message
+             * @classdesc Represents a S_OCEAN_ACTIVITY_DRAW.
+             * @implements IS_OCEAN_ACTIVITY_DRAW
+             * @constructor
+             * @param {com.message.IS_OCEAN_ACTIVITY_DRAW=} [properties] Properties to set
+             */
+            function S_OCEAN_ACTIVITY_DRAW(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_OCEAN_ACTIVITY_DRAW rewardId.
+             * @member {number|Long} rewardId
+             * @memberof com.message.S_OCEAN_ACTIVITY_DRAW
+             * @instance
+             */
+            S_OCEAN_ACTIVITY_DRAW.prototype.rewardId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * S_OCEAN_ACTIVITY_DRAW reward.
+             * @member {string} reward
+             * @memberof com.message.S_OCEAN_ACTIVITY_DRAW
+             * @instance
+             */
+            S_OCEAN_ACTIVITY_DRAW.prototype.reward = "";
+
+            /**
+             * S_OCEAN_ACTIVITY_DRAW myOceanActivityMsg.
+             * @member {com.message.IMyOceanActivityMsg|null|undefined} myOceanActivityMsg
+             * @memberof com.message.S_OCEAN_ACTIVITY_DRAW
+             * @instance
+             */
+            S_OCEAN_ACTIVITY_DRAW.prototype.myOceanActivityMsg = null;
+
+            /**
+             * Encodes the specified S_OCEAN_ACTIVITY_DRAW message. Does not implicitly {@link com.message.S_OCEAN_ACTIVITY_DRAW.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_OCEAN_ACTIVITY_DRAW
+             * @static
+             * @param {com.message.IS_OCEAN_ACTIVITY_DRAW} message S_OCEAN_ACTIVITY_DRAW message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_OCEAN_ACTIVITY_DRAW.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.rewardId != null && message.hasOwnProperty("rewardId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.rewardId);
+                if (message.reward != null && message.hasOwnProperty("reward"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.reward);
+                if (message.myOceanActivityMsg != null && message.hasOwnProperty("myOceanActivityMsg"))
+                    $root.com.message.MyOceanActivityMsg.encode(message.myOceanActivityMsg, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_OCEAN_ACTIVITY_DRAW message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_OCEAN_ACTIVITY_DRAW
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_OCEAN_ACTIVITY_DRAW} S_OCEAN_ACTIVITY_DRAW
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_OCEAN_ACTIVITY_DRAW.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_OCEAN_ACTIVITY_DRAW();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.rewardId = reader.int64();
+                        break;
+                    case 2:
+                        message.reward = reader.string();
+                        break;
+                    case 3:
+                        message.myOceanActivityMsg = $root.com.message.MyOceanActivityMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_OCEAN_ACTIVITY_DRAW;
+        })();
+
+        message.OceanActivityRankMsg = (function() {
+
+            /**
+             * Properties of an OceanActivityRankMsg.
+             * @memberof com.message
+             * @interface IOceanActivityRankMsg
+             * @property {number|Long|null} [playerId] OceanActivityRankMsg playerId
+             * @property {string|null} [mobile] OceanActivityRankMsg mobile
+             * @property {number|null} [directCount] OceanActivityRankMsg directCount
+             * @property {number|null} [teamCount] OceanActivityRankMsg teamCount
+             * @property {number|null} [leftCount] OceanActivityRankMsg leftCount
+             * @property {number|Long|null} [endTime] OceanActivityRankMsg endTime
+             */
+
+            /**
+             * Constructs a new OceanActivityRankMsg.
+             * @memberof com.message
+             * @classdesc Represents an OceanActivityRankMsg.
+             * @implements IOceanActivityRankMsg
+             * @constructor
+             * @param {com.message.IOceanActivityRankMsg=} [properties] Properties to set
+             */
+            function OceanActivityRankMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * OceanActivityRankMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.OceanActivityRankMsg
+             * @instance
+             */
+            OceanActivityRankMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * OceanActivityRankMsg mobile.
+             * @member {string} mobile
+             * @memberof com.message.OceanActivityRankMsg
+             * @instance
+             */
+            OceanActivityRankMsg.prototype.mobile = "";
+
+            /**
+             * OceanActivityRankMsg directCount.
+             * @member {number} directCount
+             * @memberof com.message.OceanActivityRankMsg
+             * @instance
+             */
+            OceanActivityRankMsg.prototype.directCount = 0;
+
+            /**
+             * OceanActivityRankMsg teamCount.
+             * @member {number} teamCount
+             * @memberof com.message.OceanActivityRankMsg
+             * @instance
+             */
+            OceanActivityRankMsg.prototype.teamCount = 0;
+
+            /**
+             * OceanActivityRankMsg leftCount.
+             * @member {number} leftCount
+             * @memberof com.message.OceanActivityRankMsg
+             * @instance
+             */
+            OceanActivityRankMsg.prototype.leftCount = 0;
+
+            /**
+             * OceanActivityRankMsg endTime.
+             * @member {number|Long} endTime
+             * @memberof com.message.OceanActivityRankMsg
+             * @instance
+             */
+            OceanActivityRankMsg.prototype.endTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified OceanActivityRankMsg message. Does not implicitly {@link com.message.OceanActivityRankMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.OceanActivityRankMsg
+             * @static
+             * @param {com.message.IOceanActivityRankMsg} message OceanActivityRankMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OceanActivityRankMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.mobile);
+                if (message.directCount != null && message.hasOwnProperty("directCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.directCount);
+                if (message.teamCount != null && message.hasOwnProperty("teamCount"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.teamCount);
+                if (message.leftCount != null && message.hasOwnProperty("leftCount"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.leftCount);
+                if (message.endTime != null && message.hasOwnProperty("endTime"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int64(message.endTime);
+                return writer;
+            };
+
+            /**
+             * Decodes an OceanActivityRankMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.OceanActivityRankMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.OceanActivityRankMsg} OceanActivityRankMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OceanActivityRankMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.OceanActivityRankMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    case 2:
+                        message.mobile = reader.string();
+                        break;
+                    case 3:
+                        message.directCount = reader.int32();
+                        break;
+                    case 4:
+                        message.teamCount = reader.int32();
+                        break;
+                    case 5:
+                        message.leftCount = reader.int32();
+                        break;
+                    case 6:
+                        message.endTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return OceanActivityRankMsg;
+        })();
+
+        message.C_GET_OCEAN_ACTIVITY_RANK = (function() {
+
+            /**
+             * Properties of a C_GET_OCEAN_ACTIVITY_RANK.
+             * @memberof com.message
+             * @interface IC_GET_OCEAN_ACTIVITY_RANK
+             * @property {number|null} [type] C_GET_OCEAN_ACTIVITY_RANK type
+             * @property {number|null} [page] C_GET_OCEAN_ACTIVITY_RANK page
+             * @property {number|null} [pageSize] C_GET_OCEAN_ACTIVITY_RANK pageSize
+             */
+
+            /**
+             * Constructs a new C_GET_OCEAN_ACTIVITY_RANK.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_OCEAN_ACTIVITY_RANK.
+             * @implements IC_GET_OCEAN_ACTIVITY_RANK
+             * @constructor
+             * @param {com.message.IC_GET_OCEAN_ACTIVITY_RANK=} [properties] Properties to set
+             */
+            function C_GET_OCEAN_ACTIVITY_RANK(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_GET_OCEAN_ACTIVITY_RANK type.
+             * @member {number} type
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_RANK
+             * @instance
+             */
+            C_GET_OCEAN_ACTIVITY_RANK.prototype.type = 0;
+
+            /**
+             * C_GET_OCEAN_ACTIVITY_RANK page.
+             * @member {number} page
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_RANK
+             * @instance
+             */
+            C_GET_OCEAN_ACTIVITY_RANK.prototype.page = 0;
+
+            /**
+             * C_GET_OCEAN_ACTIVITY_RANK pageSize.
+             * @member {number} pageSize
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_RANK
+             * @instance
+             */
+            C_GET_OCEAN_ACTIVITY_RANK.prototype.pageSize = 0;
+
+            /**
+             * Encodes the specified C_GET_OCEAN_ACTIVITY_RANK message. Does not implicitly {@link com.message.C_GET_OCEAN_ACTIVITY_RANK.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_RANK
+             * @static
+             * @param {com.message.IC_GET_OCEAN_ACTIVITY_RANK} message C_GET_OCEAN_ACTIVITY_RANK message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_OCEAN_ACTIVITY_RANK.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.page != null && message.hasOwnProperty("page"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.page);
+                if (message.pageSize != null && message.hasOwnProperty("pageSize"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.pageSize);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_OCEAN_ACTIVITY_RANK message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_RANK
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_OCEAN_ACTIVITY_RANK} C_GET_OCEAN_ACTIVITY_RANK
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_OCEAN_ACTIVITY_RANK.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_OCEAN_ACTIVITY_RANK();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = reader.int32();
+                        break;
+                    case 2:
+                        message.page = reader.int32();
+                        break;
+                    case 3:
+                        message.pageSize = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_OCEAN_ACTIVITY_RANK;
+        })();
+
+        message.S_GET_OCEAN_ACTIVITY_RANK = (function() {
+
+            /**
+             * Properties of a S_GET_OCEAN_ACTIVITY_RANK.
+             * @memberof com.message
+             * @interface IS_GET_OCEAN_ACTIVITY_RANK
+             * @property {Array.<com.message.IOceanActivityRankMsg>|null} [oceanActivityRankMsg] S_GET_OCEAN_ACTIVITY_RANK oceanActivityRankMsg
+             */
+
+            /**
+             * Constructs a new S_GET_OCEAN_ACTIVITY_RANK.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_OCEAN_ACTIVITY_RANK.
+             * @implements IS_GET_OCEAN_ACTIVITY_RANK
+             * @constructor
+             * @param {com.message.IS_GET_OCEAN_ACTIVITY_RANK=} [properties] Properties to set
+             */
+            function S_GET_OCEAN_ACTIVITY_RANK(properties) {
+                this.oceanActivityRankMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_OCEAN_ACTIVITY_RANK oceanActivityRankMsg.
+             * @member {Array.<com.message.IOceanActivityRankMsg>} oceanActivityRankMsg
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_RANK
+             * @instance
+             */
+            S_GET_OCEAN_ACTIVITY_RANK.prototype.oceanActivityRankMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_OCEAN_ACTIVITY_RANK message. Does not implicitly {@link com.message.S_GET_OCEAN_ACTIVITY_RANK.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_RANK
+             * @static
+             * @param {com.message.IS_GET_OCEAN_ACTIVITY_RANK} message S_GET_OCEAN_ACTIVITY_RANK message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_OCEAN_ACTIVITY_RANK.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.oceanActivityRankMsg != null && message.oceanActivityRankMsg.length)
+                    for (var i = 0; i < message.oceanActivityRankMsg.length; ++i)
+                        $root.com.message.OceanActivityRankMsg.encode(message.oceanActivityRankMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_OCEAN_ACTIVITY_RANK message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_RANK
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_OCEAN_ACTIVITY_RANK} S_GET_OCEAN_ACTIVITY_RANK
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_OCEAN_ACTIVITY_RANK.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_OCEAN_ACTIVITY_RANK();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.oceanActivityRankMsg && message.oceanActivityRankMsg.length))
+                            message.oceanActivityRankMsg = [];
+                        message.oceanActivityRankMsg.push($root.com.message.OceanActivityRankMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_OCEAN_ACTIVITY_RANK;
+        })();
+
+        message.OceanActivityDrawLogMsg = (function() {
+
+            /**
+             * Properties of an OceanActivityDrawLogMsg.
+             * @memberof com.message
+             * @interface IOceanActivityDrawLogMsg
+             * @property {number|Long|null} [playerId] OceanActivityDrawLogMsg playerId
+             * @property {string|null} [mobile] OceanActivityDrawLogMsg mobile
+             * @property {number|Long|null} [rewardId] OceanActivityDrawLogMsg rewardId
+             * @property {string|null} [reward] OceanActivityDrawLogMsg reward
+             * @property {number|Long|null} [logTime] OceanActivityDrawLogMsg logTime
+             */
+
+            /**
+             * Constructs a new OceanActivityDrawLogMsg.
+             * @memberof com.message
+             * @classdesc Represents an OceanActivityDrawLogMsg.
+             * @implements IOceanActivityDrawLogMsg
+             * @constructor
+             * @param {com.message.IOceanActivityDrawLogMsg=} [properties] Properties to set
+             */
+            function OceanActivityDrawLogMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * OceanActivityDrawLogMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.OceanActivityDrawLogMsg
+             * @instance
+             */
+            OceanActivityDrawLogMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * OceanActivityDrawLogMsg mobile.
+             * @member {string} mobile
+             * @memberof com.message.OceanActivityDrawLogMsg
+             * @instance
+             */
+            OceanActivityDrawLogMsg.prototype.mobile = "";
+
+            /**
+             * OceanActivityDrawLogMsg rewardId.
+             * @member {number|Long} rewardId
+             * @memberof com.message.OceanActivityDrawLogMsg
+             * @instance
+             */
+            OceanActivityDrawLogMsg.prototype.rewardId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * OceanActivityDrawLogMsg reward.
+             * @member {string} reward
+             * @memberof com.message.OceanActivityDrawLogMsg
+             * @instance
+             */
+            OceanActivityDrawLogMsg.prototype.reward = "";
+
+            /**
+             * OceanActivityDrawLogMsg logTime.
+             * @member {number|Long} logTime
+             * @memberof com.message.OceanActivityDrawLogMsg
+             * @instance
+             */
+            OceanActivityDrawLogMsg.prototype.logTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified OceanActivityDrawLogMsg message. Does not implicitly {@link com.message.OceanActivityDrawLogMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.OceanActivityDrawLogMsg
+             * @static
+             * @param {com.message.IOceanActivityDrawLogMsg} message OceanActivityDrawLogMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OceanActivityDrawLogMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.mobile != null && message.hasOwnProperty("mobile"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.mobile);
+                if (message.rewardId != null && message.hasOwnProperty("rewardId"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.rewardId);
+                if (message.reward != null && message.hasOwnProperty("reward"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.reward);
+                if (message.logTime != null && message.hasOwnProperty("logTime"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int64(message.logTime);
+                return writer;
+            };
+
+            /**
+             * Decodes an OceanActivityDrawLogMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.OceanActivityDrawLogMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.OceanActivityDrawLogMsg} OceanActivityDrawLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OceanActivityDrawLogMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.OceanActivityDrawLogMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    case 2:
+                        message.mobile = reader.string();
+                        break;
+                    case 3:
+                        message.rewardId = reader.int64();
+                        break;
+                    case 4:
+                        message.reward = reader.string();
+                        break;
+                    case 5:
+                        message.logTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return OceanActivityDrawLogMsg;
+        })();
+
+        message.C_GET_OCEAN_ACTIVITY_DRAW_LOG = (function() {
+
+            /**
+             * Properties of a C_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @memberof com.message
+             * @interface IC_GET_OCEAN_ACTIVITY_DRAW_LOG
+             */
+
+            /**
+             * Constructs a new C_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @implements IC_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @constructor
+             * @param {com.message.IC_GET_OCEAN_ACTIVITY_DRAW_LOG=} [properties] Properties to set
+             */
+            function C_GET_OCEAN_ACTIVITY_DRAW_LOG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_OCEAN_ACTIVITY_DRAW_LOG message. Does not implicitly {@link com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @static
+             * @param {com.message.IC_GET_OCEAN_ACTIVITY_DRAW_LOG} message C_GET_OCEAN_ACTIVITY_DRAW_LOG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_OCEAN_ACTIVITY_DRAW_LOG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_OCEAN_ACTIVITY_DRAW_LOG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG} C_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_OCEAN_ACTIVITY_DRAW_LOG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_OCEAN_ACTIVITY_DRAW_LOG;
+        })();
+
+        message.S_GET_OCEAN_ACTIVITY_DRAW_LOG = (function() {
+
+            /**
+             * Properties of a S_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @memberof com.message
+             * @interface IS_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @property {Array.<com.message.IOceanActivityDrawLogMsg>|null} [oceanActivityDrawLogMsg] S_GET_OCEAN_ACTIVITY_DRAW_LOG oceanActivityDrawLogMsg
+             */
+
+            /**
+             * Constructs a new S_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_OCEAN_ACTIVITY_DRAW_LOG.
+             * @implements IS_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @constructor
+             * @param {com.message.IS_GET_OCEAN_ACTIVITY_DRAW_LOG=} [properties] Properties to set
+             */
+            function S_GET_OCEAN_ACTIVITY_DRAW_LOG(properties) {
+                this.oceanActivityDrawLogMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_OCEAN_ACTIVITY_DRAW_LOG oceanActivityDrawLogMsg.
+             * @member {Array.<com.message.IOceanActivityDrawLogMsg>} oceanActivityDrawLogMsg
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @instance
+             */
+            S_GET_OCEAN_ACTIVITY_DRAW_LOG.prototype.oceanActivityDrawLogMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_OCEAN_ACTIVITY_DRAW_LOG message. Does not implicitly {@link com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @static
+             * @param {com.message.IS_GET_OCEAN_ACTIVITY_DRAW_LOG} message S_GET_OCEAN_ACTIVITY_DRAW_LOG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_OCEAN_ACTIVITY_DRAW_LOG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.oceanActivityDrawLogMsg != null && message.oceanActivityDrawLogMsg.length)
+                    for (var i = 0; i < message.oceanActivityDrawLogMsg.length; ++i)
+                        $root.com.message.OceanActivityDrawLogMsg.encode(message.oceanActivityDrawLogMsg[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_OCEAN_ACTIVITY_DRAW_LOG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG} S_GET_OCEAN_ACTIVITY_DRAW_LOG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_OCEAN_ACTIVITY_DRAW_LOG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 2:
+                        if (!(message.oceanActivityDrawLogMsg && message.oceanActivityDrawLogMsg.length))
+                            message.oceanActivityDrawLogMsg = [];
+                        message.oceanActivityDrawLogMsg.push($root.com.message.OceanActivityDrawLogMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_OCEAN_ACTIVITY_DRAW_LOG;
+        })();
+
+        message.FishMsg = (function() {
+
+            /**
+             * Properties of a FishMsg.
+             * @memberof com.message
+             * @interface IFishMsg
+             * @property {number|Long|null} [id] FishMsg id
+             * @property {number|null} [level] FishMsg level
+             * @property {number|Long|null} [fishId] FishMsg fishId
+             * @property {number|null} [state] FishMsg state
+             * @property {number|null} [allMoney] FishMsg allMoney
+             * @property {number|null} [extMoney] FishMsg extMoney
+             * @property {number|null} [leftMoney] FishMsg leftMoney
+             * @property {number|null} [todayGotMoney] FishMsg todayGotMoney
+             * @property {number|null} [todayCurMoney] FishMsg todayCurMoney
+             * @property {number|null} [allDay] FishMsg allDay
+             */
+
+            /**
+             * Constructs a new FishMsg.
+             * @memberof com.message
+             * @classdesc Represents a FishMsg.
+             * @implements IFishMsg
+             * @constructor
+             * @param {com.message.IFishMsg=} [properties] Properties to set
+             */
+            function FishMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FishMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * FishMsg level.
+             * @member {number} level
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.level = 0;
+
+            /**
+             * FishMsg fishId.
+             * @member {number|Long} fishId
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.fishId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * FishMsg state.
+             * @member {number} state
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.state = 0;
+
+            /**
+             * FishMsg allMoney.
+             * @member {number} allMoney
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.allMoney = 0;
+
+            /**
+             * FishMsg extMoney.
+             * @member {number} extMoney
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.extMoney = 0;
+
+            /**
+             * FishMsg leftMoney.
+             * @member {number} leftMoney
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.leftMoney = 0;
+
+            /**
+             * FishMsg todayGotMoney.
+             * @member {number} todayGotMoney
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.todayGotMoney = 0;
+
+            /**
+             * FishMsg todayCurMoney.
+             * @member {number} todayCurMoney
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.todayCurMoney = 0;
+
+            /**
+             * FishMsg allDay.
+             * @member {number} allDay
+             * @memberof com.message.FishMsg
+             * @instance
+             */
+            FishMsg.prototype.allDay = 0;
+
+            /**
+             * Encodes the specified FishMsg message. Does not implicitly {@link com.message.FishMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.FishMsg
+             * @static
+             * @param {com.message.IFishMsg} message FishMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FishMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.level != null && message.hasOwnProperty("level"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.level);
+                if (message.fishId != null && message.hasOwnProperty("fishId"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.fishId);
+                if (message.state != null && message.hasOwnProperty("state"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.state);
+                if (message.allMoney != null && message.hasOwnProperty("allMoney"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.allMoney);
+                if (message.extMoney != null && message.hasOwnProperty("extMoney"))
+                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.extMoney);
+                if (message.leftMoney != null && message.hasOwnProperty("leftMoney"))
+                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.leftMoney);
+                if (message.todayGotMoney != null && message.hasOwnProperty("todayGotMoney"))
+                    writer.uint32(/* id 8, wireType 1 =*/65).double(message.todayGotMoney);
+                if (message.todayCurMoney != null && message.hasOwnProperty("todayCurMoney"))
+                    writer.uint32(/* id 9, wireType 1 =*/73).double(message.todayCurMoney);
+                if (message.allDay != null && message.hasOwnProperty("allDay"))
+                    writer.uint32(/* id 10, wireType 0 =*/80).int32(message.allDay);
+                return writer;
+            };
+
+            /**
+             * Decodes a FishMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.FishMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.FishMsg} FishMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FishMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.FishMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.level = reader.int32();
+                        break;
+                    case 3:
+                        message.fishId = reader.int64();
+                        break;
+                    case 4:
+                        message.state = reader.int32();
+                        break;
+                    case 5:
+                        message.allMoney = reader.double();
+                        break;
+                    case 6:
+                        message.extMoney = reader.double();
+                        break;
+                    case 7:
+                        message.leftMoney = reader.double();
+                        break;
+                    case 8:
+                        message.todayGotMoney = reader.double();
+                        break;
+                    case 9:
+                        message.todayCurMoney = reader.double();
+                        break;
+                    case 10:
+                        message.allDay = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return FishMsg;
+        })();
+
+        message.C_GET_FISH_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_FISH_INFO.
+             * @memberof com.message
+             * @interface IC_GET_FISH_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_FISH_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_FISH_INFO.
+             * @implements IC_GET_FISH_INFO
+             * @constructor
+             * @param {com.message.IC_GET_FISH_INFO=} [properties] Properties to set
+             */
+            function C_GET_FISH_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_FISH_INFO message. Does not implicitly {@link com.message.C_GET_FISH_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_FISH_INFO
+             * @static
+             * @param {com.message.IC_GET_FISH_INFO} message C_GET_FISH_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_FISH_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_FISH_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_FISH_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_FISH_INFO} C_GET_FISH_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_FISH_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_FISH_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_FISH_INFO;
+        })();
+
+        message.S_GET_FISH_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_FISH_INFO.
+             * @memberof com.message
+             * @interface IS_GET_FISH_INFO
+             * @property {Array.<com.message.IFishMsg>|null} [fishMsg] S_GET_FISH_INFO fishMsg
+             */
+
+            /**
+             * Constructs a new S_GET_FISH_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_FISH_INFO.
+             * @implements IS_GET_FISH_INFO
+             * @constructor
+             * @param {com.message.IS_GET_FISH_INFO=} [properties] Properties to set
+             */
+            function S_GET_FISH_INFO(properties) {
+                this.fishMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_FISH_INFO fishMsg.
+             * @member {Array.<com.message.IFishMsg>} fishMsg
+             * @memberof com.message.S_GET_FISH_INFO
+             * @instance
+             */
+            S_GET_FISH_INFO.prototype.fishMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_FISH_INFO message. Does not implicitly {@link com.message.S_GET_FISH_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_FISH_INFO
+             * @static
+             * @param {com.message.IS_GET_FISH_INFO} message S_GET_FISH_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_FISH_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishMsg != null && message.fishMsg.length)
+                    for (var i = 0; i < message.fishMsg.length; ++i)
+                        $root.com.message.FishMsg.encode(message.fishMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_FISH_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_FISH_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_FISH_INFO} S_GET_FISH_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_FISH_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_FISH_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.fishMsg && message.fishMsg.length))
+                            message.fishMsg = [];
+                        message.fishMsg.push($root.com.message.FishMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_FISH_INFO;
+        })();
+
+        message.C_BUY_FISH = (function() {
+
+            /**
+             * Properties of a C_BUY_FISH.
+             * @memberof com.message
+             * @interface IC_BUY_FISH
+             * @property {number|null} [fishConfigId] C_BUY_FISH fishConfigId
+             */
+
+            /**
+             * Constructs a new C_BUY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a C_BUY_FISH.
+             * @implements IC_BUY_FISH
+             * @constructor
+             * @param {com.message.IC_BUY_FISH=} [properties] Properties to set
+             */
+            function C_BUY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_BUY_FISH fishConfigId.
+             * @member {number} fishConfigId
+             * @memberof com.message.C_BUY_FISH
+             * @instance
+             */
+            C_BUY_FISH.prototype.fishConfigId = 0;
+
+            /**
+             * Encodes the specified C_BUY_FISH message. Does not implicitly {@link com.message.C_BUY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_BUY_FISH
+             * @static
+             * @param {com.message.IC_BUY_FISH} message C_BUY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_BUY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.fishConfigId);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_BUY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_BUY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_BUY_FISH} C_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_BUY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_BUY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishConfigId = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_BUY_FISH;
+        })();
+
+        message.S_BUY_FISH = (function() {
+
+            /**
+             * Properties of a S_BUY_FISH.
+             * @memberof com.message
+             * @interface IS_BUY_FISH
+             * @property {com.message.IFishMsg|null} [fishMsg] S_BUY_FISH fishMsg
+             */
+
+            /**
+             * Constructs a new S_BUY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a S_BUY_FISH.
+             * @implements IS_BUY_FISH
+             * @constructor
+             * @param {com.message.IS_BUY_FISH=} [properties] Properties to set
+             */
+            function S_BUY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_BUY_FISH fishMsg.
+             * @member {com.message.IFishMsg|null|undefined} fishMsg
+             * @memberof com.message.S_BUY_FISH
+             * @instance
+             */
+            S_BUY_FISH.prototype.fishMsg = null;
+
+            /**
+             * Encodes the specified S_BUY_FISH message. Does not implicitly {@link com.message.S_BUY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_BUY_FISH
+             * @static
+             * @param {com.message.IS_BUY_FISH} message S_BUY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_BUY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
+                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_BUY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_BUY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_BUY_FISH} S_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_BUY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_BUY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_BUY_FISH;
+        })();
+
+        message.C_DIAMOND_BUY_FISH = (function() {
+
+            /**
+             * Properties of a C_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @interface IC_DIAMOND_BUY_FISH
+             * @property {number|null} [fishConfigId] C_DIAMOND_BUY_FISH fishConfigId
+             */
+
+            /**
+             * Constructs a new C_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a C_DIAMOND_BUY_FISH.
+             * @implements IC_DIAMOND_BUY_FISH
+             * @constructor
+             * @param {com.message.IC_DIAMOND_BUY_FISH=} [properties] Properties to set
+             */
+            function C_DIAMOND_BUY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_DIAMOND_BUY_FISH fishConfigId.
+             * @member {number} fishConfigId
+             * @memberof com.message.C_DIAMOND_BUY_FISH
+             * @instance
+             */
+            C_DIAMOND_BUY_FISH.prototype.fishConfigId = 0;
+
+            /**
+             * Encodes the specified C_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.C_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_DIAMOND_BUY_FISH
+             * @static
+             * @param {com.message.IC_DIAMOND_BUY_FISH} message C_DIAMOND_BUY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_DIAMOND_BUY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.fishConfigId);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_DIAMOND_BUY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_DIAMOND_BUY_FISH} C_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_DIAMOND_BUY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_DIAMOND_BUY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishConfigId = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_DIAMOND_BUY_FISH;
+        })();
+
+        message.S_DIAMOND_BUY_FISH = (function() {
+
+            /**
+             * Properties of a S_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @interface IS_DIAMOND_BUY_FISH
+             * @property {com.message.IFishMsg|null} [fishMsg] S_DIAMOND_BUY_FISH fishMsg
+             * @property {string|null} [buyFishStr] S_DIAMOND_BUY_FISH buyFishStr
+             */
+
+            /**
+             * Constructs a new S_DIAMOND_BUY_FISH.
+             * @memberof com.message
+             * @classdesc Represents a S_DIAMOND_BUY_FISH.
+             * @implements IS_DIAMOND_BUY_FISH
+             * @constructor
+             * @param {com.message.IS_DIAMOND_BUY_FISH=} [properties] Properties to set
+             */
+            function S_DIAMOND_BUY_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_DIAMOND_BUY_FISH fishMsg.
+             * @member {com.message.IFishMsg|null|undefined} fishMsg
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @instance
+             */
+            S_DIAMOND_BUY_FISH.prototype.fishMsg = null;
+
+            /**
+             * S_DIAMOND_BUY_FISH buyFishStr.
+             * @member {string} buyFishStr
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @instance
+             */
+            S_DIAMOND_BUY_FISH.prototype.buyFishStr = "";
+
+            /**
+             * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @static
+             * @param {com.message.IS_DIAMOND_BUY_FISH} message S_DIAMOND_BUY_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_DIAMOND_BUY_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
+                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.buyFishStr != null && message.hasOwnProperty("buyFishStr"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.buyFishStr);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_DIAMOND_BUY_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_DIAMOND_BUY_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_DIAMOND_BUY_FISH} S_DIAMOND_BUY_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_DIAMOND_BUY_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_DIAMOND_BUY_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.buyFishStr = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_DIAMOND_BUY_FISH;
+        })();
+
+        message.C_COMBINE_FISH = (function() {
+
+            /**
+             * Properties of a C_COMBINE_FISH.
+             * @memberof com.message
+             * @interface IC_COMBINE_FISH
+             * @property {number|Long|null} [fish1Id] C_COMBINE_FISH fish1Id
+             * @property {number|Long|null} [fish2Id] C_COMBINE_FISH fish2Id
+             */
+
+            /**
+             * Constructs a new C_COMBINE_FISH.
+             * @memberof com.message
+             * @classdesc Represents a C_COMBINE_FISH.
+             * @implements IC_COMBINE_FISH
+             * @constructor
+             * @param {com.message.IC_COMBINE_FISH=} [properties] Properties to set
+             */
+            function C_COMBINE_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * C_COMBINE_FISH fish1Id.
+             * @member {number|Long} fish1Id
+             * @memberof com.message.C_COMBINE_FISH
+             * @instance
+             */
+            C_COMBINE_FISH.prototype.fish1Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * C_COMBINE_FISH fish2Id.
+             * @member {number|Long} fish2Id
+             * @memberof com.message.C_COMBINE_FISH
+             * @instance
+             */
+            C_COMBINE_FISH.prototype.fish2Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Encodes the specified C_COMBINE_FISH message. Does not implicitly {@link com.message.C_COMBINE_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_COMBINE_FISH
+             * @static
+             * @param {com.message.IC_COMBINE_FISH} message C_COMBINE_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_COMBINE_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fish1Id != null && message.hasOwnProperty("fish1Id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.fish1Id);
+                if (message.fish2Id != null && message.hasOwnProperty("fish2Id"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fish2Id);
+                return writer;
+            };
+
+            /**
+             * Decodes a C_COMBINE_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_COMBINE_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_COMBINE_FISH} C_COMBINE_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_COMBINE_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_COMBINE_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fish1Id = reader.int64();
+                        break;
+                    case 2:
+                        message.fish2Id = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_COMBINE_FISH;
+        })();
+
+        message.S_COMBINE_FISH = (function() {
+
+            /**
+             * Properties of a S_COMBINE_FISH.
+             * @memberof com.message
+             * @interface IS_COMBINE_FISH
+             * @property {number|Long|null} [fish1Id] S_COMBINE_FISH fish1Id
+             * @property {number|Long|null} [fish2Id] S_COMBINE_FISH fish2Id
+             * @property {com.message.IFishMsg|null} [fishMsg] S_COMBINE_FISH fishMsg
+             */
+
+            /**
+             * Constructs a new S_COMBINE_FISH.
+             * @memberof com.message
+             * @classdesc Represents a S_COMBINE_FISH.
+             * @implements IS_COMBINE_FISH
+             * @constructor
+             * @param {com.message.IS_COMBINE_FISH=} [properties] Properties to set
+             */
+            function S_COMBINE_FISH(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_COMBINE_FISH fish1Id.
+             * @member {number|Long} fish1Id
+             * @memberof com.message.S_COMBINE_FISH
+             * @instance
+             */
+            S_COMBINE_FISH.prototype.fish1Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * S_COMBINE_FISH fish2Id.
+             * @member {number|Long} fish2Id
+             * @memberof com.message.S_COMBINE_FISH
+             * @instance
+             */
+            S_COMBINE_FISH.prototype.fish2Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * S_COMBINE_FISH fishMsg.
+             * @member {com.message.IFishMsg|null|undefined} fishMsg
+             * @memberof com.message.S_COMBINE_FISH
+             * @instance
+             */
+            S_COMBINE_FISH.prototype.fishMsg = null;
+
+            /**
+             * Encodes the specified S_COMBINE_FISH message. Does not implicitly {@link com.message.S_COMBINE_FISH.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_COMBINE_FISH
+             * @static
+             * @param {com.message.IS_COMBINE_FISH} message S_COMBINE_FISH message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_COMBINE_FISH.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fish1Id != null && message.hasOwnProperty("fish1Id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.fish1Id);
+                if (message.fish2Id != null && message.hasOwnProperty("fish2Id"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fish2Id);
+                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
+                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_COMBINE_FISH message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_COMBINE_FISH
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_COMBINE_FISH} S_COMBINE_FISH
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_COMBINE_FISH.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_COMBINE_FISH();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.fish1Id = reader.int64();
+                        break;
+                    case 2:
+                        message.fish2Id = reader.int64();
+                        break;
+                    case 3:
+                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_COMBINE_FISH;
+        })();
+
+        message.C_GET_MONEY_REWARD = (function() {
+
+            /**
+             * Properties of a C_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @interface IC_GET_MONEY_REWARD
+             */
+
+            /**
+             * Constructs a new C_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MONEY_REWARD.
+             * @implements IC_GET_MONEY_REWARD
+             * @constructor
+             * @param {com.message.IC_GET_MONEY_REWARD=} [properties] Properties to set
+             */
+            function C_GET_MONEY_REWARD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MONEY_REWARD message. Does not implicitly {@link com.message.C_GET_MONEY_REWARD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MONEY_REWARD
+             * @static
+             * @param {com.message.IC_GET_MONEY_REWARD} message C_GET_MONEY_REWARD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MONEY_REWARD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MONEY_REWARD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MONEY_REWARD} C_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MONEY_REWARD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_REWARD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MONEY_REWARD;
+        })();
+
+        message.S_GET_MONEY_REWARD = (function() {
+
+            /**
+             * Properties of a S_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @interface IS_GET_MONEY_REWARD
+             * @property {number|null} [money] S_GET_MONEY_REWARD money
+             */
+
+            /**
+             * Constructs a new S_GET_MONEY_REWARD.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MONEY_REWARD.
+             * @implements IS_GET_MONEY_REWARD
+             * @constructor
+             * @param {com.message.IS_GET_MONEY_REWARD=} [properties] Properties to set
+             */
+            function S_GET_MONEY_REWARD(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MONEY_REWARD money.
+             * @member {number} money
+             * @memberof com.message.S_GET_MONEY_REWARD
+             * @instance
+             */
+            S_GET_MONEY_REWARD.prototype.money = 0;
+
+            /**
+             * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MONEY_REWARD
+             * @static
+             * @param {com.message.IS_GET_MONEY_REWARD} message S_GET_MONEY_REWARD message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MONEY_REWARD.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.money != null && message.hasOwnProperty("money"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MONEY_REWARD message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MONEY_REWARD
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MONEY_REWARD} S_GET_MONEY_REWARD
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MONEY_REWARD.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_REWARD();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 3:
+                        message.money = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MONEY_REWARD;
+        })();
+
+        message.C_GET_MONEY_INFO = (function() {
+
+            /**
+             * Properties of a C_GET_MONEY_INFO.
+             * @memberof com.message
+             * @interface IC_GET_MONEY_INFO
+             */
+
+            /**
+             * Constructs a new C_GET_MONEY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MONEY_INFO.
+             * @implements IC_GET_MONEY_INFO
+             * @constructor
+             * @param {com.message.IC_GET_MONEY_INFO=} [properties] Properties to set
+             */
+            function C_GET_MONEY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MONEY_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MONEY_INFO
+             * @static
+             * @param {com.message.IC_GET_MONEY_INFO} message C_GET_MONEY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MONEY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MONEY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MONEY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MONEY_INFO} C_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MONEY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MONEY_INFO;
+        })();
+
+        message.S_GET_MONEY_INFO = (function() {
+
+            /**
+             * Properties of a S_GET_MONEY_INFO.
+             * @memberof com.message
+             * @interface IS_GET_MONEY_INFO
+             * @property {number|null} [money] S_GET_MONEY_INFO money
+             * @property {number|null} [diamond] S_GET_MONEY_INFO diamond
+             */
+
+            /**
+             * Constructs a new S_GET_MONEY_INFO.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MONEY_INFO.
+             * @implements IS_GET_MONEY_INFO
+             * @constructor
+             * @param {com.message.IS_GET_MONEY_INFO=} [properties] Properties to set
+             */
+            function S_GET_MONEY_INFO(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MONEY_INFO money.
+             * @member {number} money
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @instance
+             */
+            S_GET_MONEY_INFO.prototype.money = 0;
+
+            /**
+             * S_GET_MONEY_INFO diamond.
+             * @member {number} diamond
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @instance
+             */
+            S_GET_MONEY_INFO.prototype.diamond = 0;
+
+            /**
+             * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @static
+             * @param {com.message.IS_GET_MONEY_INFO} message S_GET_MONEY_INFO message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MONEY_INFO.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.money != null && message.hasOwnProperty("money"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
+                if (message.diamond != null && message.hasOwnProperty("diamond"))
+                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.diamond);
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MONEY_INFO message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MONEY_INFO
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MONEY_INFO} S_GET_MONEY_INFO
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MONEY_INFO.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_INFO();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 3:
+                        message.money = reader.double();
+                        break;
+                    case 4:
+                        message.diamond = reader.double();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MONEY_INFO;
+        })();
+
+        message.MoneyLogMsg = (function() {
+
+            /**
+             * Properties of a MoneyLogMsg.
+             * @memberof com.message
+             * @interface IMoneyLogMsg
+             * @property {number|Long|null} [playerId] MoneyLogMsg playerId
+             * @property {number|Long|null} [fishId] MoneyLogMsg fishId
+             * @property {number|Long|null} [fishConfigId] MoneyLogMsg fishConfigId
+             * @property {number|null} [type] MoneyLogMsg type
+             * @property {number|null} [beforeMoney] MoneyLogMsg beforeMoney
+             * @property {number|null} [changeMoney] MoneyLogMsg changeMoney
+             * @property {number|null} [afterMoney] MoneyLogMsg afterMoney
+             * @property {number|Long|null} [logTime] MoneyLogMsg logTime
+             * @property {string|null} [info] MoneyLogMsg info
+             */
+
+            /**
+             * Constructs a new MoneyLogMsg.
+             * @memberof com.message
+             * @classdesc Represents a MoneyLogMsg.
+             * @implements IMoneyLogMsg
+             * @constructor
+             * @param {com.message.IMoneyLogMsg=} [properties] Properties to set
+             */
+            function MoneyLogMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * MoneyLogMsg playerId.
+             * @member {number|Long} playerId
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg fishId.
+             * @member {number|Long} fishId
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.fishId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg fishConfigId.
+             * @member {number|Long} fishConfigId
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.fishConfigId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg type.
+             * @member {number} type
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.type = 0;
+
+            /**
+             * MoneyLogMsg beforeMoney.
+             * @member {number} beforeMoney
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.beforeMoney = 0;
+
+            /**
+             * MoneyLogMsg changeMoney.
+             * @member {number} changeMoney
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.changeMoney = 0;
+
+            /**
+             * MoneyLogMsg afterMoney.
+             * @member {number} afterMoney
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.afterMoney = 0;
+
+            /**
+             * MoneyLogMsg logTime.
+             * @member {number|Long} logTime
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.logTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * MoneyLogMsg info.
+             * @member {string} info
+             * @memberof com.message.MoneyLogMsg
+             * @instance
+             */
+            MoneyLogMsg.prototype.info = "";
+
+            /**
+             * Encodes the specified MoneyLogMsg message. Does not implicitly {@link com.message.MoneyLogMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.MoneyLogMsg
+             * @static
+             * @param {com.message.IMoneyLogMsg} message MoneyLogMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            MoneyLogMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.playerId != null && message.hasOwnProperty("playerId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
+                if (message.fishId != null && message.hasOwnProperty("fishId"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fishId);
+                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.fishConfigId);
+                if (message.type != null && message.hasOwnProperty("type"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.type);
+                if (message.beforeMoney != null && message.hasOwnProperty("beforeMoney"))
+                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.beforeMoney);
+                if (message.changeMoney != null && message.hasOwnProperty("changeMoney"))
+                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.changeMoney);
+                if (message.afterMoney != null && message.hasOwnProperty("afterMoney"))
+                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.afterMoney);
+                if (message.logTime != null && message.hasOwnProperty("logTime"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int64(message.logTime);
+                if (message.info != null && message.hasOwnProperty("info"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.info);
+                return writer;
+            };
+
+            /**
+             * Decodes a MoneyLogMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.MoneyLogMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.MoneyLogMsg} MoneyLogMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            MoneyLogMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.MoneyLogMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.playerId = reader.int64();
+                        break;
+                    case 2:
+                        message.fishId = reader.int64();
+                        break;
+                    case 3:
+                        message.fishConfigId = reader.int64();
+                        break;
+                    case 4:
+                        message.type = reader.int32();
+                        break;
+                    case 5:
+                        message.beforeMoney = reader.double();
+                        break;
+                    case 6:
+                        message.changeMoney = reader.double();
+                        break;
+                    case 7:
+                        message.afterMoney = reader.double();
+                        break;
+                    case 8:
+                        message.logTime = reader.int64();
+                        break;
+                    case 9:
+                        message.info = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return MoneyLogMsg;
+        })();
+
+        message.C_GET_MONEY_LOG_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @interface IC_GET_MONEY_LOG_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_MONEY_LOG_LIST.
+             * @implements IC_GET_MONEY_LOG_LIST
+             * @constructor
+             * @param {com.message.IC_GET_MONEY_LOG_LIST=} [properties] Properties to set
+             */
+            function C_GET_MONEY_LOG_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.C_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_MONEY_LOG_LIST
+             * @static
+             * @param {com.message.IC_GET_MONEY_LOG_LIST} message C_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_MONEY_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_MONEY_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_MONEY_LOG_LIST} C_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_MONEY_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_MONEY_LOG_LIST;
+        })();
+
+        message.S_GET_MONEY_LOG_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @interface IS_GET_MONEY_LOG_LIST
+             * @property {Array.<com.message.IMoneyLogMsg>|null} [moneyLogMsg] S_GET_MONEY_LOG_LIST moneyLogMsg
+             */
+
+            /**
+             * Constructs a new S_GET_MONEY_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_MONEY_LOG_LIST.
+             * @implements IS_GET_MONEY_LOG_LIST
+             * @constructor
+             * @param {com.message.IS_GET_MONEY_LOG_LIST=} [properties] Properties to set
+             */
+            function S_GET_MONEY_LOG_LIST(properties) {
+                this.moneyLogMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_MONEY_LOG_LIST moneyLogMsg.
+             * @member {Array.<com.message.IMoneyLogMsg>} moneyLogMsg
+             * @memberof com.message.S_GET_MONEY_LOG_LIST
+             * @instance
+             */
+            S_GET_MONEY_LOG_LIST.prototype.moneyLogMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.S_GET_MONEY_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_MONEY_LOG_LIST
+             * @static
+             * @param {com.message.IS_GET_MONEY_LOG_LIST} message S_GET_MONEY_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_MONEY_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyLogMsg != null && message.moneyLogMsg.length)
+                    for (var i = 0; i < message.moneyLogMsg.length; ++i)
+                        $root.com.message.MoneyLogMsg.encode(message.moneyLogMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_MONEY_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_MONEY_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_MONEY_LOG_LIST} S_GET_MONEY_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_MONEY_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.moneyLogMsg && message.moneyLogMsg.length))
+                            message.moneyLogMsg = [];
+                        message.moneyLogMsg.push($root.com.message.MoneyLogMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_MONEY_LOG_LIST;
+        })();
+
+        message.C_GET_DIAMOND_LOG_LIST = (function() {
+
+            /**
+             * Properties of a C_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @interface IC_GET_DIAMOND_LOG_LIST
+             */
+
+            /**
+             * Constructs a new C_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_DIAMOND_LOG_LIST.
+             * @implements IC_GET_DIAMOND_LOG_LIST
+             * @constructor
+             * @param {com.message.IC_GET_DIAMOND_LOG_LIST=} [properties] Properties to set
+             */
+            function C_GET_DIAMOND_LOG_LIST(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.C_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {com.message.IC_GET_DIAMOND_LOG_LIST} message C_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_DIAMOND_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_DIAMOND_LOG_LIST} C_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_DIAMOND_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_DIAMOND_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_DIAMOND_LOG_LIST;
+        })();
+
+        message.S_GET_DIAMOND_LOG_LIST = (function() {
+
+            /**
+             * Properties of a S_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @interface IS_GET_DIAMOND_LOG_LIST
+             * @property {Array.<com.message.IMoneyLogMsg>|null} [moneyLogMsg] S_GET_DIAMOND_LOG_LIST moneyLogMsg
+             */
+
+            /**
+             * Constructs a new S_GET_DIAMOND_LOG_LIST.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_DIAMOND_LOG_LIST.
+             * @implements IS_GET_DIAMOND_LOG_LIST
+             * @constructor
+             * @param {com.message.IS_GET_DIAMOND_LOG_LIST=} [properties] Properties to set
+             */
+            function S_GET_DIAMOND_LOG_LIST(properties) {
+                this.moneyLogMsg = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_DIAMOND_LOG_LIST moneyLogMsg.
+             * @member {Array.<com.message.IMoneyLogMsg>} moneyLogMsg
+             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
+             * @instance
+             */
+            S_GET_DIAMOND_LOG_LIST.prototype.moneyLogMsg = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.S_GET_DIAMOND_LOG_LIST.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {com.message.IS_GET_DIAMOND_LOG_LIST} message S_GET_DIAMOND_LOG_LIST message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_DIAMOND_LOG_LIST.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.moneyLogMsg != null && message.moneyLogMsg.length)
+                    for (var i = 0; i < message.moneyLogMsg.length; ++i)
+                        $root.com.message.MoneyLogMsg.encode(message.moneyLogMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_DIAMOND_LOG_LIST} S_GET_DIAMOND_LOG_LIST
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_DIAMOND_LOG_LIST.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_DIAMOND_LOG_LIST();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.moneyLogMsg && message.moneyLogMsg.length))
+                            message.moneyLogMsg = [];
+                        message.moneyLogMsg.push($root.com.message.MoneyLogMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_DIAMOND_LOG_LIST;
+        })();
+
         message.IntIntMapMsg = (function() {
 
             /**
@@ -2939,6 +6717,746 @@ $root.com = (function() {
             };
 
             return S_SYNC_TRADE_RATE_CONFIG;
+        })();
+
+        message.DeepFishConfigMsg = (function() {
+
+            /**
+             * Properties of a DeepFishConfigMsg.
+             * @memberof com.message
+             * @interface IDeepFishConfigMsg
+             * @property {number|Long|null} [id] DeepFishConfigMsg id
+             * @property {number|Long|null} [fishId] DeepFishConfigMsg fishId
+             * @property {number|null} [ubuyPrice] DeepFishConfigMsg ubuyPrice
+             * @property {string|null} [dec] DeepFishConfigMsg dec
+             */
+
+            /**
+             * Constructs a new DeepFishConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents a DeepFishConfigMsg.
+             * @implements IDeepFishConfigMsg
+             * @constructor
+             * @param {com.message.IDeepFishConfigMsg=} [properties] Properties to set
+             */
+            function DeepFishConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DeepFishConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.DeepFishConfigMsg
+             * @instance
+             */
+            DeepFishConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * DeepFishConfigMsg fishId.
+             * @member {number|Long} fishId
+             * @memberof com.message.DeepFishConfigMsg
+             * @instance
+             */
+            DeepFishConfigMsg.prototype.fishId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * DeepFishConfigMsg ubuyPrice.
+             * @member {number} ubuyPrice
+             * @memberof com.message.DeepFishConfigMsg
+             * @instance
+             */
+            DeepFishConfigMsg.prototype.ubuyPrice = 0;
+
+            /**
+             * DeepFishConfigMsg dec.
+             * @member {string} dec
+             * @memberof com.message.DeepFishConfigMsg
+             * @instance
+             */
+            DeepFishConfigMsg.prototype.dec = "";
+
+            /**
+             * Encodes the specified DeepFishConfigMsg message. Does not implicitly {@link com.message.DeepFishConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.DeepFishConfigMsg
+             * @static
+             * @param {com.message.IDeepFishConfigMsg} message DeepFishConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DeepFishConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.fishId != null && message.hasOwnProperty("fishId"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.fishId);
+                if (message.dec != null && message.hasOwnProperty("dec"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.dec);
+                if (message.ubuyPrice != null && message.hasOwnProperty("ubuyPrice"))
+                    writer.uint32(/* id 9, wireType 1 =*/73).double(message.ubuyPrice);
+                return writer;
+            };
+
+            /**
+             * Decodes a DeepFishConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.DeepFishConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.DeepFishConfigMsg} DeepFishConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DeepFishConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.DeepFishConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 3:
+                        message.fishId = reader.int64();
+                        break;
+                    case 9:
+                        message.ubuyPrice = reader.double();
+                        break;
+                    case 4:
+                        message.dec = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return DeepFishConfigMsg;
+        })();
+
+        message.C_GET_DEEP_FISH_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_DEEP_FISH_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_DEEP_FISH_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_DEEP_FISH_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_DEEP_FISH_CONFIG.
+             * @implements IC_GET_DEEP_FISH_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_DEEP_FISH_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_DEEP_FISH_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_DEEP_FISH_CONFIG message. Does not implicitly {@link com.message.C_GET_DEEP_FISH_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_DEEP_FISH_CONFIG
+             * @static
+             * @param {com.message.IC_GET_DEEP_FISH_CONFIG} message C_GET_DEEP_FISH_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_DEEP_FISH_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_DEEP_FISH_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_DEEP_FISH_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_DEEP_FISH_CONFIG} C_GET_DEEP_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_DEEP_FISH_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_DEEP_FISH_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_DEEP_FISH_CONFIG;
+        })();
+
+        message.S_GET_DEEP_FISH_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_DEEP_FISH_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_DEEP_FISH_CONFIG
+             * @property {Array.<com.message.IDeepFishConfigMsg>|null} [configMsgList] S_GET_DEEP_FISH_CONFIG configMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_DEEP_FISH_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_DEEP_FISH_CONFIG.
+             * @implements IS_GET_DEEP_FISH_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_DEEP_FISH_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_DEEP_FISH_CONFIG(properties) {
+                this.configMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_DEEP_FISH_CONFIG configMsgList.
+             * @member {Array.<com.message.IDeepFishConfigMsg>} configMsgList
+             * @memberof com.message.S_GET_DEEP_FISH_CONFIG
+             * @instance
+             */
+            S_GET_DEEP_FISH_CONFIG.prototype.configMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_DEEP_FISH_CONFIG message. Does not implicitly {@link com.message.S_GET_DEEP_FISH_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_DEEP_FISH_CONFIG
+             * @static
+             * @param {com.message.IS_GET_DEEP_FISH_CONFIG} message S_GET_DEEP_FISH_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_DEEP_FISH_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsgList != null && message.configMsgList.length)
+                    for (var i = 0; i < message.configMsgList.length; ++i)
+                        $root.com.message.DeepFishConfigMsg.encode(message.configMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_DEEP_FISH_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_DEEP_FISH_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_DEEP_FISH_CONFIG} S_GET_DEEP_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_DEEP_FISH_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_DEEP_FISH_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.configMsgList && message.configMsgList.length))
+                            message.configMsgList = [];
+                        message.configMsgList.push($root.com.message.DeepFishConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_DEEP_FISH_CONFIG;
+        })();
+
+        message.S_SYNC_DEEP_FISH_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_DEEP_FISH_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_DEEP_FISH_CONFIG
+             * @property {com.message.IDeepFishConfigMsg|null} [configMsg] S_SYNC_DEEP_FISH_CONFIG configMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_DEEP_FISH_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_DEEP_FISH_CONFIG.
+             * @implements IS_SYNC_DEEP_FISH_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_DEEP_FISH_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_DEEP_FISH_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_DEEP_FISH_CONFIG configMsg.
+             * @member {com.message.IDeepFishConfigMsg|null|undefined} configMsg
+             * @memberof com.message.S_SYNC_DEEP_FISH_CONFIG
+             * @instance
+             */
+            S_SYNC_DEEP_FISH_CONFIG.prototype.configMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_DEEP_FISH_CONFIG message. Does not implicitly {@link com.message.S_SYNC_DEEP_FISH_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_DEEP_FISH_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_DEEP_FISH_CONFIG} message S_SYNC_DEEP_FISH_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_DEEP_FISH_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsg != null && message.hasOwnProperty("configMsg"))
+                    $root.com.message.DeepFishConfigMsg.encode(message.configMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_DEEP_FISH_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_DEEP_FISH_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_DEEP_FISH_CONFIG} S_SYNC_DEEP_FISH_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_DEEP_FISH_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_DEEP_FISH_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.configMsg = $root.com.message.DeepFishConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_DEEP_FISH_CONFIG;
+        })();
+
+        message.OceanDrawConfigMsg = (function() {
+
+            /**
+             * Properties of an OceanDrawConfigMsg.
+             * @memberof com.message
+             * @interface IOceanDrawConfigMsg
+             * @property {number|Long|null} [id] OceanDrawConfigMsg id
+             * @property {number|null} [money] OceanDrawConfigMsg money
+             * @property {number|null} [diamond] OceanDrawConfigMsg diamond
+             * @property {number|null} [reward] OceanDrawConfigMsg reward
+             * @property {number|null} [rate] OceanDrawConfigMsg rate
+             * @property {string|null} [dec] OceanDrawConfigMsg dec
+             */
+
+            /**
+             * Constructs a new OceanDrawConfigMsg.
+             * @memberof com.message
+             * @classdesc Represents an OceanDrawConfigMsg.
+             * @implements IOceanDrawConfigMsg
+             * @constructor
+             * @param {com.message.IOceanDrawConfigMsg=} [properties] Properties to set
+             */
+            function OceanDrawConfigMsg(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * OceanDrawConfigMsg id.
+             * @member {number|Long} id
+             * @memberof com.message.OceanDrawConfigMsg
+             * @instance
+             */
+            OceanDrawConfigMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * OceanDrawConfigMsg money.
+             * @member {number} money
+             * @memberof com.message.OceanDrawConfigMsg
+             * @instance
+             */
+            OceanDrawConfigMsg.prototype.money = 0;
+
+            /**
+             * OceanDrawConfigMsg diamond.
+             * @member {number} diamond
+             * @memberof com.message.OceanDrawConfigMsg
+             * @instance
+             */
+            OceanDrawConfigMsg.prototype.diamond = 0;
+
+            /**
+             * OceanDrawConfigMsg reward.
+             * @member {number} reward
+             * @memberof com.message.OceanDrawConfigMsg
+             * @instance
+             */
+            OceanDrawConfigMsg.prototype.reward = 0;
+
+            /**
+             * OceanDrawConfigMsg rate.
+             * @member {number} rate
+             * @memberof com.message.OceanDrawConfigMsg
+             * @instance
+             */
+            OceanDrawConfigMsg.prototype.rate = 0;
+
+            /**
+             * OceanDrawConfigMsg dec.
+             * @member {string} dec
+             * @memberof com.message.OceanDrawConfigMsg
+             * @instance
+             */
+            OceanDrawConfigMsg.prototype.dec = "";
+
+            /**
+             * Encodes the specified OceanDrawConfigMsg message. Does not implicitly {@link com.message.OceanDrawConfigMsg.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.OceanDrawConfigMsg
+             * @static
+             * @param {com.message.IOceanDrawConfigMsg} message OceanDrawConfigMsg message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OceanDrawConfigMsg.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
+                if (message.money != null && message.hasOwnProperty("money"))
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.money);
+                if (message.diamond != null && message.hasOwnProperty("diamond"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.diamond);
+                if (message.reward != null && message.hasOwnProperty("reward"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.reward);
+                if (message.rate != null && message.hasOwnProperty("rate"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.rate);
+                if (message.dec != null && message.hasOwnProperty("dec"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.dec);
+                return writer;
+            };
+
+            /**
+             * Decodes an OceanDrawConfigMsg message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.OceanDrawConfigMsg
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.OceanDrawConfigMsg} OceanDrawConfigMsg
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OceanDrawConfigMsg.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.OceanDrawConfigMsg();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.int64();
+                        break;
+                    case 2:
+                        message.money = reader.double();
+                        break;
+                    case 3:
+                        message.diamond = reader.double();
+                        break;
+                    case 4:
+                        message.reward = reader.int32();
+                        break;
+                    case 5:
+                        message.rate = reader.int32();
+                        break;
+                    case 6:
+                        message.dec = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return OceanDrawConfigMsg;
+        })();
+
+        message.C_GET_OCEAN_DRAW_CONFIG = (function() {
+
+            /**
+             * Properties of a C_GET_OCEAN_DRAW_CONFIG.
+             * @memberof com.message
+             * @interface IC_GET_OCEAN_DRAW_CONFIG
+             */
+
+            /**
+             * Constructs a new C_GET_OCEAN_DRAW_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a C_GET_OCEAN_DRAW_CONFIG.
+             * @implements IC_GET_OCEAN_DRAW_CONFIG
+             * @constructor
+             * @param {com.message.IC_GET_OCEAN_DRAW_CONFIG=} [properties] Properties to set
+             */
+            function C_GET_OCEAN_DRAW_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Encodes the specified C_GET_OCEAN_DRAW_CONFIG message. Does not implicitly {@link com.message.C_GET_OCEAN_DRAW_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.C_GET_OCEAN_DRAW_CONFIG
+             * @static
+             * @param {com.message.IC_GET_OCEAN_DRAW_CONFIG} message C_GET_OCEAN_DRAW_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            C_GET_OCEAN_DRAW_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a C_GET_OCEAN_DRAW_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.C_GET_OCEAN_DRAW_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.C_GET_OCEAN_DRAW_CONFIG} C_GET_OCEAN_DRAW_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            C_GET_OCEAN_DRAW_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_OCEAN_DRAW_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return C_GET_OCEAN_DRAW_CONFIG;
+        })();
+
+        message.S_GET_OCEAN_DRAW_CONFIG = (function() {
+
+            /**
+             * Properties of a S_GET_OCEAN_DRAW_CONFIG.
+             * @memberof com.message
+             * @interface IS_GET_OCEAN_DRAW_CONFIG
+             * @property {Array.<com.message.IOceanDrawConfigMsg>|null} [configMsgList] S_GET_OCEAN_DRAW_CONFIG configMsgList
+             */
+
+            /**
+             * Constructs a new S_GET_OCEAN_DRAW_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_GET_OCEAN_DRAW_CONFIG.
+             * @implements IS_GET_OCEAN_DRAW_CONFIG
+             * @constructor
+             * @param {com.message.IS_GET_OCEAN_DRAW_CONFIG=} [properties] Properties to set
+             */
+            function S_GET_OCEAN_DRAW_CONFIG(properties) {
+                this.configMsgList = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_GET_OCEAN_DRAW_CONFIG configMsgList.
+             * @member {Array.<com.message.IOceanDrawConfigMsg>} configMsgList
+             * @memberof com.message.S_GET_OCEAN_DRAW_CONFIG
+             * @instance
+             */
+            S_GET_OCEAN_DRAW_CONFIG.prototype.configMsgList = $util.emptyArray;
+
+            /**
+             * Encodes the specified S_GET_OCEAN_DRAW_CONFIG message. Does not implicitly {@link com.message.S_GET_OCEAN_DRAW_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_GET_OCEAN_DRAW_CONFIG
+             * @static
+             * @param {com.message.IS_GET_OCEAN_DRAW_CONFIG} message S_GET_OCEAN_DRAW_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_GET_OCEAN_DRAW_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsgList != null && message.configMsgList.length)
+                    for (var i = 0; i < message.configMsgList.length; ++i)
+                        $root.com.message.OceanDrawConfigMsg.encode(message.configMsgList[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_GET_OCEAN_DRAW_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_GET_OCEAN_DRAW_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_GET_OCEAN_DRAW_CONFIG} S_GET_OCEAN_DRAW_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_GET_OCEAN_DRAW_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_OCEAN_DRAW_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.configMsgList && message.configMsgList.length))
+                            message.configMsgList = [];
+                        message.configMsgList.push($root.com.message.OceanDrawConfigMsg.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_GET_OCEAN_DRAW_CONFIG;
+        })();
+
+        message.S_SYNC_OCEAN_DRAW_CONFIG = (function() {
+
+            /**
+             * Properties of a S_SYNC_OCEAN_DRAW_CONFIG.
+             * @memberof com.message
+             * @interface IS_SYNC_OCEAN_DRAW_CONFIG
+             * @property {com.message.IOceanDrawConfigMsg|null} [configMsg] S_SYNC_OCEAN_DRAW_CONFIG configMsg
+             */
+
+            /**
+             * Constructs a new S_SYNC_OCEAN_DRAW_CONFIG.
+             * @memberof com.message
+             * @classdesc Represents a S_SYNC_OCEAN_DRAW_CONFIG.
+             * @implements IS_SYNC_OCEAN_DRAW_CONFIG
+             * @constructor
+             * @param {com.message.IS_SYNC_OCEAN_DRAW_CONFIG=} [properties] Properties to set
+             */
+            function S_SYNC_OCEAN_DRAW_CONFIG(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * S_SYNC_OCEAN_DRAW_CONFIG configMsg.
+             * @member {com.message.IOceanDrawConfigMsg|null|undefined} configMsg
+             * @memberof com.message.S_SYNC_OCEAN_DRAW_CONFIG
+             * @instance
+             */
+            S_SYNC_OCEAN_DRAW_CONFIG.prototype.configMsg = null;
+
+            /**
+             * Encodes the specified S_SYNC_OCEAN_DRAW_CONFIG message. Does not implicitly {@link com.message.S_SYNC_OCEAN_DRAW_CONFIG.verify|verify} messages.
+             * @function encode
+             * @memberof com.message.S_SYNC_OCEAN_DRAW_CONFIG
+             * @static
+             * @param {com.message.IS_SYNC_OCEAN_DRAW_CONFIG} message S_SYNC_OCEAN_DRAW_CONFIG message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            S_SYNC_OCEAN_DRAW_CONFIG.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.configMsg != null && message.hasOwnProperty("configMsg"))
+                    $root.com.message.OceanDrawConfigMsg.encode(message.configMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a S_SYNC_OCEAN_DRAW_CONFIG message from the specified reader or buffer.
+             * @function decode
+             * @memberof com.message.S_SYNC_OCEAN_DRAW_CONFIG
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {com.message.S_SYNC_OCEAN_DRAW_CONFIG} S_SYNC_OCEAN_DRAW_CONFIG
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            S_SYNC_OCEAN_DRAW_CONFIG.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_SYNC_OCEAN_DRAW_CONFIG();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.configMsg = $root.com.message.OceanDrawConfigMsg.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            return S_SYNC_OCEAN_DRAW_CONFIG;
         })();
 
         message.CROSS_C_SERVER_REGISTER = (function() {
@@ -8167,1714 +12685,6 @@ $root.com = (function() {
             return CROSS_S_EXCEPTION_MSG;
         })();
 
-        message.FishMsg = (function() {
-
-            /**
-             * Properties of a FishMsg.
-             * @memberof com.message
-             * @interface IFishMsg
-             * @property {number|Long|null} [id] FishMsg id
-             * @property {number|null} [level] FishMsg level
-             * @property {number|Long|null} [fishId] FishMsg fishId
-             * @property {number|null} [state] FishMsg state
-             * @property {number|null} [allMoney] FishMsg allMoney
-             * @property {number|null} [extMoney] FishMsg extMoney
-             * @property {number|null} [leftMoney] FishMsg leftMoney
-             * @property {number|null} [todayGotMoney] FishMsg todayGotMoney
-             * @property {number|null} [todayCurMoney] FishMsg todayCurMoney
-             * @property {number|null} [allDay] FishMsg allDay
-             */
-
-            /**
-             * Constructs a new FishMsg.
-             * @memberof com.message
-             * @classdesc Represents a FishMsg.
-             * @implements IFishMsg
-             * @constructor
-             * @param {com.message.IFishMsg=} [properties] Properties to set
-             */
-            function FishMsg(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * FishMsg id.
-             * @member {number|Long} id
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * FishMsg level.
-             * @member {number} level
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.level = 0;
-
-            /**
-             * FishMsg fishId.
-             * @member {number|Long} fishId
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.fishId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * FishMsg state.
-             * @member {number} state
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.state = 0;
-
-            /**
-             * FishMsg allMoney.
-             * @member {number} allMoney
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.allMoney = 0;
-
-            /**
-             * FishMsg extMoney.
-             * @member {number} extMoney
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.extMoney = 0;
-
-            /**
-             * FishMsg leftMoney.
-             * @member {number} leftMoney
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.leftMoney = 0;
-
-            /**
-             * FishMsg todayGotMoney.
-             * @member {number} todayGotMoney
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.todayGotMoney = 0;
-
-            /**
-             * FishMsg todayCurMoney.
-             * @member {number} todayCurMoney
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.todayCurMoney = 0;
-
-            /**
-             * FishMsg allDay.
-             * @member {number} allDay
-             * @memberof com.message.FishMsg
-             * @instance
-             */
-            FishMsg.prototype.allDay = 0;
-
-            /**
-             * Encodes the specified FishMsg message. Does not implicitly {@link com.message.FishMsg.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.FishMsg
-             * @static
-             * @param {com.message.IFishMsg} message FishMsg message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            FishMsg.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.id);
-                if (message.level != null && message.hasOwnProperty("level"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.level);
-                if (message.fishId != null && message.hasOwnProperty("fishId"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.fishId);
-                if (message.state != null && message.hasOwnProperty("state"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.state);
-                if (message.allMoney != null && message.hasOwnProperty("allMoney"))
-                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.allMoney);
-                if (message.extMoney != null && message.hasOwnProperty("extMoney"))
-                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.extMoney);
-                if (message.leftMoney != null && message.hasOwnProperty("leftMoney"))
-                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.leftMoney);
-                if (message.todayGotMoney != null && message.hasOwnProperty("todayGotMoney"))
-                    writer.uint32(/* id 8, wireType 1 =*/65).double(message.todayGotMoney);
-                if (message.todayCurMoney != null && message.hasOwnProperty("todayCurMoney"))
-                    writer.uint32(/* id 9, wireType 1 =*/73).double(message.todayCurMoney);
-                if (message.allDay != null && message.hasOwnProperty("allDay"))
-                    writer.uint32(/* id 10, wireType 0 =*/80).int32(message.allDay);
-                return writer;
-            };
-
-            /**
-             * Decodes a FishMsg message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.FishMsg
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.FishMsg} FishMsg
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            FishMsg.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.FishMsg();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.id = reader.int64();
-                        break;
-                    case 2:
-                        message.level = reader.int32();
-                        break;
-                    case 3:
-                        message.fishId = reader.int64();
-                        break;
-                    case 4:
-                        message.state = reader.int32();
-                        break;
-                    case 5:
-                        message.allMoney = reader.double();
-                        break;
-                    case 6:
-                        message.extMoney = reader.double();
-                        break;
-                    case 7:
-                        message.leftMoney = reader.double();
-                        break;
-                    case 8:
-                        message.todayGotMoney = reader.double();
-                        break;
-                    case 9:
-                        message.todayCurMoney = reader.double();
-                        break;
-                    case 10:
-                        message.allDay = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return FishMsg;
-        })();
-
-        message.C_GET_FISH_INFO = (function() {
-
-            /**
-             * Properties of a C_GET_FISH_INFO.
-             * @memberof com.message
-             * @interface IC_GET_FISH_INFO
-             */
-
-            /**
-             * Constructs a new C_GET_FISH_INFO.
-             * @memberof com.message
-             * @classdesc Represents a C_GET_FISH_INFO.
-             * @implements IC_GET_FISH_INFO
-             * @constructor
-             * @param {com.message.IC_GET_FISH_INFO=} [properties] Properties to set
-             */
-            function C_GET_FISH_INFO(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Encodes the specified C_GET_FISH_INFO message. Does not implicitly {@link com.message.C_GET_FISH_INFO.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_GET_FISH_INFO
-             * @static
-             * @param {com.message.IC_GET_FISH_INFO} message C_GET_FISH_INFO message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_GET_FISH_INFO.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a C_GET_FISH_INFO message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_GET_FISH_INFO
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_GET_FISH_INFO} C_GET_FISH_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_GET_FISH_INFO.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_FISH_INFO();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_GET_FISH_INFO;
-        })();
-
-        message.S_GET_FISH_INFO = (function() {
-
-            /**
-             * Properties of a S_GET_FISH_INFO.
-             * @memberof com.message
-             * @interface IS_GET_FISH_INFO
-             * @property {Array.<com.message.IFishMsg>|null} [fishMsg] S_GET_FISH_INFO fishMsg
-             */
-
-            /**
-             * Constructs a new S_GET_FISH_INFO.
-             * @memberof com.message
-             * @classdesc Represents a S_GET_FISH_INFO.
-             * @implements IS_GET_FISH_INFO
-             * @constructor
-             * @param {com.message.IS_GET_FISH_INFO=} [properties] Properties to set
-             */
-            function S_GET_FISH_INFO(properties) {
-                this.fishMsg = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_GET_FISH_INFO fishMsg.
-             * @member {Array.<com.message.IFishMsg>} fishMsg
-             * @memberof com.message.S_GET_FISH_INFO
-             * @instance
-             */
-            S_GET_FISH_INFO.prototype.fishMsg = $util.emptyArray;
-
-            /**
-             * Encodes the specified S_GET_FISH_INFO message. Does not implicitly {@link com.message.S_GET_FISH_INFO.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_GET_FISH_INFO
-             * @static
-             * @param {com.message.IS_GET_FISH_INFO} message S_GET_FISH_INFO message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_GET_FISH_INFO.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.fishMsg != null && message.fishMsg.length)
-                    for (var i = 0; i < message.fishMsg.length; ++i)
-                        $root.com.message.FishMsg.encode(message.fishMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a S_GET_FISH_INFO message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_GET_FISH_INFO
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_GET_FISH_INFO} S_GET_FISH_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_GET_FISH_INFO.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_FISH_INFO();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.fishMsg && message.fishMsg.length))
-                            message.fishMsg = [];
-                        message.fishMsg.push($root.com.message.FishMsg.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_GET_FISH_INFO;
-        })();
-
-        message.C_BUY_FISH = (function() {
-
-            /**
-             * Properties of a C_BUY_FISH.
-             * @memberof com.message
-             * @interface IC_BUY_FISH
-             * @property {number|null} [fishConfigId] C_BUY_FISH fishConfigId
-             */
-
-            /**
-             * Constructs a new C_BUY_FISH.
-             * @memberof com.message
-             * @classdesc Represents a C_BUY_FISH.
-             * @implements IC_BUY_FISH
-             * @constructor
-             * @param {com.message.IC_BUY_FISH=} [properties] Properties to set
-             */
-            function C_BUY_FISH(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * C_BUY_FISH fishConfigId.
-             * @member {number} fishConfigId
-             * @memberof com.message.C_BUY_FISH
-             * @instance
-             */
-            C_BUY_FISH.prototype.fishConfigId = 0;
-
-            /**
-             * Encodes the specified C_BUY_FISH message. Does not implicitly {@link com.message.C_BUY_FISH.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_BUY_FISH
-             * @static
-             * @param {com.message.IC_BUY_FISH} message C_BUY_FISH message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_BUY_FISH.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.fishConfigId);
-                return writer;
-            };
-
-            /**
-             * Decodes a C_BUY_FISH message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_BUY_FISH
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_BUY_FISH} C_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_BUY_FISH.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_BUY_FISH();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.fishConfigId = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_BUY_FISH;
-        })();
-
-        message.S_BUY_FISH = (function() {
-
-            /**
-             * Properties of a S_BUY_FISH.
-             * @memberof com.message
-             * @interface IS_BUY_FISH
-             * @property {com.message.IFishMsg|null} [fishMsg] S_BUY_FISH fishMsg
-             */
-
-            /**
-             * Constructs a new S_BUY_FISH.
-             * @memberof com.message
-             * @classdesc Represents a S_BUY_FISH.
-             * @implements IS_BUY_FISH
-             * @constructor
-             * @param {com.message.IS_BUY_FISH=} [properties] Properties to set
-             */
-            function S_BUY_FISH(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_BUY_FISH fishMsg.
-             * @member {com.message.IFishMsg|null|undefined} fishMsg
-             * @memberof com.message.S_BUY_FISH
-             * @instance
-             */
-            S_BUY_FISH.prototype.fishMsg = null;
-
-            /**
-             * Encodes the specified S_BUY_FISH message. Does not implicitly {@link com.message.S_BUY_FISH.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_BUY_FISH
-             * @static
-             * @param {com.message.IS_BUY_FISH} message S_BUY_FISH message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_BUY_FISH.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
-                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a S_BUY_FISH message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_BUY_FISH
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_BUY_FISH} S_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_BUY_FISH.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_BUY_FISH();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_BUY_FISH;
-        })();
-
-        message.C_DIAMOND_BUY_FISH = (function() {
-
-            /**
-             * Properties of a C_DIAMOND_BUY_FISH.
-             * @memberof com.message
-             * @interface IC_DIAMOND_BUY_FISH
-             * @property {number|null} [fishConfigId] C_DIAMOND_BUY_FISH fishConfigId
-             */
-
-            /**
-             * Constructs a new C_DIAMOND_BUY_FISH.
-             * @memberof com.message
-             * @classdesc Represents a C_DIAMOND_BUY_FISH.
-             * @implements IC_DIAMOND_BUY_FISH
-             * @constructor
-             * @param {com.message.IC_DIAMOND_BUY_FISH=} [properties] Properties to set
-             */
-            function C_DIAMOND_BUY_FISH(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * C_DIAMOND_BUY_FISH fishConfigId.
-             * @member {number} fishConfigId
-             * @memberof com.message.C_DIAMOND_BUY_FISH
-             * @instance
-             */
-            C_DIAMOND_BUY_FISH.prototype.fishConfigId = 0;
-
-            /**
-             * Encodes the specified C_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.C_DIAMOND_BUY_FISH.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_DIAMOND_BUY_FISH
-             * @static
-             * @param {com.message.IC_DIAMOND_BUY_FISH} message C_DIAMOND_BUY_FISH message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_DIAMOND_BUY_FISH.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.fishConfigId);
-                return writer;
-            };
-
-            /**
-             * Decodes a C_DIAMOND_BUY_FISH message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_DIAMOND_BUY_FISH
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_DIAMOND_BUY_FISH} C_DIAMOND_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_DIAMOND_BUY_FISH.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_DIAMOND_BUY_FISH();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.fishConfigId = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_DIAMOND_BUY_FISH;
-        })();
-
-        message.S_DIAMOND_BUY_FISH = (function() {
-
-            /**
-             * Properties of a S_DIAMOND_BUY_FISH.
-             * @memberof com.message
-             * @interface IS_DIAMOND_BUY_FISH
-             * @property {com.message.IFishMsg|null} [fishMsg] S_DIAMOND_BUY_FISH fishMsg
-             * @property {string|null} [buyFishStr] S_DIAMOND_BUY_FISH buyFishStr
-             */
-
-            /**
-             * Constructs a new S_DIAMOND_BUY_FISH.
-             * @memberof com.message
-             * @classdesc Represents a S_DIAMOND_BUY_FISH.
-             * @implements IS_DIAMOND_BUY_FISH
-             * @constructor
-             * @param {com.message.IS_DIAMOND_BUY_FISH=} [properties] Properties to set
-             */
-            function S_DIAMOND_BUY_FISH(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_DIAMOND_BUY_FISH fishMsg.
-             * @member {com.message.IFishMsg|null|undefined} fishMsg
-             * @memberof com.message.S_DIAMOND_BUY_FISH
-             * @instance
-             */
-            S_DIAMOND_BUY_FISH.prototype.fishMsg = null;
-
-            /**
-             * S_DIAMOND_BUY_FISH buyFishStr.
-             * @member {string} buyFishStr
-             * @memberof com.message.S_DIAMOND_BUY_FISH
-             * @instance
-             */
-            S_DIAMOND_BUY_FISH.prototype.buyFishStr = "";
-
-            /**
-             * Encodes the specified S_DIAMOND_BUY_FISH message. Does not implicitly {@link com.message.S_DIAMOND_BUY_FISH.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_DIAMOND_BUY_FISH
-             * @static
-             * @param {com.message.IS_DIAMOND_BUY_FISH} message S_DIAMOND_BUY_FISH message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_DIAMOND_BUY_FISH.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
-                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.buyFishStr != null && message.hasOwnProperty("buyFishStr"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.buyFishStr);
-                return writer;
-            };
-
-            /**
-             * Decodes a S_DIAMOND_BUY_FISH message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_DIAMOND_BUY_FISH
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_DIAMOND_BUY_FISH} S_DIAMOND_BUY_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_DIAMOND_BUY_FISH.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_DIAMOND_BUY_FISH();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.buyFishStr = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_DIAMOND_BUY_FISH;
-        })();
-
-        message.C_COMBINE_FISH = (function() {
-
-            /**
-             * Properties of a C_COMBINE_FISH.
-             * @memberof com.message
-             * @interface IC_COMBINE_FISH
-             * @property {number|Long|null} [fish1Id] C_COMBINE_FISH fish1Id
-             * @property {number|Long|null} [fish2Id] C_COMBINE_FISH fish2Id
-             */
-
-            /**
-             * Constructs a new C_COMBINE_FISH.
-             * @memberof com.message
-             * @classdesc Represents a C_COMBINE_FISH.
-             * @implements IC_COMBINE_FISH
-             * @constructor
-             * @param {com.message.IC_COMBINE_FISH=} [properties] Properties to set
-             */
-            function C_COMBINE_FISH(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * C_COMBINE_FISH fish1Id.
-             * @member {number|Long} fish1Id
-             * @memberof com.message.C_COMBINE_FISH
-             * @instance
-             */
-            C_COMBINE_FISH.prototype.fish1Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * C_COMBINE_FISH fish2Id.
-             * @member {number|Long} fish2Id
-             * @memberof com.message.C_COMBINE_FISH
-             * @instance
-             */
-            C_COMBINE_FISH.prototype.fish2Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * Encodes the specified C_COMBINE_FISH message. Does not implicitly {@link com.message.C_COMBINE_FISH.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_COMBINE_FISH
-             * @static
-             * @param {com.message.IC_COMBINE_FISH} message C_COMBINE_FISH message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_COMBINE_FISH.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.fish1Id != null && message.hasOwnProperty("fish1Id"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.fish1Id);
-                if (message.fish2Id != null && message.hasOwnProperty("fish2Id"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fish2Id);
-                return writer;
-            };
-
-            /**
-             * Decodes a C_COMBINE_FISH message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_COMBINE_FISH
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_COMBINE_FISH} C_COMBINE_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_COMBINE_FISH.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_COMBINE_FISH();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.fish1Id = reader.int64();
-                        break;
-                    case 2:
-                        message.fish2Id = reader.int64();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_COMBINE_FISH;
-        })();
-
-        message.S_COMBINE_FISH = (function() {
-
-            /**
-             * Properties of a S_COMBINE_FISH.
-             * @memberof com.message
-             * @interface IS_COMBINE_FISH
-             * @property {number|Long|null} [fish1Id] S_COMBINE_FISH fish1Id
-             * @property {number|Long|null} [fish2Id] S_COMBINE_FISH fish2Id
-             * @property {com.message.IFishMsg|null} [fishMsg] S_COMBINE_FISH fishMsg
-             */
-
-            /**
-             * Constructs a new S_COMBINE_FISH.
-             * @memberof com.message
-             * @classdesc Represents a S_COMBINE_FISH.
-             * @implements IS_COMBINE_FISH
-             * @constructor
-             * @param {com.message.IS_COMBINE_FISH=} [properties] Properties to set
-             */
-            function S_COMBINE_FISH(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_COMBINE_FISH fish1Id.
-             * @member {number|Long} fish1Id
-             * @memberof com.message.S_COMBINE_FISH
-             * @instance
-             */
-            S_COMBINE_FISH.prototype.fish1Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * S_COMBINE_FISH fish2Id.
-             * @member {number|Long} fish2Id
-             * @memberof com.message.S_COMBINE_FISH
-             * @instance
-             */
-            S_COMBINE_FISH.prototype.fish2Id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * S_COMBINE_FISH fishMsg.
-             * @member {com.message.IFishMsg|null|undefined} fishMsg
-             * @memberof com.message.S_COMBINE_FISH
-             * @instance
-             */
-            S_COMBINE_FISH.prototype.fishMsg = null;
-
-            /**
-             * Encodes the specified S_COMBINE_FISH message. Does not implicitly {@link com.message.S_COMBINE_FISH.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_COMBINE_FISH
-             * @static
-             * @param {com.message.IS_COMBINE_FISH} message S_COMBINE_FISH message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_COMBINE_FISH.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.fish1Id != null && message.hasOwnProperty("fish1Id"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.fish1Id);
-                if (message.fish2Id != null && message.hasOwnProperty("fish2Id"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fish2Id);
-                if (message.fishMsg != null && message.hasOwnProperty("fishMsg"))
-                    $root.com.message.FishMsg.encode(message.fishMsg, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a S_COMBINE_FISH message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_COMBINE_FISH
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_COMBINE_FISH} S_COMBINE_FISH
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_COMBINE_FISH.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_COMBINE_FISH();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.fish1Id = reader.int64();
-                        break;
-                    case 2:
-                        message.fish2Id = reader.int64();
-                        break;
-                    case 3:
-                        message.fishMsg = $root.com.message.FishMsg.decode(reader, reader.uint32());
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_COMBINE_FISH;
-        })();
-
-        message.C_GET_MONEY_REWARD = (function() {
-
-            /**
-             * Properties of a C_GET_MONEY_REWARD.
-             * @memberof com.message
-             * @interface IC_GET_MONEY_REWARD
-             */
-
-            /**
-             * Constructs a new C_GET_MONEY_REWARD.
-             * @memberof com.message
-             * @classdesc Represents a C_GET_MONEY_REWARD.
-             * @implements IC_GET_MONEY_REWARD
-             * @constructor
-             * @param {com.message.IC_GET_MONEY_REWARD=} [properties] Properties to set
-             */
-            function C_GET_MONEY_REWARD(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Encodes the specified C_GET_MONEY_REWARD message. Does not implicitly {@link com.message.C_GET_MONEY_REWARD.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_GET_MONEY_REWARD
-             * @static
-             * @param {com.message.IC_GET_MONEY_REWARD} message C_GET_MONEY_REWARD message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_GET_MONEY_REWARD.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a C_GET_MONEY_REWARD message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_GET_MONEY_REWARD
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_GET_MONEY_REWARD} C_GET_MONEY_REWARD
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_GET_MONEY_REWARD.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_REWARD();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_GET_MONEY_REWARD;
-        })();
-
-        message.S_GET_MONEY_REWARD = (function() {
-
-            /**
-             * Properties of a S_GET_MONEY_REWARD.
-             * @memberof com.message
-             * @interface IS_GET_MONEY_REWARD
-             * @property {number|null} [money] S_GET_MONEY_REWARD money
-             */
-
-            /**
-             * Constructs a new S_GET_MONEY_REWARD.
-             * @memberof com.message
-             * @classdesc Represents a S_GET_MONEY_REWARD.
-             * @implements IS_GET_MONEY_REWARD
-             * @constructor
-             * @param {com.message.IS_GET_MONEY_REWARD=} [properties] Properties to set
-             */
-            function S_GET_MONEY_REWARD(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_GET_MONEY_REWARD money.
-             * @member {number} money
-             * @memberof com.message.S_GET_MONEY_REWARD
-             * @instance
-             */
-            S_GET_MONEY_REWARD.prototype.money = 0;
-
-            /**
-             * Encodes the specified S_GET_MONEY_REWARD message. Does not implicitly {@link com.message.S_GET_MONEY_REWARD.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_GET_MONEY_REWARD
-             * @static
-             * @param {com.message.IS_GET_MONEY_REWARD} message S_GET_MONEY_REWARD message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_GET_MONEY_REWARD.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.money != null && message.hasOwnProperty("money"))
-                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
-                return writer;
-            };
-
-            /**
-             * Decodes a S_GET_MONEY_REWARD message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_GET_MONEY_REWARD
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_GET_MONEY_REWARD} S_GET_MONEY_REWARD
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_GET_MONEY_REWARD.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_REWARD();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 3:
-                        message.money = reader.double();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_GET_MONEY_REWARD;
-        })();
-
-        message.C_GET_MONEY_INFO = (function() {
-
-            /**
-             * Properties of a C_GET_MONEY_INFO.
-             * @memberof com.message
-             * @interface IC_GET_MONEY_INFO
-             */
-
-            /**
-             * Constructs a new C_GET_MONEY_INFO.
-             * @memberof com.message
-             * @classdesc Represents a C_GET_MONEY_INFO.
-             * @implements IC_GET_MONEY_INFO
-             * @constructor
-             * @param {com.message.IC_GET_MONEY_INFO=} [properties] Properties to set
-             */
-            function C_GET_MONEY_INFO(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Encodes the specified C_GET_MONEY_INFO message. Does not implicitly {@link com.message.C_GET_MONEY_INFO.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_GET_MONEY_INFO
-             * @static
-             * @param {com.message.IC_GET_MONEY_INFO} message C_GET_MONEY_INFO message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_GET_MONEY_INFO.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a C_GET_MONEY_INFO message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_GET_MONEY_INFO
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_GET_MONEY_INFO} C_GET_MONEY_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_GET_MONEY_INFO.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_INFO();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_GET_MONEY_INFO;
-        })();
-
-        message.S_GET_MONEY_INFO = (function() {
-
-            /**
-             * Properties of a S_GET_MONEY_INFO.
-             * @memberof com.message
-             * @interface IS_GET_MONEY_INFO
-             * @property {number|null} [money] S_GET_MONEY_INFO money
-             * @property {number|null} [diamond] S_GET_MONEY_INFO diamond
-             */
-
-            /**
-             * Constructs a new S_GET_MONEY_INFO.
-             * @memberof com.message
-             * @classdesc Represents a S_GET_MONEY_INFO.
-             * @implements IS_GET_MONEY_INFO
-             * @constructor
-             * @param {com.message.IS_GET_MONEY_INFO=} [properties] Properties to set
-             */
-            function S_GET_MONEY_INFO(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_GET_MONEY_INFO money.
-             * @member {number} money
-             * @memberof com.message.S_GET_MONEY_INFO
-             * @instance
-             */
-            S_GET_MONEY_INFO.prototype.money = 0;
-
-            /**
-             * S_GET_MONEY_INFO diamond.
-             * @member {number} diamond
-             * @memberof com.message.S_GET_MONEY_INFO
-             * @instance
-             */
-            S_GET_MONEY_INFO.prototype.diamond = 0;
-
-            /**
-             * Encodes the specified S_GET_MONEY_INFO message. Does not implicitly {@link com.message.S_GET_MONEY_INFO.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_GET_MONEY_INFO
-             * @static
-             * @param {com.message.IS_GET_MONEY_INFO} message S_GET_MONEY_INFO message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_GET_MONEY_INFO.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.money != null && message.hasOwnProperty("money"))
-                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.money);
-                if (message.diamond != null && message.hasOwnProperty("diamond"))
-                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.diamond);
-                return writer;
-            };
-
-            /**
-             * Decodes a S_GET_MONEY_INFO message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_GET_MONEY_INFO
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_GET_MONEY_INFO} S_GET_MONEY_INFO
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_GET_MONEY_INFO.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_INFO();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 3:
-                        message.money = reader.double();
-                        break;
-                    case 4:
-                        message.diamond = reader.double();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_GET_MONEY_INFO;
-        })();
-
-        message.MoneyLogMsg = (function() {
-
-            /**
-             * Properties of a MoneyLogMsg.
-             * @memberof com.message
-             * @interface IMoneyLogMsg
-             * @property {number|Long|null} [playerId] MoneyLogMsg playerId
-             * @property {number|Long|null} [fishId] MoneyLogMsg fishId
-             * @property {number|Long|null} [fishConfigId] MoneyLogMsg fishConfigId
-             * @property {number|null} [type] MoneyLogMsg type
-             * @property {number|null} [beforeMoney] MoneyLogMsg beforeMoney
-             * @property {number|null} [changeMoney] MoneyLogMsg changeMoney
-             * @property {number|null} [afterMoney] MoneyLogMsg afterMoney
-             * @property {number|Long|null} [logTime] MoneyLogMsg logTime
-             * @property {string|null} [info] MoneyLogMsg info
-             */
-
-            /**
-             * Constructs a new MoneyLogMsg.
-             * @memberof com.message
-             * @classdesc Represents a MoneyLogMsg.
-             * @implements IMoneyLogMsg
-             * @constructor
-             * @param {com.message.IMoneyLogMsg=} [properties] Properties to set
-             */
-            function MoneyLogMsg(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * MoneyLogMsg playerId.
-             * @member {number|Long} playerId
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.playerId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * MoneyLogMsg fishId.
-             * @member {number|Long} fishId
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.fishId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * MoneyLogMsg fishConfigId.
-             * @member {number|Long} fishConfigId
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.fishConfigId = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * MoneyLogMsg type.
-             * @member {number} type
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.type = 0;
-
-            /**
-             * MoneyLogMsg beforeMoney.
-             * @member {number} beforeMoney
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.beforeMoney = 0;
-
-            /**
-             * MoneyLogMsg changeMoney.
-             * @member {number} changeMoney
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.changeMoney = 0;
-
-            /**
-             * MoneyLogMsg afterMoney.
-             * @member {number} afterMoney
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.afterMoney = 0;
-
-            /**
-             * MoneyLogMsg logTime.
-             * @member {number|Long} logTime
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.logTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-
-            /**
-             * MoneyLogMsg info.
-             * @member {string} info
-             * @memberof com.message.MoneyLogMsg
-             * @instance
-             */
-            MoneyLogMsg.prototype.info = "";
-
-            /**
-             * Encodes the specified MoneyLogMsg message. Does not implicitly {@link com.message.MoneyLogMsg.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.MoneyLogMsg
-             * @static
-             * @param {com.message.IMoneyLogMsg} message MoneyLogMsg message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            MoneyLogMsg.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.playerId != null && message.hasOwnProperty("playerId"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.playerId);
-                if (message.fishId != null && message.hasOwnProperty("fishId"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.fishId);
-                if (message.fishConfigId != null && message.hasOwnProperty("fishConfigId"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.fishConfigId);
-                if (message.type != null && message.hasOwnProperty("type"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.type);
-                if (message.beforeMoney != null && message.hasOwnProperty("beforeMoney"))
-                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.beforeMoney);
-                if (message.changeMoney != null && message.hasOwnProperty("changeMoney"))
-                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.changeMoney);
-                if (message.afterMoney != null && message.hasOwnProperty("afterMoney"))
-                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.afterMoney);
-                if (message.logTime != null && message.hasOwnProperty("logTime"))
-                    writer.uint32(/* id 8, wireType 0 =*/64).int64(message.logTime);
-                if (message.info != null && message.hasOwnProperty("info"))
-                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.info);
-                return writer;
-            };
-
-            /**
-             * Decodes a MoneyLogMsg message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.MoneyLogMsg
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.MoneyLogMsg} MoneyLogMsg
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            MoneyLogMsg.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.MoneyLogMsg();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.playerId = reader.int64();
-                        break;
-                    case 2:
-                        message.fishId = reader.int64();
-                        break;
-                    case 3:
-                        message.fishConfigId = reader.int64();
-                        break;
-                    case 4:
-                        message.type = reader.int32();
-                        break;
-                    case 5:
-                        message.beforeMoney = reader.double();
-                        break;
-                    case 6:
-                        message.changeMoney = reader.double();
-                        break;
-                    case 7:
-                        message.afterMoney = reader.double();
-                        break;
-                    case 8:
-                        message.logTime = reader.int64();
-                        break;
-                    case 9:
-                        message.info = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return MoneyLogMsg;
-        })();
-
-        message.C_GET_MONEY_LOG_LIST = (function() {
-
-            /**
-             * Properties of a C_GET_MONEY_LOG_LIST.
-             * @memberof com.message
-             * @interface IC_GET_MONEY_LOG_LIST
-             */
-
-            /**
-             * Constructs a new C_GET_MONEY_LOG_LIST.
-             * @memberof com.message
-             * @classdesc Represents a C_GET_MONEY_LOG_LIST.
-             * @implements IC_GET_MONEY_LOG_LIST
-             * @constructor
-             * @param {com.message.IC_GET_MONEY_LOG_LIST=} [properties] Properties to set
-             */
-            function C_GET_MONEY_LOG_LIST(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Encodes the specified C_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.C_GET_MONEY_LOG_LIST.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_GET_MONEY_LOG_LIST
-             * @static
-             * @param {com.message.IC_GET_MONEY_LOG_LIST} message C_GET_MONEY_LOG_LIST message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_GET_MONEY_LOG_LIST.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a C_GET_MONEY_LOG_LIST message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_GET_MONEY_LOG_LIST
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_GET_MONEY_LOG_LIST} C_GET_MONEY_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_GET_MONEY_LOG_LIST.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_MONEY_LOG_LIST();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_GET_MONEY_LOG_LIST;
-        })();
-
-        message.S_GET_MONEY_LOG_LIST = (function() {
-
-            /**
-             * Properties of a S_GET_MONEY_LOG_LIST.
-             * @memberof com.message
-             * @interface IS_GET_MONEY_LOG_LIST
-             * @property {Array.<com.message.IMoneyLogMsg>|null} [moneyLogMsg] S_GET_MONEY_LOG_LIST moneyLogMsg
-             */
-
-            /**
-             * Constructs a new S_GET_MONEY_LOG_LIST.
-             * @memberof com.message
-             * @classdesc Represents a S_GET_MONEY_LOG_LIST.
-             * @implements IS_GET_MONEY_LOG_LIST
-             * @constructor
-             * @param {com.message.IS_GET_MONEY_LOG_LIST=} [properties] Properties to set
-             */
-            function S_GET_MONEY_LOG_LIST(properties) {
-                this.moneyLogMsg = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_GET_MONEY_LOG_LIST moneyLogMsg.
-             * @member {Array.<com.message.IMoneyLogMsg>} moneyLogMsg
-             * @memberof com.message.S_GET_MONEY_LOG_LIST
-             * @instance
-             */
-            S_GET_MONEY_LOG_LIST.prototype.moneyLogMsg = $util.emptyArray;
-
-            /**
-             * Encodes the specified S_GET_MONEY_LOG_LIST message. Does not implicitly {@link com.message.S_GET_MONEY_LOG_LIST.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_GET_MONEY_LOG_LIST
-             * @static
-             * @param {com.message.IS_GET_MONEY_LOG_LIST} message S_GET_MONEY_LOG_LIST message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_GET_MONEY_LOG_LIST.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.moneyLogMsg != null && message.moneyLogMsg.length)
-                    for (var i = 0; i < message.moneyLogMsg.length; ++i)
-                        $root.com.message.MoneyLogMsg.encode(message.moneyLogMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a S_GET_MONEY_LOG_LIST message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_GET_MONEY_LOG_LIST
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_GET_MONEY_LOG_LIST} S_GET_MONEY_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_GET_MONEY_LOG_LIST.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_MONEY_LOG_LIST();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.moneyLogMsg && message.moneyLogMsg.length))
-                            message.moneyLogMsg = [];
-                        message.moneyLogMsg.push($root.com.message.MoneyLogMsg.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_GET_MONEY_LOG_LIST;
-        })();
-
-        message.C_GET_DIAMOND_LOG_LIST = (function() {
-
-            /**
-             * Properties of a C_GET_DIAMOND_LOG_LIST.
-             * @memberof com.message
-             * @interface IC_GET_DIAMOND_LOG_LIST
-             */
-
-            /**
-             * Constructs a new C_GET_DIAMOND_LOG_LIST.
-             * @memberof com.message
-             * @classdesc Represents a C_GET_DIAMOND_LOG_LIST.
-             * @implements IC_GET_DIAMOND_LOG_LIST
-             * @constructor
-             * @param {com.message.IC_GET_DIAMOND_LOG_LIST=} [properties] Properties to set
-             */
-            function C_GET_DIAMOND_LOG_LIST(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Encodes the specified C_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.C_GET_DIAMOND_LOG_LIST.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.C_GET_DIAMOND_LOG_LIST
-             * @static
-             * @param {com.message.IC_GET_DIAMOND_LOG_LIST} message C_GET_DIAMOND_LOG_LIST message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            C_GET_DIAMOND_LOG_LIST.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                return writer;
-            };
-
-            /**
-             * Decodes a C_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.C_GET_DIAMOND_LOG_LIST
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.C_GET_DIAMOND_LOG_LIST} C_GET_DIAMOND_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            C_GET_DIAMOND_LOG_LIST.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.C_GET_DIAMOND_LOG_LIST();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return C_GET_DIAMOND_LOG_LIST;
-        })();
-
-        message.S_GET_DIAMOND_LOG_LIST = (function() {
-
-            /**
-             * Properties of a S_GET_DIAMOND_LOG_LIST.
-             * @memberof com.message
-             * @interface IS_GET_DIAMOND_LOG_LIST
-             * @property {Array.<com.message.IMoneyLogMsg>|null} [moneyLogMsg] S_GET_DIAMOND_LOG_LIST moneyLogMsg
-             */
-
-            /**
-             * Constructs a new S_GET_DIAMOND_LOG_LIST.
-             * @memberof com.message
-             * @classdesc Represents a S_GET_DIAMOND_LOG_LIST.
-             * @implements IS_GET_DIAMOND_LOG_LIST
-             * @constructor
-             * @param {com.message.IS_GET_DIAMOND_LOG_LIST=} [properties] Properties to set
-             */
-            function S_GET_DIAMOND_LOG_LIST(properties) {
-                this.moneyLogMsg = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * S_GET_DIAMOND_LOG_LIST moneyLogMsg.
-             * @member {Array.<com.message.IMoneyLogMsg>} moneyLogMsg
-             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
-             * @instance
-             */
-            S_GET_DIAMOND_LOG_LIST.prototype.moneyLogMsg = $util.emptyArray;
-
-            /**
-             * Encodes the specified S_GET_DIAMOND_LOG_LIST message. Does not implicitly {@link com.message.S_GET_DIAMOND_LOG_LIST.verify|verify} messages.
-             * @function encode
-             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
-             * @static
-             * @param {com.message.IS_GET_DIAMOND_LOG_LIST} message S_GET_DIAMOND_LOG_LIST message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            S_GET_DIAMOND_LOG_LIST.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.moneyLogMsg != null && message.moneyLogMsg.length)
-                    for (var i = 0; i < message.moneyLogMsg.length; ++i)
-                        $root.com.message.MoneyLogMsg.encode(message.moneyLogMsg[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a S_GET_DIAMOND_LOG_LIST message from the specified reader or buffer.
-             * @function decode
-             * @memberof com.message.S_GET_DIAMOND_LOG_LIST
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {com.message.S_GET_DIAMOND_LOG_LIST} S_GET_DIAMOND_LOG_LIST
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            S_GET_DIAMOND_LOG_LIST.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.com.message.S_GET_DIAMOND_LOG_LIST();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.moneyLogMsg && message.moneyLogMsg.length))
-                            message.moneyLogMsg = [];
-                        message.moneyLogMsg.push($root.com.message.MoneyLogMsg.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            return S_GET_DIAMOND_LOG_LIST;
-        })();
-
         message.C_USER_LOGIN = (function() {
 
             /**
@@ -14261,6 +17071,12 @@ $root.com = (function() {
              * @property {number} C_GET_TRADE_RATE_CONFIG=1621 C_GET_TRADE_RATE_CONFIG value
              * @property {number} S_GET_TRADE_RATE_CONFIG=1622 S_GET_TRADE_RATE_CONFIG value
              * @property {number} S_SYNC_TRADE_RATE_CONFIG=1623 S_SYNC_TRADE_RATE_CONFIG value
+             * @property {number} C_GET_DEEP_FISH_CONFIG=1624 C_GET_DEEP_FISH_CONFIG value
+             * @property {number} S_GET_DEEP_FISH_CONFIG=1625 S_GET_DEEP_FISH_CONFIG value
+             * @property {number} S_SYNC_DEEP_FISH_CONFIG=1626 S_SYNC_DEEP_FISH_CONFIG value
+             * @property {number} C_GET_OCEAN_DRAW_CONFIG=1627 C_GET_OCEAN_DRAW_CONFIG value
+             * @property {number} S_GET_OCEAN_DRAW_CONFIG=1628 S_GET_OCEAN_DRAW_CONFIG value
+             * @property {number} S_SYNC_OCEAN_DRAW_CONFIG=1629 S_SYNC_OCEAN_DRAW_CONFIG value
              * @property {number} S_SYN_PROPERTY=2001 S_SYN_PROPERTY value
              * @property {number} C_SYNC_TIME=2101 C_SYNC_TIME value
              * @property {number} S_SYNC_TIME=2102 S_SYNC_TIME value
@@ -14291,6 +17107,22 @@ $root.com = (function() {
              * @property {number} C_GET_DOLPHIN_WAIT_LIST=5023 C_GET_DOLPHIN_WAIT_LIST value
              * @property {number} S_GET_DOLPHIN_WAIT_LIST=5024 S_GET_DOLPHIN_WAIT_LIST value
              * @property {number} S_SYNC_NEW_DOLPHIN=5030 S_SYNC_NEW_DOLPHIN value
+             * @property {number} C_GET_DEAP_ACTIVITY_INFO=5101 C_GET_DEAP_ACTIVITY_INFO value
+             * @property {number} S_GET_DEAP_ACTIVITY_INFO=5102 S_GET_DEAP_ACTIVITY_INFO value
+             * @property {number} C_GET_MY_DEAP_ACTIVITY_INFO=5103 C_GET_MY_DEAP_ACTIVITY_INFO value
+             * @property {number} S_GET_MY_DEAP_ACTIVITY_INFO=5104 S_GET_MY_DEAP_ACTIVITY_INFO value
+             * @property {number} C_BUY_DEAP_ACTIVITY_FISH=5105 C_BUY_DEAP_ACTIVITY_FISH value
+             * @property {number} S_BUY_DEAP_ACTIVITY_FISH=5106 S_BUY_DEAP_ACTIVITY_FISH value
+             * @property {number} C_GET_OCEAN_ACTIVITY_INFO=5201 C_GET_OCEAN_ACTIVITY_INFO value
+             * @property {number} S_GET_OCEAN_ACTIVITY_INFO=5202 S_GET_OCEAN_ACTIVITY_INFO value
+             * @property {number} C_GET_MY_OCEAN_ACTIVITY_INFO=5203 C_GET_MY_OCEAN_ACTIVITY_INFO value
+             * @property {number} S_GET_MY_OCEAN_ACTIVITY_INFO=5204 S_GET_MY_OCEAN_ACTIVITY_INFO value
+             * @property {number} C_OCEAN_ACTIVITY_DRAW=5205 C_OCEAN_ACTIVITY_DRAW value
+             * @property {number} S_OCEAN_ACTIVITY_DRAW=5206 S_OCEAN_ACTIVITY_DRAW value
+             * @property {number} C_GET_OCEAN_ACTIVITY_RANK=5207 C_GET_OCEAN_ACTIVITY_RANK value
+             * @property {number} S_GET_OCEAN_ACTIVITY_RANK=5208 S_GET_OCEAN_ACTIVITY_RANK value
+             * @property {number} C_GET_OCEAN_ACTIVITY_DRAW_LOG=5209 C_GET_OCEAN_ACTIVITY_DRAW_LOG value
+             * @property {number} S_GET_OCEAN_ACTIVITY_DRAW_LOG=5210 S_GET_OCEAN_ACTIVITY_DRAW_LOG value
              * @property {number} CROSS_C_HEART_BEAT=100001 CROSS_C_HEART_BEAT value
              * @property {number} CROSS_S_HEART_BEAT=100002 CROSS_S_HEART_BEAT value
              * @property {number} CROSS_C_SERVER_REGISTER=100003 CROSS_C_SERVER_REGISTER value
@@ -14398,6 +17230,12 @@ $root.com = (function() {
                 values[valuesById[1621] = "C_GET_TRADE_RATE_CONFIG"] = 1621;
                 values[valuesById[1622] = "S_GET_TRADE_RATE_CONFIG"] = 1622;
                 values[valuesById[1623] = "S_SYNC_TRADE_RATE_CONFIG"] = 1623;
+                values[valuesById[1624] = "C_GET_DEEP_FISH_CONFIG"] = 1624;
+                values[valuesById[1625] = "S_GET_DEEP_FISH_CONFIG"] = 1625;
+                values[valuesById[1626] = "S_SYNC_DEEP_FISH_CONFIG"] = 1626;
+                values[valuesById[1627] = "C_GET_OCEAN_DRAW_CONFIG"] = 1627;
+                values[valuesById[1628] = "S_GET_OCEAN_DRAW_CONFIG"] = 1628;
+                values[valuesById[1629] = "S_SYNC_OCEAN_DRAW_CONFIG"] = 1629;
                 values[valuesById[2001] = "S_SYN_PROPERTY"] = 2001;
                 values[valuesById[2101] = "C_SYNC_TIME"] = 2101;
                 values[valuesById[2102] = "S_SYNC_TIME"] = 2102;
@@ -14428,6 +17266,22 @@ $root.com = (function() {
                 values[valuesById[5023] = "C_GET_DOLPHIN_WAIT_LIST"] = 5023;
                 values[valuesById[5024] = "S_GET_DOLPHIN_WAIT_LIST"] = 5024;
                 values[valuesById[5030] = "S_SYNC_NEW_DOLPHIN"] = 5030;
+                values[valuesById[5101] = "C_GET_DEAP_ACTIVITY_INFO"] = 5101;
+                values[valuesById[5102] = "S_GET_DEAP_ACTIVITY_INFO"] = 5102;
+                values[valuesById[5103] = "C_GET_MY_DEAP_ACTIVITY_INFO"] = 5103;
+                values[valuesById[5104] = "S_GET_MY_DEAP_ACTIVITY_INFO"] = 5104;
+                values[valuesById[5105] = "C_BUY_DEAP_ACTIVITY_FISH"] = 5105;
+                values[valuesById[5106] = "S_BUY_DEAP_ACTIVITY_FISH"] = 5106;
+                values[valuesById[5201] = "C_GET_OCEAN_ACTIVITY_INFO"] = 5201;
+                values[valuesById[5202] = "S_GET_OCEAN_ACTIVITY_INFO"] = 5202;
+                values[valuesById[5203] = "C_GET_MY_OCEAN_ACTIVITY_INFO"] = 5203;
+                values[valuesById[5204] = "S_GET_MY_OCEAN_ACTIVITY_INFO"] = 5204;
+                values[valuesById[5205] = "C_OCEAN_ACTIVITY_DRAW"] = 5205;
+                values[valuesById[5206] = "S_OCEAN_ACTIVITY_DRAW"] = 5206;
+                values[valuesById[5207] = "C_GET_OCEAN_ACTIVITY_RANK"] = 5207;
+                values[valuesById[5208] = "S_GET_OCEAN_ACTIVITY_RANK"] = 5208;
+                values[valuesById[5209] = "C_GET_OCEAN_ACTIVITY_DRAW_LOG"] = 5209;
+                values[valuesById[5210] = "S_GET_OCEAN_ACTIVITY_DRAW_LOG"] = 5210;
                 values[valuesById[100001] = "CROSS_C_HEART_BEAT"] = 100001;
                 values[valuesById[100002] = "CROSS_S_HEART_BEAT"] = 100002;
                 values[valuesById[100003] = "CROSS_C_SERVER_REGISTER"] = 100003;
@@ -14483,6 +17337,9 @@ $root.com = (function() {
              * @property {number} SIGN_HOUR_NOT_ENOUGH=1210 SIGN_HOUR_NOT_ENOUGH value
              * @property {number} TEAM_EFFECT_NUM_NOT_ENOUGH=1211 TEAM_EFFECT_NUM_NOT_ENOUGH value
              * @property {number} TEAM_EFFECT_RATE_NOT_ENOUGH=1212 TEAM_EFFECT_RATE_NOT_ENOUGH value
+             * @property {number} ACTIVITY_NOT_IN_TIME=1213 ACTIVITY_NOT_IN_TIME value
+             * @property {number} BUY_COUNT_NOT_ENOUGH=1214 BUY_COUNT_NOT_ENOUGH value
+             * @property {number} DRAW_COUNT_NOT_ENOUGH=1215 DRAW_COUNT_NOT_ENOUGH value
              */
             MsgEnum.ExceptionCode = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -14526,6 +17383,9 @@ $root.com = (function() {
                 values[valuesById[1210] = "SIGN_HOUR_NOT_ENOUGH"] = 1210;
                 values[valuesById[1211] = "TEAM_EFFECT_NUM_NOT_ENOUGH"] = 1211;
                 values[valuesById[1212] = "TEAM_EFFECT_RATE_NOT_ENOUGH"] = 1212;
+                values[valuesById[1213] = "ACTIVITY_NOT_IN_TIME"] = 1213;
+                values[valuesById[1214] = "BUY_COUNT_NOT_ENOUGH"] = 1214;
+                values[valuesById[1215] = "DRAW_COUNT_NOT_ENOUGH"] = 1215;
                 return values;
             })();
 

@@ -106,7 +106,7 @@ module qmr {
                     msg = "CN_276"//"孵化海豚，消耗U"
                     break;
                 case TradeTypeEnum.CASH_OUT_COST_U:
-                    msg = "CN_260"//"提现，消耗u"
+                    msg = "CN_545"//"提现，消耗u"
                     break;
                 case TradeTypeEnum.CASH_OUT_REFUSE_GOT_U:
                     msg = "CN_543"//"玩家提现被拒绝，返还U和手续费，获得U"

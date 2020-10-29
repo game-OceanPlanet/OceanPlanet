@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RuneLotteryViewSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="1690f63eb25"/>
+	<e:Group id="content" width="690" height="743" horizontalCenter="0"  verticalCenter="0">
+		<e:Image   verticalCenter="22" horizontalCenter="0" x="1" y="2" touchEnabled="false" source="ui_ywd_cjdiban_png"/>
+		<e:Image id="lottery_bgd"   y="427" touchEnabled="false" anchorOffsetX="80" anchorOffsetY="130" rotation="0" x="348" source="uiactive_json.ui_ywd_cjzhen"/>
+		<e:Image id="start_btn"   horizontalCenter="1" verticalCenter="53" anchorOffsetX="49" anchorOffsetY="54" source="uiactive_json.ui_ywd_cjwenzi"/>
+		<e:Group id="lottery_g" width="458" height="466"   touchThrough="true"   y="191" x="118">
+		</e:Group>
+		<e:Image x="268" y="508" source="uiactive_json.ui_ywd_cjbg" scale9Grid="16,3,103,24" anchorOffsetX="0" width="163"/>
+		<e:Image y="730" horizontalCenter="-6" source="uiactive_json.ui_ywd_cjbg2" scale9Grid="48,22,292,8" anchorOffsetY="0" height="118" anchorOffsetX="0" width="484"/>
+		<e:Label stroke="1" id="cd_time" text="每通关10层，即可拿走奖池内的1个奖励！" y="751" size="22" fontFamily="specialGameFont" horizontalCenter="8" textColor="0xfefc94" width="400" lineSpacing="8"/>
+		<e:Label stroke="0" id="cost_num" text="可抽次数:1" y="512" width="203" touchEnabled="false"  size="22" fontFamily="specialGameFont" textAlign="center" horizontalCenter="0.5" textColor="0xfefc94"/>
+	</e:Group>
+</e:Skin>

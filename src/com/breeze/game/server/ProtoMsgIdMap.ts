@@ -71,6 +71,10 @@ module qmr {
 			this.msgIdMap[MessageID.S_SYNC_TEAM_RATE_CONFIG] = com.message.S_SYNC_TEAM_RATE_CONFIG;
 			this.msgIdMap[MessageID.S_GET_TRADE_RATE_CONFIG] = com.message.S_GET_TRADE_RATE_CONFIG;
 			this.msgIdMap[MessageID.S_SYNC_TRADE_RATE_CONFIG] = com.message.S_SYNC_TRADE_RATE_CONFIG;
+			this.msgIdMap[MessageID.S_GET_DEEP_FISH_CONFIG] = com.message.S_GET_DEEP_FISH_CONFIG;
+			this.msgIdMap[MessageID.S_SYNC_DEEP_FISH_CONFIG] = com.message.S_SYNC_DEEP_FISH_CONFIG;
+			this.msgIdMap[MessageID.S_GET_OCEAN_DRAW_CONFIG] = com.message.S_GET_OCEAN_DRAW_CONFIG;
+			this.msgIdMap[MessageID.S_SYNC_OCEAN_DRAW_CONFIG] = com.message.S_SYNC_OCEAN_DRAW_CONFIG;
 			this.msgIdMap[MessageID.S_SYN_PROPERTY] = com.message.S_SYN_PROPERTY;
 			this.msgIdMap[MessageID.C_SYNC_TIME] = com.message.C_SYNC_TIME;
 			this.msgIdMap[MessageID.S_SYNC_TIME] = com.message.S_SYNC_TIME;
@@ -88,6 +92,14 @@ module qmr {
 			this.msgIdMap[MessageID.S_GET_SIGN_IN_REWARD] = com.message.S_GET_SIGN_IN_REWARD;
 			this.msgIdMap[MessageID.S_GET_DOLPHIN_WAIT_LIST] = com.message.S_GET_DOLPHIN_WAIT_LIST;
 			this.msgIdMap[MessageID.S_SYNC_NEW_DOLPHIN] = com.message.S_SYNC_NEW_DOLPHIN;
+			this.msgIdMap[MessageID.S_GET_DEAP_ACTIVITY_INFO] = com.message.S_GET_DEAP_ACTIVITY_INFO;
+			this.msgIdMap[MessageID.S_GET_MY_DEAP_ACTIVITY_INFO] = com.message.S_GET_MY_DEAP_ACTIVITY_INFO;
+			this.msgIdMap[MessageID.S_BUY_DEAP_ACTIVITY_FISH] = com.message.S_BUY_DEAP_ACTIVITY_FISH;
+			this.msgIdMap[MessageID.S_GET_OCEAN_ACTIVITY_INFO] = com.message.S_GET_OCEAN_ACTIVITY_INFO;
+			this.msgIdMap[MessageID.S_GET_MY_OCEAN_ACTIVITY_INFO] = com.message.S_GET_MY_OCEAN_ACTIVITY_INFO;
+			this.msgIdMap[MessageID.S_OCEAN_ACTIVITY_DRAW] = com.message.S_OCEAN_ACTIVITY_DRAW;
+			this.msgIdMap[MessageID.S_GET_OCEAN_ACTIVITY_RANK] = com.message.S_GET_OCEAN_ACTIVITY_RANK;
+			this.msgIdMap[MessageID.S_GET_OCEAN_ACTIVITY_DRAW_LOG] = com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG;
 			this.msgIdMap[MessageID.CROSS_C_HEART_BEAT] = com.message.CROSS_C_HEART_BEAT;
 			this.msgIdMap[MessageID.CROSS_S_HEART_BEAT] = com.message.CROSS_S_HEART_BEAT;
 			this.msgIdMap[MessageID.CROSS_C_SERVER_REGISTER] = com.message.CROSS_C_SERVER_REGISTER;

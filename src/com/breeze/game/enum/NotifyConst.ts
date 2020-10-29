@@ -44,6 +44,13 @@ module qmr
 		public static S_REAL_NAME_VERIFICATION:string = "S_REAL_NAME_VERIFICATION";
 
 		public static S_GET_MY_ADDRESS:string = "S_GET_MY_ADDRESS";
+
+		public static S_GET_DEAP_ACTIVITY_INFO:string = "S_GET_DEAP_ACTIVITY_INFO";
+		public static S_GET_MY_DEAP_ACTIVITY_INFO:string = "S_GET_MY_DEAP_ACTIVITY_INFO";
+		public static S_BUY_DEAP_ACTIVITY_FISH:string = "S_BUY_DEAP_ACTIVITY_FISH";
+		public static S_GET_OCEAN_ACTIVITY_INFO:string = "S_GET_OCEAN_ACTIVITY_INFO";
+		public static S_GET_MY_OCEAN_ACTIVITY_INFO:string = "S_GET_MY_OCEAN_ACTIVITY_INFO";
+		public static S_OCEAN_ACTIVITY_DRAW:string = "S_OCEAN_ACTIVITY_DRAW";
 		
 	}
 

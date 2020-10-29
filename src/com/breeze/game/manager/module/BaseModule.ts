@@ -32,6 +32,13 @@ module qmr
 				t.addClickEvent(btn_close, t.onPageBgCloseView, t);
 			}
 
+			if(t["panelBg"]){
+				btn_close = t["panelBg"]["btnClose"];
+				if(btn_close){
+					t.addClickEvent(btn_close, t.onPageBgCloseView, t);
+				}
+			}
+
 			let btn_help = t["btn_help"];
 			if(btn_help){
 				t.addClickEvent(btn_help, t.showHelpView, t);
