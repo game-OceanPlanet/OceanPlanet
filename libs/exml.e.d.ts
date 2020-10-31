@@ -2,6 +2,8 @@ declare class PanelBg extends eui.Skin{
 }
 declare class PanelPopBg extends eui.Skin{
 }
+declare class TabBarSkin extends eui.Skin{
+}
 declare module skins{
 	class ButtonSkin extends eui.Skin{
 	}
@@ -53,6 +55,10 @@ declare module skins{
 declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
+}
+declare class ActiveDrawLogsItemSkin extends eui.Skin{
+}
+declare class ActiveDrawLogsSkin extends eui.Skin{
 }
 declare class ActiveKeyItemSkin extends eui.Skin{
 }
@@ -127,6 +133,10 @@ declare class RuneLotteryViewSkin extends eui.Skin{
 declare class ShopItemSkin extends eui.Skin{
 }
 declare class ShopSkin extends eui.Skin{
+}
+declare class TeamItemSkin extends eui.Skin{
+}
+declare class TeamRankSkin extends eui.Skin{
 }
 declare class USDTLogItemSkin extends eui.Skin{
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TeamRankSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:qmr="qmr.*"   >
+	<e:Group width="650" height="996"   verticalCenter="20" horizontalCenter="0" anchorOffsetY="0">
+		<qmr:PanelPopBgUI id="panelBg" width="660"   skinName="PanelPopBg" top="1" bottom="1" title="三界争霸" anchorOffsetY="0" anchorOffsetX="0"/>
+		<e:Image x="78" y="71" anchorOffsetX="0" width="501" anchorOffsetY="0" height="77" source="common_json.common_dikuang3" scale9Grid="33,38,32,24"/>
+		<e:Group id="content"   anchorOffsetY="0" x="23" y="160">
+		<e:Image scale9Grid="17,20,67,63" x="5" y="34" width="612" height="690.48" anchorOffsetY="0" anchorOffsetX="0" source="common_json.common_dikuang"/>
+		<e:Image x="3" y="0" scale9Grid="18,22,24,9" width="616" anchorOffsetX="0" source="common_json.ui_ywd_piahang"/>
+		<e:Group id="rankGroup" width="600" height="681.06" x="12" y="45" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Scroller width="595" height="675.88" horizontalCenter="-2.5" top="1" x="-6" y="-1" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off">
+				<e:List id="rank_list" anchorOffsetY="0" height="672.85" anchorOffsetX="0" width="597">
+				<e:layout>
+					<e:VerticalLayout gap="3"/>
+				</e:layout>
+				</e:List>
+			</e:Scroller>
+			<e:Label stroke="0" text="手机号" x="39" size="24" fontFamily="specialGameFont" textColor="0x5A2E2B" y="-32" bold="false" scaleX="1" scaleY="1"/>
+			<e:Label stroke="0" text="新增直推" x="186" size="24" fontFamily="specialGameFont" textColor="0x5A2E2B" y="-32" bold="false" scaleX="1" scaleY="1"/>
+			<e:Label stroke="0" text="新增团队" x="329" size="24" fontFamily="specialGameFont" textColor="0x5A2E2B" y="-32" bold="false" scaleX="1" scaleY="1"/>
+			<e:Label stroke="0" text="剩余次数" x="479" size="24" fontFamily="specialGameFont" textColor="0x5a2e2b" y="-32" bold="false" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Group>
+        <e:Group x="213.97" y="905.17" anchorOffsetX="0" anchorOffsetY="0">
+			<e:TabBar id="tabBar" itemRendererSkinName="TabBarSkin" scaleX="1" scaleY="1" x="13">
+				<e:ArrayCollection>
+				<e:Array>
+					<e:Object label="直推排名"/>
+					<e:Object label="团队排名"/>
+				</e:Array>
+				</e:ArrayCollection>
+			</e:TabBar>
+		</e:Group>
+		<e:Image id="btn_return" source="common_json.common_fanhui" right="14" bottom="22"/>
+		<e:Label id="txt_title0" text="全网推广直推人数前十名奖励每一位1000KH全网推广团队人数前十名奖励每一位1000KH" size="22" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" anchorOffsetX="0" y="79" horizontalCenter="0" width="436" anchorOffsetY="0" height="63" textColor="0x803f07"/>
+		<e:Label id="txt_title" text="活动排行" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" textColor="0x803F07" bold="true" anchorOffsetX="0" y="9.25" horizontalCenter="2.5"/>
+		<e:Image id="btn_help" scaleX="1" scaleY="1" anchorOffsetX="40" anchorOffsetY="40" source="common_json.ui_1yuan_wenhao" y="90" horizontalCenter="-279"/>
+	</e:Group>
+
+
+</e:Skin>

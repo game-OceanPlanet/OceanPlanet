@@ -29,5 +29,7 @@ module qmr
 		public static LOGIN_GIFT_VIEW: string = "qmr.LoginGiftView";
 		public static ACTIVE_SHOP_VIEW: string = "qmr.ActiveShopView";
 		public static RUNE_LOTTERY_VIEW: string = "qmr.RuneLotteryView";
+		public static TEAM_RANK_VIEW: string = "qmr.TeamRankView";
+		public static ACTIVE_DRAW_LOGS: string = "qmr.ActiveDrawLogsView";
 	}
 }

@@ -166,6 +166,22 @@ module qmr {
                 case TradeTypeEnum.ADMIN_CURRENCY_OPERATION:
                     msg = "CN_297"//"非直推下级购买海豚, 团队用户获得加速积分"
                     break;
+
+                case TradeTypeEnum.OCEAN_ACTIVITY_DRAW_REWARD:
+                    msg = "CN_546"//海洋星球活动，抽奖获得金币
+                    break;
+                case TradeTypeEnum.OCEAN_ACTIVITY_DIRECT_REWARD:
+                    msg = "CN_547"//海洋星球活动，直推排名获得金币
+                    break;
+                case TradeTypeEnum.OCEAN_ACTIVITY_TEAM_REWARD:
+                    msg = "CN_548"//海洋星球活动，团队排名获得金币
+                    break;
+                case TradeTypeEnum.DEEP_ACTIVITY_BUY_FISH_COST_U:
+                    msg = "CN_549"//深海活动，U买鱼，消耗u
+                    break;
+                case TradeTypeEnum.OCEAN_ACTIVITY_DRAW_GOT_U:
+                    msg = "CN_550"//海洋星球活动，抽奖获得u
+                    break;
             }
             if(msg){
                 return LabelUtil.getCNMessage(msg);

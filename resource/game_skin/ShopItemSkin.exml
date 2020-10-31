@@ -27,4 +27,5 @@
 	</e:Group>
 	<e:Image id="img_head" width="128" height="128" x="20" y="13" />
 	<e:Label id="CN_258" text="限购1条" y="128" size="22" fontFamily="specialGameFont" scaleX="1" scaleY="1" horizontalCenter="214.5" textColor="0xdd1900"/>
+	<e:Image source="common_json.xuanzhongkuang" x="9" y="3" scale9Grid="32,41,55,41" anchorOffsetX="0" width="148" anchorOffsetY="0" height="148"/>
 </e:Skin>

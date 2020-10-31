@@ -21,6 +21,8 @@ module qmr
             this.addSocketListener(MessageID.S_GET_OCEAN_ACTIVITY_INFO, this.getOcpActiveResponse, this, false);
             this.addSocketListener(MessageID.S_GET_MY_OCEAN_ACTIVITY_INFO, this.getMyOcpActiveResponse, this, false);
             this.addSocketListener(MessageID.S_OCEAN_ACTIVITY_DRAW, this.getDrawResponse, this, false);
+            this.addSocketListener(MessageID.S_GET_OCEAN_ACTIVITY_RANK, this.getOcpActiveRankResponse, this, false);
+            this.addSocketListener(MessageID.S_GET_OCEAN_ACTIVITY_DRAW_LOG, this.getOcpDrawLogsResponse, this, false);
 		}
 
         //获取深海活动信息
@@ -115,6 +117,45 @@ module qmr
             ActiveShopModel.instance.drawId = Int64Util.getNumber(s.rewardId);
             ActiveShopModel.instance.myOcpActivePro = s.myOceanActivityMsg as com.message.MyOceanActivityMsg;
             this.dispatch(NotifyConst.S_OCEAN_ACTIVITY_DRAW);
+        }
+
+
+        private rankType:number;
+        //获取海洋星球活动排名信息
+		public requestOcpRankInfo(type:number, page:number = 1, pageSize:number = 100): void
+		{
+            this.rankType = type;
+            var c: com.message.C_GET_OCEAN_ACTIVITY_RANK = new com.message.C_GET_OCEAN_ACTIVITY_RANK();
+            c.type = type;//1直推排名，2团队排名
+            c.page = page;
+            c.pageSize = pageSize;
+			this.sendCmd(c, MessageID.C_GET_OCEAN_ACTIVITY_RANK, true);
+        }
+        
+        // 获取海洋星球活动排名信息
+        private getOcpActiveRankResponse(s: com.message.S_GET_OCEAN_ACTIVITY_RANK):void
+        {
+            if(this.rankType == 1){
+                ActiveShopModel.instance.directRankPros = s.oceanActivityRankMsg as com.message.OceanActivityRankMsg[];
+            } else {
+                ActiveShopModel.instance.teamRankPros = s.oceanActivityRankMsg as com.message.OceanActivityRankMsg[];
+            }
+            
+            this.dispatch(NotifyConst.S_GET_OCEAN_ACTIVITY_RANK);
+        }
+
+        //获取海洋星球活动信息
+		public requestOcpDrawLogs(): void
+		{
+			var c: com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG = new com.message.C_GET_OCEAN_ACTIVITY_DRAW_LOG();
+			this.sendCmd(c, MessageID.C_GET_OCEAN_ACTIVITY_DRAW_LOG, true);
+        }
+        
+        // 获取海洋星球活动信息
+        private getOcpDrawLogsResponse(s: com.message.S_GET_OCEAN_ACTIVITY_DRAW_LOG):void
+        {
+            ActiveShopModel.instance.drawLogPros = s.oceanActivityDrawLogMsg as com.message.OceanActivityDrawLogMsg[];
+            this.dispatch(NotifyConst.S_GET_OCEAN_ACTIVITY_DRAW_LOG);
         }
     }
 }

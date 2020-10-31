@@ -19,6 +19,8 @@ module qmr {
             public static TIP_8 = 8;
             /** 激活码*/
             public static TIP_9 = 9;
+            /** 限时购买*/
+            public static TIP_15 = 15;
 
 
     }

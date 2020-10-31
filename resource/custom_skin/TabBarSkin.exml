@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TabBarSkin" states="up,down,disabled,upAndSelected,downAndSelected,disabledAndSelected,leftUp,rightUp,leftUpSelected,rightUpSelected" xmlns:e="http://ns.egret.com/eui" height="56" width.up="111">
+    <e:Group width="100%" height="100%">
+        <e:Image fillMode="scale" alpha="1" alpha.disabled="0.5" alpha.down="0.7" source="common_json.anniua" source.downAndSelected="common_json.anniul"  verticalCenter="0" horizontalCenter="0" source.down="common_json.anniul" source.upAndSelected="common_json.anniul" source.disabled="common_json.anniua_dis" source.disabledAndSelected="common_json.anniua_dis" source.leftUp="common_json.common_anniula"  source.rightUp="common_json.common_anniulya" source.leftUpSelected="common_json.common_anniul" source.rightUpSelected="common_json.common_anniuly" width="112" height="57"/>
+        <e:Label id="labelDisplay" size="24" textColor="0x5a2e2b" fontFamily="specialGameFont" text="{data.label}" textAlign="center" verticalCenter="0" horizontalCenter="0"
+        stroke.upAndSelected="2" stroke.downAndSelected="2" strokeColor.upAndSelected="0x5a2e2b" strokeColor.downAndSelected="0x5a2e2b"
+           textColor.downAndSelected="0xffffff" textColor.upAndSelected="0xffffff" bold="false" stroke.leftUpSelected="2" strokeColor.leftUpSelected="0x5a2e2b" textColor.leftUpSelected="0xffffff" stroke.rightUpSelected="2" strokeColor.rightUpSelected="0x5a2e2b" textColor.rightUpSelected="0xffffff"/>
+			<e:Image id="iconDisplay" source="common_json.common_dian" top="0" right="0" anchorOffsetX="0" width="19.5" anchorOffsetY="0" height="19.5" visible="false"/>
+    </e:Group>
+</e:Skin>

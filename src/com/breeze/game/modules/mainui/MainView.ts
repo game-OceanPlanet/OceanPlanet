@@ -302,7 +302,7 @@ public img_name_help:eui.Image;
          //排行榜
          private onRankClick():void
          {
-            //  ModuleManager.showModule(ModuleNameConst.ACT_KEY_VIEW);
+             ModuleManager.showModule(ModuleNameConst.TEAM_RANK_VIEW);
          }
 
         /**
@@ -388,6 +388,10 @@ public img_name_help:eui.Image;
             t.__totalMoney = md.totalMoney;
             t.__secondSpeed = md.getProduceMoneySpeed();
             t.__dayTotal = md.getEveryDayProduceMoney();
+
+            if(md.isDelayShowMoney){
+                return;
+            }
 
             let count:number = t.getCurrentWaitMoney();
             t.txt_curr.text = NumberUtil.getFloat4Number2String(count);

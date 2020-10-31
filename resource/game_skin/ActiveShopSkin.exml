@@ -21,6 +21,6 @@
 		</e:List>
 		</e:Scroller>
 	</e:Group>
-	<e:Image id="btnReturn" anchorOffsetX="47" anchorOffsetY="47" source="basePanel_json.common_fanhui" right="44" bottom="172"/>
-	<e:Image id="btn_help" scaleX="1" scaleY="1" anchorOffsetX="40" anchorOffsetY="40" left="31" top="126" source="common_json.ui_1yuan_wenhao"/>
+	<e:Image id="btnReturn" anchorOffsetX="47" anchorOffsetY="47" source="basePanel_json.common_fanhui" y="1127" horizontalCenter="290.5"/>
+	<e:Image id="btn_help" scaleX="1" scaleY="1" anchorOffsetX="40" anchorOffsetY="40" source="common_json.ui_1yuan_wenhao" y="166" horizontalCenter="-315"/>
 </e:Skin>

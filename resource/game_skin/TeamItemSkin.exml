@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TeamItemSkin" width="609" height="61" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="normal,tower" >
+	<e:Image id="rank_bgImg" left="0" top="0" bottom="0" right="0" source="loginPanel_json.dikuang4" scale9Grid="29,30,35,35"/>
+	<e:Label id="txt_direct" stroke="0" text="小霸王" size="22" fontFamily="specialGameFont" textAlign="center" textColor="0x803f07" bold="false" horizontalCenter.tower="-104" verticalCenter.tower="0" y="20" horizontalCenter="-68.5"/>
+	<e:Label id="txt_team" stroke="0" text="小霸王" size="22" fontFamily="specialGameFont" textAlign="center" textColor="0x803F07" bold="false" y="20" horizontalCenter="72.5"/>
+	<e:Label id="txt_count" stroke="0" text="一重天2层" size="22" fontFamily="specialGameFont" textAlign="center" textColor="0x803f07" bold="false" horizontalCenter.tower="225" verticalCenter.tower="0" y="20" horizontalCenter="227"/>
+	<e:Label id="txt_tel" stroke="0" text="20" size="28" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" textColor="0x803f07" italic="true" bold="false" y="18" left="15"/>
+</e:Skin>

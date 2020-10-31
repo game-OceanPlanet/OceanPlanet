@@ -9,7 +9,9 @@
 		</e:Group>
 		<e:Image x="268" y="508" source="uiactive_json.ui_ywd_cjbg" scale9Grid="16,3,103,24" anchorOffsetX="0" width="163"/>
 		<e:Image y="730" horizontalCenter="-6" source="uiactive_json.ui_ywd_cjbg2" scale9Grid="48,22,292,8" anchorOffsetY="0" height="118" anchorOffsetX="0" width="484"/>
-		<e:Label stroke="1" id="cd_time" text="每通关10层，即可拿走奖池内的1个奖励！" y="751" size="22" fontFamily="specialGameFont" horizontalCenter="8" textColor="0xfefc94" width="400" lineSpacing="8"/>
+		<e:Label stroke="1" id="cd_time" text="每通关10层，即可拿走奖池内的1个奖励！" y="751" size="22" fontFamily="specialGameFont" horizontalCenter="3.5" textColor="0xfefc94" width="469" lineSpacing="8" anchorOffsetX="0" rotation="359.99" anchorOffsetY="0" height="86"/>
 		<e:Label stroke="0" id="cost_num" text="可抽次数:1" y="512" width="203" touchEnabled="false"  size="22" fontFamily="specialGameFont" textAlign="center" horizontalCenter="0.5" textColor="0xfefc94"/>
+		<e:Label id="txt_logs" text="查看记录" y="750" size="20" fontFamily="specialGameFont" horizontalCenter="148" textColor="0x09a608"/>
+		<e:Image id="btnClose" source="common_json.common_cha" x="599" y="155"/>
 	</e:Group>
 </e:Skin>

@@ -15,10 +15,11 @@
 	         left="230" />
 	<e:Label id="txt_3" text="10%" y="110" size="20" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 	         textColor="0x553B24" left="230" />
-	<e:Group id="btn_buy_group" x="536" y="81" anchorOffsetX="76" anchorOffsetY="25" width="152" height="49">
-		<e:Image id="btn_buy" x="0" y="0" scaleX="1" scaleY="1" source="commp_json.btn_common1" />
-		<e:Label id="CN_256" text="购  买" y="12" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
+	<e:Group id="btn_buy_group" x="536" y="71" anchorOffsetX="76" anchorOffsetY="25" width="160" height="62">
+		<e:Image id="btn_buy" x="0" y="0" scaleX="1" scaleY="1"  source="common_json.anniuxin2"/>
+		<e:Label id="CN_256" text="购  买" y="18" size="26" fontFamily="specialGameFont" scaleX="1" scaleY="1"
 		         horizontalCenter="0.5" textColor="0xfff4d6" />
 	</e:Group>
 	<e:Image id="img_head" width="128" height="128" x="20" y="13" />
+	<e:Image source="common_json.toukuang" x="12.5" y="8" scale9Grid="32,30,54,61" anchorOffsetX="0" width="140" anchorOffsetY="0" height="140"/>
 </e:Skin>

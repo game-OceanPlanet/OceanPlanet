@@ -51,6 +51,8 @@ module qmr
 		public static S_GET_OCEAN_ACTIVITY_INFO:string = "S_GET_OCEAN_ACTIVITY_INFO";
 		public static S_GET_MY_OCEAN_ACTIVITY_INFO:string = "S_GET_MY_OCEAN_ACTIVITY_INFO";
 		public static S_OCEAN_ACTIVITY_DRAW:string = "S_OCEAN_ACTIVITY_DRAW";
+		public static S_GET_OCEAN_ACTIVITY_RANK:string = "S_GET_OCEAN_ACTIVITY_RANK";
+		public static S_GET_OCEAN_ACTIVITY_DRAW_LOG:string = "S_GET_OCEAN_ACTIVITY_DRAW_LOG";
 		
 	}
 

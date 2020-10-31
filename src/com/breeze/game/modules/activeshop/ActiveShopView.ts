@@ -24,7 +24,7 @@ public btn_help:eui.Image;
 			super();
 			this.qmrSkinName = "ActiveShopSkin";
 			this.isNeedMask = true;
-			this.helpId = HelpIdEnum.TIP_2;
+			this.helpId = HelpIdEnum.TIP_15;
 		}
 
 		protected initComponent():void
@@ -95,7 +95,7 @@ public btn_help:eui.Image;
 			let sysPro:com.message.DeapActivityMsg = ActiveShopModel.instance.activePro;
 			t.txt_time.textColor = 0x09a608;
 			if(pro){
-				t.text_count.text = pro.leftCount + "/" + sysPro.limiteCount;
+				t.text_count.text = pro.leftCount + "/" + (sysPro.limiteCount * 2);
 				t.text_allCount.text = sysPro.leftCount + "/" + sysPro.allCount;
 				let leftTime:number = t.__endTime - ServerTime.serverTime / 1000;
 				leftTime = Math.floor(leftTime);

@@ -40,6 +40,8 @@ module qmr
             modulelManager.registerClass(ModuleNameConst.LOGIN_GIFT_VIEW, qmr.LoginGiftView);
             modulelManager.registerClass(ModuleNameConst.ACTIVE_SHOP_VIEW, qmr.ActiveShopView);
             modulelManager.registerClass(ModuleNameConst.RUNE_LOTTERY_VIEW, qmr.RuneLotteryView);
+            modulelManager.registerClass(ModuleNameConst.TEAM_RANK_VIEW, qmr.TeamRankView);
+            modulelManager.registerClass(ModuleNameConst.ACTIVE_DRAW_LOGS, qmr.ActiveDrawLogsView);
         }
     }
 }

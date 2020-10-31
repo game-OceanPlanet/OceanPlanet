@@ -34,6 +34,8 @@ module qmr {
         public lastName:string;
         public lastTel:string;
 
+        public isDelayShowMoney:boolean = false;//是否延迟显示货币
+
         public constructor() {
             super();
             let t = this;

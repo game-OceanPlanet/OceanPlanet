@@ -66,7 +66,7 @@ public img_head:eui.Image;
                 return;
             }
 
-            if(cfg.UActivePrice > HeroModel.instance.totalMoney){
+            if(cfg.UActivePrice > HeroModel.instance.totalUSDT){
                 TipManagerCommon.getInstance().showLanTip("CN_131");
                 return;
             }

@@ -6,6 +6,7 @@ module qmr {
 		protected start_btn: eui.Image;
 		protected cd_time: eui.Label;
 		protected lottery_bgd: eui.Image;
+		public txt_logs:eui.Label;
 
 
         protected cost_num: eui.Label;
@@ -21,7 +22,6 @@ module qmr {
 
 		private __endTime:number = 0;
 		private __rewardIndexs:number[];
-		private __rewardDes:string[];
 
 		public constructor() {
 			super();
@@ -33,26 +33,29 @@ module qmr {
 
 		protected initComponent(): void {
 			super.initComponent();
+			let t = this;
 			let len = 8;
 			let R = 170;	//半径
 			let rangle = 360 / len;
+
+			t.txt_logs.textFlow = new Array<egret.ITextElement>({ text: "查看记录", style: { underline: true } });
 			
 			let gameItem: RuneLotteryAwardItem;
 			
-			this.__rewardDes = ["10USDT","50KH","1USDT","1000KH","20USDT","500KH","5USDT","200KH"];
-
+			
+			let rdws:string[] = ActiveShopModel.instance.rewardDes;
 			for (let i = 0; i < len; i++) {
 				gameItem = new RuneLotteryAwardItem();
 				//gameItem.scaleX = gameItem.scaleY = 0.8;
 				gameItem.horizontalCenter = R * Math.sin(rangle * i * Math.PI / 180);
 				gameItem.verticalCenter = -R * Math.cos(rangle * i * Math.PI / 180);
 				//gameItem.rotation = rangle * i;
-				gameItem.setInfo(this.__rewardDes[i]);
+				gameItem.setInfo(rdws[i]);
 				this.gameItemArr[i] = gameItem;
 				this.lottery_g.addChild(gameItem);
 			}
 
-			this.__rewardIndexs = [7,1,5,4,8,3,6,2];
+			this.__rewardIndexs = ActiveShopModel.instance.rewardIndexs;
 		}
         /**
          * @description 初始化数据
@@ -79,6 +82,8 @@ module qmr {
 			super.initListener();
 			let t = this;
 			t.addClickEvent(t.start_btn, t.startLottery, t);
+			t.addClickEvent(t.txt_logs, t.showLogsView, t);
+
 			t.registerNotify(NotifyConst.S_GET_MY_OCEAN_ACTIVITY_INFO, t.setShowTime, t);
 			t.registerNotify(NotifyConst.S_OCEAN_ACTIVITY_DRAW, t.onDrawResult, t);
 		}
@@ -104,8 +109,8 @@ module qmr {
 			this.cost_num.textFlow = (new egret.HtmlTextParser).parser("可抽次数:<font color='0x27cb6c'>" +　leftCount + "</font>");
 			let msg:string = "直推人数：<font color='0x27cb6c'>" + directCount + "</font>"
 							+ "团队规模：<font color='0x27cb6c'>" + teamCount + "</font>\r" 
-						   +"直推"+directCount2+"人可以免费获得<font color='0x27cb6c'>" + 1 + "</font>次抽奖机会！\r"
-						   + "团队增加"+teamCount2+"人也免费获得<font color='0x27cb6c'>" + 1 + "</font>次抽奖机会！"
+						   +"直推"+directCount2+"人可以免费获得<font color='0x27cb6c'>" + 1 + "</font>次抽奖机会！可累计！\r"
+						   + "团队增加"+teamCount2+"人也免费获得<font color='0x27cb6c'>" + 1 + "</font>次抽奖机会！可累计！"
 			this.cd_time.textFlow = (new egret.HtmlTextParser).parser(msg);
 		}
 
@@ -113,10 +118,11 @@ module qmr {
 		private startLottery(): void {
 			if (this.isCircling) return;
 			if (this.lastTime <= 0){
-				TipManagerCommon.getInstance().createCommonTip("抽奖次不够,请完成足够的挑战次数!");
+				TipManagerCommon.getInstance().createCommonTip("抽奖次不够,请完成足够的团队任务!");
 				return;
 			}
 			this.isCircling = true;
+			HeroModel.instance.isDelayShowMoney = true;
 			ActiveShopController.instance.requestDraw();
 		}
 
@@ -154,8 +160,16 @@ module qmr {
 
 		private lotteryEndTween(index:number): void {
 			SoundManager.getInstance().loadAndPlayEffect("SOUND_JINBI");
-			let des:string = this.__rewardDes[index];
+			let rdws:string[] = ActiveShopModel.instance.rewardDes;
+			let des:string = rdws[index];
 			TipManagerCommon.getInstance().createCommonTip("恭喜本次抽奖获得："+des);
+			HeroModel.instance.isDelayShowMoney = false;
+			this.dispatch(NotifyConst.S_SYN_PROPERTY);
+		}
+
+		private showLogsView():void
+		{
+			ModuleManager.showModule(ModuleNameConst.ACTIVE_DRAW_LOGS);
 		}
 		
 		public dispose()
