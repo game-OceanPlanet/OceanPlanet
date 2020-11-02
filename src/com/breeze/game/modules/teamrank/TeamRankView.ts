@@ -72,12 +72,23 @@ private _isGetRank:boolean;
 			} else {
 				ranks = ActiveShopModel.instance.teamRankPros;
 			} 
+
+			let pros:com.message.OceanActivityRankMsg[] = [];
+			if(ranks && ranks.length > 0){
+				let len:number = ranks.length;
+				for(var i:number = 0; i < len; i ++){
+					if(ranks[i].directCount || ranks[i].teamCount > 0){
+						pros.push(ranks[i]);
+					}
+				}
+			}
+
 			// if(logs){
 			// 	logs.sort((a, b)=>{
 			// 		return Int64Util.getNumber(b.logTime) - Int64Util.getNumber(a.logTime);
 			// 	});
 			// }
-			t._arrCollection.source = ranks;
+			t._arrCollection.source = pros;
 		}
 		
 		

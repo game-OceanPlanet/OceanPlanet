@@ -27,7 +27,7 @@
 	"isShowNotice":1,
 	"max_hw_ratio":2.16,
 	"min_hw_ratio":1.333,
-	"connectAddress":"ws://101.32.204.106/s1",
+	"connectAddress":"ws://www.siychina.com/s1",
 	"GameId":1,
 	"InviteAddress":"http://siychina.com/ocp/game.html",
 	"AppDownAddress":"http://192.168.1.223:8089/app/index.html"

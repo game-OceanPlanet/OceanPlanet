@@ -9,9 +9,9 @@
 			<e:Label text="可用购买次数：" size="22" fontFamily="specialGameFont"  height="28" verticalAlign="middle" bold="false" y="-42" scaleX="1" scaleY="1" textAlign="center" x="413" textColor="0x553b24"/>
 		<e:Label text="活动剩余时间：" size="22" fontFamily="specialGameFont"  height="28" verticalAlign="middle" bold="false" y="-43" scaleX="1" scaleY="1" textAlign="center" x="35" textColor="0x553b24"/>
 		<e:Label text="全网剩余动物：" size="22" fontFamily="specialGameFont" height="28" verticalAlign="middle" bold="false" y="-69" scaleX="1" scaleY="1" textAlign="center" x="35" textColor="0x553B24"/>
-		<e:Label id="text_allCount" text="9999" fontFamily="specialGameFont" strokeColor="0x803F07" stroke="2" size="22" bold="false" textColor="0xFFF000" y="-67" scaleX="1" scaleY="1" textAlign="center" x="182"/>
+		<e:Label id="text_allCount" text="0" fontFamily="specialGameFont" strokeColor="0x803F07" stroke="2" size="22" bold="false" textColor="0xFFF000" y="-67" scaleX="1" scaleY="1" textAlign="center" x="182"/>
 		<e:Label id="txt_time" text="0" size="22" fontFamily="specialGameFont" height="28" verticalAlign="middle" bold="false" y="-42" scaleX="1" scaleY="1" textAlign="center" x="184" textColor="0x09a608"/>
-			<e:Label id="text_count" text="9999" fontFamily="specialGameFont" strokeColor="0x803F07" stroke="2" size="22" bold="false" textColor="0xFFF000" y="-40" scaleX="1" scaleY="1" textAlign="center" x="560"/>
+			<e:Label id="text_count" text="0" fontFamily="specialGameFont" strokeColor="0x803F07" stroke="2" size="22" bold="false" textColor="0xFFF000" y="-40" scaleX="1" scaleY="1" textAlign="center" x="560"/>
 		<e:Label id="txt_title" text="限时购买" size="30" fontFamily="specialGameFont" verticalAlign="middle" textAlign="center" textColor="0x803F07" bold="true" anchorOffsetX="0" y="-116.75" horizontalCenter="2.5"/>
 		<e:Scroller width="646" x="-6" anchorOffsetY="0" scaleX="1" scaleY="1" anchorOffsetX="0" scrollPolicyH="off" height="848">
 		<e:List id="item_list" anchorOffsetY="0" anchorOffsetX="0" x="2" height="736">
