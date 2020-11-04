@@ -31,6 +31,8 @@ public CN_357:eui.Label;
 public CN_354:eui.Label;
 public CN_359:eui.Label;
 public title_tuiguang:eui.Image;
+public codeGroup:eui.Group;
+
 
 public copy_group1:eui.Group;
 public txt_copy1:eui.TextInput;
@@ -62,6 +64,17 @@ public txt_copy2:eui.TextInput;
 			t.item_list.dataProvider = t._arrCollection;
 			
 			t.showTxtNames = ["CN_360","CN_358","CN_361","CN_362","CN_363","CN_364","CN_355","CN_353","CN_356","CN_357","CN_354","CN_359"];
+
+			while(t.codeGroup.numChildren > 0){
+				t.codeGroup.removeChildAt(0);
+			}
+			let pro:com.message.BasePlayerMsg = HeroModel.instance.IdentityPro;
+			let code = pro.inviteCode;
+			let address:string = PlatformConfig.InviteAddress + "?code="+code+"&register=1";
+			if(address){
+				let sp:egret.Sprite = GameUtil.createCode(address);
+				t.codeGroup.addChild(sp);
+			}
 		}
 		protected switchLange(){
 			let t = this;
